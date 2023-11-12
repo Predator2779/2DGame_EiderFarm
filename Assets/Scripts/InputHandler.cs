@@ -18,6 +18,6 @@ public class InputHandler : MonoBehaviour
     {
         Vector3 direction = new Vector3(_joystick.Horizontal, _joystick.Vertical, 0);
 
-        if (direction.magnitude > _sensitivity) _person.Move(direction);
+        if (direction.magnitude > _sensitivity) _person.Move(direction.normalized);
     }
 }

@@ -6,7 +6,7 @@ public class Person : MonoBehaviour, IMovable
     [SerializeField] private Movement _movement;
 
     [Header("Character speed.")]
-    [SerializeField, Range(0, 10)] private float _speed;
+    [SerializeField, Range(0, 100)] private float _speed;
 
     private void Start() => _movement = GetComponent<Movement>();
 
