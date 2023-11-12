@@ -103715,6 +103715,35 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1842551867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842551862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4014e6fdcae7e044b8f76283c6da2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _person: {fileID: 0}
+  _joystick: {fileID: 3460235}
+  _sensitivity: 0.5
+--- !u!114 &1842551870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842551862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095f9ac3038800c469f1dc71a9042567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movement: {fileID: 0}
+  _speed: 3
 --- !u!1001 &3490543915323929453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103804,6 +103833,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4075783788594439080, guid: fde95fa42de228b4cb8e530785974c14, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1842551866}
+    - targetCorrespondingSourceObject: {fileID: 4075783788594439080, guid: fde95fa42de228b4cb8e530785974c14, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1842551867}
+    - targetCorrespondingSourceObject: {fileID: 4075783788594439080, guid: fde95fa42de228b4cb8e530785974c14, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1842551870}
   m_SourcePrefab: {fileID: 100100000, guid: fde95fa42de228b4cb8e530785974c14, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
