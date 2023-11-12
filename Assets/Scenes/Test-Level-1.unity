@@ -103727,9 +103727,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4014e6fdcae7e044b8f76283c6da2bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _person: {fileID: 0}
   _joystick: {fileID: 3460235}
-  _sensitivity: 0.5
+  _sensitivity: 0.21
 --- !u!114 &1842551870
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,10 +1,6 @@
 using UnityEngine;
 
-public class Movement : MonoBehaviour, IMovable
+public class Movement : MonoBehaviour
 {
-    public void Move(Vector3 direction)
-    {
-        Vector3 movement = direction * Time.deltaTime;
-        transform.Translate(movement);
-    }
+    public void Move(Vector3 direction) => transform.Translate(direction);
 }

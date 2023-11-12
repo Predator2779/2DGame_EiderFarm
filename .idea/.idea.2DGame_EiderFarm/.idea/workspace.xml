@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db890482-7c9c-4845-aed2-97ea93e16238" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Person.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Person.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -10,5 +10,5 @@ public class Person : MonoBehaviour, IMovable
 
     private void Start() => _movement = GetComponent<Movement>();
 
-    public void Move(Vector3 direction) => _movement.Move(direction * _speed);
+    public void Move(Vector3 direction) => _movement.Move(direction * _speed * Time.deltaTime);
 }
