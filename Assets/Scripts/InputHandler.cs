@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Person))]
@@ -8,7 +6,7 @@ public class InputHandler : MonoBehaviour
     [SerializeField] private Person _person;
     [SerializeField] private Joystick _joystick;
 
-    [Header("Чувствительность стика.")]
+    [Header("Joystick sensetivity.")]
     [SerializeField, Range(0, 1)] private float _sensitivity;
 
     private void Start()
@@ -20,7 +18,6 @@ public class InputHandler : MonoBehaviour
     {
         Vector3 direction = new Vector3(_joystick.Horizontal, _joystick.Vertical, 0);
 
-        if (direction.magnitude > _sensitivity)
-            _person.GetMovement().Move(direction, _person.GetSpeed());
+        if (direction.magnitude > _sensitivity) _person.Move(direction);
     }
 }

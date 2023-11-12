@@ -1,19 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 [RequireComponent(typeof(Movement))]
-public class Person : MonoBehaviour
+public class Person : MonoBehaviour, IMovable
 {
     [SerializeField] private Movement _movement;
 
-    [Header("Скорость движения персонажа.")]
+    [Header("Character speed.")]
     [SerializeField, Range(0, 10)] private float _speed;
 
     private void Start() => _movement = GetComponent<Movement>();
 
-    public Movement GetMovement() => _movement;
-    public float GetSpeed() => _speed;
-
+    public void Move(Vector3 direction) => _movement.Move(direction * _speed);
 }
