@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Joystick _joystick;
 
-    [Header("Скорость движения персонажа.")]
+    [Header("РЎРєРѕСЂРѕСЃС‚СЊ РґРІРёР¶РµРЅРёСЏ РїРµСЂСЃРѕРЅР°Р¶Р°.")]
     [SerializeField, Range(0, 100)] private float _speed;
 
     private void Update()
