@@ -10,7 +10,9 @@ public class Field : MonoBehaviour
 
     [SerializeField] private GameObject _prefabGaga;
     [SerializeField] private GameObject[] _spawnPlaces;
-    [SerializeField] private float _spawnDelay;
+
+    [Header("Задержка перед спавном гаги.")]
+    [SerializeField,Range(0,30)] private int _spawnDelay;
     public GameObject GetRandomSpawnPlace() => _spawnPlaces[UnityEngine.Random.Range(0, _spawnPlaces.Length)];
 
     private Gaga gaga;

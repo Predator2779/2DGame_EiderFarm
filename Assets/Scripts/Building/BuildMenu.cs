@@ -13,8 +13,6 @@ namespace Building
         private SpriteRenderer _triggerPlace;
         private Vector3 _buildPos;
 
-        private Gaga gaga;
-
         public void SetPosition(SpriteRenderer triggerPlace, Vector3 buildPos)
         {
             _triggerPlace = triggerPlace;
@@ -27,7 +25,7 @@ namespace Building
             _construction.isBuilded = true;
             _triggerPlace.enabled = false;
             Build(_construction.GetBuilding());
-            gaga = _field.GagaSpawn();
+            _field.GagaSpawn();
         }
 
         public void Demolition()

@@ -27,6 +27,7 @@ public class Gaga : MonoBehaviour
 
     private SpriteRenderer sprite;
 
+    [Header("¬рем€ нахождени€ гаги в домике (врем€ выработки пуха).")]
     [SerializeField] private int _timeInHome;
 
     public void Initialize(GameObject target, GameObject endOfField)
