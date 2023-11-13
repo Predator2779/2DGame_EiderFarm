@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,6 +8,7 @@ using UnityEngine;
 
 public class Gaga : MonoBehaviour
 {
+    public event Action GagaDieEvent;
     private enum State
     {
         InHome,
@@ -16,7 +18,8 @@ public class Gaga : MonoBehaviour
 
     private State currentState;
 
-    public Movement movement;
+    [SerializeField] private Movement _movement;
+    [SerializeField] private FluffGiver _fluffGiver;
 
     private GameObject targetPosition;
     private GameObject endPosition;
@@ -35,8 +38,9 @@ public class Gaga : MonoBehaviour
     private void Start()
     {
         currentState = State.WalkToHome;
-        movement = GetComponent<Movement>();
+        _movement = GetComponent<Movement>();
         sprite = GetComponent<SpriteRenderer>();
+        _fluffGiver = GetComponent<FluffGiver>();
     }
 
     private void Update()
@@ -52,14 +56,17 @@ public class Gaga : MonoBehaviour
             SetState(State.InHome);
             return;
         }
-        movement.Move(direction.normalized * _speed * Time.deltaTime);
+        _movement.Move(direction.normalized * _speed * Time.deltaTime);
     }
 
     private void IsEnd()
     {
         float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(endPosition.transform.position.x, endPosition.transform.position.y));
         if (distance < 1f)
+        {
+            GagaDieEvent.Invoke();
             Destroy(this.gameObject);
+        }
     }
     private void SetState(State newState)
     {
@@ -97,8 +104,15 @@ public class Gaga : MonoBehaviour
     private IEnumerator Process(float time)
     {
         sprite.enabled = false;
+        /// процесс
+
+        
+
+        ///
         yield return new WaitForSecondsRealtime(time);
+        _fluffGiver.GiveFluff();
         SetState(State.WalkToNature);
+
         sprite.enabled = true;
     }
 
