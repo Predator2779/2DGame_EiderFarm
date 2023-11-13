@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7902566626661600838}
   - component: {fileID: 1294137825701748463}
   m_Layer: 0
-  m_Name: BuldingTest
+  m_Name: Construction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,4 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5146cd540cf94daca2a4bb5bb6b9b40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data: {fileID: 11400000, guid: fe537f4506d8089438ba52952df0b4f4, type: 2}
+  _gradeBuildings:
+  - {fileID: 438150383606693080, guid: 2f4e22122b498534bb3ae531fb80abc3, type: 3}
+  - {fileID: 438150383606693080, guid: d443b5d9391ea4a4d964bd106350677b, type: 3}
+  - {fileID: 438150383606693080, guid: ca193b893967bc34c8d2b3610fac3d0d, type: 3}
+  _currentGrade: 0
+  isBuilded: 0

@@ -4,20 +4,26 @@ namespace Building.Constructions
 {
     public class Construction : MonoBehaviour
     {
-        [SerializeField] private ConstructionData _data;
+        [SerializeField] private GameObject[] _gradeBuildings;
+        [SerializeField] private int _currentGrade;
+        
+        public bool isBuilded;
+
+        private void Awake() => Reset();
 
         public GameObject GetBuilding()
         {
-            Upgrade();
+            if (CanBuild()) _currentGrade++;
             
-            return _data.gradeBuildings[_data.currentGrade - 1];
+            return _gradeBuildings[_currentGrade - 1];
         }
+        
+        public bool CanBuild() => _currentGrade < _gradeBuildings.Length;
 
-        public ConstructionData GetData() => _data;
-
-        private void Upgrade()
+        public void Reset()
         {
-            if (_data.CanBuild()) _data.currentGrade++;
+            isBuilded = false;
+            _currentGrade = 0;
         }
     }
 }

@@ -19,25 +19,27 @@ namespace Building
 
         public void Build()
         {
-            if (_construction.GetData().isBuilded) return;
+            if (_construction.isBuilded) return;
 
-            _construction.GetData().isBuilded = true;
+            _construction.isBuilded = true;
             _triggerPlace.enabled = false;
             Build(_construction.GetBuilding());
         }
 
         public void Demolition()
         {
-            if (!_construction.GetData().isBuilded) return;
+            if (!_construction.isBuilded) return;
 
             _triggerPlace.enabled = true;
-            _construction.GetData().isBuilded = false;
-            _construction.GetData().currentGrade = 0;
+            _construction.isBuilded = false;
+            _construction.Reset();
             Destroy(_building);
         }
 
         public void Upgrade()
         {
+            if (!_construction.isBuilded) return;
+            
             Build(_construction.GetBuilding());
         }
 

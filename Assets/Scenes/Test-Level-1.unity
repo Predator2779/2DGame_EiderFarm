@@ -433,7 +433,7 @@ Grid:
   m_Enabled: 1
   m_CellSize: {x: 2, y: 1, z: 1}
   m_CellGap: {x: 0, y: 0, z: 0}
-  m_CellLayout: 2
+  m_CellLayout: 3
   m_CellSwizzle: 0
 --- !u!4 &116504559
 Transform:
@@ -797,8 +797,8 @@ GameObject:
   m_Component:
   - component: {fileID: 318277725}
   - component: {fileID: 318277727}
-  - component: {fileID: 318277728}
   - component: {fileID: 318277726}
+  - component: {fileID: 318277728}
   m_Layer: 0
   m_Name: BuildPlace
   m_TagString: Untagged
@@ -887,8 +887,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &318277728
-PolygonCollider2D:
+--- !u!58 &318277728
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -919,58 +919,9 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.2}
-    oldSize: {x: 2.56, y: 3.52}
-    newSize: {x: 0.47, y: 0.47}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.78999996, y: -0.284}
-      - {x: 1.04, y: -0.20400001}
-      - {x: 1.13, y: -0.13400002}
-      - {x: 1.16, y: -0.06400001}
-      - {x: 1.16, y: 0.29599997}
-      - {x: 1.11, y: 0.38599998}
-      - {x: 1.09, y: 0.406}
-      - {x: 0.96, y: 0.59599996}
-      - {x: 0.96, y: 0.816}
-      - {x: 0.93, y: 0.98599994}
-      - {x: 0.90999997, y: 1.046}
-      - {x: 0.7, y: 1.166}
-      - {x: 0.26, y: 1.326}
-      - {x: 0.12, y: 1.406}
-      - {x: -0.01, y: 1.446}
-      - {x: -0.099999994, y: 1.446}
-      - {x: -0.39, y: 1.316}
-      - {x: -0.53, y: 1.216}
-      - {x: -0.83, y: 1.106}
-      - {x: -0.9, y: 1.046}
-      - {x: -0.94, y: 0.92599994}
-      - {x: -0.93, y: 0.60599995}
-      - {x: -1.12, y: 0.39599997}
-      - {x: -1.16, y: 0.24599998}
-      - {x: -1.17, y: 0.065999985}
-      - {x: -1.17, y: -0.044000015}
-      - {x: -1.16, y: -0.12400001}
-      - {x: -0.91999996, y: -0.284}
-      - {x: -0.81, y: -0.30400002}
-      - {x: -0.76, y: -0.314}
-      - {x: -0.55, y: -0.324}
-      - {x: -0.39999998, y: -0.404}
-      - {x: -0.38, y: -0.484}
-      - {x: -0.22999999, y: -0.594}
-      - {x: -0.06, y: -0.674}
-      - {x: 0.08, y: -0.674}
-      - {x: 0.29999998, y: -0.534}
-      - {x: 0.38, y: -0.46400002}
-      - {x: 0.55, y: -0.354}
-  m_UseDelaunayMesh: 0
+  m_Offset: {x: 0, y: 0.25}
+  serializedVersion: 2
+  m_Radius: 1.5
 --- !u!20 &519420031 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 4189265312479855752, guid: e2dac43ccef89724db924c3fa1fed1d6, type: 3}
