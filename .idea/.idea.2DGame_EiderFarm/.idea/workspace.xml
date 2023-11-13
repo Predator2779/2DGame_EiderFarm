@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db890482-7c9c-4845-aed2-97ea93e16238" name="Changes" comment="" />
+    <list default="true" id="db890482-7c9c-4845-aed2-97ea93e16238" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Building/BuildMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Building/BuildMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Building/BuildTrigger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Building/BuildTrigger.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Constructions.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Constructions/Construction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Constructions/Construction.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Constructions/ConstructionData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Constructions/ConstructionData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/General.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/General/EventHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/General/EventHandler.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/PLAYER.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/PLAYER.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test-Level-1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test-Level-1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tilemapping/Palletes/Town-Expansion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tilemapping/Palletes/Town-Expansion.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tilemapping/Sprites/Town-Expansion/_my_obstacle_collider.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tilemapping/Sprites/Town-Expansion/_my_obstacle_collider.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tilemapping/Tiles/Town-Expansion/_my_obstacle_collider.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tilemapping/Tiles/Town-Expansion/_my_obstacle_collider.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tilemapping/Tiles/Town-Expansion/_my_obstacle_collider.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tilemapping/Tiles/Town-Expansion/_my_obstacle_collider.asset.meta" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -29,11 +47,13 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;tile-mapping&quot;,
+    &quot;do_not_show_Android_plugin_suggestion&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;building-system&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -91,12 +111,18 @@
       <option name="presentableId" value="Default" />
       <updated>1699647684980</updated>
       <workItem from="1699647686228" duration="5883000" />
+      <workItem from="1699818395588" duration="9586000" />
+      <workItem from="1699866819286" duration="381000" />
+      <workItem from="1699867227391" duration="449000" />
+      <workItem from="1699867715693" duration="141000" />
+      <workItem from="1699867889565" duration="6443000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
