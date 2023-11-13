@@ -860,6 +860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6791130965709027472}
   - component: {fileID: 7103210750881125334}
+  - component: {fileID: 8074823601665130008}
   m_Layer: 0
   m_Name: BuildMenu
   m_TagString: Untagged
@@ -896,6 +897,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _construction: {fileID: 1294137825701748463, guid: d6e66c2d007761149aaa537daca56d8a, type: 3}
+--- !u!114 &8074823601665130008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420785868169431231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5146cd540cf94daca2a4bb5bb6b9b40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gradeBuildings:
+  - {fileID: 438150383606693080, guid: 2f4e22122b498534bb3ae531fb80abc3, type: 3}
+  - {fileID: 438150383606693080, guid: d443b5d9391ea4a4d964bd106350677b, type: 3}
+  - {fileID: 438150383606693080, guid: ca193b893967bc34c8d2b3610fac3d0d, type: 3}
+  _currentGrade: 0
+  isBuilded: 0
 --- !u!1 &8162890622549168910
 GameObject:
   m_ObjectHideFlags: 0
