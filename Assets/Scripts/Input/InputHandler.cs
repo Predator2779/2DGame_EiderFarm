@@ -14,7 +14,7 @@ public class InputHandler : MonoBehaviour
 
     private void Update()
     {
-        Vector3 direction = new Vector3(_joystick.Horizontal, _joystick.Vertical, 0);
+        Vector3 direction = new Vector2(_joystick.Horizontal, _joystick.Vertical);
 
         if (direction.magnitude > _sensitivity) _movable.Move(direction.normalized);
     }
