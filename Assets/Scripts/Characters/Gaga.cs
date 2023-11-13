@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.IO.LowLevel.Unsafe;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Gaga : MonoBehaviour
@@ -53,6 +54,13 @@ public class Gaga : MonoBehaviour
         }
         movement.Move(direction.normalized * _speed * Time.deltaTime);
     }
+
+    private void IsEnd()
+    {
+        float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(endPosition.transform.position.x, endPosition.transform.position.y));
+        if (distance < 1f)
+            Destroy(this.gameObject);
+    }
     private void SetState(State newState)
     {
         switch (newState)
@@ -76,6 +84,7 @@ public class Gaga : MonoBehaviour
 
             case State.WalkToNature:
                 MoveTo(endPosition);
+                IsEnd();
                 break;
         }
     }
