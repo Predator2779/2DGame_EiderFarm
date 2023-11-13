@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class Gaga : MonoBehaviour
 {
-    enum State
+    private enum State
     {
         InHome,
         WalkToHome,
@@ -16,31 +17,35 @@ public class Gaga : MonoBehaviour
 
     public Movement movement;
 
-    [SerializeField] private GameObject _targetPosition;
-    private Vector2 endPosition;
+    private GameObject targetPosition;
+    private GameObject endPosition;
     [SerializeField] private float _speed;
 
+    private SpriteRenderer sprite;
 
-    Gaga(GameObject target)
+    [SerializeField] private int _timeInHome;
+
+    public void Initialize(GameObject target, GameObject endOfField)
     {
-        _targetPosition = target;
+        targetPosition = target;
+        endPosition = endOfField;
     }
 
     private void Start()
     {
         currentState = State.WalkToHome;
         movement = GetComponent<Movement>();
-        endPosition = new Vector2(transform.position.x, transform.position.y);
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
-        UpdateState();
+        UpdateState(_timeInHome);
     }
 
-    private void MoveTo(Vector2 targetPosition)
+    private void MoveTo(GameObject target)
     {
-        Vector2 direction = targetPosition - new Vector2(transform.position.x, transform.position.y);
+        Vector2 direction = new Vector2(target.transform.position.x, target.transform.position.y) - new Vector2(transform.position.x, transform.position.y);
         if (direction.magnitude < 0.5f)
         {
             SetState(State.InHome);
@@ -57,16 +62,16 @@ public class Gaga : MonoBehaviour
             case State.WalkToNature: currentState = State.WalkToNature; break;
         }
     }
-    private void UpdateState()
+    private void UpdateState(int timeInHome)
     {
         switch (currentState)
         {
             case State.InHome:
-                ProccessInHome();
+                ProccessInHome(timeInHome);
                 break;
 
             case State.WalkToHome:
-                MoveTo(new Vector2(_targetPosition.transform.position.x, _targetPosition.transform.position.y));
+                MoveTo(targetPosition);
                 break;
 
             case State.WalkToNature:
@@ -75,15 +80,17 @@ public class Gaga : MonoBehaviour
         }
     }
 
-    public void ProccessInHome()
+    public void ProccessInHome(float time)
     {
-        StartCoroutine(Process(2));
+        StartCoroutine(Process(time));
     }
 
     private IEnumerator Process(float time)
     {
+        sprite.enabled = false;
         yield return new WaitForSecondsRealtime(time);
         SetState(State.WalkToNature);
+        sprite.enabled = true;
     }
 
 }
