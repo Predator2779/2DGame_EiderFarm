@@ -36,6 +36,7 @@ namespace Building
             _construction.isBuilded = false;
             _construction.Reset();
             Destroy(_building);
+            Destroy(_field.GetGaga().gameObject);
         }
 
         public void Upgrade()

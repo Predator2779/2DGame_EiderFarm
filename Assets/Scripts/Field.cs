@@ -29,6 +29,8 @@ public class Field : MonoBehaviour
         return gaga;
     }
 
+    public Gaga GetGaga() => gaga;
+
     public IEnumerator SpawnGagasWithDelay()
     {
         yield return new WaitForSecondsRealtime(_spawnDelay);

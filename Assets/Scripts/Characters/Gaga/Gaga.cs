@@ -117,4 +117,9 @@ public class Gaga : MonoBehaviour
         sprite.enabled = true;
     }
 
+    public void GoToEnd()
+    {
+        SetState(State.WalkToNature);
+    }
+
 }
