@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 4686426078005236636}
   - component: {fileID: 1197186549066876592}
   - component: {fileID: 5096082907166943967}
+  - component: {fileID: 690351582350672660}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -196,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _joystick: {fileID: 0}
-  _sensitivity: 0.2
+  _sensitivity: 0.137
 --- !u!114 &1197186549066876592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _renderer: {fileID: 3265313704037566952}
 --- !u!114 &5096082907166943967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +224,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cabf618e446b92b449f3a12b1c2b1687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &690351582350672660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303510742262950643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb6caf4dbbf43fe81c90d82a8854edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bags:
+  - content: 0
+    _points: 0
+    _isPlayerBag: 1
+  - content: 1
+    _points: 0
+    _isPlayerBag: 1
+  - content: 2
+    _points: 0
+    _isPlayerBag: 1
+  - content: 3
+    _points: 0
+    _isPlayerBag: 1
 --- !u!1 &8928991494267925070
 GameObject:
   m_ObjectHideFlags: 0

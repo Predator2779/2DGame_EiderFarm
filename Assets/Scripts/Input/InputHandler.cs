@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(IMovable))]
 public class InputHandler : MonoBehaviour
 {
-    [SerializeField] private Joystick _joystick;
+    [SerializeField] private MyJoystick _joystick;
 
     [Header("Joystick sensetivity.")]
     [SerializeField, Range(0, 1)] private float _sensitivity;

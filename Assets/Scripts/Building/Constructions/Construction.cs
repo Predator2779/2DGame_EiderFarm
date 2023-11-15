@@ -9,13 +9,18 @@ namespace Building.Constructions
         
         public bool isBuilded;
 
-        private void Awake() => Reset();
+        private void Start() => Reset();
 
         public GameObject GetBuilding()
         {
             if (CanBuild()) _currentGrade++;
             
             return _gradeBuildings[_currentGrade - 1];
+        }
+        
+        public void Upgrade()
+        {
+            /// повышение характеристик...
         }
         
         public bool CanBuild() => _currentGrade < _gradeBuildings.Length;

@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine.EventSystems;
 
-public class FloatingJoystick : Joystick
+public class FloatingJoystick : MyJoystick
 {
     protected override void Start()
     {
@@ -11,16 +8,16 @@ public class FloatingJoystick : Joystick
         background.gameObject.SetActive(false);
     }
 
-    public override void OnPointerDown(PointerEventData eventData)
+    public override void OnBeginDrag(PointerEventData eventData)
     {
+        base.OnBeginDrag(eventData);
         background.anchoredPosition = ScreenPointToAnchoredPosition(eventData.position);
         background.gameObject.SetActive(true);
-        base.OnPointerDown(eventData);
     }
 
-    public override void OnPointerUp(PointerEventData eventData)
+    public override void OnEndDrag(PointerEventData eventData)
     {
         background.gameObject.SetActive(false);
-        base.OnPointerUp(eventData);
+        base.OnEndDrag(eventData);
     }
 }
