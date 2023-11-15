@@ -5,12 +5,9 @@ namespace Building
 {
     public class BuildMenu : MonoBehaviour
     {
+        [SerializeField] private BuildStorage _storage;
         [SerializeField] private Construction _construction;
         [SerializeField] private Field _field;
-
-        [SerializeField] private GameObject _prefabGaga;
-
-
 
         private GameObject _building;
         private SpriteRenderer _triggerPlace;
@@ -25,14 +22,10 @@ namespace Building
         public void Build()
         {
             if (_construction.isBuilded) return;
-
             _construction.isBuilded = true;
             _triggerPlace.enabled = false;
             Build(_construction.GetBuilding());
-
-            if (_prefabGaga != null)
-                Instantiate(_prefabGaga, _field.GetRandomSpawnPlace().transform.position, Quaternion.identity).GetComponent<Gaga>().Initialize(this.gameObject, _field.GetRandomSpawnPlace());
-
+            _field.GagaSpawn();
         }
 
         public void Demolition()
@@ -43,6 +36,7 @@ namespace Building
             _construction.isBuilded = false;
             _construction.Reset();
             Destroy(_building);
+            Destroy(_field.GetGaga().gameObject);
         }
 
         public void Upgrade()
@@ -58,5 +52,11 @@ namespace Building
 
             _building = Instantiate(building, _buildPos, Quaternion.identity);
         }
+
+        public void AddFluffToStorage() => _storage.AddFluff();
+
+
+        public BuildStorage GetBuildStorage() => _storage;
+
     }
 }

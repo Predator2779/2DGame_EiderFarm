@@ -1,11 +1,22 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler, IEndDragHandler, IBeginDragHandler
+public class MyJoystick : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
-    public float Horizontal { get { return (snapX) ? SnapFloat(input.x, AxisOptions.Horizontal) : input.x; } }
-    public float Vertical { get { return (snapY) ? SnapFloat(input.y, AxisOptions.Vertical) : input.y; } }
-    public Vector2 Direction { get { return new Vector2(Horizontal, Vertical); } }
+    public float Horizontal
+    {
+        get { return (snapX) ? SnapFloat(input.x, AxisOptions.Horizontal) : input.x; }
+    }
+
+    public float Vertical
+    {
+        get { return (snapY) ? SnapFloat(input.y, AxisOptions.Vertical) : input.y; }
+    }
+
+    public Vector2 Direction
+    {
+        get { return new Vector2(Horizontal, Vertical); }
+    }
 
     public float HandleRange
     {
@@ -19,9 +30,23 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         set { deadZone = Mathf.Abs(value); }
     }
 
-    public AxisOptions AxisOptions { get { return AxisOptions; } set { axisOptions = value; } }
-    public bool SnapX { get { return snapX; } set { snapX = value; } }
-    public bool SnapY { get { return snapY; } set { snapY = value; } }
+    public AxisOptions AxisOptions
+    {
+        get { return AxisOptions; }
+        set { axisOptions = value; }
+    }
+
+    public bool SnapX
+    {
+        get { return snapX; }
+        set { snapX = value; }
+    }
+
+    public bool SnapY
+    {
+        get { return snapY; }
+        set { snapY = value; }
+    }
 
     [SerializeField] private float handleRange = 1;
     [SerializeField] private float deadZone = 0;
@@ -55,10 +80,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         handle.anchoredPosition = Vector2.zero;
     }
 
-    public virtual void OnPointerDown(PointerEventData eventData)
-    {
-        OnDrag(eventData);
-    }
+    public virtual void OnBeginDrag(PointerEventData eventData) => OnDrag(eventData);
 
     public virtual void OnDrag(PointerEventData eventData)
     {
@@ -72,6 +94,12 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         FormatInput();
         HandleInput(input.magnitude, input.normalized, radius, cam);
         handle.anchoredPosition = input * radius * handleRange;
+    }
+
+    public virtual void OnEndDrag(PointerEventData eventData)
+    {
+        input = Vector2.zero;
+        handle.anchoredPosition = Vector2.zero;
     }
 
     protected virtual void HandleInput(float magnitude, Vector2 normalised, Vector2 radius, Camera cam)
@@ -115,6 +143,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
                 else
                     return (value > 0) ? 1 : -1;
             }
+
             return value;
         }
         else
@@ -124,13 +153,8 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
             if (value < 0)
                 return -1;
         }
-        return 0;
-    }
 
-    public virtual void OnPointerUp(PointerEventData eventData)
-    {
-        input = Vector2.zero;
-        handle.anchoredPosition = Vector2.zero;
+        return 0;
     }
 
     protected Vector2 ScreenPointToAnchoredPosition(Vector2 screenPosition)
@@ -141,19 +165,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
             Vector2 pivotOffset = baseRect.pivot * baseRect.sizeDelta;
             return localPoint - (background.anchorMax * baseRect.sizeDelta) + pivotOffset;
         }
+
         return Vector2.zero;
     }
-
-    public virtual void OnEndDrag(PointerEventData eventData)
-    {
-        input = Vector2.zero;
-        handle.anchoredPosition = Vector2.zero;
-    }
-
-    public virtual void OnBeginDrag(PointerEventData eventData)
-    {
-        OnDrag(eventData);
-    }
 }
-
-public enum AxisOptions { Both, Horizontal, Vertical }
