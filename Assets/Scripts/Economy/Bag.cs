@@ -3,18 +3,9 @@ using UnityEngine;
 
 namespace Economy
 {
-    public class Bag : MonoBehaviour
+    [Serializable] public class Bag
     {
-        public enum BagContent
-        {
-            Money,
-            CleanedFluff,
-            UncleanedFluff,
-            Clothes
-        }
-
-        public BagContent content;
-
+        public BagContent content { get; }
         [SerializeField] private int _points;
 
         public void AddPoints(int value) => _points += value > 0 ? value : 0;
@@ -24,7 +15,7 @@ namespace Economy
         public void Give(Bag bag, int value)
         {
             if (!IsCorrect(bag)) return;
-            
+
             bag.AddPoints(GetPoints(_points, value));
             RemovePoints(value);
         }
@@ -32,5 +23,13 @@ namespace Economy
         private bool IsCorrect(Bag bag) => bag.content == content;
 
         private int GetPoints(int points, int value) => points >= value ? value : 0;
+    }
+
+    public enum BagContent
+    {
+        Money,
+        CleanedFluff,
+        UncleanedFluff,
+        Clothes
     }
 }
