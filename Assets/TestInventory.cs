@@ -10,7 +10,7 @@ public class TestInventory : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent(out Inventory _inventory))
-            if (_inventory.TryGetBag(BagContent.Money, out Bag bag))
+            if (_inventory.TryGetBag(_content, out Bag bag))
                 bag.AddPoints(Random.Range(_minValue, _maxValue));
     }
 }

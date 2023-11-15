@@ -1,13 +1,12 @@
-using System.Linq;
 using UnityEngine;
 
 namespace Economy
 {
     public class Inventory : MonoBehaviour
     {
-        [SerializeField] private BagStruct[] _bags;
+        [SerializeField] private Bag[] _bags;
 
-        public Bag[] GetAllBags() => _bags.Select(x => x.bag).ToArray();
+        public Bag[] GetAllBags() => _bags;
 
         public bool TryGetBag(BagContent content, out Bag relevantBag)
         {

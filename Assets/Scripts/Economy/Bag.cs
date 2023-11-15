@@ -1,14 +1,21 @@
 using System;
 using UnityEngine;
+using EventHandler = General.EventHandler;
 
 namespace Economy
 {
     [Serializable] public class Bag
     {
-        public BagContent content { get; }
+        public BagContent content;
         [SerializeField] private int _points;
+        [SerializeField] private bool _isPlayerBag;
 
-        public void AddPoints(int value) => _points += value > 0 ? value : 0;
+        public void AddPoints(int value)
+        {
+            _points += value > 0 ? value : 0;
+            
+            if (_isPlayerBag) EventHandler.OnBagAdd?.Invoke(content, _points);
+        }
 
         private void RemovePoints(int value) => AddPoints(-value);
 
