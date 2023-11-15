@@ -11,7 +11,7 @@ public class Field : MonoBehaviour
     [SerializeField] private GameObject _prefabGaga;
     [SerializeField] private GameObject[] _spawnPlaces;
 
-    [Header("Çàäåðæêà ïåðåä ñïàâíîì ãàãè.")]
+    [Header("Ð—Ð°Ð´ÐµÑ€Ð¶ÐºÐ° Ð¿ÐµÑ€ÐµÐ´ ÑÐ¿Ð°Ð²Ð½Ð¾Ð¼ Ð³Ð°Ð³Ð¸.")]
     [SerializeField,Range(0,30)] private int _spawnDelay;
     public GameObject GetRandomSpawnPlace() => _spawnPlaces[UnityEngine.Random.Range(0, _spawnPlaces.Length)];
 
