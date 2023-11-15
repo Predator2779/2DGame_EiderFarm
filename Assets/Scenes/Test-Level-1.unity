@@ -8517,7 +8517,6 @@ GameObject:
   - component: {fileID: 525053944}
   - component: {fileID: 525053943}
   - component: {fileID: 525053942}
-  - component: {fileID: 525053946}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -8574,7 +8573,7 @@ Canvas:
   m_GameObject: {fileID: 525053941}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -8586,7 +8585,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &525053945
 RectTransform:
@@ -8608,18 +8607,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!225 &525053946
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525053941}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 0
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1001 &761948023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9318,6 +9305,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 7443397624085077158, guid: 39c6e1df77edc0a43b4cdc9d169265df, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8298108614771525093, guid: 39c6e1df77edc0a43b4cdc9d169265df, type: 3}
       propertyPath: _prefabGaga
       value: 
