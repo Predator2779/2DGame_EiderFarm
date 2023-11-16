@@ -12,4 +12,14 @@ public class BuildStorage : MonoBehaviour
     {
         _fluffCount++;
     }
+
+    public int GetFluffFromStorage()
+    {
+        return _fluffCount;
+    }
+
+    public void ResetFluff()
+    {
+        _fluffCount = 0;
+    }
 }
