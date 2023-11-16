@@ -55,7 +55,6 @@ namespace Building
 
         public void AddFluffToStorage() => _storage.AddFluff();
 
-
         public BuildStorage GetBuildStorage() => _storage;
 
     }
