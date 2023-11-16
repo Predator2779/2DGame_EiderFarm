@@ -1,0 +1,30 @@
+-keep class bitter.jnibridge.* { *; }
+-keep class com.unity3d.player.* { *; }
+-keep class org.fmod.* { *; }
+
+-keep class com.google.android.c2dm.** { *; }
+-keep class com.google.android.gms.** { *; }
+-keep class com.chartboost.sdk.unity.** { *; }
+-keep class com.yandex.metrica.** { *; }
+-keep class com.ursegames.unitybridge.** { *; }
+-keep class com.fyber.** { *; }
+-keep class com.facebook.** { *; }
+-keep class com.appsflyer.** { *; }
+-keep class com.google.zxing.** { *; }
+-keep class com.google.firebase.** { *; }
+-keep class com.evernote.android.job.** { *; }
+-keep class com.ablar.android.** { *; }
+-keep class com.fyber.mediation.** { *; }
+-keep class com.tapjoy.** {*;}
+-keep class com.devtodev.** {*;}
+-keep class com.mopub.** {*;}
+-keep class ru.odnoklassniki.** {*;}
+
+-dontwarn com.google.android.gms.**
+-dontwarn com.google.zxing.**
+-dontwarn com.google.firebase.iid.**
+-dontwarn com.evernote.android.job.v14.**
+-dontwarn com.evernote.android.job.**
+-dontwarn com.fyber.mediation.tapjoy.**
+-dontwarn com.tapjoy.internal.**
+-dontwarn com.devtodev.**
