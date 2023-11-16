@@ -9,7 +9,7 @@ namespace Building
         [SerializeField] private Construction _construction;
         [SerializeField] private Field _field;
 
-        private GameObject _building;
+        [SerializeField] private GameObject _building;
         private SpriteRenderer _triggerPlace;
         private Vector3 _buildPos;
 
@@ -54,7 +54,6 @@ namespace Building
         }
 
         public void AddFluffToStorage() => _storage.AddFluff();
-
 
         public BuildStorage GetBuildStorage() => _storage;
 
