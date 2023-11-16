@@ -864,7 +864,6 @@ GameObject:
   - component: {fileID: 1791497133908368240}
   - component: {fileID: 1795743072531732223}
   - component: {fileID: 1717968257665960982}
-  - component: {fileID: 8298108614771525093}
   m_Layer: 0
   m_Name: BuildMenu
   m_TagString: Untagged
@@ -900,9 +899,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17ee78c7f36743ba884ac1eeaa50a838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _storage: {fileID: 0}
   _construction: {fileID: 1717968257665960982}
-  _field: {fileID: 8298108614771525093}
-  _prefabGaga: {fileID: 7382054376449002626, guid: 27d55e85803656448b53f9bcba00d76f, type: 3}
+  _field: {fileID: 0}
+  _building: {fileID: 0}
 --- !u!114 &1717968257665960982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -921,22 +921,6 @@ MonoBehaviour:
   - {fileID: 438150383606693080, guid: ca193b893967bc34c8d2b3610fac3d0d, type: 3}
   _currentGrade: 0
   isBuilded: 0
---- !u!114 &8298108614771525093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6602598850073981244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7594c5287d0cf2240ace7fc852901e9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawnPlaces:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &6840135655190377597
 GameObject:
   m_ObjectHideFlags: 0
