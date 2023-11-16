@@ -1,9 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using Unity.IO.LowLevel.Unsafe;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Gaga : MonoBehaviour
@@ -27,7 +23,7 @@ public class Gaga : MonoBehaviour
 
     private SpriteRenderer sprite;
 
-    [Header("Время нахождения гаги в домике (время выработки пуха).")]
+    [Header("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ).")]
     [SerializeField] private int _timeInHome;
 
     public void Initialize(GameObject target, GameObject endOfField)
@@ -105,7 +101,7 @@ public class Gaga : MonoBehaviour
     private IEnumerator Process(float time)
     {
         sprite.enabled = false;
-        /// процесс
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
         
 
