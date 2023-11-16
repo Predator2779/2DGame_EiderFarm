@@ -10998,6 +10998,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1134311917}
     m_Modifications:
+    - target: {fileID: 491614236179571107, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 54628aafa20f64b40ae661038ee7abf0, type: 3}
+    - target: {fileID: 491614236179571107, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: m_Color.a
+      value: 0.7058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 2381575673401110215, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 54628aafa20f64b40ae661038ee7abf0, type: 3}
+    - target: {fileID: 2381575673401110215, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: m_Color.a
+      value: 0.7058824
+      objectReference: {fileID: 0}
     - target: {fileID: 2629156067078942385, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11042,6 +11058,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 3335898028604534565, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 54628aafa20f64b40ae661038ee7abf0, type: 3}
+    - target: {fileID: 3335898028604534565, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: m_Color.a
+      value: 0.7058824
+      objectReference: {fileID: 0}
     - target: {fileID: 7848348355720333072, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: _spawnPlaces.Array.data[0]
       value: 
@@ -11057,6 +11081,10 @@ PrefabInstance:
     - target: {fileID: 8872234337872490026, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: m_Name
       value: BuildPlace
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197288945890603453, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
