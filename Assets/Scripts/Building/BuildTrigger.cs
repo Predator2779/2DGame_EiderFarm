@@ -20,11 +20,6 @@ namespace Building
         public void SetMenuActive(bool value) => _menu.gameObject.SetActive(value);
 
         private Vector3 GetTilePos() => _map.CellToWorld(_map.WorldToCell(transform.position));
-
-        private void DisableMenu()
-        {
-            SetMenuActive(false);
-        }
         
         private void OnTriggerEnter2D(Collider2D other)
         {
