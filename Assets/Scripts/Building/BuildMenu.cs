@@ -6,8 +6,8 @@ namespace Building
     public class BuildMenu : MonoBehaviour
     {
         [SerializeField] private Construction _construction;
-
-        [SerializeField] private GameObject _building;
+        
+        private GameObject _building;
         private SpriteRenderer _triggerPlace;
         private Vector3 _buildPos;
 
