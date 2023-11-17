@@ -12,12 +12,13 @@ namespace Economy
 
         public void AddPoints(int value)
         {
-            _points += value > 0 ? value : 0;
+            //_points += value > 0 ? value : 0;
+            _points += value;
             
             if (_isPlayerBag) EventHandler.OnBagAdd?.Invoke(content, _points);
         }
 
-        private void RemovePoints(int value) => AddPoints(-value);
+        public void RemovePoints(int value) => AddPoints(-value);
 
         public void Give(Bag bag, int value)
         {
@@ -30,6 +31,8 @@ namespace Economy
         private bool IsCorrect(Bag bag) => bag.content == content;
 
         private int GetPoints(int points, int value) => points >= value ? value : 0;
+
+        public int GetCurrentPoints() => _points;
     }
 
     public enum BagContent
