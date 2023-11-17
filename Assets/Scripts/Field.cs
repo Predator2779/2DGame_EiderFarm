@@ -1,31 +1,41 @@
-using Building;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Field : MonoBehaviour
 {
-    [SerializeField] private BuildMenu _buildMenu;
-
     [SerializeField] private GameObject _prefabGaga;
     [SerializeField] private GameObject[] _spawnPlaces;
 
     [Header("Задержка перед спавном гаги.")]
-    [SerializeField,Range(0,30)] private int _spawnDelay;
-    public GameObject GetRandomSpawnPlace() => _spawnPlaces[UnityEngine.Random.Range(0, _spawnPlaces.Length)];
+    [SerializeField, Range(0, 30)] private int _spawnDelay;
 
+    private BuildStorage _buildStorage;
     private Gaga gaga;
+
+    private void OnEnable() => Initialize();
+
+    private void Initialize()
+    {
+        _buildStorage = GetComponent<BuildStorage>();
+        GagaSpawn();
+    }
+
+    public GameObject GetRandomSpawnPlace() => _spawnPlaces[Random.Range(0, _spawnPlaces.Length)];
+
     public Gaga GagaSpawn()
     {
         if (_prefabGaga != null)
         {
-            gaga = Instantiate(_prefabGaga, GetRandomSpawnPlace().transform.position, Quaternion.identity).GetComponent<Gaga>();
+            gaga = Instantiate(_prefabGaga, GetRandomSpawnPlace().transform.position, Quaternion.identity)
+                    .GetComponent<Gaga>();
             gaga.Initialize(this.gameObject, GetRandomSpawnPlace());
             gaga.GagaDieEvent += GagaDie;
-            gaga.GetComponent<FluffGiver>().FluffGiveEvent += () => _buildMenu.AddFluffToStorage();
+            gaga.GetComponent<FluffGiver>().FluffGiveEvent += () => _buildStorage.AddFluff();
             return gaga;
         }
+
         return gaga;
     }
 
@@ -42,4 +52,6 @@ public class Field : MonoBehaviour
         gaga.GagaDieEvent -= GagaDie;
         StartCoroutine(SpawnGagasWithDelay());
     }
+
+    private void OnDestroy() => Destroy(GetGaga().gameObject);
 }

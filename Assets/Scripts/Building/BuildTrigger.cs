@@ -21,6 +21,11 @@ namespace Building
 
         private Vector3 GetTilePos() => _map.CellToWorld(_map.WorldToCell(transform.position));
 
+        private void DisableMenu()
+        {
+            SetMenuActive(false);
+        }
+        
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (!other.CompareTag("Player")) return;

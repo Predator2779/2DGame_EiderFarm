@@ -47,7 +47,10 @@ public class Gaga : MonoBehaviour
 
     private void MoveTo(GameObject target)
     {
-        Vector2 direction = new Vector2(target.transform.position.x, target.transform.position.y) - new Vector2(transform.position.x, transform.position.y);
+        Vector2 direction = new Vector2(
+                target.transform.position.x, target.transform.position.y) - 
+                            new Vector2(transform.position.x, transform.position.y);
+        
         if (direction.magnitude < 0.5f)
         {
             SetState(State.InHome);
@@ -58,11 +61,14 @@ public class Gaga : MonoBehaviour
 
     private void IsEnd()
     {
-        float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(endPosition.transform.position.x, endPosition.transform.position.y));
+        float distance = Vector2.Distance(
+                new Vector2(transform.position.x, transform.position.y), 
+                new Vector2(endPosition.transform.position.x, endPosition.transform.position.y));
+        
         if (distance < 1f)
         {
             GagaDieEvent.Invoke();
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
     private void SetState(State newState)
@@ -101,11 +107,7 @@ public class Gaga : MonoBehaviour
     private IEnumerator Process(float time)
     {
         sprite.enabled = false;
-        /// �������
 
-        
-
-        ///
         yield return new WaitForSecondsRealtime(time);
         _fluffGiver.GiveFluff();
         SetState(State.WalkToNature);

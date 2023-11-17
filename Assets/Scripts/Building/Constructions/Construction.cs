@@ -4,17 +4,17 @@ namespace Building.Constructions
 {
     public class Construction : MonoBehaviour
     {
-        [SerializeField] private GameObject[] _gradeBuildings;
+        [SerializeField] private Sprite[] _gradeBuildings;
         [SerializeField] private int _currentGrade;
         
         public bool isBuilded;
 
         private void Start() => Reset();
 
-        public GameObject GetBuilding()
+        public Sprite GetGrade()
         {
             if (CanBuild()) _currentGrade++;
-            
+
             return _gradeBuildings[_currentGrade - 1];
         }
         
