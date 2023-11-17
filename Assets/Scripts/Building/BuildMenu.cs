@@ -11,6 +11,7 @@ namespace Building
         private SpriteRenderer _triggerPlace;
         private Vector3 _buildPos;
 
+        private void Start() => _construction.Reset();
         public void SetPosition(SpriteRenderer triggerPlace, Vector3 buildPos)
         {
             _triggerPlace = triggerPlace;
@@ -23,7 +24,6 @@ namespace Building
             
             _construction.isBuilded = true;
             _triggerPlace.enabled = false;
-            
             Build(_construction.gameObject);
             
             _building.GetComponent<SpriteRenderer>().sprite = _construction.GetGrade();

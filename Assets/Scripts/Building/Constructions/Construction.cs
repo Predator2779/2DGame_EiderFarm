@@ -30,5 +30,6 @@ namespace Building.Constructions
             isBuilded = false;
             _currentGrade = 0;
         }
+        
     }
 }
