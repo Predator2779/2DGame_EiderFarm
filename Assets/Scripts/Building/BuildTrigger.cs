@@ -17,7 +17,7 @@ namespace Building
             _renderer = GetComponent<SpriteRenderer>();
         }
 
-        public void SetMenuActive(bool value) => _menu.gameObject.SetActive(value);
+        private void SetMenuActive(bool value) => _menu.gameObject.SetActive(value);
 
         private Vector3 GetTilePos() => _map.CellToWorld(_map.WorldToCell(transform.position));
         

@@ -11000,6 +11000,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 6302356720110280428, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: _building
+      value: 
+      objectReference: {fileID: 2055177213520633573, guid: fadf628535c05c74992c3a05a3a3f14f, type: 3}
     - target: {fileID: 7848348355720333072, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: _spawnPlaces.Array.data[0]
       value: 

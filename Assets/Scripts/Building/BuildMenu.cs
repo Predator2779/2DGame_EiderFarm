@@ -5,13 +5,12 @@ namespace Building
 {
     public class BuildMenu : MonoBehaviour
     {
-        [SerializeField] private Construction _construction;
+        [SerializeField] private GameObject _building;
         
-        private GameObject _building;
+        private Construction _construction;
         private SpriteRenderer _triggerPlace;
         private Vector3 _buildPos;
-
-        private void Start() => _construction.Reset();
+        
         public void SetPosition(SpriteRenderer triggerPlace, Vector3 buildPos)
         {
             _triggerPlace = triggerPlace;
@@ -20,38 +19,33 @@ namespace Building
 
         public void Build()
         {
-            if (_construction.isBuilded) return;
+            if (_construction != null) return;
             
-            _construction.isBuilded = true;
             _triggerPlace.enabled = false;
-            Build(_construction.gameObject);
-            
-            _building.GetComponent<SpriteRenderer>().sprite = _construction.GetGrade();
+            Build(_building);
+            _construction.SetSprite(_construction.GetGrade());
         }
 
         public void Demolition()
         {
-            if (!_construction.isBuilded) return;
+            if (_construction == null) return;
 
             _triggerPlace.enabled = true;
-            _construction.isBuilded = false;
-            _construction.Reset();
-            
-            Destroy(_building);
+            Destroy(_construction.gameObject);
         }
 
         public void Upgrade()
         {
-            if (!_construction.isBuilded) return;
+            if (_construction == null || !_construction.CanUpgrade()) return;
 
-            _building.GetComponent<SpriteRenderer>().sprite = _construction.GetGrade();
+            _construction.SetSprite(_construction.GetGrade());
         }
 
         private void Build(GameObject building)
         {
-            if (_building != null) Destroy(_building);
+            if (_construction != null) Destroy(_construction);
 
-            _building = Instantiate(building.gameObject, _buildPos, Quaternion.identity);
+            _construction = Instantiate(building, _buildPos, Quaternion.identity).GetComponent<Construction>();
         }
     }
 }
