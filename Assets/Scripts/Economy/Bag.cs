@@ -12,8 +12,7 @@ namespace Economy
 
         public void AddPoints(int value)
         {
-            //_points += value > 0 ? value : 0;
-            _points += value;
+            _points += value > 0 ? value : 0;
             
             if (_isPlayerBag) EventHandler.OnBagAdd?.Invoke(content, _points);
         }
