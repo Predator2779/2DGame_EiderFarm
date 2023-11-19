@@ -23,6 +23,8 @@ namespace Economy
             AddValue(_count - value >= 0 ? -value : -_count);
         }
 
+        public Sprite GetItemIcon() => _item.GetIcon();
+        
         public string GetItemName() => _item.GetName();
 
         public int GetCount() => _count;

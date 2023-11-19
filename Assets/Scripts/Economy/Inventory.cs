@@ -23,6 +23,8 @@ namespace Economy
             if (IsExistsItems(item, count)) Remove(item, count);
         }
 
+        public List<ItemBunch> GetAllItems() => _listItems;
+        
         private bool IsExistsItems(Item type, int count) =>
                 _listItems.Any(bunch => bunch.GetItemName() ==
                         type.GetName() && bunch.GetCount() > count);
