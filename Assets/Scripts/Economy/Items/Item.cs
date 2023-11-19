@@ -1,19 +1,13 @@
 using System;
+using UnityEngine;
 
-namespace Economy.Items
+namespace Economy
 {
-    [Serializable] public class Item
+    [CreateAssetMenu(menuName = "Inventory/Item", fileName = "New Item", order = 0)]
+    [Serializable] public class Item : ScriptableObject
     {
-        private readonly ItemType _type;
-        public Item(ItemType type) => _type = type;
-        public ItemType GetItemType() => _type;
-    }
+        [SerializeField] private string _name;
 
-    public enum ItemType
-    {
-        Item,
-        Money,
-        CleanedFluff,
-        UncleanedFluff
+        public string GetName() => _name;
     }
 }

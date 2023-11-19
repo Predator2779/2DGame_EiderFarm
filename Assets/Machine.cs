@@ -1,7 +1,5 @@
 using Economy;
-using Economy.Items;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BuildStorage))]
@@ -16,7 +14,7 @@ public class Machine : MonoBehaviour
     [SerializeField, Header("Время изготовления")]
     private int _delayProduction;
 
-    private ItemType _typeFromPlayer;
+    private Item _typeFromPlayer;
 
     private void Start()
     {
@@ -33,12 +31,12 @@ public class Machine : MonoBehaviour
         _transmitter.CheckBag();
     }
 
-    private IEnumerator Production(ItemType _typeToPlayer, Inventory _characterInventory, int _fluffCount)
+    private IEnumerator Production(Item _typeToPlayer, Inventory _characterInventory, int _fluffCount)
     {
         if (!_isWorked)
         {
             _isWorked = true;
-            _typeFromPlayer = _converter.ConvertToFrom(_typeToPlayer);
+            _typeFromPlayer = _converter.Convert(_typeToPlayer, _storage);
             _characterInventory.RemoveItems(_typeFromPlayer, _fluffCount);
             yield return new WaitForSecondsRealtime(_delayProduction);
             _isWorked = false;

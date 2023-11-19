@@ -1,7 +1,7 @@
-using Economy.Items;
 using General;
 using TMPro;
 using UnityEngine;
+using static General.GlobalConstants;
 
 public class InventoryDrawer : MonoBehaviour
 {
@@ -14,17 +14,17 @@ public class InventoryDrawer : MonoBehaviour
         EventHandler.OnInventoryAdd.AddListener(UpdateCounter);
     }
 
-    private void UpdateCounter(ItemType content, int points)
+    private void UpdateCounter(string content, int points)
     {
         switch (content)
         {
-            case ItemType.Money:
+            case Money:
                 _moneyCounter.text = points.ToString();
                 break;            
-            case ItemType.CleanedFluff:
+            case CleanedFluff:
                 _cleanFCounter.text = points.ToString();
                 break;            
-            case ItemType.UncleanedFluff:
+            case UncleanedFluff:
                 _uncleanFCounter.text = points.ToString();
                 break;
         }

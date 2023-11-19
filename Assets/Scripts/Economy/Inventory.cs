@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Economy.Items;
 using UnityEngine;
 using EventHandler = General.EventHandler;
 
@@ -14,23 +13,23 @@ namespace Economy
         private void Start()
         {
             foreach (var bunch in _listItems)
-                SendMessage(bunch.GetItemType(), bunch.GetCount());
+                SendMessage(bunch.GetItemName(), bunch.GetCount());
         }
 
-        public void AddItems(ItemType type, int count) => AddOrCreate(type, count);
+        public void AddItems(Item item, int count) => AddOrCreate(item, count);
 
-        public void RemoveItems(ItemType type, int count)
+        public void RemoveItems(Item item, int count)
         {
-            if (IsExistsItems(type, count)) Remove(type, count);
+            if (IsExistsItems(item, count)) Remove(item, count);
         }
 
-        private bool IsExistsItems(ItemType type, int count) =>
-                _listItems.Any(bunch => bunch.GetItemType() ==
-                        type && bunch.GetCount() > count);
+        private bool IsExistsItems(Item type, int count) =>
+                _listItems.Any(bunch => bunch.GetItemName() ==
+                        type.GetName() && bunch.GetCount() > count);
 
-        private bool TryGetBunch(ItemType type, out ItemBunch itemBunch)
+        private bool TryGetBunch(Item item, out ItemBunch itemBunch)
         {
-            foreach (var bunch in _listItems.Where(bunch => bunch.GetItemType() == type))
+            foreach (var bunch in _listItems.Where(bunch => bunch.GetItemName() == item.GetName()))
             {
                 itemBunch = bunch;
                 return true;
@@ -40,11 +39,11 @@ namespace Economy
             return false;
         }
 
-        private void AddOrCreate(ItemType type, int count)
+        private void AddOrCreate(Item item, int count)
         {
-            ItemBunch bunch = new ItemBunch(type);
+            ItemBunch bunch = new ItemBunch(item);
 
-            if (TryGetBunch(type, out ItemBunch newBunch))
+            if (TryGetBunch(item, out ItemBunch newBunch))
             {
                 bunch = newBunch;
             }
@@ -54,32 +53,20 @@ namespace Economy
             }
 
             bunch.AddItems(count);
-            SendMessage(type, bunch.GetCount());
+            SendMessage(item.GetName(), bunch.GetCount());
         }
 
-        private void Remove(ItemType type, int count)
+        private void Remove(Item item, int count)
         {
-            if (!TryGetBunch(type, out ItemBunch itemBunch)) return;
+            if (!TryGetBunch(item, out ItemBunch itemBunch)) return;
 
             itemBunch.RemoveItems(count);
-            SendMessage(type, itemBunch.GetCount());
+            SendMessage(item.GetName(), itemBunch.GetCount());
         }
 
-        private void SendMessage(ItemType type, int count)
+        private void SendMessage(string name, int count)
         {
-            if (_isPlayerInventory) EventHandler.OnInventoryAdd?.Invoke(type, count);
+            if (_isPlayerInventory) EventHandler.OnInventoryAdd?.Invoke(name, count);
         }
-
-        #region Removed
-
-        // public void Give(ref Inventory inv, ItemType type, int count)
-        // {
-        //     if (!IsExistsItems(type, count)) return;
-        //
-        //     inv.Add(type, count);
-        //     RemoveItems(type, count);
-        // }
-
-        #endregion
     }
 }
