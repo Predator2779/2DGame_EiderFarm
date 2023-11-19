@@ -9273,7 +9273,6 @@ MonoBehaviour:
   _moneyCounter: {fileID: 2039018285}
   _cleanFCounter: {fileID: 17318509}
   _uncleanFCounter: {fileID: 2096478510}
-  _clothesCouunter: {fileID: 76087353}
 --- !u!1 &753931635
 GameObject:
   m_ObjectHideFlags: 0
@@ -9340,7 +9339,7 @@ SpriteRenderer:
   m_Size: {x: 38.399998, y: 33.16875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &753931637
@@ -11263,8 +11262,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 690351582350672660, guid: e2dac43ccef89724db924c3fa1fed1d6, type: 3}
+      propertyPath: _listItems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 690351582350672660, guid: e2dac43ccef89724db924c3fa1fed1d6, type: 3}
       propertyPath: _bags.Array.data[2]._points
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 690351582350672660, guid: e2dac43ccef89724db924c3fa1fed1d6, type: 3}
+      propertyPath: _listItems.Array.data[0]._type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 690351582350672660, guid: e2dac43ccef89724db924c3fa1fed1d6, type: 3}
+      propertyPath: _listItems.Array.data[1]._type
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1928003797261364996, guid: e2dac43ccef89724db924c3fa1fed1d6, type: 3}
       propertyPath: m_LocalScale.x
