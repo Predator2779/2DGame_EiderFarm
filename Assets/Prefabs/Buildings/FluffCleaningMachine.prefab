@@ -137,10 +137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcd90eecabae024e954552a4da420d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _typeFromPlayer: 2
-  _fluffCount: 0
-  _delayProduction: 0
-  _isTransmiteToMachine: 1
+  _typeToPlayer: {fileID: 11400000, guid: 200ec94766fc499428a2a0d4b79d9875, type: 2}
+  _fluffCount: 2
 --- !u!114 &5870109810159464413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac7e2559eae87c45ab4f43e5d2120a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _relevantItem: {fileID: 11400000, guid: 200ec94766fc499428a2a0d4b79d9875, type: 2}
+  _convertedItem: {fileID: 11400000, guid: 159a6522252945049be044ad47855211, type: 2}
 --- !u!114 &-743542058398352483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +193,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ed1386f1ec2b042bacfa2412ee9cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _storage: {fileID: 0}
-  _converter: {fileID: 0}
   _delayProduction: 3
-  _fluffCount: 2

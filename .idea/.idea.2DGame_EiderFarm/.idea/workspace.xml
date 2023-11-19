@@ -5,32 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db890482-7c9c-4845-aed2-97ea93e16238" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/FHouseMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/FHouseMenu.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/ShopMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/ShopMenu.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/General/GlobalConstants.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/General/GlobalConstants.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/FHouseTrigger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/FHouseTrigger.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Converter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Converter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Machine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Machine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ResourceTransmitter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ResourceTransmitter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/FluffCleaningMachine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/FluffCleaningMachine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Gaga Houses/GagaHouse.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Gaga Houses/GagaHouse.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test-Level-2 (Kn1ght).unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test-Level-2 (Kn1ght).unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/BuildTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/BuildTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/BuildTrigger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/BuildTrigger.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/MenuTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/MenuTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/MenuTrigger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/MenuTrigger.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Inventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Items/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Items/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Items/Item.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Items/Item.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Items/ItemBunch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Items/ItemBunch.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/General/EventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/General/EventHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/TestInvRemove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/TestInvRemove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/TestInventoryAdd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/TestInventoryAdd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InventoryDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InventoryDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script Objects.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script Objects/Cleaned Fluff.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script Objects/Cleaned Fluff.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script Objects/Cloth.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script Objects/Cloth.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script Objects/Money.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script Objects/Money.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script Objects/Uncleaned Fluff.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script Objects/Uncleaned Fluff.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/TurnHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/TurnHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +120,7 @@
       <workItem from="1699867889565" duration="6443000" />
       <workItem from="1700214552399" duration="3580000" />
       <workItem from="1700328902173" duration="603000" />
-      <workItem from="1700382392364" duration="21568000" />
+      <workItem from="1700382392364" duration="22244000" />
     </task>
     <servers />
   </component>

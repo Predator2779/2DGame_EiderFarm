@@ -12,10 +12,10 @@ namespace Player
             switch (side)
             {
                 case PlayerSides.Left:
-                    RotateObj(_renderer.transform, 0);
+                    RotateObj(_renderer.transform, 180);
                     break;
                 default:
-                    RotateObj(_renderer.transform, 180);
+                    RotateObj(_renderer.transform, 0);
                     break;
             }
         }
