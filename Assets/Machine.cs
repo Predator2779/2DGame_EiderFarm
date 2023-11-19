@@ -25,24 +25,24 @@ public class Machine : MonoBehaviour
     [SerializeField, Header("Время изготовления")]
     private int _delayProduction;
 
-    private ItemType _typeToPlayer;
+    private ItemType _typeFromPlayer;
 
-    private void Make(ItemType _typeFromPlayer, int _fluffCount)
+    private void Make(int _fluffCount)
     {
-        _typeToPlayer = _converter.Convert(_typeFromPlayer);
         _storage.AddFluff(_fluffCount);
+        _transmitter.CheckBag();
     }
 
-    private IEnumerator Production(ItemType _typeFromPlayer, Inventory _characterInventory, int _fluffCount)
+    private IEnumerator Production(ItemType _typeToPlayer, Inventory _characterInventory, int _fluffCount)
     {
-        Debug.Log(2);
         if (!_isWorked)
         {
             _isWorked = true;
+            _typeFromPlayer = _converter.ConvertToFrom(_typeToPlayer);
             _characterInventory.RemoveItems(_typeFromPlayer, _fluffCount);
             yield return new WaitForSecondsRealtime(_delayProduction);
-            Make(_typeFromPlayer, _fluffCount);
             _isWorked = false;
+            Make(_fluffCount);
         }
     }
 }

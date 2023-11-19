@@ -9,7 +9,6 @@ public class ResourceTransmitter : MonoBehaviour
     public delegate IEnumerator CoroutineDelegate(ItemType typeFrom, Inventory inv, int fluff);
     public event CoroutineDelegate TransmitteEvent;
 
-    [SerializeField] private ItemType _typeFromPlayer;
     [SerializeField] private ItemType _typeToPlayer;
 
     [SerializeField, Header("Сколько пуха передается от игрока")]
@@ -23,12 +22,15 @@ public class ResourceTransmitter : MonoBehaviour
 
     private void Start() => _storage = GetComponent<BuildStorage>();
 
-    private void CheckBag()
+    public void CheckBag()
     {
         if (_characterInventory == null) return;
 
         _characterInventory.AddItems(_typeToPlayer, _storage.GetFluff());
         _storage.ResetFluff();
+
+        if (_fluffCount != 0 && TransmitteEvent != null)
+            StartCoroutine(TransmitteEvent.Invoke(_typeToPlayer, _characterInventory, _fluffCount));
     }
 
     
@@ -40,10 +42,6 @@ public class ResourceTransmitter : MonoBehaviour
             _characterInventory = collision.gameObject.GetComponent<Inventory>();
 
             CheckBag();
-            if (_fluffCount != 0 && TransmitteEvent != null)
-            {
-                StartCoroutine(TransmitteEvent.Invoke(_typeFromPlayer, _characterInventory, _fluffCount));
-            }
         }
     }
 

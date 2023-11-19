@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Converter : MonoBehaviour
 {
-    public ItemType Convert(ItemType from)
+    public ItemType ConvertFromTo(ItemType from)
     {
         switch (from)
         {
@@ -17,4 +17,19 @@ public class Converter : MonoBehaviour
                 return ItemType.UncleanedFluff;
         }
     }
+    public ItemType ConvertToFrom(ItemType to)
+    {
+        switch (to)
+        {
+            case ItemType.CleanedFluff:
+                return ItemType.UncleanedFluff;
+            case ItemType.UncleanedFluff:
+                return ItemType.Money;
+            case ItemType.Money:
+                return ItemType.Item;
+            default:
+                return ItemType.Money;
+        }
+    }
+
 }
