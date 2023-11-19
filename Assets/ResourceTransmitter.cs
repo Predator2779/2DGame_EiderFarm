@@ -9,7 +9,8 @@ public class ResourceTransmitter : MonoBehaviour
     [SerializeField] private Converter _converter;
 
     [SerializeField, Header("Сколько пуха передается от игрока")]
-    private int _fluffCount;  
+    private int _fluffCount;
+
     [SerializeField, Header("Время изготовления")]
     private int _delayProduction;
 
@@ -17,14 +18,15 @@ public class ResourceTransmitter : MonoBehaviour
     private Inventory _characterInventory;
     private ItemType _typeToPlayer;
 
-    private int _fluff;
+    private bool _isWorked;
+
     private void Start() => _storage = GetComponent<BuildStorage>();
 
     private void CheckBag()
     {
         if (_characterInventory == null) return;
 
-        _characterInventory.Add(_typeToPlayer, _storage.GetFluff());
+        _characterInventory.AddItems(_typeToPlayer, _storage.GetFluff());
         _storage.ResetFluff();
     }
 
@@ -35,13 +37,13 @@ public class ResourceTransmitter : MonoBehaviour
         if (_converter != null)
             _typeToPlayer = _converter.Convert(_typeFromPlayer);
 
-        _characterInventory.GiveToStorage(ref _storage, _typeFromPlayer, _fluffCount);
+        _storage.AddFluff(_fluffCount);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _characterInventory = collision.gameObject.GetComponent<Inventory>();
-        
+
         CheckBag();
         StartCoroutine(Production(_delayProduction));
     }
@@ -53,6 +55,7 @@ public class ResourceTransmitter : MonoBehaviour
 
     private IEnumerator Production(float delay)
     {
+        _characterInventory.RemoveItems(_typeFromPlayer, _fluffCount);
         yield return new WaitForSeconds(delay);
         Make();
     }

@@ -4,7 +4,7 @@ using General;
 using TMPro;
 using UnityEngine;
 
-public class BagDrawer : MonoBehaviour
+public class InventoryDrawer : MonoBehaviour
 {
     [SerializeField] private TMP_Text _moneyCounter;
     [SerializeField] private TMP_Text _cleanFCounter;
