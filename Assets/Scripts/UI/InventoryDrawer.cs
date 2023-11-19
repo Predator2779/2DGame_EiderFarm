@@ -1,4 +1,3 @@
-using Economy;
 using Economy.Items;
 using General;
 using TMPro;
@@ -10,7 +9,7 @@ public class InventoryDrawer : MonoBehaviour
     [SerializeField] private TMP_Text _cleanFCounter;
     [SerializeField] private TMP_Text _uncleanFCounter;
     
-    private void Start()
+    private void Awake()
     {
         EventHandler.OnInventoryAdd.AddListener(UpdateCounter);
     }

@@ -11,7 +11,7 @@ namespace Economy
         [SerializeField] private bool _isPlayerInventory;
         [SerializeField] private List<ItemBunch> _listItems;
 
-        private void OnEnable()
+        private void Start()
         {
             foreach (var bunch in _listItems)
                 SendMessage(bunch.GetItemType(), bunch.GetCount());
