@@ -9,16 +9,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/FluffCleaningMachine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/FluffCleaningMachine.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Gaga Houses/GagaHouse.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Gaga Houses/GagaHouse.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test-Level-2 (Kn1ght).unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test-Level-2 (Kn1ght).unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script Objects.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script Objects/Cleaned Fluff.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script Objects/Cleaned Fluff.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script Objects/Cloth.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script Objects/Cloth.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script Objects/Money.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script Objects/Money.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script Objects/Uncleaned Fluff.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script Objects/Uncleaned Fluff.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/TurnHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/TurnHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Field.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Field.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +111,7 @@
       <workItem from="1699867889565" duration="6443000" />
       <workItem from="1700214552399" duration="3580000" />
       <workItem from="1700328902173" duration="603000" />
-      <workItem from="1700382392364" duration="22244000" />
+      <workItem from="1700382392364" duration="23432000" />
     </task>
     <servers />
   </component>
