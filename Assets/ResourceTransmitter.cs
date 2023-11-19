@@ -1,61 +1,59 @@
-using Economy;
 using System.Collections;
-using System.Collections.Generic;
+using Economy;
+using Economy.Items;
 using UnityEngine;
 
 public class ResourceTransmitter : MonoBehaviour
 {
-    [SerializeField] private BagContent _typeFromPlayer;
+    [SerializeField] private ItemType _typeFromPlayer;
     [SerializeField] private Converter _converter;
-    private BagContent _typeToPlayer;
+
+    [SerializeField, Header("Сколько пуха передается от игрока")]
+    private int _fluffCount;  
+    [SerializeField, Header("Время изготовления")]
+    private int _delayProduction;
+
     private BuildStorage _storage;
-    private Bag _characterBag;
-    private Bag _characterSecondBag;
+    private Inventory _characterInventory;
+    private ItemType _typeToPlayer;
 
     private int _fluff;
     private void Start() => _storage = GetComponent<BuildStorage>();
 
     private void CheckBag()
     {
-        if (_characterBag == null) return;
+        if (_characterInventory == null) return;
 
-        _fluff = _storage.GetFluff();
-        if (_characterSecondBag != null)
-        {
-            _characterSecondBag.AddPoints(-_fluff);
-            Debug.Log(1111);
-        }
-            _characterBag.AddPoints(_fluff > 0 ? _fluff : 0);
+        _characterInventory.Add(_typeToPlayer, _storage.GetFluff());
         _storage.ResetFluff();
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Make()
     {
-        Inventory inventory = collision.gameObject.GetComponent<Inventory>();
-        if (_converter == null)
-        {
-            _typeToPlayer = BagContent.UncleanedFluff;
-        }
-        else
-        {
-            _typeToPlayer = _converter.Convert(_typeFromPlayer);
-            inventory.
-                      TryGetBag(_typeFromPlayer, out _characterSecondBag);
-            _fluff = _characterSecondBag.GetCurrentPoints();
-            _storage.AddFluff(_fluff);
-        }
-        inventory.
-                  TryGetBag(_typeToPlayer, out _characterBag);
+        _typeToPlayer = ItemType.UncleanedFluff;
 
+        if (_converter != null)
+            _typeToPlayer = _converter.Convert(_typeFromPlayer);
+
+        _characterInventory.GiveToStorage(ref _storage, _typeFromPlayer, _fluffCount);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        _characterInventory = collision.gameObject.GetComponent<Inventory>();
+        
         CheckBag();
+        StartCoroutine(Production(_delayProduction));
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<Inventory>().
-                  TryGetBag(_typeFromPlayer, out Bag bag);
-
-        if (_characterBag == bag) _characterBag = null;
+        if (_characterInventory == collision.GetComponent<Inventory>()) _characterInventory = null;
     }
 
+    private IEnumerator Production(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Make();
+    }
 }

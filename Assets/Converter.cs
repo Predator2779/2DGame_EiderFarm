@@ -1,23 +1,20 @@
-using Economy;
-using System.Collections;
-using System.Collections.Generic;
+using Economy.Items;
 using UnityEngine;
 
 public class Converter : MonoBehaviour
 {
-    public BagContent Convert(BagContent from)
+    public ItemType Convert(ItemType from)
     {
         switch (from)
         {
-            case BagContent.Money:
-                return BagContent.UncleanedFluff;
-            case BagContent.CleanedFluff:
-                return BagContent.Clothes;
-            case BagContent.UncleanedFluff:
-                return BagContent.CleanedFluff;
-            case BagContent.Clothes:
-                return BagContent.Money;
+            case ItemType.CleanedFluff:
+                return ItemType.Item;
+            case ItemType.UncleanedFluff:
+                return ItemType.CleanedFluff;
+            case ItemType.Item:
+                return ItemType.Money;
+            default:
+                return ItemType.UncleanedFluff;
         }
-        return BagContent.UncleanedFluff;
     }
 }

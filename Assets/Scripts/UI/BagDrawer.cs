@@ -1,4 +1,5 @@
 using Economy;
+using Economy.Items;
 using General;
 using TMPro;
 using UnityEngine;
@@ -8,28 +9,24 @@ public class BagDrawer : MonoBehaviour
     [SerializeField] private TMP_Text _moneyCounter;
     [SerializeField] private TMP_Text _cleanFCounter;
     [SerializeField] private TMP_Text _uncleanFCounter;
-    [SerializeField] private TMP_Text _clothesCouunter;
     
     private void Start()
     {
-        EventHandler.OnBagAdd.AddListener(UpdateCounter);
+        EventHandler.OnInventoryAdd.AddListener(UpdateCounter);
     }
 
-    private void UpdateCounter(BagContent content, int points)
+    private void UpdateCounter(ItemType content, int points)
     {
         switch (content)
         {
-            case BagContent.Money:
+            case ItemType.Money:
                 _moneyCounter.text = points.ToString();
                 break;            
-            case BagContent.CleanedFluff:
+            case ItemType.CleanedFluff:
                 _cleanFCounter.text = points.ToString();
                 break;            
-            case BagContent.UncleanedFluff:
+            case ItemType.UncleanedFluff:
                 _uncleanFCounter.text = points.ToString();
-                break;            
-            case BagContent.Clothes:
-                _clothesCouunter.text = points.ToString();
                 break;
         }
     }

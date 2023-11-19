@@ -1,5 +1,5 @@
 using Building.Constructions;
-using Economy;
+using Economy.Items;
 using UnityEngine.Events;
 
 namespace General
@@ -10,6 +10,6 @@ namespace General
         public static UnityEvent<Construction> OnDemolishBtnPressed = new();
         public static UnityEvent<Construction> OnUpgradeBtnPressed = new();
         
-        public static UnityEvent<BagContent, int> OnBagAdd = new();
+        public static UnityEvent<ItemType, int> OnInventoryAdd = new();
     }
 }
