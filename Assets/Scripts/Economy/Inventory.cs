@@ -1,31 +1,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using Economy.Items;
-using General;
 using UnityEngine;
-using UnityEngine.Serialization;
+using EventHandler = General.EventHandler;
 
 namespace Economy
 {
     public class Inventory : MonoBehaviour
     {
-        [FormerlySerializedAs("_isPlayerInvemtory")] [SerializeField]
-        private bool _isPlayerInventory;
-
+        [SerializeField] private bool _isPlayerInventory;
         [SerializeField] private List<ItemBunch> _listItems;
+
+        private void OnEnable()
+        {
+            foreach (var bunch in _listItems)
+                SendMessage(bunch.GetItemType(), bunch.GetCount());
+        }
 
         public void AddItems(ItemType type, int count) => AddOrCreate(type, count);
 
         public void RemoveItems(ItemType type, int count)
         {
-            if (!IsExistsItems(type, count)) return;
-
-            Remove(type, count);
+            if (IsExistsItems(type, count)) Remove(type, count);
         }
 
         private bool IsExistsItems(ItemType type, int count) =>
                 _listItems.Any(bunch => bunch.GetItemType() ==
-                        type && bunch.GetCount() == count);
+                        type && bunch.GetCount() > count);
 
         private bool TryGetBunch(ItemType type, out ItemBunch itemBunch)
         {

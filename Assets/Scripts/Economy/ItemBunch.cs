@@ -24,7 +24,7 @@ namespace Economy
         {
             if (!IsValidValue(value)) return;
             
-            AddValue(_count - value >= 0 ? -value : _count);
+            AddValue(_count - value >= 0 ? -value : -_count);
         }
         
         public ItemType GetItemType() => _type;
