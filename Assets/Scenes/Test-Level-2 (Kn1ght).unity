@@ -31514,7 +31514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7193240059d7541a11a39b0838184b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menu: {fileID: 0}
+  _menu: {fileID: 35388547}
 --- !u!58 &1872318763
 CircleCollider2D:
   m_ObjectHideFlags: 0
