@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="db890482-7c9c-4845-aed2-97ea93e16238" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Farm House/ShopButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Farm House/ShopButton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Farm House/ShopButton.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Farm House/ShopButton.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Machine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Machine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ResourceTransmitter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ResourceTransmitter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test-Level-2 (Kn1ght).unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test-Level-2 (Kn1ght).unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/ShopCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/ShopCell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF - Drop Shadow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF - Drop Shadow.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/General/GlobalConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/General/GlobalConstants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/FHouseTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/FHouseTrigger.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

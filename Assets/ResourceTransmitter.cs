@@ -13,7 +13,7 @@ public class ResourceTransmitter : MonoBehaviour
     private int _fluffCount;
 
     private BuildStorage _storage;
-    private Inventory _characterInventory;
+    [SerializeField] private Inventory _characterInventory;
 
     private void Start() => _storage = GetComponent<BuildStorage>();
 
@@ -25,7 +25,7 @@ public class ResourceTransmitter : MonoBehaviour
         _storage.ResetFluff();
 
         if (_fluffCount != 0 && TransmitteEvent != null)
-            StartCoroutine(TransmitteEvent.Invoke(_typeToPlayer, _characterInventory, _fluffCount));
+            StartCoroutine(TransmitteEvent?.Invoke(_typeToPlayer, _characterInventory, _fluffCount));
     }
 
     private void OnTriggerStay2D(Collider2D collision)

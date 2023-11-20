@@ -43,4 +43,6 @@ public class Machine : MonoBehaviour
             Make(_fluffCount);
         }
     }
+
+    private void OnDestroy() => _transmitter.TransmitteEvent -= Production;
 }

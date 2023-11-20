@@ -8,7 +8,7 @@ namespace TriggerScripts
     {
         [SerializeField] private FHouseMenu _fHouseMenu;
         
-        protected void OnTriggerEnter2D(Collider2D other)
+        protected override void OnTriggerEnter2D(Collider2D other)
         {
             base.OnTriggerEnter2D(other);
 
