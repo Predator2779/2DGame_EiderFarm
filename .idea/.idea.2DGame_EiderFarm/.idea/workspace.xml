@@ -7,16 +7,10 @@
     <list default="true" id="db890482-7c9c-4845-aed2-97ea93e16238" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Farm House/ShopButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Farm House/ShopButton.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Farm House/ShopButton.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Farm House/ShopButton.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test-Level-2 (Kn1ght).unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test-Level-2 (Kn1ght).unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Cleaned Fluff.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Cleaned Fluff.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Cloth.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Cloth.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Money.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Money.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Uncleaned Fluff.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Uncleaned Fluff.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/FHouseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/FHouseMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/ShopCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/ShopCell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/ShopMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/ShopMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Inventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Items/ItemBunch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Items/ItemBunch.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF - Drop Shadow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF - Drop Shadow.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +114,7 @@
       <workItem from="1700214552399" duration="3580000" />
       <workItem from="1700328902173" duration="603000" />
       <workItem from="1700382392364" duration="27705000" />
-      <workItem from="1700482010116" duration="4401000" />
+      <workItem from="1700482010116" duration="5808000" />
     </task>
     <servers />
   </component>
