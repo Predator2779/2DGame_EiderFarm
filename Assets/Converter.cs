@@ -8,7 +8,7 @@ public class Converter : MonoBehaviour
 
     public Item Convert(Item item, BuildStorage storage)
     {
-        if (item == _relevantItem) return _convertedItem;
+        if (item == _convertedItem) return _relevantItem;
 
         return null;
     }

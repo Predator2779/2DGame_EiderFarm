@@ -20,14 +20,21 @@ namespace Economy
 
         public void RemoveItems(Item item, int count)
         {
-            if (IsExistsItems(item, count)) Remove(item, count);
+
+            if (IsExistsItems(item, count))
+            {
+                Remove(item, count);
+
+            }
         }
 
         public List<ItemBunch> GetAllItems() => _listItems;
-        
+
         private bool IsExistsItems(Item type, int count) =>
-                _listItems.Any(bunch => bunch.GetItemName() ==
-                        type.GetName() && count >= 0);
+            _listItems.Any(bunch => bunch.GetItemName() ==
+                    type.GetName() && count >= 0);
+
+
 
         private bool TryGetBunch(Item item, out ItemBunch itemBunch)
         {
@@ -53,7 +60,7 @@ namespace Economy
             {
                 _listItems.Add(bunch);
             }
-
+            
             bunch.AddItems(count);
             SendMessage(item.GetName(), bunch.GetCount());
         }
