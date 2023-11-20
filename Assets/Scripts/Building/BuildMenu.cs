@@ -10,11 +10,13 @@ namespace Building
         private Construction _construction;
         private SpriteRenderer _triggerSprite;
         private Vector3 _buildPos;
+        private Quaternion _buildRot;
         
-        public void SetPosition(SpriteRenderer triggerSprite, Vector3 buildPos)
+        public void SetPosition(SpriteRenderer triggerSprite, Vector3 buildPos, Quaternion buildRot)
         {
             _triggerSprite = triggerSprite;
             _buildPos = buildPos;
+            _buildRot = buildRot;
         }
 
         public void Build()
@@ -45,7 +47,7 @@ namespace Building
         {
             if (_construction != null) Destroy(_construction);
 
-            _construction = Instantiate(building, _buildPos, Quaternion.identity);
+            _construction = Instantiate(building, _buildPos, _buildRot);
         }
     }
 }

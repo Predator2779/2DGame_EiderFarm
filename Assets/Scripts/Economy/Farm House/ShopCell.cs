@@ -43,7 +43,7 @@ namespace Economy.Farm_House
         {
             int count = GetCountFromInput();
             
-            // if (count <= 0) return;
+            if (count > _bunch.GetCount()) return;
             
             _invFrom.RemoveItems(_bunch.GetItem(), count);
             _invTo.AddItems(_bunch.GetItem(), count);

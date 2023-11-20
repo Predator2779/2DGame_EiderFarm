@@ -107,7 +107,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.65
 --- !u!212 &987119111608633216
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -221,3 +221,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _typeToPlayer: {fileID: 11400000, guid: 159a6522252945049be044ad47855211, type: 2}
   _fluffCount: 1
+  _characterInventory: {fileID: 0}

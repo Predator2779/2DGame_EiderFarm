@@ -6,57 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="db890482-7c9c-4845-aed2-97ea93e16238" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Converter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Converter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/FluffCleaningMachine.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/FluffCleaningMachine.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/GagaHouse.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/GagaHouse.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/General.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/General/BuildMenu.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/General/BuildMenu.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/General/BuildPlace.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/General/BuildPlace.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/BuildPlace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/BuildPlace.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPrefabs/GagaHouse.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPrefabs/GagaHouse.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Gaga/Gaga.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Gaga/Gaga.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/PLAYER.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/PLAYER.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main-Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main-Level.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/BuildMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/BuildMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Constructions/Construction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Constructions/Construction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Person.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Person.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Inventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/General/Game Settings/ApplicationMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/General/Game Settings/ApplicationMode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/ShopCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/ShopCell.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/BuildTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/BuildTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/MenuTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/MenuTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InventoryDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InventoryDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Animals/Gagas/Eider_1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Animals/Gagas/Eider_1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Animals/Gagas/Eider_2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Animals/Gagas/Eider_2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Animals/Gagas/Eider_Male.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Animals/Gagas/Eider_Male.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.1/1.1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.1/1.1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.1/1.2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.1/1.2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.1/1.3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.1/1.3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.1/1.4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.1/1.4.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.1/1.5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.1/1.5.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.2/2.1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.2/2.1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.2/2.2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.2/2.2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.2/2.3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.2/2.3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.2/2.4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.2/2.4.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.2/2.5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.2/2.5.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.3/3.1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.3/3.1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.3/3.2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.3/3.2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.3/3.3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.3/3.3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.3/3.4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.3/3.4.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.3/3.5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.3/3.5.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.1/дом_утки1.1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.1/дом_утки1.1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.1/дом_утки1.2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.1/дом_утки1.2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.1/дом_утки1.3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.1/дом_утки1.3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.1/дом_утки1.4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.1/дом_утки1.4.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.2/дом_утки2.1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.2/дом_утки2.1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.2/дом_утки2.2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.2/дом_утки2.2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.2/дом_утки2.3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.2/дом_утки2.3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.2/дом_утки2.4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.2/дом_утки2.4.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.3/дом_утки3.1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.3/дом_утки3.1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.3/дом_утки3.2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.3/дом_утки3.2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.3/дом_утки3.3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.3/дом_утки3.3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.3/дом_утки3.4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Gaga House/Grade.3/дом_утки3.4.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,28 +43,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "do_not_show_Android_plugin_suggestion": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;do_not_show_Android_plugin_suggestion&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Dark Knight\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Dark Knight\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\Dark Knight\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Dark Knight\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Dark Knight\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Dark Knight\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.13f1\Editor\Unity.exe" />
@@ -160,7 +121,8 @@
       <workItem from="1700328902173" duration="603000" />
       <workItem from="1700382392364" duration="27705000" />
       <workItem from="1700482010116" duration="5808000" />
-      <workItem from="1700500563801" duration="5179000" />
+      <workItem from="1700500563801" duration="5184000" />
+      <workItem from="1700516232869" duration="2597000" />
     </task>
     <servers />
   </component>
