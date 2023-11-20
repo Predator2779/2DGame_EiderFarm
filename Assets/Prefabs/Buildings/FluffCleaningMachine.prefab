@@ -152,8 +152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gradeBuildings:
-  - {fileID: 21300000, guid: 14b2e30c255eab745b8abf7dec0928ea, type: 3}
-  - {fileID: 21300000, guid: e3fb232c341fdf24da4cceca5ef3dc8a, type: 3}
+  - {fileID: 21300000, guid: 17f43af97f10a62458cbae2386fc4273, type: 3}
+  - {fileID: 21300000, guid: 624c7db7ce9ee7e4fa8fae80a7466120, type: 3}
+  - {fileID: 21300000, guid: 7bbed1e4bb7f30542ac1135f94c8f8fe, type: 3}
 --- !u!114 &8045537459041494023
 MonoBehaviour:
   m_ObjectHideFlags: 0
