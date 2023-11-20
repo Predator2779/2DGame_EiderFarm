@@ -16,15 +16,12 @@ public class Gaga : MonoBehaviour
 
     [SerializeField] private Movement _movement;
     [SerializeField] private FluffGiver _fluffGiver;
+    [SerializeField] private int _timeInHome;
+    [SerializeField] private float _speed;
 
     private GameObject targetPosition;
     private GameObject endPosition;
-    [SerializeField] private float _speed;
-
     private SpriteRenderer sprite;
-
-    [Header("����� ���������� ���� � ������ (����� ��������� ����).")]
-    [SerializeField] private int _timeInHome;
 
     public void Initialize(GameObject target, GameObject endOfField)
     {
@@ -119,5 +116,4 @@ public class Gaga : MonoBehaviour
     {
         SetState(State.WalkToNature);
     }
-
 }
