@@ -1,19 +1,22 @@
 using UnityEngine;
 
-public class MenuTrigger : MonoBehaviour
+namespace TriggerScripts
 {
-    [SerializeField] private GameObject _menu;
-    private void SetMenuActive(bool value) => _menu.gameObject.SetActive(value);
+    public class MenuTrigger : MonoBehaviour
+    {
+        [SerializeField] private GameObject _panelUI;
+        private void SetMenuActive(bool value) => _panelUI.gameObject.SetActive(value);
     
-    protected virtual void OnTriggerEnter2D(Collider2D other)
-    {
-        if (!other.CompareTag("Player")) return;
+        protected virtual void OnTriggerEnter2D(Collider2D other)
+        {
+            if (!other.CompareTag("Player")) return;
             
-        SetMenuActive(true);
-    }
+            SetMenuActive(true);
+        }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player")) SetMenuActive(false);
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag("Player")) SetMenuActive(false);
+        }
     }
 }

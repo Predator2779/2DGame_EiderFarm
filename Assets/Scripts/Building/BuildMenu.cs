@@ -5,15 +5,15 @@ namespace Building
 {
     public class BuildMenu : MonoBehaviour
     {
-        [SerializeField] private GameObject _building;
+        public Construction buildingPrefab;
         
         private Construction _construction;
-        private SpriteRenderer _triggerPlace;
+        private SpriteRenderer _triggerSprite;
         private Vector3 _buildPos;
         
-        public void SetPosition(SpriteRenderer triggerPlace, Vector3 buildPos)
+        public void SetPosition(SpriteRenderer triggerSprite, Vector3 buildPos)
         {
-            _triggerPlace = triggerPlace;
+            _triggerSprite = triggerSprite;
             _buildPos = buildPos;
         }
 
@@ -21,16 +21,16 @@ namespace Building
         {
             if (_construction != null) return;
             
-            _triggerPlace.enabled = false;
-            Build(_building);
-            _construction.SetSprite(_construction.GetGrade());
+            _triggerSprite.enabled = false;
+            Build(buildingPrefab);
+            _construction.SetSprite(_construction.Upgrade());
         }
 
         public void Demolition()
         {
             if (_construction == null) return;
 
-            _triggerPlace.enabled = true;
+            _triggerSprite.enabled = true;
             Destroy(_construction.gameObject);
         }
 
@@ -38,14 +38,14 @@ namespace Building
         {
             if (_construction == null || !_construction.CanUpgrade()) return;
 
-            _construction.SetSprite(_construction.GetGrade());
+            _construction.SetSprite(_construction.Upgrade());
         }
-
-        private void Build(GameObject building)
+        
+        private void Build(Construction building)
         {
             if (_construction != null) Destroy(_construction);
 
-            _construction = Instantiate(building, _buildPos, Quaternion.identity).GetComponent<Construction>();
+            _construction = Instantiate(building, _buildPos, Quaternion.identity);
         }
     }
 }

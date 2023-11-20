@@ -12,13 +12,15 @@ namespace Building.Constructions
 
         private void Awake() => _spriteRenderer = GetComponent<SpriteRenderer>();
 
-        public Sprite GetGrade()
+        public Sprite Upgrade()
         {
             if (CanUpgrade()) _currentGrade++;
 
             return _gradeBuildings[_currentGrade - 1];
         }
 
+        public Sprite GetFirstGrade() => _gradeBuildings[0];
+        
         public void SetSprite(Sprite sprite) => _spriteRenderer.sprite = sprite;
 
         public bool CanUpgrade() => _currentGrade < _gradeBuildings.Length;

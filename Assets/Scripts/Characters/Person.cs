@@ -6,7 +6,7 @@ using UnityEngine;
 public class Person : MonoBehaviour, IMovable
 {
     [Header("Character speed.")]
-    [SerializeField, Range(0, 100)] private float _speed;
+    [SerializeField, Range(0, 10)] private float _speed;
 
     [SerializeField] private SpriteRenderer _renderer;
 
