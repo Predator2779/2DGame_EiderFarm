@@ -676,7 +676,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3185539416069270736}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 953158676813208233}
+        m_TargetAssemblyTypeName: Economy.Farm_House.ShopCell, Assembly-CSharp
+        m_MethodName: Exchange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5506581994045671488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,10 +1063,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6619009680138066014}
-  - {fileID: 1941214947431438257}
   - {fileID: 5930931605074978980}
   - {fileID: 3750760086662860655}
   - {fileID: 3865249712349656607}
+  - {fileID: 1941214947431438257}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1074,10 +1086,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79602a2e6ab43a9841b9794b39ddce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inpField: {fileID: 5490921409278172420}
   _icon: {fileID: 2704385818962976957}
   _description: {fileID: 7217876708022313384}
   _counter: {fileID: 7105003986383447245}
-  _inpField: {fileID: 5490921409278172420}
 --- !u!1 &6776317132387355235
 GameObject:
   m_ObjectHideFlags: 0

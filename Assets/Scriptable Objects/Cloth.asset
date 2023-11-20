@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0284f471f44102a70365018e02c226, type: 3}
   m_Name: Cloth
   m_EditorClassIdentifier: 
+  _icon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   _name: "\u0422\u043A\u0430\u043D\u044C"

@@ -8,32 +8,27 @@ namespace Economy.Farm_House
         [SerializeField] private Transform _content;
         [SerializeField] private ShopCell _shopCellPrefab;
 
-        [SerializeField] private Inventory _playerInventory;//hide
-        private bool _isShopDisplayed = true;
+        private Inventory _playerInventory;
         private Inventory _assortment;
+        private bool _isShopDisplayed = true;
 
         private void Awake() => Initialize();
 
-        private void Initialize()
-        {
-            _assortment = GetComponent<Inventory>();
-        }
-
-        private void OnEnable()
-        {
-            DrawInventory(_assortment);
-        }
+        private void Initialize() => _assortment = GetComponent<Inventory>();
 
         public void SetPlayerInventory(Inventory inv) => _playerInventory = inv;
 
-        public void SwitchDisplay() => Draw();
-
-        private void Draw()
+        public void SwitchDisplay()
         {
             _isShopDisplayed = !_isShopDisplayed;
 
+            Draw();
+        }
+
+        public void Draw()
+        {
             ClearContent();
-            
+
             if (_isShopDisplayed)
             {
                 DrawInventory(_assortment);
@@ -53,11 +48,23 @@ namespace Economy.Farm_House
 
         private void DrawInventory(Inventory inv)
         {
-            var list = inv.GetAllItems();
+            var listBunch = inv.GetAllItems();
 
-            foreach (var item in list)
-                Instantiate(_shopCellPrefab, _content).
-                        SetCell(item.GetItemIcon(), item.GetItemName(), item.GetCount());
+            foreach (var bunch in listBunch)
+                SetCell(Instantiate(_shopCellPrefab, _content), bunch);
+        }
+
+        private void SetCell(ShopCell cell, ItemBunch bunch)
+        {
+            switch (_isShopDisplayed)
+            {
+                case true:
+                    cell.SetCell(bunch, _assortment, _playerInventory);
+                    break;
+                case false:
+                    cell.SetCell(bunch, _playerInventory, _assortment);
+                    break;
+            }
         }
     }
 }

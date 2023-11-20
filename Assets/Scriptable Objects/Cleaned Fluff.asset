@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0284f471f44102a70365018e02c226, type: 3}
   m_Name: Cleaned Fluff
   m_EditorClassIdentifier: 
+  _icon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   _name: "\u041E\u0431\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043D\u044B\u0439
     \u043F\u0443\u0445"

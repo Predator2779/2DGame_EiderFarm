@@ -27,7 +27,7 @@ namespace Economy
         
         private bool IsExistsItems(Item type, int count) =>
                 _listItems.Any(bunch => bunch.GetItemName() ==
-                        type.GetName() && bunch.GetCount() > count);
+                        type.GetName() && count >= 0);
 
         private bool TryGetBunch(Item item, out ItemBunch itemBunch)
         {
@@ -60,12 +60,18 @@ namespace Economy
 
         private void Remove(Item item, int count)
         {
-            if (!TryGetBunch(item, out ItemBunch itemBunch)) return;
+            if (!TryGetBunch(item, out ItemBunch bunch)) return;
 
-            itemBunch.RemoveItems(count);
-            SendMessage(item.GetName(), itemBunch.GetCount());
+            bunch.RemoveItems(count);
+            CheckCount(bunch);
+            SendMessage(item.GetName(), bunch.GetCount());
         }
-
+        
+        private void CheckCount(ItemBunch bunch)
+        {
+            if (bunch.GetCount() <= 0) _listItems.Remove(bunch);
+        }
+        
         private void SendMessage(string name, int count)
         {
             if (_isPlayerInventory) EventHandler.OnInventoryAdd?.Invoke(name, count);

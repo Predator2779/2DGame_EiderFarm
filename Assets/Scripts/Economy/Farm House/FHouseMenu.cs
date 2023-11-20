@@ -6,6 +6,10 @@ namespace Economy.Farm_House
     {
         [SerializeField] private ShopMenu _shopMenu;
 
-        public void SetInventory(Inventory inv) => _shopMenu.SetPlayerInventory(inv);
+        public void SetInventory(Inventory inv)
+        {
+            _shopMenu.SetPlayerInventory(inv);
+            _shopMenu.Draw();
+        }
     }
 }
