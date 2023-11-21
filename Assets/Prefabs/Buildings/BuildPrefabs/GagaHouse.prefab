@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 987119111608633216}
   - component: {fileID: 8916316367632330952}
   - component: {fileID: 5496360640194218666}
-  - component: {fileID: 487354432795468279}
   - component: {fileID: 8785618567574733136}
+  - component: {fileID: 8902711513000996661}
   m_Layer: 0
   m_Name: GagaHouse
   m_TagString: Untagged
@@ -189,24 +189,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 608927cdc666d3242bdf06f28381b64e, type: 3}
   - {fileID: 21300000, guid: 97c3a8d8cf66e414dbaa121b282f8a90, type: 3}
   - {fileID: 21300000, guid: 33059f67d97188941a5ed9a74ca0a1a5, type: 3}
---- !u!114 &487354432795468279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2055177213520633573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7594c5287d0cf2240ace7fc852901e9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefabGaga: {fileID: 7382054376449002626, guid: 27d55e85803656448b53f9bcba00d76f, type: 3}
-  _spawnPlaces:
-  - {fileID: 5505930480216250807, guid: 4c917b07a0053d14e80244b182111d49, type: 3}
-  - {fileID: 7847389073917768340, guid: 62a7f21dc0fbef64f91ec4dcb18048b5, type: 3}
-  - {fileID: 5916386271907280978, guid: 37d2967645d272c41b6bce70580f0fa8, type: 3}
-  _spawnDelay: 3
 --- !u!114 &8785618567574733136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,3 +204,18 @@ MonoBehaviour:
   _typeToPlayer: {fileID: 11400000, guid: 159a6522252945049be044ad47855211, type: 2}
   _fluffCount: 1
   _characterInventory: {fileID: 0}
+--- !u!114 &8902711513000996661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055177213520633573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 426c5d7e3f1248b47aa9931ba09e04c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chance: 100
+  _time: 2
+  _fluffCount: 1

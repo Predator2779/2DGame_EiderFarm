@@ -1,40 +1,48 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Gaga : MonoBehaviour
 {
     public event Action GagaDieEvent;
     private enum State
     {
-        InHome,
-        WalkToHome,
-        WalkToNature
+        Idle,
+        Walk,
     }
 
     private State currentState;
-
+    [SerializeField] private Field _field;
     [SerializeField] private Movement _movement;
-    [SerializeField] private FluffGiver _fluffGiver;
     [SerializeField] private int _timeInHome;
     [SerializeField] private float _speed;
 
-    private GameObject targetPosition;
-    private GameObject endPosition;
+    private Transform _centerPoint;
+    private float _moveRadius;
+
     private SpriteRenderer sprite;
 
-    public void Initialize(GameObject target, GameObject endOfField)
-    {
-        targetPosition = target;
-        endPosition = endOfField;
-    }
+    private bool isCoroutineRunning;
+
+    private Vector2 targetPos;
+
+    
 
     private void Start()
     {
-        currentState = State.WalkToHome;
+        _field = FindObjectOfType<Field>();
+        currentState = State.Walk;
         _movement = GetComponent<Movement>();
         sprite = GetComponent<SpriteRenderer>();
-        _fluffGiver = GetComponent<FluffGiver>();
+        
+    }
+
+    public void Initialize(Transform center, float radius)
+    {
+        _centerPoint = center;
+        _moveRadius = radius;
     }
 
     private void Update()
@@ -42,78 +50,67 @@ public class Gaga : MonoBehaviour
         UpdateState(_timeInHome);
     }
 
-    private void MoveTo(GameObject target)
+    private void MoveTo()
     {
-        Vector2 direction = new Vector2(
-                target.transform.position.x, target.transform.position.y) - 
-                            new Vector2(transform.position.x, transform.position.y);
-        
-        if (direction.magnitude < 0.5f)
-        {
-            SetState(State.InHome);
-            return;
-        }
+        Vector2 direction = (targetPos - new Vector2(transform.position.x,transform.position.y)).normalized;
         _movement.Move(direction.normalized * _speed * Time.deltaTime);
+
+        float directionX = direction.x;
+        sprite.flipX = directionX < 0;
+
+        float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.y), targetPos);
+        if (distance < 3f)
+        {
+            SetState(State.Idle);
+            GetRandomPoint(_moveRadius, _centerPoint);
+        }
     }
 
-    private void IsEnd()
-    {
-        float distance = Vector2.Distance(
-                new Vector2(transform.position.x, transform.position.y), 
-                new Vector2(endPosition.transform.position.x, endPosition.transform.position.y));
-        
-        if (distance < 1f)
-        {
-            GagaDieEvent.Invoke();
-            Destroy(gameObject);
-        }
-    }
     private void SetState(State newState)
     {
         switch (newState)
         {
-            case State.InHome: currentState = State.InHome; break;
-            case State.WalkToHome: currentState = State.WalkToHome; break;
-            case State.WalkToNature: currentState = State.WalkToNature; break;
+            case State.Idle: currentState = State.Idle; break;
+            case State.Walk: currentState = State.Walk; break;
         }
     }
     private void UpdateState(int timeInHome)
     {
         switch (currentState)
         {
-            case State.InHome:
-                ProccessInHome(timeInHome);
+            case State.Idle:
+                StartCoroutine(IdleProcess(4,3));
                 break;
 
-            case State.WalkToHome:
-                MoveTo(targetPosition);
+            case State.Walk:
+                MoveTo();
                 break;
 
-            case State.WalkToNature:
-                MoveTo(endPosition);
-                IsEnd();
-                break;
         }
     }
 
-    public void ProccessInHome(float time)
+
+    private IEnumerator IdleProcess(int maxIterations, int maxDelay)
     {
-        StartCoroutine(Process(time));
+        if (!isCoroutineRunning)
+        {
+            isCoroutineRunning = true;
+            System.Random random = new System.Random();
+            for (int i = 0; i < random.Next(0, maxIterations); i++)
+            {
+                sprite.flipX = !sprite.flipX;
+                yield return new WaitForSecondsRealtime(random.Next(1, maxDelay));
+            }
+            SetState(State.Walk);
+            isCoroutineRunning = false;
+        }
     }
 
-    private IEnumerator Process(float time)
+    public void GetRandomPoint(float moveRadius, Transform center)
     {
-        sprite.enabled = false;
+        Vector2 randomPoint = UnityEngine.Random.insideUnitCircle * moveRadius;
 
-        yield return new WaitForSecondsRealtime(time);
-        _fluffGiver.GiveFluff();
-        SetState(State.WalkToNature);
+        targetPos = new Vector2(center.position.x, center.position.y) + randomPoint;
 
-        sprite.enabled = true;
-    }
-
-    public void GoToEnd()
-    {
-        SetState(State.WalkToNature);
     }
 }

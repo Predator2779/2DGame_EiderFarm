@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -6,51 +8,56 @@ public class Field : MonoBehaviour
 {
     [SerializeField] private GameObject _prefabGaga;
     [SerializeField] private GameObject[] _spawnPlaces;
+    private bool[] _occupiedSpawnPlaces;
+
+    [SerializeField] private Transform[] _center;
+    [SerializeField] private float _maxRadius;
 
     [Header("Задержка перед спавном гаги.")]
     [SerializeField, Range(0, 30)] private int _spawnDelay;
 
-    private BuildStorage _buildStorage;
-    private Gaga gaga;
+    private List<Gaga> _gagas;
+
 
     private void OnEnable() => Initialize();
 
     private void Initialize()
     {
-        _buildStorage = GetComponent<BuildStorage>();
-        GagaSpawn();
+        _gagas = new List<Gaga>();
+        _occupiedSpawnPlaces = new bool[_spawnPlaces.Length];
+        GagaSpawn(4);
     }
 
-    public GameObject GetRandomSpawnPlace() => _spawnPlaces[Random.Range(0, _spawnPlaces.Length)];
-
-    public Gaga GagaSpawn()
+    public GameObject GetRandomSpawnPlace()
     {
-        if (_prefabGaga != null)
+        int randomPlaceNumber = Random.Range(0, _spawnPlaces.Length);
+        if (!_occupiedSpawnPlaces[randomPlaceNumber])
         {
-            gaga = Instantiate(_prefabGaga, GetRandomSpawnPlace().transform.position, Quaternion.identity)
-                    .GetComponent<Gaga>();
-            gaga.Initialize(this.gameObject, GetRandomSpawnPlace());
-            gaga.GagaDieEvent += GagaDie;
-            gaga.GetComponent<FluffGiver>().FluffGiveEvent += () => _buildStorage.AddFluff();
-            return gaga;
+            _occupiedSpawnPlaces[randomPlaceNumber] = true;
+            return _spawnPlaces[randomPlaceNumber];
         }
-
-        return gaga;
+        while (_occupiedSpawnPlaces[randomPlaceNumber])
+        {
+            randomPlaceNumber = Random.Range(0, _spawnPlaces.Length);
+            if (!_occupiedSpawnPlaces[randomPlaceNumber])
+            {
+                _occupiedSpawnPlaces[randomPlaceNumber] = true;
+                break;
+            }
+        }
+        return _spawnPlaces[randomPlaceNumber];
     }
 
-    public Gaga GetGaga() => gaga;
-
-    public IEnumerator SpawnGagasWithDelay()
+    public void GagaSpawn(int count)
     {
-        yield return new WaitForSecondsRealtime(_spawnDelay);
-        GagaSpawn();
+        for (int i = 0; i < count; i++)
+        {
+            if (_prefabGaga != null)
+            {
+                _gagas.Add(Instantiate(_prefabGaga, GetRandomSpawnPlace().transform.position, Quaternion.identity)
+                        .GetComponent<Gaga>());
+                _gagas[i].Initialize(_center[Random.Range(0, _center.Length)], Random.Range(10, _maxRadius));
+            }
+        }
     }
-
-    public void GagaDie()
-    {
-        gaga.GagaDieEvent -= GagaDie;
-        StartCoroutine(SpawnGagasWithDelay());
-    }
-
-    private void OnDestroy() => Destroy(GetGaga().gameObject);
 }

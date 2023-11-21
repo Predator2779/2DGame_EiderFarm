@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8118005094760716372}
   - component: {fileID: -2093613650551445842}
   - component: {fileID: -2651130561913625798}
-  - component: {fileID: -4750722640537857864}
   m_Layer: 0
   m_Name: Gaga
   m_TagString: Untagged
@@ -100,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movement: {fileID: -2651130561913625798}
-  _fluffGiver: {fileID: -4750722640537857864}
+  _fluffGiver: {fileID: 0}
   _timeInHome: 2
   _speed: 2
 --- !u!114 &-2651130561913625798
@@ -115,17 +114,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cabf618e446b92b449f3a12b1c2b1687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-4750722640537857864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7382054376449002626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 426c5d7e3f1248b47aa9931ba09e04c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasGivenFluff: 0
-  _chance: 100
