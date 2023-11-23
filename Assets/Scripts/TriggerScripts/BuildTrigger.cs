@@ -31,6 +31,9 @@ namespace TriggerScripts
 
         private Quaternion GetRotation() => transform.GetComponentInChildren<SpriteRenderer>().transform.rotation;
 
+        public void SetPos() => _buildMenu.SetPosition(_renderer, GetTilePos(), GetRotation());
+
+
         protected override void OnTriggerEnter2D(Collider2D other)
         {
             base.OnTriggerEnter2D(other);
