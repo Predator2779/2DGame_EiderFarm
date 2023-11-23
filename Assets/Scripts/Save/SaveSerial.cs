@@ -89,7 +89,7 @@ public class SaveSerial : MonoBehaviour
 
         for (int i = 0; i < menus.Length; i++)
         {
-            if (_gagaHouses[i].GetConstruction() != null)
+            if (menus[i].GetConstruction() != null)
             {
                 dataArray[i] = menus[i].GetConstruction().GetCurrentGrade();
             }
