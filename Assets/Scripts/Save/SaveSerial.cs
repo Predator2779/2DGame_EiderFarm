@@ -1,5 +1,6 @@
 using Building;
 using Economy;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -38,25 +39,8 @@ public class SaveSerial : MonoBehaviour
         data.UncleanedFluff = _playerInventory.GetAllItems()[2].GetCount();
         data.Item = _playerInventory.GetAllItems()[3].GetCount();
 
-        data.GagaHouses = new int[_gagaHouses.Length];
-        
-        for (int i = 0; i < _gagaHouses.Length; i++)
-        {
-            if (_gagaHouses[i].GetConstruction() != null)
-            {
-                data.GagaHouses[i] = _gagaHouses[i].GetConstruction().GetCurrentGrade();
-            }
-        }
-
-        data.Cleaners = new int[_cleaners.Length];
-
-        for (int i = 0; i < _cleaners.Length; i++)
-        {
-            if (_gagaHouses[i].GetConstruction() != null)
-            {
-                data.Cleaners[i] = _cleaners[i].GetConstruction().GetCurrentGrade();
-            }
-        }
+        data.GagaHouses = SaveDataGrades(_gagaHouses);
+        data.Cleaners = SaveDataGrades(_cleaners);
 
         bf.Serialize(file, data);
         file.Close();
@@ -99,6 +83,19 @@ public class SaveSerial : MonoBehaviour
         }
     }
 
+    private int[] SaveDataGrades(BuildMenu[] menus)
+    {
+        int [] dataArray = new int[menus.Length];
+
+        for (int i = 0; i < menus.Length; i++)
+        {
+            if (_gagaHouses[i].GetConstruction() != null)
+            {
+                dataArray[i] = menus[i].GetConstruction().GetCurrentGrade();
+            }
+        }
+        return dataArray;
+    }
     private void ClearAndAdd()
     {
         _playerInventory.GetAllItems()[0].ClearItems();
