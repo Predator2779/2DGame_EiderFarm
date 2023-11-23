@@ -23,6 +23,7 @@ namespace Building
         {
             if (_construction != null) return;
             
+            if(_triggerSprite != null)
             _triggerSprite.enabled = false;
             Build(buildingPrefab);
             _construction.SetSprite(_construction.Upgrade());
@@ -42,6 +43,8 @@ namespace Building
 
             _construction.SetSprite(_construction.Upgrade());
         }
+
+        public Construction GetConstruction() => _construction;
         
         private void Build(Construction building)
         {
