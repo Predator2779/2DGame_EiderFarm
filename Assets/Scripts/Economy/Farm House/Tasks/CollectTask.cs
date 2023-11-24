@@ -49,5 +49,11 @@ namespace Economy.Farm_House
                 _currentCount >= _requireCount) 
                 SetStage(TaskStage.Completed);
         }
+
+        [ContextMenu("Reset Task")] public void ResetTask()
+        {
+            _currentCount = 0;
+            SetStage(TaskStage.NotStarted);
+        }
     }
 }

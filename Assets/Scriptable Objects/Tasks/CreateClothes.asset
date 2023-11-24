@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198f1600bc9a41699a9c769e34439991, type: 3}
   m_Name: CreateClothes
   m_EditorClassIdentifier: 
-  _stage: 3
+  _stage: 0
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: "\u0421\u043E\u0437\u0434\u0430\u0442\u044C \u043A\u0443\u0440\u0442\u043A\u0443"
   _description: "\u0421\u043E\u0437\u0434\u0430\u0442\u044C \u043A\u0443\u0440\u0442\u043A\u0443
@@ -22,4 +22,4 @@ MonoBehaviour:
     _count: 100
   _requiredItem: {fileID: 11400000, guid: 3e35c204c77a2c34a9439f95cd1ddef4, type: 2}
   _requireCount: 3
-  _currentCount: 38
+  _currentCount: 0
