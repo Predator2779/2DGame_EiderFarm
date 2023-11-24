@@ -29,9 +29,9 @@ namespace Economy
                 _listItems.Any(bunch => bunch.GetItemName() ==
                         type.GetName() && count >= 0);
 
-        private bool TryGetBunch(Item item, out ItemBunch itemBunch)
+        public bool TryGetBunch(string name, out ItemBunch itemBunch)
         {
-            foreach (var bunch in _listItems.Where(bunch => bunch.GetItemName() == item.GetName()))
+            foreach (var bunch in _listItems.Where(bunch => bunch.GetItemName() == name))
             {
                 itemBunch = bunch;
                 return true;
@@ -45,7 +45,7 @@ namespace Economy
         {
             ItemBunch bunch = new ItemBunch(item);
 
-            if (TryGetBunch(item, out ItemBunch newBunch))
+            if (TryGetBunch(item.GetName(), out ItemBunch newBunch))
             {
                 bunch = newBunch;
             }
@@ -60,7 +60,7 @@ namespace Economy
 
         private void Remove(Item item, int count)
         {
-            if (!TryGetBunch(item, out ItemBunch bunch)) return;
+            if (!TryGetBunch(item.GetName(), out ItemBunch bunch)) return;
 
             bunch.RemoveItems(count);
             CheckCount(bunch);

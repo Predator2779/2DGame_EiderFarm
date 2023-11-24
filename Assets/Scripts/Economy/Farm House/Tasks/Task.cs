@@ -1,10 +1,11 @@
+using System;
 using General;
 using UnityEngine;
+using EventHandler = General.EventHandler;
 
 namespace Economy.Farm_House
 {
-    [CreateAssetMenu(menuName = "Tasks/Task", fileName = "New Task", order = 0)]
-    public class Task : ScriptableObject
+    public abstract class Task : ScriptableObject
     {
         [SerializeField] private TaskStage _stage;
         [SerializeField] private Sprite _icon;
@@ -22,7 +23,13 @@ namespace Economy.Farm_House
         public void SetStage(TaskStage stage)
         {
             _stage = stage;
-            EventHandler.OnTaskStageChanged?.Invoke();
+            EventHandler.OnTaskStageChanged?.Invoke(this, _stage);
+        }
+
+        public void GiveReward(Inventory inventory)
+        {
+            if (inventory.TryGetBunch(GlobalConstants.Money, out ItemBunch wallet))
+                wallet.AddItems(_reward);
         }
     }
 

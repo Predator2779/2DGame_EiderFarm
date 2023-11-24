@@ -659,7 +659,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.5
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -833,7 +833,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18.05
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -965,6 +965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _icon: {fileID: 928513077124483773}
   _description: {fileID: 1092352872545408971}
+  _counter: {fileID: 7178874699671635912}
 --- !u!1 &9126553974485976934
 GameObject:
   m_ObjectHideFlags: 0

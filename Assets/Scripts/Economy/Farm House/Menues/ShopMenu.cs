@@ -8,8 +8,7 @@ namespace Economy.Farm_House
     public class ShopMenu : DisplayMenu
     {
         [SerializeField] private ShopCell _shopCellPrefab;
-
-        private Inventory _playerInventory;
+        
         private Inventory _assortment;
 
         private void Awake() => Initialize();
