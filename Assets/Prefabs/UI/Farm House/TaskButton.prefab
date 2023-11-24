@@ -554,9 +554,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Economy.Farm_House.ShopCell, Assembly-CSharp
-        m_MethodName: Exchange
+      - m_Target: {fileID: 7144582560142004977}
+        m_TargetAssemblyTypeName: Economy.Farm_House.CollectTaskCell, Assembly-CSharp
+        m_MethodName: ClickTaskBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

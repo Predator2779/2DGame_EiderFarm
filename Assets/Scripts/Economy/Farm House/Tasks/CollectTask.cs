@@ -31,21 +31,23 @@ namespace Economy.Farm_House
         public int GetRequireCount() => _requireCount;
         public int GetCurrentCount() => _currentCount;
         
-        private void PickUpItem(Item item)
+        private void PickUpItem(Item item, int count)
         {
-            if (_requiredItem == item) _currentCount++;
+            if (_requiredItem == item) _currentCount += count;
             CheckProgressing();
         }  
         
-        private void PutItem(Item item)
+        private void PutItem(Item item, int count)
         {
-            if (_requiredItem == item) _currentCount--;
+            if (_requiredItem == item) _currentCount -= count;
             CheckProgressing();
         }
 
         private void CheckProgressing()
         {
-            if (_currentCount >= _requireCount) SetStage(TaskStage.Completed);
+            if (_stage == TaskStage.Progressing &&
+                _currentCount >= _requireCount) 
+                SetStage(TaskStage.Completed);
         }
     }
 }

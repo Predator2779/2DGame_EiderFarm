@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using EventHandler = General.EventHandler;
 
@@ -24,8 +23,6 @@ namespace Economy.Farm_House
                 case TaskStage.Completed:
                     EventHandler.OnGiveReward?.Invoke(_task, TaskStage.Completed);
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException();
             }
         }
         

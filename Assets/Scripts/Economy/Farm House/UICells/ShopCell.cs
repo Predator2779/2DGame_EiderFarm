@@ -8,9 +8,9 @@ namespace Economy.Farm_House
     {
         [SerializeField] private TMP_InputField _inpField;
         
-        private ItemBunch _bunch;
+        [SerializeField] private ItemBunch _bunch;
         private Inventory _invFrom;
-        private Inventory _invTo;
+        [SerializeField] private Inventory _invTo;
         
         public void SetCell(ItemBunch bunch, Inventory invFrom, Inventory invTo)
         {

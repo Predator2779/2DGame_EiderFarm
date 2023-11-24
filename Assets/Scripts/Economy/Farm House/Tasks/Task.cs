@@ -1,5 +1,3 @@
-using System;
-using General;
 using UnityEngine;
 using EventHandler = General.EventHandler;
 
@@ -7,16 +5,17 @@ namespace Economy.Farm_House
 {
     public abstract class Task : ScriptableObject
     {
-        [SerializeField] private TaskStage _stage;
-        [SerializeField] private Sprite _icon;
-        [SerializeField] private string _name;
-        [SerializeField] private string _description;
-        [SerializeField] private int _reward;
+        [SerializeField] protected TaskStage _stage;
+        [SerializeField] protected Sprite _icon;
+        [SerializeField] protected string _name;
+        [SerializeField] protected string _description;
+        
+        [Header("Reward")]
+        [SerializeField] protected ItemBunch _reward;
         
         public Sprite GetIcon() => _icon;
         public string GetName() => _name;
         public string GetDescription() => _description;
-        public int GetReward() => _reward;
 
         public TaskStage GetStage() => _stage;
         
@@ -26,11 +25,8 @@ namespace Economy.Farm_House
             EventHandler.OnTaskStageChanged?.Invoke(this, _stage);
         }
 
-        public void GiveReward(Inventory inventory)
-        {
-            if (inventory.TryGetBunch(GlobalConstants.Money, out ItemBunch wallet))
-                wallet.AddItems(_reward);
-        }
+        public void GiveReward(Inventory inventory) => 
+                inventory.AddItems(_reward.GetItem(), _reward.GetCount());
     }
 
     public enum TaskStage

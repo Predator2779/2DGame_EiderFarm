@@ -9,7 +9,7 @@ public class InventoryDrawer : MonoBehaviour
     [SerializeField] private TMP_Text _cleanFCounter;
     [SerializeField] private TMP_Text _uncleanFCounter;
 
-    private void Awake() => EventHandler.OnInventoryAdd.AddListener(UpdateCounter);
+    private void Awake() => EventHandler.OnBunchChanged.AddListener(UpdateCounter);
 
     private void UpdateCounter(string content, int points)
     {

@@ -38,6 +38,7 @@ namespace Economy.Farm_House
                 return;
             }
 
+            DrawTasks(GetTasks(TaskStage.Completed));
             DrawTasks(GetTasks(TaskStage.Progressing));
         }
 

@@ -13,7 +13,7 @@ namespace Economy
         private void Start()
         {
             foreach (var bunch in _listItems)
-                SendMessage(bunch.GetItemName(), bunch.GetCount());
+                SendCountItemsMsg(bunch.GetItemName(), bunch.GetCount());
         }
 
         public void AddItems(Item item, int count) => AddOrCreate(item, count);
@@ -55,7 +55,8 @@ namespace Economy
             }
 
             bunch.AddItems(count);
-            SendMessage(item.GetName(), bunch.GetCount());
+            SendCountItemsMsg(item.GetName(), bunch.GetCount());
+            SendCountAddedMsg(item, count);
         }
 
         private void Remove(Item item, int count)
@@ -64,7 +65,8 @@ namespace Economy
 
             bunch.RemoveItems(count);
             CheckCount(bunch);
-            SendMessage(item.GetName(), bunch.GetCount());
+            SendCountItemsMsg(item.GetName(), bunch.GetCount());
+            SendCountRemovedMsg(item, count);
         }
 
         private void CheckCount(ItemBunch bunch)
@@ -72,9 +74,19 @@ namespace Economy
             if (bunch.GetCount() <= 0) _listItems.Remove(bunch);
         }
 
-        private void SendMessage(string name, int count)
+        private void SendCountItemsMsg(string name, int count)
         {
-            if (_isPlayerInventory) EventHandler.OnInventoryAdd?.Invoke(name, count);
+            if (_isPlayerInventory) EventHandler.OnBunchChanged?.Invoke(name, count);
+        }
+
+        private void SendCountAddedMsg(Item item, int count)
+        {
+            if (_isPlayerInventory) EventHandler.OnItemPickUp?.Invoke(item, count);
+        }     
+        
+        private void SendCountRemovedMsg(Item item, int count)
+        {
+            if (_isPlayerInventory) EventHandler.OnItemPut?.Invoke(item, count);
         }
     }
 }

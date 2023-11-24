@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Economy.Farm_House
@@ -6,27 +7,25 @@ namespace Economy.Farm_House
     {
         [SerializeField] protected Transform _content;
 
-        protected Inventory _playerInventory;
+        [SerializeField] protected Inventory _playerInventory;
         protected bool _isHouseMenu = true; // отображается меню сущностей инвентаря игрока или фермерского домика.
-        
-        public void SetPlayerInventory(Inventory inventory) => _playerInventory = inventory;
-        
-        public void SwitchDisplay()
-        {
-            _isHouseMenu = !_isHouseMenu;
 
-            Draw();
-        }
+        public void SetPlayerInventory(Inventory inventory) => _playerInventory = inventory;
 
         public void DisplayActive(bool value)
         {
             _isHouseMenu = value;
-
             Draw();
         }
 
         public abstract void Draw();
 
+        public void RefreshDisplay()
+        {
+            ClearContent();
+            Draw();
+        }
+        
         protected void ClearContent()
         {
             var length = _content.childCount;

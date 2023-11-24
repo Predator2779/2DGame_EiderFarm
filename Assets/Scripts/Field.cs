@@ -52,5 +52,8 @@ public class Field : MonoBehaviour
         StartCoroutine(SpawnGagasWithDelay());
     }
 
-    private void OnDestroy() => Destroy(GetGaga().gameObject);
+    private void OnDestroy()
+    {
+        if (gaga != null) Destroy(gaga.gameObject);
+    }
 }
