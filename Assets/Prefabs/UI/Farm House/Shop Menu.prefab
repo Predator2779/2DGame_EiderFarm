@@ -152,6 +152,8 @@ MonoBehaviour:
     _count: 45
   - _item: {fileID: 11400000, guid: 200ec94766fc499428a2a0d4b79d9875, type: 2}
     _count: 54
+  - _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
+    _count: 10000
 --- !u!1 &790178343031751972
 GameObject:
   m_ObjectHideFlags: 0

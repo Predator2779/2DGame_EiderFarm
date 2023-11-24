@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using General;
 using UnityEngine;
 using EventHandler = General.EventHandler;
 
@@ -20,14 +21,14 @@ namespace Economy
 
         public void RemoveItems(Item item, int count)
         {
-            if (IsExistsItems(item, count)) Remove(item, count);
+            if (IsExistsItems(item.GetName(), count)) Remove(item, count);
         }
-
+        
         public List<ItemBunch> GetAllItems() => _listItems;
 
-        private bool IsExistsItems(Item type, int count) =>
+        public bool IsExistsItems(string name, int count) =>
                 _listItems.Any(bunch => bunch.GetItemName() ==
-                        type.GetName() && count >= 0);
+                        name && count >= 0 && bunch.GetCount() > 0);
 
         public bool TryGetBunch(string name, out ItemBunch itemBunch)
         {
@@ -74,7 +75,7 @@ namespace Economy
             if (bunch.GetCount() <= 0) _listItems.Remove(bunch);
         }
 
-        private void SendCountItemsMsg(string name, int count)
+        public void SendCountItemsMsg(string name, int count)
         {
             if (_isPlayerInventory) EventHandler.OnBunchChanged?.Invoke(name, count);
         }
