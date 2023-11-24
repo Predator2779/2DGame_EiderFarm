@@ -8,8 +8,10 @@ namespace Economy
     {
         [SerializeField] private Sprite _icon;
         [SerializeField] private string _name;
+        [SerializeField] private int _price;
 
         public Sprite GetIcon() => _icon;
         public string GetName() => _name;
+        public int GetPrice() => _price;
     }
 }
