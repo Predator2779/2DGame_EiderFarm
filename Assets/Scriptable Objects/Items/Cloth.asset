@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cloth
   m_EditorClassIdentifier: 
   _icon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  _name: "\u0422\u043A\u0430\u043D\u044C"
+  _name: "\u041A\u0443\u0440\u0442\u043A\u0430"
   _price: 9
