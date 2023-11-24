@@ -480,7 +480,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 531.46875}
+  m_AnchoredPosition: {x: 0, y: 531.4689}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &6563808198576737120
@@ -1181,7 +1181,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 5552428973792644056}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Economy.Farm_House.ShopMenu, Assembly-CSharp
         m_MethodName: DisplayActive
         m_Mode: 6
@@ -1544,8 +1544,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8131656608191468327}
-  - component: {fileID: 5552428973792644056}
-  - component: {fileID: 8397450855888286802}
+  - component: {fileID: 5076512444849265687}
   m_Layer: 5
   m_Name: Task Menu
   m_TagString: Untagged
@@ -1575,7 +1574,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5552428973792644056
+--- !u!114 &5076512444849265687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1584,33 +1583,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3723943426534509011}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5e7d4f94f89433e9d7a932356ebf766, type: 3}
+  m_Script: {fileID: 11500000, guid: e845c5f618884098a55fb12e95d1a6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _content: {fileID: 3543201713532394409}
-  _shopCellPrefab: {fileID: 3080319492574632987, guid: 9af0729de593e2e43990227facfb4e70, type: 3}
---- !u!114 &8397450855888286802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3723943426534509011}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeb6caf4dbbf43fe81c90d82a8854edc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isPlayerInventory: 0
-  _listItems:
-  - _item: {fileID: 11400000, guid: 3e35c204c77a2c34a9439f95cd1ddef4, type: 2}
-    _count: 22
-  - _item: {fileID: 11400000, guid: 159a6522252945049be044ad47855211, type: 2}
-    _count: 13
-  - _item: {fileID: 11400000, guid: 200ec94766fc499428a2a0d4b79d9875, type: 2}
-    _count: 4
-  - _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
-    _count: 18
+  _tasks:
+  - {fileID: 11400000, guid: 9deb2b95a9a87984fab59e3433f7066b, type: 2}
+  - {fileID: 11400000, guid: 9842b3e919909b84c81d538b4dd8354a, type: 2}
+  - {fileID: 11400000, guid: bdd3358246eda454780d3912c6dc2d5b, type: 2}
+  collectTaskCellPrefab: {fileID: 6627950912350663287}
 --- !u!1 &3865336609707047001
 GameObject:
   m_ObjectHideFlags: 0
@@ -3551,7 +3532,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5552428973792644056}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Economy.Farm_House.ShopMenu, Assembly-CSharp
         m_MethodName: DisplayActive
         m_Mode: 6
@@ -4677,6 +4658,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1092352872545408971, guid: 8a75096aaaed0d04aa9ef0ed58458908, type: 3}
+      propertyPath: m_fontSize
+      value: 18.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357443135064618044, guid: 8a75096aaaed0d04aa9ef0ed58458908, type: 3}
+      propertyPath: m_fontSize
+      value: 34.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9122696217890211360, guid: 8a75096aaaed0d04aa9ef0ed58458908, type: 3}
       propertyPath: m_Name
       value: TaskButton
@@ -4691,3 +4680,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 775812333882842229, guid: 8a75096aaaed0d04aa9ef0ed58458908, type: 3}
   m_PrefabInstance: {fileID: 4097591494541844614}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6627950912350663287 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7144582560142004977, guid: 8a75096aaaed0d04aa9ef0ed58458908, type: 3}
+  m_PrefabInstance: {fileID: 4097591494541844614}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbd9ba7bd7c4b4ebae9d3333dd13237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
