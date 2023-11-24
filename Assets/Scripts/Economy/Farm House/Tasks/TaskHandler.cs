@@ -7,14 +7,14 @@ namespace Economy.Farm_House
     public class TaskHandler : DisplayMenu
     {
         [SerializeField] private CollectTask[] _tasks;
-        [SerializeField] private CollectTaskCell collectTaskCellPrefab;
+        [SerializeField] private CollectTaskCell _collectTaskCellPrefab;
 
         private void Awake()
         {
             EventHandler.OnTaskStageChanged.AddListener(RefreshTasksStatus);
             EventHandler.OnGiveReward.AddListener(CheckStage);
         }
-
+        
         private void CheckStage(Task task, TaskStage stage)
         {
             if (stage == TaskStage.Completed)
@@ -46,7 +46,7 @@ namespace Economy.Farm_House
         private void DrawTasks(CollectTask[] tasks)
         {
             foreach (var task in tasks)
-                SetCell(Instantiate(collectTaskCellPrefab, _content), task);
+                SetCell(Instantiate(_collectTaskCellPrefab, _content), task);
         }
 
         private void SetCell(CollectTaskCell cell, CollectTask task) => cell.SetCell(task);

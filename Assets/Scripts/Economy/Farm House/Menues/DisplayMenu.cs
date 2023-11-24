@@ -9,6 +9,8 @@ namespace Economy.Farm_House
         protected Inventory _playerInventory;
         protected bool _isHouseMenu = true; // отображается меню сущностей инвентаря игрока или фермерского домика.
         
+        public void SetPlayerInventory(Inventory inventory) => _playerInventory = inventory;
+        
         public void SwitchDisplay()
         {
             _isHouseMenu = !_isHouseMenu;
