@@ -15,6 +15,7 @@ public class SaveSerial : MonoBehaviour
 
     [SerializeField] private BuildMenu[] _gagaHouses;
     [SerializeField] private BuildMenu[] _cleaners;
+    [SerializeField] private BuildMenu[] _clothMachines;
     
 
     private string path = "/dataSaveFile.dat";
@@ -41,6 +42,7 @@ public class SaveSerial : MonoBehaviour
 
         data.GagaHouses = SaveDataGrades(_gagaHouses);
         data.Cleaners = SaveDataGrades(_cleaners);
+        data.ClothMachines = SaveDataGrades(_clothMachines);
 
         bf.Serialize(file, data);
         file.Close();
@@ -59,6 +61,7 @@ public class SaveSerial : MonoBehaviour
             ClearAndAdd();
             BuildAndUpgrade(data.GagaHouses, _gagaHouses);
             BuildAndUpgrade(data.Cleaners, _cleaners);
+            BuildAndUpgrade(data.ClothMachines, _clothMachines);
         }
     }
 
@@ -76,6 +79,7 @@ public class SaveSerial : MonoBehaviour
 
             data.GagaHouses = new int[0];
             data.Cleaners = new int[0];
+            data.ClothMachines = new int[0];
 
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

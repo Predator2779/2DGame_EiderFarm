@@ -12,4 +12,5 @@ using UnityEngine;
 
     public int[] GagaHouses;
     public int[] Cleaners;
+    public int[] ClothMachines;
 }
