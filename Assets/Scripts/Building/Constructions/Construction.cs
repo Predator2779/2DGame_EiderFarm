@@ -24,5 +24,7 @@ namespace Building.Constructions
         public void SetSprite(Sprite sprite) => _spriteRenderer.sprite = sprite;
 
         public bool CanUpgrade() => _currentGrade < _gradeBuildings.Length;
+
+        public int GetCurrentGrade() => _currentGrade;
     }
 }
