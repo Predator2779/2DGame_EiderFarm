@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 92058674469280376, guid: 1e27d68546c462c4293c7bb8f986baae, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 716025645820381315, guid: 1e27d68546c462c4293c7bb8f986baae, type: 3}
       propertyPath: m_Name
       value: GagaPlace_4 Variant
