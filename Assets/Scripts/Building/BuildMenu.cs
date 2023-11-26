@@ -1,4 +1,5 @@
 using Building.Constructions;
+using System;
 using UnityEngine;
 
 namespace Building
@@ -10,6 +11,8 @@ namespace Building
         private SpriteRenderer _triggerSprite;
         private Vector3 _buildPos;
         private Quaternion _buildRot;
+
+        public bool IsBuilded;
 
         public void SetConstruction(
                 Construction prefab,
@@ -32,6 +35,7 @@ namespace Building
             
             Build(_buildingPrefab);
             _curConstruction.SetSprite(_curConstruction.Upgrade());
+            IsBuilded = true;
         }
 
         public void Demolition()
@@ -40,6 +44,7 @@ namespace Building
 
             _triggerSprite.enabled = true;
             Destroy(_curConstruction.gameObject);
+            IsBuilded = false;
         }
 
         public void Upgrade()
