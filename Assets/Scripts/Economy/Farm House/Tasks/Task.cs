@@ -31,6 +31,7 @@ namespace Economy.Farm_House
 
     public enum TaskStage
     {
+        NotAvailable,
         NotStarted,
         Progressing,
         Completed,
