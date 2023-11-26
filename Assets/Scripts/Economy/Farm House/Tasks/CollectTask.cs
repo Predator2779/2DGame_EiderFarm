@@ -10,19 +10,13 @@ namespace Economy.Farm_House
         [SerializeField] private int _requireCount;
         [SerializeField] private int _currentCount;
 
-        public void Initialize()
+        protected override void Initialize()
         {
             EventHandler.OnItemPickUp.AddListener(PickUpItem);
             EventHandler.OnItemPut.AddListener(PutItem);
         }
 
-        public void Reinitialize()
-        {
-            Deinitialize();
-            Initialize();
-        }
-
-        public void Deinitialize()
+        protected override void Deinitialize()
         {
             EventHandler.OnItemPickUp.RemoveListener(PickUpItem);
             EventHandler.OnItemPut.RemoveListener(PutItem);
@@ -30,27 +24,26 @@ namespace Economy.Farm_House
 
         public int GetRequireCount() => _requireCount;
         public int GetCurrentCount() => _currentCount;
-        
+
         private void PickUpItem(Item item, int count)
         {
-            if (_requiredItem == item) _currentCount += count;
+            if (_requiredItem == item) 
+                _currentCount += count;
+            
             CheckProgressing();
-        }  
-        
+        }
+
         private void PutItem(Item item, int count)
         {
-            if (_requiredItem == item) _currentCount -= count;
+            if (_requiredItem == item) 
+                _currentCount -= count;
+            
             CheckProgressing();
         }
 
-        private void CheckProgressing()
-        {
-            if (_stage == TaskStage.Progressing &&
-                _currentCount >= _requireCount) 
-                SetStage(TaskStage.Completed);
-        }
+        protected override bool SomeCondition() => _currentCount >= _requireCount;
 
-        [ContextMenu("Reset Task")] public void ResetTask()
+        [ContextMenu("Reset Task")] public override void ResetTask()
         {
             _currentCount = 0;
             SetStage(TaskStage.NotStarted);

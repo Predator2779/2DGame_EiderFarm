@@ -11,23 +11,22 @@ namespace Economy.Farm_House
 
         private void Awake()
         {
-            EventHandler.OnTaskStageChanged.AddListener(RefreshTasksStatus);
-            EventHandler.OnGiveReward.AddListener(CheckStage);
-        }
-        
-        private void CheckStage(Task task, TaskStage stage)
-        {
-            if (stage == TaskStage.Completed)
-            {
-                task.GiveReward(_playerInventory);
-                task.SetStage(TaskStage.Passed);
-            }
+            ResetTasks();
             
+            EventHandler.OnTaskStageChanged.AddListener(RefreshTasksStatus);
+            EventHandler.OnGiveReward.AddListener(GiveReward);
+        }
+
+        private void GiveReward(Task task, TaskStage stage)
+        {
+            if (stage == TaskStage.Passed)
+                task.GiveReward(_playerInventory);
+
             RefreshTasksStatus(task, stage);
         }
 
         private void RefreshTasksStatus(Task task, TaskStage stage) => Draw();
-        
+
         public override void Draw()
         {
             ClearContent();
@@ -51,5 +50,11 @@ namespace Economy.Farm_House
         }
 
         private void SetCell(CollectTaskCell cell, CollectTask task) => cell.SetCell(task);
+
+        private void ResetTasks()
+        {
+            foreach (var task in _tasks)
+                task.ResetTask();
+        }
     }
 }
