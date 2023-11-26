@@ -7,7 +7,7 @@ namespace Economy.Farm_House
     {
         [SerializeField] protected Transform _content;
 
-        [SerializeField] protected Inventory _playerInventory;
+        protected Inventory _playerInventory;
         protected bool _isHouseMenu = true; // отображается меню сущностей инвентаря игрока или фермерского домика.
 
         public void SetPlayerInventory(Inventory inventory) => _playerInventory = inventory;

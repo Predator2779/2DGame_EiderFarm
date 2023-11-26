@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198f1600bc9a41699a9c769e34439991, type: 3}
   m_Name: CollectUncleanFluff
   m_EditorClassIdentifier: 
-  _stage: 0
+  _stage: 1
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C \u043D\u0435\u043E\u0431\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043D\u044B\u0439
     \u043F\u0443\u0445"
