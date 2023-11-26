@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198f1600bc9a41699a9c769e34439991, type: 3}
+  m_Name: "Collect\u0421leanFluff"
+  m_EditorClassIdentifier: 
+  _stage: 0
+  _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  _name: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043D\u044B\u0439
+    \u043F\u0443\u0445"
+  _description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043D\u044B\u0439
+    \u043F\u0443\u0445"
+  _reward:
+    _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
+    _count: 40
+  _requiredItem: {fileID: 11400000, guid: 159a6522252945049be044ad47855211, type: 2}
+  _requireCount: 15
+  _currentCount: 0

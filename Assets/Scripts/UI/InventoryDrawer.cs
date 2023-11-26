@@ -8,8 +8,9 @@ public class InventoryDrawer : MonoBehaviour
     [SerializeField] private TMP_Text _moneyCounter;
     [SerializeField] private TMP_Text _cleanFCounter;
     [SerializeField] private TMP_Text _uncleanFCounter;
+    [SerializeField] private TMP_Text _clothesCounter;
 
-    private void Awake() => EventHandler.OnInventoryAdd.AddListener(UpdateCounter);
+    private void Awake() => EventHandler.OnBunchChanged.AddListener(UpdateCounter);
 
     private void UpdateCounter(string content, int points)
     {
@@ -23,6 +24,9 @@ public class InventoryDrawer : MonoBehaviour
                 break;
             case UncleanedFluff:
                 _uncleanFCounter.text = points.ToString();
+                break;            
+            case Clothes:
+                _clothesCounter.text = points.ToString();
                 break;
         }
     }
