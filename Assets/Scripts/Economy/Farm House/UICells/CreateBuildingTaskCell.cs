@@ -27,9 +27,9 @@ namespace Economy.Farm_House
 
             SetButton(
                     _task.GetIcon(),
-                    _task.GetDescription());
-                    //_task.GetRequireCount(),
-                    //_task.GetCurrentCount());
+                    _task.GetDescription(),
+            _task.GetRequireCount(),
+                    _task.GetCurrentCount());
         }
 
     }

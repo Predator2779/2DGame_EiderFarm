@@ -9,12 +9,13 @@ namespace Economy.Farm_House
     {
         [SerializeField] private int _requiredBuildings;
         private int _countBuildings;
+        [SerializeField] private int _currentCount;
 
         [SerializeField] private GameObject[] _buildMenus;
 
         protected override void Initialize()
         {
-            _countBuildings = GetActiveBuildMenus(); 
+            _countBuildings = GetActiveBuildMenus();
         }
 
         protected override void Deinitialize()
@@ -31,11 +32,13 @@ namespace Economy.Farm_House
                     count++;
                 }
             }
-            return count;
+                _currentCount = _countBuildings + count;
+                return count;
         }
 
 
-
+        public int GetRequireCount() => _requiredBuildings;
+        public int GetCurrentCount() => _currentCount;
         protected override bool SomeCondition() => GetActiveBuildMenus() == _countBuildings + _requiredBuildings;
 
         [ContextMenu("Reset Task")]
