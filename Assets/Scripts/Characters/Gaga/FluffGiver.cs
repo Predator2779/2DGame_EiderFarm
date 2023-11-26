@@ -3,26 +3,50 @@ using UnityEngine;
 
 public class FluffGiver : MonoBehaviour
 {
+    private BuildStorage _storage;
     public event Action FluffGiveEvent;
-
-    [SerializeField] private bool hasGivenFluff;
+private bool hasGivenFluff;
 
     [Header("Шанс выпадения пуха (в процентах).")]
     [SerializeField] private int _chance;
 
-    private void Start() => hasGivenFluff = false;
+    [Header("Время выпадения пуха.")]
+    [SerializeField] private float _time;
+
+    [Header("Количество воспроизводимого пуха.")]
+    [SerializeField] private float _fluffCount;
+
+    private void Start()
+    {
+        _storage = GetComponent<BuildStorage>();
+        StartCoroutine(CreateFluff());
+    }
 
     // пока без пугалок и отпугивателей
-    public void GiveFluff()
+    private void GiveFluff()
     {
         if (!hasGivenFluff)
         {
             hasGivenFluff = true;
             if (UnityEngine.Random.Range(0, 100) < _chance)
             {
-                FluffGiveEvent.Invoke();
+                _storage.AddFluff();
+                
             }
+            hasGivenFluff = false;
         }
+    }
+
+    private IEnumerator CreateFluff()
+    {
+        yield return new WaitForSecondsRealtime(_time);
+        GiveFluff();
+        StartCoroutine(CreateFluff());
+    }
+
+    public void UpgradeFluffGiver()
+    {
+        _fluffCount++;
     }
 
 }

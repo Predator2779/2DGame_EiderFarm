@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8916316367632330952}
   - component: {fileID: 5496360640194218666}
   - component: {fileID: 8785618567574733136}
+  - component: {fileID: 8902711513000996661}
   m_Layer: 0
   m_Name: GagaHouse
   m_TagString: Untagged
@@ -203,3 +204,18 @@ MonoBehaviour:
   _typeToPlayer: {fileID: 11400000, guid: 159a6522252945049be044ad47855211, type: 2}
   _fluffCount: 1
   _characterInventory: {fileID: 0}
+--- !u!114 &8902711513000996661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055177213520633573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 426c5d7e3f1248b47aa9931ba09e04c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chance: 100
+  _time: 2
+  _fluffCount: 1
