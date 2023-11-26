@@ -24,8 +24,6 @@ namespace Economy.Farm_House
         {
             if (_task == null) return;
             
-            _task.Reinitialize();
-            
             SetButton(
                     _task.GetIcon(), 
                     _task.GetDescription(), 
