@@ -15,11 +15,6 @@ namespace TriggerScripts
 
             if (other.TryGetComponent(out Inventory inv))
                 _houseMenu.SetInventory(inv);
-
-            if (other.GetComponent<InputHandler>())
-            {
-                _createBuildingTask.CheckProgressing();
-            }
         }
     }
 }
