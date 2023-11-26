@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: New Build Task
   m_EditorClassIdentifier: 
   _stage: 1
-  _icon: {fileID: 0}
-  _name: 
-  _description: 
+  _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  _name: 11
+  _description: 2222
   _reward:
     _item: {fileID: 0}
     _count: 0
