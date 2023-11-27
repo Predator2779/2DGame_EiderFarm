@@ -21,7 +21,7 @@ namespace TriggerScripts
         {
             _map = transform.parent.GetComponent<Tilemap>();
             
-            SetParent(_buildPrefab.type);
+            SetParent(_buildPrefab.typeConstruction);
             SetSprite();
             SetPosition();
         }

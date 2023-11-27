@@ -15,28 +15,42 @@ namespace Economy.Farm_House
         {
             _pathBuildings = GameObject.Find("Tilemap-Buildings").transform;
             _countBuildings = GetCountBuildings();
+
+            EventHandler.OnBuilded.AddListener(Build);
         }
 
-        protected override void Deinitialize() { }
-        
+        protected override void Deinitialize()
+        {
+            EventHandler.OnBuilded.RemoveListener(Build);
+        }
+
+        private void Build(GlobalTypes.TypeBuildings type)
+        {
+            if (type == _buildType)
+                _currentCount++;
+
+            CheckProgressing();
+        }
+
         private int GetCountBuildings()
         {
             int countBuildings = 0;
             string name = _buildType.ToString().ToUpper();
             int length = _pathBuildings.childCount;
 
+            Transform requirePath = null;
+
             for (int i = 0; i < length; i++)
             {
                 Transform child = _pathBuildings.GetChild(i);
 
-                if (child.name == name)
-                    countBuildings++;
+                if (child.name == name) requirePath = child;
             }
-
-            return countBuildings;
+            
+            return requirePath == null ? 0 : requirePath.childCount;
         }
-        
-        protected override bool SomeCondition() => GetCountBuildings() == _countBuildings + _requireCount;
+
+        protected override bool SomeCondition() => GetCountBuildings() >= _countBuildings + _requireCount;
 
         [ContextMenu("Reset Task")]
         public override void ResetTask()

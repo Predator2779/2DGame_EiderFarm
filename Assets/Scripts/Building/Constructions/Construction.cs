@@ -6,7 +6,7 @@ namespace Building.Constructions
     [RequireComponent(typeof(SpriteRenderer))]
     public class Construction : MonoBehaviour
     {
-        public GlobalTypes.TypeBuildings type;
+        public GlobalTypes.TypeBuildings typeConstruction;
         
         [SerializeField] private Sprite[] _gradeBuildings;
         

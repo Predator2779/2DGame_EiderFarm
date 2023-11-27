@@ -1,6 +1,7 @@
 using Building.Constructions;
 using System;
 using UnityEngine;
+using EventHandler = General.EventHandler;
 
 namespace Building
 {
@@ -39,6 +40,8 @@ namespace Building
             Build(_buildingPrefab);
             _curConstruction.SetSprite(_curConstruction.Upgrade());
             IsBuilded = true;
+            
+            EventHandler.OnBuilded?.Invoke(_curConstruction.typeConstruction);
         }
 
         public void Demolition()
