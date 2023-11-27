@@ -5,13 +5,16 @@ namespace Economy.Farm_House
     public abstract class CollectTask : Task
     {
         [Header("Task Cell")]
-        [SerializeField] protected CollectTaskCell _taskCellPrefab;
+        [SerializeField] protected CollectTaskCell _cellPrefab;
         
         [Header("Counters")]
         [SerializeField] protected int _requireCount;
         [SerializeField] protected int _currentCount;
         
-        public CollectTaskCell GetCell() => _taskCellPrefab;
+        public CollectTaskCell GetCell() => _cellPrefab;
+        
+        public override void SetCell(Transform parent) => 
+                Instantiate(_cellPrefab, parent).SetCell(this);
         
         public int GetRequireCount() => _requireCount;
         public int GetCurrentCount() => _currentCount;

@@ -16,10 +16,10 @@ MonoBehaviour:
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: BuildTask
   _description: BuildTask
-  _taskCellPrefab: {fileID: 5305335994122247229, guid: 8a75096aaaed0d04aa9ef0ed58458908, type: 3}
   _reward:
     _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
     _count: 50
+  _cellPrefab: {fileID: 5305335994122247229, guid: 8a75096aaaed0d04aa9ef0ed58458908, type: 3}
   _requireCount: 2
   _currentCount: 0
   _buildType: 0

@@ -17,6 +17,8 @@ namespace Economy.Farm_House
         protected abstract void Initialize();
 
         protected abstract void Deinitialize();
+
+        public abstract void SetCell(Transform parent);
         
         public Sprite GetIcon() => _icon;
         public string GetName() => _name;

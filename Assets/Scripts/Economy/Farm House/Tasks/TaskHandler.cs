@@ -6,7 +6,7 @@ namespace Economy.Farm_House
 {
     public class TaskHandler : DisplayMenu
     {
-        [SerializeField] private CollectTask[] _tasks;
+        [SerializeField] private Task[] _tasks;
 
         private void Awake()
         {
@@ -28,8 +28,6 @@ namespace Economy.Farm_House
 
         public override void Draw()
         {
-            // ClearContent();
-
             if (_isHouseMenu)
             {
                 SetBtnText("Доступные");
@@ -42,15 +40,13 @@ namespace Economy.Farm_House
             DrawTasks(GetTasks(TaskStage.Progressing));
         }
 
-        private CollectTask[] GetTasks(TaskStage stage) => _tasks.Where(task => task.GetStage() == stage).ToArray();
+        private Task[] GetTasks(TaskStage stage) => _tasks.Where(task => task.GetStage() == stage).ToArray();
         
-        private void DrawTasks(CollectTask[] tasks)
+        private void DrawTasks(Task[] tasks)
         {
             foreach (var task in tasks)
-                SetCell(Instantiate(task.GetCell(), _content), task);
+                task.SetCell(_content);
         }
-
-        private void SetCell(CollectTaskCell cell, CollectTask task) => cell.SetCell(task);
 
         private void ResetTasks()
         {
