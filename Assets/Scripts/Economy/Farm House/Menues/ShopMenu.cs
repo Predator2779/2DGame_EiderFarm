@@ -17,14 +17,16 @@ namespace Economy.Farm_House
         
         public override void Draw()
         {
-            ClearContent();
+            // ClearContent();
 
             if (_isHouseMenu)
             {
+                SetBtnText("Фермерский домик");
                 DrawInventory(_assortment);
                 return;
             }
 
+            SetBtnText("Инвентарь");
             DrawInventory(_playerInventory);
         }
 

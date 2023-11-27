@@ -24,18 +24,20 @@ namespace Economy.Farm_House
             RefreshTasksStatus(task, stage);
         }
 
-        private void RefreshTasksStatus(Task task, TaskStage stage) => Draw();
+        private void RefreshTasksStatus(Task task, TaskStage stage) => RefreshDisplay();
 
         public override void Draw()
         {
-            ClearContent();
+            // ClearContent();
 
             if (_isHouseMenu)
             {
+                SetBtnText("Доступные");
                 DrawTasks(GetTasks(TaskStage.NotStarted));
                 return;
             }
 
+            SetBtnText("Мои");
             DrawTasks(GetTasks(TaskStage.Completed));
             DrawTasks(GetTasks(TaskStage.Progressing));
         }
