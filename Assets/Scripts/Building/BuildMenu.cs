@@ -8,6 +8,7 @@ namespace Building
     {
         private Construction _buildingPrefab;
         private Construction _curConstruction;
+        private Transform _parent;
         private SpriteRenderer _triggerSprite;
         private Vector3 _buildPos;
         private Quaternion _buildRot;
@@ -15,12 +16,14 @@ namespace Building
         public bool IsBuilded;
 
         public void SetConstruction(
-                Construction prefab,
+                Construction prefab, 
+                Transform parent,
                 SpriteRenderer triggerSprite, 
                 Vector3 buildPos, 
                 Quaternion buildRot)
         {
             _buildingPrefab = prefab;
+            _parent = parent;
             _triggerSprite = triggerSprite;
             _buildPos = buildPos;
             _buildRot = buildRot;
@@ -60,7 +63,7 @@ namespace Building
         {
             if (_curConstruction != null) Destroy(_curConstruction);
 
-            _curConstruction = Instantiate(building, _buildPos, _buildRot);
+            _curConstruction = Instantiate(building, _buildPos, _buildRot, _parent);
         }
     }
 }

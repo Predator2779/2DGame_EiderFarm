@@ -1,3 +1,4 @@
+using General;
 using UnityEngine;
 
 namespace Building.Constructions
@@ -5,6 +6,8 @@ namespace Building.Constructions
     [RequireComponent(typeof(SpriteRenderer))]
     public class Construction : MonoBehaviour
     {
+        public GlobalTypes.TypeBuildings type;
+        
         [SerializeField] private Sprite[] _gradeBuildings;
         
         private int _currentGrade;

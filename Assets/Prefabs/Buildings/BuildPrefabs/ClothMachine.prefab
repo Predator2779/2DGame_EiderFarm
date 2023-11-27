@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5146cd540cf94daca2a4bb5bb6b9b40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
   _gradeBuildings:
   - {fileID: 21300000, guid: 85c2af1935ecebc4c8e5cfc141713feb, type: 3}
   - {fileID: 21300000, guid: 89c95003a6d57754883533e544efaba9, type: 3}

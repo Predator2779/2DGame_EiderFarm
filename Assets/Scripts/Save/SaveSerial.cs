@@ -122,16 +122,16 @@ public class SaveSerial : MonoBehaviour
             {
                 default: continue;
                 case 1:
-                    menus[i].GetComponent<BuildTrigger>().SetPos();
+                    menus[i].GetComponent<BuildTrigger>().SetConstruction();
                     menus[i].Build();
                     continue;
                 case 2:
-                    menus[i].GetComponent<BuildTrigger>().SetPos();
+                    menus[i].GetComponent<BuildTrigger>().SetConstruction();
                     menus[i].Build();
                     menus[i].Upgrade();
                     continue;
                 case 3:
-                    menus[i].GetComponent<BuildTrigger>().SetPos();
+                    menus[i].GetComponent<BuildTrigger>().SetConstruction();
                     menus[i].Build();
                     menus[i].Upgrade();
                     menus[i].Upgrade();
