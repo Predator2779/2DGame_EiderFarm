@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d32fc010adc5e4f845912789cc4dde, type: 3}
   m_Name: New Build Task
   m_EditorClassIdentifier: 
-  _stage: 1
+  _stage: 2
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: 11
   _description: 2222
+  _taskCellPrefab: {fileID: 5305335994122247229, guid: 8a75096aaaed0d04aa9ef0ed58458908, type: 3}
   _reward:
     _item: {fileID: 0}
     _count: 0
-  _requiredBuildings: 2
+  _requiredItem: {fileID: 0}
+  _requireCount: 2
+  _currentCount: 0
   _buildMenus: []

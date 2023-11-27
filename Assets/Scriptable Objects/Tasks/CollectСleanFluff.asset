@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198f1600bc9a41699a9c769e34439991, type: 3}
   m_Name: "Collect\u0421leanFluff"
   m_EditorClassIdentifier: 
-  _stage: 2
+  _stage: 1
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043D\u044B\u0439
     \u043F\u0443\u0445"
   _description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043D\u044B\u0439
     \u043F\u0443\u0445"
+  _taskCellPrefab: {fileID: 5305335994122247229, guid: 8a75096aaaed0d04aa9ef0ed58458908, type: 3}
   _reward:
     _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
     _count: 40

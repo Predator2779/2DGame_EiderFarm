@@ -1,26 +1,20 @@
 using Building;
-using General;
 using UnityEngine;
 
 namespace Economy.Farm_House
 {
-    [CreateAssetMenu(menuName = "Tasks/BuildTask", fileName = "New Build Task", order = 1)]
-    public class CreateBuildingTask : Task
+    [CreateAssetMenu(menuName = "Tasks/BuildTask", fileName = "New BuildTask", order = 0)]
+    public class CreateBuildingTask : CollectTask
     {
-        [SerializeField] private int _requiredBuildings;
-        private int _countBuildings;
-        [SerializeField] private int _currentCount;
-
         [SerializeField] private GameObject[] _buildMenus;
+        private int _countBuildings;
 
         protected override void Initialize()
         {
             _countBuildings = GetActiveBuildMenus();
         }
 
-        protected override void Deinitialize()
-        {
-        }
+        protected override void Deinitialize() { }
 
         private int GetActiveBuildMenus()
         {
@@ -32,14 +26,12 @@ namespace Economy.Farm_House
                     count++;
                 }
             }
-                _currentCount = _countBuildings + count;
-                return count;
+
+            _currentCount = _countBuildings + count;
+            return count;
         }
-
-
-        public int GetRequireCount() => _requiredBuildings;
-        public int GetCurrentCount() => _currentCount;
-        protected override bool SomeCondition() => GetActiveBuildMenus() == _countBuildings + _requiredBuildings;
+        
+        protected override bool SomeCondition() => GetActiveBuildMenus() == _countBuildings + _requireCount;
 
         [ContextMenu("Reset Task")]
         public override void ResetTask()

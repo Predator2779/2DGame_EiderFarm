@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Economy.Farm_House
 {
-    [CreateAssetMenu(menuName = "Tasks/CollectTask", fileName = "New Task", order = 0)]
+    [CreateAssetMenu(menuName = "Tasks/CollectTask", fileName = "New CollectTask", order = 0)]
     public class CollectTask : Task
     {
         [SerializeField] private Item _requiredItem;
-        [SerializeField] private int _requireCount;
-        [SerializeField] private int _currentCount;
+        [SerializeField] protected int _requireCount;
+        [SerializeField] protected int _currentCount;
 
         protected override void Initialize()
         {

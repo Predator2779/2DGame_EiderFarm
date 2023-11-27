@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Economy.Farm_House
@@ -31,6 +30,5 @@ namespace Economy.Farm_House
                     _task.GetRequireCount(), 
                     _task.GetCurrentCount());
         }
-
     }
 }

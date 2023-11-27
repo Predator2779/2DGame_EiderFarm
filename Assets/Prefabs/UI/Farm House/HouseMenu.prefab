@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 4134757150391854568}
   - component: {fileID: 4732175192225819344}
   m_Layer: 5
-  m_Name: House Menu
+  m_Name: HouseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

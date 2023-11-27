@@ -7,7 +7,6 @@ namespace TriggerScripts
     public class HouseTrigger : MenuTrigger
     {
         [SerializeField] private HouseMenu _houseMenu;
-        [SerializeField] private CreateBuildingTask _createBuildingTask;
         
         protected override void OnTriggerEnter2D(Collider2D other)
         {

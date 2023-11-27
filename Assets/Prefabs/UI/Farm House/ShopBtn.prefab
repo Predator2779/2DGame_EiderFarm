@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 6670693625363663611}
   - component: {fileID: 3080319492574632987}
   m_Layer: 5
-  m_Name: ShopButton
+  m_Name: ShopBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

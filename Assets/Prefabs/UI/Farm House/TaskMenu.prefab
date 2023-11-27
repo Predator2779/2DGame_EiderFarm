@@ -1151,7 +1151,7 @@ GameObject:
   - component: {fileID: 9177030481396094551}
   - component: {fileID: 8936552802194355129}
   m_Layer: 5
-  m_Name: Task Menu
+  m_Name: TaskMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
