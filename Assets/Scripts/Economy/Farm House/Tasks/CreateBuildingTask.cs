@@ -13,8 +13,8 @@ namespace Economy.Farm_House
 
         protected override void Initialize()
         {
-            _countBuildings = GetActiveBuildMenus();
             _pathBuildings = GameObject.Find("Tilemap-Buildings").transform;
+            _countBuildings = FindBuildings(_buildType);
         }
 
         protected override void Deinitialize() { }
@@ -35,6 +35,23 @@ namespace Economy.Farm_House
             
             
             return count;
+        }
+        
+        private int FindBuildings(GlobalTypes.TypeBuildings type)
+        {
+            int countBuildings = 0;
+            string name = type.ToString().ToUpper();
+            int length = _pathBuildings.childCount;
+
+            for (int i = 0; i < length; i++)
+            {
+                Transform child = _pathBuildings.GetChild(i);
+
+                if (child.name == name)
+                    countBuildings++;
+            }
+
+            return countBuildings;
         }
         
         protected override bool SomeCondition() => GetActiveBuildMenus() == _countBuildings + _requireCount;
