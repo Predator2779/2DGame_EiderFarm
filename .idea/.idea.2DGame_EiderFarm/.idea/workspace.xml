@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db890482-7c9c-4845-aed2-97ea93e16238" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/ItemTask.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/ItemTask.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Farm House/TaskButton.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Farm House/TaskButton.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Farm House/TaskButton_1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Farm House/TaskButton_1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test-Level-3 (Daniil).unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test-Level-3 (Daniil).unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/CollectTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/CollectTask.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/CreateBuildingTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/CreateBuildingTask.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/Task.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/Task.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TaskHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TaskHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/CollectTaskCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/CollectTaskCell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/CollectTaskCell.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/CollectTaskCell.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/CreateBuildingTaskCell.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/CreateBuildingTaskCell.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/HouseTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/HouseTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/CreateBuildingTask.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/CreateBuildingTask.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "do_not_show_Android_plugin_suggestion": "true",
-    "git-widget-placeholder": "createBuildingTask",
+    "git-widget-placeholder": "collect-tasks",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -126,7 +117,7 @@
       <workItem from="1700500563801" duration="5184000" />
       <workItem from="1700516232869" duration="2597000" />
       <workItem from="1701001209410" duration="3141000" />
-      <workItem from="1701031320328" duration="2667000" />
+      <workItem from="1701031320328" duration="5438000" />
     </task>
     <servers />
   </component>
