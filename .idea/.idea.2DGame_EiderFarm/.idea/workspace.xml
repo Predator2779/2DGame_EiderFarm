@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db890482-7c9c-4845-aed2-97ea93e16238" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Menues/DisplayMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Menues/DisplayMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Menues/ShopMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Menues/ShopMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/ComplexTasks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/ComplexTasks.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test-Level-2 (Kn1ght).unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test-Level-2 (Kn1ght).unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
