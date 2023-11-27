@@ -3,9 +3,11 @@ using UnityEngine;
 
 namespace Economy.Farm_House
 {
-    [CreateAssetMenu(menuName = "Tasks/CollectTasks", fileName = "New ItemTask", order = 0)]
+    [CreateAssetMenu(menuName = "Tasks/CollectTasks/ItemTask", fileName = "New ItemTask", order = 0)]
     public class ItemTask : CollectTask
     {
+        [SerializeField] protected Item _requiredItem;
+        
         protected override void Initialize()
         {
             EventHandler.OnItemPickUp.AddListener(PickUpItem);

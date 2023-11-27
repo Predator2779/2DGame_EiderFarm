@@ -4,7 +4,6 @@ namespace Economy.Farm_House
 {
     public abstract class CollectTask : Task
     {
-        [SerializeField] protected Item _requiredItem;
         [SerializeField] protected int _requireCount;
         [SerializeField] protected int _currentCount;
 

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 using EventHandler = General.EventHandler;
 
 namespace Economy.Farm_House
@@ -11,8 +10,7 @@ namespace Economy.Farm_House
         [SerializeField] protected Sprite _icon;
         [SerializeField] protected string _name;
         [SerializeField] protected string _description;
-
-        [FormerlySerializedAs("_taskCell")]
+        
         [Header("Task Cell")]
         [SerializeField] protected CollectTaskCell _taskCellPrefab; 
         
