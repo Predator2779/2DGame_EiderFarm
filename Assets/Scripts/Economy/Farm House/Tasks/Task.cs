@@ -11,17 +11,12 @@ namespace Economy.Farm_House
         [SerializeField] protected string _name;
         [SerializeField] protected string _description;
         
-        [Header("Task Cell")]
-        [SerializeField] protected CollectTaskCell _taskCellPrefab; 
-        
         [Header("Reward")]
         [SerializeField] protected ItemBunch _reward;
 
         protected abstract void Initialize();
 
         protected abstract void Deinitialize();
-
-        public CollectTaskCell GetCell() => _taskCellPrefab;
         
         public Sprite GetIcon() => _icon;
         public string GetName() => _name;
@@ -75,7 +70,10 @@ namespace Economy.Farm_House
             }
         }
 
-        public abstract void ResetTask();
+        public virtual void ResetTask()
+        {
+            
+        }
     }
 
     public enum TaskStage

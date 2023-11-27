@@ -51,13 +51,5 @@ namespace Economy.Farm_House
         }
 
         protected override bool SomeCondition() => GetCountBuildings() >= _countBuildings + _requireCount;
-
-        [ContextMenu("Reset Task")]
-        public override void ResetTask()
-        {
-            _countBuildings = GetCountBuildings();
-
-            SetStage(!SomeCondition() ? TaskStage.NotStarted : TaskStage.Completed);
-        }
     }
 }
