@@ -17,8 +17,6 @@ namespace Economy.Farm_House
         
         public override void Draw()
         {
-            // ClearContent();
-
             if (_isHouseMenu)
             {
                 SetBtnText("Фермерский домик");

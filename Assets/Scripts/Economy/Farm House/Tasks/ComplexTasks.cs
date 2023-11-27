@@ -5,7 +5,7 @@ namespace Economy.Farm_House
 {
     public class ComplexTasks : Task
     {
-        // [SerializeField] protected 
+        [SerializeField] protected ComplexTaskCell _cellPrefab;
         [SerializeField] private Task[] _subTasks;
         
         protected override void Initialize() { }

@@ -1,8 +1,5 @@
-using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
-using Button = UnityEngine.UI.Button;
 
 namespace Economy.Farm_House
 {
@@ -12,7 +9,7 @@ namespace Economy.Farm_House
         [SerializeField] private TMP_Text _btnText;
 
         protected Inventory _playerInventory;
-        protected bool _isHouseMenu = true; // отображается меню сущностей инвентаря игрока или фермерского домика.
+        protected bool _isHouseMenu = true; // отображается меню сущностей инвентаря игрока(false) или фермерского домика(true).
 
         public void SetPlayerInventory(Inventory inventory) => _playerInventory = inventory;
 
@@ -20,12 +17,6 @@ namespace Economy.Farm_House
         {
             _isHouseMenu = !_isHouseMenu;
             RefreshDisplay();
-        }
-
-        public void DisplayActive(bool value)
-        {
-            // _isHouseMenu = value;
-            // Draw();
         }
 
         public abstract void Draw();
