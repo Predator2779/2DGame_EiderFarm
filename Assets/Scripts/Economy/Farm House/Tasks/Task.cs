@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEditor;
 using UnityEngine.Serialization;
 using EventHandler = General.EventHandler;
 
@@ -21,12 +20,6 @@ namespace Economy.Farm_House
         [SerializeField] protected ItemBunch _reward;
 
         protected abstract void Initialize();
-
-        public void Reinitialize()
-        {
-            Deinitialize();
-            Initialize();
-        }
 
         protected abstract void Deinitialize();
 
