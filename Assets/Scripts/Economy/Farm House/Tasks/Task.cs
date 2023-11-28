@@ -16,6 +16,12 @@ namespace Economy.Farm_House
 
         protected abstract void Initialize();
 
+        protected void Reinitialize()
+        {
+            Deinitialize();
+            Initialize();
+        }
+        
         protected abstract void Deinitialize();
 
         public abstract void SetCell(Transform parent);
@@ -39,7 +45,7 @@ namespace Economy.Farm_House
 
         private void StartTask()
         {
-            Initialize();
+            Reinitialize();
             SetStage(TaskStage.Progressing);
         }
 

@@ -34,7 +34,6 @@ namespace Economy.Farm_House
 
         private int GetCountBuildings()
         {
-            int countBuildings = 0;
             string name = _buildType.ToString().ToUpper();
             int length = _pathBuildings.childCount;
 
