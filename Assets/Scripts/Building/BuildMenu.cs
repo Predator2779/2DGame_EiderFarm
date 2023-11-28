@@ -57,6 +57,10 @@ namespace Building
             if (_curConstruction == null || !_curConstruction.CanUpgrade()) return;
 
             _curConstruction.SetSprite(_curConstruction.Upgrade());
+            
+            EventHandler.OnUpgraded?.Invoke(
+                    _curConstruction.typeConstruction, 
+                    _curConstruction.GetCurrentGrade());
         }
 
         public Construction GetConstruction() => _curConstruction;

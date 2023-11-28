@@ -10,7 +10,7 @@ namespace Building.Constructions
         
         [SerializeField] private Sprite[] _gradeBuildings;
         
-        private int _currentGrade;
+        [SerializeField] private int _currentGrade;
         private SpriteRenderer _spriteRenderer;
 
         private void Awake() => _spriteRenderer = GetComponent<SpriteRenderer>();
