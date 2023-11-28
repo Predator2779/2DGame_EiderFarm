@@ -1,5 +1,6 @@
 using Building.Constructions;
 using UnityEngine;
+using EventHandler = General.EventHandler;
 
 namespace Building
 {
@@ -7,6 +8,7 @@ namespace Building
     {
         private Construction _buildingPrefab;
         private Construction _curConstruction;
+        private Transform _parent;
         private SpriteRenderer _triggerSprite;
         private Vector3 _buildPos;
         private Quaternion _buildRot;
@@ -14,12 +16,14 @@ namespace Building
         public bool IsBuilded;
 
         public void SetConstruction(
-                Construction prefab,
+                Construction prefab, 
+                Transform parent,
                 SpriteRenderer triggerSprite, 
                 Vector3 buildPos, 
                 Quaternion buildRot)
         {
             _buildingPrefab = prefab;
+            _parent = parent;
             _triggerSprite = triggerSprite;
             _buildPos = buildPos;
             _buildRot = buildRot;
@@ -35,6 +39,8 @@ namespace Building
             Build(_buildingPrefab);
             _curConstruction.SetSprite(_curConstruction.Upgrade());
             IsBuilded = true;
+            
+            EventHandler.OnBuilded?.Invoke(_curConstruction.typeConstruction);
         }
 
         public void Demolition()
@@ -42,8 +48,8 @@ namespace Building
             if (_curConstruction == null) return;
 
             _triggerSprite.enabled = true;
-            IsBuilded = false;
             Destroy(_curConstruction.gameObject);
+            IsBuilded = false;
         }
 
         public void Upgrade()
@@ -59,7 +65,7 @@ namespace Building
         {
             if (_curConstruction != null) Destroy(_curConstruction);
 
-            _curConstruction = Instantiate(building, _buildPos, _buildRot);
+            _curConstruction = Instantiate(building, _buildPos, _buildRot, _parent);
         }
     }
 }
