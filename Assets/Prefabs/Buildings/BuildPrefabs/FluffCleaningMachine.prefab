@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5146cd540cf94daca2a4bb5bb6b9b40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  typeConstruction: 1
   _gradeBuildings:
   - {fileID: 21300000, guid: 17f43af97f10a62458cbae2386fc4273, type: 3}
   - {fileID: 21300000, guid: 624c7db7ce9ee7e4fa8fae80a7466120, type: 3}
