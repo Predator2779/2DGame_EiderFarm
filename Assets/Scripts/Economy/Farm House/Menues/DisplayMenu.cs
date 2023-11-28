@@ -1,4 +1,4 @@
-using System;
+using TMPro;
 using UnityEngine;
 
 namespace Economy.Farm_House
@@ -6,16 +6,17 @@ namespace Economy.Farm_House
     public abstract class DisplayMenu : MonoBehaviour
     {
         [SerializeField] protected Transform _content;
+        [SerializeField] private TMP_Text _btnText;
 
         protected Inventory _playerInventory;
-        protected bool _isHouseMenu = true; // отображается меню сущностей инвентаря игрока или фермерского домика.
+        protected bool _isHouseMenu = true; // отображается меню сущностей инвентаря игрока(false) или фермерского домика(true).
 
         public void SetPlayerInventory(Inventory inventory) => _playerInventory = inventory;
 
-        public void DisplayActive(bool value)
+        public void SwitchDisplay()
         {
-            _isHouseMenu = value;
-            Draw();
+            _isHouseMenu = !_isHouseMenu;
+            RefreshDisplay();
         }
 
         public abstract void Draw();
@@ -25,7 +26,7 @@ namespace Economy.Farm_House
             ClearContent();
             Draw();
         }
-        
+
         protected void ClearContent()
         {
             var length = _content.childCount;
@@ -33,5 +34,7 @@ namespace Economy.Farm_House
             for (int i = 0; i < length; i++)
                 Destroy(_content.GetChild(i).gameObject);
         }
+
+        protected void SetBtnText(string text) => _btnText.text = text;
     }
 }

@@ -139,6 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _typeToPlayer: {fileID: 11400000, guid: 159a6522252945049be044ad47855211, type: 2}
   _fluffCount: 2
+  _characterInventory: {fileID: 0}
 --- !u!114 &5870109810159464413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5146cd540cf94daca2a4bb5bb6b9b40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeConstruction: 1
   _gradeBuildings:
   - {fileID: 21300000, guid: 17f43af97f10a62458cbae2386fc4273, type: 3}
   - {fileID: 21300000, guid: 624c7db7ce9ee7e4fa8fae80a7466120, type: 3}

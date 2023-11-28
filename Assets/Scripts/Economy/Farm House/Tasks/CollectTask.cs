@@ -1,52 +1,46 @@
-using General;
 using UnityEngine;
 
 namespace Economy.Farm_House
 {
-    [CreateAssetMenu(menuName = "Tasks/CollectTask", fileName = "New Task", order = 0)]
-    public class CollectTask : Task
+    public abstract class CollectTask : Task
     {
-        [SerializeField] private Item _requiredItem;
-        [SerializeField] private int _requireCount;
-        [SerializeField] private int _currentCount;
+        [Header("Task Cell")]
+        [SerializeField] protected CollectTaskCell _cellPrefab;
 
-        protected override void Initialize()
+        [Header("Counters")]
+        [SerializeField] protected int _requireCount;
+
+        [SerializeField] protected int _currentCount;
+
+        public override void CreateCell(Transform parent) =>
+                Instantiate(_cellPrefab, parent).SetCell(this);
+
+        protected void AddCount(int value)
         {
-            EventHandler.OnItemPickUp.AddListener(PickUpItem);
-            EventHandler.OnItemPut.AddListener(PutItem);
+            _currentCount += value;
+            
+            if (_currentCount > _requireCount)
+                _currentCount = _requireCount;
         }
 
-        protected override void Deinitialize()
+        protected void RemoveCount(int value)
         {
-            EventHandler.OnItemPickUp.RemoveListener(PickUpItem);
-            EventHandler.OnItemPut.RemoveListener(PutItem);
+            _currentCount -= value;
+
+            if (_currentCount < 0)
+                _currentCount = 0;
         }
 
         public int GetRequireCount() => _requireCount;
         public int GetCurrentCount() => _currentCount;
 
-        private void PickUpItem(Item item, int count)
-        {
-            if (_requiredItem == item) 
-                _currentCount += count;
-            
-            CheckProgressing();
-        }
-
-        private void PutItem(Item item, int count)
-        {
-            if (_requiredItem == item) 
-                _currentCount -= count;
-            
-            CheckProgressing();
-        }
-
         protected override bool SomeCondition() => _currentCount >= _requireCount;
 
         [ContextMenu("Reset Task")] public override void ResetTask()
         {
+            base.ResetTask();
+            
             _currentCount = 0;
-            SetStage(TaskStage.NotStarted);
         }
     }
 }

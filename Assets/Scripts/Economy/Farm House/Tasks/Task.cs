@@ -1,29 +1,35 @@
 using UnityEngine;
-using UnityEditor;
 using EventHandler = General.EventHandler;
 
 namespace Economy.Farm_House
 {
     public abstract class Task : ScriptableObject
     {
+        [Header("Task")]
         [SerializeField] protected TaskStage _stage;
+        [SerializeField] protected TaskStage _resetStage;
         [SerializeField] protected Sprite _icon;
         [SerializeField] protected string _name;
         [SerializeField] protected string _description;
-
+        
         [Header("Reward")]
         [SerializeField] protected ItemBunch _reward;
 
+        [Header("Set available tasks")]
+        [SerializeField] protected Task[] _nextTasks;
+        
         protected abstract void Initialize();
 
-        public void Reinitialize()
+        private void Reinitialize()
         {
             Deinitialize();
             Initialize();
         }
-
+        
         protected abstract void Deinitialize();
 
+        public abstract void CreateCell(Transform parent);
+        
         public Sprite GetIcon() => _icon;
         public string GetName() => _name;
         public string GetDescription() => _description;
@@ -43,11 +49,11 @@ namespace Economy.Farm_House
 
         private void StartTask()
         {
-            Initialize();
+            Reinitialize();
             SetStage(TaskStage.Progressing);
         }
 
-        private void ProgressingTask()
+        protected void ProgressingTask()
         {
             if (SomeCondition()) 
                 SetStage(TaskStage.Completed);
@@ -55,8 +61,9 @@ namespace Economy.Farm_House
 
         private void PassTask()
         {
-            SetStage(TaskStage.Passed);
             EventHandler.OnGiveReward?.Invoke(this, _stage);
+            SetStage(TaskStage.Passed);
+            SetAvailableTasks();
             Deinitialize();
         }
 
@@ -76,7 +83,19 @@ namespace Economy.Farm_House
             }
         }
 
-        public abstract void ResetTask();
+        private void SetAvailableTasks()
+        {
+            foreach (var task in _nextTasks)
+            {
+                if (task.GetStage() == TaskStage.NotAvailable)
+                    task.SetStage(TaskStage.NotStarted);
+            }
+        }
+
+        public virtual void ResetTask()
+        {
+            SetStage(_resetStage);
+        }
     }
 
     public enum TaskStage
