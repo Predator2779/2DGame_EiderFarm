@@ -14,9 +14,12 @@ namespace Economy.Farm_House
         [Header("Reward")]
         [SerializeField] protected ItemBunch _reward;
 
+        [Header("Set available tasks")]
+        [SerializeField] protected Task[] _nextTasks;
+        
         protected abstract void Initialize();
 
-        protected void Reinitialize()
+        private void Reinitialize()
         {
             Deinitialize();
             Initialize();
@@ -57,8 +60,9 @@ namespace Economy.Farm_House
 
         private void PassTask()
         {
-            SetStage(TaskStage.Passed);
             EventHandler.OnGiveReward?.Invoke(this, _stage);
+            SetStage(TaskStage.Passed);
+            SetAvailableTasks();
             Deinitialize();
         }
 
@@ -78,6 +82,15 @@ namespace Economy.Farm_House
             }
         }
 
+        private void SetAvailableTasks()
+        {
+            foreach (var task in _nextTasks)
+            {
+                if (task.GetStage() == TaskStage.NotAvailable)
+                    task.SetStage(TaskStage.NotStarted);
+            }
+        }
+        
         public abstract void ResetTask();
     }
 

@@ -19,6 +19,8 @@ MonoBehaviour:
   _reward:
     _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
     _count: 50
+  _nextTasks:
+  - {fileID: 11400000, guid: 83da2014cbdf58e47b5471ca88fb77d0, type: 2}
   _cellPrefab: {fileID: 5305335994122247229, guid: 8a75096aaaed0d04aa9ef0ed58458908, type: 3}
   _requireCount: 10
   _currentCount: 0
