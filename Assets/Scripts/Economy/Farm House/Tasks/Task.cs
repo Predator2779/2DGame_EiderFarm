@@ -7,17 +7,18 @@ namespace Economy.Farm_House
     {
         [Header("Task")]
         [SerializeField] protected TaskStage _stage;
+
         [SerializeField] protected TaskStage _resetStage;
         [SerializeField] protected Sprite _icon;
         [SerializeField] protected string _name;
         [SerializeField] protected string _description;
-        
+
         [Header("Reward")]
         [SerializeField] protected ItemBunch _reward;
 
         [Header("Set available tasks")]
         [SerializeField] protected Task[] _nextTasks;
-        
+
         protected abstract void Initialize();
 
         private void Reinitialize()
@@ -25,25 +26,27 @@ namespace Economy.Farm_House
             Deinitialize();
             Initialize();
         }
-        
+
         protected abstract void Deinitialize();
 
         public abstract void CreateCell(Transform parent);
-        
+
         public Sprite GetIcon() => _icon;
         public string GetName() => _name;
         public string GetDescription() => _description;
 
         public TaskStage GetStage() => _stage;
 
-        protected void SetStage(TaskStage stage)
+        private void SetStage(TaskStage stage)
         {
             _stage = stage;
             EventHandler.OnTaskStageChanged?.Invoke(this, _stage);
         }
 
-        public void GiveReward(Inventory inventory) =>
-                inventory.AddItems(_reward.GetItem(), _reward.GetCount());
+        public void GiveReward(Inventory inventory)
+        {
+            if (_reward != null) inventory.AddItems(_reward.GetItem(), _reward.GetCount());
+        }
 
         protected abstract bool SomeCondition();
 
@@ -53,9 +56,9 @@ namespace Economy.Farm_House
             SetStage(TaskStage.Progressing);
         }
 
-        protected void ProgressingTask()
+        public void ProgressingTask()
         {
-            if (SomeCondition()) 
+            if (SomeCondition())
                 SetStage(TaskStage.Completed);
         }
 
