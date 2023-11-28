@@ -41,11 +41,9 @@ namespace Economy.Farm_House
                 task.CreateCell(parent);
         }
 
-        protected override bool SomeCondition()
-        {
-            return _subTasks.All(sub => sub.GetStage() == TaskStage.Completed || sub.GetStage() == TaskStage.Passed);
-        }
-                // _subTasks.All(task => task.GetStage() == TaskStage.Completed);
+        protected override bool SomeCondition() => 
+                _subTasks.All(sub => sub.GetStage() == TaskStage.Completed || 
+                                     sub.GetStage() == TaskStage.Passed);
 
         public override void CheckProgressing()
         {
