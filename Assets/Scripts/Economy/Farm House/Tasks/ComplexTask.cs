@@ -13,28 +13,33 @@ namespace Economy.Farm_House
 
         protected override void Deinitialize() { }
 
-        public override void SetCell(Transform parent) => 
-                Instantiate(_cellPrefab, parent).SetCell(this);
+        public override void CreateCell(Transform parent)
+        {
+            var task = Instantiate(_cellPrefab, parent);
+            task.SetCell(this);
+            
+            DrawSubtasks(_subTasks, task.transform);
+        }
+        
+        private void DrawSubtasks(Task[] tasks, Transform parent)
+        {
+            foreach (var task in tasks)
+                task.CreateCell(parent);
+        }
         
         protected override bool SomeCondition() => 
-                _subTasks.All(task => task.GetStage() == TaskStage.Completed);
+                _subTasks.All(task => task.GetStage() == TaskStage.Completed ||
+                                      task.GetStage() == TaskStage.Passed); 
 
         public override void CheckProgressing()
         {
             foreach (var task in _subTasks)
                 task.CheckProgressing();
-         
-            DrawSubtasks();
             
             base.CheckProgressing();
         }
-
-        private void DrawSubtasks()
-        {
-            /// Draw...
-        }
         
-        public override void ResetTask()
+        [ContextMenu("Reset Task")] public override void ResetTask()
         {
             foreach (var task in _subTasks)
                 task.ResetTask();

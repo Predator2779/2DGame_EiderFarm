@@ -11,9 +11,7 @@ namespace Economy.Farm_House
         [SerializeField] protected int _requireCount;
         [SerializeField] protected int _currentCount;
         
-        public CollectTaskCell GetCell() => _cellPrefab;
-        
-        public override void SetCell(Transform parent) => 
+        public override void CreateCell(Transform parent) => 
                 Instantiate(_cellPrefab, parent).SetCell(this);
         
         public int GetRequireCount() => _requireCount;

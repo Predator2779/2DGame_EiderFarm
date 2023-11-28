@@ -24,7 +24,7 @@ namespace Economy.Farm_House
         
         protected abstract void Deinitialize();
 
-        public abstract void SetCell(Transform parent);
+        public abstract void CreateCell(Transform parent);
         
         public Sprite GetIcon() => _icon;
         public string GetName() => _name;
@@ -78,10 +78,7 @@ namespace Economy.Farm_House
             }
         }
 
-        public virtual void ResetTask()
-        {
-            
-        }
+        public abstract void ResetTask();
     }
 
     public enum TaskStage

@@ -45,7 +45,7 @@ namespace Economy.Farm_House
         private void DrawTasks(Task[] tasks)
         {
             foreach (var task in tasks)
-                task.SetCell(_content);
+                task.CreateCell(_content);
         }
 
         private void ResetTasks()

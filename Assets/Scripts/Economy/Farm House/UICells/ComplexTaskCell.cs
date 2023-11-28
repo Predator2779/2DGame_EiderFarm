@@ -11,7 +11,7 @@ namespace Economy.Farm_House
         }
 
         public void ClickTaskBtn() => _task.CheckProgressing();
-
+        
         private void RefreshButton()
         {
             if (_task == null) return;
