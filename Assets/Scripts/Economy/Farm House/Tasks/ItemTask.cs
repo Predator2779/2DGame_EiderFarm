@@ -23,15 +23,15 @@ namespace Economy.Farm_House
         private void PickUpItem(Item item, int count)
         {
             if (_requiredItem == item) 
-                _currentCount += count;
+                AddCount(count);
             
             ProgressingTask();
         }
 
         private void PutItem(Item item, int count)
         {
-            if (_requiredItem == item) 
-                _currentCount -= count;
+            if (_requiredItem == item)
+                RemoveCount(count);
             
             ProgressingTask();
         }

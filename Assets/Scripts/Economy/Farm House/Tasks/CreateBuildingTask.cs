@@ -26,7 +26,9 @@ namespace Economy.Farm_House
 
         private void Build(GlobalTypes.TypeBuildings type)
         {
-            if (type == _buildType && _stage == TaskStage.Progressing)
+            if (type == _buildType && 
+                _stage == TaskStage.Progressing &&
+                _currentCount + 1 <= _requireCount)
                 _currentCount++;
 
             CheckProgressing();
