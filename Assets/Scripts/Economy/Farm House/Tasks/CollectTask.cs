@@ -38,8 +38,9 @@ namespace Economy.Farm_House
 
         [ContextMenu("Reset Task")] public override void ResetTask()
         {
+            base.ResetTask();
+            
             _currentCount = 0;
-            // SetStage(TaskStage.NotStarted);
         }
     }
 }

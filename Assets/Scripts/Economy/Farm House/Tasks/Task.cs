@@ -7,6 +7,7 @@ namespace Economy.Farm_House
     {
         [Header("Task")]
         [SerializeField] protected TaskStage _stage;
+        [SerializeField] protected TaskStage _resetStage;
         [SerializeField] protected Sprite _icon;
         [SerializeField] protected string _name;
         [SerializeField] protected string _description;
@@ -90,8 +91,11 @@ namespace Economy.Farm_House
                     task.SetStage(TaskStage.NotStarted);
             }
         }
-        
-        public abstract void ResetTask();
+
+        public virtual void ResetTask()
+        {
+            SetStage(_resetStage);
+        }
     }
 
     public enum TaskStage

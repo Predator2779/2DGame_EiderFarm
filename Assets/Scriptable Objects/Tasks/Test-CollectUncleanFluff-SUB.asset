@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Test-CollectUncleanFluff-SUB
   m_EditorClassIdentifier: 
   _stage: 1
+  _resetStage: 1
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: Unclean Fluff
   _description: Unclean Fluff
   _reward:
     _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
     _count: 50
+  _nextTasks: []
   _cellPrefab: {fileID: 33109036186903016, guid: e9751fe0630c95942adb95af3fb2b6c9, type: 3}
   _requireCount: 10
   _currentCount: 0

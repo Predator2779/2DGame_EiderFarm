@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Test-CollectUncleanFluff
   m_EditorClassIdentifier: 
   _stage: 1
+  _resetStage: 1
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: Unclean Fluff
   _description: Unclean Fluff
