@@ -6,7 +6,7 @@ public class FluffGiver : MonoBehaviour
 {
     private BuildStorage _storage;
     public event Action FluffGiveEvent;
-private bool hasGivenFluff;
+    private bool hasGivenFluff;
 
     [Header("Шанс выпадения пуха (в процентах).")]
     [SerializeField] private int _chance;
@@ -32,7 +32,7 @@ private bool hasGivenFluff;
             if (UnityEngine.Random.Range(0, 100) < _chance)
             {
                 _storage.AddFluff();
-                
+
             }
             hasGivenFluff = false;
         }

@@ -11,6 +11,8 @@ namespace Building
         private Vector3 _buildPos;
         private Quaternion _buildRot;
 
+        public bool IsBuilded;
+
         public void SetConstruction(
                 Construction prefab,
                 SpriteRenderer triggerSprite, 
@@ -32,6 +34,7 @@ namespace Building
             
             Build(_buildingPrefab);
             _curConstruction.SetSprite(_curConstruction.Upgrade());
+            IsBuilded = true;
         }
 
         public void Demolition()
@@ -39,6 +42,7 @@ namespace Building
             if (_curConstruction == null) return;
 
             _triggerSprite.enabled = true;
+            IsBuilded = false;
             Destroy(_curConstruction.gameObject);
         }
 
