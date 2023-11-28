@@ -1,5 +1,6 @@
 using Economy;
 using Economy.Farm_House;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace General
@@ -7,6 +8,7 @@ namespace General
     public static class EventHandler
     {
         public static UnityEvent<string, int> OnBunchChanged = new(); // for UI
+        public static UnityEvent<int, Sprite[]> OnFlagChanged = new();
 
         #region Tasks
 

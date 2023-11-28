@@ -30,9 +30,16 @@ namespace Economy.Farm_House
         public void Exchange()
         {
             Item item = _bunch.GetItem();
+
+            if (item.IsOne() && _invTo.GetAllItems()[4].GetCount() != 0) return;
+            else if(item.IsOne() && _invTo.GetAllItems()[4].GetCount() == 0) _inpField.text = 1.ToString();
+
             int count = GetCountFromInput();
 
             if (count > _bunch.GetCount()) return;
+
+            
+                
 
             if (!_invTo.TryGetBunch(GlobalConstants.Money, out ItemBunch bunchTo) ||
                 !_invFrom.TryGetBunch(GlobalConstants.Money, out ItemBunch bunchFrom) ||
