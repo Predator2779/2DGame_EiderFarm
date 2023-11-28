@@ -1,4 +1,5 @@
 using System.Linq;
+using General;
 using UnityEngine;
 
 namespace Economy.Farm_House
@@ -8,39 +9,53 @@ namespace Economy.Farm_House
     {
         [SerializeField] protected ComplexTaskCell _cellPrefab;
         [SerializeField] private Task[] _subTasks;
-        
-        protected override void Initialize() { }
 
-        protected override void Deinitialize() { }
+        protected override void Initialize()
+        {
+            EventHandler.OnTaskStageChanged.AddListener(CheckSubtasks);
+        }
+
+        protected override void Deinitialize()
+        {
+            EventHandler.OnTaskStageChanged.RemoveListener(CheckSubtasks);
+        }
+
+        private void CheckSubtasks(Task task, TaskStage stage)
+        {
+            if (_subTasks.Any(t => t == task) &&
+                stage == TaskStage.Completed)
+                ProgressingTask();
+        }
 
         public override void CreateCell(Transform parent)
         {
             var task = Instantiate(_cellPrefab, parent);
             task.SetCell(this);
-            
+
             DrawSubtasks(_subTasks, task.transform);
         }
-        
+
         private void DrawSubtasks(Task[] tasks, Transform parent)
         {
             foreach (var task in tasks)
                 task.CreateCell(parent);
         }
-        
-        protected override bool SomeCondition() => 
-                _subTasks.All(task => task.GetStage() == TaskStage.Completed ||
-                                      task.GetStage() == TaskStage.Passed); 
+
+        protected override bool SomeCondition() =>
+                _subTasks.All(task => task.GetStage() == TaskStage.Completed);
 
         public override void CheckProgressing()
         {
             foreach (var task in _subTasks)
                 task.CheckProgressing();
-            
+
             base.CheckProgressing();
         }
-        
+
         [ContextMenu("Reset Task")] public override void ResetTask()
         {
+            SetStage(TaskStage.NotStarted);
+
             foreach (var task in _subTasks)
                 task.ResetTask();
         }

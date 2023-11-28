@@ -49,7 +49,7 @@ namespace Economy.Farm_House
             SetStage(TaskStage.Progressing);
         }
 
-        private void ProgressingTask()
+        protected void ProgressingTask()
         {
             if (SomeCondition()) 
                 SetStage(TaskStage.Completed);

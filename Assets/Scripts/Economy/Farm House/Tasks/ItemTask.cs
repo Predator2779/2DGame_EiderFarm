@@ -25,7 +25,7 @@ namespace Economy.Farm_House
             if (_requiredItem == item) 
                 _currentCount += count;
             
-            CheckProgressing();
+            ProgressingTask();
         }
 
         private void PutItem(Item item, int count)
@@ -33,7 +33,7 @@ namespace Economy.Farm_House
             if (_requiredItem == item) 
                 _currentCount -= count;
             
-            CheckProgressing();
+            ProgressingTask();
         }
     }
 }
