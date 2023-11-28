@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed151be32864cc3a17edac02ffb695a, type: 3}
   m_Name: 4GagaHouse-SUB
   m_EditorClassIdentifier: 
-  _stage: 1
+  _stage: 4
   _resetStage: 1
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: "4 \u0434\u043E\u043C\u0430"
