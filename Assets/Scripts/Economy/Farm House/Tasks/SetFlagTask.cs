@@ -4,12 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Tasks/CollectTasks/BuildTask", fileName = "New BuildTask", order = 0)]
+[CreateAssetMenu(menuName = "Tasks/CollectTasks/SetFlagTasks", fileName = "New SetFlagTask", order = 0)]
 public class SetFlagTask : CollectTask
 {
-    [SerializeField] private int _count;
-
-    private int _current;
 
     protected override void Initialize()
     {
@@ -25,9 +22,9 @@ public class SetFlagTask : CollectTask
 
     private void SetFlag()
     {
-        _current++;
+        _currentCount++;
         CheckProgressing();
     }
 
-    protected override bool SomeCondition() => _current >= _count;
+    protected override bool SomeCondition() => _currentCount >= _requireCount;
 }

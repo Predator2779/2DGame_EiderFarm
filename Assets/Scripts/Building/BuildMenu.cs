@@ -39,12 +39,9 @@ namespace Building
             
             Build(_buildingPrefab);
             _curConstruction.SetSprite(_curConstruction.Upgrade());
-            IsBuilded = true;
-<<<<<<< HEAD
-=======
-            
+            IsBuilded = true;          
             EventHandler.OnBuilded?.Invoke(_curConstruction.typeConstruction);
->>>>>>> setFlag-tasks
+
         }
 
         public void Demolition()
