@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135f5ac61de1fcd42ad3af8a91cff405, type: 3}
   m_Name: New SetFlagTask
   m_EditorClassIdentifier: 
-  _stage: 0
+  _stage: 2
   _resetStage: 0
   _icon: {fileID: 0}
   _name: "\u0424\u043B\u0430\u0436\u043A\u0438"

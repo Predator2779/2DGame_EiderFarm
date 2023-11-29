@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb214ac4f1ea4b7a8d44128de42eb616, type: 3}
   m_Name: ClothMachineComplexTask
   m_EditorClassIdentifier: 
-  _stage: 0
+  _stage: 2
   _resetStage: 0
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: "\u0428\u0432\u0435\u044F"
@@ -21,8 +21,8 @@ MonoBehaviour:
     _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
     _count: 50
   _nextTasks:
-  - {fileID: 11400000, guid: d22f619c79624a74694fda9b34d15471, type: 2}
+  - {fileID: 11400000, guid: 8b4d6fe1629ff0049a8d8eae74bcbd21, type: 2}
   _cellPrefab: {fileID: 3904866896323149092, guid: 881e53c46ad8ef7428c7cd2efccf67ef, type: 3}
   _subTasks:
-  - {fileID: 11400000, guid: cf776eb6af352dc4391dc16ea449c2a7, type: 2}
-  - {fileID: 11400000, guid: 71fe099b42c1ddc438f3292bc28f33ab, type: 2}
+  - {fileID: 11400000, guid: ac273eccfa25668419b2e8126a18b89c, type: 2}
+  - {fileID: 11400000, guid: 5224430226b495f4e8b85c0d1d3eefe6, type: 2}
