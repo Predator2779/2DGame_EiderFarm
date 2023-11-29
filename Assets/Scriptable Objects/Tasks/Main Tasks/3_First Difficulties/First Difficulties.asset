@@ -22,4 +22,5 @@ MonoBehaviour:
     _count: 20
   _nextTasks: []
   _cellPrefab: {fileID: 3904866896323149092, guid: 881e53c46ad8ef7428c7cd2efccf67ef, type: 3}
-  _subTasks: []
+  _subTasks:
+  - {fileID: 11400000, guid: ee73c390187a43e49a0ddac96768fed9, type: 2}
