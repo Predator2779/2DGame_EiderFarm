@@ -17,6 +17,7 @@ namespace General
 
         public static UnityEvent<GlobalTypes.TypeBuildings> OnBuilded = new();
         public static UnityEvent<GlobalTypes.TypeBuildings, int> OnUpgraded = new();
+        public static UnityEvent OnFlagSet = new();
         
         public static UnityEvent<Task, TaskStage> OnTaskStageChanged = new();
         public static UnityEvent<Task, TaskStage> OnGiveReward = new();

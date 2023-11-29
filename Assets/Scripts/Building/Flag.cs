@@ -1,10 +1,12 @@
 using Building;
 using Economy;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AdaptivePerformance.VisualScripting;
 using UnityEngine.UI;
+using EventHandler = General.EventHandler;
 
 public class Flag : MonoBehaviour
 {
@@ -42,6 +44,7 @@ public class Flag : MonoBehaviour
         _flag.GetComponent<SpriteRenderer>().sprite = _inventoryDrawer.GetSprite();
         _flag.SetActive(true);
         _playerInventory.GetAllItems()[4].RemoveItems(1);
+        EventHandler.OnFlagSet?.Invoke();
     }
 
 
