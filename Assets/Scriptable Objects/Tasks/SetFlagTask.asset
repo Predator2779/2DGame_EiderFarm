@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135f5ac61de1fcd42ad3af8a91cff405, type: 3}
   m_Name: SetFlagTask
   m_EditorClassIdentifier: 
-  _stage: 4
+  _stage: 1
   _resetStage: 1
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: "\u0424\u043B\u0430\u0436\u043A\u0438"
@@ -23,4 +23,4 @@ MonoBehaviour:
   _nextTasks: []
   _cellPrefab: {fileID: 5305335994122247229, guid: 8a75096aaaed0d04aa9ef0ed58458908, type: 3}
   _requireCount: 3
-  _currentCount: 3
+  _currentCount: 0
