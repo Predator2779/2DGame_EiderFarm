@@ -20,7 +20,8 @@ MonoBehaviour:
   _reward:
     _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
     _count: 20
-  _nextTasks: []
+  _nextTasks:
+  - {fileID: 11400000, guid: b3213b5ac85d93a45936517bcd840f62, type: 2}
   _cellPrefab: {fileID: 3904866896323149092, guid: 881e53c46ad8ef7428c7cd2efccf67ef, type: 3}
   _subTasks:
   - {fileID: 11400000, guid: ee73c390187a43e49a0ddac96768fed9, type: 2}
