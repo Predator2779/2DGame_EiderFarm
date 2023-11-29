@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb214ac4f1ea4b7a8d44128de42eb616, type: 3}
+  m_Name: Industrial Revolution
+  m_EditorClassIdentifier: 
+  _stage: 0
+  _resetStage: 1
+  _icon: {fileID: 0}
+  _name: "\u0420\u0435\u0432\u043E\u043B\u044E\u0446\u0438\u044F!"
+  _description: "\u041F\u0440\u043E\u043C\u044B\u0448\u043B\u0435\u043D\u043D\u0430\u044F
+    \u0440\u0435\u0432\u043E\u043B\u044E\u0446\u0438\u044F"
+  _reward:
+    _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
+    _count: 50
+  _nextTasks: []
+  _cellPrefab: {fileID: 3904866896323149092, guid: 881e53c46ad8ef7428c7cd2efccf67ef, type: 3}
+  _subTasks:
+  - {fileID: 11400000, guid: 84e520d09aacefb4c890fb81434e7e8b, type: 2}
+  - {fileID: 11400000, guid: ede00244197d4a545ae179acdb90e886, type: 2}
+  - {fileID: 11400000, guid: 91b02b23d69cf404597c823afd5442a7, type: 2}
+  - {fileID: 11400000, guid: 499f53ec3526ec74f88b490c902066b6, type: 2}
