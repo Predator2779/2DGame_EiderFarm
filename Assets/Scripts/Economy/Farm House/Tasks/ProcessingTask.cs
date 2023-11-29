@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Economy.Farm_House
 {
     [CreateAssetMenu(menuName = "Tasks/CollectTasks/ProcessingTask", fileName = "New ProcessingTask", order = 0)]
-    public class ProcessingTask : CollectTask
+    public class ProcessingTask : ItemTask
     {
         [SerializeField] protected GlobalTypes.TypeBuildings _requireType;
         
@@ -18,9 +18,10 @@ namespace Economy.Farm_House
             EventHandler.OnItemTransmitted.RemoveListener(CheckTransmitte);
         }
 
-        private void CheckTransmitte(GlobalTypes.TypeBuildings type, int count)
+        private void CheckTransmitte(GlobalTypes.TypeBuildings type, Item item, int count)
         {
-            if (type == _requireType) AddCount(count);
+            if (type == _requireType) 
+                PickUpItem(item, count);
             
             ProgressingTask();
         }

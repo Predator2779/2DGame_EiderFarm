@@ -14,7 +14,7 @@ namespace General
 
         public static UnityEvent<Item, int> OnItemPickUp = new();
         public static UnityEvent<Item, int> OnItemPut = new();
-        public static UnityEvent<GlobalTypes.TypeBuildings, int> OnItemTransmitted = new();
+        public static UnityEvent<GlobalTypes.TypeBuildings, Item, int> OnItemTransmitted = new();
 
         public static UnityEvent<GlobalTypes.TypeBuildings> OnBuilded = new();
         public static UnityEvent<GlobalTypes.TypeBuildings, int> OnUpgraded = new();

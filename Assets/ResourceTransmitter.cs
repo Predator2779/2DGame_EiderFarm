@@ -41,7 +41,7 @@ public class ResourceTransmitter : MonoBehaviour
         _characterInventory.AddItems(_typeToPlayer, count);
         _storage.ResetFluff();
         
-        EventHandler.OnItemTransmitted?.Invoke(_construction.typeConstruction, count);
+        EventHandler.OnItemTransmitted?.Invoke(_construction.typeConstruction, _typeToPlayer, count);
     }
 
     private void OnTriggerStay2D(Collider2D collision)

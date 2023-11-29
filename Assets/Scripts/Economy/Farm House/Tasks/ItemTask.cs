@@ -20,7 +20,7 @@ namespace Economy.Farm_House
             EventHandler.OnItemPut.RemoveListener(PutItem);
         }
         
-        private void PickUpItem(Item item, int count)
+        protected void PickUpItem(Item item, int count)
         {
             if (_requiredItem == item) 
                 AddCount(count);
