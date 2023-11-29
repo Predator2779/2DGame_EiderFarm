@@ -6,7 +6,8 @@ namespace General
         {
             GagaHouse,
             FluffCleaner,
-            ClothMachine
+            ClothMachine,
+            Storage
         }
     }
 }

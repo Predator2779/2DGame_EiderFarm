@@ -55,7 +55,7 @@ namespace Economy
             SendCountAddedMsg(item, count);
         }
 
-        private ItemBunch GetBunch(Item item)//
+        private ItemBunch GetBunch(Item item)
         {
             ItemBunch bunch = new ItemBunch(item);
 

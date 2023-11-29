@@ -3,18 +3,18 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(BuildStorage))]
+[RequireComponent(typeof(Converter))]
+[RequireComponent(typeof(ResourceTransmitter))]
 public class Machine : MonoBehaviour
 {
+    [SerializeField, Header("Время изготовления")] private int _delayProduction;
+    
     private BuildStorage _storage;
     private Converter _converter;
     private ResourceTransmitter _transmitter;
-
+    private Item _typeFromPlayer;
     private bool _isWorked;
 
-    [SerializeField, Header("Время изготовления")]
-    private int _delayProduction;
-
-    private Item _typeFromPlayer;
 
     private void Start()
     {
