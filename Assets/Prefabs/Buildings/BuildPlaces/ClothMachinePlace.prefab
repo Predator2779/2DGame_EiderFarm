@@ -85,7 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panelUI: {fileID: 146025030260967615}
   _buildMenu: {fileID: 5158547561068056797}
-  _buildPrefab: {fileID: 0}
+  _buildPrefab: {fileID: 963965709575088290, guid: f8a024ee77d5c434a81912aa72e79263, type: 3}
   _renderer: {fileID: 4106786949892469983}
 --- !u!114 &3914757823484691421
 MonoBehaviour:

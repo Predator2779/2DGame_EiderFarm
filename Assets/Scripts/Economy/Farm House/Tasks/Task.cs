@@ -50,7 +50,7 @@ namespace Economy.Farm_House
 
         protected abstract bool SomeCondition();
 
-        private void StartTask()
+        public virtual void StartTask()
         {
             Reinitialize();
             SetStage(TaskStage.Progressing);
@@ -94,7 +94,7 @@ namespace Economy.Farm_House
                     task.SetStage(TaskStage.NotStarted);
             }
         }
-
+        
         public virtual void ResetTask()
         {
             SetStage(_resetStage);

@@ -20,6 +20,14 @@ namespace Economy.Farm_House
             EventHandler.OnTaskStageChanged.RemoveListener(CheckSubtasks);
         }
 
+        public override void StartTask()
+        {
+            base.StartTask();
+
+            foreach (var sub in _subTasks)
+                sub.StartTask();
+        }
+
         private void CheckSubtasks(Task task, TaskStage stage)
         {
             if (_subTasks.Any(t => t == task) &&
@@ -41,8 +49,8 @@ namespace Economy.Farm_House
                 task.CreateCell(parent);
         }
 
-        protected override bool SomeCondition() => 
-                _subTasks.All(sub => sub.GetStage() == TaskStage.Completed || 
+        protected override bool SomeCondition() =>
+                _subTasks.All(sub => sub.GetStage() == TaskStage.Completed ||
                                      sub.GetStage() == TaskStage.Passed);
 
         public override void CheckProgressing()
