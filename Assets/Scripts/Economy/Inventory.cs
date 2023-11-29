@@ -23,12 +23,16 @@ namespace Economy
         {
             if (IsExistsItems(item.GetName(), count)) Remove(item, count);
         }
-        
+
         public List<ItemBunch> GetAllItems() => _listItems;
 
-        public bool IsExistsItems(string name, int count) =>
-                _listItems.Any(bunch => bunch.GetItemName() ==
-                        name && count >= 0 && bunch.GetCount() > 0);
+        public bool IsExistsItems(string name, int count)
+        {
+            if (count < 0) return false;
+            
+            return _listItems.Any(bunch => bunch.GetItemName() ==
+                    name && bunch.GetCount() >= count);
+        }
 
         public bool TryGetBunch(string name, out ItemBunch itemBunch)
         {
@@ -44,20 +48,23 @@ namespace Economy
 
         private void AddOrCreate(Item item, int count)
         {
-            ItemBunch bunch = new ItemBunch(item);
-
-            if (TryGetBunch(item.GetName(), out ItemBunch newBunch))
-            {
-                bunch = newBunch;
-            }
-            else
-            {
-                _listItems.Add(bunch);
-            }
-
+            var bunch = GetBunch(item);
+            
             bunch.AddItems(count);
             SendCountItemsMsg(item.GetName(), bunch.GetCount());
             SendCountAddedMsg(item, count);
+        }
+
+        private ItemBunch GetBunch(Item item)//
+        {
+            ItemBunch bunch = new ItemBunch(item);
+
+            if (TryGetBunch(item.GetName(), out ItemBunch newBunch))
+                bunch = newBunch;
+            else
+                _listItems.Add(bunch);
+
+            return bunch;
         }
 
         private void Remove(Item item, int count)
@@ -75,20 +82,19 @@ namespace Economy
             if (bunch.GetCount() <= 0) _listItems.Remove(bunch);
         }
 
-        public void SendCountItemsMsg(string name, int count)
+        private void SendCountItemsMsg(string name, int count)
         {
-            if (_isPlayerInventory)
-            {
-                EventHandler.OnBunchChanged?.Invoke(name, count);
-                EventHandler.OnFlagChanged?.Invoke(GetAllItems()[4].GetCount(), GetAllItems()[4].GetItem().GetSprites());
-            }
+            if (!_isPlayerInventory) return;
+
+            EventHandler.OnBunchChanged?.Invoke(name, count);
+            EventHandler.OnFlagChanged?.Invoke(GetAllItems()[4].GetCount(), GetAllItems()[4].GetItem().GetSprites());
         }
 
         private void SendCountAddedMsg(Item item, int count)
         {
             if (_isPlayerInventory) EventHandler.OnItemPickUp?.Invoke(item, count);
-        }     
-        
+        }
+
         private void SendCountRemovedMsg(Item item, int count)
         {
             if (_isPlayerInventory) EventHandler.OnItemPut?.Invoke(item, count);

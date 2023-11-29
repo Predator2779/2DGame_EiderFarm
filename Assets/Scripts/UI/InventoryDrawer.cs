@@ -13,6 +13,7 @@ public class InventoryDrawer : MonoBehaviour
 
     [SerializeField] private GameObject _flagPanel;
     [SerializeField] private Image _flagImage;
+    
     private bool _isFlagAdded;
 
     private void Awake()

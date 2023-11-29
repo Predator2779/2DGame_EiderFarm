@@ -10,77 +10,79 @@ namespace Economy.Farm_House
         [SerializeField] private TMP_InputField _inpField;
 
         private ItemBunch _bunch;
-        private Inventory _invFrom;
-        private Inventory _invTo;
-
+        private Inventory _seller;
+        private Inventory _buyer;
+        private ItemBunch _sellerWallet;
+        private ItemBunch _buyerWallet;
+        
         public void SetCell(ItemBunch bunch, Inventory invFrom, Inventory invTo)
         {
             _bunch = bunch;
-            _invFrom = invFrom;
-            _invTo = invTo;
+            _seller = invFrom;
+            _buyer = invTo;
 
             RefreshButton();
+        }
+
+        public void Exchange()
+        {
+            Item item = _bunch.GetItem();
+
+            if (item.IsOne() && _buyer.GetAllItems()[4].GetCount() != 0) return;
+            if (item.IsOne() && _buyer.GetAllItems()[4].GetCount() == 0) _inpField.text = 1.ToString();
+
+            int count = GetCountFromInput();
+            var price = item.GetPrice() * count;
+            
+            if (count > _bunch.GetCount()) return;
+            if (!CheckWallets(_buyer, _seller)) return;;
+            if (!IsEnoughMoney(_buyer, price)) return;
+            
+            
+            Sell(item, count, price);
+            Buy(item, count, price);
+
+            RefreshButton();
+            CheckCount();
         }
 
         private void RefreshButton() =>
                 SetButton(_bunch.GetItemIcon(),
                         _bunch.GetItemName(),
                         _bunch.GetCount());
-
-        public void Exchange()
+        
+        private bool IsEnoughMoney(Inventory inv, int value) =>
+                inv.IsExistsItems(GlobalConstants.Money, value);
+        
+        private void Buy(Item item, int count, int price)
         {
-            Item item = _bunch.GetItem();
-
-            if (item.IsOne() && _invTo.GetAllItems()[4].GetCount() != 0) return;
-            else if(item.IsOne() && _invTo.GetAllItems()[4].GetCount() == 0) _inpField.text = 1.ToString();
-
-            int count = GetCountFromInput();
-
-            if (count > _bunch.GetCount()) return;
-
-            
-                
-
-            if (!_invTo.TryGetBunch(GlobalConstants.Money, out ItemBunch bunchTo) ||
-                !_invFrom.TryGetBunch(GlobalConstants.Money, out ItemBunch bunchFrom) ||
-                !IsEnoughMoney(_invTo, count)) return;
-
-            /// убрать проверку кошелька на добавление денег
-
-            Sell(bunchTo, count);
-            Buy(bunchFrom, count);
-
-            _invFrom.RemoveItems(item, count);
-            _invTo.AddItems(item, count);
-
-            RefreshButton();
-            CheckCount();
+            _buyer.RemoveItems(_buyerWallet.GetItem(), price);
+            _buyer.AddItems(item, count);
         }
 
-        private bool IsEnoughMoney(Inventory inv, int count) =>
-                inv.IsExistsItems(GlobalConstants.Money, count);
-
-        private void Sell(ItemBunch wallet, int countItems)
+        private void Sell(Item item, int count, int price)
         {
-            var item = _bunch.GetItem();
-            wallet.RemoveItems(item.GetPrice() * countItems);
+            _seller.AddItems(_sellerWallet.GetItem(), price);
+            _seller.RemoveItems(item, count);
         }
-
-        private void Buy(ItemBunch wallet, int countItems)
-        {
-            var item = _bunch.GetItem();
-            wallet.AddItems(item.GetPrice() * countItems);
-        }
+        
+        private bool CheckWallets(Inventory buyer, Inventory seller) =>
+                buyer.TryGetBunch(GlobalConstants.Money, out _buyerWallet) &&
+                seller.TryGetBunch(GlobalConstants.Money, out _sellerWallet);
 
         private void CheckCount()
         {
             if (_bunch.GetCount() <= 0) Destroy(gameObject);
         }
 
-        private int GetCountFromInput() /// запрашиваемое кол-во из inputField
+        private int GetCountFromInput()
         {
-            int count = Convert.ToInt32(_inpField.text);
-
+            string text = _inpField.text;
+            
+            if (text == "") return 1;
+            
+            int count = Convert.ToInt32(text);
+            
             return count > 0 ? count : 0;
         }
     }
