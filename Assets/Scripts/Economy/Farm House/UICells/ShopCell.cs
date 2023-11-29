@@ -27,28 +27,23 @@ namespace Economy.Farm_House
                         _bunch.GetItemName(),
                         _bunch.GetCount());
 
-        public void Exchange()
+        public void Exchange() // переписать
         {
             Item item = _bunch.GetItem();
 
             if (item.IsOne() && _invTo.GetAllItems()[4].GetCount() != 0) return;
-            else if(item.IsOne() && _invTo.GetAllItems()[4].GetCount() == 0) _inpField.text = 1.ToString();
+            if (item.IsOne() && _invTo.GetAllItems()[4].GetCount() == 0) _inpField.text = 1.ToString();
 
             int count = GetCountFromInput();
 
             if (count > _bunch.GetCount()) return;
 
+            if (!(_invTo.TryGetBunch(GlobalConstants.Money, out ItemBunch bunchTo) &&
+                _invFrom.TryGetBunch(GlobalConstants.Money, out ItemBunch bunchFrom) &&
+                IsEnoughMoney(_invTo, count))) return;
             
-                
-
-            if (!_invTo.TryGetBunch(GlobalConstants.Money, out ItemBunch bunchTo) ||
-                !_invFrom.TryGetBunch(GlobalConstants.Money, out ItemBunch bunchFrom) ||
-                !IsEnoughMoney(_invTo, count)) return;
-
-            /// убрать проверку кошелька на добавление денег
-
-            Sell(bunchTo, count);
-            Buy(bunchFrom, count);
+            RemoveMoney(bunchTo, count);
+            AddMoney(bunchFrom, count);
 
             _invFrom.RemoveItems(item, count);
             _invTo.AddItems(item, count);
@@ -56,20 +51,20 @@ namespace Economy.Farm_House
             RefreshButton();
             CheckCount();
         }
-
+        
         private bool IsEnoughMoney(Inventory inv, int count) =>
                 inv.IsExistsItems(GlobalConstants.Money, count);
 
-        private void Sell(ItemBunch wallet, int countItems)
-        {
-            var item = _bunch.GetItem();
-            wallet.RemoveItems(item.GetPrice() * countItems);
-        }
-
-        private void Buy(ItemBunch wallet, int countItems)
+        private void AddMoney(ItemBunch wallet, int countItems)
         {
             var item = _bunch.GetItem();
             wallet.AddItems(item.GetPrice() * countItems);
+        }
+        
+        private void RemoveMoney(ItemBunch wallet, int countItems)
+        {
+            var item = _bunch.GetItem();
+            wallet.RemoveItems(item.GetPrice() * countItems);
         }
 
         private void CheckCount()
@@ -77,10 +72,14 @@ namespace Economy.Farm_House
             if (_bunch.GetCount() <= 0) Destroy(gameObject);
         }
 
-        private int GetCountFromInput() /// запрашиваемое кол-во из inputField
+        private int GetCountFromInput()
         {
-            int count = Convert.ToInt32(_inpField.text);
-
+            string text = _inpField.text;
+            
+            if (text == "") return 1;
+            
+            int count = Convert.ToInt32(text);
+            
             return count > 0 ? count : 0;
         }
     }
