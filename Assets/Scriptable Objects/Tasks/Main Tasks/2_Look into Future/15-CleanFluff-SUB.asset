@@ -22,10 +22,10 @@ MonoBehaviour:
     \u043D\u0435\u043E\u0447\u0438\u0449\u0435\u043D\u043D\u044B\u0439 \u043F\u0443\u0445
     \u0432 \u043E\u0447\u0438\u0449\u0435\u043D\u043D\u044B\u0439"
   _reward:
-    _item: {fileID: 0}
+    _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
     _count: 0
   _nextTasks: []
-  _cellPrefab: {fileID: 5305335994122247229, guid: 8a75096aaaed0d04aa9ef0ed58458908, type: 3}
+  _cellPrefab: {fileID: 33109036186903016, guid: e9751fe0630c95942adb95af3fb2b6c9, type: 3}
   _requireCount: 15
   _currentCount: 0
   _requiredItem: {fileID: 11400000, guid: 159a6522252945049be044ad47855211, type: 2}
