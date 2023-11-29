@@ -6,8 +6,7 @@ namespace Economy.Farm_House
 {
     public class TaskHandler : DisplayMenu
     {
-        [SerializeField] private CollectTask[] _tasks;
-        [SerializeField] private CollectTaskCell _collectTaskCellPrefab;
+        [SerializeField] private Task[] _tasks;
 
         private void Awake()
         {
@@ -25,31 +24,29 @@ namespace Economy.Farm_House
             RefreshTasksStatus(task, stage);
         }
 
-        private void RefreshTasksStatus(Task task, TaskStage stage) => Draw();
+        private void RefreshTasksStatus(Task task, TaskStage stage) => RefreshDisplay();
 
         public override void Draw()
         {
-            ClearContent();
-
             if (_isHouseMenu)
             {
+                SetBtnText("Доступные");
                 DrawTasks(GetTasks(TaskStage.NotStarted));
                 return;
             }
 
+            SetBtnText("Мои");
             DrawTasks(GetTasks(TaskStage.Completed));
             DrawTasks(GetTasks(TaskStage.Progressing));
         }
 
-        private CollectTask[] GetTasks(TaskStage stage) => _tasks.Where(task => task.GetStage() == stage).ToArray();
-
-        private void DrawTasks(CollectTask[] tasks)
+        private Task[] GetTasks(TaskStage stage) => _tasks.Where(task => task.GetStage() == stage).ToArray();
+        
+        private void DrawTasks(Task[] tasks)
         {
             foreach (var task in tasks)
-                SetCell(Instantiate(_collectTaskCellPrefab, _content), task);
+                task.CreateCell(_content);
         }
-
-        private void SetCell(CollectTaskCell cell, CollectTask task) => cell.SetCell(task);
 
         private void ResetTasks()
         {
