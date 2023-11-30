@@ -1,11 +1,6 @@
 using Building;
 using Economy;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AdaptivePerformance.VisualScripting;
-using UnityEngine.UI;
 using EventHandler = General.EventHandler;
 
 public class Flag : MonoBehaviour
@@ -13,7 +8,7 @@ public class Flag : MonoBehaviour
     [SerializeField] private GameObject _setFlagButton;
     [SerializeField] private GameObject _flag;
     [SerializeField] private BuildMenu _buildMenu;
-    [SerializeField] private InventoryDrawer _inventoryDrawer;
+    [SerializeField] private InventoryDrawer _inventoryDrawer; //??
 
     private Inventory _playerInventory;
 
