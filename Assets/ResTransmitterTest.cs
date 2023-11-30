@@ -37,6 +37,9 @@ public class ResTransmitterTest : MonoBehaviour
     private void Transmitte()
     {
         var resources = _inventory.GetAllItems();
+        
+        if (resources == null) return;
+        
         _characterInventory.AddItemsWithMsg(resources.ToArray(), _construction);
         _inventory.ResetInventory();
     }

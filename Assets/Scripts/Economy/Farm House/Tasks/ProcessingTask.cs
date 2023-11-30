@@ -22,8 +22,6 @@ namespace Economy.Farm_House
         {
             if (type == _requireType) 
                 PickUpItem(item, count);
-            
-            ProgressingTask();
         }
         
         [ContextMenu("Reset Task")] public override void ResetTask()
