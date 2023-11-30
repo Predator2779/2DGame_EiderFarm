@@ -13,10 +13,10 @@ public class Field : MonoBehaviour
     [SerializeField] private Transform[] _center;
     [SerializeField] private float _maxRadius;
 
-    [Header("Задержка перед спавном гаги.")]
-    [SerializeField, Range(0, 30)] private int _spawnDelay;
-
     private List<Gaga> _gagas;
+
+    [Header("Количество гаг.")]
+    [SerializeField] private int _count;
 
 
     private void OnEnable() => Initialize();
@@ -25,7 +25,7 @@ public class Field : MonoBehaviour
     {
         _gagas = new List<Gaga>();
         _occupiedSpawnPlaces = new bool[_spawnPlaces.Length];
-        GagaSpawn(4);
+        GagaSpawn(_count);
     }
 
     public GameObject GetRandomSpawnPlace()

@@ -9,13 +9,16 @@ using TriggerScripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(Menu))]
 public class SaveSerial : MonoBehaviour
 {
     [SerializeField] private Inventory _playerInventory;
 
-    [SerializeField] private BuildMenu[] _gagaHouses;
-    [SerializeField] private BuildMenu[] _cleaners;
-    [SerializeField] private BuildMenu[] _clothMachines;
+    [SerializeField] private GameObject[] _gagaHouses;
+    [SerializeField] private GameObject[] _cleaners;
+    [SerializeField] private GameObject[] _clothMachines;
+
+    [SerializeField] private Menu _menu;
     
 
     private string path = "/dataSaveFile.dat";
@@ -24,6 +27,9 @@ public class SaveSerial : MonoBehaviour
 
     private void Awake()
     {
+        if (_menu.GetResetValue())
+            ResetData();
+        else
         LoadGame();
     }
     public void SaveGame()
@@ -46,6 +52,8 @@ public class SaveSerial : MonoBehaviour
 
         bf.Serialize(file, data);
         file.Close();
+
+        
     }
 
     public void LoadGame()
@@ -82,20 +90,19 @@ public class SaveSerial : MonoBehaviour
             data.ClothMachines = new int[0];
 
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
         }
     }
 
-    private int[] SaveDataGrades(BuildMenu[] menus)
+    private int[] SaveDataGrades(GameObject[] menus)
     {
         int [] dataArray = new int[menus.Length];
 
         for (int i = 0; i < menus.Length; i++)
         {
-            if (menus[i].GetConstruction() != null)
+            BuildMenu buildMenu = menus[i].GetComponent<BuildTrigger>().GetBuildMenu();
+            if (buildMenu.GetConstruction() != null)
             {
-                dataArray[i] = menus[i].GetConstruction().GetCurrentGrade();
+                dataArray[i] = buildMenu.GetConstruction().GetCurrentGrade();
             }
         }
         return dataArray;
@@ -113,28 +120,29 @@ public class SaveSerial : MonoBehaviour
         _playerInventory.GetAllItems()[3].AddItems(data.Item);
     }
 
-    private void BuildAndUpgrade(int[] dataArray, BuildMenu[] menus)
+    private void BuildAndUpgrade(int[] dataArray, GameObject[] menus)
     {
         for (int i = 0; i < dataArray.Length; i++)
         {
-
+            BuildMenu buildMenu = menus[i].GetComponent<BuildTrigger>().GetBuildMenu();
             switch (dataArray[i])
             {
+                
                 default: continue;
                 case 1:
                     menus[i].GetComponent<BuildTrigger>().SetConstruction();
-                    menus[i].Build();
+                    buildMenu.Build();
                     continue;
                 case 2:
                     menus[i].GetComponent<BuildTrigger>().SetConstruction();
-                    menus[i].Build();
-                    menus[i].Upgrade();
+                    buildMenu.Build();
+                    buildMenu.Upgrade();
                     continue;
                 case 3:
                     menus[i].GetComponent<BuildTrigger>().SetConstruction();
-                    menus[i].Build();
-                    menus[i].Upgrade();
-                    menus[i].Upgrade();
+                    buildMenu.Build();
+                    buildMenu.Upgrade();
+                    buildMenu.Upgrade();
                     continue;
             }
 

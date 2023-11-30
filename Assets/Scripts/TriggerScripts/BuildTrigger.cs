@@ -74,5 +74,7 @@ namespace TriggerScripts
 
             SetConstruction();
         }
+
+        public BuildMenu GetBuildMenu() => _buildMenu;
     }
 }
