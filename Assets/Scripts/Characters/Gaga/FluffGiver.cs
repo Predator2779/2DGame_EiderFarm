@@ -1,13 +1,10 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(BuildStorage))]
+[RequireComponent(typeof(ResourceTransmitter))]
 public class FluffGiver : MonoBehaviour
 {
-    private BuildStorage _storage;
-    public event Action FluffGiveEvent;
-    private bool hasGivenFluff;
-
     [Header("Шанс выпадения пуха (в процентах).")]
     [SerializeField] private int _chance;
 
@@ -15,27 +12,31 @@ public class FluffGiver : MonoBehaviour
     [SerializeField] private float _time;
 
     [Header("Количество воспроизводимого пуха.")]
-    [SerializeField] private float _fluffCount;
+    [SerializeField] private int _fluffCount;
+
+    private BuildStorage _storage;
+    private ResourceTransmitter _transmitter;
+    private bool hasGivenFluff;
 
     private void Start()
     {
         _storage = GetComponent<BuildStorage>();
+        _transmitter = GetComponent<ResourceTransmitter>();
+        
         StartCoroutine(CreateFluff());
     }
-
-    // пока без пугалок и отпугивателей
+    
     private void GiveFluff()
     {
-        if (!hasGivenFluff)
+        if (hasGivenFluff) return;
+        
+        hasGivenFluff = true;
+        if (Random.Range(0, 100) < _chance)
         {
-            hasGivenFluff = true;
-            if (UnityEngine.Random.Range(0, 100) < _chance)
-            {
-                _storage.AddFluff();
-
-            }
-            hasGivenFluff = false;
+            _storage.AddFluff(_fluffCount);
+            _transmitter.CheckBag();
         }
+        hasGivenFluff = false;
     }
 
     private IEnumerator CreateFluff()
@@ -44,10 +45,4 @@ public class FluffGiver : MonoBehaviour
         GiveFluff();
         StartCoroutine(CreateFluff());
     }
-
-    public void UpgradeFluffGiver()
-    {
-        _fluffCount++;
-    }
-
 }

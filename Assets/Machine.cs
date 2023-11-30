@@ -11,7 +11,7 @@ public class Machine : MonoBehaviour
     
     private BuildStorage _storage;
     private Converter _converter;
-    private ResourceTransmitter _transmitter;
+    [SerializeField] private ResourceTransmitter _transmitter;
     private Item _typeFromPlayer;
     private bool _isWorked;
 

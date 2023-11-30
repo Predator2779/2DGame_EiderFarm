@@ -19,7 +19,7 @@ namespace TriggerScripts
 
         private void Initialize()
         {
-            _map = transform.parent.GetComponent<Tilemap>();
+            _map = transform.GetComponentInParent<Tilemap>();
             
             SetParent(_buildPrefab.typeConstruction);
             SetSprite();
