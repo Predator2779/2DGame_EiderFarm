@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace General
 {
     public static class GlobalConstants
@@ -6,5 +8,7 @@ namespace General
         public const string UncleanedFluff = "Необработанный пух";
         public const string CleanedFluff = "Обработанный пух";
         public const string Clothes = "Куртка";
+
+        public const float PlayerSpeed = 3.25f;
     }
 }
