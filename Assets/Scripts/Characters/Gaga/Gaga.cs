@@ -13,30 +13,24 @@ public class Gaga : MonoBehaviour
         Walk,
     }
 
-    private State currentState;
     [SerializeField] private Field _field;
     [SerializeField] private Movement _movement;
     [SerializeField] private int _timeInHome;
     [SerializeField] private float _speed;
 
+    private State _currentState;
     private Transform _centerPoint;
     private float _moveRadius;
-
-    private SpriteRenderer sprite;
-
-    private bool isCoroutineRunning;
-
-    private Vector2 targetPos;
-
-    
+    private SpriteRenderer _sprite;
+    private bool _isCoroutineRunning;
+    private Vector2 _targetPos;
 
     private void Start()
     {
         _field = FindObjectOfType<Field>();
-        currentState = State.Walk;
+        _currentState = State.Walk;
         _movement = GetComponent<Movement>();
-        sprite = GetComponent<SpriteRenderer>();
-        
+        _sprite = GetComponent<SpriteRenderer>();
     }
 
     public void Initialize(Transform center, float radius)
@@ -52,13 +46,13 @@ public class Gaga : MonoBehaviour
 
     private void MoveTo()
     {
-        Vector2 direction = (targetPos - new Vector2(transform.position.x,transform.position.y)).normalized;
+        Vector2 direction = (_targetPos - new Vector2(transform.position.x,transform.position.y)).normalized;
         _movement.Move(direction.normalized * _speed * Time.deltaTime);
 
         float directionX = direction.x;
-        sprite.flipX = directionX < 0;
+        _sprite.flipX = directionX < 0;
 
-        float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.y), targetPos);
+        float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.y), _targetPos);
         if (distance < 3f)
         {
             SetState(State.Idle);
@@ -70,13 +64,13 @@ public class Gaga : MonoBehaviour
     {
         switch (newState)
         {
-            case State.Idle: currentState = State.Idle; break;
-            case State.Walk: currentState = State.Walk; break;
+            case State.Idle: _currentState = State.Idle; break;
+            case State.Walk: _currentState = State.Walk; break;
         }
     }
     private void UpdateState(int timeInHome)
     {
-        switch (currentState)
+        switch (_currentState)
         {
             case State.Idle:
                 StartCoroutine(IdleProcess(4,3));
@@ -85,24 +79,22 @@ public class Gaga : MonoBehaviour
             case State.Walk:
                 MoveTo();
                 break;
-
         }
     }
 
-
     private IEnumerator IdleProcess(int maxIterations, int maxDelay)
     {
-        if (!isCoroutineRunning)
+        if (!_isCoroutineRunning)
         {
-            isCoroutineRunning = true;
+            _isCoroutineRunning = true;
             System.Random random = new System.Random();
             for (int i = 0; i < random.Next(0, maxIterations); i++)
             {
-                sprite.flipX = !sprite.flipX;
+                _sprite.flipX = !_sprite.flipX;
                 yield return new WaitForSecondsRealtime(random.Next(1, maxDelay));
             }
             SetState(State.Walk);
-            isCoroutineRunning = false;
+            _isCoroutineRunning = false;
         }
     }
 
@@ -110,7 +102,6 @@ public class Gaga : MonoBehaviour
     {
         Vector2 randomPoint = UnityEngine.Random.insideUnitCircle * moveRadius;
 
-        targetPos = new Vector2(center.position.x, center.position.y) + randomPoint;
-
+        _targetPos = new Vector2(center.position.x, center.position.y) + randomPoint;
     }
 }

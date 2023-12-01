@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Player
 {
-    [RequireComponent(typeof(Animator)), RequireComponent(typeof(SpriteRenderer))]
+    [RequireComponent(typeof(Animator))][RequireComponent(typeof(SpriteRenderer))]
     public class PersonAnimate : MonoBehaviour
     {
         private Animator _animator;
