@@ -601,12 +601,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: b68de1480ddfebe40b531822e6fd7c13, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5edab08b671c39d498f86f8a755ff996, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.34, y: 7.43}
+  m_Size: {x: 8.27, y: 7.78}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -622,7 +622,7 @@ Animator:
   m_GameObject: {fileID: 358574325}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8d843a2fe8c1d94448be81735b6bd2aa, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3362,7 +3362,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.45
+  m_fontSize: 39.25
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5388,7 +5388,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.1
+  m_fontSize: 46.9
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6606,7 +6606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5831334378576330881, guid: ca8eedab04a2d2845a697132ac9aa478, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.5
+      value: -0.49987793
       objectReference: {fileID: 0}
     - target: {fileID: 8288988507411685962, guid: ca8eedab04a2d2845a697132ac9aa478, type: 3}
       propertyPath: m_Name
