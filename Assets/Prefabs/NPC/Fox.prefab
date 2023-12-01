@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2.5
-  _runSpeed: 2.5
+  _runSpeed: 4
 --- !u!114 &5171191660436919778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +268,7 @@ MonoBehaviour:
   _currentState: 0
   _requirePlayerDistance: 5
   _requireFlagDistance: 5
-  _idleTime: 1
+  _idleTime: 1.5
   _patrolTime: 3
   _changeDirTime: 2.8
 --- !u!1 &6519487850087627784
