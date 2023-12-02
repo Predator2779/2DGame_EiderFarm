@@ -9,8 +9,8 @@ namespace Building.Constructions
         public GlobalTypes.TypeBuildings typeConstruction;
         
         [SerializeField] private Sprite[] _gradeBuildings;
-        
         [SerializeField] private int _currentGrade;
+        
         private SpriteRenderer _spriteRenderer;
 
         private void Awake() => _spriteRenderer = GetComponent<SpriteRenderer>();

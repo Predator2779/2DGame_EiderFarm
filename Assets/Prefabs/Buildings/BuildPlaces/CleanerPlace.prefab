@@ -105,6 +105,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2809764830879567986, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: _panelUI
+      value: 
+      objectReference: {fileID: 7275601397496512053}
+    - target: {fileID: 2809764830879567986, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: _buildPrefab
       value: 
       objectReference: {fileID: 5870109810159464413, guid: fa5d5521fca1d6c42850e1c8c068c359, type: 3}
@@ -165,3 +169,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+--- !u!1 &7275601397496512053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5670660395236983953, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+  m_PrefabInstance: {fileID: 3047278306973416100}
+  m_PrefabAsset: {fileID: 0}

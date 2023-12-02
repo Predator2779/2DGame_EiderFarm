@@ -8,18 +8,23 @@ namespace Building
     {
         private Construction _buildingPrefab;
         private Construction _curConstruction;
+
         private Transform _parent;
         private SpriteRenderer _triggerSprite;
         private Vector3 _buildPos;
         private Quaternion _buildRot;
 
+        private GameObject _buildBtn;
+        private GameObject _upgradeBtn;
+        private GameObject _demolitionBtn;
+
         public bool IsBuilded;
 
         public void SetConstruction(
-                Construction prefab, 
+                Construction prefab,
                 Transform parent,
-                SpriteRenderer triggerSprite, 
-                Vector3 buildPos, 
+                SpriteRenderer triggerSprite,
+                Vector3 buildPos,
                 Quaternion buildRot)
         {
             _buildingPrefab = prefab;
@@ -28,6 +33,13 @@ namespace Building
             _buildPos = buildPos;
             _buildRot = buildRot;
         }
+        
+        public void SetButtons()
+        {
+            _buildBtn = transform.Find("BuildBtn").gameObject;
+            _upgradeBtn = transform.Find("UpgradeBtn").gameObject;
+            _demolitionBtn = transform.Find("DemolitionBtn").gameObject;
+        }
 
         public void Build()
         {
@@ -35,11 +47,11 @@ namespace Building
 
             if (_triggerSprite != null)
                 _triggerSprite.enabled = false;
-            
+
             Build(_buildingPrefab);
             _curConstruction.SetSprite(_curConstruction.Upgrade());
-
-            IsBuilded = true;          
+            IsBuilded = true;
+            CheckBtns();
             EventHandler.OnBuilded?.Invoke(_curConstruction.typeConstruction);
         }
 
@@ -50,6 +62,7 @@ namespace Building
             _triggerSprite.enabled = true;
             Destroy(_curConstruction.gameObject);
             IsBuilded = false;
+            CheckBtns();
         }
 
         public void Upgrade()
@@ -57,10 +70,26 @@ namespace Building
             if (_curConstruction == null || !_curConstruction.CanUpgrade()) return;
 
             _curConstruction.SetSprite(_curConstruction.Upgrade());
-            
+
             EventHandler.OnUpgraded?.Invoke(
-                    _curConstruction.typeConstruction, 
+                    _curConstruction.typeConstruction,
                     _curConstruction.GetCurrentGrade());
+        }
+
+        public void CheckBtns()
+        {
+            if (!IsBuilded)
+            {
+                _buildBtn.SetActive(true);
+                _upgradeBtn.SetActive(false);
+                _demolitionBtn.SetActive(false);
+            }
+            else
+            {
+                _buildBtn.SetActive(false);
+                _upgradeBtn.SetActive(true);
+                _demolitionBtn.SetActive(true);
+            }
         }
 
         public Construction GetConstruction() => _curConstruction;

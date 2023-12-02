@@ -12,8 +12,7 @@ namespace TriggerScripts
         {
             base.OnTriggerEnter2D(other);
 
-            if (other.TryGetComponent(out Inventory inv))
-                _houseMenu.SetInventory(inv);
+            if (other.TryGetComponent(out Inventory inv)) _houseMenu.SetInventory(inv);
         }
     }
 }

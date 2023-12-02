@@ -71,9 +71,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.4, y: 0}
   serializedVersion: 2
-  m_Radius: 3.23
+  m_Radius: 2
 --- !u!58 &81094814713061814
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -106,9 +106,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.4, y: 0}
   serializedVersion: 2
-  m_Radius: 0.65
+  m_Radius: 1.4
 --- !u!212 &3711242519619652208
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -191,6 +191,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 85c2af1935ecebc4c8e5cfc141713feb, type: 3}
   - {fileID: 21300000, guid: 89c95003a6d57754883533e544efaba9, type: 3}
   - {fileID: 21300000, guid: 029e7ba9a690dae44964fb57b733bb79, type: 3}
+  _currentGrade: 0
 --- !u!114 &5617066704552950403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,8 +218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcd90eecabae024e954552a4da420d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _typeToPlayer: {fileID: 11400000, guid: 3e35c204c77a2c34a9439f95cd1ddef4, type: 2}
   _fluffCount: 1
+  _typeToPlayer: {fileID: 11400000, guid: 3e35c204c77a2c34a9439f95cd1ddef4, type: 2}
   _characterInventory: {fileID: 0}
 --- !u!114 &7179212813463761311
 MonoBehaviour:
@@ -233,3 +234,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _delayProduction: 3
+  _transmitter: {fileID: 0}

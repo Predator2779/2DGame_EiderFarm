@@ -12,6 +12,7 @@ namespace General
 
         public static UnityEvent<bool> FlagPanelEvent = new();
         public static UnityEvent<Sprite> OnFlagSpriteChanged = new(); 
+        
         #region Tasks
 
         public static UnityEvent<Item, int> OnItemPickUp = new();

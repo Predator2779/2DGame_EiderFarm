@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2212489885118787166}
   - component: {fileID: 4236809055952291820}
+  - component: {fileID: 3891964469456384658}
   - component: {fileID: 3857099885617047449}
   - component: {fileID: 5870109810159464413}
   - component: {fileID: 6533531074316886523}
@@ -70,9 +71,44 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.75}
   serializedVersion: 2
-  m_Radius: 3.23
+  m_Radius: 2
+--- !u!58 &3891964469456384658
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3675441815452204403}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.75}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!212 &3857099885617047449
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -171,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _delayProduction: 3
+  _transmitter: {fileID: 0}
 --- !u!114 &5069752540118177730
 MonoBehaviour:
   m_ObjectHideFlags: 0

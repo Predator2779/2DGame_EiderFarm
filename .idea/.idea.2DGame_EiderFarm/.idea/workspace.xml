@@ -6,16 +6,31 @@
   <component name="ChangeListManager">
     <list default="true" id="db890482-7c9c-4845-aed2-97ea93e16238" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ResourceTransmitter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ResourceTransmitter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main-Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main-Level.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/BuildPlace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/BuildPlace.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/CleanerPlace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/CleanerPlace.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/ClothMachinePlace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/ClothMachinePlace.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/GagaPlace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/GagaPlace.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/StoragePlace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/StoragePlace.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPrefabs/CleaningMachine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPrefabs/CleaningMachine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPrefabs/ClothMachine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPrefabs/ClothMachine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPrefabs/GagaHouse.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPrefabs/GagaHouse.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Common Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Common Menu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LEVEL/Removed/LEVEL-6 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/LEVEL/Removed/LEVEL-6 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LEVEL/Removed/LEVEL-6 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/LEVEL/Removed/LEVEL-6 2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LEVEL/Removed/LEVEL-6.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/LEVEL/Removed/LEVEL-6.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LEVEL/Removed/LEVEL.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/LEVEL/Removed/LEVEL.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test-Level (Kn1ght).unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test-Level (Kn1ght).unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Inventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/General/GlobalConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/General/GlobalConstants.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/Menu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save/SaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save/SaveData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save/SaveSerial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save/SaveSerial.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InventoryDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InventoryDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test-Level (Kn1ght).unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test-Level (Kn1ght).unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/BuildMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/BuildMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Constructions/Construction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Constructions/Construction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Flag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Flag.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/General/EventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/General/EventHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/BuildTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/BuildTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/HouseTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/HouseTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/MenuTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerScripts/MenuTrigger.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +63,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "do_not_show_Android_plugin_suggestion": "true",
-    "git-widget-placeholder": "saves",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

@@ -1,61 +1,50 @@
 using Building;
 using Economy;
+using General;
 using UnityEngine;
 using EventHandler = General.EventHandler;
 
 public class Flag : MonoBehaviour
 {
-    [SerializeField] private GameObject _setFlagButton;
-    [SerializeField] private GameObject _flag;
     [SerializeField] private BuildMenu _buildMenu;
-    [SerializeField] private InventoryDrawer _inventoryDrawer; //??
+    [SerializeField] private GameObject _flagBtn;
+    [SerializeField] private GameObject _flag;
 
     private Inventory _playerInventory;
-
-    private bool isFlagAdded;
-
     private ItemBunch _itemBunch;
+    private bool _isFlagAdded;
 
-    private void Awake()
-    {
-        EventHandler.OnFlagSpriteChanged.AddListener(SetFlagSprite);
-    }
-    protected void OnTriggerStay2D(Collider2D other)
-    {
+    private void Awake() => EventHandler.OnFlagSpriteChanged.AddListener(SetFlagSprite);
 
-        if (other.GetComponent<InputHandler>() && _buildMenu.IsBuilded && !isFlagAdded)
-        {
-            _playerInventory = other.gameObject.GetComponent<Inventory>();
-            if (_playerInventory.TryGetBunch("Ôëàæîê", out ItemBunch bunch))
-            {
-                _itemBunch = bunch;
-                if (bunch.GetCount() > 0)
-                    _setFlagButton.SetActive(true);
-            }
-        }
+    protected void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.GetComponent<InputHandler>() ||
+            !_buildMenu.IsBuilded ||
+            _isFlagAdded) return;
+
+        _playerInventory = other.gameObject.GetComponent<Inventory>();
+        
+        if (!_playerInventory.TryGetBunch(GlobalConstants.Flag, out var bunch) ||
+            bunch.GetCount() <= 0) return;
+        
+        _flagBtn.SetActive(true);
+        _itemBunch = bunch;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.GetComponent<InputHandler>())
-        {
-            _setFlagButton.SetActive(false);
-        }
-    }
+    private void OnTriggerExit2D(Collider2D other) => _flagBtn.SetActive(false);
 
     public void SetFlag()
     {
-        _setFlagButton.SetActive(false);
+        if (_itemBunch == null || _itemBunch.GetCount() <= 0) return;
+
+        _flagBtn.SetActive(false);
         EventHandler.FlagPanelEvent.Invoke(false);
-        isFlagAdded = true;
-        
+        _isFlagAdded = true;
+
         _flag.SetActive(true);
         _itemBunch.RemoveItems(1);
         EventHandler.OnFlagSet?.Invoke();
     }
 
-
-    public void SetFlagSprite(Sprite sprite) => _flag.GetComponent<SpriteRenderer>().sprite = sprite;
-
-
+    private void SetFlagSprite(Sprite sprite) => _flag.GetComponent<SpriteRenderer>().sprite = sprite;
 }

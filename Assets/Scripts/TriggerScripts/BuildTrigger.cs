@@ -20,7 +20,8 @@ namespace TriggerScripts
         private void Initialize()
         {
             _map = transform.GetComponentInParent<Tilemap>();
-            
+            _buildMenu.SetButtons();
+
             SetParent(_buildPrefab.typeConstruction);
             SetSprite();
             SetPosition();
@@ -46,33 +47,32 @@ namespace TriggerScripts
             for (int i = 0; i < length; i++)
             {
                 Transform child = parent.GetChild(i);
-                
-                if (child.name == name)
-                {
-                    _parentBuildings = child;
-                    _parentBuildings.name = name;
-                    return;
-                }
+
+                if (child.name != name) continue;
+
+                _parentBuildings = child;
+                _parentBuildings.name = name;
+                return;
             }
-            
+
             _parentBuildings = Instantiate(new GameObject(), parent).transform;
             _parentBuildings.name = name;
         }
-        
-        public void SetConstruction() => 
+
+        public void SetConstruction() =>
                 _buildMenu.SetConstruction(
-                _buildPrefab, 
-                _parentBuildings,
-                _renderer, 
-                GetTilePos(), 
-                GetRotation());
-
-
+                        _buildPrefab,
+                        _parentBuildings,
+                        _renderer,
+                        GetTilePos(),
+                        GetRotation());
+        
+        
         protected override void OnTriggerEnter2D(Collider2D other)
         {
             base.OnTriggerEnter2D(other);
-
             SetConstruction();
+            _buildMenu.CheckBtns();
         }
 
         public BuildMenu GetBuildMenu() => _buildMenu;

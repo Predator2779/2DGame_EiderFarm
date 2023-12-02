@@ -88,6 +88,14 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1322818786695563411, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: _flagBtn
+      value: 
+      objectReference: {fileID: 5573564880729657712}
+    - target: {fileID: 1322818786695563411, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: _setFlagButton
+      value: 
+      objectReference: {fileID: 5573564880729657712}
     - target: {fileID: 1984452253068342655, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: _spawnPlaces.Array.data[0]
       value: 
@@ -190,11 +198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2629156067078942385, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2629156067078942385, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2629156067078942385, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: m_LocalPosition.z
@@ -244,6 +252,38 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5354227253298410627, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354227253298410627, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354227253298410627, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6959415155011350074}
+    - target: {fileID: 5354227253298410627, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354227253298410627, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetFlag
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354227253298410627, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Flag, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354227253298410627, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5670660395236983953, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6302356720110280428, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: _construction
       value: 
@@ -288,6 +328,10 @@ PrefabInstance:
       propertyPath: _spawnPlaces.Array.data[2]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8232681692306436881, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8317955410469946597, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 2
@@ -307,3 +351,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+--- !u!1 &5573564880729657712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4581867412695283673, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+  m_PrefabInstance: {fileID: 8272927352826635945}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6959415155011350074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1322818786695563411, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+  m_PrefabInstance: {fileID: 8272927352826635945}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37757f8ca14d15348ba30426c52f90c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
