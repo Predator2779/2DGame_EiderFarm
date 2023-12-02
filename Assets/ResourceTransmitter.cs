@@ -18,7 +18,7 @@ public class ResourceTransmitter : MonoBehaviour
     private Construction _construction;
     private BuildStorage _storage;
 
-    private void Start()
+    private void Awake()
     {
         _construction = GetComponent<Construction>();
         _storage = GetComponent<BuildStorage>();

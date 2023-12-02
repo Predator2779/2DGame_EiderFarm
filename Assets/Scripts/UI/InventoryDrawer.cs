@@ -36,7 +36,7 @@ public class InventoryDrawer : MonoBehaviour
             case UncleanedFluff:
                 _uncleanFCounter.text = points.ToString();
                 break;            
-            case Clothes:
+            case GlobalConstants.Cloth:
                 _clothesCounter.text = points.ToString();
                 break;
         }

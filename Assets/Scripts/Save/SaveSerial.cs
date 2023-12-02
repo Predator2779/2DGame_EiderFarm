@@ -2,7 +2,9 @@ using Building;
 using Economy;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
+using General;
 using TriggerScripts;
 using UnityEngine;
 
@@ -15,6 +17,8 @@ public class SaveSerial : MonoBehaviour
     [SerializeField] private GameObject[] _clothMachines;
     [SerializeField] private Menu _menu;
 
+    [SerializeField] private Item[] _itemTypes;
+    
     private List<ItemBunch> _items;
     private string path = "/dataSaveFile.dat";
 
@@ -24,49 +28,42 @@ public class SaveSerial : MonoBehaviour
     {
         GetItems();
 
-        if (_menu.GetResetValue())
-            ResetData();
-        else
-            LoadGame();
+        if (_menu.GetResetValue()) ResetData();
+        else LoadGame();
     }
 
-    private void GetItems()
-    {
-        _items = _playerInventory.GetAllItems();
-
-    }
+    private void GetItems() => _items = _playerInventory.GetAllItems();
 
     private void Get()
     {
         for (int i = 0; i < _items.Count; i++)
         {
-
             switch (_items[i].GetItemName())
             {
-                case "Денежки": data.Money = _items[i].GetCount(); break;
-                case "Обработанный пух": data.CleanedFluff = _items[i].GetCount(); break;
-                case "Необработанный пух": data.UncleanedFluff = _items[i].GetCount(); break;
-                case "Куртка": data.Cloth = _items[i].GetCount(); break;
-                case "Флажок": data.Cloth = _items[i].GetCount(); break;
+                case GlobalConstants.Money: data.Money = _items[i].GetCount(); break;
+                case GlobalConstants.CleanedFluff: data.CleanedFluff = _items[i].GetCount(); break;
+                case GlobalConstants.UncleanedFluff: data.UncleanedFluff = _items[i].GetCount(); break;
+                case GlobalConstants.Cloth: data.Cloth = _items[i].GetCount(); break;
+                case GlobalConstants.Flag: data.Flag = _items[i].GetCount(); break;
             }
         }
     }
 
     private void Put()
     {
-        for (int i = 0; i < _items.Count; i++)
-        {
-            switch (_items[i].GetItemName())
-            {
-                case "Денежки": _playerInventory.GetAllItems()[i].AddItems(data.Money); ; break;
-                case "Обработанный пух": _playerInventory.GetAllItems()[i].AddItems(data.CleanedFluff); break;
-                case "Необработанный пух": _playerInventory.GetAllItems()[i].AddItems(data.UncleanedFluff); break;
-                case "Куртка": _playerInventory.GetAllItems()[i].AddItems(data.Cloth); break;
-                case "Флажок": _playerInventory.GetAllItems()[i].AddItems(data.Flag); break;
-            }
-        }
+        Add(GlobalConstants.Money, data.Money);
+        Add(GlobalConstants.CleanedFluff, data.CleanedFluff);
+        Add(GlobalConstants.UncleanedFluff, data.UncleanedFluff);
+        Add(GlobalConstants.Cloth, data.Cloth);
+        Add(GlobalConstants.Flag, data.Flag);
     }
 
+    private void Add(string name, int count)
+    {
+        var item =_itemTypes.FirstOrDefault(item => item.GetName() == name);
+        _playerInventory.AddItems(item, count);
+    }
+    
     public void SaveGame()
     {
         BinaryFormatter bf = new BinaryFormatter();
@@ -75,7 +72,7 @@ public class SaveSerial : MonoBehaviour
         file = !File.Exists(Application.persistentDataPath + path) ?
                 File.Create(Application.persistentDataPath + path) :
                 File.Open(Application.persistentDataPath + path, FileMode.Open);
-        GetItems();
+
         Get();
 
         data.GagaHouses = SaveDataGrades(_gagaHouses);
