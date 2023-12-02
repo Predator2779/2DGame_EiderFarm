@@ -26,7 +26,8 @@ public class EnemyAI : MonoBehaviour
 
     private void Start() => SetNullableFields();
     private void OnValidate() => SetNullableFields();
-    private void Update() => StateMachine();
+    private void Update() => CheckConditions();
+    private void FixedUpdate() => StateMachine();
 
     private void SetNullableFields()
     {
@@ -38,8 +39,6 @@ public class EnemyAI : MonoBehaviour
 
     private void StateMachine()
     {
-        CheckConditions();
-
         switch (_currentState)
         {
             case EnemyStates.Idle:
@@ -65,13 +64,13 @@ public class EnemyAI : MonoBehaviour
     {
         _personAnimate.Walk(_currentDirection, false);
     }
-    
+
     private void Walk(Vector2 direction)
     {
         _person.Walk(direction);
         _personAnimate.Walk(direction, true);
     }
-    
+
     private void Run(Vector2 direction)
     {
         _person.Run(direction);
@@ -167,8 +166,7 @@ public class EnemyAI : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        print(other.gameObject.name);
-        
+        // развернуться при упоре в стену
         StopCoroutine(ChangeDirection(GetRandomDirection()));
         StartCoroutine(ChangeDirection(GetOppositeDirection(other.transform.position, false)));
     }

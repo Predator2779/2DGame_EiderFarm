@@ -11,9 +11,7 @@ namespace Economy.Farm_House
         
         private Inventory _assortment;
 
-        private void Awake() => Initialize();
-
-        private void Initialize() => _assortment = GetComponent<Inventory>();
+        public void Initialize() => _assortment = GetComponent<Inventory>();
         
         public override void Draw()
         {

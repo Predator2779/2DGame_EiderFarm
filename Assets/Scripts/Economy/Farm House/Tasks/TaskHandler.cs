@@ -8,14 +8,14 @@ namespace Economy.Farm_House
     {
         [SerializeField] private Task[] _tasks;
 
-        private void Awake()
+        public void Initialize()
         {
             ResetTasks();
             
             EventHandler.OnTaskStageChanged.AddListener(RefreshTasksStatus);
             EventHandler.OnGiveReward.AddListener(GiveReward);
         }
-
+        
         private void GiveReward(Task task, TaskStage stage)
         {
             if (stage == TaskStage.Completed)
