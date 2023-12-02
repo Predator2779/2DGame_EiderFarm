@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db890482-7c9c-4845-aed2-97ea93e16238" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LEVEL/LEVEL (old).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/LEVEL/LEVEL (old).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LEVEL/LEVEL-3.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LEVEL/LEVEL-3.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Agos.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Agos.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main-Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main-Level.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +128,6 @@
       <workItem from="1701031320328" duration="5438000" />
       <workItem from="1701093589078" duration="3496000" />
       <workItem from="1701188398691" duration="2736000" />
-      <workItem from="1701506957370" duration="1682000" />
     </task>
     <servers />
   </component>
