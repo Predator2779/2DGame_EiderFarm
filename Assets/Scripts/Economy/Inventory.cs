@@ -108,8 +108,12 @@ namespace Economy
             if (!_isPlayerInventory) return;
 
             EventHandler.OnBunchChanged?.Invoke(name, count);
+<<<<<<< HEAD
             if(TryGetBunch("Ôëàæîê", out ItemBunch bunch))
             EventHandler.OnFlagChanged?.Invoke(bunch.GetCount(), bunch.GetItem().GetSprites());
+=======
+            // EventHandler.OnFlagChanged?.Invoke(GetAllItems()[4].GetCount(), GetAllItems()[4].GetItem().GetSprites());
+>>>>>>> 522f2fc14dac750e1e436e3af1e48ac2415dedd5
         }
 
         private void SendCountAddedMsg(Item item, int count)
