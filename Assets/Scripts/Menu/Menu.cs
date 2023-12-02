@@ -8,7 +8,6 @@ public class Menu : MonoBehaviour
     public void StartLevel(bool newGame)
     {
         resetData = newGame;
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

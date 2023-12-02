@@ -25,15 +25,17 @@ namespace Economy
                 AddOrCreate(bunch.GetItem(), bunch.GetCount());
         }
 
+        public void AddItems(List<ItemBunch> bunches) => _listItems = bunches;
+
         public void AddItemsWithMsg(ItemBunch[] bunches, Construction construction)
         {
             foreach (var bunch in bunches)
             {
                 Item item = bunch.GetItem();
                 int count = bunch.GetCount();
-                
+
                 AddOrCreate(item, count);
-                SendTransmitteMsg(construction,item, count);
+                SendTransmitteMsg(construction, item, count);
             }
         }
 
@@ -108,10 +110,9 @@ namespace Economy
             if (!_isPlayerInventory) return;
 
             EventHandler.OnBunchChanged?.Invoke(name, count);
-            if(TryGetBunch("Флажок", out ItemBunch bunch))
-            EventHandler.OnFlagChanged?.Invoke(bunch.GetCount(), bunch.GetItem().GetSprites());
-
-
+            
+            if (TryGetBunch("Флажок", out ItemBunch bunch))
+                EventHandler.OnFlagChanged?.Invoke(bunch.GetCount(), bunch.GetItem().GetSprites());
         }
 
         private void SendCountAddedMsg(Item item, int count)
