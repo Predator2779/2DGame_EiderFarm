@@ -8,7 +8,8 @@ using UnityEngine;
     public int Money;
     public int UncleanedFluff;
     public int CleanedFluff;
-    public int Item;
+    public int Cloth;
+    public int Flag;
 
     public int[] GagaHouses;
     public int[] Cleaners;

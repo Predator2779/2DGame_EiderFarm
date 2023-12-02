@@ -1,5 +1,6 @@
 using Building;
 using Economy;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using TriggerScripts;
@@ -14,31 +15,76 @@ public class SaveSerial : MonoBehaviour
     [SerializeField] private GameObject[] _clothMachines;
     [SerializeField] private Menu _menu;
 
+    private List<ItemBunch> _items;
+
     private string path = "/dataSaveFile.dat";
 
     SaveData data = new();
 
     private void Awake()
     {
+        GetItems();
+
         if (_menu.GetResetValue())
             ResetData();
         else
             LoadGame();
+
+        
+    }
+
+    private void GetItems()
+    {
+        _items = _playerInventory.GetAllItems();
+    }
+
+    private void Get()
+    {
+        for (int i = 0; i < _items.Count; i++)
+        {
+
+            data.Money = _items[i].GetCount();
+
+            switch (_items[i].GetItemName())
+            {
+                case "Денежки": data.Money = _items[i].GetCount(); break;
+                case "Обработанный пух": data.CleanedFluff = _items[i].GetCount(); break;
+                case "Необработанный пух": data.UncleanedFluff = _items[i].GetCount(); break;
+                case "Куртка": data.Cloth = _items[i].GetCount(); break;
+                case "Флажок": data.Cloth = _items[i].GetCount(); break;
+                default: break;
+            }
+        }
+    }
+
+    private void Put()
+    {
+        for (int i = 0; i < _items.Count; i++)
+        {
+
+            data.Money = _items[i].GetCount();
+
+            switch (_items[i].GetItemName())
+            {
+                case "Денежки": _playerInventory.GetAllItems()[i].AddItems(data.Money); break;
+                case "Обработанный пух": _playerInventory.GetAllItems()[i].AddItems(data.CleanedFluff); break;
+                case "Необработанный пух": _playerInventory.GetAllItems()[i].AddItems(data.UncleanedFluff); break;
+                case "Куртка": _playerInventory.GetAllItems()[i].AddItems(data.Cloth); break;
+                case "Флажок": _playerInventory.GetAllItems()[i].AddItems(data.Flag); break;
+            }
+        }
     }
 
     public void SaveGame()
     {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file;
-        
-        file = !File.Exists(Application.persistentDataPath + path) ? 
-                File.Create(Application.persistentDataPath + path) : 
+
+        file = !File.Exists(Application.persistentDataPath + path) ?
+                File.Create(Application.persistentDataPath + path) :
                 File.Open(Application.persistentDataPath + path, FileMode.Open);
 
-        data.Money = _playerInventory.GetAllItems()[0].GetCount();
-        data.CleanedFluff = _playerInventory.GetAllItems()[1].GetCount();
-        data.UncleanedFluff = _playerInventory.GetAllItems()[2].GetCount();
-        data.Item = _playerInventory.GetAllItems()[3].GetCount();
+        Get();
 
         data.GagaHouses = SaveDataGrades(_gagaHouses);
         data.Cleaners = SaveDataGrades(_cleaners);
@@ -51,7 +97,7 @@ public class SaveSerial : MonoBehaviour
     public void LoadGame()
     {
         if (!File.Exists(Application.persistentDataPath + path)) return;
-        
+
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + path, FileMode.Open);
 
@@ -67,13 +113,14 @@ public class SaveSerial : MonoBehaviour
     public void ResetData()
     {
         if (!File.Exists(Application.persistentDataPath + path)) return;
-        
+
         File.Delete(Application.persistentDataPath
                     + path);
         data.Money = 0;
         data.CleanedFluff = 0;
         data.UncleanedFluff = 0;
-        data.Item = 0;
+        data.Cloth = 0;
+        data.Flag = 0;
 
         data.GagaHouses = new int[0];
         data.Cleaners = new int[0];
@@ -98,15 +145,13 @@ public class SaveSerial : MonoBehaviour
 
     private void ClearAndAdd()
     {
-        _playerInventory.GetAllItems()[0].ClearItems();
-        _playerInventory.GetAllItems()[1].ClearItems();
-        _playerInventory.GetAllItems()[2].ClearItems();
-        _playerInventory.GetAllItems()[3].ClearItems();
 
-        _playerInventory.GetAllItems()[0].AddItems(data.Money);
-        _playerInventory.GetAllItems()[1].AddItems(data.CleanedFluff);
-        _playerInventory.GetAllItems()[2].AddItems(data.UncleanedFluff);
-        _playerInventory.GetAllItems()[3].AddItems(data.Item);
+
+        for (int i = 0; i < _playerInventory.GetAllItems().Count; i++)
+        {
+            _playerInventory.GetAllItems()[i].ClearItems();
+        }
+        Put();
     }
 
     private void BuildAndUpgrade(int[] dataArray, GameObject[] menus)
