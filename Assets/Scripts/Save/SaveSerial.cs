@@ -20,7 +20,7 @@ public class SaveSerial : MonoBehaviour
 
     public SaveData data = new();
 
-    private void Awake()
+    private void Start()
     {
         GetItems();
 
@@ -33,13 +33,13 @@ public class SaveSerial : MonoBehaviour
     private void GetItems()
     {
         _items = _playerInventory.GetAllItems();
+
     }
 
     private void Get()
     {
         for (int i = 0; i < _items.Count; i++)
         {
-            data.Money = _items[i].GetCount();
 
             switch (_items[i].GetItemName())
             {
@@ -56,11 +56,9 @@ public class SaveSerial : MonoBehaviour
     {
         for (int i = 0; i < _items.Count; i++)
         {
-            data.Money = _items[i].GetCount();
-
             switch (_items[i].GetItemName())
             {
-                case "Денежки": _playerInventory.GetAllItems()[i].AddItems(data.Money); break;
+                case "Денежки": _playerInventory.GetAllItems()[i].AddItems(data.Money); ; break;
                 case "Обработанный пух": _playerInventory.GetAllItems()[i].AddItems(data.CleanedFluff); break;
                 case "Необработанный пух": _playerInventory.GetAllItems()[i].AddItems(data.UncleanedFluff); break;
                 case "Куртка": _playerInventory.GetAllItems()[i].AddItems(data.Cloth); break;
@@ -77,7 +75,7 @@ public class SaveSerial : MonoBehaviour
         file = !File.Exists(Application.persistentDataPath + path) ?
                 File.Create(Application.persistentDataPath + path) :
                 File.Open(Application.persistentDataPath + path, FileMode.Open);
-
+        GetItems();
         Get();
 
         data.GagaHouses = SaveDataGrades(_gagaHouses);
