@@ -10,6 +10,8 @@ namespace General
         public static UnityEvent<string, int> OnBunchChanged = new(); // for UI
         public static UnityEvent<int, Sprite[]> OnFlagChanged = new();
 
+        public static UnityEvent<bool> FlagPanelEvent = new();
+        public static UnityEvent<Sprite> OnFlagSpriteChanged = new(); 
         #region Tasks
 
         public static UnityEvent<Item, int> OnItemPickUp = new();

@@ -27,9 +27,12 @@ namespace Economy.Farm_House
         public void Exchange()
         {
             Item item = _bunch.GetItem();
-
-            if (item.IsOne() && _buyer.GetAllItems()[4].GetCount() != 0) return;
-            if (item.IsOne() && _buyer.GetAllItems()[4].GetCount() == 0) _inpField.text = 1.ToString();
+            if (_buyer.TryGetBunch("Флажок", out ItemBunch bunch))
+            {
+                if (item.IsOne() && bunch.GetCount() != 0) return;
+                if (item.IsOne() && bunch.GetCount() == 0) _inpField.text = 1.ToString();
+            }
+            
 
             int count = GetCountFromInput();
             var price = item.GetPrice() * count;

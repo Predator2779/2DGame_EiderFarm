@@ -14,12 +14,24 @@ public class Flag : MonoBehaviour
 
     private bool isFlagAdded;
 
+    private ItemBunch _itemBunch;
+
+    private void Awake()
+    {
+        EventHandler.OnFlagSpriteChanged.AddListener(SetFlagSprite);
+    }
     protected void OnTriggerStay2D(Collider2D other)
     {
-        if (other.GetComponent<InputHandler>() && other.gameObject.GetComponent<Inventory>().GetAllItems()[4].GetCount() > 0 && _buildMenu.IsBuilded && !isFlagAdded)
+
+        if (other.GetComponent<InputHandler>() && _buildMenu.IsBuilded && !isFlagAdded)
         {
             _playerInventory = other.gameObject.GetComponent<Inventory>();
-            _setFlagButton.SetActive(true);
+            if (_playerInventory.TryGetBunch("Ôëàæîê", out ItemBunch bunch))
+            {
+                _itemBunch = bunch;
+                if (bunch.GetCount() > 0)
+                    _setFlagButton.SetActive(true);
+            }
         }
     }
 
@@ -34,13 +46,16 @@ public class Flag : MonoBehaviour
     public void SetFlag()
     {
         _setFlagButton.SetActive(false);
-        _inventoryDrawer.GetFlagPanel().SetActive(false);
+        EventHandler.FlagPanelEvent.Invoke(false);
         isFlagAdded = true;
-        _flag.GetComponent<SpriteRenderer>().sprite = _inventoryDrawer.GetSprite();
+        
         _flag.SetActive(true);
-        _playerInventory.GetAllItems()[4].RemoveItems(1);
+        _itemBunch.RemoveItems(1);
         EventHandler.OnFlagSet?.Invoke();
     }
+
+
+    public void SetFlagSprite(Sprite sprite) => _flag.GetComponent<SpriteRenderer>().sprite = sprite;
 
 
 }

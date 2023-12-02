@@ -20,6 +20,7 @@ public class InventoryDrawer : MonoBehaviour
     {
         EventHandler.OnBunchChanged.AddListener(UpdateCounter);
         EventHandler.OnFlagChanged.AddListener(UpdateFlagSprite);
+        EventHandler.FlagPanelEvent.AddListener(SwitchFlagPanel);
     }
 
     private void UpdateCounter(string content, int points)
@@ -41,12 +42,21 @@ public class InventoryDrawer : MonoBehaviour
         }
     }
 
+    public void SwitchFlagPanel(bool yes)
+    {
+        if(yes)
+            _flagPanel.SetActive(true);
+        else
+            _flagPanel.SetActive(false);
+    }
+
     private void UpdateFlagSprite(int count, Sprite[] flagSprites)
     {
         if(count > 0 && !_isFlagAdded)
         {
             _flagPanel.SetActive(true);
             _flagImage.sprite = flagSprites[Random.Range(0,flagSprites.Length)];
+            EventHandler.OnFlagSpriteChanged.Invoke(_flagImage.sprite);
             _isFlagAdded = true;
         }
         else if(count <= 0)
