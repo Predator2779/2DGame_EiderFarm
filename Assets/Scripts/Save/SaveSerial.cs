@@ -16,10 +16,9 @@ public class SaveSerial : MonoBehaviour
     [SerializeField] private Menu _menu;
 
     private List<ItemBunch> _items;
-
     private string path = "/dataSaveFile.dat";
 
-    SaveData data = new();
+    public SaveData data = new();
 
     private void Awake()
     {
@@ -29,8 +28,6 @@ public class SaveSerial : MonoBehaviour
             ResetData();
         else
             LoadGame();
-
-        
     }
 
     private void GetItems()
@@ -42,7 +39,6 @@ public class SaveSerial : MonoBehaviour
     {
         for (int i = 0; i < _items.Count; i++)
         {
-
             data.Money = _items[i].GetCount();
 
             switch (_items[i].GetItemName())
@@ -52,7 +48,6 @@ public class SaveSerial : MonoBehaviour
                 case "Необработанный пух": data.UncleanedFluff = _items[i].GetCount(); break;
                 case "Куртка": data.Cloth = _items[i].GetCount(); break;
                 case "Флажок": data.Cloth = _items[i].GetCount(); break;
-                default: break;
             }
         }
     }
@@ -61,7 +56,6 @@ public class SaveSerial : MonoBehaviour
     {
         for (int i = 0; i < _items.Count; i++)
         {
-
             data.Money = _items[i].GetCount();
 
             switch (_items[i].GetItemName())
@@ -145,8 +139,6 @@ public class SaveSerial : MonoBehaviour
 
     private void ClearAndAdd()
     {
-
-
         for (int i = 0; i < _playerInventory.GetAllItems().Count; i++)
         {
             _playerInventory.GetAllItems()[i].ClearItems();
