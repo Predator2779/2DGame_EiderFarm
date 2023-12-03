@@ -8,6 +8,7 @@ namespace General
         public const string Cloth = "Куртка";
         public const string Flag = "Флажок";
 
+        public const float CoefPhysPlayerSpeed = 1000f;
         public const float PlayerSpeed = 3.25f;
     }
 }
