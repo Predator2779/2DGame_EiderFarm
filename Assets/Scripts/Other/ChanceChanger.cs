@@ -18,6 +18,7 @@ public class ChanceChanger : MonoBehaviour
         _gagaHouses = _save.GetGagaHouses();
 
         Debug.Log(gb.transform.GetChild(2).GetComponent<BuildMenu>());
+        Debug.Log(gb.GetComponentInChildren<BuildMenu>());
     }
 
     public void SetChance(int chance)
