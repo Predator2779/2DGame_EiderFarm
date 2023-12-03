@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2.5
-  _runSpeed: 4
+  _runSpeed: 7
 --- !u!114 &888522739896275641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,11 +148,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _personAnimate: {fileID: 4890964017926284591}
   _currentState: 0
-  _requirePlayerDistance: 5
-  _requireFlagDistance: 5
-  _idleTime: 1.5
+  _requirePlayerDistance: 7
+  _requireFlagDistance: 7
+  _idleTime: 4
   _patrolTime: 3
-  _changeDirTime: 2.8
+  _changeDirTime: 3.5
 --- !u!50 &5616179734583736253
 Rigidbody2D:
   serializedVersion: 4
