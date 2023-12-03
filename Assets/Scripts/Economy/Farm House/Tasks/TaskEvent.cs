@@ -15,10 +15,4 @@ public class TaskEvent : MonoBehaviour
         if (task == _task && _task.GetStage() == TaskStage.Passed)
             _myEvent?.Invoke();
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-            _myEvent?.Invoke();
-    }
 }

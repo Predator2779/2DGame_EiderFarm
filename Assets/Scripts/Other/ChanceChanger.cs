@@ -8,7 +8,7 @@ public class ChanceChanger : MonoBehaviour
 
     private GameObject[] _gagaHouses;
 
-    [SerializeField] private GameObject gb;
+    // [SerializeField] private GameObject gb;
 
     [SerializeField] private SaveSerial _save;
 
@@ -16,9 +16,9 @@ public class ChanceChanger : MonoBehaviour
     {
         _gagaHousePrefab.GetComponent<FluffGiver>().ChangeChance(100);
         _gagaHouses = _save.GetGagaHouses();
-
-        Debug.Log(gb.transform.GetChild(2).GetComponent<BuildMenu>());
-        Debug.Log(gb.GetComponentInChildren<BuildMenu>());
+        //
+        // Debug.Log(gb.transform.GetChild(2).GetComponent<BuildMenu>());
+        // Debug.Log(gb.GetComponentInChildren<BuildMenu>());
     }
 
     public void SetChance(int chance)
