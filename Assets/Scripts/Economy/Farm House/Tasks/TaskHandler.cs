@@ -10,7 +10,7 @@ namespace Economy.Farm_House
 
         public void Initialize()
         {
-            ResetTasks();
+            ResetTasks(); /// убрать на билдинге
             
             EventHandler.OnTaskStageChanged.AddListener(RefreshTasksStatus);
             EventHandler.OnGiveReward.AddListener(GiveReward);

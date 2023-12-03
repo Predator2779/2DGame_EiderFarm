@@ -52,7 +52,9 @@ namespace Building
             _curConstruction.SetSprite(_curConstruction.Upgrade());
             IsBuilded = true;
             CheckBtns();
-            EventHandler.OnBuilded?.Invoke(_curConstruction.typeConstruction);
+            
+            EventHandler.OnBuilded?.Invoke(
+                    _curConstruction.typeConstruction);
         }
 
         public void Demolition()

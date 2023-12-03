@@ -56,7 +56,7 @@ namespace Economy.Farm_House
             SetStage(TaskStage.Progressing);
         }
 
-        public void ProgressingTask()
+        protected void ProgressingTask()
         {
             if (SomeCondition())
                 SetStage(TaskStage.Completed);
@@ -70,7 +70,7 @@ namespace Economy.Farm_House
             Deinitialize();
         }
 
-        public virtual void CheckProgressing()
+        public void CheckProgressing()
         {
             switch (GetStage())
             {

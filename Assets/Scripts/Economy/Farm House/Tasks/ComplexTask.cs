@@ -53,13 +53,13 @@ namespace Economy.Farm_House
                 _subTasks.All(sub => sub.GetStage() == TaskStage.Completed ||
                                      sub.GetStage() == TaskStage.Passed);
 
-        public override void CheckProgressing()
-        {
-            foreach (var task in _subTasks)
-                task.CheckProgressing();
-
-            base.CheckProgressing();
-        }
+        // public override void CheckProgressing()
+        // {
+        //     // foreach (var task in _subTasks)
+        //     //     task.CheckProgressing();
+        //
+        //     base.CheckProgressing();
+        // }
 
         [ContextMenu("Reset Task")] public override void ResetTask()
         {

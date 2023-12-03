@@ -9,7 +9,6 @@ namespace Economy.Farm_House
 
         [Header("Counters")]
         [SerializeField] protected int _requireCount;
-
         [SerializeField] protected int _currentCount;
 
         public override void CreateCell(Transform parent) =>
@@ -39,7 +38,6 @@ namespace Economy.Farm_House
         [ContextMenu("Reset Task")] public override void ResetTask()
         {
             base.ResetTask();
-            
             _currentCount = 0;
         }
     }
