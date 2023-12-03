@@ -170,4 +170,14 @@ public class SaveSerial : MonoBehaviour
             }
         }
     }
+
+    public GameObject[] GetGagaHouses()
+    {
+        GameObject[] gb = new GameObject[_gagaHouses.Length];
+        for (int i = 0; i < _gagaHouses.Length; i++)
+        {
+            gb[i] = _gagaHouses[i].gameObject;
+        }
+        return gb;
+    }
 }
