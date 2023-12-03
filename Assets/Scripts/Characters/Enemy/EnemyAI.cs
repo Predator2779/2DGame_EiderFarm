@@ -1,13 +1,12 @@
 using System.Collections;
-using Player;
+using Characters.Enemy;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Person))]
 [RequireComponent(typeof(CircleCollider2D))]
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : PersonAI
 {
-    [SerializeField] private PersonAnimate _personAnimate;
     [SerializeField] private EnemyStates _currentState;
     [SerializeField] private float _requirePlayerDistance;
     [SerializeField] private float _requireFlagDistance;
@@ -15,7 +14,6 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float _patrolTime;
     [SerializeField] private float _changeDirTime;
 
-    private Person _person;
     private Transform _player;
     private Transform _flag;
     private Vector2 _currentDirection;
@@ -27,7 +25,7 @@ public class EnemyAI : MonoBehaviour
     private void Start() => SetNullableFields();
     private void OnValidate() => SetNullableFields();
     private void Update() => CheckConditions();
-    private void FixedUpdate() => StateMachine();
+    private void FixedUpdate() => StateExecute();
 
     private void SetNullableFields()
     {
@@ -37,7 +35,7 @@ public class EnemyAI : MonoBehaviour
         _canChangeDir = true;
     }
 
-    private void StateMachine()
+    protected override void StateExecute()
     {
         switch (_currentState)
         {
@@ -60,26 +58,18 @@ public class EnemyAI : MonoBehaviour
         Walk(_currentDirection);
     }
 
-    private void Idle()
+    protected override void Idle()
     {
         _personAnimate.Walk(_currentDirection, false);
     }
 
-    private void Walk(Vector2 direction)
-    {
-        _person.Walk(direction);
-        _personAnimate.Walk(direction, true);
-    }
-
-    private void Run(Vector2 direction)
+    protected override void Run(Vector2 direction)
     {
         StopCoroutine(ChangeDirection(direction));
-        
-        _person.Run(direction);
-        _personAnimate.Walk(direction, true);
+        base.Run(direction);
     }
 
-    private void CheckConditions()
+    protected override void CheckConditions()
     {
         if (_player != null)
         {
@@ -154,7 +144,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (other.CompareTag("Player")) _player = other.transform;
 
-        if (other.TryGetComponent(out Flag flag) && 
+        if (other.TryGetComponent(out Flag flag) &&
             flag.isFlagAdded && _flag != flag)
             _flag = flag.transform;
     }
@@ -163,7 +153,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (other.CompareTag("Player")) _player = null;
 
-        if (other.TryGetComponent(out Flag flag) && 
+        if (other.TryGetComponent(out Flag flag) &&
             flag.isFlagAdded && _flag == flag)
             _flag = null;
     }
