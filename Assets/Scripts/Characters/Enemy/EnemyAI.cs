@@ -73,6 +73,8 @@ public class EnemyAI : MonoBehaviour
 
     private void Run(Vector2 direction)
     {
+        StopCoroutine(ChangeDirection(direction));
+        
         _person.Run(direction);
         _personAnimate.Walk(direction, true);
     }
@@ -152,7 +154,8 @@ public class EnemyAI : MonoBehaviour
     {
         if (other.CompareTag("Player")) _player = other.transform;
 
-        if (other.TryGetComponent(out Flag flag) && _flag != flag)
+        if (other.TryGetComponent(out Flag flag) && 
+            flag.isFlagAdded && _flag != flag)
             _flag = flag.transform;
     }
 
@@ -160,7 +163,8 @@ public class EnemyAI : MonoBehaviour
     {
         if (other.CompareTag("Player")) _player = null;
 
-        if (other.TryGetComponent(out Flag flag) && _flag == flag)
+        if (other.TryGetComponent(out Flag flag) && 
+            flag.isFlagAdded && _flag == flag)
             _flag = null;
     }
 

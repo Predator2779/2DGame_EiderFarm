@@ -2,6 +2,7 @@ using Building;
 using Economy;
 using General;
 using UnityEngine;
+using UnityEngine.Serialization;
 using EventHandler = General.EventHandler;
 
 public class Flag : MonoBehaviour
@@ -12,15 +13,16 @@ public class Flag : MonoBehaviour
 
     private Inventory _playerInventory;
     private ItemBunch _itemBunch;
-    private bool _isFlagAdded;
 
+    [FormerlySerializedAs("_isFlagAdded")] public bool isFlagAdded;
+    
     private void Awake() => EventHandler.OnFlagSpriteChanged.AddListener(SetFlagSprite);
 
     protected void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.GetComponent<InputHandler>() ||
             !_buildMenu.IsBuilded ||
-            _isFlagAdded) return;
+            isFlagAdded) return;
 
         _playerInventory = other.gameObject.GetComponent<Inventory>();
         
@@ -39,7 +41,7 @@ public class Flag : MonoBehaviour
 
         _flagBtn.SetActive(false);
         EventHandler.FlagPanelEvent.Invoke(false);
-        _isFlagAdded = true;
+        isFlagAdded = true;
 
         _flag.SetActive(true);
         _itemBunch.RemoveItems(1);
