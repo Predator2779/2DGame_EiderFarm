@@ -75,6 +75,12 @@ namespace TriggerScripts
             _buildMenu.CheckBtns();
         }
 
+        public void RemovePlace()
+        {
+            _buildMenu.Demolition();
+            gameObject.SetActive(false);
+        }
+        
         public BuildMenu GetBuildMenu() => _buildMenu;
     }
 }
