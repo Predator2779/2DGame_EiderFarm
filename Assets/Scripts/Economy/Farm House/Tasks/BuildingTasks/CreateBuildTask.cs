@@ -64,6 +64,12 @@ namespace Economy.Farm_House
             return buildings;
         }
 
-        protected override bool SomeCondition() => _currentCount >= _countBuildings + _requireCount;
+        protected override bool SomeCondition() => _currentCount >= _requireCount - _countBuildings;
+
+        [ContextMenu("Reset Task")] public override void ResetTask()
+        {
+            base.ResetTask();
+            _currentCount = 0;
+        }
     }
 }

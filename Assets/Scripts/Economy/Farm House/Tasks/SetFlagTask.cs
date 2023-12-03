@@ -7,7 +7,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Tasks/CollectTasks/SetFlagTasks", fileName = "New SetFlagTask", order = 0)]
 public class SetFlagTask : CollectTask
 {
-
     protected override void Initialize()
     {
         _currentCount = 0;

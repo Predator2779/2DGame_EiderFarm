@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed151be32864cc3a17edac02ffb695a, type: 3}
   m_Name: 6-GagaHouse-SUB
   m_EditorClassIdentifier: 
-  _stage: 0
-  _resetStage: 0
+  _stage: 1
+  _resetStage: 1
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: "6 \u0434\u043E\u043C\u043E\u0432"
   _description: "\u041F\u043E\u0441\u0442\u0440\u043E\u0438\u0442\u044C 6 \u0434\u043E\u043C\u0438\u043A\u043E\u0432
