@@ -45,4 +45,9 @@ public class FluffGiver : MonoBehaviour
         GiveFluff();
         StartCoroutine(CreateFluff());
     }
+
+    public void ChangeChance(int chance)
+    {
+        _chance = chance;
+    }
 }
