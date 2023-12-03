@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    private static bool resetData;
+    private static bool _isNewGame;
 
-    public void StartLevel(bool newGame)
+    public void StartLevel(bool isNewGame)
     {
-        resetData = newGame;
+        _isNewGame = isNewGame;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -15,5 +15,5 @@ public class Menu : MonoBehaviour
 
     public void Exit() => Application.Quit();
 
-    public bool GetResetValue() => resetData;
+    public bool IsNewGame() => _isNewGame;
 }

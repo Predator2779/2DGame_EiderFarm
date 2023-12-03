@@ -11,4 +11,5 @@ using System;
     public int[] GagaHouses;
     public int[] Cleaners;
     public int[] ClothMachines;
+    public int[] Storages;
 }

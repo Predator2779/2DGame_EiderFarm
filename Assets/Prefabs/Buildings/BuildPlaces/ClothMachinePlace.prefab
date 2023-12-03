@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8415511768425813117}
   - component: {fileID: 2323685821376467626}
   - component: {fileID: 5442988141683131856}
-  - component: {fileID: 3914757823484691421}
   m_Layer: 0
   m_Name: ClothMachinePlace
   m_TagString: Untagged
@@ -87,19 +86,6 @@ MonoBehaviour:
   _buildMenu: {fileID: 4890241244467973914}
   _buildPrefab: {fileID: 963965709575088290, guid: f8a024ee77d5c434a81912aa72e79263, type: 3}
   _renderer: {fileID: 4106786949892469983}
---- !u!114 &3914757823484691421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342429673278563079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17ee78c7f36743ba884ac1eeaa50a838, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsBuilded: 0
 --- !u!1 &5364477728317815241
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +197,7 @@ PrefabInstance:
     - target: {fileID: 4659290638384298752, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4890241244467973914}
     - target: {fileID: 4659290638384298752, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Build
@@ -219,7 +205,7 @@ PrefabInstance:
     - target: {fileID: 6022729745342143562, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4890241244467973914}
     - target: {fileID: 6022729745342143562, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Upgrade
@@ -231,7 +217,7 @@ PrefabInstance:
     - target: {fileID: 6341495191577719324, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4890241244467973914}
     - target: {fileID: 6341495191577719324, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Demolition
@@ -317,7 +303,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5781141693958379987, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
