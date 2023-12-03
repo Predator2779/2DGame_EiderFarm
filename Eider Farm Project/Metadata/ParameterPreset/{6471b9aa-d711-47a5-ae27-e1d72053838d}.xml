@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{6471b9aa-d711-47a5-ae27-e1d72053838d}">
+		<property name="name">
+			<value>Parameter Multiband</value>
+		</property>
+		<relationship name="folder">
+			<destination>{43ac6766-ad91-4b4d-b449-d8aeea776a88}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ece90d80-5fa6-48e5-bd37-62b731d10b06}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ece90d80-5fa6-48e5-bd37-62b731d10b06}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<relationship name="automators">
+			<destination>{415df63c-32f0-4d34-a266-9b81e97354c3}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{415df63c-32f0-4d34-a266-9b81e97354c3}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cursorPosition</value>
+		</property>
+	</object>
+</objects>
