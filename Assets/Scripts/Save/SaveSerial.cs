@@ -18,7 +18,9 @@ public class SaveSerial : MonoBehaviour
     [SerializeField] private BuildTrigger[] _clothMachines;
     [SerializeField] private BuildTrigger[] _storages;
     [SerializeField] private Menu _menu;
-    
+
+    private bool[] _flags;
+
     private List<ItemBunch> _items;
     private string _path = "/dataSaveFile.dat";
 
@@ -27,7 +29,7 @@ public class SaveSerial : MonoBehaviour
     private void Start()
     {
         GetItems();
-        
+
         if (_menu.IsNewGame()) ResetData();
         else LoadGame();
     }
@@ -60,10 +62,10 @@ public class SaveSerial : MonoBehaviour
 
     private void AddItems(string name, int count)
     {
-        var item =_itemTypes.FirstOrDefault(item => item.GetName() == name);
+        var item = _itemTypes.FirstOrDefault(item => item.GetName() == name);
         _playerInventory.AddItems(item, count);
     }
-    
+
     public void SaveGame()
     {
         BinaryFormatter bf = new BinaryFormatter();
@@ -72,13 +74,14 @@ public class SaveSerial : MonoBehaviour
         file = !File.Exists(Application.persistentDataPath + _path) ?
                 File.Create(Application.persistentDataPath + _path) :
                 File.Open(Application.persistentDataPath + _path, FileMode.Open);
-        
-        SaveItems();
 
+        SaveItems();
         data.GagaHouses = SaveDataGrades(_gagaHouses);
         data.Cleaners = SaveDataGrades(_cleaners);
         data.ClothMachines = SaveDataGrades(_clothMachines);
         data.Storages = SaveDataGrades(_storages);
+        SaveFlags();
+        
 
         bf.Serialize(file, data);
         file.Close();
@@ -95,7 +98,7 @@ public class SaveSerial : MonoBehaviour
         file.Close();
 
         ClearAndAdd();
-        
+        LoadFlags();
         BuildAndUpgrade(data.GagaHouses, _gagaHouses);
         BuildAndUpgrade(data.Cleaners, _cleaners);
         BuildAndUpgrade(data.ClothMachines, _clothMachines);
@@ -105,9 +108,9 @@ public class SaveSerial : MonoBehaviour
     private void ResetData()
     {
         if (!File.Exists(Application.persistentDataPath + _path)) return;
-        
+
         File.Delete(Application.persistentDataPath + _path);
-        
+
         data.Money = 0;
         data.CleanedFluff = 0;
         data.UncleanedFluff = 0;
@@ -118,6 +121,8 @@ public class SaveSerial : MonoBehaviour
         data.Cleaners = new int[0];
         data.ClothMachines = new int[0];
         data.Storages = new int[0];
+
+        data.Flags = new bool[0];
     }
 
     private int[] SaveDataGrades(BuildTrigger[] menus)
@@ -127,7 +132,7 @@ public class SaveSerial : MonoBehaviour
         for (int i = 0; i < menus.Length; i++)
         {
             BuildMenu buildMenu = menus[i].GetBuildMenu();
-            
+
             if (buildMenu.GetConstruction() != null)
                 dataArray[i] = buildMenu.GetConstruction().GetCurrentGrade();
         }
@@ -135,11 +140,34 @@ public class SaveSerial : MonoBehaviour
         return dataArray;
     }
 
+    private void SaveFlags()
+    {
+        data.Flags = new bool[_gagaHouses.Length];
+        for (int i = 0; i < _gagaHouses.Length; i++)
+        {
+            if (_gagaHouses[i].gameObject.GetComponent<Flag>().isFlagAdded)
+                data.Flags[i] = true;
+        }
+    }
+
+    private void LoadFlags()
+    {
+        for (int i = 0; i < _gagaHouses.Length; i++)
+        {
+            if (data.Flags[i])
+            {
+                _gagaHouses[i].gameObject.GetComponent<Flag>().isFlagAdded = true;
+            }
+        }
+        SetFlags(_gagaHouses);
+        
+    }
+
     private void ClearAndAdd()
     {
         for (int i = 0; i < _playerInventory.GetAllItems().Count; i++)
             _playerInventory.GetAllItems()[i].ClearItems();
-        
+
         LoadItems();
     }
 
@@ -148,7 +176,7 @@ public class SaveSerial : MonoBehaviour
         for (int i = 0; i < dataArray.Length; i++)
         {
             BuildMenu buildMenu = menus[i].GetBuildMenu();
-            
+
             switch (dataArray[i])
             {
                 default: continue;
@@ -168,6 +196,17 @@ public class SaveSerial : MonoBehaviour
                     buildMenu.Upgrade();
                     continue;
             }
+
+        }
+    }
+
+    private void SetFlags(BuildTrigger[] gagaHousesMenus)
+    {
+        for (int i = 0; i < _gagaHouses.Length; i++)
+        {
+
+            if (gagaHousesMenus[i].gameObject.GetComponent<Flag>().isFlagAdded)
+                gagaHousesMenus[i].gameObject.GetComponent<Flag>().AddFlag();
         }
     }
 

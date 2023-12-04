@@ -113,6 +113,8 @@ namespace Building
             _curConstruction = Instantiate(building, _buildPos, _buildRot, _parent);
         }
 
+        public void SetFlag() => _flag.AddFlag();
+
 
     }
 }

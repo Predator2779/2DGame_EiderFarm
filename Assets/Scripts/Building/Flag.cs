@@ -16,7 +16,11 @@ public class Flag : MonoBehaviour
 
     [FormerlySerializedAs("_isFlagAdded")] public bool isFlagAdded;
 
-    private void Awake() => EventHandler.OnFlagSpriteChanged.AddListener(SetFlagSprite);
+    private void Awake()
+    {
+        if(!isFlagAdded)
+        EventHandler.OnFlagSpriteChanged.AddListener(SetFlagSprite);
+    }
 
     protected void OnTriggerEnter2D(Collider2D other)
     {
@@ -25,7 +29,7 @@ public class Flag : MonoBehaviour
 
         if (!_playerInventory.TryGetBunch(GlobalConstants.Flag, out var bunch) ||
             bunch.GetCount() <= 0) return;
-        
+
         _itemBunch = bunch;
 
         if (!_buildMenu.IsBuilded || isFlagAdded) return;
@@ -51,6 +55,9 @@ public class Flag : MonoBehaviour
     }
 
     public void RemoveFlag() => _flag.SetActive(false);
+
+    public void AddFlag() => _flag.SetActive(true);
+
 
 
     public GameObject GetFlagButton() => _flagBtn;

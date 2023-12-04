@@ -12,4 +12,6 @@ using System;
     public int[] Cleaners;
     public int[] ClothMachines;
     public int[] Storages;
+
+    public bool[] Flags;
 }
