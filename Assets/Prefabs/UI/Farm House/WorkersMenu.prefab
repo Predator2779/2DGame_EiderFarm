@@ -56,7 +56,6 @@ MonoBehaviour:
   _spawnTransform: {fileID: 0}
   _personal:
   - {fileID: 8307517251854064901, guid: f73f35d34c0e8fb449b87b3802d913f4, type: 3}
-  - {fileID: 8307517251854064901, guid: fcfe1cc8ea607d8499daf1b637c098f3, type: 3}
 --- !u!1 &1793497947987895294
 GameObject:
   m_ObjectHideFlags: 0

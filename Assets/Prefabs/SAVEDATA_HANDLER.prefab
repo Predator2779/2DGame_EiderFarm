@@ -90,10 +90,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   _cleaners:
   - {fileID: 0}
   - {fileID: 0}
@@ -105,6 +101,7 @@ MonoBehaviour:
   _storages:
   - {fileID: 0}
   _menu: {fileID: 8635574941930412320}
+  _sprites: []
   data:
     Money: 0
     UncleanedFluff: 0
@@ -115,6 +112,8 @@ MonoBehaviour:
     Cleaners: 
     ClothMachines: 
     Storages: 
+    Flags: 
+    flagSprites: 
 --- !u!114 &8635574941930412320
 MonoBehaviour:
   m_ObjectHideFlags: 0

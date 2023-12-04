@@ -13,10 +13,9 @@ public class Flag : MonoBehaviour
 
     private Inventory _playerInventory;
     private ItemBunch _itemBunch;
-
     private Sprite _sprite;
 
-    [FormerlySerializedAs("_isFlagAdded")] public bool isFlagAdded;
+    public bool isFlagAdded;
 
     private void Awake()
     {
