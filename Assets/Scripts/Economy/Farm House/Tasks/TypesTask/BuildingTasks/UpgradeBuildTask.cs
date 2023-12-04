@@ -13,7 +13,7 @@ namespace Economy.Farm_House.Tasks.TypesTask.BuildingTasks
         protected override void Initialize()
         {
             _pathBuildings = GameObject.Find("Tilemap-Buildings").transform;
-            _countBuildings = GetUpgradeBuildingsCount(GetBuildings(_buildType).ToArray());
+            _currentCount = GetUpgradeBuildingsCount(GetBuildings(_buildType).ToArray());
 
             EventHandler.OnUpgraded.AddListener(Upgrade);
         }
@@ -33,6 +33,6 @@ namespace Economy.Farm_House.Tasks.TypesTask.BuildingTasks
         private int GetUpgradeBuildingsCount(Construction[] buildings) =>
                 buildings.Count(building => building.GetCurrentGrade() >= _requireGrade);
 
-        protected override bool SomeCondition() => _currentCount >= _requireCount - _countBuildings;
+        protected override bool SomeCondition() => _currentCount >= _requireCount;
     }
 }

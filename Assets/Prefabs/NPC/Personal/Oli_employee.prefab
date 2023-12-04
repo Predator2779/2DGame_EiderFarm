@@ -200,4 +200,4 @@ MonoBehaviour:
   _isPlayerInventory: 0
   _listItems:
   - _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
-    _count: 350
+    _count: 550

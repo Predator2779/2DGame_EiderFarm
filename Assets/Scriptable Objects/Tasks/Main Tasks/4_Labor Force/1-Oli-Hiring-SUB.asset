@@ -17,11 +17,12 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: bbab026af1be7164b8a44f9b7d855e2b, type: 3}
   _name: "\u041D\u0430\u043D\u044F\u0442\u044C \u0440\u0430\u0431\u043E\u0447\u0435\u0433\u043E
     (\u041E\u043B\u0438)"
-  _description: 
+  _description: "\u041D\u0430\u043D\u044F\u0442\u044C \u0440\u0430\u0431\u043E\u0447\u0435\u0433\u043E
+    (\u041E\u043B\u0438)"
   _reward:
     _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
     _count: 0
   _nextTasks: []
-  _cellPrefab: {fileID: 2273216649942457802, guid: 62ff3815dc6fd274e86f994488135f7f, type: 3}
+  _cellPrefab: {fileID: 3568171378626415371, guid: 0e777cdb75a46f44a95dc6cea534dec2, type: 3}
   _requiredEmployees:
   - {fileID: 8307517251854064901, guid: f73f35d34c0e8fb449b87b3802d913f4, type: 3}

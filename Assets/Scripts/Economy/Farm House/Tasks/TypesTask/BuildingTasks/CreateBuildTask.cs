@@ -12,7 +12,6 @@ namespace Economy.Farm_House.Tasks.TypesTask.BuildingTasks
 
         protected Transform _pathBuildings;
         private List<Construction> _buildings;
-        protected int _countBuildings;
 
         protected override void Initialize()
         {
@@ -24,7 +23,7 @@ namespace Economy.Farm_House.Tasks.TypesTask.BuildingTasks
         {
             _pathBuildings = GameObject.Find("Tilemap-Buildings").transform;
             _buildings = GetBuildings(_buildType);
-            _countBuildings = _buildings.Count;
+            _currentCount = _buildings.Count;
         }
 
         protected override void Deinitialize() => EventHandler.OnBuilded.RemoveListener(Build);
@@ -67,7 +66,7 @@ namespace Economy.Farm_House.Tasks.TypesTask.BuildingTasks
             return buildings;
         }
 
-        protected override bool SomeCondition() => _currentCount >= _requireCount - _countBuildings;
+        protected override bool SomeCondition() => _currentCount >= _requireCount;
 
         [ContextMenu("Reset Task")] public override void ResetTask()
         {

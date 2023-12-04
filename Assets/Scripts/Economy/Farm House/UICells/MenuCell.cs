@@ -11,6 +11,11 @@ namespace Economy.Farm_House
         [SerializeField] protected TMP_Text _description;
         [SerializeField] protected TMP_Text _counter;
         
+        protected void SetButton(string description)
+        {
+            _description.text = description;
+        }    
+        
         protected void SetButton(Sprite icon, string description)
         {
             _icon.sprite = icon;
