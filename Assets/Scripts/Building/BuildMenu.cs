@@ -53,8 +53,7 @@ namespace Building
             IsBuilded = true;
             CheckBtns();
             
-            EventHandler.OnBuilded?.Invoke(
-                    _curConstruction.typeConstruction);
+            EventHandler.OnBuilded?.Invoke(_curConstruction.typeConstruction);
         }
 
         public void Demolition()
@@ -62,8 +61,9 @@ namespace Building
             if (_curConstruction == null) return;
 
             _triggerSprite.enabled = true;
-            Destroy(_curConstruction.gameObject);
             IsBuilded = false;
+            EventHandler.OnDemolition?.Invoke(_curConstruction.typeConstruction);
+            Destroy(_curConstruction.gameObject);
             CheckBtns();
         }
 

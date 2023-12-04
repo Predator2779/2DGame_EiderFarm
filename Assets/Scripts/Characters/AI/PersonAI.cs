@@ -1,7 +1,7 @@
 using Player;
 using UnityEngine;
 
-namespace Characters.Enemy
+namespace Characters.AI
 {
     public abstract class PersonAI : MonoBehaviour
     {

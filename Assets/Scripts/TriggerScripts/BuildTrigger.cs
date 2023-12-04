@@ -11,7 +11,8 @@ namespace TriggerScripts
         [SerializeField] private BuildMenu _buildMenu;
         [SerializeField] private Construction _buildPrefab;
         [SerializeField] private SpriteRenderer _renderer;
-        
+
+        private bool _isOccupied;
         private Transform _parentBuildings;
         private Tilemap _map;
 
@@ -38,6 +39,8 @@ namespace TriggerScripts
 
         private Quaternion GetRotation() => transform.GetComponentInChildren<SpriteRenderer>().transform.rotation;
 
+        public bool IsOccupied() => _isOccupied;
+        
         private void SetParent(GlobalTypes.TypeBuildings type)
         {
             Transform parent = transform.parent;
