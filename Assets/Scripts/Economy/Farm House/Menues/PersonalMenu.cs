@@ -9,7 +9,7 @@ namespace Economy.Farm_House
         [SerializeField] private Transform _spawnTransform;
         [SerializeField] private Employee[] _personal;
         
-        public override void Draw()
+        protected override void Draw()
         {
             foreach (var employee in _personal)
                 if (employee.CanHiring())

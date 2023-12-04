@@ -19,7 +19,7 @@ namespace Economy.Farm_House
             RefreshDisplay();
         }
 
-        public abstract void Draw();
+        protected abstract void Draw();
 
         public void RefreshDisplay()
         {
@@ -27,7 +27,7 @@ namespace Economy.Farm_House
             Draw();
         }
 
-        protected void ClearContent()
+        private void ClearContent()
         {
             var length = _content.childCount;
 

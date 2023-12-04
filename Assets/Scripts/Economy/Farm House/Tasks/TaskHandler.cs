@@ -26,7 +26,7 @@ namespace Economy.Farm_House
 
         private void RefreshTasksStatus(Task task, TaskStage stage) => RefreshDisplay();
 
-        public override void Draw()
+        protected override void Draw()
         {
             if (_isHouseMenu)
             {

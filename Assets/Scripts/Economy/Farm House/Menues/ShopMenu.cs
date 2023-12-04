@@ -2,7 +2,7 @@ using System.Linq;
 using General;
 using UnityEngine;
 
-namespace Economy.Farm_House
+namespace Economy.Farm_House.Menues
 {
     [RequireComponent(typeof(Inventory))]
     public class ShopMenu : DisplayMenu
@@ -13,7 +13,7 @@ namespace Economy.Farm_House
 
         public void Initialize() => _assortment = GetComponent<Inventory>();
         
-        public override void Draw()
+        protected override void Draw()
         {
             if (_isHouseMenu)
             {
