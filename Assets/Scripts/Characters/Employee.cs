@@ -24,6 +24,7 @@ namespace Characters
             Item money = wallet.GetItem();
             inventory.RemoveItems(money, _price);
             _inventory.AddItems(money, _price);
+            _isHired = true;
             
             SpawnEmployee(spawnPosition);
         }

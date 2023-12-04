@@ -6,9 +6,8 @@ namespace Economy.Farm_House
     public class PersonalMenu : DisplayMenu
     {
         [SerializeField] private EmployeeCell _cellPrefab;
-        [SerializeField] private Vector2 _spawnPosition;
-        
-        private Employee[] _personal;
+        [SerializeField] private Transform _spawnTransform;
+        [SerializeField] private Employee[] _personal;
         
         public override void Draw()
         {
@@ -18,6 +17,6 @@ namespace Economy.Farm_House
         }
 
         private void SetCell(EmployeeCell cell, Employee employee) =>
-                cell.SetCell(employee, _spawnPosition, _playerInventory);
+                cell.SetCell(employee, _spawnTransform.position, _playerInventory);
     }
 }

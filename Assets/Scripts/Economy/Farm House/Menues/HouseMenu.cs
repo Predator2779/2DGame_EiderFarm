@@ -6,6 +6,7 @@ namespace Economy.Farm_House
     {
         [SerializeField] private ShopMenu _shopMenu;
         [SerializeField] private TaskHandler _taskHandler;
+        [SerializeField] private PersonalMenu _personalMenu;
 
         private void Awake() => Initialize();
         
@@ -21,7 +22,10 @@ namespace Economy.Farm_House
             _shopMenu.RefreshDisplay();
             
             _taskHandler.SetPlayerInventory(inv);
-            _taskHandler.RefreshDisplay();
+            _taskHandler.RefreshDisplay();     
+            
+            _personalMenu.SetPlayerInventory(inv);
+            _personalMenu.RefreshDisplay();
         }
     }
 }

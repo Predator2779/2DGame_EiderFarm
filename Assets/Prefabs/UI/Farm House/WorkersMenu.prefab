@@ -9,8 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3899723910291412874}
-  - component: {fileID: 4204029009764276803}
-  - component: {fileID: 784301470523840729}
+  - component: {fileID: 5629423256267194810}
   m_Layer: 5
   m_Name: WorkersMenu
   m_TagString: Untagged
@@ -39,7 +38,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4204029009764276803
+--- !u!114 &5629423256267194810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,28 +47,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 645458297272897956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5e7d4f94f89433e9d7a932356ebf766, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ea7b97df4d044298a8c69e081c33301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _content: {fileID: 900826200728684594}
-  _btnText: {fileID: 9019013495877343036}
-  _shopCellPrefab: {fileID: 3080319492574632987, guid: 9af0729de593e2e43990227facfb4e70, type: 3}
---- !u!114 &784301470523840729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645458297272897956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeb6caf4dbbf43fe81c90d82a8854edc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isPlayerInventory: 0
-  _listItems:
-  - _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
-    _count: 10000
+  _btnText: {fileID: 0}
+  _cellPrefab: {fileID: 2329546994574512717, guid: f49e72cc48fdc914196415e2aca5faf3, type: 3}
+  _spawnTransform: {fileID: 0}
+  _personal:
+  - {fileID: 8307517251854064901, guid: fcfe1cc8ea607d8499daf1b637c098f3, type: 3}
 --- !u!1 &1793497947987895294
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +502,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4204029009764276803}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Economy.Farm_House.DisplayMenu, Assembly-CSharp
         m_MethodName: SwitchDisplay
         m_Mode: 1
