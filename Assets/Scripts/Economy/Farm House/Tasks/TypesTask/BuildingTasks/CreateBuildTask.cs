@@ -3,7 +3,7 @@ using Building.Constructions;
 using General;
 using UnityEngine;
 
-namespace Economy.Farm_House
+namespace Economy.Farm_House.Tasks.TypesTask.BuildingTasks
 {
     [CreateAssetMenu(menuName = "Tasks/BuildTasks/CreateBuildTask", fileName = "New CreateBuildTask", order = 0)]
     public class CreateBuildTask : CollectTask
@@ -16,19 +16,22 @@ namespace Economy.Farm_House
 
         protected override void Initialize()
         {
-            _pathBuildings = GameObject.Find("Tilemap-Buildings").transform;
-            _buildings = GetBuildings(_buildType);
-            _countBuildings = _buildings.Count;
-
+            SetNullableFields();
             EventHandler.OnBuilded.AddListener(Build);
         }
 
-        protected override void Deinitialize()
+        protected void SetNullableFields()
         {
-            EventHandler.OnBuilded.RemoveListener(Build);
+            _pathBuildings = GameObject.Find("Tilemap-Buildings").transform;
+            _buildings = GetBuildings(_buildType);
+            _countBuildings = _buildings.Count;
         }
 
-        private void Build(GlobalTypes.TypeBuildings type)
+        protected override void Deinitialize() => EventHandler.OnBuilded.RemoveListener(Build);
+
+        private void Build(GlobalTypes.TypeBuildings type) => CheckBuilding(type);
+
+        protected void CheckBuilding(GlobalTypes.TypeBuildings type)
         {
             if (type == _buildType &&
                 _stage == TaskStage.Progressing &&
@@ -49,7 +52,7 @@ namespace Economy.Farm_House
             {
                 var child = _pathBuildings.GetChild(i);
                 var count = child.childCount;
-                
+
                 if (child.name == path && count > 0)
                     for (int j = 0; j < count; j++)
                     {
@@ -60,7 +63,7 @@ namespace Economy.Farm_House
                                 buildings.Add(construction);
                     }
             }
-            
+
             return buildings;
         }
 
