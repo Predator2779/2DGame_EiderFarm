@@ -45,14 +45,12 @@ public class Flag : MonoBehaviour
     {
         if (_itemBunch == null || _itemBunch.GetCount() <= 0) return;
 
-        _flagBtn.SetActive(false);
-        EventHandler.FlagPanelEvent.Invoke(false);
         isFlagAdded = true;
-
-        _flag.SetActive(true);
         _itemBunch.RemoveItems(1);
+        _flagBtn.SetActive(false);
+        _flag.SetActive(true);
+        EventHandler.FlagPanelEvent.Invoke(false);
         EventHandler.OnFlagSet?.Invoke();
-
         EventHandler.OnFlagSpriteChanged.RemoveListener(SetFlagSprite);
     }
 
@@ -64,10 +62,12 @@ public class Flag : MonoBehaviour
     }
     public void AddFlag()
     {
-        _flag.SetActive(true);
-        isFlagAdded = true;
-        EventHandler.OnFlagSpriteChanged?.RemoveListener(SetFlagSprite);
-        EventHandler.OnFlagSet?.Invoke();
+        SetFlag();
+        
+        // _flag.SetActive(true);
+        // isFlagAdded = true;
+        // EventHandler.OnFlagSpriteChanged?.RemoveListener(SetFlagSprite);
+        // EventHandler.OnFlagSet?.Invoke();
     }
 
     public Sprite GetSprite()

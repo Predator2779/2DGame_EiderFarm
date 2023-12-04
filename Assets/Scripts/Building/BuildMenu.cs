@@ -17,11 +17,11 @@ namespace Building
         private GameObject _buildBtn;
         private GameObject _upgradeBtn;
         private GameObject _demolitionBtn;
+        
         [SerializeField] private GameObject _flagBtn;
         [SerializeField] private Flag _flag;
 
         public bool HasFlag;
-
         public bool IsBuilded;
 
         public void SetConstruction(
@@ -100,9 +100,9 @@ namespace Building
                 _upgradeBtn.SetActive(true);
                 _demolitionBtn.SetActive(true);
 
-                if (HasFlag && _flagBtn != null)
-                    _flagBtn.SetActive(true);
-                else if (!HasFlag && _flagBtn != null) _flagBtn.SetActive(false);
+                if (_flagBtn == null) return;
+
+                _flagBtn.SetActive(HasFlag);
             }
         }
 
@@ -111,7 +111,6 @@ namespace Building
         private void Build(Construction building)
         {
             if (_curConstruction != null) Destroy(_curConstruction);
-
             _curConstruction = Instantiate(building, _buildPos, _buildRot, _parent);
         }
 

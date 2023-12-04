@@ -27,15 +27,15 @@ namespace Economy.Farm_House
         public void Exchange()
         {
             Item item = _bunch.GetItem();
-            if (_buyer.TryGetBunch("Ôëàæîê", out ItemBunch bunch))
-            {
-                if (item.IsOne() && bunch.GetCount() != 0) return;
-                if (item.IsOne() && bunch.GetCount() == 0) _inpField.text = 1.ToString();
-            }
-            
 
             int count = GetCountFromInput();
             var price = item.GetPrice() * count;
+            
+            if (_buyer.TryGetBunch("Ôëàæîê", out ItemBunch bunch))
+            {
+                if (item.IsOne() && bunch.GetCount() != 0) return;
+                if (item.IsOne() && bunch.GetCount() == 0) count = 1;
+            }
             
             if (count > _bunch.GetCount()) return;
             if (!CheckWallets(_buyer, _seller)) return;;
