@@ -3160,6 +3160,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4544929881048724889}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
+      propertyPath: _sprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
+      propertyPath: _sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4e2cdc0d940136e408ae0527e9beb599, type: 3}
+    - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
+      propertyPath: _sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: e5dc00a900a5f70498e16cb6eaa0d28e, type: 3}
+    - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
+      propertyPath: _sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0470f41a972d6cb4eb87f1c721bca793, type: 3}
+    - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _cleaners.Array.data[0]
       value: 
       objectReference: {fileID: 5746781163014255812}

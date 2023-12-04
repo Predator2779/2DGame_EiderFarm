@@ -19,6 +19,8 @@ public class SaveSerial : MonoBehaviour
     [SerializeField] private BuildTrigger[] _storages;
     [SerializeField] private Menu _menu;
 
+    [SerializeField] private Sprite[] _sprites;
+
     private bool[] _flags;
 
     private List<ItemBunch> _items;
@@ -81,7 +83,7 @@ public class SaveSerial : MonoBehaviour
         data.ClothMachines = SaveDataGrades(_clothMachines);
         data.Storages = SaveDataGrades(_storages);
         SaveFlags();
-        
+
 
         bf.Serialize(file, data);
         file.Close();
@@ -123,6 +125,7 @@ public class SaveSerial : MonoBehaviour
         data.Storages = new int[0];
 
         data.Flags = new bool[0];
+        data.flagSprites = new int[0];
     }
 
     private int[] SaveDataGrades(BuildTrigger[] menus)
@@ -143,10 +146,19 @@ public class SaveSerial : MonoBehaviour
     private void SaveFlags()
     {
         data.Flags = new bool[_gagaHouses.Length];
+        data.flagSprites = new int[data.Flags.Length];
         for (int i = 0; i < _gagaHouses.Length; i++)
         {
             if (_gagaHouses[i].gameObject.GetComponent<Flag>().isFlagAdded)
+            {
                 data.Flags[i] = true;
+
+                for (int j = 0; j < _sprites.Length; j++)
+                {
+                    if (_sprites[j] == _gagaHouses[i].gameObject.GetComponent<Flag>().GetSprite())
+                        data.flagSprites[i] = j + 1;
+                }
+            }
         }
     }
 
@@ -160,7 +172,7 @@ public class SaveSerial : MonoBehaviour
             }
         }
         SetFlags(_gagaHouses);
-        
+
     }
 
     private void ClearAndAdd()
@@ -206,7 +218,20 @@ public class SaveSerial : MonoBehaviour
         {
 
             if (gagaHousesMenus[i].gameObject.GetComponent<Flag>().isFlagAdded)
+            {
                 gagaHousesMenus[i].gameObject.GetComponent<Flag>().AddFlag();
+
+            }
+            if (data.Flags[i])
+            {
+                for (int j = 0; j < _sprites.Length; j++)
+                {
+                    if (data.flagSprites[i] == j + 1)
+                    {
+                        gagaHousesMenus[i].gameObject.GetComponent<Flag>().SetSprite(_sprites[j]);
+                    }
+                }
+            }
         }
     }
 

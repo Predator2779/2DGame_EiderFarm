@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 [Serializable] public class SaveData
 {
@@ -14,4 +15,6 @@ using System;
     public int[] Storages;
 
     public bool[] Flags;
+
+    public int[] flagSprites;
 }

@@ -14,6 +14,8 @@ public class Flag : MonoBehaviour
     private Inventory _playerInventory;
     private ItemBunch _itemBunch;
 
+    private Sprite _sprite;
+
     [FormerlySerializedAs("_isFlagAdded")] public bool isFlagAdded;
 
     private void Awake()
@@ -68,7 +70,15 @@ public class Flag : MonoBehaviour
         EventHandler.OnFlagSet?.Invoke();
     }
 
+    public Sprite GetSprite()
+    {
+        return gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite;
+    }
 
+    public void SetSprite(Sprite spr)
+    {
+        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite = spr;
+    }
 
     public GameObject GetFlagButton() => _flagBtn;
 
