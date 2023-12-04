@@ -18,8 +18,8 @@ public class Flag : MonoBehaviour
 
     private void Awake()
     {
-        if(!isFlagAdded)
-        EventHandler.OnFlagSpriteChanged.AddListener(SetFlagSprite);
+        if (!isFlagAdded)
+            EventHandler.OnFlagSpriteChanged.AddListener(SetFlagSprite);
     }
 
     protected void OnTriggerEnter2D(Collider2D other)
@@ -54,9 +54,19 @@ public class Flag : MonoBehaviour
         EventHandler.OnFlagSpriteChanged.RemoveListener(SetFlagSprite);
     }
 
-    public void RemoveFlag() => _flag.SetActive(false);
+    public void RemoveFlag()
+    {
+        _flag.SetActive(false);
+        isFlagAdded = false;
 
-    public void AddFlag() => _flag.SetActive(true);
+    }
+    public void AddFlag()
+    {
+        _flag.SetActive(true);
+        isFlagAdded = true;
+        EventHandler.OnFlagSpriteChanged?.RemoveListener(SetFlagSprite);
+        EventHandler.OnFlagSet?.Invoke();
+    }
 
 
 
