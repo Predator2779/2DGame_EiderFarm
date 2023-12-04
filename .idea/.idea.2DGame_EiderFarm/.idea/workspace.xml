@@ -5,12 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db890482-7c9c-4845-aed2-97ea93e16238" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/BuildingTasks/DemolitionTask.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/BuildingTasks/DemolitionTask.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/CollectTasks.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/HiringTask.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/HiringTask.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPrefabs/FarmHouse.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPrefabs/FarmHouse.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Menues/DisplayMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Menues/DisplayMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Menues/PersonalMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Menues/PersonalMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Menues/ShopMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Menues/ShopMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TaskHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TaskHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/BuildingTasks.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/BuildingTasks.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/BuildingTasks/CreateBuildTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/BuildingTasks/CreateBuildTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/BuildingTasks/CreateBuildTask.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/BuildingTasks/CreateBuildTask.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/BuildingTasks/UpgradeBuildTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/BuildingTasks/UpgradeBuildTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/BuildingTasks/UpgradeBuildTask.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/BuildingTasks/UpgradeBuildTask.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/CollectTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/CollectTasks/CollectTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/CollectTask.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/CollectTasks/CollectTask.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/ComplexTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/ComplexTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/ComplexTask.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/ComplexTask.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/ItemTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/CollectTasks/ItemTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/ItemTask.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/CollectTasks/ItemTask.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/ProcessingTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/CollectTasks/ProcessingTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/ProcessingTask.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/CollectTasks/ProcessingTask.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/SetFlagTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/SetFlagTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/SetFlagTask.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/TypesTask/SetFlagTask.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/CollectTaskCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/CollectTaskCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/ComplexTaskCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/ComplexTaskCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/EmployeeCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/EmployeeCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/MenuCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/GeneralCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/MenuCell.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/GeneralCell.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/ShopCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/UICells/ShopCell.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +156,7 @@
       <workItem from="1701188398691" duration="2736000" />
       <workItem from="1701506957370" duration="1682000" />
       <workItem from="1701610438393" duration="8746000" />
-      <workItem from="1701681295325" duration="9768000" />
+      <workItem from="1701681295325" duration="13438000" />
     </task>
     <servers />
   </component>

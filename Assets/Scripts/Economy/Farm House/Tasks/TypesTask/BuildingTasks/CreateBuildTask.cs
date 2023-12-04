@@ -11,7 +11,7 @@ namespace Economy.Farm_House
         [SerializeField] protected GlobalTypes.TypeBuildings _buildType;
 
         protected Transform _pathBuildings;
-        protected List<Construction> _buildings;
+        private List<Construction> _buildings;
         protected int _countBuildings;
 
         protected override void Initialize()

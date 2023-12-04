@@ -10,7 +10,6 @@ public class SetFlagTask : CollectTask
     protected override void Initialize()
     {
         _currentCount = 0;
-
         EventHandler.OnFlagSet.AddListener(SetFlag);
     }
 

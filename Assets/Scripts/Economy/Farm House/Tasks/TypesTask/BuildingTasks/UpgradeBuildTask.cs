@@ -34,8 +34,8 @@ namespace Economy.Farm_House
         }
 
         private int GetUpgradeBuildingsCount(Construction[] buildings) =>
-                buildings.Count(building => building.GetCurrentGrade() == _requireGrade);
+                buildings.Count(building => building.GetCurrentGrade() >= _requireGrade);
         
-        protected override bool SomeCondition() => _currentCount >= _countBuildings + _requireCount;
+        protected override bool SomeCondition() => _currentCount >= _requireCount - _countBuildings;
     }
 }

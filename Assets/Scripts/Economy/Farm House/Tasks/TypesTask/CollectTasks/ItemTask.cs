@@ -6,6 +6,7 @@ namespace Economy.Farm_House
     [CreateAssetMenu(menuName = "Tasks/CollectTasks/ItemTask", fileName = "New ItemTask", order = 0)]
     public class ItemTask : CollectTask
     {
+        [Header("Task Cell")]
         [SerializeField] protected Item _requiredItem;
         
         protected override void Initialize()

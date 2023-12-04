@@ -7,7 +7,9 @@ namespace Economy.Farm_House
     [CreateAssetMenu(menuName = "Tasks/CollectTasks/ComplexTask", fileName = "New ComplexTask", order = 0)]
     public class ComplexTask : Task
     {
+        [Header("Task Cell")]
         [SerializeField] protected ComplexTaskCell _cellPrefab;
+        [Header("Subtasks")]
         [SerializeField] private Task[] _subTasks;
 
         protected override void Initialize()
