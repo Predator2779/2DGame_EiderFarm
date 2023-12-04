@@ -56,9 +56,8 @@ namespace Building
             _curConstruction.SetSprite(_curConstruction.Upgrade());
             IsBuilded = true;
             CheckBtns();
-
-            EventHandler.OnBuilded?.Invoke(
-                    _curConstruction.typeConstruction);
+            
+            EventHandler.OnBuilded?.Invoke(_curConstruction.typeConstruction);
         }
 
         public void Demolition()
@@ -66,11 +65,14 @@ namespace Building
             if (_curConstruction == null) return;
 
             _triggerSprite.enabled = true;
-            Destroy(_curConstruction.gameObject);
             IsBuilded = false;
-            if (_flag != null)
-                _flag.RemoveFlag();
-                CheckBtns();
+
+            EventHandler.OnDemolition?.Invoke(_curConstruction.typeConstruction);
+            Destroy(_curConstruction.gameObject);
+            CheckBtns();
+            
+            if (_flag != null) _flag.RemoveFlag();
+
         }
 
         public void Upgrade()
@@ -114,7 +116,5 @@ namespace Building
         }
 
         public void SetFlag() => _flag.AddFlag();
-
-
     }
 }

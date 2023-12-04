@@ -1,3 +1,4 @@
+using Economy.Farm_House.Menues;
 using UnityEngine;
 
 namespace Economy.Farm_House
@@ -6,6 +7,7 @@ namespace Economy.Farm_House
     {
         [SerializeField] private ShopMenu _shopMenu;
         [SerializeField] private TaskHandler _taskHandler;
+        [SerializeField] private PersonalMenu _personalMenu;
 
         private void Awake() => Initialize();
         
@@ -17,11 +19,14 @@ namespace Economy.Farm_House
         
         public void SetInventory(Inventory inv)
         {
+            _taskHandler.SetPlayerInventory(inv);
+            _taskHandler.RefreshDisplay();    
+            
             _shopMenu.SetPlayerInventory(inv);
             _shopMenu.RefreshDisplay();
             
-            _taskHandler.SetPlayerInventory(inv);
-            _taskHandler.RefreshDisplay();
+            _personalMenu.SetPlayerInventory(inv);
+            _personalMenu.RefreshDisplay();
         }
     }
 }

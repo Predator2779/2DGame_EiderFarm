@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2932823940365785843}
   - component: {fileID: 2251581718500601478}
   - component: {fileID: 8224497332577226762}
-  - component: {fileID: 5403525958388572221}
+  - component: {fileID: 7687938006764830125}
   - component: {fileID: 888522739896275641}
   - component: {fileID: 5616179734583736253}
   m_Layer: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cabf618e446b92b449f3a12b1c2b1687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5403525958388572221
+--- !u!114 &7687938006764830125
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5755486986276998862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 095f9ac3038800c469f1dc71a9042567, type: 3}
+  m_Script: {fileID: 11500000, guid: db314a6299bc47bd9e99afe831a4aefa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2.5
@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _personAnimate: {fileID: 4890964017926284591}
+  _animal: {fileID: 7687938006764830125}
   _currentState: 0
   _requirePlayerDistance: 7
   _requireFlagDistance: 7

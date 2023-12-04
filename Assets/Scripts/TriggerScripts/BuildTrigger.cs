@@ -1,6 +1,7 @@
 using Building;
 using Building.Constructions;
 using Economy;
+using Characters;
 using General;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -12,7 +13,8 @@ namespace TriggerScripts
         [SerializeField] private BuildMenu _buildMenu;
         [SerializeField] private Construction _buildPrefab;
         [SerializeField] private SpriteRenderer _renderer;
-        
+
+        private string _personName;
         private Transform _parentBuildings;
         private Tilemap _map;
 
@@ -38,6 +40,8 @@ namespace TriggerScripts
         private Vector3 GetTilePos() => _map.CellToWorld(_map.WorldToCell(transform.position));
 
         private Quaternion GetRotation() => transform.GetComponentInChildren<SpriteRenderer>().transform.rotation;
+
+        public bool IsOccupied() => _personName != "";
 
         private void SetParent(GlobalTypes.TypeBuildings type)
         {
@@ -67,21 +71,33 @@ namespace TriggerScripts
                         _renderer,
                         GetTilePos(),
                         GetRotation());
-        
-        
+
+
         protected override void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.GetComponent<InputHandler>())
             {
-                base.OnTriggerEnter2D(other);
                 SetConstruction();
-                if (other.gameObject.GetComponent<Inventory>().TryGetBunch(GlobalConstants.Flag, out var bunch))
-                    if (bunch.GetCount() > 0)
-                        _buildMenu.HasFlag = true;
-                else
-                        _buildMenu.HasFlag = false;
+                if (other.gameObject.GetComponent<Inventory>().
+                          TryGetBunch(GlobalConstants.Flag, out var bunch)) 
+                    _buildMenu.HasFlag = bunch.GetCount() > 0;
+
                 _buildMenu.CheckBtns();
             }
+
+            if (other.TryGetComponent(out Person person) &&
+                person.GetName() == _personName)
+                _personName = person.GetName();
+
+            base.OnTriggerEnter2D(other);
+        }
+
+        protected override void OnTriggerExit2D(Collider2D other)
+        {
+            base.OnTriggerExit2D(other);
+
+            if (other.TryGetComponent(out Person person) &&
+                person.GetName() == _personName) _personName = "";
         }
 
         public void RemovePlace()
@@ -89,7 +105,7 @@ namespace TriggerScripts
             _buildMenu.Demolition();
             gameObject.SetActive(false);
         }
-        
+
         public BuildMenu GetBuildMenu() => _buildMenu;
     }
 }
