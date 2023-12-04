@@ -18,6 +18,7 @@ namespace Building
         private GameObject _upgradeBtn;
         private GameObject _demolitionBtn;
         [SerializeField] private GameObject _flagBtn;
+        [SerializeField] private Flag _flag;
 
         public bool HasFlag;
 
@@ -67,7 +68,9 @@ namespace Building
             _triggerSprite.enabled = true;
             Destroy(_curConstruction.gameObject);
             IsBuilded = false;
-            CheckBtns();
+            if (_flag != null)
+                _flag.RemoveFlag();
+                CheckBtns();
         }
 
         public void Upgrade()
@@ -94,7 +97,7 @@ namespace Building
                 _buildBtn.SetActive(false);
                 _upgradeBtn.SetActive(true);
                 _demolitionBtn.SetActive(true);
-                
+
                 if (HasFlag && _flagBtn != null)
                     _flagBtn.SetActive(true);
                 else if (!HasFlag && _flagBtn != null) _flagBtn.SetActive(false);

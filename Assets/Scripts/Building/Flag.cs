@@ -50,6 +50,9 @@ public class Flag : MonoBehaviour
         EventHandler.OnFlagSpriteChanged.RemoveListener(SetFlagSprite);
     }
 
+    public void RemoveFlag() => _flag.SetActive(false);
+
+
     public GameObject GetFlagButton() => _flagBtn;
 
     private void SetFlagSprite(Sprite sprite) => _flag.GetComponent<SpriteRenderer>().sprite = sprite;
