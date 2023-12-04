@@ -46,7 +46,11 @@ public class Flag : MonoBehaviour
         _flag.SetActive(true);
         _itemBunch.RemoveItems(1);
         EventHandler.OnFlagSet?.Invoke();
+
+        EventHandler.OnFlagSpriteChanged.RemoveListener(SetFlagSprite);
     }
+
+    public GameObject GetFlagButton() => _flagBtn;
 
     private void SetFlagSprite(Sprite sprite) => _flag.GetComponent<SpriteRenderer>().sprite = sprite;
 }

@@ -17,6 +17,9 @@ namespace Building
         private GameObject _buildBtn;
         private GameObject _upgradeBtn;
         private GameObject _demolitionBtn;
+        [SerializeField] private GameObject _flagBtn;
+
+        public bool HasFlag;
 
         public bool IsBuilded;
 
@@ -33,7 +36,7 @@ namespace Building
             _buildPos = buildPos;
             _buildRot = buildRot;
         }
-        
+
         public void SetButtons()
         {
             _buildBtn = transform.Find("BuildBtn").gameObject;
@@ -52,7 +55,7 @@ namespace Building
             _curConstruction.SetSprite(_curConstruction.Upgrade());
             IsBuilded = true;
             CheckBtns();
-            
+
             EventHandler.OnBuilded?.Invoke(
                     _curConstruction.typeConstruction);
         }
@@ -91,6 +94,10 @@ namespace Building
                 _buildBtn.SetActive(false);
                 _upgradeBtn.SetActive(true);
                 _demolitionBtn.SetActive(true);
+                
+                if (HasFlag && _flagBtn != null)
+                    _flagBtn.SetActive(true);
+                else if (!HasFlag && _flagBtn != null) _flagBtn.SetActive(false);
             }
         }
 
@@ -102,5 +109,7 @@ namespace Building
 
             _curConstruction = Instantiate(building, _buildPos, _buildRot, _parent);
         }
+
+
     }
 }

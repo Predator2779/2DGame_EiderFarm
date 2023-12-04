@@ -878,6 +878,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a47f546fc70ec8428172694e78e4288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1136149396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8055982784655480963, guid: bc169926cdfc2ac458d2803e6cfcb794, type: 3}
+  m_PrefabInstance: {fileID: 7908207244051269342}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1144242075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2985,6 +2990,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6860066777379613806, guid: bc169926cdfc2ac458d2803e6cfcb794, type: 3}
+      propertyPath: _flagBtn
+      value: 
+      objectReference: {fileID: 1136149396}
     - target: {fileID: 7682446203333061235, guid: bc169926cdfc2ac458d2803e6cfcb794, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3003,6 +3012,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8333251343946151484, guid: bc169926cdfc2ac458d2803e6cfcb794, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638896882027570736, guid: bc169926cdfc2ac458d2803e6cfcb794, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

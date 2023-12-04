@@ -44,30 +44,25 @@ public class InventoryDrawer : MonoBehaviour
 
     public void SwitchFlagPanel(bool yes)
     {
-        if(yes)
+        if (yes)
             _flagPanel.SetActive(true);
         else
+        {
             _flagPanel.SetActive(false);
+            _isFlagAdded = false;
+        }
     }
 
     private void UpdateFlagSprite(int count, Sprite[] flagSprites)
     {
         if(count > 0 && !_isFlagAdded)
         {
-            _flagPanel.SetActive(true);
-            _flagImage.sprite = flagSprites[Random.Range(0,flagSprites.Length)];
+            _flagImage.sprite = flagSprites[Random.Range(0, flagSprites.Length)];
             EventHandler.OnFlagSpriteChanged.Invoke(_flagImage.sprite);
+            EventHandler.FlagPanelEvent?.Invoke(true);
             _isFlagAdded = true;
         }
-        else if(count <= 0)
-        {
-            _flagPanel.SetActive(false);
-        }
-    }
-    public Sprite GetSprite()
-    {
-        _isFlagAdded = false;
-        return _flagImage.sprite;
+        
     }
 
     public GameObject GetFlagPanel() => _flagPanel;

@@ -1,5 +1,6 @@
 using Building;
 using Building.Constructions;
+using Economy;
 using General;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -70,9 +71,17 @@ namespace TriggerScripts
         
         protected override void OnTriggerEnter2D(Collider2D other)
         {
-            base.OnTriggerEnter2D(other);
-            SetConstruction();
-            _buildMenu.CheckBtns();
+            if (other.gameObject.GetComponent<InputHandler>())
+            {
+                base.OnTriggerEnter2D(other);
+                SetConstruction();
+                if (other.gameObject.GetComponent<Inventory>().TryGetBunch(GlobalConstants.Flag, out var bunch))
+                    if (bunch.GetCount() > 0)
+                        _buildMenu.HasFlag = true;
+                else
+                        _buildMenu.HasFlag = false;
+                _buildMenu.CheckBtns();
+            }
         }
 
         public void RemovePlace()
