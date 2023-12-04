@@ -1354,7 +1354,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 5468336205536155252}
+      - m_Target: {fileID: 4864529857491688941}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -1600,7 +1600,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5468336205536155252}
+      - m_Target: {fileID: 4864529857491688941}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -1616,6 +1616,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 389792708353609203}
+        m_TargetAssemblyTypeName: Economy.Farm_House.DisplayMenu, Assembly-CSharp
+        m_MethodName: RefreshDisplay
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1757,7 +1769,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5468336205536155252}
+      - m_Target: {fileID: 4864529857491688941}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -2337,12 +2349,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5629423256267194810, guid: 6e91d8d8080c6ba4fa5a618b5b81ae76, type: 3}
   m_PrefabInstance: {fileID: 5437930279070420041}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4864529857491688941}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ea7b97df4d044298a8c69e081c33301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4864529857491688941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 645458297272897956, guid: 6e91d8d8080c6ba4fa5a618b5b81ae76, type: 3}
+  m_PrefabInstance: {fileID: 5437930279070420041}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &9037021287654955971 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3899723910291412874, guid: 6e91d8d8080c6ba4fa5a618b5b81ae76, type: 3}
