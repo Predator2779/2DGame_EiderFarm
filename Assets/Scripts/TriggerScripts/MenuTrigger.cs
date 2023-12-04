@@ -12,7 +12,7 @@ namespace TriggerScripts
             if (!other.CompareTag("Player")) return; SetMenuActive(true);
         }
 
-        private void OnTriggerExit2D(Collider2D other)
+        protected virtual void OnTriggerExit2D(Collider2D other)
         {
             if (other.CompareTag("Player")) SetMenuActive(false);
         }

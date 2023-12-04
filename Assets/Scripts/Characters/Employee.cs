@@ -7,14 +7,12 @@ namespace Characters
     public class Employee : Person
     {
         [SerializeField] private Sprite _sprite;
-        [SerializeField] private string _name;
         [SerializeField] private string _description;
         [SerializeField] private int _price;
         [SerializeField] private bool _isHired;
         [SerializeField] private Inventory _inventory;
 
         public Sprite GetSprite() => _sprite;
-        public string GetName() => _name;
         public string GetDescription() => _description;
         public int GetPrice() => _price;
         public bool CanHiring() => !_isHired;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Characters.Enemy
 {
-    public class EmployeeAI : PersonAI
+    public class EmployeeAI : AnimalAI
     {
         [SerializeField] private EmployeeStates _currentState;
         
@@ -15,7 +15,7 @@ namespace Characters.Enemy
 
         private void SetNullableFields()
         {
-            _person ??= GetComponent<Employee>();
+            _animal ??= GetComponent<Employee>();
         }
         
         protected override void StateExecute()

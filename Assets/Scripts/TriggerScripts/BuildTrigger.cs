@@ -1,5 +1,6 @@
 using Building;
 using Building.Constructions;
+using Characters;
 using General;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -12,7 +13,7 @@ namespace TriggerScripts
         [SerializeField] private Construction _buildPrefab;
         [SerializeField] private SpriteRenderer _renderer;
 
-        private bool _isOccupied;
+        private string _personName;
         private Transform _parentBuildings;
         private Tilemap _map;
 
@@ -39,7 +40,7 @@ namespace TriggerScripts
 
         private Quaternion GetRotation() => transform.GetComponentInChildren<SpriteRenderer>().transform.rotation;
 
-        public bool IsOccupied() => _isOccupied;
+        public bool IsOccupied() => _personName != "";
         
         private void SetParent(GlobalTypes.TypeBuildings type)
         {
@@ -76,6 +77,19 @@ namespace TriggerScripts
             base.OnTriggerEnter2D(other);
             SetConstruction();
             _buildMenu.CheckBtns();
+            
+            if (other.TryGetComponent(out Person person) &&
+                person.GetName() == _personName)
+                _personName = person.GetName();
+        }
+
+        protected override void OnTriggerExit2D(Collider2D other)
+        {
+            base.OnTriggerExit2D(other);
+
+            if (other.TryGetComponent(out Person person) &&
+                person.GetName() == _personName)
+                _personName = "";
         }
 
         public void RemovePlace()

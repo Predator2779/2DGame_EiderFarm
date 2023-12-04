@@ -1,13 +1,13 @@
 using System.Collections;
+using Characters;
 using Characters.AI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Charcters.AI
 {
-    [RequireComponent(typeof(Person))]
     [RequireComponent(typeof(CircleCollider2D))]
-    public class EnemyAI : PersonAI
+    public class PatrollerAI : AnimalAI
     {
         [SerializeField] private EnemyStates _currentState;
         [SerializeField] private float _requirePlayerDistance;
@@ -24,14 +24,13 @@ namespace Charcters.AI
         private bool _canChangePatrolState;
         private bool _canChangeDir;
 
-        private void Start() => SetNullableFields();
-        private void OnValidate() => SetNullableFields();
+        private void Start() => Initialize();
+        private void OnValidate() => Initialize();
         private void Update() => CheckConditions();
         private void FixedUpdate() => StateExecute();
 
-        private void SetNullableFields()
+        private void Initialize()
         {
-            _person ??= GetComponent<Person>();
             _currentDirection = GetRandomDirection();
             _canChangePatrolState = true;
             _canChangeDir = true;
@@ -56,7 +55,6 @@ namespace Charcters.AI
         private void Patrol()
         {
             if (_canChangeDir) StartCoroutine(ChangeDirection(GetRandomDirection()));
-
             Walk(_currentDirection);
         }
 

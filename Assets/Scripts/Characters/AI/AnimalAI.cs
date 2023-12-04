@@ -3,23 +3,23 @@ using UnityEngine;
 
 namespace Characters.AI
 {
-    public abstract class PersonAI : MonoBehaviour
+    public abstract class AnimalAI : MonoBehaviour
     {
         [SerializeField] protected PersonAnimate _personAnimate;
+        [SerializeField] protected Animal _animal;
 
-        protected Person _person;
         protected abstract void StateExecute();
         protected abstract void Idle();
         
         protected void Walk(Vector2 direction)
         {
-            _person.Walk(direction);
+            _animal.Walk(direction);
             _personAnimate.Walk(direction, true);
         }
         
         protected virtual void Run(Vector2 direction)
         {
-            _person.Run(direction);
+            _animal.Run(direction);
             _personAnimate.Walk(direction, true);
         }
 
