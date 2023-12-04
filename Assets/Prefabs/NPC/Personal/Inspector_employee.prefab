@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8307517251854064901}
   - component: {fileID: 144525402567722880}
   m_Layer: 0
-  m_Name: Inspector
+  m_Name: Inspector_employee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
