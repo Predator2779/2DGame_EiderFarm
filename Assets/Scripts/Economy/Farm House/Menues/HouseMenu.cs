@@ -19,11 +19,11 @@ namespace Economy.Farm_House
         
         public void SetInventory(Inventory inv)
         {
+            _taskHandler.SetPlayerInventory(inv);
+            _taskHandler.RefreshDisplay();    
+            
             _shopMenu.SetPlayerInventory(inv);
             _shopMenu.RefreshDisplay();
-            
-            _taskHandler.SetPlayerInventory(inv);
-            _taskHandler.RefreshDisplay();     
             
             _personalMenu.SetPlayerInventory(inv);
             _personalMenu.RefreshDisplay();

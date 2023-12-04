@@ -1,5 +1,6 @@
 using System.Linq;
 using Characters;
+using General;
 using UnityEngine;
 
 namespace Economy.Farm_House
@@ -11,9 +12,12 @@ namespace Economy.Farm_House
         [SerializeField] private GeneralCell _cellPrefab;
         [Header("Employees")]
         [SerializeField] private Employee[] _requiredEmployees;
-        
-        protected override void Initialize() { }
-        protected override void Deinitialize() { }
+
+        protected override void Initialize() =>
+                EventHandler.OnEmployeeHired.AddListener(ProgressingTask);
+
+        protected override void Deinitialize() =>
+                EventHandler.OnEmployeeHired.RemoveListener(ProgressingTask);
 
         public override void CreateCell(Transform parent) =>
                 Instantiate(_cellPrefab, parent).SetCell(this);

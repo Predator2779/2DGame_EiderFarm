@@ -39,6 +39,8 @@ namespace General
         public static UnityEvent<Task, TaskStage> OnTaskStageChanged = new();
         public static UnityEvent<Task, TaskStage> OnGiveReward = new();
 
+        public static UnityEvent OnEmployeeHired = new();
+
         #endregion
     }
 }

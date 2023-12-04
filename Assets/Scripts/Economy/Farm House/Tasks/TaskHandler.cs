@@ -21,7 +21,7 @@ namespace Economy.Farm_House
             if (stage == TaskStage.Completed)
                 task.GiveReward(_playerInventory);
 
-            RefreshTasksStatus(task, stage);
+            RefreshDisplay();
         }
 
         private void RefreshTasksStatus(Task task, TaskStage stage) => RefreshDisplay();

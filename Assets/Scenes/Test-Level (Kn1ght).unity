@@ -1908,7 +1908,7 @@ MonoBehaviour:
   _isPlayerInventory: 1
   _listItems:
   - _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
-    _count: 50
+    _count: 2000
 --- !u!114 &5069678491385381035 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
@@ -2200,6 +2200,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 896586563214401165, guid: bc169926cdfc2ac458d2803e6cfcb794, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1159339052895454638, guid: bc169926cdfc2ac458d2803e6cfcb794, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -563
@@ -2362,7 +2366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7945064810890952933, guid: bc169926cdfc2ac458d2803e6cfcb794, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8333251343946151484, guid: bc169926cdfc2ac458d2803e6cfcb794, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target

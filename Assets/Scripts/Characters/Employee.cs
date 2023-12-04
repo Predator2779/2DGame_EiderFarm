@@ -26,6 +26,8 @@ namespace Characters
             _inventory.AddItems(money, _price);
             _isHired = true;
             
+            EventHandler.OnEmployeeHired?.Invoke();
+            
             SpawnEmployee(spawnPosition);
         }
 
