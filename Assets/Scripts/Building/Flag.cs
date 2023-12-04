@@ -15,22 +15,22 @@ public class Flag : MonoBehaviour
     private ItemBunch _itemBunch;
 
     [FormerlySerializedAs("_isFlagAdded")] public bool isFlagAdded;
-    
+
     private void Awake() => EventHandler.OnFlagSpriteChanged.AddListener(SetFlagSprite);
 
     protected void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.GetComponent<InputHandler>() ||
-            !_buildMenu.IsBuilded ||
-            isFlagAdded) return;
-
+        if (!other.GetComponent<InputHandler>()) return;
         _playerInventory = other.gameObject.GetComponent<Inventory>();
-        
+
         if (!_playerInventory.TryGetBunch(GlobalConstants.Flag, out var bunch) ||
             bunch.GetCount() <= 0) return;
         
-        _flagBtn.SetActive(true);
         _itemBunch = bunch;
+
+        if (!_buildMenu.IsBuilded || isFlagAdded) return;
+
+        _flagBtn.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D other) => _flagBtn.SetActive(false);
