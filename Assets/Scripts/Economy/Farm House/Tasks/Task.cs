@@ -43,6 +43,8 @@ namespace Economy.Farm_House
             EventHandler.OnTaskStageChanged?.Invoke(this, _stage);
         }
 
+        public int RewardCount() => _reward.GetCount();
+        
         public void GiveReward(Inventory inventory)
         {
             if (_reward != null) inventory.AddItems(_reward.GetItem(), _reward.GetCount());

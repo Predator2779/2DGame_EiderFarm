@@ -1,32 +1,34 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Economy.Farm_House
 {
-    public class GeneralCell : MonoBehaviour
+    public class GeneralCell : MenuCell
     {
-        [SerializeField] protected Image _icon;
-        [SerializeField] protected TMP_Text _name;
-        [SerializeField] protected TMP_Text _description;
-        [SerializeField] protected TMP_Text _counter;
+        private Task _task;
         
-        protected void SetButton(Sprite icon, string description)
+        public void SetCell(Task task)
         {
-            _icon.sprite = icon;
-            _description.text = description;
+            _task = task;
+            RefreshButton();
         }
         
-        protected void SetButton(Sprite icon, string description, int count)
-        {
-            SetButton(icon, description);
-            _counter.text = count.ToString();
-        }   
+        public void ClickTaskBtn() => _task.CheckProgressing();
         
-        protected void SetButton(Sprite icon, string name, string description, int count)
+        private void SetButton(Sprite icon, string name, string description, int rewardCount)
         {
-            _name.text = name;
-            SetButton(icon, description, count);
+            SetButton(icon, name, description);
+            _counter.text = $"Награда: {rewardCount}kr";
+        }
+
+        private void RefreshButton()
+        {
+            if (_task == null) return;
+            
+            SetButton(
+                    _task.GetIcon(), 
+                    _task.GetName(), 
+                    _task.GetDescription(), 
+                    _task.RewardCount());
         }
     }
 }

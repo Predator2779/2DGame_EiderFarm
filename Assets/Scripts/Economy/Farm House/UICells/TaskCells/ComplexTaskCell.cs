@@ -1,6 +1,6 @@
 namespace Economy.Farm_House
 {
-    public class ComplexTaskCell : GeneralCell
+    public class ComplexTaskCell : MenuCell
     {
         private ComplexTask _task;
         

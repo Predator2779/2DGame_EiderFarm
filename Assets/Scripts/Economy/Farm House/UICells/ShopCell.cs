@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Economy.Farm_House
 {
-    public class ShopCell : GeneralCell
+    public class ShopCell : MenuCell
     {
         [SerializeField] private TMP_InputField _inpField;
 

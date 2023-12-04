@@ -2336,6 +2336,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 531.4686
       objectReference: {fileID: 0}
+    - target: {fileID: 6016448749758555194, guid: bc169926cdfc2ac458d2803e6cfcb794, type: 3}
+      propertyPath: _tasks.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6016448749758555194, guid: bc169926cdfc2ac458d2803e6cfcb794, type: 3}
+      propertyPath: _tasks.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0af0e0c8b237f86438a2021acd99faa5, type: 2}
     - target: {fileID: 6067375479773031528, guid: bc169926cdfc2ac458d2803e6cfcb794, type: 3}
       propertyPath: m_Name
       value: PersonalMenu
@@ -2354,7 +2362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7945064810890952933, guid: bc169926cdfc2ac458d2803e6cfcb794, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8333251343946151484, guid: bc169926cdfc2ac458d2803e6cfcb794, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target

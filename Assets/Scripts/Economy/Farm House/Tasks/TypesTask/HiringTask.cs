@@ -8,24 +8,15 @@ namespace Economy.Farm_House
     public class HiringTask : Task
     {
         [Header("Task Cell")]
-        // [SerializeField] private CollectTaskCell _cellPrefab;
+        [SerializeField] private GeneralCell _cellPrefab;
         [Header("Employees")]
         [SerializeField] private Employee[] _requiredEmployees;
         
-        protected override void Initialize()
-        {
-            throw new System.NotImplementedException();
-        }
+        protected override void Initialize() { }
+        protected override void Deinitialize() { }
 
-        protected override void Deinitialize()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void CreateCell(Transform parent)
-        {
-            // Instantiate(_cellPrefab, parent).SetCell(this);
-        }
+        public override void CreateCell(Transform parent) =>
+                Instantiate(_cellPrefab, parent).SetCell(this);
 
         protected override bool SomeCondition() => _requiredEmployees.All(e => !e.CanHiring());
     }

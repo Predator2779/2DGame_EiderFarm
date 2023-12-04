@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Economy.Farm_House
 {
-    public class EmployeeCell : GeneralCell
+    public class EmployeeCell : MenuCell
     {
         private Employee _employee;
         private Vector2 _spawnPosition;

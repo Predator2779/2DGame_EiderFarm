@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Economy.Farm_House
 {
-    public class CollectTaskCell : GeneralCell
+    public class CollectTaskCell : MenuCell
     {
         private CollectTask _task;
         
