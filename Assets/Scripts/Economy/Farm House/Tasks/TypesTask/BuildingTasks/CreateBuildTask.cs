@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Economy.Farm_House
 {
-    [CreateAssetMenu(menuName = "Tasks/CollectTasks/CreateBuildTask", fileName = "New CreateBuildTask", order = 0)]
+    [CreateAssetMenu(menuName = "Tasks/BuildTasks/CreateBuildTask", fileName = "New CreateBuildTask", order = 0)]
     public class CreateBuildTask : CollectTask
     {
         [SerializeField] protected GlobalTypes.TypeBuildings _buildType;

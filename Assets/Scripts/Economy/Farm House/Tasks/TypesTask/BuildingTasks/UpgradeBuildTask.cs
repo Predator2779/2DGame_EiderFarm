@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Economy.Farm_House
 {
-    [CreateAssetMenu(menuName = "Tasks/CollectTasks/UpgradeBuildTask", fileName = "New UpgradeBuildTask", order = 0)]
+    [CreateAssetMenu(menuName = "Tasks/BuildTasks/UpgradeBuildTask", fileName = "New UpgradeBuildTask", order = 0)]
     public class UpgradeBuildTask : CreateBuildTask
     {
         [SerializeField] private int _requireGrade;

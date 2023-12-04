@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Economy.Farm_House
 {
+    [CreateAssetMenu(menuName = "Tasks/BuildTasks/DemolitionTask", fileName = "New DemolitionTask", order = 0)]
     public class DemolitionTask : CollectTask
     {
         [SerializeField] private BuildTrigger[] _buildTriggers;
