@@ -1267,7 +1267,7 @@ MonoBehaviour:
     Path: event:/Soundtrack/Soundtrack
   Event: 
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -1598,6 +1598,10 @@ PrefabInstance:
     - target: {fileID: 2548872672200277418, guid: 019bc82c2436a704f9c5f939925ac966, type: 3}
       propertyPath: m_Name
       value: PLAYER_PHYS-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324752455631967444, guid: 019bc82c2436a704f9c5f939925ac966, type: 3}
+      propertyPath: _listItems.Array.data[0]._count
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4221277828616919809, guid: 019bc82c2436a704f9c5f939925ac966, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2101,22 +2105,6 @@ PrefabInstance:
       propertyPath: _gagaHouses.Array.data[36]
       value: 
       objectReference: {fileID: 2130788027}
-    - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
-      propertyPath: _gagaHouses.Array.data[37]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
-      propertyPath: _gagaHouses.Array.data[38]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
-      propertyPath: _gagaHouses.Array.data[39]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
-      propertyPath: _gagaHouses.Array.data[40]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _clothMachines.Array.data[0]
       value: 

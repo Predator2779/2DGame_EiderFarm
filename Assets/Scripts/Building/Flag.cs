@@ -61,12 +61,12 @@ public class Flag : MonoBehaviour
     }
     public void AddFlag()
     {
-        SetFlag();
-        
-        // _flag.SetActive(true);
-        // isFlagAdded = true;
-        // EventHandler.OnFlagSpriteChanged?.RemoveListener(SetFlagSprite);
-        // EventHandler.OnFlagSet?.Invoke();
+        //SetFlag();
+
+        _flag.SetActive(true);
+        isFlagAdded = true;
+        EventHandler.OnFlagSpriteChanged?.RemoveListener(SetFlagSprite);
+        EventHandler.OnFlagSet?.Invoke();
     }
 
     public Sprite GetSprite()
