@@ -34,7 +34,7 @@ namespace FMODUnity
             EditorParameters = new List<EditorParamRef>();
             MasterBanks = new List<EditorBankRef>();
             StringsBanks = new List<EditorBankRef>();
-            cacheTime = 0;
+            cacheTime = 0;  
         }
     }
 }
