@@ -6,14 +6,12 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Gaga : MonoBehaviour
 {
-    public event Action GagaDieEvent;
     private enum State
     {
         Idle,
         Walk,
     }
 
-    [SerializeField] private Field _field;
     [SerializeField] private Movement _movement;
     [SerializeField] private int _timeInHome;
     [SerializeField] private float _speed;
@@ -27,7 +25,6 @@ public class Gaga : MonoBehaviour
 
     private void Start()
     {
-        _field = FindObjectOfType<Field>();
         _currentState = State.Walk;
         _movement = GetComponent<Movement>();
         _sprite = GetComponent<SpriteRenderer>();

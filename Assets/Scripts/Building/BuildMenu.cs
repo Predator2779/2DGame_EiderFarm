@@ -1,4 +1,6 @@
 using Building.Constructions;
+using Economy;
+using General;
 using UnityEngine;
 using EventHandler = General.EventHandler;
 
@@ -17,9 +19,18 @@ namespace Building
         private GameObject _buildBtn;
         private GameObject _upgradeBtn;
         private GameObject _demolitionBtn;
-        
+
         [SerializeField] private GameObject _flagBtn;
         [SerializeField] private Flag _flag;
+
+        [Header("Стоимость постройки")]
+        [SerializeField, Range(0, 20)] private int _buyPrice;
+        [Header("Стоимость улучшений")]
+        [SerializeField, Range(0, 20)] private int[] _upgradePrice = new int[1];
+        [Header("Сколько возвращает при сносе (0 если 0)")]
+        [SerializeField, Range(0, 20)] private int _sellPrice;
+
+        private Inventory _inventory;
 
         public bool HasFlag;
         public bool IsBuilded;
@@ -49,14 +60,19 @@ namespace Building
         {
             if (_curConstruction != null) return;
 
+            if (!Buy(_buyPrice))
+                return;
+
             if (_triggerSprite != null)
                 _triggerSprite.enabled = false;
+
 
             Build(_buildingPrefab);
             _curConstruction.SetSprite(_curConstruction.Upgrade());
             IsBuilded = true;
+
             CheckBtns();
-            
+
             EventHandler.OnBuilded?.Invoke(_curConstruction.typeConstruction);
         }
 
@@ -65,12 +81,14 @@ namespace Building
             if (_curConstruction == null) return;
 
             _triggerSprite.enabled = true;
+            Sell(_sellPrice);
             IsBuilded = false;
 
             EventHandler.OnDemolition?.Invoke(_curConstruction.typeConstruction);
             Destroy(_curConstruction.gameObject);
-            CheckBtns();
             
+            CheckBtns();
+
             if (_flag != null) _flag.RemoveFlag();
 
         }
@@ -79,8 +97,15 @@ namespace Building
         {
             if (_curConstruction == null || !_curConstruction.CanUpgrade()) return;
 
+            switch (_curConstruction.GetCurrentGrade())
+            {
+                case 1:
+                    if (!Buy(_upgradePrice[0])) return; break;
+                case 2:
+                    if (!Buy(_upgradePrice[1])) return; break;
+            }
             _curConstruction.SetSprite(_curConstruction.Upgrade());
-
+            
             EventHandler.OnUpgraded?.Invoke(
                     _curConstruction.typeConstruction,
                     _curConstruction.GetCurrentGrade());
@@ -115,5 +140,27 @@ namespace Building
         }
 
         public void SetFlag() => _flag.AddFlag();
+
+        private bool Buy(int price)
+        {
+            _inventory.TryGetBunch(GlobalConstants.Money, out var moneyBunch);
+            if (moneyBunch.GetCount() < price)
+                return false;
+            moneyBunch.RemoveItems(price);
+            EventHandler.OnBunchChanged.Invoke(GlobalConstants.Money, moneyBunch.GetCount());
+            return true;
+        }
+
+        private void Sell(int price)
+        {
+            _inventory.TryGetBunch(GlobalConstants.Money, out var moneyBunch);
+
+            moneyBunch.AddItems(price);
+            EventHandler.OnBunchChanged.Invoke(GlobalConstants.Money, moneyBunch.GetCount());
+        }
+
+        public void SetInventory(Inventory inv) => _inventory = inv;
+
+
     }
 }

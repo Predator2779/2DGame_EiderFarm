@@ -78,6 +78,7 @@ namespace TriggerScripts
             if (other.gameObject.GetComponent<InputHandler>())
             {
                 SetConstruction();
+                _buildMenu.SetInventory(other.gameObject.GetComponent<Inventory>());
                 if (other.gameObject.GetComponent<Inventory>().
                           TryGetBunch(GlobalConstants.Flag, out var bunch)) 
                     _buildMenu.HasFlag = bunch.GetCount() > 0;
@@ -95,7 +96,7 @@ namespace TriggerScripts
         protected override void OnTriggerExit2D(Collider2D other)
         {
             base.OnTriggerExit2D(other);
-
+            _buildMenu.SetInventory(null);
             if (other.TryGetComponent(out Person person) &&
                 person.GetName() == _personName) _personName = "";
         }

@@ -91,6 +91,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17ee78c7f36743ba884ac1eeaa50a838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _flagBtn: {fileID: 0}
+  _flag: {fileID: 0}
+  _buyPrice: 5
+  _upgradePrice: 0800000003000000
+  _sellPrice: 3
+  HasFlag: 0
   IsBuilded: 0
 --- !u!1 &1572242538074882626
 GameObject:
