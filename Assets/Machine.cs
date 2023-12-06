@@ -15,9 +15,12 @@ public class Machine : MonoBehaviour
     private Item _typeFromPlayer;
     private bool _isWorked;
 
+    private Animator _animator;
+
 
     private void Start()
     {
+        _animator.GetComponent<Animator>();
         _storage = GetComponent<BuildStorage>();
         _converter = GetComponent<Converter>();
         _transmitter = GetComponent<ResourceTransmitter>();
@@ -29,6 +32,12 @@ public class Machine : MonoBehaviour
     {
         _storage.AddFluff(_fluffCount);
         _transmitter.CheckBag();
+    }
+
+    public void Animation(bool work, int currentGrade)
+    {
+        _animator.SetBool("isWork", work);
+        _animator.SetInteger("currentGrade", currentGrade);
     }
 
     private IEnumerator Production(Item _typeToPlayer, Inventory _characterInventory, int _fluffCount)
@@ -45,4 +54,6 @@ public class Machine : MonoBehaviour
     }
 
     private void OnDestroy() => _transmitter.TransmitteEvent -= Production;
+
+    public Animator GetAnimator() => _animator; 
 }

@@ -18,10 +18,14 @@ public class ResourceTransmitter : MonoBehaviour
     private Construction _construction;
     private BuildStorage _storage;
 
+    private Machine _machine;
+
+
     private void Awake()
     {
         _construction = GetComponent<Construction>();
         _storage = GetComponent<BuildStorage>();
+        _machine = GetComponent<Machine>();
     }
 
     public void CheckBag()
@@ -37,10 +41,10 @@ public class ResourceTransmitter : MonoBehaviour
     private void Transmitte()
     {
         int count = _storage.GetFluff();
-        
+
         _characterInventory.AddItems(_typeToPlayer, count);
         _storage.ResetFluff();
-        
+
         EventHandler.OnItemTransmitted?.Invoke(_construction.typeConstruction, _typeToPlayer, count);
     }
 
@@ -50,6 +54,7 @@ public class ResourceTransmitter : MonoBehaviour
         {
             _characterInventory = collision.gameObject.GetComponent<Inventory>();
             CheckBag();
+            _machine.Animation(true, _construction.GetCurrentGrade());
         }
     }
 
@@ -57,6 +62,9 @@ public class ResourceTransmitter : MonoBehaviour
     {
         if (_characterInventory == collision.GetComponent<Inventory>() &&
             collision.gameObject.GetComponent<InputHandler>())
+        {
             _characterInventory = null;
+            _machine.Animation(false, _construction.GetCurrentGrade());
+        }
     }
 }
