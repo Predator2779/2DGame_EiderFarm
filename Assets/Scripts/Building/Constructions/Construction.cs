@@ -1,5 +1,6 @@
 using General;
 using UnityEngine;
+using UnityEditor.UIElements;
 
 namespace Building.Constructions
 {
@@ -24,12 +25,9 @@ namespace Building.Constructions
             return _gradeBuildings[_currentGrade - 1];
         }
 
-        private void Update()
-        {
-            _spriteRenderer.sprite = _gradeBuildings[2];
-        }
-
         public Sprite GetFirstGrade() => _gradeBuildings[0];
+
+        public Sprite[] GetGradeBuildings() => _gradeBuildings;
 
         public void SetSprite(Sprite sprite) => _spriteRenderer.sprite = sprite;
 
@@ -40,15 +38,16 @@ namespace Building.Constructions
         public ResourceTransmitter GetTransmitter() => _transmitter;
 
 
-        public Sprite GetCurrentGradeSprite()
+        public Sprite GetCurrentGradeSprite(Sprite[] sprites)
         {
             switch (GetCurrentGrade())
             {
-                case 1: return _gradeBuildings[0];
-                case 2: return _gradeBuildings[1];
-                case 3: return _gradeBuildings[2];
+                case 1: return sprites[0];
+                case 2: return sprites[1];
+                case 3: return sprites[2];
             }
-            return _gradeBuildings[0];
+            return sprites[0];
         }
+
     }
 }

@@ -109,6 +109,8 @@ namespace Building
                     if (!Buy(_upgradePrice[1])) return; break;
             }
             _curConstruction.SetSprite(_curConstruction.Upgrade());
+            if (_curConstruction.GetComponent<ResourceTransmitter>())
+                _curConstruction.GetComponent<ResourceTransmitter>().SetGradeAnimationTrue(_curConstruction.GetCurrentGrade());
 
             EventHandler.OnUpgraded?.Invoke(
                     _curConstruction.typeConstruction,

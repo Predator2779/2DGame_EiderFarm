@@ -54,5 +54,13 @@ public class Machine : MonoBehaviour
 
     private void OnDestroy() => _transmitter.TransmitteEvent -= Production;
 
-    public Animator GetAnimator() => _animator; 
+    public Animator GetAnimator() => _animator;
+
+    public void EnableAnimator()
+    {
+        _animator.enabled = !_animator.enabled;
+        Debug.Log(1);
+    }
+            
+
 }
