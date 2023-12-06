@@ -1,12 +1,14 @@
-using System;
+using Building;
 using Characters.AI;
 using UnityEngine;
 
 namespace Characters.Enemy
 {
-    public class EmployeeAI : AnimalAI
+    public class EmployeeAI : PatrollerAI
     {
         [SerializeField] private EmployeeStates _currentState;
+        [SerializeField] private BuildingsPull _pull;
+        
         
         private void Start() => SetNullableFields();
         private void OnValidate() => SetNullableFields();
@@ -15,7 +17,7 @@ namespace Characters.Enemy
 
         private void SetNullableFields()
         {
-            _animal ??= GetComponent<Employee>();
+            _walker ??= GetComponent<Employee>();
         }
         
         protected override void StateExecute()
