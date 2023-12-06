@@ -10,15 +10,15 @@ namespace TriggerScripts
 {
     public class BuildTrigger : MenuTrigger
     {
+        [SerializeField] private Tilemap _map;
         [SerializeField] private BuildMenu _buildMenu;
         [SerializeField] private Construction _buildPrefab;
         [SerializeField] private SpriteRenderer _renderer;
-
-        private string _personName;
+        
         private Transform _parentBuildings;
-        private Tilemap _map;
+        private string _personName;
 
-        private void Awake() => Initialize();
+        private void Start() => Initialize();
 
         private void Initialize()
         {
@@ -28,6 +28,7 @@ namespace TriggerScripts
             SetParent(_buildPrefab.typeConstruction);
             SetSprite();
             SetPosition();
+            AddToPull();
         }
 
         private void SetSprite()
@@ -41,6 +42,14 @@ namespace TriggerScripts
 
         private Quaternion GetRotation() => transform.GetComponentInChildren<SpriteRenderer>().transform.rotation;
 
+        public void AddToPull() =>
+                EventHandler.OnAddedBuildPull.Invoke(this, GetTypeBuilding());  
+        
+        public void RemoveFromPull() =>
+                EventHandler.OnRemovedBuildPull?.Invoke(this, GetTypeBuilding());
+
+        private GlobalTypes.TypeBuildings GetTypeBuilding() => _buildPrefab.typeConstruction;
+        
         public bool IsOccupied() => _personName != "";
 
         private void SetParent(GlobalTypes.TypeBuildings type)
@@ -100,7 +109,7 @@ namespace TriggerScripts
             if (other.TryGetComponent(out Person person) &&
                 person.GetName() == _personName) _personName = "";
         }
-
+        
         public void RemovePlace()
         {
             _buildMenu.Demolition();

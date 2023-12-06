@@ -9,10 +9,10 @@ namespace Building
 {
     public class BuildingsPull : MonoBehaviour
     {
-        public BuildTrigger[] _gagaHouses;
-        public BuildTrigger[] _cleaners;
-        public BuildTrigger[] _clothMachines;
-        public BuildTrigger[] _storages;
+        [SerializeField] private BuildTrigger[] _gagaHouses;
+        [SerializeField] private BuildTrigger[] _cleaners;
+        [SerializeField] private BuildTrigger[] _clothMachines;
+        [SerializeField] private BuildTrigger[] _storages;
 
         private static BuildingsPull _instance;
 
@@ -43,23 +43,23 @@ namespace Building
             switch (buildType)
             {
                 case GlobalTypes.TypeBuildings.GagaHouse:
-                    AddRemove(commandType, buildTrigger, ref _gagaHouses);
+                    ChangeArray(commandType, buildTrigger, ref _gagaHouses);
                     break;
                 case GlobalTypes.TypeBuildings.FluffCleaner:
-                    AddRemove(commandType, buildTrigger, ref _cleaners);
+                    ChangeArray(commandType, buildTrigger, ref _cleaners);
                     break;
                 case GlobalTypes.TypeBuildings.ClothMachine:
-                    AddRemove(commandType, buildTrigger, ref _clothMachines);
+                    ChangeArray(commandType, buildTrigger, ref _clothMachines);
                     break;
                 case GlobalTypes.TypeBuildings.Storage:
-                    AddRemove(commandType, buildTrigger, ref _storages);
+                    ChangeArray(commandType, buildTrigger, ref _storages);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(buildType), buildType, null);
             }
         }
         
-        private void AddRemove(
+        private void ChangeArray(
                 CommandType type,
                 BuildTrigger building,
                 ref BuildTrigger[] buildings)
