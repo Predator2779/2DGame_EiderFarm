@@ -236,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _delayProduction: 3
   _transmitter: {fileID: 0}
+  _animator: {fileID: 2469458603659518761}
 --- !u!95 &2469458603659518761
 Animator:
   serializedVersion: 5

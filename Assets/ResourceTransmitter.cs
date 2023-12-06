@@ -20,12 +20,16 @@ public class ResourceTransmitter : MonoBehaviour
 
     private Machine _machine;
 
+    private Sprite _sprite;
+
 
     private void Awake()
     {
         _construction = GetComponent<Construction>();
         _storage = GetComponent<BuildStorage>();
         _machine = GetComponent<Machine>();
+
+        EventHandler.OnUpgradeChanged.AddListener(SetGradeAnimationTrue);
     }
 
     public void CheckBag()
@@ -55,6 +59,7 @@ public class ResourceTransmitter : MonoBehaviour
             _characterInventory = collision.gameObject.GetComponent<Inventory>();
             CheckBag();
             _machine.Animation(true, _construction.GetCurrentGrade());
+            SetGradeAnimationTrue(_construction.GetCurrentGrade());
         }
     }
 
@@ -64,7 +69,20 @@ public class ResourceTransmitter : MonoBehaviour
             collision.gameObject.GetComponent<InputHandler>())
         {
             _characterInventory = null;
+            _sprite = GetComponent<SpriteRenderer>().sprite;
             _machine.Animation(false, _construction.GetCurrentGrade());
+            gameObject.GetComponent<SpriteRenderer>().sprite = _construction.GetCurrentGradeSprite();
         }
     }
+
+    public void SetGradeAnimationTrue(int grade)
+    {
+        _machine.Animation(true, grade);
+    }
+
+    private void OnDestroy()
+    {
+        EventHandler.OnUpgradeChanged.RemoveListener(SetGradeAnimationTrue);
+    }
+
 }

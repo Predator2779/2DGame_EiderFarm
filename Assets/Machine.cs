@@ -15,12 +15,11 @@ public class Machine : MonoBehaviour
     private Item _typeFromPlayer;
     private bool _isWorked;
 
-    private Animator _animator;
+    [SerializeField] private Animator _animator;
 
 
     private void Start()
     {
-        _animator.GetComponent<Animator>();
         _storage = GetComponent<BuildStorage>();
         _converter = GetComponent<Converter>();
         _transmitter = GetComponent<ResourceTransmitter>();

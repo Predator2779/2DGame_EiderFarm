@@ -1,6 +1,7 @@
 using Building.Constructions;
 using Economy;
 using General;
+using System;
 using UnityEngine;
 using EventHandler = General.EventHandler;
 
@@ -8,6 +9,7 @@ namespace Building
 {
     public class BuildMenu : MonoBehaviour
     {
+
         private Construction _buildingPrefab;
         private Construction _curConstruction;
 
@@ -34,6 +36,8 @@ namespace Building
 
         public bool HasFlag;
         public bool IsBuilded;
+
+        
 
         public void SetConstruction(
                 Construction prefab,
@@ -105,7 +109,7 @@ namespace Building
                     if (!Buy(_upgradePrice[1])) return; break;
             }
             _curConstruction.SetSprite(_curConstruction.Upgrade());
-            
+
             EventHandler.OnUpgraded?.Invoke(
                     _curConstruction.typeConstruction,
                     _curConstruction.GetCurrentGrade());
