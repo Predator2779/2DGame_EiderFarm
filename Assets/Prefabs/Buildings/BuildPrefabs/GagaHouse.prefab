@@ -219,5 +219,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chance: 100
-  _time: 2
+  _time: 30
   _fluffCount: 1
