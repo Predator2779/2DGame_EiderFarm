@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using General;
 using TriggerScripts;
@@ -16,7 +17,7 @@ namespace Building
 
         private static BuildingsPull _instance;
 
-        private void Start()
+        private void Awake()
         {
             if (_instance == null) _instance = this;
             else if (_instance == this) Destroy(gameObject);
@@ -64,15 +65,24 @@ namespace Building
                 BuildTrigger building,
                 ref BuildTrigger[] buildings)
         {
+            List<BuildTrigger> buildingsList = buildings.ToList();
             bool contains = buildings.Contains(building);
             
             switch (type)
             {
                 case CommandType.Add:
-                    if (!contains) buildings.ToList().Add(building);
+                    if (!contains)
+                    {
+                        buildingsList.Add(building);
+                        buildings = buildingsList.ToArray();
+                    }
                     break;
                 case CommandType.Remove:
-                    if (contains) buildings.ToList().Remove(building);
+                    if (contains)
+                    {
+                        buildingsList.Remove(building);
+                        buildings = buildingsList.ToArray();
+                    }
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
