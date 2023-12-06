@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Team-1
   productName: Eider Farm
-  defaultCursor: {fileID: 2800000, guid: 77500de90b03cd64c86ccffeec75c32f, type: 3}
+  defaultCursor: {fileID: 2800000, guid: c330ef7bd4e5329418bd6afda3d297e7, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -136,9 +136,11 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 1.28
+  bundleVersion: 1.29
   preloadedAssets:
-  - {fileID: 9060760868616050858, guid: 1158e3058758c184099701b830d61b29, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 11400000, guid: d1b55c980c5f6d243b984bea1baefa48, type: 2}
   - {fileID: 11400000, guid: 23bca2de37cb81b438115dbffbe82cdd, type: 2}
   metroInputSource: 0
@@ -290,7 +292,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: fb1023a0990eec540928c2cb14aa403b, type: 3}
+      m_Icon: {fileID: 2800000, guid: 411ff653087ec744a9054822eebd80ce, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
