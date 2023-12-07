@@ -10,7 +10,7 @@ namespace Characters.AI
         [SerializeField] private float _patrolTime;
         [SerializeField] private float _changeDirTime;
 
-        protected EnemyStates CurrentState { set => _currentState = value; }
+        protected EnemyStates CurrentState { get => _currentState; set => _currentState = value; }
         protected Vector2 CurrentDirection { get; set; }
 
         private float _patrolDelay;
@@ -23,9 +23,10 @@ namespace Characters.AI
         private void Update() => CheckConditions();
         private void FixedUpdate() => StateExecute();
 
-        private void Initialize()
+        protected virtual void Initialize()
         {
             CurrentDirection = GetRandomDirection();
+            
             _canChangePatrolState = true;
             _canChangeDir = true;
         }
