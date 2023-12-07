@@ -14,7 +14,7 @@ namespace TriggerScripts
         [SerializeField] private BuildMenu _buildMenu;
         [SerializeField] private Construction _buildPrefab;
         [SerializeField] private SpriteRenderer _renderer;
-        
+
         private Transform _parentBuildings;
         private string _personName;
 
@@ -107,7 +107,10 @@ namespace TriggerScripts
             base.OnTriggerExit2D(other);
             _buildMenu.SetInventory(null);
             if (other.TryGetComponent(out Person person) &&
-                person.GetName() == _personName) _personName = "";
+                person.GetName() == _personName)
+            {
+                _personName = "";
+            }
         }
         
         public void RemovePlace()

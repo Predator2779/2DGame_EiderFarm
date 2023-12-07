@@ -15,4 +15,6 @@ MonoBehaviour:
   _icon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   _name: "\u041E\u0431\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043D\u044B\u0439
     \u043F\u0443\u0445"
-  _price: 3
+  _price: 2
+  _sprites: []
+  _isOneAtTime: 0

@@ -1,3 +1,4 @@
+using Building.Constructions;
 using System.Collections;
 using UnityEngine;
 
@@ -18,10 +19,16 @@ public class FluffGiver : MonoBehaviour
     private ResourceTransmitter _transmitter;
     private bool hasGivenFluff;
 
+    [SerializeField] private Sprite[] _spritesWithFluff;
+    private SpriteRenderer _sprRender;
+    private Construction _construction;
+
     private void Start()
     {
         _storage = GetComponent<BuildStorage>();
         _transmitter = GetComponent<ResourceTransmitter>();
+        _sprRender = GetComponent<SpriteRenderer>();
+        _construction = GetComponent<Construction>();
         
         StartCoroutine(CreateFluff());
     }
@@ -35,6 +42,7 @@ public class FluffGiver : MonoBehaviour
         {
             _storage.AddFluff(_fluffCount);
             _transmitter.CheckBag();
+            ChangeSpriteFromNullToFluff();
         }
         hasGivenFluff = false;
     }
@@ -49,5 +57,20 @@ public class FluffGiver : MonoBehaviour
     public void ChangeChance(int chance)
     {
         _chance = chance;
+    }
+
+    public void ChangeSpriteFromFluffToNull()
+    {
+        _sprRender.sprite = _construction.GetCurrentGradeSprite(_construction.GetGradeBuildings());
+    }
+    public void ChangeSpriteFromNullToFluff()
+    {
+        _sprRender.sprite = _construction.GetCurrentGradeSprite(_spritesWithFluff);
+    }
+
+    public IEnumerator ChangeSpritesWithDelay(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        ChangeSpriteFromFluffToNull();
     }
 }

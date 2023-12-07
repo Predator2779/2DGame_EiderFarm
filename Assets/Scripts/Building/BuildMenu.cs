@@ -1,6 +1,7 @@
 using Building.Constructions;
 using Economy;
 using General;
+using System;
 using UnityEngine;
 using EventHandler = General.EventHandler;
 
@@ -8,6 +9,7 @@ namespace Building
 {
     public class BuildMenu : MonoBehaviour
     {
+
         private Construction _buildingPrefab;
         private Construction _curConstruction;
 
@@ -24,16 +26,18 @@ namespace Building
         [SerializeField] private Flag _flag;
 
         [Header("Стоимость постройки")]
-        [SerializeField, Range(0, 20)] private int _buyPrice;
+        [SerializeField, Range(0, 1000)] private int _buyPrice;
         [Header("Стоимость улучшений")]
-        [SerializeField, Range(0, 20)] private int[] _upgradePrice = new int[1];
+        [SerializeField, Range(0, 1000)] private int[] _upgradePrice = new int[1];
         [Header("Сколько возвращает при сносе (0 если 0)")]
-        [SerializeField, Range(0, 20)] private int _sellPrice;
+        [SerializeField, Range(0, 1000)] private int _sellPrice;
 
         private Inventory _inventory;
 
         public bool HasFlag;
         public bool IsBuilded;
+
+        
 
         public void SetConstruction(
                 Construction prefab,
@@ -105,7 +109,9 @@ namespace Building
                     if (!Buy(_upgradePrice[1])) return; break;
             }
             _curConstruction.SetSprite(_curConstruction.Upgrade());
-            
+            if (_curConstruction.GetComponent<ResourceTransmitter>() && _curConstruction.GetComponent<Machine>())
+                _curConstruction.GetComponent<ResourceTransmitter>().SetGradeAnimationTrue(_curConstruction.GetCurrentGrade());
+
             EventHandler.OnUpgraded?.Invoke(
                     _curConstruction.typeConstruction,
                     _curConstruction.GetCurrentGrade());

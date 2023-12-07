@@ -15,6 +15,8 @@ public class Machine : MonoBehaviour
     private Item _typeFromPlayer;
     private bool _isWorked;
 
+    [SerializeField] private Animator _animator;
+
 
     private void Start()
     {
@@ -31,6 +33,12 @@ public class Machine : MonoBehaviour
         _transmitter.CheckBag();
     }
 
+    public void Animation(bool work, int currentGrade)
+    {
+        _animator.SetBool("isWork", work);
+        _animator.SetInteger("currentGrade", currentGrade);
+    }
+
     private IEnumerator Production(Item _typeToPlayer, Inventory _characterInventory, int _fluffCount)
     {
         if (!_isWorked)
@@ -45,4 +53,14 @@ public class Machine : MonoBehaviour
     }
 
     private void OnDestroy() => _transmitter.TransmitteEvent -= Production;
+
+    public Animator GetAnimator() => _animator;
+
+    public void EnableAnimator()
+    {
+        _animator.enabled = !_animator.enabled;
+        Debug.Log(1);
+    }
+            
+
 }

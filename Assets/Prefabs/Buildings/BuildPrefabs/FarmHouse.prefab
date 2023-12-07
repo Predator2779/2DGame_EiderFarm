@@ -125,7 +125,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.4}
-    oldSize: {x: 18.323118, y: 17.67}
+    oldSize: {x: 15.9331455, y: 15.365217}
     newSize: {x: 36.646236, y: 35.34}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -539,6 +539,14 @@ PrefabInstance:
       propertyPath: _spawnTransform
       value: 
       objectReference: {fileID: 867563142248834680}
+    - target: {fileID: 977267878239523640, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
+      propertyPath: m_Size
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 977267878239523640, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2021061463451395383, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -577,6 +585,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5861419363362830659, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861419363362830659, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7034014522078748060, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
@@ -681,7 +693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8889584840645363237, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 531.4686
+      value: 531.46875
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
