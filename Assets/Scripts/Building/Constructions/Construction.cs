@@ -1,6 +1,5 @@
 using General;
 using UnityEngine;
-using UnityEditor.UIElements;
 
 namespace Building.Constructions
 {
@@ -48,6 +47,5 @@ namespace Building.Constructions
             }
             return sprites[0];
         }
-
     }
 }
