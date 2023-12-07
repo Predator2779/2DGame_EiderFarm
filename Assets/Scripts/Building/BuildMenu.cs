@@ -26,11 +26,11 @@ namespace Building
         [SerializeField] private Flag _flag;
 
         [Header("Стоимость постройки")]
-        [SerializeField, Range(0, 20)] private int _buyPrice;
+        [SerializeField, Range(0, 1000)] private int _buyPrice;
         [Header("Стоимость улучшений")]
-        [SerializeField, Range(0, 20)] private int[] _upgradePrice = new int[1];
+        [SerializeField, Range(0, 1000)] private int[] _upgradePrice = new int[1];
         [Header("Сколько возвращает при сносе (0 если 0)")]
-        [SerializeField, Range(0, 20)] private int _sellPrice;
+        [SerializeField, Range(0, 1000)] private int _sellPrice;
 
         private Inventory _inventory;
 
