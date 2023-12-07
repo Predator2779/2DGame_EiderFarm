@@ -10,6 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1110511041579909940, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: _buyPrice
+<<<<<<< HEAD
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1110511041579909940, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
@@ -23,6 +24,21 @@ PrefabInstance:
     - target: {fileID: 1110511041579909940, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: _upgradePrice.Array.data[1]
       value: 20
+=======
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110511041579909940, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: _upgradePrice.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110511041579909940, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: _upgradePrice.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110511041579909940, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
+      propertyPath: _upgradePrice.Array.data[2]
+      value: 3
+>>>>>>> animations
       objectReference: {fileID: 0}
     - target: {fileID: 1984452253068342655, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: _spawnPlaces.Array.data[0]
@@ -82,11 +98,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2629156067078942385, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -36.78106
       objectReference: {fileID: 0}
     - target: {fileID: 2629156067078942385, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -12.26996
       objectReference: {fileID: 0}
     - target: {fileID: 2629156067078942385, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: m_LocalPosition.z

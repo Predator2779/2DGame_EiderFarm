@@ -1,5 +1,6 @@
 using General;
 using UnityEngine;
+using UnityEditor.UIElements;
 
 namespace Building.Constructions
 {
@@ -7,11 +8,13 @@ namespace Building.Constructions
     public class Construction : MonoBehaviour
     {
         public GlobalTypes.TypeBuildings typeConstruction;
-        
+
         [SerializeField] private Sprite[] _gradeBuildings;
         [SerializeField] private int _currentGrade;
-        
+
         private SpriteRenderer _spriteRenderer;
+        private ResourceTransmitter _transmitter;
+
 
         private void Awake() => _spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -23,11 +26,28 @@ namespace Building.Constructions
         }
 
         public Sprite GetFirstGrade() => _gradeBuildings[0];
-        
+
+        public Sprite[] GetGradeBuildings() => _gradeBuildings;
+
         public void SetSprite(Sprite sprite) => _spriteRenderer.sprite = sprite;
 
         public bool CanUpgrade() => _currentGrade < _gradeBuildings.Length;
 
         public int GetCurrentGrade() => _currentGrade;
+
+        public ResourceTransmitter GetTransmitter() => _transmitter;
+
+
+        public Sprite GetCurrentGradeSprite(Sprite[] sprites)
+        {
+            switch (GetCurrentGrade())
+            {
+                case 1: return sprites[0];
+                case 2: return sprites[1];
+                case 3: return sprites[2];
+            }
+            return sprites[0];
+        }
+
     }
 }
