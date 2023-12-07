@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1110511041579909940, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: _upgradePrice.Array.size
-      value: 30
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1110511041579909940, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: _upgradePrice.Array.data[0]
@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1110511041579909940, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: _upgradePrice.Array.data[1]
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1110511041579909940, guid: b53cd0f1ceea32343a9f5ab083fec102, type: 3}
       propertyPath: _upgradePrice.Array.data[2]

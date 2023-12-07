@@ -86,6 +86,7 @@ MonoBehaviour:
   _buildMenu: {fileID: 4890241244467973914}
   _buildPrefab: {fileID: 963965709575088290, guid: f8a024ee77d5c434a81912aa72e79263, type: 3}
   _renderer: {fileID: 4106786949892469983}
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &5364477728317815241
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +225,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6973259388961172798, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
       propertyPath: _buyPrice
-      value: 20
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973259388961172798, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
+      propertyPath: _upgradePrice.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973259388961172798, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
+      propertyPath: _upgradePrice.Array.data[0]
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973259388961172798, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
+      propertyPath: _upgradePrice.Array.data[1]
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 7626448791440526852, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
       propertyPath: m_Pivot.x
