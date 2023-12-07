@@ -42,7 +42,7 @@ public class FluffGiver : MonoBehaviour
         {
             _storage.AddFluff(_fluffCount);
             _transmitter.CheckBag();
-            StartCoroutine(ChangeSpritesWithDelay(0.2f));
+            ChangeSpriteFromNullToFluff();
         }
         hasGivenFluff = false;
     }
@@ -71,6 +71,6 @@ public class FluffGiver : MonoBehaviour
     public IEnumerator ChangeSpritesWithDelay(float delay)
     {
         yield return new WaitForSecondsRealtime(delay);
-        ChangeSpriteFromNullToFluff();
+        ChangeSpriteFromFluffToNull();
     }
 }

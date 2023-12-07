@@ -49,7 +49,7 @@ public class ResourceTransmitter : MonoBehaviour
         _storage.ResetFluff();
 
         if (GetComponent<FluffGiver>())
-            GetComponent<FluffGiver>().ChangeSpriteFromFluffToNull();
+            StartCoroutine(GetComponent<FluffGiver>().ChangeSpritesWithDelay(0.3f));
 
         EventHandler.OnItemTransmitted?.Invoke(_construction.typeConstruction, _typeToPlayer, count);
     }
