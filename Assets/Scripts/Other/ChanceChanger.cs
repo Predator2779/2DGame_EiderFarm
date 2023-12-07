@@ -30,7 +30,7 @@ public class ChanceChanger : MonoBehaviour
             BuildMenu buildMenu = _gagaHouses[i].transform.GetChild(2).GetComponent<BuildMenu>();
 
             if (buildMenu.IsBuilded)
-                buildMenu.GetConstruction().gameObject.GetComponent<FluffGiver>().ChangeChance(70);
+                buildMenu.GetBuilding().gameObject.GetComponent<FluffGiver>().ChangeChance(70);
         }
     }
 

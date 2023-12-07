@@ -15,6 +15,12 @@ namespace Building
         [SerializeField] private BuildTrigger[] _clothMachines;
         [SerializeField] private BuildTrigger[] _storages;
 
+        public BuildTrigger[] GagaHouses { get => _gagaHouses; }
+        public BuildTrigger[] Cleaners { get => _cleaners; }
+        public BuildTrigger[] ClothMachines { get => _clothMachines; }
+        public BuildTrigger[] Storages { get => _storages; }
+        
+        
         private static BuildingsPull _instance;
 
         private void Awake()

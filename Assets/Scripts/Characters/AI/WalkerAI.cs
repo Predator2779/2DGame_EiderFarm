@@ -8,7 +8,7 @@ namespace Characters.AI
     {
         [SerializeField] protected PersonAnimate _personAnimate;
         private Walker _walker;
-        private void Start() => _walker = GetComponent<Walker>();
+        private void Awake() => _walker = GetComponent<Walker>();
 
         protected void Walk(Vector2 direction)
         {

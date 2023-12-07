@@ -36,7 +36,7 @@ public class ResourceTransmitter : MonoBehaviour
 
     private void Transmitte()
     {
-        int count = _storage.GetFluff();
+        int count = _storage.GetFluffCount();
         
         _characterInventory.AddItems(_typeToPlayer, count);
         _storage.ResetFluff();

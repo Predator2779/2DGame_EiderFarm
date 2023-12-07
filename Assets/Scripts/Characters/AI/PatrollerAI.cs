@@ -13,14 +13,14 @@ namespace Characters.AI
         protected EnemyStates CurrentState { get => _currentState; set => _currentState = value; }
         protected Vector2 CurrentDirection { get; set; }
 
-        private float _patrolDelay;
+        protected float _idleDelay;
         private bool _isPatrol;
         private bool _canChangeDir;
         private bool _canChangePatrolState;
 
         private void Start() => Initialize();
         private void OnValidate() => Initialize();
-        private void Update() => CheckConditions();
+        protected virtual void Update() => CheckConditions();
         private void FixedUpdate() => StateExecute();
 
         protected virtual void Initialize()
@@ -55,6 +55,7 @@ namespace Characters.AI
         private void Patrol()
         {
             if (_canChangeDir) StartCoroutine(ChangeDirection(GetRandomDirection()));
+            
             Walk(CurrentDirection);
         }
 
@@ -84,15 +85,15 @@ namespace Characters.AI
             if (Random.Range(0, 2) <= 0)
             {
                 _currentState = EnemyStates.Patrol;
-                _patrolDelay = _patrolTime;
+                _idleDelay = _patrolTime;
             }
             else
             {
                 _currentState = EnemyStates.Idle;
-                _patrolDelay = _idleTime;
+                _idleDelay = _idleTime;
             }
 
-            yield return new WaitForSeconds(_patrolDelay);
+            yield return new WaitForSeconds(_idleDelay);
             _canChangePatrolState = true;
         }
 

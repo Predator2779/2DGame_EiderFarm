@@ -131,7 +131,7 @@ namespace Building
             }
         }
 
-        public Construction GetConstruction() => _curConstruction;
+        public Construction GetBuilding() => _curConstruction;
 
         private void Build(Construction building)
         {
