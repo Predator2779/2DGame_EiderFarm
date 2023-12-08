@@ -7,10 +7,11 @@ namespace Characters.AI
     public class WalkTest : WalkerAI
     {
         [SerializeField] private Transform _target;
-        private PathFinder _pathFinder;
-        private List<Vector2> _path = new();
         [SerializeField] private int _index;
         [SerializeField] private bool _walk;
+        [SerializeField] private int _maxDistance;
+        private PathFinder _pathFinder;
+        private List<Vector2> _path = new();
 
         private void Start()
         {
@@ -26,6 +27,8 @@ namespace Characters.AI
         {
             if (_walk)
             {
+                if (Vector2.Distance(transform.position, _target.position) > _maxDistance) return;
+                
                 if (!IsDestination(transform.position, _target.position))
                 {
                     if (_index > 0)

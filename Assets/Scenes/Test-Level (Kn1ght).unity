@@ -1685,25 +1685,13 @@ PrefabInstance:
       propertyPath: _pull
       value: 
       objectReference: {fileID: 60388247}
-    - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
-      propertyPath: _idleDelay
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
-      propertyPath: _currentStorage
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
-      propertyPath: _currentEmployeeState
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6007349334224100691, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: m_Name
       value: Oli_employee
       objectReference: {fileID: 0}
     - target: {fileID: 6007349334224100691, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5195,7 +5183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7657352253616383699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5246,6 +5234,7 @@ MonoBehaviour:
   _target: {fileID: 4544929881048724895}
   _index: 0
   _walk: 0
+  _maxDistance: 0
 --- !u!114 &7934326964678841690
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ public class PathFinder : MonoBehaviour
             {
                 return CalculatePathFromNode(nodeToCheck);
             }
-            
+
             var isValid = IsValidNode(nodeToCheck.Position);
 
             switch (isValid)
@@ -53,6 +53,7 @@ public class PathFinder : MonoBehaviour
                         CheckedNodes.Add(nodeToCheck);
                         WaitingNodes.AddRange(GetNeighbourNodes(nodeToCheck));
                     }
+
                     break;
                 }
             }
@@ -64,10 +65,10 @@ public class PathFinder : MonoBehaviour
     private bool IsValidNode(Vector2 nodePosition)
     {
         var colliders = Physics2D.OverlapCircleAll(nodePosition, radius, SolidLayer);
-        
+
         return colliders.All(col => !col.CompareTag("Obstacle"));
     }
-    
+
     private List<Vector2> CalculatePathFromNode(Node node)
     {
         var path = new List<Vector2>();
@@ -105,22 +106,23 @@ public class PathFinder : MonoBehaviour
         return Neighbours;
     }
 
-    private void OnDrawGizmos()
-    {
-        foreach (var item in CheckedNodes)
-        {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawSphere(new Vector2(item.Position.x, item.Position.y), radius);
-        }
-
-        if (PathToTarget == null) return;
-        
-        foreach (var item in PathToTarget)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere(new Vector2(item.x, item.y), radius);
-        }
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     if (PathToTarget == null)
+    //     {
+    //         foreach (var item in PathToTarget)
+    //         {
+    //             Gizmos.color = Color.red;
+    //             Gizmos.DrawSphere(new Vector2(item.x, item.y), radius);
+    //         }
+    //     }
+    //
+    //     foreach (var item in CheckedNodes)
+    //     {
+    //         Gizmos.color = Color.blue;
+    //         Gizmos.DrawSphere(new Vector2(item.Position.x, item.Position.y), radius);
+    //     }
+    // }
 }
 
 public class Node

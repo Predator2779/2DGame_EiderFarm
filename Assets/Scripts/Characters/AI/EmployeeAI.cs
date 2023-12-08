@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Building;
+using Building.Constructions;
 using Characters.AI;
 using Economy;
 using General;
@@ -14,7 +15,10 @@ namespace Characters.Enemy
     {
         [Header("Service")]
         [SerializeField] private EmployeeStates _currentEmployeeState;
+
+        [SerializeField] private int _maxDistance;
         [SerializeField] private float _idleDelay;
+
         [Space] [Header("Settings:")]
         [SerializeField] [Range(1, 100)] private int _fluffCapacity;
 
@@ -32,6 +36,7 @@ namespace Characters.Enemy
         private void Start() => Initialize();
         private void OnValidate() => Initialize();
         private void FixedUpdate() => StateExecute();
+
         private void Initialize()
         {
             _pull ??= FindObjectOfType<BuildingsPull>();
@@ -46,7 +51,7 @@ namespace Characters.Enemy
                 print("!full");
                 if (CanPickFluff() && CountCleanFluff() <= 0)
                 {
-                    SetTarget(_currentHouse.transform.position);
+                    SetTarget(_currentHouse.gameObject);
                     _currentEmployeeState = EmployeeStates.Picking;
                     print("picking");
                     return;
@@ -54,7 +59,7 @@ namespace Characters.Enemy
 
                 if (CanRecycle())
                 {
-                    SetTarget(_currentCleaner.transform.position);
+                    SetTarget(_currentCleaner.gameObject);
                     _currentEmployeeState = EmployeeStates.Recycling;
                     print("recycle");
                 }
@@ -64,13 +69,13 @@ namespace Characters.Enemy
                 print("full");
                 if (CountCleanFluff() > 0 && CanTransportable())
                 {
-                    SetTarget(_currentStorage.transform.position);
+                    SetTarget(_currentStorage.gameObject);
                     _currentEmployeeState = EmployeeStates.Transportation;
                     print("transportable");
                 }
             }
 
-            // _currentEmployeeState = EmployeeStates.Patrol;
+            _currentEmployeeState = EmployeeStates.Patrol;
             print("idle");
         }
 
@@ -98,28 +103,71 @@ namespace Characters.Enemy
 
         private void WalkToTarget()
         {
-            print("walked..");
-            if (IsDestination(transform.position, _target))
+            if (Vector2.Distance(transform.position, _target) > _maxDistance) return;
+
+            if (!IsDestination(transform.position, _target))
+            {
+                if (_index > 0)
+                {
+                    if (_path == null) return;
+
+                    if (!IsDestination(transform.position, _path[_index]))
+                    {
+                        var direction = _path[_index] - (Vector2)transform.position;
+                        Walk(direction);
+                    }
+                    else
+                    {
+                        _index--;
+                    }
+                }
+                else SetPath(_target);
+            }
+            else
+
             {
                 Idle();
-                return;
-            }
-            
-            if (_index <= 0) SetPath(_target);
-            else
-            {
-                if (!IsDestination(transform.position, _path[_index]))
-                {
-                    var direction = _path[_index] - (Vector2)transform.position;
-                    Walk(direction.normalized);
-                    return;
-                }
-            
-                _index--;
             }
         }
 
-        private void SetTarget(Vector2 target) => _target = target;
+        // private void WalkToTarget()
+        // {
+        //     print("walked..");
+        //     if (IsDestination(transform.position, _target))
+        //     {
+        //         Idle();
+        //         return;
+        //     }
+        //     
+        //     if (_index <= 0) SetPath(_target);
+        //     else
+        //     {
+        //         if (!IsDestination(transform.position, _path[_index]))
+        //         {
+        //             var direction = _path[_index] - (Vector2)transform.position;
+        //             Walk(direction.normalized);
+        //             return;
+        //         }
+        //     
+        //         _index--;
+        //     }
+        // }
+
+        private void SetTarget(GameObject target)
+        {
+            if (TryGetComponent(out Construction construction))
+            {
+                var entryPoint = construction.GetEntryPoint();
+                
+                if (entryPoint != null)
+                {
+                    _target = entryPoint.position;
+                    return;
+                }
+            }
+
+            _target = target.transform.position;
+        }
 
         private void SetPath(Vector2 target)
         {
