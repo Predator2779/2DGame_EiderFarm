@@ -1,5 +1,6 @@
 using System.Collections;
 using Building.Constructions;
+using Characters;
 using Economy;
 using General;
 using UnityEngine;
@@ -20,12 +21,9 @@ public class ResourceTransmitter : MonoBehaviour
 
     private Construction _construction;
     private BuildStorage _storage;
-
     private Machine _machine;
-
     private Sprite _sprite;
-
-
+    
     private void Awake()
     {
         _construction = GetComponent<Construction>();
@@ -58,24 +56,23 @@ public class ResourceTransmitter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<InputHandler>())
-        {
-            _characterInventory = collision.gameObject.GetComponent<Inventory>();
-            CheckBag();
-            if (gameObject.GetComponent<Machine>())
-                _machine.EnableAnimator();
-        }
+        if (!collision.gameObject.GetComponent<Person>()) return;
+        
+        _characterInventory = collision.gameObject.GetComponent<Inventory>();
+        
+        CheckBag();
+        
+        if (gameObject.GetComponent<Machine>()) _machine.EnableAnimator();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (_characterInventory == collision.GetComponent<Inventory>() &&
-            collision.gameObject.GetComponent<InputHandler>())
-        {
-            _characterInventory = null;
-            if (gameObject.GetComponent<Machine>())
-                _machine.EnableAnimator();
-        }
+        if (_characterInventory != collision.GetComponent<Inventory>() ||
+            !collision.gameObject.GetComponent<Person>()) return;
+        
+        _characterInventory = null;
+        
+        if (gameObject.GetComponent<Machine>()) _machine.EnableAnimator();
     }
 
 

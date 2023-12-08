@@ -49,11 +49,11 @@ namespace Economy
                 return;
 
             int count = invTo.GetFreeSpace();
-            
+
             invTo.AddItems(bunchFrom.GetItem(), count);
             invFrom.Remove(bunchFrom.GetItem(), count);
         }
-        
+
         public bool TryGetBunch(string name, out ItemBunch itemBunch)
         {
             foreach (var bunch in _listItems.Where(bunch => bunch.GetItemName() == name))
@@ -65,12 +65,13 @@ namespace Economy
             itemBunch = null;
             return false;
         }
-        
+
         public int GetLimit() => _limit;
         public int GetFreeSpace() => _limit - GetTotalCount();
         public int GetTotalCount() => _listItems.Sum(bunch => bunch.GetCount());
         public List<ItemBunch> GetAllItems() => _listItems;
         public void ReplaceAllBunches(List<ItemBunch> bunches) => _listItems = bunches;
+
         public bool IsExistsItems(string name, int count)
         {
             if (count < 0) return false;
@@ -87,15 +88,16 @@ namespace Economy
             SendCountItemsMsg(item.GetName(), bunch.GetCount());
             SendCountAddedMsg(item, count);
         }
-        
+
         private void AddUpToLimit(ItemBunch bunch, int count)
         {
             int free = _limit - GetTotalCount();
-                    
-            if (free >= count || _limit == 0) bunch.AddItems(count);
+
+            if (count <= free || _limit == 0)
+                bunch.AddItems(count);
             else bunch.AddItems(free);
         }
-        
+
         private ItemBunch GetBunch(Item item)
         {
             ItemBunch bunch = new ItemBunch(item);
