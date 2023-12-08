@@ -9,9 +9,12 @@ using UnityEngine;
 public class ResourceTransmitter : MonoBehaviour
 {
     public delegate IEnumerator CoroutineDelegate(Item typeFrom, Inventory inv, int fluff);
+
     public event CoroutineDelegate TransmitteEvent;
 
-    [SerializeField, Header("Сколько пуха передается от игрока")] private int _fluffCount;
+    [SerializeField, Header("Сколько пуха передается от игрока")]
+    private int _fluffCount;
+
     [SerializeField] private Item _typeToPlayer;
     [SerializeField] private Inventory _characterInventory;
 
@@ -28,7 +31,6 @@ public class ResourceTransmitter : MonoBehaviour
         _construction = GetComponent<Construction>();
         _storage = GetComponent<BuildStorage>();
         _machine = GetComponent<Machine>();
-
     }
 
     public void CheckBag()
@@ -43,7 +45,7 @@ public class ResourceTransmitter : MonoBehaviour
 
     private void Transmitte()
     {
-        int count = _storage.GetFluff();
+        int count = _storage.GetFluffCount();
 
         _characterInventory.AddItems(_typeToPlayer, count);
         _storage.ResetFluff();
@@ -61,7 +63,7 @@ public class ResourceTransmitter : MonoBehaviour
             _characterInventory = collision.gameObject.GetComponent<Inventory>();
             CheckBag();
             if (gameObject.GetComponent<Machine>())
-            _machine.EnableAnimator();
+                _machine.EnableAnimator();
         }
     }
 
@@ -76,12 +78,9 @@ public class ResourceTransmitter : MonoBehaviour
         }
     }
 
-    
 
     public void SetGradeAnimationTrue(int grade)
     {
         _machine.Animation(true, grade);
     }
-
-
 }

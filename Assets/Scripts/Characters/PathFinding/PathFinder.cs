@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,11 +6,11 @@ using UnityEngine;
 public class PathFinder : MonoBehaviour
 {
     public List<Vector2> PathToTarget;
-    public List<Node> CheckedNodes = new List<Node>();
-    public List<Node> FreeNodes = new List<Node>();
-    public List<Node> WaitingNodes = new List<Node>();
-    public GameObject Target;
+    public List<Node> CheckedNodes = new();
+    public List<Node> WaitingNodes = new();
+    [NonSerialized] public GameObject Target;
     public LayerMask SolidLayer;
+    public float radius;
 
     public List<Vector2> GetPath(Vector2 target)
     {
@@ -23,40 +24,51 @@ public class PathFinder : MonoBehaviour
         if (StartPosition == TargetPosition) return PathToTarget;
 
         Node startNode = new Node(0, StartPosition, TargetPosition, null);
+
         CheckedNodes.Add(startNode);
         WaitingNodes.AddRange(GetNeighbourNodes(startNode));
+
         while (WaitingNodes.Count > 0)
         {
-            Node nodeToCheck = WaitingNodes.Where(x => x.F == WaitingNodes.Min(y => y.F)).FirstOrDefault();
+            Node nodeToCheck = WaitingNodes.FirstOrDefault(x => x.F == WaitingNodes.Min(y => y.F));
 
             if (nodeToCheck.Position == TargetPosition)
             {
                 return CalculatePathFromNode(nodeToCheck);
             }
+            
+            var isValid = IsValidNode(nodeToCheck.Position);
 
-            var walkable = !Physics2D.OverlapCircle(nodeToCheck.Position, 0.1f, SolidLayer);
-            if (!walkable)
+            switch (isValid)
             {
-                WaitingNodes.Remove(nodeToCheck);
-                CheckedNodes.Add(nodeToCheck);
-            }
-            else if (walkable)
-            {
-                WaitingNodes.Remove(nodeToCheck);
-                if (!CheckedNodes.Where(x => x.Position == nodeToCheck.Position).Any())
-                {
+                case false:
+                    WaitingNodes.Remove(nodeToCheck);
                     CheckedNodes.Add(nodeToCheck);
-                    WaitingNodes.AddRange(GetNeighbourNodes(nodeToCheck));
+                    break;
+                case true:
+                {
+                    WaitingNodes.Remove(nodeToCheck);
+                    if (CheckedNodes.All(x => x.Position != nodeToCheck.Position))
+                    {
+                        CheckedNodes.Add(nodeToCheck);
+                        WaitingNodes.AddRange(GetNeighbourNodes(nodeToCheck));
+                    }
+                    break;
                 }
             }
         }
 
-        FreeNodes = CheckedNodes;
-
         return PathToTarget;
     }
 
-    public List<Vector2> CalculatePathFromNode(Node node)
+    private bool IsValidNode(Vector2 nodePosition)
+    {
+        var colliders = Physics2D.OverlapCircleAll(nodePosition, radius, SolidLayer);
+        
+        return colliders.All(col => !col.CompareTag("Obstacle"));
+    }
+    
+    private List<Vector2> CalculatePathFromNode(Node node)
     {
         var path = new List<Vector2>();
         Node currentNode = node;
@@ -70,7 +82,7 @@ public class PathFinder : MonoBehaviour
         return path;
     }
 
-    List<Node> GetNeighbourNodes(Node node)
+    private List<Node> GetNeighbourNodes(Node node)
     {
         var Neighbours = new List<Node>();
 
@@ -93,20 +105,21 @@ public class PathFinder : MonoBehaviour
         return Neighbours;
     }
 
-    void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
-        // foreach (var item in CheckedNodes)
-        // {
-        //     Gizmos.color = Color.blue;
-        //     Gizmos.DrawSphere(new Vector2(item.Position.x, item.Position.y), 0.1f);
-        // }
-        //
-        // if (PathToTarget != null)
-        //     foreach (var item in PathToTarget)
-        //     {
-        //         Gizmos.color = Color.red;
-        //         Gizmos.DrawSphere(new Vector2(item.x, item.y), 0.1f);
-        //     }
+        foreach (var item in CheckedNodes)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawSphere(new Vector2(item.Position.x, item.Position.y), radius);
+        }
+
+        if (PathToTarget == null) return;
+        
+        foreach (var item in PathToTarget)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(new Vector2(item.x, item.y), radius);
+        }
     }
 }
 
@@ -115,9 +128,9 @@ public class Node
     public Vector2 Position;
     public Vector2 TargetPosition;
     public Node PreviousNode;
-    public int F; // F=G+H
     public int G; // расстояние от старта до ноды
     public int H; // расстояние от ноды до цели
+    public int F; // F=G+H
 
     public Node(int g, Vector2 nodePosition, Vector2 targetPosition, Node previousNode)
     {

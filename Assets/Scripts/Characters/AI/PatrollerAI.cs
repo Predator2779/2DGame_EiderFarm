@@ -13,7 +13,7 @@ namespace Characters.AI
         protected EnemyStates CurrentState { get => _currentState; set => _currentState = value; }
         protected Vector2 CurrentDirection { get; set; }
 
-        protected float _idleDelay;
+        private float _idleDelay;
         private bool _isPatrol;
         private bool _canChangeDir;
         private bool _canChangePatrolState;
@@ -23,7 +23,7 @@ namespace Characters.AI
         protected virtual void Update() => CheckConditions();
         private void FixedUpdate() => StateExecute();
 
-        protected virtual void Initialize()
+        protected void Initialize()
         {
             CurrentDirection = GetRandomDirection();
             
@@ -31,7 +31,7 @@ namespace Characters.AI
             _canChangeDir = true;
         }
 
-        protected virtual void StateExecute()
+        protected void StateExecute()
         {
             switch (_currentState)
             {
@@ -59,7 +59,7 @@ namespace Characters.AI
             Walk(CurrentDirection);
         }
 
-        protected virtual void Idle()
+        private void Idle()
         {
             _personAnimate.Walk(CurrentDirection, false);
         }

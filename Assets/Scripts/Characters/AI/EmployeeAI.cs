@@ -10,64 +10,71 @@ namespace Characters.Enemy
 {
     [RequireComponent(typeof(Employee))]
     [RequireComponent(typeof(PathFinder))]
-    public class EmployeeAI : PatrollerAI
+    public class EmployeeAI : WalkerAI
     {
         [Header("Service")]
         [SerializeField] private EmployeeStates _currentEmployeeState;
-
+        [SerializeField] private float _idleDelay;
         [Space] [Header("Settings:")]
         [SerializeField] [Range(1, 100)] private int _fluffCapacity;
 
         [SerializeField] private BuildingsPull _pull;
-        private BuildStorage _currentHouse;
-        private Transform _currentCleaner;
-        private Inventory _currentStorage;
+        [SerializeField] private BuildStorage _currentHouse;
+        [SerializeField] private Transform _currentCleaner;
+        [SerializeField] private Inventory _currentStorage;
         private PathFinder _pathFinder;
         private Employee _employee;
         private Vector2 _target;
         private List<Vector2> _path = new();
+        private bool _isDelayed;
         private int _index;
-        private bool _isIdle;
 
-        protected override void Update()
-        {
-        }
-
-        protected override void Initialize()
+        private void Start() => Initialize();
+        private void OnValidate() => Initialize();
+        private void FixedUpdate() => StateExecute();
+        private void Initialize()
         {
             _pull ??= FindObjectOfType<BuildingsPull>();
             _employee ??= GetComponent<Employee>();
             _pathFinder ??= GetComponent<PathFinder>();
-
-            SetPath(_target);
         }
 
-        protected override void CheckConditions()
+        private void CheckConditions()
         {
-            if (!IsFull() && CanPickFluff() && _currentEmployeeState == EmployeeStates.Picking)
+            if (!IsFull())
             {
-                SetPath(_currentHouse.transform.position);
-                _currentEmployeeState = EmployeeStates.Picking;
+                print("!full");
+                if (CanPickFluff() && CountCleanFluff() <= 0)
+                {
+                    SetTarget(_currentHouse.transform.position);
+                    _currentEmployeeState = EmployeeStates.Picking;
+                    print("picking");
+                    return;
+                }
+
+                if (CanRecycle())
+                {
+                    SetTarget(_currentCleaner.transform.position);
+                    _currentEmployeeState = EmployeeStates.Recycling;
+                    print("recycle");
+                }
+            }
+            else
+            {
+                print("full");
+                if (CountCleanFluff() > 0 && CanTransportable())
+                {
+                    SetTarget(_currentStorage.transform.position);
+                    _currentEmployeeState = EmployeeStates.Transportation;
+                    print("transportable");
+                }
             }
 
-            if (!IsFull() && CanRecycle() && CountCleanFluff() > 0 && _currentEmployeeState == EmployeeStates.Recycling)
-            {
-                SetPath(_currentCleaner.transform.position);
-                _currentEmployeeState = EmployeeStates.Recycling;
-                return;
-            }
-
-            if (CountCleanFluff() > 0 && CanTransportable())
-            {
-                SetPath(_currentStorage.transform.position);
-                _currentEmployeeState = EmployeeStates.Transportation;
-                return;
-            }
-
-            _currentEmployeeState = EmployeeStates.Idle; //patrol
+            // _currentEmployeeState = EmployeeStates.Patrol;
+            print("idle");
         }
 
-        protected override void StateExecute()
+        private void StateExecute()
         {
             switch (_currentEmployeeState)
             {
@@ -84,33 +91,35 @@ namespace Characters.Enemy
                     Transportation();
                     break;
                 case EmployeeStates.Patrol:
+                    Idle();
                     break;
             }
         }
 
         private void WalkToTarget()
         {
+            print("walked..");
             if (IsDestination(transform.position, _target))
             {
                 Idle();
                 return;
             }
-
-            if (_index >= 0)
+            
+            if (_index <= 0) SetPath(_target);
+            else
             {
                 if (!IsDestination(transform.position, _path[_index]))
                 {
-                    var target = _path[_index] - (Vector2)transform.position;
-                    Walk(target.normalized);
+                    var direction = _path[_index] - (Vector2)transform.position;
+                    Walk(direction.normalized);
                     return;
                 }
-
+            
                 _index--;
-                return;
             }
-
-            SetPath(_target);
         }
+
+        private void SetTarget(Vector2 target) => _target = target;
 
         private void SetPath(Vector2 target)
         {
@@ -124,7 +133,9 @@ namespace Characters.Enemy
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;
 
         private ItemBunch TryGetBunch(string name) => _employee.GetInventory().TryGetBunch(
-                name, out ItemBunch bunch) ? bunch : null;
+                name, out ItemBunch bunch)
+                ? bunch
+                : null;
 
         private bool CanPickFluff()
         {
@@ -132,8 +143,10 @@ namespace Characters.Enemy
 
             foreach (var house in gagaHouses)
             {
-                if (!house.GetBuildMenu().IsBuilded ||
-                    !house.TryGetComponent(out BuildStorage storage) ||
+                var bMenu = house.GetBuildMenu();
+
+                if (!bMenu.IsBuilded ||
+                    !bMenu.GetBuilding().TryGetComponent(out BuildStorage storage) ||
                     storage.GetFluffCount() <= 0) continue;
 
                 _currentHouse = storage;
@@ -166,8 +179,10 @@ namespace Characters.Enemy
 
             foreach (var storage in storages)
             {
-                if (!storage.GetBuildMenu().IsBuilded ||
-                    !storage.GetBuildMenu().GetBuilding().TryGetComponent(out Inventory inventory) ||
+                var bMenu = storage.GetBuildMenu();
+
+                if (!bMenu.IsBuilded ||
+                    !bMenu.GetBuilding().TryGetComponent(out Inventory inventory) ||
                     inventory.GetFreeSpace() <= 0) continue;
 
                 _currentStorage = inventory;
@@ -177,22 +192,28 @@ namespace Characters.Enemy
             return false;
         }
 
-        private IEnumerator ConditionCoroutine()
+        private void Idle()
         {
+            _personAnimate.Walk(_target, false);
+
+            if (!_isDelayed) StartCoroutine(Delay());
+        }
+
+        private IEnumerator Delay()
+        {
+            _isDelayed = true;
             yield return new WaitForSeconds(_idleDelay);
             CheckConditions();
-        }
-        
-        protected override void Idle()
-        {
-            base.Idle();
-            CheckConditions();
+            _isDelayed = false;
         }
 
         private void Picking()
         {
             if (_currentHouse == null || _currentHouse.GetFluffCount() <= 0)
+            {
                 CheckConditions();
+                return;
+            }
 
             WalkToTarget();
         }
@@ -200,7 +221,10 @@ namespace Characters.Enemy
         private void Recycling()
         {
             if (_currentCleaner == null || _currentHouse.GetFluffCount() <= 0)
+            {
                 CheckConditions();
+                return;
+            }
 
             WalkToTarget();
         }
@@ -208,7 +232,10 @@ namespace Characters.Enemy
         private void Transportation()
         {
             if (_currentStorage == null || _currentStorage.GetFreeSpace() <= 0)
+            {
                 CheckConditions();
+                return;
+            }
 
             if (IsDestination(transform.position, _currentStorage.transform.position))
             {
@@ -216,16 +243,11 @@ namespace Characters.Enemy
                         _employee.GetInventory(),
                         _currentStorage,
                         TryGetBunch(GlobalConstants.CleanedFluff));
-                
+
                 CheckConditions();
             }
 
             WalkToTarget();
-        }
-
-        private void Patrol()
-        {
-            base.StateExecute();
         }
 
         private enum EmployeeStates
