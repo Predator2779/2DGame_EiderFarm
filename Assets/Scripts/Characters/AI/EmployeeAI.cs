@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Building;
@@ -28,7 +29,7 @@ namespace Characters.Enemy
         [SerializeField] private Inventory _currentStorage;
         private PathFinder _pathFinder;
         private Employee _employee;
-        private Vector2 _target;
+        [SerializeField] private Vector2 _target;
         private List<Vector2> _path = new();
         private bool _isDelayed;
         private int _index;
@@ -57,7 +58,7 @@ namespace Characters.Enemy
                     return;
                 }
 
-                if (CanRecycle())
+                if (CanRecycle() && CountUncleanFluff() > 0)
                 {
                     SetTarget(_currentCleaner.gameObject);
                     _currentEmployeeState = EmployeeStates.Recycling;
@@ -98,6 +99,9 @@ namespace Characters.Enemy
                 case EmployeeStates.Patrol:
                     Idle();
                     break;
+                case EmployeeStates.SideStep:
+                    SideStep();
+                    break;
             }
         }
 
@@ -114,7 +118,7 @@ namespace Characters.Enemy
                     if (!IsDestination(transform.position, _path[_index]))
                     {
                         var direction = _path[_index] - (Vector2)transform.position;
-                        Walk(direction);
+                        Walk(direction.normalized);
                     }
                     else
                     {
@@ -155,7 +159,7 @@ namespace Characters.Enemy
 
         private void SetTarget(GameObject target)
         {
-            if (TryGetComponent(out Construction construction))
+            if (target.TryGetComponent(out Construction construction))
             {
                 var entryPoint = construction.GetEntryPoint();
                 
@@ -298,12 +302,31 @@ namespace Characters.Enemy
             WalkToTarget();
         }
 
+        
+        private void SideStep()
+        {
+            if (IsDestination(transform.position, _target))
+            {
+                CheckConditions();
+                return;
+            }
+
+            WalkToTarget();
+        }
+        
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            SetPath(_target);
+            _currentEmployeeState = EmployeeStates.SideStep;
+        }
+        
         private enum EmployeeStates
         {
             Idle,
             Picking,
             Recycling,
             Transportation,
+            SideStep,
             Patrol
         }
     }
