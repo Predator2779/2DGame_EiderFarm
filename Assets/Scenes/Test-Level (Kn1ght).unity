@@ -1719,7 +1719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6007349334224100691, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8092244096398859633, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: radius
@@ -3296,6 +3296,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 2229941925564431221, guid: cf887c8d7e52cc74f989964757e4be2a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2815935754950919799, guid: cf887c8d7e52cc74f989964757e4be2a, type: 3}
       propertyPath: m_Camera
       value: 
@@ -3322,7 +3326,7 @@ PrefabInstance:
       objectReference: {fileID: 911143458661069317}
     - target: {fileID: 7087732436482335164, guid: cf887c8d7e52cc74f989964757e4be2a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -186.48001
+      value: -186.48
       objectReference: {fileID: 0}
     - target: {fileID: 7405517000206911181, guid: cf887c8d7e52cc74f989964757e4be2a, type: 3}
       propertyPath: m_sharedMaterial
@@ -5215,7 +5219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7657352253616383699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5283,7 +5287,7 @@ MonoBehaviour:
   SolidLayer:
     serializedVersion: 2
     m_Bits: 1
-  radius: 0.5
+  radius: 1
 --- !u!1001 &9078513458533179938
 PrefabInstance:
   m_ObjectHideFlags: 0

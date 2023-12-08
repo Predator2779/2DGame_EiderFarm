@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PathFinder : MonoBehaviour
 {
+    [NonSerialized] public GameObject Target;
     public List<Vector2> PathToTarget;
     public List<Node> CheckedNodes = new();
     public List<Node> WaitingNodes = new();
-    [NonSerialized] public GameObject Target;
     public LayerMask SolidLayer;
     public float radius;
 
@@ -130,9 +130,9 @@ public class Node
     public Vector2 Position;
     public Vector2 TargetPosition;
     public Node PreviousNode;
-    public int G; // расстояние от старта до ноды
-    public int H; // расстояние от ноды до цели
-    public int F; // F=G+H
+    public int G;
+    public int H;
+    public int F;
 
     public Node(int g, Vector2 nodePosition, Vector2 targetPosition, Node previousNode)
     {

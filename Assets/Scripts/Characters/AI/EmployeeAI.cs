@@ -29,7 +29,7 @@ namespace Characters.Enemy
         [SerializeField] private Inventory _currentStorage;
         private PathFinder _pathFinder;
         private Employee _employee;
-        [SerializeField] private Vector2 _target;
+        private Vector2 _target;
         private List<Vector2> _path = new();
         private bool _isDelayed;
         private int _index;
@@ -133,29 +133,6 @@ namespace Characters.Enemy
                 Idle();
             }
         }
-
-        // private void WalkToTarget()
-        // {
-        //     print("walked..");
-        //     if (IsDestination(transform.position, _target))
-        //     {
-        //         Idle();
-        //         return;
-        //     }
-        //     
-        //     if (_index <= 0) SetPath(_target);
-        //     else
-        //     {
-        //         if (!IsDestination(transform.position, _path[_index]))
-        //         {
-        //             var direction = _path[_index] - (Vector2)transform.position;
-        //             Walk(direction.normalized);
-        //             return;
-        //         }
-        //     
-        //         _index--;
-        //     }
-        // }
 
         private void SetTarget(GameObject target)
         {
