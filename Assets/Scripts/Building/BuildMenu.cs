@@ -109,6 +109,12 @@ namespace Building
                     if (!Buy(_upgradePrice[1])) return; break;
             }
             _curConstruction.SetSprite(_curConstruction.Upgrade());
+
+            if (_curConstruction.typeConstruction == GlobalTypes.TypeBuildings.GagaHouse)
+                _curConstruction.GetComponent<FluffGiver>().CheckGrade();
+            if (_curConstruction.typeConstruction == GlobalTypes.TypeBuildings.FluffCleaner || _curConstruction.typeConstruction == GlobalTypes.TypeBuildings.ClothMachine)
+                _curConstruction.GetComponent<Machine>().CheckGrade();
+
             if (_curConstruction.GetComponent<ResourceTransmitter>() && _curConstruction.GetComponent<Machine>())
                 _curConstruction.GetComponent<ResourceTransmitter>().SetGradeAnimationTrue(_curConstruction.GetCurrentGrade());
 

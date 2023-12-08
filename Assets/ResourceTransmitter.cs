@@ -83,5 +83,6 @@ public class ResourceTransmitter : MonoBehaviour
         _machine.Animation(true, grade);
     }
 
+    public void ChangeFluffCount(int count) => _fluffCount = count;
 
 }

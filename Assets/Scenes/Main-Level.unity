@@ -2878,7 +2878,7 @@ PrefabInstance:
       objectReference: {fileID: 911143458661069317}
     - target: {fileID: 7087732436482335164, guid: cf887c8d7e52cc74f989964757e4be2a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -186.48003
+      value: -186.48001
       objectReference: {fileID: 0}
     - target: {fileID: 7405517000206911181, guid: cf887c8d7e52cc74f989964757e4be2a, type: 3}
       propertyPath: m_sharedMaterial
@@ -3470,7 +3470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3324752455631967444, guid: 5365565ee0cccde418767ade71145759, type: 3}
       propertyPath: _listItems.Array.data[0]._count
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4221277828616919809, guid: 5365565ee0cccde418767ade71145759, type: 3}
       propertyPath: m_LocalPosition.x

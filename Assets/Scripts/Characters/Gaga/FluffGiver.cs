@@ -10,10 +10,16 @@ public class FluffGiver : MonoBehaviour
     [SerializeField] private int _chance;
 
     [Header("Время выпадения пуха.")]
-    [SerializeField] private float _time;
+    private int _time;
 
     [Header("Количество воспроизводимого пуха.")]
-    [SerializeField] private int _fluffCount;
+    private int _fluffCount;
+
+    [Header("Время выпадения пуха по улучшениям (открыть стрелочку слева)")]
+    [SerializeField, Range(1,100)] private int[] _upgradeTime;
+
+    [Header("Количество воспроизв. пуха по улучшениям (открыть стрелочку слева)")]
+    [SerializeField, Range(1,100)] private int[] _ugradeFluffCount;
 
     private BuildStorage _storage;
     private ResourceTransmitter _transmitter;
@@ -29,14 +35,16 @@ public class FluffGiver : MonoBehaviour
         _transmitter = GetComponent<ResourceTransmitter>();
         _sprRender = GetComponent<SpriteRenderer>();
         _construction = GetComponent<Construction>();
-        
+        CheckGrade();
         StartCoroutine(CreateFluff());
     }
     
     private void GiveFluff()
     {
         if (hasGivenFluff) return;
+
         
+
         hasGivenFluff = true;
         if (Random.Range(0, 100) < _chance)
         {
@@ -45,6 +53,16 @@ public class FluffGiver : MonoBehaviour
             ChangeSpriteFromNullToFluff();
         }
         hasGivenFluff = false;
+    }
+
+    public void CheckGrade()
+    {
+        switch (_construction.GetCurrentGrade())
+        {
+            case 1: _time = _upgradeTime[0]; _fluffCount = _ugradeFluffCount[0]; break;
+            case 2: _time = _upgradeTime[1]; _fluffCount = _ugradeFluffCount[1]; break;
+            case 3: _time = _upgradeTime[2]; _fluffCount = _ugradeFluffCount[2]; break;
+        }
     }
 
     private IEnumerator CreateFluff()

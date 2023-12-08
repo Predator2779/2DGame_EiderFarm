@@ -1,3 +1,4 @@
+using Building.Constructions;
 using Economy;
 using System.Collections;
 using UnityEngine;
@@ -17,14 +18,25 @@ public class Machine : MonoBehaviour
 
     [SerializeField] private Animator _animator;
 
+    private Construction _construction;
+
+
+    [Header("Время переработки по улучшениям (открыть стрелочку слева)")]
+    [SerializeField, Range(1, 100)] private int[] _upgradeTime;
+
+    [Header("Сколько пуха за раз по улучшениям (открыть стрелочку слева)")]
+    [SerializeField, Range(1, 100)] private int[] _ugradeFluffCount;
+
 
     private void Start()
     {
+        _construction = GetComponent<Construction>();
         _storage = GetComponent<BuildStorage>();
         _converter = GetComponent<Converter>();
         _transmitter = GetComponent<ResourceTransmitter>();
 
         _transmitter.TransmitteEvent += Production;
+        CheckGrade();
     }
 
     private void Make(int _fluffCount)
@@ -61,6 +73,16 @@ public class Machine : MonoBehaviour
         _animator.enabled = !_animator.enabled;
         Debug.Log(1);
     }
-            
+
+    public void CheckGrade()
+    {
+        switch (_construction.GetCurrentGrade())
+        {
+            case 1: _delayProduction = _upgradeTime[0]; _transmitter.ChangeFluffCount(_ugradeFluffCount[0]); break;
+            case 2: _delayProduction = _upgradeTime[1]; _transmitter.ChangeFluffCount(_ugradeFluffCount[1]); break;
+            case 3: _delayProduction = _upgradeTime[2]; _transmitter.ChangeFluffCount(_ugradeFluffCount[2]); break;
+        }
+    }
+
 
 }

@@ -219,8 +219,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chance: 100
-  _time: 30
-  _fluffCount: 1
+  _time: 0
+  _fluffCount: 0
+  _upgradeTime:
+  - 10
+  - 5
+  - 2
+  _ugradeFluffCount: 020000000400000006000000
   _spritesWithFluff:
   - {fileID: 21300000, guid: 0765411e329820242a593d774eb89e34, type: 3}
   - {fileID: 21300000, guid: e135f9d2f96bc0348a964b328c91180e, type: 3}

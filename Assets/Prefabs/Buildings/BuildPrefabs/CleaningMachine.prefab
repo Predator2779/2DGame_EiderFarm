@@ -210,6 +210,8 @@ MonoBehaviour:
   _delayProduction: 3
   _transmitter: {fileID: 0}
   _animator: {fileID: 4486999885980057955}
+  _upgradeTime: 060000000400000002000000
+  _ugradeFluffCount: 020000000400000006000000
 --- !u!114 &5069752540118177730
 MonoBehaviour:
   m_ObjectHideFlags: 0
