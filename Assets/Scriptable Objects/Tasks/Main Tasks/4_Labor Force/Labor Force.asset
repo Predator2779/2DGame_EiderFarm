@@ -19,7 +19,7 @@ MonoBehaviour:
   _description: "\u0420\u0430\u0431\u043E\u0447\u0430\u044F \u0441\u0438\u043B\u0430"
   _reward:
     _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
-    _count: 20
+    _count: 60
   _nextTasks:
   - {fileID: 11400000, guid: b3213b5ac85d93a45936517bcd840f62, type: 2}
   _cellPrefab: {fileID: 3904866896323149092, guid: 881e53c46ad8ef7428c7cd2efccf67ef, type: 3}

@@ -68,9 +68,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2, y: -6}
+  m_Offset: {x: -1.4953938, y: -5.0453405}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.9590874
 --- !u!114 &6180305001878398851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ Transform:
   m_GameObject: {fileID: 7742955859725538385}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -6, z: 0}
+  m_LocalPosition: {x: -1.48, y: -5.07, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -278,7 +278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6973259388961172798, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
       propertyPath: _buyPrice
-      value: 199
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6973259388961172798, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
       propertyPath: _upgradePrice.Array.size

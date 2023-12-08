@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb214ac4f1ea4b7a8d44128de42eb616, type: 3}
   m_Name: First Difficulties
   m_EditorClassIdentifier: 
-  _stage: 4
+  _stage: 0
   _resetStage: 0
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: "\u041F\u0435\u0440\u0432\u044B\u0435 \u0442\u0440\u0443\u0434\u043D\u043E\u0441\u0442\u0438"
   _description: "\u041F\u0435\u0440\u0432\u044B\u0435 \u0442\u0440\u0443\u0434\u043D\u043E\u0441\u0442\u0438"
   _reward:
     _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
-    _count: 20
+    _count: 40
   _nextTasks:
   - {fileID: 11400000, guid: b18469ec21bb8f5468bbb5846f73ece1, type: 2}
   _cellPrefab: {fileID: 3904866896323149092, guid: 881e53c46ad8ef7428c7cd2efccf67ef, type: 3}
