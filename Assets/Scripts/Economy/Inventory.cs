@@ -79,9 +79,9 @@ namespace Economy
         {
             int free = _limit - GetTotalCount();
 
-            if (count <= free || _limit == 0)
-                bunch.AddItems(count);
-            else bunch.AddItems(free);
+            if (count > free && _limit != 0)
+                bunch.AddItems(free);
+            else bunch.AddItems(count);
         }
 
         private ItemBunch GetBunch(Item item)
