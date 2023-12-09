@@ -23,6 +23,7 @@ namespace Economy.Farm_House
         
         protected void SetButton(Sprite icon, string name, string description)
         {
+            if(_name != null)
             _name.text = name;
             SetButton(icon, description);
         }   
@@ -35,7 +36,8 @@ namespace Economy.Farm_House
         
         protected void SetButton(Sprite icon, string name, string description, int count)
         {
-            _name.text = name;
+            if (_name != null)
+                _name.text = name;
             SetButton(icon, description, count);
         }
     }

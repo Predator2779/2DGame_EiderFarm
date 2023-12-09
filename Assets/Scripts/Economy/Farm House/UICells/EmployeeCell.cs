@@ -18,7 +18,7 @@ namespace Economy.Farm_House
             _employee = employee;
             _spawnPosition = spawnPos;
             _playerInventory = playerInventory;
-            
+
             RefreshButton();
         }
 
@@ -33,8 +33,8 @@ namespace Economy.Farm_House
 
         private void RefreshButton() => SetButton(
                 _employee.GetSprite(),
-                _employee.GetName(),
                 _employee.GetDescription(),
+                _employee.GetName(),
                 _employee.GetPrice()
         );
 
