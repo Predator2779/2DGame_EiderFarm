@@ -8,7 +8,6 @@ namespace Building
 {
     public class BuildMenu : MonoBehaviour
     {
-
         private Construction _buildingPrefab;
         private Construction _currentBuilding;
 
@@ -35,9 +34,7 @@ namespace Building
 
         public bool HasFlag;
         public bool IsBuilded;
-
         
-
         public void SetConstruction(
                 Construction prefab,
                 Transform parent,

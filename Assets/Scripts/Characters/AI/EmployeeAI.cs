@@ -50,7 +50,9 @@ namespace Characters.Enemy
 
         private void CheckConditions()
         {
-            if (!IsFull() && CanPickFluff() &&
+            print($"IsFull: {IsFull()}, CanRecycle: {CanRecycle()}, CountUncleanFluff: {CountUncleanFluff()}");
+            if (!IsFull() &&
+                CanPickFluff() &&
                 CountCleanFluff() <= 0 &&
                 CountUncleanFluff() < _fluffCapacity)
             {
@@ -67,8 +69,7 @@ namespace Characters.Enemy
                 print("recycle");
                 return;
             }
-
-            print("full");
+            
             if (CountCleanFluff() > 0 && CanTransportable())
             {
                 SetTarget(_currentStorage.gameObject);
@@ -76,8 +77,7 @@ namespace Characters.Enemy
                 print("transportable");
                 return;
             }
-
-
+            
             _currentEmployeeState = EmployeeStates.Patrol;
             print("idle");
         }
@@ -158,7 +158,7 @@ namespace Characters.Enemy
         }
 
         private bool IsDestination(Vector2 first, Vector2 second) => (int)Vector2.Distance(first, second) == 0;
-        private bool IsFull() => CountUncleanFluff() >= _employee.GetInventory().GetLimit();
+        private bool IsFull() => CountUncleanFluff() >= _fluffCapacity;
         private int CountUncleanFluff() => TryGetBunch(GlobalConstants.UncleanedFluff)?.GetCount() ?? 0;
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;
 
@@ -213,7 +213,7 @@ namespace Characters.Enemy
 
                 if (!bMenu.IsBuilded ||
                     !bMenu.GetBuilding().TryGetComponent(out Inventory inventory) ||
-                    inventory.GetFreeSpace() <= 0) continue;
+                    inventory.GetFreeSpace() > 0) continue;
 
                 _currentStorage = inventory;
                 return true;
@@ -225,8 +225,8 @@ namespace Characters.Enemy
         private void Idle()
         {
             _personAnimate.Walk(_target, false);
-
-            if (!_isDelayed) StartCoroutine(Delay());
+            CheckConditions();//
+            // if (!_isDelayed) StartCoroutine(Delay());
         }
 
         private IEnumerator Delay()
@@ -250,7 +250,7 @@ namespace Characters.Enemy
 
         private void Recycling()
         {
-            if (_currentCleaner == null)
+            if (_currentCleaner == null || CountUncleanFluff() <= 0)
             {
                 CheckConditions();
                 return;
@@ -282,6 +282,8 @@ namespace Characters.Enemy
 
         private void SideStep()
         {
+            /// Добавить проверку. (если некоторое время не двигается -> смена пути)
+
             CheckConditions();
 
             if (!IsDestination(transform.position, _target))

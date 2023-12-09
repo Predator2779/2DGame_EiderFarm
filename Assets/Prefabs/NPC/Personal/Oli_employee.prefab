@@ -166,14 +166,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _personAnimate: {fileID: 4638296066102253726}
   _currentEmployeeState: 0
-  _maxDistance: 25
+  _maxDistance: 70
   _idleDelay: 2
   _fluffCapacity: 2
   _pull: {fileID: 0}
   _currentHouse: {fileID: 0}
   _currentCleaner: {fileID: 0}
   _currentStorage: {fileID: 0}
-  _target: {x: 0, y: 0}
 --- !u!114 &5987656316525160417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,10 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isPlayerInventory: 0
-  _listItems:
-  - _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
-    _count: 100
-  _limit: 150
+  _listItems: []
+  _limit: 200
 --- !u!1 &9136485320912651497
 GameObject:
   m_ObjectHideFlags: 0
