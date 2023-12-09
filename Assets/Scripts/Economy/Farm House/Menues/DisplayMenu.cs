@@ -18,9 +18,10 @@ namespace Economy.Farm_House
         public void SwitchDisplay()
         {
             _isHouseMenu = !_isHouseMenu;
+            if(_prefabText != null)
             if (_isHouseMenu)
                 _prefabText.text = "Купить";
-            else
+            else if (!_isHouseMenu)
                 _prefabText.text = "Продать";
             RefreshDisplay();
 
