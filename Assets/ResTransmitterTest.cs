@@ -44,15 +44,15 @@ public class ResTransmitterTest : MonoBehaviour
             _characterInventory.AddItemsWithMsg(resources.ToArray(), _construction);
             _inventory.ResetInventory();
         }
-        // else
-        // {
-        //     _resources = _characterInventory.GetAllItems();
-        //
-        //     if (_resources == null) return;
-        //
-        //     _inventory.AddItems(_resources.ToArray());
-        //     _characterInventory.ResetInventory();
-        // }
+        else
+        {
+            var resources = _characterInventory.GetAllItems();
+        
+            if (resources == null) return;
+        
+            _inventory.AddItems(resources.ToArray());
+            _characterInventory.ResetInventory();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

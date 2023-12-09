@@ -261,13 +261,15 @@ namespace Characters.AI
 
             WalkToTarget();
             CheckConditions();
-
-            if (CountCleanFluff() <= 0 || !(Vector2.Distance(transform.position, _target) < 5)) return;
-            
-            _currentStorage.Exchange(
-                    _employee.GetInventory(),
-                    _currentStorage,
-                    TryGetBunch(GlobalConstants.CleanedFluff));
+            //
+            // var bunch = TryGetBunch(GlobalConstants.CleanedFluff);
+            //
+            // if (bunch == null && CountCleanFluff() <= 0 || !(Vector2.Distance(transform.position, _target) < 5)) return;
+            //
+            // _currentStorage.Exchange(
+            //         _employee.GetInventory(),
+            //         _currentStorage,
+            //         bunch);
         }
 
         private void SideStep()
