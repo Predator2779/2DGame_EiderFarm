@@ -68,9 +68,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.4953938, y: -5.0453405}
+  m_Offset: {x: -2.3213427, y: -5.5676317}
   serializedVersion: 2
-  m_Radius: 0.9590874
+  m_Radius: 1.4570878
 --- !u!114 &6180305001878398851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,10 +84,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panelUI: {fileID: 7310839671862343464}
+  _map: {fileID: 0}
   _buildMenu: {fileID: 2643113318332444813}
   _buildPrefab: {fileID: 277233241798781, guid: 2be666695e5843540bf7dc2cb3e5fb66, type: 3}
   _renderer: {fileID: 8212618561621644297}
-  _spriteRenderer: {fileID: 0}
 --- !u!1 &6020784128501815957
 GameObject:
   m_ObjectHideFlags: 0
