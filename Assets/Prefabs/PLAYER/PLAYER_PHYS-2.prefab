@@ -267,6 +267,8 @@ MonoBehaviour:
   _joystick: {fileID: 0}
   _sensitivity: 0.137
   _personAnimate: {fileID: 8732194193539385663}
+  _walkSound: "event:/\u0411\u0435\u0433 \u0413\u043B\u0430\u0432\u043D\u044B\u0439
+    \u0433\u0435\u0440\u043E\u0439"
 --- !u!114 &5512495870546276711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,7 +311,8 @@ MonoBehaviour:
   _isPlayerInventory: 1
   _listItems:
   - _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
-    _count: 0
+    _count: 200
+  _limit: 0
 --- !u!1 &4046312489882834566
 GameObject:
   m_ObjectHideFlags: 0

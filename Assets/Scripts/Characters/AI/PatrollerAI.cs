@@ -55,18 +55,20 @@ namespace Characters.AI
         private void Patrol()
         {
             if (_canChangeDir) StartCoroutine(ChangeDirection(GetRandomDirection()));
-            
+            PlaySound();
             Walk(CurrentDirection);
         }
 
         private void Idle()
         {
             _personAnimate.Walk(CurrentDirection, false);
+            StopSound();
         }
 
         protected override void Run(Vector2 direction)
         {
             StopCoroutine(ChangeDirection(direction));
+            PlaySound();
             base.Run(direction);
         }
 

@@ -25,12 +25,14 @@ namespace Characters.AI
         protected void Walk(Vector2 direction)
         {
             _walker.Walk(direction);
+            PlaySound();
             Animate(direction);
         }
 
         protected virtual void Run(Vector2 direction)
         {
             _walker.Run(direction);
+            PlaySound();
             Animate(direction);
         }
 

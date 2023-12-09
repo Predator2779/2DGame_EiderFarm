@@ -1648,11 +1648,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
-      propertyPath: _walkSound
-      value: "event:/\u0411\u0435\u0433 \u041D\u0430\u0435\u043C\u043D\u044B\u0439
-        \u0440\u0430\u0431\u043E\u0442\u043D\u0438\u043A 2.0"
-      objectReference: {fileID: 0}
     - target: {fileID: 5987656316525160417, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: item
       value: 
@@ -28166,10 +28161,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PLAYER_PHYS
       objectReference: {fileID: 0}
-    - target: {fileID: 3324752455631967444, guid: 5365565ee0cccde418767ade71145759, type: 3}
-      propertyPath: _listItems.Array.data[0]._count
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 4221277828616919809, guid: 5365565ee0cccde418767ade71145759, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8
@@ -28214,11 +28205,6 @@ PrefabInstance:
       propertyPath: _joystick
       value: 
       objectReference: {fileID: 1124473930}
-    - target: {fileID: 7802842079176855647, guid: 5365565ee0cccde418767ade71145759, type: 3}
-      propertyPath: _walkSound
-      value: "event:/\u0411\u0435\u0433 \u0413\u043B\u0430\u0432\u043D\u044B\u0439
-        \u0433\u0435\u0440\u043E\u0439"
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -147,13 +147,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _personAnimate: {fileID: 4890964017926284591}
-  _animal: {fileID: 7687938006764830125}
+  _walkSound: "event:/\u041B\u0438\u0441 \u043F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435
+    2.0"
   _currentState: 0
-  _requirePlayerDistance: 7
-  _requireFlagDistance: 7
   _idleTime: 4
   _patrolTime: 3
   _changeDirTime: 3.5
+  _requirePlayerDistance: 7
+  _requireFlagDistance: 7
 --- !u!50 &5616179734583736253
 Rigidbody2D:
   serializedVersion: 4

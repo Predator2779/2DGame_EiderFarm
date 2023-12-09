@@ -113,7 +113,6 @@ namespace Characters.AI
                     {
                         var direction = _path[_index] - (Vector2)transform.position;
                         Walk(direction.normalized);
-                        PlaySound();
                     }
                     else
                     {
