@@ -1,7 +1,5 @@
 using System.Linq;
 using General;
-using TMPro;
-using UnityEditor.Build;
 using UnityEngine;
 
 namespace Economy.Farm_House.Menues
@@ -10,8 +8,6 @@ namespace Economy.Farm_House.Menues
     public class ShopMenu : DisplayMenu
     {
         [SerializeField] private ShopCell _shopCellPrefab;
-
-       
         
         private Inventory _assortment;
 
