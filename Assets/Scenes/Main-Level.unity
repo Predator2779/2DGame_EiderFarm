@@ -157,6 +157,28 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
+--- !u!114 &131578902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7154182420850519130, guid: a93bcf259170d334f87f6ae2777dc21a, type: 3}
+  m_PrefabInstance: {fileID: 3729539824746173434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9835bb59bb074b4fae3068e439c8759f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &395855915 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6879746800756703630, guid: a93bcf259170d334f87f6ae2777dc21a, type: 3}
+  m_PrefabInstance: {fileID: 3729539824746173434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9835bb59bb074b4fae3068e439c8759f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &400124857
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +451,17 @@ Sprite:
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
+--- !u!114 &475512552 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8413108624104822412, guid: a93bcf259170d334f87f6ae2777dc21a, type: 3}
+  m_PrefabInstance: {fileID: 3729539824746173434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9835bb59bb074b4fae3068e439c8759f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &505364860
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +527,17 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
+--- !u!114 &560912170 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2380978453054693458, guid: a93bcf259170d334f87f6ae2777dc21a, type: 3}
+  m_PrefabInstance: {fileID: 3729539824746173434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9835bb59bb074b4fae3068e439c8759f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!213 &607192189
 Sprite:
   m_ObjectHideFlags: 0
@@ -1327,6 +1371,17 @@ Sprite:
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
+--- !u!114 &1167226023 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 399159054089770730, guid: a93bcf259170d334f87f6ae2777dc21a, type: 3}
+  m_PrefabInstance: {fileID: 3729539824746173434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9835bb59bb074b4fae3068e439c8759f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1365436622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,6 +1479,17 @@ MonoBehaviour:
   - {fileID: 1029481472}
   _maxRadius: 30
   _count: 3
+--- !u!114 &1494467410 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7596585922118350711, guid: a93bcf259170d334f87f6ae2777dc21a, type: 3}
+  m_PrefabInstance: {fileID: 3729539824746173434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9835bb59bb074b4fae3068e439c8759f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1537120865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3454,7 +3520,7 @@ PrefabInstance:
       objectReference: {fileID: 4544929881048724889}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _cleaners.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _storages.Array.size
@@ -3467,23 +3533,27 @@ PrefabInstance:
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _cleaners.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1167226023}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _cleaners.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 475512552}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _cleaners.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 560912170}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _cleaners.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 395855915}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _cleaners.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1494467410}
+    - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
+      propertyPath: _cleaners.Array.data[5]
+      value: 
+      objectReference: {fileID: 1494467410}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _storages.Array.data[0]
       value: 
@@ -3499,79 +3569,79 @@ PrefabInstance:
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3729539824746173454}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[2]
       value: 
-      objectReference: {fileID: 3729539824746173454}
+      objectReference: {fileID: 3729539824746173453}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[3]
       value: 
-      objectReference: {fileID: 3729539824746173453}
+      objectReference: {fileID: 3729539824746173452}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[4]
       value: 
-      objectReference: {fileID: 3729539824746173452}
+      objectReference: {fileID: 3729539824746173451}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[5]
       value: 
-      objectReference: {fileID: 3729539824746173451}
+      objectReference: {fileID: 3729539824746173450}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[6]
       value: 
-      objectReference: {fileID: 3729539824746173450}
+      objectReference: {fileID: 3729539824746173449}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[7]
       value: 
-      objectReference: {fileID: 3729539824746173449}
+      objectReference: {fileID: 3729539824746173448}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[8]
       value: 
-      objectReference: {fileID: 3729539824746173448}
+      objectReference: {fileID: 3729539824746173447}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[9]
       value: 
-      objectReference: {fileID: 3729539824746173447}
+      objectReference: {fileID: 3729539824746173446}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[10]
       value: 
-      objectReference: {fileID: 3729539824746173446}
+      objectReference: {fileID: 3729539824746173445}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[11]
       value: 
-      objectReference: {fileID: 3729539824746173445}
+      objectReference: {fileID: 3729539824746173444}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[12]
       value: 
-      objectReference: {fileID: 3729539824746173444}
+      objectReference: {fileID: 3729539824746173443}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[13]
       value: 
-      objectReference: {fileID: 3729539824746173443}
+      objectReference: {fileID: 3729539824746173442}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[14]
       value: 
-      objectReference: {fileID: 3729539824746173442}
+      objectReference: {fileID: 3729539824746173441}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[15]
       value: 
-      objectReference: {fileID: 3729539824746173441}
+      objectReference: {fileID: 3729539824746173440}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[16]
       value: 
-      objectReference: {fileID: 3729539824746173440}
+      objectReference: {fileID: 3729539824746173439}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[17]
       value: 
-      objectReference: {fileID: 3729539824746173439}
+      objectReference: {fileID: 3729539824746173438}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[18]
       value: 
-      objectReference: {fileID: 3729539824746173438}
+      objectReference: {fileID: 3729539824746173437}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[19]
       value: 
-      objectReference: {fileID: 3729539824746173437}
+      objectReference: {fileID: 131578902}
     - target: {fileID: 5457287013517292997, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: _gagaHouses.Array.data[20]
       value: 
