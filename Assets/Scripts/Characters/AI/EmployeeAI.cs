@@ -36,7 +36,7 @@ namespace Characters.AI
         private void Start() => Initialize();
         private void OnValidate() => Initialize();
         private void FixedUpdate() => StateExecute();
-
+        
         private void Initialize()
         {
             _pull ??= FindObjectOfType<BuildingsPull>();
@@ -113,6 +113,7 @@ namespace Characters.AI
                     {
                         var direction = _path[_index] - (Vector2)transform.position;
                         Walk(direction.normalized);
+                        PlaySound();
                     }
                     else
                     {
@@ -217,6 +218,7 @@ namespace Characters.AI
         private void Idle()
         {
             _personAnimate.Walk(_target, false);
+            StopSound();
             CheckConditions(); //
             // if (!_isDelayed) StartCoroutine(Delay());
         }
