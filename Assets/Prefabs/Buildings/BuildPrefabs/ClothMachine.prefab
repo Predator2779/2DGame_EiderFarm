@@ -237,8 +237,8 @@ MonoBehaviour:
   _delayProduction: 60
   _transmitter: {fileID: 0}
   _animator: {fileID: 2469458603659518761}
-  _upgradeTime: 060000000300000002000000
-  _ugradeFluffCount: 020000000400000006000000
+  _upgradeTime: 030000000200000001000000
+  _ugradeFluffCount: 010000000200000003000000
 --- !u!95 &2469458603659518761
 Animator:
   serializedVersion: 5
