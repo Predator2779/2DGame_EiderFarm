@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{53c0d97e-f261-4f58-bf37-538eef6942d2}">
+		<property name="name">
+			<value>UI меню стройки станок обработки пуха 2.0</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9ab01565-efa6-4eb0-8851-a29743ae0c65}</destination>
+		</relationship>
+	</object>
+</objects>

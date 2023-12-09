@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{41d720c3-43b7-46e5-ac79-d91031c0828e}">
+		<property name="assetPath">
+			<value>Удар по футбольному мячу.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.9992063492063492</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f7c7fe7c-c78b-448f-8544-83198bf4c8d2}</destination>
+		</relationship>
+	</object>
+</objects>

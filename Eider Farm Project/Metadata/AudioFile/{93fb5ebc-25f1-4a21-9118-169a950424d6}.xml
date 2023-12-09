@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{93fb5ebc-25f1-4a21-9118-169a950424d6}">
+		<property name="assetPath">
+			<value>Бег по мосту (Все герои).wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>12.302698412698414</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f7c7fe7c-c78b-448f-8544-83198bf4c8d2}</destination>
+		</relationship>
+	</object>
+</objects>
