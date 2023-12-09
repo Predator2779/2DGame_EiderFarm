@@ -1,14 +1,12 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Building;
 using Building.Constructions;
-using Characters.AI;
 using Economy;
 using General;
 using UnityEngine;
 
-namespace Characters.Enemy
+namespace Characters.AI
 {
     [RequireComponent(typeof(Employee))]
     [RequireComponent(typeof(PathFinder))]
@@ -22,12 +20,11 @@ namespace Characters.Enemy
 
         [Space] [Header("Settings:")]
         [SerializeField] [Range(1, 100)] private int _fluffCapacity;
-
-        [SerializeField] private BuildingsPull _pull;
-        [SerializeField] private BuildStorage _currentHouse;
-        [SerializeField] private Transform _currentCleaner;
-        [SerializeField] private Inventory _currentStorage;
-
+        
+        private BuildStorage _currentHouse;
+        private Transform _currentCleaner;
+        private Inventory _currentStorage;
+        private BuildingsPull _pull;
         private PathFinder _pathFinder;
         private Employee _employee;
         private Rigidbody2D _rbody;
@@ -43,9 +40,9 @@ namespace Characters.Enemy
         private void Initialize()
         {
             _pull ??= FindObjectOfType<BuildingsPull>();
+            _pathFinder ??= GetComponent<PathFinder>();
             _employee ??= GetComponent<Employee>();
             _rbody ??= GetComponent<Rigidbody2D>();
-            _pathFinder ??= GetComponent<PathFinder>();
         }
 
         private void CheckConditions()

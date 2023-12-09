@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8669189534273016632}
   - component: {fileID: 8362759735060497476}
   m_Layer: 0
-  m_Name: BUILDINGS-PULL
+  m_Name: BUILDINGS_PULL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,34 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d82bcafd6a414dd69b6b02ef8e335fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gagaHouses:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _cleaners:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _clothMachines:
-  - {fileID: 0}
-  _storages:
-  - {fileID: 0}
+  _gagaHouses: []
+  _cleaners: []
+  _clothMachines: []
+  _storages: []
