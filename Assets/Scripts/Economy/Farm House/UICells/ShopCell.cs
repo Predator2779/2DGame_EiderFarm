@@ -8,6 +8,7 @@ namespace Economy.Farm_House
     public class ShopCell : MenuCell
     {
         [SerializeField] private TMP_InputField _inpField;
+        [SerializeField] private TextMeshProUGUI _prefabButtonText;
 
         private ItemBunch _bunch;
         private Inventory _seller;
@@ -23,6 +24,8 @@ namespace Economy.Farm_House
 
             RefreshButton();
         }
+
+        public TextMeshProUGUI GetText() => _prefabButtonText;
 
         public void Exchange()
         {

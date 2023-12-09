@@ -8,6 +8,8 @@ namespace Economy.Farm_House
         [SerializeField] protected Transform _content;
         [SerializeField] private TMP_Text _btnText;
 
+        protected TextMeshProUGUI _prefabText;
+
         protected Inventory _playerInventory;
         protected bool _isHouseMenu = true;
 
@@ -16,7 +18,13 @@ namespace Economy.Farm_House
         public void SwitchDisplay()
         {
             _isHouseMenu = !_isHouseMenu;
+            if (_isHouseMenu)
+                _prefabText.text = "Купить";
+            else
+                _prefabText.text = "Продать";
             RefreshDisplay();
+
+            
         }
 
         protected abstract void Draw();
