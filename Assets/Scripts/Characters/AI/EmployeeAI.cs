@@ -98,9 +98,9 @@ namespace Characters.AI
                 case EmployeeStates.Patrol:
                     Idle();
                     break;
-                case EmployeeStates.SideStep:
-                    SideStep();
-                    break;
+                // case EmployeeStates.SideStep:
+                //     SideStep();
+                //     break;
             }
         }
 
@@ -279,18 +279,18 @@ namespace Characters.AI
 
         private void SideStep()
         {
-            /// Добавить проверку. (если некоторое время не двигается -> смена пути)
-
-            CheckConditions();
-
-            if (!IsDestination(transform.position, _target))
-                WalkToTarget();
+            // /// Добавить проверку. (если некоторое время не двигается -> смена пути)
+            //
+            // CheckConditions();
+            //
+            // if (!IsDestination(transform.position, _target))
+            //     WalkToTarget();
         }
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            SetPath(_target);
-            _currentEmployeeState = EmployeeStates.SideStep;
+            // SetPath(_target);
+            // _currentEmployeeState = EmployeeStates.SideStep;
         }
 
         private enum EmployeeStates

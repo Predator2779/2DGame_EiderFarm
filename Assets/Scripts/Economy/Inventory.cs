@@ -65,10 +65,9 @@ namespace Economy
             itemBunch = null;
             return false;
         }
-
-        public int GetLimit() => _limit;
+        
         public int GetFreeSpace() => _limit - GetTotalCount();
-        public int GetTotalCount() => _listItems.Sum(bunch => bunch.GetCount());
+        private int GetTotalCount() => _listItems == null ? 0 : _listItems.Sum(bunch => bunch.GetCount());
         public List<ItemBunch> GetAllItems() => _listItems;
         public void ReplaceAllBunches(List<ItemBunch> bunches) => _listItems = bunches;
 
