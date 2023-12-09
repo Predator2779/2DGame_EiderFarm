@@ -20,7 +20,6 @@ public class Machine : MonoBehaviour
 
     private Construction _construction;
 
-
     [Header("Время переработки по улучшениям (открыть стрелочку слева)")]
     [SerializeField, Range(1, 100)] private int[] _upgradeTime;
 
@@ -43,7 +42,6 @@ public class Machine : MonoBehaviour
     {
         _storage.AddFluff(_fluffCount);
         _transmitter.CheckBag();
-        print("maked");
     }
 
     public void Animation(bool work, int currentGrade)

@@ -20,7 +20,7 @@ namespace Characters.AI
 
         [Space] [Header("Settings:")]
         [SerializeField] [Range(1, 100)] private int _fluffCapacity;
-        
+
         private BuildStorage _currentHouse;
         private Transform _currentCleaner;
         private Inventory _currentStorage;
@@ -47,7 +47,6 @@ namespace Characters.AI
 
         private void CheckConditions()
         {
-            print($"IsFull: {IsFull()}, CanRecycle: {CanRecycle()}, CountUncleanFluff: {CountUncleanFluff()}");
             if (!IsFull() &&
                 CanPickFluff() &&
                 CountCleanFluff() <= 0 &&
@@ -55,7 +54,6 @@ namespace Characters.AI
             {
                 SetTarget(_currentHouse.gameObject);
                 _currentEmployeeState = EmployeeStates.Picking;
-                print("picking");
                 return;
             }
 
@@ -63,20 +61,17 @@ namespace Characters.AI
             {
                 SetTarget(_currentCleaner.gameObject);
                 _currentEmployeeState = EmployeeStates.Recycling;
-                print("recycle");
                 return;
             }
-            
+
             if (CountCleanFluff() > 0 && CanTransportable())
             {
                 SetTarget(_currentStorage.gameObject);
                 _currentEmployeeState = EmployeeStates.Transportation;
-                print("transportable");
                 return;
             }
-            
+
             _currentEmployeeState = EmployeeStates.Patrol;
-            print("idle");
         }
 
         private void StateExecute()
@@ -222,7 +217,7 @@ namespace Characters.AI
         private void Idle()
         {
             _personAnimate.Walk(_target, false);
-            CheckConditions();//
+            CheckConditions(); //
             // if (!_isDelayed) StartCoroutine(Delay());
         }
 
@@ -264,17 +259,15 @@ namespace Characters.AI
                 return;
             }
 
-            if (IsDestination(transform.position, _currentStorage.transform.position))
-            {
-                _currentStorage.Exchange(
-                        _employee.GetInventory(),
-                        _currentStorage,
-                        TryGetBunch(GlobalConstants.CleanedFluff));
-
-                CheckConditions();
-            }
-
             WalkToTarget();
+            CheckConditions();
+
+            if (CountCleanFluff() <= 0 || !(Vector2.Distance(transform.position, _target) < 5)) return;
+            
+            _currentStorage.Exchange(
+                    _employee.GetInventory(),
+                    _currentStorage,
+                    TryGetBunch(GlobalConstants.CleanedFluff));
         }
 
         private void SideStep()

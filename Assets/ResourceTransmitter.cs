@@ -49,8 +49,6 @@ public class ResourceTransmitter : MonoBehaviour
 
         _characterInventory.AddItems(_typeToPlayer, count);
         _storage.ResetFluff();
-
-        print("Transmitted");
         
         if (GetComponent<FluffGiver>())
             StartCoroutine(GetComponent<FluffGiver>().ChangeSpritesWithDelay(0.3f));

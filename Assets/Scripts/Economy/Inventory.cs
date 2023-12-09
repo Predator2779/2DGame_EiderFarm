@@ -9,7 +9,7 @@ namespace Economy
     public class Inventory : MonoBehaviour
     {
         [SerializeField] private bool _isPlayerInventory;
-        [SerializeField] private List<ItemBunch> _listItems;
+        [SerializeField] private List<ItemBunch> _listItems = new List<ItemBunch>();
         [SerializeField] private int _limit;
 
         private void Start()
@@ -45,8 +45,7 @@ namespace Economy
 
         public void Exchange(Inventory invFrom, Inventory invTo, ItemBunch bunchFrom)
         {
-            if (invFrom.IsExistsItems(bunchFrom.GetItem().GetName(), bunchFrom.GetCount()))
-                return;
+            if (!invFrom.IsExistsItems(bunchFrom.GetItem().GetName(), bunchFrom.GetCount())) return;
 
             int count = invTo.GetFreeSpace();
 
@@ -54,29 +53,17 @@ namespace Economy
             invFrom.Remove(bunchFrom.GetItem(), count);
         }
 
-        public bool TryGetBunch(string name, out ItemBunch itemBunch)
-        {
-            foreach (var bunch in _listItems.Where(bunch => bunch.GetItemName() == name))
-            {
-                itemBunch = bunch;
-                return true;
-            }
-
-            itemBunch = null;
-            return false;
-        }
-        
+        public bool IsPlayerInventory() => _isPlayerInventory;
         public int GetFreeSpace() => _limit - GetTotalCount();
-        private int GetTotalCount() => _listItems == null ? 0 : _listItems.Sum(bunch => bunch.GetCount());
+        public int GetTotalCount() => _listItems?.Sum(bunch => bunch.GetCount()) ?? 0;
         public List<ItemBunch> GetAllItems() => _listItems;
         public void ReplaceAllBunches(List<ItemBunch> bunches) => _listItems = bunches;
 
         public bool IsExistsItems(string name, int count)
         {
-            if (count < 0) return false;
+            if (count < 0 || _listItems == null) return false;
 
-            return _listItems.Any(bunch => bunch.GetItemName() ==
-                    name && bunch.GetCount() >= count);
+            return _listItems.Any(bunch => bunch.GetItemName() == name && bunch.GetCount() >= count);
         }
 
         private void AddOrCreate(Item item, int count)
@@ -101,12 +88,15 @@ namespace Economy
         {
             ItemBunch bunch = new ItemBunch(item);
 
-            if (TryGetBunch(item.GetName(), out ItemBunch newBunch))
-                bunch = newBunch;
-            else
+            if (!IsExistsItems(item.GetName(), 0))
+            {
                 _listItems.Add(bunch);
+                return bunch;
+            }
 
-            return bunch;
+            TryGetBunch(item.GetName(), out ItemBunch newBunch);
+
+            return newBunch;
         }
 
         private void Remove(Item item, int count)
@@ -117,6 +107,21 @@ namespace Economy
             CheckCount(bunch);
             SendCountItemsMsg(item.GetName(), bunch.GetCount());
             SendCountRemovedMsg(item, count);
+        }
+
+        public bool TryGetBunch(string name, out ItemBunch itemBunch)
+        {
+            if (_listItems != null)
+            {
+                foreach (var bunch in _listItems.Where(bunch => bunch.GetItemName() == name))
+                {
+                    itemBunch = bunch;
+                    return true;
+                }
+            }
+
+            itemBunch = null;
+            return false;
         }
 
         private void CheckCount(ItemBunch bunch)
