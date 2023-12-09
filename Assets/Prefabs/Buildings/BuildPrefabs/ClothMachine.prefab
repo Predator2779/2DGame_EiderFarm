@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcd90eecabae024e954552a4da420d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fluffCount: 2
+  _fluffCount: 20
   _typeToPlayer: {fileID: 11400000, guid: 3e35c204c77a2c34a9439f95cd1ddef4, type: 2}
   _characterInventory: {fileID: 0}
 --- !u!114 &7179212813463761311
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ed1386f1ec2b042bacfa2412ee9cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delayProduction: 6
+  _delayProduction: 60
   _transmitter: {fileID: 0}
   _animator: {fileID: 2469458603659518761}
   _upgradeTime: 060000000300000002000000

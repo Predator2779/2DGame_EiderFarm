@@ -19,7 +19,6 @@ namespace Economy.Farm_House
         protected void SetButton(Sprite icon, string description)
         {
             _icon.sprite = icon;
-            _description.text = description;
         }
         
         protected void SetButton(Sprite icon, string name, string description)

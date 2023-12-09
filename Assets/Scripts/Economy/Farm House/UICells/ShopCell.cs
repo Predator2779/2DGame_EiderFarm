@@ -80,7 +80,13 @@ namespace Economy.Farm_House
 
         private int GetCountFromInput()
         {
-            string text = _inpField.text;
+            string text;
+            if (_inpField != null)
+            {
+                text = _inpField.text;
+            }
+            else text = 1.ToString();
+            
             
             if (text == "") return 1;
             

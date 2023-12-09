@@ -223,10 +223,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79602a2e6ab43a9841b9794b39ddce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inpField: {fileID: 6609137746027473179}
   _icon: {fileID: 6536288824127446067}
+  _name: {fileID: 0}
   _description: {fileID: 6449150891340972357}
   _counter: {fileID: 3888666097452323142}
+  _inpField: {fileID: 6609137746027473179}
 --- !u!1 &2954121435940721128
 GameObject:
   m_ObjectHideFlags: 0
