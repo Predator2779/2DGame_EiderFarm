@@ -55,7 +55,7 @@ MonoBehaviour:
   _cellPrefab: {fileID: 2329546994574512717, guid: f49e72cc48fdc914196415e2aca5faf3, type: 3}
   _spawnTransform: {fileID: 0}
   _personal:
-  - {fileID: 8307517251854064901, guid: f73f35d34c0e8fb449b87b3802d913f4, type: 3}
+  - {fileID: 7934326965898499444, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
 --- !u!1 &1793497947987895294
 GameObject:
   m_ObjectHideFlags: 0

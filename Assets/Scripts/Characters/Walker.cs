@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Characters
 {
     [RequireComponent(typeof(Movement))]
-    public class Animal : MonoBehaviour, IMovable
+    public class Walker : MonoBehaviour, IMovable
     {
         [Header("Character speed.")]
         [SerializeField][Range(0, 10)] private float _speed;
