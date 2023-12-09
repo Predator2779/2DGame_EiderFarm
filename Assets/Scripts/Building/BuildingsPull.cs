@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using General;
 using TriggerScripts;
@@ -9,14 +10,20 @@ namespace Building
 {
     public class BuildingsPull : MonoBehaviour
     {
-        public BuildTrigger[] _gagaHouses;
-        public BuildTrigger[] _cleaners;
-        public BuildTrigger[] _clothMachines;
-        public BuildTrigger[] _storages;
+        [SerializeField] private BuildTrigger[] _gagaHouses;
+        [SerializeField] private BuildTrigger[] _cleaners;
+        [SerializeField] private BuildTrigger[] _clothMachines;
+        [SerializeField] private BuildTrigger[] _storages;
 
+        public BuildTrigger[] GagaHouses { get => _gagaHouses; }
+        public BuildTrigger[] Cleaners { get => _cleaners; }
+        public BuildTrigger[] ClothMachines { get => _clothMachines; }
+        public BuildTrigger[] Storages { get => _storages; }
+        
+        
         private static BuildingsPull _instance;
 
-        private void Start()
+        private void Awake()
         {
             if (_instance == null) _instance = this;
             else if (_instance == this) Destroy(gameObject);
@@ -43,36 +50,45 @@ namespace Building
             switch (buildType)
             {
                 case GlobalTypes.TypeBuildings.GagaHouse:
-                    AddRemove(commandType, buildTrigger, ref _gagaHouses);
+                    ChangeArray(commandType, buildTrigger, ref _gagaHouses);
                     break;
                 case GlobalTypes.TypeBuildings.FluffCleaner:
-                    AddRemove(commandType, buildTrigger, ref _cleaners);
+                    ChangeArray(commandType, buildTrigger, ref _cleaners);
                     break;
                 case GlobalTypes.TypeBuildings.ClothMachine:
-                    AddRemove(commandType, buildTrigger, ref _clothMachines);
+                    ChangeArray(commandType, buildTrigger, ref _clothMachines);
                     break;
                 case GlobalTypes.TypeBuildings.Storage:
-                    AddRemove(commandType, buildTrigger, ref _storages);
+                    ChangeArray(commandType, buildTrigger, ref _storages);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(buildType), buildType, null);
             }
         }
         
-        private void AddRemove(
+        private void ChangeArray(
                 CommandType type,
                 BuildTrigger building,
                 ref BuildTrigger[] buildings)
         {
+            List<BuildTrigger> buildingsList = buildings.ToList();
             bool contains = buildings.Contains(building);
             
             switch (type)
             {
                 case CommandType.Add:
-                    if (!contains) buildings.ToList().Add(building);
+                    if (!contains)
+                    {
+                        buildingsList.Add(building);
+                        buildings = buildingsList.ToArray();
+                    }
                     break;
                 case CommandType.Remove:
-                    if (contains) buildings.ToList().Remove(building);
+                    if (contains)
+                    {
+                        buildingsList.Remove(building);
+                        buildings = buildingsList.ToArray();
+                    }
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);

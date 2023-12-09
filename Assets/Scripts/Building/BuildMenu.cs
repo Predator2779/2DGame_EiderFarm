@@ -1,7 +1,6 @@
 using Building.Constructions;
 using Economy;
 using General;
-using System;
 using UnityEngine;
 using EventHandler = General.EventHandler;
 
@@ -9,9 +8,8 @@ namespace Building
 {
     public class BuildMenu : MonoBehaviour
     {
-
         private Construction _buildingPrefab;
-        private Construction _curConstruction;
+        private Construction _currentBuilding;
 
         private Transform _parent;
         private SpriteRenderer _triggerSprite;
@@ -36,9 +34,7 @@ namespace Building
 
         public bool HasFlag;
         public bool IsBuilded;
-
         
-
         public void SetConstruction(
                 Construction prefab,
                 Transform parent,
@@ -62,7 +58,7 @@ namespace Building
 
         public void Build()
         {
-            if (_curConstruction != null) return;
+            if (_currentBuilding != null) return;
 
             if (!Buy(_buyPrice))
                 return;
@@ -72,24 +68,24 @@ namespace Building
 
 
             Build(_buildingPrefab);
-            _curConstruction.SetSprite(_curConstruction.Upgrade());
+            _currentBuilding.SetSprite(_currentBuilding.Upgrade());
             IsBuilded = true;
 
             CheckBtns();
 
-            EventHandler.OnBuilded?.Invoke(_curConstruction.typeConstruction);
+            EventHandler.OnBuilded?.Invoke(_currentBuilding.typeConstruction);
         }
 
         public void Demolition()
         {
-            if (_curConstruction == null) return;
+            if (_currentBuilding == null) return;
 
             _triggerSprite.enabled = true;
             Sell(_sellPrice);
             IsBuilded = false;
 
-            EventHandler.OnDemolition?.Invoke(_curConstruction.typeConstruction);
-            Destroy(_curConstruction.gameObject);
+            EventHandler.OnDemolition?.Invoke(_currentBuilding.typeConstruction);
+            Destroy(_currentBuilding.gameObject);
             
             CheckBtns();
 
@@ -99,28 +95,33 @@ namespace Building
 
         public void Upgrade()
         {
-            if (_curConstruction == null || !_curConstruction.CanUpgrade()) return;
+            if (_currentBuilding == null || !_currentBuilding.CanUpgrade()) return;
 
-            switch (_curConstruction.GetCurrentGrade())
+            switch (_currentBuilding.GetCurrentGrade())
             {
                 case 1:
                     if (!Buy(_upgradePrice[0])) return; break;
                 case 2:
                     if (!Buy(_upgradePrice[1])) return; break;
             }
-            _curConstruction.SetSprite(_curConstruction.Upgrade());
 
-            if (_curConstruction.typeConstruction == GlobalTypes.TypeBuildings.GagaHouse)
-                _curConstruction.GetComponent<FluffGiver>().CheckGrade();
-            if (_curConstruction.typeConstruction == GlobalTypes.TypeBuildings.FluffCleaner || _curConstruction.typeConstruction == GlobalTypes.TypeBuildings.ClothMachine)
-                _curConstruction.GetComponent<Machine>().CheckGrade();
+            _currentBuilding.SetSprite(_currentBuilding.Upgrade());
 
-            if (_curConstruction.GetComponent<ResourceTransmitter>() && _curConstruction.GetComponent<Machine>())
-                _curConstruction.GetComponent<ResourceTransmitter>().SetGradeAnimationTrue(_curConstruction.GetCurrentGrade());
+            if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.GagaHouse)
+                _currentBuilding.GetComponent<FluffGiver>().CheckGrade();
+            if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.FluffCleaner || _currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.ClothMachine)
+                _currentBuilding.GetComponent<Machine>().CheckGrade();
+
+            if (_currentBuilding.GetComponent<ResourceTransmitter>() && _currentBuilding.GetComponent<Machine>())
+                _currentBuilding.GetComponent<ResourceTransmitter>().SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
+            
+            _currentBuilding.SetSprite(_currentBuilding.Upgrade());
+            if (_currentBuilding.GetComponent<ResourceTransmitter>() && _currentBuilding.GetComponent<Machine>())
+                _currentBuilding.GetComponent<ResourceTransmitter>().SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
 
             EventHandler.OnUpgraded?.Invoke(
-                    _curConstruction.typeConstruction,
-                    _curConstruction.GetCurrentGrade());
+                    _currentBuilding.typeConstruction,
+                    _currentBuilding.GetCurrentGrade());
         }
 
         public void CheckBtns()
@@ -143,12 +144,12 @@ namespace Building
             }
         }
 
-        public Construction GetConstruction() => _curConstruction;
+        public Construction GetBuilding() => _currentBuilding;
 
         private void Build(Construction building)
         {
-            if (_curConstruction != null) Destroy(_curConstruction);
-            _curConstruction = Instantiate(building, _buildPos, _buildRot, _parent);
+            if (_currentBuilding != null) Destroy(_currentBuilding);
+            _currentBuilding = Instantiate(building, _buildPos, _buildRot, _parent);
         }
 
         public void SetFlag() => _flag.AddFlag();

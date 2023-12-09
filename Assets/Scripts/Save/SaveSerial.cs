@@ -136,8 +136,8 @@ public class SaveSerial : MonoBehaviour
         {
             BuildMenu buildMenu = menus[i].GetBuildMenu();
 
-            if (buildMenu.GetConstruction() != null)
-                dataArray[i] = buildMenu.GetConstruction().GetCurrentGrade();
+            if (buildMenu.GetBuilding() != null)
+                dataArray[i] = buildMenu.GetBuilding().GetCurrentGrade();
         }
 
         return dataArray;

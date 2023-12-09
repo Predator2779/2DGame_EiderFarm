@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Characters
 {
-    public class Person : Animal
+    public class Person : Walker
     {
         [Header("Character name.")]
         [SerializeField] protected string _name;

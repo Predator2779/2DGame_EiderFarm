@@ -8,7 +8,7 @@ public class BuildStorage : MonoBehaviour
     public void AddFluff() => _fluffCount++;
     public void AddFluff(int fluff) => _fluffCount += fluff;
 
-    public int GetFluff() => _fluffCount;
+    public int GetFluffCount() => _fluffCount;
 
     public void ResetFluff() => _fluffCount = 0;
 }

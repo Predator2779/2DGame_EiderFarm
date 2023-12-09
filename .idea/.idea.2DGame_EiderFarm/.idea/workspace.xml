@@ -5,63 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db890482-7c9c-4845-aed2-97ea93e16238" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Resources/FMODStudioSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Resources/FMODStudioSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main-Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main-Level.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Eider Farm Project.fspro" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Eider Farm Project.fspro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Asset/{f7c7fe7c-c78b-448f-8544-83198bf4c8d2}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Asset/{f7c7fe7c-c78b-448f-8544-83198bf4c8d2}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{4a963125-0041-4621-8246-d2911ff9793c}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{4a963125-0041-4621-8246-d2911ff9793c}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{7c5e6321-9d52-432f-a7b0-d6a56917148a}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{7c5e6321-9d52-432f-a7b0-d6a56917148a}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{804ab03c-aca3-4b29-9353-af8460e67ec2}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{804ab03c-aca3-4b29-9353-af8460e67ec2}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{8c47a910-8a09-4ca4-bb75-7922dec7d136}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{8c47a910-8a09-4ca4-bb75-7922dec7d136}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{9837ba10-5758-43cb-99fb-161b0e4c47b6}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{9837ba10-5758-43cb-99fb-161b0e4c47b6}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{98801f95-5220-4b76-953e-f955c1623ed9}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{98801f95-5220-4b76-953e-f955c1623ed9}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{abc3a5b8-64ee-4ed5-8801-a8dee4ff1d1c}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{abc3a5b8-64ee-4ed5-8801-a8dee4ff1d1c}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{b1193fec-1a95-44e3-abdc-9401bfee6522}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{b1193fec-1a95-44e3-abdc-9401bfee6522}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{b79dced9-ea7a-4c3d-b424-9474803dfa20}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{b79dced9-ea7a-4c3d-b424-9474803dfa20}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{bda4e0d7-b1e6-400a-80b9-e736a30d850a}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{bda4e0d7-b1e6-400a-80b9-e736a30d850a}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{d227b0ce-4327-4e0c-bec8-404cd38a7083}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{d227b0ce-4327-4e0c-bec8-404cd38a7083}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{d86222af-a9c9-48c1-8b55-d781f80e25c4}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{d86222af-a9c9-48c1-8b55-d781f80e25c4}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{feaa6956-406e-42b7-b517-c7cda2afacc5}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{feaa6956-406e-42b7-b517-c7cda2afacc5}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{ffc53b75-8b25-486d-8b67-743749f348c1}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/AudioFile/{ffc53b75-8b25-486d-8b67-743749f348c1}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Bank/{f028d205-1681-42e5-bd72-f8cc589fe5a8}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Bank/{f028d205-1681-42e5-bd72-f8cc589fe5a8}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/BankFolder/{82bc43a4-3256-465c-baea-70b24a222bdd}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/BankFolder/{82bc43a4-3256-465c-baea-70b24a222bdd}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/EffectPresetFolder/{90fa18c2-0f64-44e5-af0d-ec04452bc96e}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/EffectPresetFolder/{90fa18c2-0f64-44e5-af0d-ec04452bc96e}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/EncodingSetting/{0bdef946-c923-47e1-a2a4-037cb7256a9d}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/EncodingSetting/{0bdef946-c923-47e1-a2a4-037cb7256a9d}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{08322804-220f-4a0d-8a70-d45595386e95}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{08322804-220f-4a0d-8a70-d45595386e95}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{19c6c691-dcb7-4be7-9ae4-4f24dcced39d}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{19c6c691-dcb7-4be7-9ae4-4f24dcced39d}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{1a902ee2-f5d8-4c89-bfbb-0c3ce1adea6c}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{1a902ee2-f5d8-4c89-bfbb-0c3ce1adea6c}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{234e8b63-3f90-4426-9ad1-94d3800f062c}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{234e8b63-3f90-4426-9ad1-94d3800f062c}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{2f12e789-1e13-4c9c-b471-b09dcf5dd0db}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{2f12e789-1e13-4c9c-b471-b09dcf5dd0db}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{45110946-e005-4768-af75-5c4653e9b279}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{45110946-e005-4768-af75-5c4653e9b279}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{6078617b-38fa-4c14-8328-701803dab698}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{6078617b-38fa-4c14-8328-701803dab698}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{6439ebde-96c0-4c11-9109-4db918fd8b4c}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{6439ebde-96c0-4c11-9109-4db918fd8b4c}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{6c33d274-ce7c-431c-92e1-65018b435190}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{6c33d274-ce7c-431c-92e1-65018b435190}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{74121545-4164-4313-ae55-6dce6ec4f3bd}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{74121545-4164-4313-ae55-6dce6ec4f3bd}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{9384003e-1821-417a-b555-2067fff6ba8e}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{9384003e-1821-417a-b555-2067fff6ba8e}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{ad4aae5c-cd00-4ea1-9ca1-0a60d86c8fad}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{ad4aae5c-cd00-4ea1-9ca1-0a60d86c8fad}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{e4d402fe-29b5-4523-97ce-525d31eff661}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{e4d402fe-29b5-4523-97ce-525d31eff661}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{e5396ebe-6af1-4ae3-9b8f-c499e529ac2c}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{e5396ebe-6af1-4ae3-9b8f-c499e529ac2c}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{f1fe74fb-b773-4405-a7e7-0ef123561d71}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Event/{f1fe74fb-b773-4405-a7e7-0ef123561d71}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/EventFolder/{2178311b-bb7b-4ff9-ac64-4587c388cfe5}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/EventFolder/{2178311b-bb7b-4ff9-ac64-4587c388cfe5}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/EventFolder/{49aa961a-005c-49fa-8cde-cb50b282a238}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/EventFolder/{49aa961a-005c-49fa-8cde-cb50b282a238}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/EventFolder/{9ab01565-efa6-4eb0-8851-a29743ae0c65}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/EventFolder/{9ab01565-efa6-4eb0-8851-a29743ae0c65}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/EventFolder/{a67f5626-66d0-43e1-bd6e-212efafa8273}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/EventFolder/{a67f5626-66d0-43e1-bd6e-212efafa8273}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/EventFolder/{cf5e78f1-f8b0-4216-aeae-4899f407170f}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/EventFolder/{cf5e78f1-f8b0-4216-aeae-4899f407170f}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/EventFolder/{e02c1df6-2c6e-4cc1-a3da-3333850d37cc}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/EventFolder/{e02c1df6-2c6e-4cc1-a3da-3333850d37cc}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Master.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Mixer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Mixer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/ParameterPreset/{3d4a117d-c49e-468b-8f9a-3ebbe4d62ccb}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/ParameterPreset/{3d4a117d-c49e-468b-8f9a-3ebbe4d62ccb}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/ParameterPreset/{6471b9aa-d711-47a5-ae27-e1d72053838d}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/ParameterPreset/{6471b9aa-d711-47a5-ae27-e1d72053838d}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/ParameterPresetFolder/{43ac6766-ad91-4b4d-b449-d8aeea776a88}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/ParameterPresetFolder/{43ac6766-ad91-4b4d-b449-d8aeea776a88}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Platform/{13f5f799-c4b3-4ae6-9742-2d76bf97c43d}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Platform/{13f5f799-c4b3-4ae6-9742-2d76bf97c43d}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/ProfilerFolder/{68e47847-6554-4374-aeaa-a3be0c9f69de}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/ProfilerFolder/{68e47847-6554-4374-aeaa-a3be0c9f69de}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Return/{d56d6cab-bd26-456c-93f2-e2e621554941}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Return/{d56d6cab-bd26-456c-93f2-e2e621554941}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/SandboxFolder/{a3dc3a2a-c692-4867-8e6b-ce2c8d298776}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/SandboxFolder/{a3dc3a2a-c692-4867-8e6b-ce2c8d298776}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/SnapshotGroup/{455f0954-8050-4ad7-b313-47f198de3617}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/SnapshotGroup/{455f0954-8050-4ad7-b313-47f198de3617}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Tags.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Tags.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eider Farm Project/Metadata/Workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eider Farm Project/Metadata/Workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fmod_editor.log" beforeDir="false" afterPath="$PROJECT_DIR$/fmod_editor.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPC/Personal/Oli_employee.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NPC/Personal/Oli_employee.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test-Level (Kn1ght).unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test-Level (Kn1ght).unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/BuildMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/BuildMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/AI/EmployeeAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/AI/EmployeeAI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,10 +20,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Characters/AI/PatrollerAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/Game Settings/ApplicationMode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tests/TestInventoryAdd.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TestDelegate.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TestEvents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.adaptiveperformance@5.0.0/Editor/Management/ProviderSettingsEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventInterfaces.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../2DGame_SibJam23/Assets/Scripts/Core/Common/RotationCommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/30adf90198bc4c4b83910c6fb1877998174000/c4/5fe44a2d/Application.cs" root0="SKIP_HIGHLIGHTING" />
@@ -90,28 +38,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "do_not_show_Android_plugin_suggestion": "true",
-    "git-widget-placeholder": "adding-audio",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.build.unityPlugin",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;do_not_show_Android_plugin_suggestion&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;npc-ai&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.build.unityPlugin&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Dark Knight\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Dark Knight\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\Dark Knight\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Dark Knight\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Dark Knight\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Dark Knight\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$USER_HOME$/Desktop/EiderFarm_builds/WindowsBuild\Eider Farm.exe" />
@@ -185,6 +133,8 @@
       <workItem from="1701506957370" duration="1682000" />
       <workItem from="1701610438393" duration="8746000" />
       <workItem from="1701768691848" duration="486000" />
+      <workItem from="1701878208594" duration="4649000" />
+      <workItem from="1701885195486" duration="347000" />
     </task>
     <servers />
   </component>

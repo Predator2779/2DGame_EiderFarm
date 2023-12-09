@@ -8,12 +8,12 @@ namespace Building.Constructions
     {
         public GlobalTypes.TypeBuildings typeConstruction;
 
+        [SerializeField] private Transform _entryPoint;
         [SerializeField] private Sprite[] _gradeBuildings;
         [SerializeField] private int _currentGrade;
 
         private SpriteRenderer _spriteRenderer;
         private ResourceTransmitter _transmitter;
-
 
         private void Awake() => _spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -36,7 +36,8 @@ namespace Building.Constructions
 
         public ResourceTransmitter GetTransmitter() => _transmitter;
 
-
+        public Transform GetEntryPoint() => _entryPoint;
+        
         public Sprite GetCurrentGradeSprite(Sprite[] sprites)
         {
             switch (GetCurrentGrade())

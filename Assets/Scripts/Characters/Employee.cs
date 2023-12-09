@@ -31,6 +31,8 @@ namespace Characters
             SpawnEmployee(spawnPosition);
         }
 
+        public Inventory GetInventory() => _inventory;
+        
         private void SpawnEmployee(Vector2 spawnPosition)
         {
             Instantiate(this, spawnPosition, Quaternion.identity);
