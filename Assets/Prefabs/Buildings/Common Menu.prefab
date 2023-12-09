@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 377087528623251762}
   - component: {fileID: 4882773777916986635}
   - component: {fileID: 6341495191577719324}
+  - component: {fileID: 1933725431609527804}
   m_Layer: 0
   m_Name: DemolitionBtn
   m_TagString: Untagged
@@ -254,6 +255,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1933725431609527804}
+        m_TargetAssemblyTypeName: SoundShot, Assembly-CSharp
+        m_MethodName: Shot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1933725431609527804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983970901517956301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30a9fe28c6b72c94b8e247b0da1ab933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
+    \u043F\u0443\u0445\u0430 2.0/\u0421\u043D\u0435\u0441\u0442\u0438"
 --- !u!1 &2221606519722748701
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,7 +506,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &2759310772757918117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +537,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _flagBtn: {fileID: 0}
+  _flag: {fileID: 0}
+  _buyPrice: 0
+  _upgradePrice: 00000000
+  _sellPrice: 0
   HasFlag: 0
   IsBuilded: 0
 --- !u!1 &2485397831367445419
@@ -790,6 +823,7 @@ GameObject:
   - component: {fileID: 6749196830828276544}
   - component: {fileID: 1308501037726555722}
   - component: {fileID: 4659290638384298752}
+  - component: {fileID: 3287740292590338981}
   m_Layer: 0
   m_Name: BuildBtn
   m_TagString: Untagged
@@ -911,6 +945,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3287740292590338981}
+        m_TargetAssemblyTypeName: SoundShot, Assembly-CSharp
+        m_MethodName: Shot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3287740292590338981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5000611045636648402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30a9fe28c6b72c94b8e247b0da1ab933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
+    \u043F\u0443\u0445\u0430 2.0/\u0421\u0442\u0440\u043E\u0438\u0442\u044C 2.0"
+  - "event:/\u0421\u0442\u0440\u043E\u0439\u043A\u0430 \u0441\u043A\u043B\u0430\u0434\u0430"
 --- !u!1 &5245249290877918053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,6 +1253,7 @@ GameObject:
   - component: {fileID: 1212142338669615339}
   - component: {fileID: 1243026698713415927}
   - component: {fileID: 6022729745342143562}
+  - component: {fileID: 570205889920872167}
   m_Layer: 0
   m_Name: UpgradeBtn
   m_TagString: Untagged
@@ -1311,6 +1375,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 570205889920872167}
+        m_TargetAssemblyTypeName: SoundShot, Assembly-CSharp
+        m_MethodName: Shot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &570205889920872167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7702721496299052181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30a9fe28c6b72c94b8e247b0da1ab933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
+    \u043F\u0443\u0445\u0430 2.0/\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
 --- !u!1 &8234408343109813252
 GameObject:
   m_ObjectHideFlags: 0
