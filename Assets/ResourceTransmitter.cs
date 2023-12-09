@@ -23,7 +23,7 @@ public class ResourceTransmitter : MonoBehaviour
     private BuildStorage _storage;
     private Machine _machine;
     private Sprite _sprite;
-    
+
     private void Awake()
     {
         _construction = GetComponent<Construction>();
@@ -43,11 +43,15 @@ public class ResourceTransmitter : MonoBehaviour
 
     private void Transmitte()
     {
+        if (_storage.GetFluffCount() == 0) return;
+        
         int count = _storage.GetFluffCount();
 
         _characterInventory.AddItems(_typeToPlayer, count);
         _storage.ResetFluff();
 
+        print("Transmitted");
+        
         if (GetComponent<FluffGiver>())
             StartCoroutine(GetComponent<FluffGiver>().ChangeSpritesWithDelay(0.3f));
 
@@ -57,11 +61,11 @@ public class ResourceTransmitter : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.gameObject.GetComponent<Person>()) return;
-        
+
         _characterInventory = collision.gameObject.GetComponent<Inventory>();
-        
+
         CheckBag();
-        
+
         if (gameObject.GetComponent<Machine>()) _machine.EnableAnimator();
     }
 
@@ -69,9 +73,9 @@ public class ResourceTransmitter : MonoBehaviour
     {
         if (_characterInventory != collision.GetComponent<Inventory>() ||
             !collision.gameObject.GetComponent<Person>()) return;
-        
+
         _characterInventory = null;
-        
+
         if (gameObject.GetComponent<Machine>()) _machine.EnableAnimator();
     }
 

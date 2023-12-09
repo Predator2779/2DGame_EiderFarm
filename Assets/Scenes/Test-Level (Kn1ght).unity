@@ -1713,6 +1713,18 @@ PrefabInstance:
       propertyPath: _pull
       value: 
       objectReference: {fileID: 60388247}
+    - target: {fileID: 5987656316525160417, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+      propertyPath: _listItems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987656316525160417, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+      propertyPath: _listItems.Array.data[1]._item
+      value: 
+      objectReference: {fileID: 11400000, guid: 200ec94766fc499428a2a0d4b79d9875, type: 2}
+    - target: {fileID: 5987656316525160417, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+      propertyPath: _listItems.Array.data[1]._count
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6007349334224100691, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: m_Name
       value: Oli_employee
@@ -1723,6 +1735,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8092244096398859633, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092244096398859633, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+      propertyPath: drawGizmos
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

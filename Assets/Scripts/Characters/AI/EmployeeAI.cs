@@ -27,8 +27,10 @@ namespace Characters.Enemy
         [SerializeField] private BuildStorage _currentHouse;
         [SerializeField] private Transform _currentCleaner;
         [SerializeField] private Inventory _currentStorage;
+
         private PathFinder _pathFinder;
         private Employee _employee;
+        private Rigidbody2D _rbody;
         private Vector2 _target;
         private List<Vector2> _path = new();
         private bool _isDelayed;
@@ -42,39 +44,39 @@ namespace Characters.Enemy
         {
             _pull ??= FindObjectOfType<BuildingsPull>();
             _employee ??= GetComponent<Employee>();
+            _rbody ??= GetComponent<Rigidbody2D>();
             _pathFinder ??= GetComponent<PathFinder>();
         }
 
         private void CheckConditions()
         {
-            if (!IsFull())
+            if (!IsFull() && CanPickFluff() &&
+                CountCleanFluff() <= 0 &&
+                CountUncleanFluff() < _fluffCapacity)
             {
-                print("!full");
-                if (CanPickFluff() && CountCleanFluff() <= 0)
-                {
-                    SetTarget(_currentHouse.gameObject);
-                    _currentEmployeeState = EmployeeStates.Picking;
-                    print("picking");
-                    return;
-                }
+                SetTarget(_currentHouse.gameObject);
+                _currentEmployeeState = EmployeeStates.Picking;
+                print("picking");
+                return;
+            }
 
-                if (CanRecycle() && CountUncleanFluff() > 0)
-                {
-                    SetTarget(_currentCleaner.gameObject);
-                    _currentEmployeeState = EmployeeStates.Recycling;
-                    print("recycle");
-                }
-            }
-            else
+            if (IsFull() && CanRecycle() && CountUncleanFluff() > 0)
             {
-                print("full");
-                if (CountCleanFluff() > 0 && CanTransportable())
-                {
-                    SetTarget(_currentStorage.gameObject);
-                    _currentEmployeeState = EmployeeStates.Transportation;
-                    print("transportable");
-                }
+                SetTarget(_currentCleaner.gameObject);
+                _currentEmployeeState = EmployeeStates.Recycling;
+                print("recycle");
+                return;
             }
+
+            print("full");
+            if (CountCleanFluff() > 0 && CanTransportable())
+            {
+                SetTarget(_currentStorage.gameObject);
+                _currentEmployeeState = EmployeeStates.Transportation;
+                print("transportable");
+                return;
+            }
+
 
             _currentEmployeeState = EmployeeStates.Patrol;
             print("idle");
@@ -128,7 +130,6 @@ namespace Characters.Enemy
                 else SetPath(_target);
             }
             else
-
             {
                 Idle();
             }
@@ -139,7 +140,7 @@ namespace Characters.Enemy
             if (target.TryGetComponent(out Construction construction))
             {
                 var entryPoint = construction.GetEntryPoint();
-                
+
                 if (entryPoint != null)
                 {
                     _target = entryPoint.position;
@@ -249,7 +250,7 @@ namespace Characters.Enemy
 
         private void Recycling()
         {
-            if (_currentCleaner == null || _currentHouse.GetFluffCount() <= 0)
+            if (_currentCleaner == null)
             {
                 CheckConditions();
                 return;
@@ -260,7 +261,7 @@ namespace Characters.Enemy
 
         private void Transportation()
         {
-            if (_currentStorage == null || _currentStorage.GetFreeSpace() <= 0)
+            if (_currentStorage == null)
             {
                 CheckConditions();
                 return;
@@ -279,24 +280,20 @@ namespace Characters.Enemy
             WalkToTarget();
         }
 
-        
         private void SideStep()
         {
-            if (IsDestination(transform.position, _target))
-            {
-                CheckConditions();
-                return;
-            }
+            CheckConditions();
 
-            WalkToTarget();
+            if (!IsDestination(transform.position, _target))
+                WalkToTarget();
         }
-        
+
         private void OnCollisionEnter2D(Collision2D other)
         {
             SetPath(_target);
             _currentEmployeeState = EmployeeStates.SideStep;
         }
-        
+
         private enum EmployeeStates
         {
             Idle,

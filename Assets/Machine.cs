@@ -31,6 +31,7 @@ public class Machine : MonoBehaviour
     {
         _storage.AddFluff(_fluffCount);
         _transmitter.CheckBag();
+        print("maked");
     }
 
     public void Animation(bool work, int currentGrade)

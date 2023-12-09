@@ -106,23 +106,23 @@ public class PathFinder : MonoBehaviour
         return Neighbours;
     }
 
-    private void OnDrawGizmos()
-    {
-        if (PathToTarget == null)
-        {
-            foreach (var item in PathToTarget)
-            {
-                Gizmos.color = Color.red;
-                Gizmos.DrawSphere(new Vector2(item.x, item.y), radius);
-            }
-        }
-    
-        foreach (var item in CheckedNodes)
-        {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawSphere(new Vector2(item.Position.x, item.Position.y), radius);
-        }
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     if (PathToTarget == null)
+    //     {
+    //         foreach (var item in PathToTarget)
+    //         {
+    //             Gizmos.color = Color.red;
+    //             Gizmos.DrawSphere(new Vector2(item.x, item.y), radius);
+    //         }
+    //     }
+    //
+    //     foreach (var item in CheckedNodes)
+    //     {
+    //         Gizmos.color = Color.blue;
+    //         Gizmos.DrawSphere(new Vector2(item.Position.x, item.Position.y), radius);
+    //     }
+    // }
 }
 
 public class Node
