@@ -47,6 +47,7 @@ namespace Characters.AI
 
         private void CheckConditions()
         {
+            print("pick");
             if (!IsFull() &&
                 CanPickFluff() &&
                 CountCleanFluff() <= 0 &&

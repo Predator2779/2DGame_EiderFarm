@@ -10,38 +10,61 @@ namespace Building
 {
     public class BuildingsPull : MonoBehaviour
     {
-        [SerializeField] private BuildTrigger[] _gagaHouses;
-        [SerializeField] private BuildTrigger[] _cleaners;
-        [SerializeField] private BuildTrigger[] _clothMachines;
-        [SerializeField] private BuildTrigger[] _storages;
-
+        [SerializeField] private SaveSerial _saveSerial;
+        [SerializeField] private Transform _mapGagaHouse;
+        [SerializeField] private Transform _mapCleaners;
+        [SerializeField] private Transform _mapClothMachine;
+        [SerializeField] private Transform _mapStorages;
+        
+        private BuildTrigger[] _gagaHouses;
+        private BuildTrigger[] _cleaners;
+        private BuildTrigger[] _clothMachines;
+        private BuildTrigger[] _storages;
+        
         public BuildTrigger[] GagaHouses { get => _gagaHouses; }
         public BuildTrigger[] Cleaners { get => _cleaners; }
         public BuildTrigger[] ClothMachines { get => _clothMachines; }
         public BuildTrigger[] Storages { get => _storages; }
         
-        
         private static BuildingsPull _instance;
-
+        
         private void Awake()
         {
             if (_instance == null) _instance = this;
             else if (_instance == this) Destroy(gameObject);
             
-            EventHandler.OnAddedBuildPull.AddListener(AddBuilding);
-            EventHandler.OnRemovedBuildPull.AddListener(RemoveBuilding);
+            Initialize();
+            
+            // EventHandler.OnAddedBuildPull.AddListener(AddBuilding);
+            // EventHandler.OnRemovedBuildPull.AddListener(RemoveBuilding);
         }
 
+        private void Initialize()
+        {
+            FindAllBuildings();
+            
+            _saveSerial.SetBuildings(this);
+            _saveSerial.Initialize();
+        }
+        
+        private void FindAllBuildings()
+        {
+            _cleaners = _mapCleaners.GetComponentsInChildren<BuildTrigger>();
+            _clothMachines = _mapClothMachine.GetComponentsInChildren<BuildTrigger>();
+            _storages = _mapStorages.GetComponentsInChildren<BuildTrigger>();
+            _gagaHouses = _mapGagaHouse.GetComponentsInChildren<BuildTrigger>();
+        }
+        
         private void AddBuilding(BuildTrigger buildTrigger, GlobalTypes.TypeBuildings type)
         {
             Handle(CommandType.Add, buildTrigger, type);
         }
-
+        
         private void RemoveBuilding(BuildTrigger buildTrigger, GlobalTypes.TypeBuildings type)
         {
             Handle(CommandType.Remove, buildTrigger, type);
         }
-
+        
         private void Handle(
                 CommandType commandType,
                 BuildTrigger buildTrigger,
@@ -94,13 +117,13 @@ namespace Building
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
             }
         }
-
+        
         private void OnApplicationQuit()
         {
             EventHandler.OnAddedBuildPull.RemoveListener(AddBuilding);
             EventHandler.OnRemovedBuildPull.RemoveListener(RemoveBuilding);
         }
-
+        
         private enum CommandType
         {
             Add,

@@ -13,31 +13,37 @@ public class SaveSerial : MonoBehaviour
 {
     [SerializeField] private Inventory _playerInventory;
     [SerializeField] private Item[] _itemTypes;
+    [SerializeField] private Menu _menu;
+    [SerializeField] private Sprite[] _sprites;
+
     [SerializeField] private BuildTrigger[] _gagaHouses;
     [SerializeField] private BuildTrigger[] _cleaners;
     [SerializeField] private BuildTrigger[] _clothMachines;
     [SerializeField] private BuildTrigger[] _storages;
-    [SerializeField] private Menu _menu;
-
-    [SerializeField] private Sprite[] _sprites;
-
+    
     private bool[] _flags;
-
     private List<ItemBunch> _items;
     private string _path = "/dataSaveFile.dat";
-
     public SaveData data = new();
 
-    private void Start()
+    public void Initialize()
     {
         GetItems();
 
         if (_menu.IsNewGame()) ResetData();
         else LoadGame();
     }
-
+    
     private void GetItems() => _items = _playerInventory.GetAllItems();
 
+    public void SetBuildings(BuildingsPull pull)
+    {
+        _gagaHouses = pull.GagaHouses;
+        _cleaners = pull.Cleaners;
+        _clothMachines = pull.ClothMachines;
+        _storages = pull.Storages;
+    }
+    
     private void SaveItems()
     {
         for (int i = 0; i < _items.Count; i++)

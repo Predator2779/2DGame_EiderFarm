@@ -30,8 +30,7 @@ public class InputHandler : MonoBehaviour
 
         if (direction.magnitude > _sensitivity) _movable.Walk(direction.normalized);
         
-        _personAnimate.Walk(direction, 
-                !(direction.y == 0 && direction.x == 0));
+        _personAnimate.Walk(direction, !(direction.y == 0 && direction.x == 0));
 
         switch (_isPlayed)
         {
