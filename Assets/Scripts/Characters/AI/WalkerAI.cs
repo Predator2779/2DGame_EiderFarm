@@ -40,7 +40,6 @@ namespace Characters.AI
 
         protected void PlaySound()
         {
-            print(gameObject.name);
             if (_isPlayed) return;
             
             _eventInstance.start();
@@ -51,7 +50,7 @@ namespace Characters.AI
         {
             if (!_isPlayed) return;
             
-            _eventInstance.stop(STOP_MODE.ALLOWFADEOUT);
+            _eventInstance.stop(STOP_MODE.IMMEDIATE);
             _isPlayed = false;
         }
     }

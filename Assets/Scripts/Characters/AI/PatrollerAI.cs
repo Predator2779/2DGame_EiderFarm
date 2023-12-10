@@ -55,7 +55,6 @@ namespace Characters.AI
         private void Patrol()
         {
             if (_canChangeDir) StartCoroutine(ChangeDirection(GetRandomDirection()));
-            PlaySound();
             Walk(CurrentDirection);
         }
 
@@ -68,7 +67,6 @@ namespace Characters.AI
         protected override void Run(Vector2 direction)
         {
             StopCoroutine(ChangeDirection(direction));
-            PlaySound();
             base.Run(direction);
         }
 

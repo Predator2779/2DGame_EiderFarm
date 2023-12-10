@@ -1931,6 +1931,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5987656316525160417, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+      propertyPath: _listItems.Array.data[1]._item
+      value: 
+      objectReference: {fileID: 11400000, guid: 200ec94766fc499428a2a0d4b79d9875, type: 2}
     - target: {fileID: 6007349334224100691, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: m_Name
       value: Oli_employee
