@@ -384,9 +384,13 @@ MonoBehaviour:
   Name: Master.strings
   StudioPath: bank:/Master.strings
 <<<<<<< HEAD
+<<<<<<< HEAD
   lastModified: 638378230934461042
 =======
   lastModified: 638378051412764496
+>>>>>>> gagaAnimation
+=======
+  lastModified: 638378239447330834
 >>>>>>> gagaAnimation
   FileSizes:
   - Name: Desktop
@@ -579,9 +583,13 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -2222524810892591784}
 <<<<<<< HEAD
+<<<<<<< HEAD
   cacheTime: 638378230934461042
 =======
   cacheTime: 638378051412764496
+>>>>>>> gagaAnimation
+=======
+  cacheTime: 638378239447330834
 >>>>>>> gagaAnimation
   cacheVersion: 131605
 --- !u!114 &36895069970332860
@@ -980,9 +988,13 @@ MonoBehaviour:
   Name: Master
   StudioPath: bank:/Master
 <<<<<<< HEAD
+<<<<<<< HEAD
   lastModified: 638378230934451041
 =======
   lastModified: 638378051412744478
+>>>>>>> gagaAnimation
+=======
+  lastModified: 638378239447320688
 >>>>>>> gagaAnimation
   FileSizes:
   - Name: Desktop
