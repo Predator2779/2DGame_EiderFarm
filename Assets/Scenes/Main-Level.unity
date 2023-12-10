@@ -25739,6 +25739,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1445859043304298626, guid: d53f33afc2bc6514b9f421387089cc0b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.7823486
+      objectReference: {fileID: 0}
     - target: {fileID: 2531719437276444919, guid: d53f33afc2bc6514b9f421387089cc0b, type: 3}
       propertyPath: m_Name
       value: Level-5105
@@ -26033,7 +26037,7 @@ PrefabInstance:
       objectReference: {fileID: 911143458661069317}
     - target: {fileID: 7087732436482335164, guid: cf887c8d7e52cc74f989964757e4be2a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -186.48004
+      value: -186.48006
       objectReference: {fileID: 0}
     - target: {fileID: 7405517000206911181, guid: cf887c8d7e52cc74f989964757e4be2a, type: 3}
       propertyPath: m_fontColor.b
