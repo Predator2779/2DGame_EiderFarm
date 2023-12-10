@@ -155,6 +155,7 @@ MonoBehaviour:
   _changeDirTime: 3.5
   _requirePlayerDistance: 7
   _requireFlagDistance: 7
+  _radius: 5
 --- !u!50 &5616179734583736253
 Rigidbody2D:
   serializedVersion: 4

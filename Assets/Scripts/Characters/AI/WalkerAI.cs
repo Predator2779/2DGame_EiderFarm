@@ -50,7 +50,7 @@ namespace Characters.AI
         {
             if (!_isPlayed) return;
             
-            _eventInstance.stop(STOP_MODE.ALLOWFADEOUT);
+            _eventInstance.stop(STOP_MODE.IMMEDIATE);
             _isPlayed = false;
         }
     }
