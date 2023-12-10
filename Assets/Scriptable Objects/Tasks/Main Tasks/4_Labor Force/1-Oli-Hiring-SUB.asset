@@ -26,6 +26,6 @@ MonoBehaviour:
     _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
     _count: 0
   _nextTasks: []
-  _cellPrefab: {fileID: 3568171378626415371, guid: 0e777cdb75a46f44a95dc6cea534dec2, type: 3}
+  _cellPrefab: {fileID: 1450947221153099899, guid: 4a56b4d2851b4f0448978e45f3ff13d5, type: 3}
   _requiredEmployees:
   - {fileID: 8307517251854064901, guid: f73f35d34c0e8fb449b87b3802d913f4, type: 3}

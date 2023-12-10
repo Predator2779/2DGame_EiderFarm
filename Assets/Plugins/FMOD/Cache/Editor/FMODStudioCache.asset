@@ -383,7 +383,11 @@ MonoBehaviour:
   Path: Eider Farm Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< HEAD
   lastModified: 638378230934461042
+=======
+  lastModified: 638378051412764496
+>>>>>>> gagaAnimation
   FileSizes:
   - Name: Desktop
     Value: 2842
@@ -574,7 +578,11 @@ MonoBehaviour:
   - {fileID: 6769393119567457817}
   StringsBanks:
   - {fileID: -2222524810892591784}
+<<<<<<< HEAD
   cacheTime: 638378230934461042
+=======
+  cacheTime: 638378051412764496
+>>>>>>> gagaAnimation
   cacheVersion: 131605
 --- !u!114 &36895069970332860
 MonoBehaviour:
@@ -971,7 +979,11 @@ MonoBehaviour:
   Path: Eider Farm Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< HEAD
   lastModified: 638378230934451041
+=======
+  lastModified: 638378051412744478
+>>>>>>> gagaAnimation
   FileSizes:
   - Name: Desktop
     Value: 9011776

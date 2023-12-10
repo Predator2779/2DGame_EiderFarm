@@ -24,6 +24,12 @@ namespace Player
             CheckSide(direction);
         }
 
+        public void Walk(Vector2 direction, bool isWalk, bool notCheckSide)
+        {
+            _animator.SetBool("isWalk", isWalk);
+            _animator.SetFloat("dirY", direction.y);
+        }
+
         private void CheckSide(Vector2 direction)
         {
             switch (direction.x)

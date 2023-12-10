@@ -15,17 +15,27 @@ namespace Economy.Farm_House
 
         public void SetPlayerInventory(Inventory inventory) => _playerInventory = inventory;
 
+        private void Awake()
+        {
+            ChangeText(_isHouseMenu);
+            ChangeText(_isHouseMenu);
+        }
         public void SwitchDisplay()
         {
             _isHouseMenu = !_isHouseMenu;
-            if(_prefabText != null)
-            if (_isHouseMenu)
-                _prefabText.text = "Купить";
-            else if (!_isHouseMenu)
-                _prefabText.text = "Продать";
+            ChangeText(_isHouseMenu);
             RefreshDisplay();
 
             
+        }
+
+        private void ChangeText(bool menu)
+        {
+            if (_prefabText != null)
+                if (menu)
+                    _prefabText.text = "Купить";
+                else if (!menu)
+                    _prefabText.text = "Продать";
         }
 
         protected abstract void Draw();

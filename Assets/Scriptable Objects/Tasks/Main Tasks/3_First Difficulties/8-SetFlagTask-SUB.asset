@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135f5ac61de1fcd42ad3af8a91cff405, type: 3}
   m_Name: 8-SetFlagTask-SUB
   m_EditorClassIdentifier: 
-  _stage: 0
+  _stage: 3
   _resetStage: 0
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 53f2eb229106db54ca8522dda72e6940, type: 3}
   _name: "\u0424\u043B\u0430\u0436\u043A\u0438"
   _description: "\u041B\u0438\u0441\u044B \u043E\u0445\u043E\u0442\u044F\u0442\u0441\u044F
     \u043D\u0430 \u0433\u0430\u0433! \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438
@@ -25,6 +25,6 @@ MonoBehaviour:
     _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
     _count: 0
   _nextTasks: []
-  _cellPrefab: {fileID: 33109036186903016, guid: e9751fe0630c95942adb95af3fb2b6c9, type: 3}
+  _cellPrefab: {fileID: 2800116051798515356, guid: 6e6d042e3c1206a47b503c538abb5442, type: 3}
   _requireCount: 6
   _currentCount: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb214ac4f1ea4b7a8d44128de42eb616, type: 3}
   m_Name: New Horizons
   m_EditorClassIdentifier: 
-  _stage: 0
+  _stage: 1
   _resetStage: 0
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: "\u0418\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u044C \u043D\u043E\u0432\u044B\u0439
@@ -32,5 +32,5 @@ MonoBehaviour:
     _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
     _count: 500
   _nextTasks: []
-  _cellPrefab: {fileID: 3904866896323149092, guid: 881e53c46ad8ef7428c7cd2efccf67ef, type: 3}
+  _cellPrefab: {fileID: 2847860675649861900, guid: 709456743750be742bc066ff635f9e68, type: 3}
   _subTasks: []

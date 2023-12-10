@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stage: 0
   _resetStage: 0
-  _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  _icon: {fileID: 21300000, guid: 85c2af1935ecebc4c8e5cfc141713feb, type: 3}
   _name: "\u041F\u043E\u0441\u0442\u0440\u043E\u0438\u0442\u044C \u0448\u0432\u0435\u0439\u043D\u0443\u044E
     \u043C\u0430\u0441\u0442\u0435\u0440\u0441\u043A\u0443\u044E"
   _description: "\u0421\u0432\u043E\u0439 \u0431\u0440\u0435\u043D\u0434 \u043E\u0434\u0435\u0436\u0434\u044B
@@ -26,7 +26,7 @@ MonoBehaviour:
     _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
     _count: 0
   _nextTasks: []
-  _cellPrefab: {fileID: 33109036186903016, guid: e9751fe0630c95942adb95af3fb2b6c9, type: 3}
+  _cellPrefab: {fileID: 2714213325177431332, guid: 1b7f11e573b4ec749902d8bedabb10e2, type: 3}
   _requireCount: 1
   _currentCount: 0
   _buildType: 2

@@ -1,3 +1,4 @@
+using Player;
 using System;
 using System.Collections;
 using TMPro;
@@ -23,11 +24,16 @@ public class Gaga : MonoBehaviour
     private bool _isCoroutineRunning;
     private Vector2 _targetPos;
 
+    [SerializeField] private PersonAnimate _personAnimate;
+    [SerializeField] private Animator _animator;
+
     private void Start()
     {
         _currentState = State.Walk;
         _movement = GetComponent<Movement>();
-        _sprite = GetComponent<SpriteRenderer>();
+        _sprite = GetComponentInChildren<SpriteRenderer>();
+        _personAnimate = GetComponentInChildren<PersonAnimate>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     public void Initialize(Transform center, float radius)
@@ -44,15 +50,20 @@ public class Gaga : MonoBehaviour
     private void MoveTo()
     {
         Vector2 direction = (_targetPos - new Vector2(transform.position.x,transform.position.y)).normalized;
+        _personAnimate.Walk(direction, true, false);
         _movement.Move(direction.normalized * _speed * Time.deltaTime);
-
         float directionX = direction.x;
         _sprite.flipX = directionX < 0;
 
         float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.y), _targetPos);
         if (distance < 3f)
         {
+<<<<<<< HEAD
             SetState(State.Idle); 
+=======
+            _personAnimate.Walk(direction, false, false);
+            SetState(State.Idle);
+>>>>>>> gagaAnimation
             GetRandomPoint(_moveRadius, _centerPoint);
         }
     }
