@@ -279,11 +279,13 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -455867650
-      Data2: 1159932341
-      Data3: 1565707927
-      Data4: 1643573041
-    Path: "event:/\u0421\u0442\u0440\u043E\u0439\u043A\u0430 \u0441\u043A\u043B\u0430\u0434\u0430"
+      Data1: 1973587337
+      Data2: 1271382646
+      Data3: 1310108550
+      Data4: -546962969
+    Path: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+      \u0442\u043A\u0430\u0446\u043A\u0438\u0439 \u0441\u0442\u0430\u043D\u043E\u043A
+      2.0/\u0421\u0442\u0440\u043E\u0438\u0442\u044C 2.0"
   Event: 
   PlayEvent: 1
   StopEvent: 0
@@ -317,7 +319,7 @@ MonoBehaviour:
     Path: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
       \u0434\u043E\u043C\u0438\u043A/\u0421\u043D\u0435\u0441\u0442\u0438"
   Event: 
-  PlayEvent: 1
+  PlayEvent: 0
   StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
