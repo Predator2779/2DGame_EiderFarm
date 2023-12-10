@@ -8,6 +8,7 @@ namespace Economy
     {
         [SerializeField] private Sprite _icon;
         [SerializeField] private string _name;
+        [SerializeField] private string _description;
         [SerializeField] private int _price;
 
         [SerializeField] private Sprite[] _sprites;
@@ -19,6 +20,8 @@ namespace Economy
         public Sprite[] GetSprites() => _sprites;
         public string GetName() => _name;
         public int GetPrice() => _price;
+
+        public string GetDescriptiption() => _description;
 
         public bool IsOne() => _isOneAtTime;
     }
