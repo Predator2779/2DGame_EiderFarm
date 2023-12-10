@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 277233241798781}
   - component: {fileID: 7924215316631800172}
   - component: {fileID: 1645055648655777952}
+  - component: {fileID: 4274013785058683456}
+  - component: {fileID: 7248380976650221033}
   m_Layer: 0
   m_Name: Storage
   m_TagString: Untagged
@@ -223,6 +225,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fluffCount: 30
+--- !u!114 &4274013785058683456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296330802562157729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -455867650
+      Data2: 1159932341
+      Data3: 1565707927
+      Data4: 1643573041
+    Path: "event:/\u0421\u0442\u0440\u043E\u0439\u043A\u0430 \u0441\u043A\u043B\u0430\u0434\u0430"
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &7248380976650221033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296330802562157729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 592350051
+      Data2: 1143357328
+      Data3: -745221734
+      Data4: 738594688
+    Path: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+      \u0434\u043E\u043C\u0438\u043A/\u0421\u043D\u0435\u0441\u0442\u0438"
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6830579629966980656
 GameObject:
   m_ObjectHideFlags: 0
