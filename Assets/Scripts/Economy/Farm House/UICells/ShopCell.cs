@@ -55,6 +55,7 @@ namespace Economy.Farm_House
         private void RefreshButton() =>
                 SetButton(_bunch.GetItemIcon(),
                         _bunch.GetItemName(),
+                        _bunch.GetItemDescription(),
                         _bunch.GetCount());
         
         private bool IsEnoughMoney(Inventory inv, int value) =>
