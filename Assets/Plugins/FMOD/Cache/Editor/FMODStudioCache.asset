@@ -385,6 +385,7 @@ MonoBehaviour:
   StudioPath: bank:/Master.strings
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   lastModified: 638378230934461042
 =======
   lastModified: 638378051412764496
@@ -392,6 +393,9 @@ MonoBehaviour:
 =======
   lastModified: 638378239447330834
 >>>>>>> gagaAnimation
+=======
+  lastModified: 638378294954150760
+>>>>>>> UILevel
   FileSizes:
   - Name: Desktop
     Value: 2842
@@ -584,6 +588,7 @@ MonoBehaviour:
   - {fileID: -2222524810892591784}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   cacheTime: 638378230934461042
 =======
   cacheTime: 638378051412764496
@@ -591,6 +596,9 @@ MonoBehaviour:
 =======
   cacheTime: 638378239447330834
 >>>>>>> gagaAnimation
+=======
+  cacheTime: 638378294954150760
+>>>>>>> UILevel
   cacheVersion: 131605
 --- !u!114 &36895069970332860
 MonoBehaviour:
@@ -989,6 +997,7 @@ MonoBehaviour:
   StudioPath: bank:/Master
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   lastModified: 638378230934451041
 =======
   lastModified: 638378051412744478
@@ -996,6 +1005,9 @@ MonoBehaviour:
 =======
   lastModified: 638378239447320688
 >>>>>>> gagaAnimation
+=======
+  lastModified: 638378294954140757
+>>>>>>> UILevel
   FileSizes:
   - Name: Desktop
     Value: 9011776
