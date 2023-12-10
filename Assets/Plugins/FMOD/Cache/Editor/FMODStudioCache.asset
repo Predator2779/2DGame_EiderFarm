@@ -1,316 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8271773293617589795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/\u0421\u0442\u0440\u043E\u0439\u043A\u0430 \u0441\u043A\u043B\u0430\u0434\u0430"
-  m_EditorClassIdentifier: 
-  Path: "event:/\u0421\u0442\u0440\u043E\u0439\u043A\u0430 \u0441\u043A\u043B\u0430\u0434\u0430"
-  Guid:
-    Data1: -455867650
-    Data2: 1159932341
-    Data3: 1565707927
-    Data4: 1643573041
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1529
---- !u!114 &-7746557105445564849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Soundtrack/Soundtrack
-  m_EditorClassIdentifier: 
-  Path: event:/Soundtrack/Soundtrack
-  Guid:
-    Data1: 789768073
-    Data2: 1285299731
-    Data3: -1649380940
-    Data4: -607101489
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 428607940652762961}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 264501
---- !u!114 &-7578296645750495261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/\u0423\u0434\u0430\u0440 \u0438 \u043E\u0442\u0441\u043A\u043E\u043A
-    \u043C\u044F\u0447\u0430 (\u043E\u0442 \u0434\u0435\u0440\u0435\u0432\u0430,
-    \u0437\u0430\u0431\u043E\u0440\u0430) 2.0"
-  m_EditorClassIdentifier: 
-  Path: "event:/\u0423\u0434\u0430\u0440 \u0438 \u043E\u0442\u0441\u043A\u043E\u043A
-    \u043C\u044F\u0447\u0430 (\u043E\u0442 \u0434\u0435\u0440\u0435\u0432\u0430,
-    \u0437\u0430\u0431\u043E\u0440\u0430) 2.0"
-  Guid:
-    Data1: -19648360
-    Data2: 1218551874
-    Data3: 2095734192
-    Data4: 1635013872
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1537
---- !u!114 &-6743853058350476600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0434\u043E\u043C\u0438\u043A/\u041D\u0430\u0437\u0430\u0434"
-  m_EditorClassIdentifier: 
-  Path: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0434\u043E\u043C\u0438\u043A/\u041D\u0430\u0437\u0430\u0434"
-  Guid:
-    Data1: -234982149
-    Data2: 1141225331
-    Data3: -250681433
-    Data4: 1897748003
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 285
---- !u!114 &-5736830729932557693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
-    \u043F\u0443\u0445\u0430 2.0/\u0421\u043D\u0435\u0441\u0442\u0438"
-  m_EditorClassIdentifier: 
-  Path: "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
-    \u043F\u0443\u0445\u0430 2.0/\u0421\u043D\u0435\u0441\u0442\u0438"
-  Guid:
-    Data1: -1376650341
-    Data2: 1208932893
-    Data3: 1589251717
-    Data4: -1442193131
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 227
---- !u!114 &-5576547839610231993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0417\u0430\u0434\u0430\u043D\u0438\u044F;
-    \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
-  m_EditorClassIdentifier: 
-  Path: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0417\u0430\u0434\u0430\u043D\u0438\u044F;
-    \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
-  Guid:
-    Data1: 1815335540
-    Data2: 1125961340
-    Data3: 23454098
-    Data4: -1873722485
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 809
---- !u!114 &-5565631844689373664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/\u0413\u0443\u0441\u044C 2.0"
-  m_EditorClassIdentifier: 
-  Path: "event:/\u0413\u0443\u0441\u044C 2.0"
-  Guid:
-    Data1: -1629915418
-    Data2: 1126527544
-    Data3: 1565535892
-    Data4: -1237282963
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 4613
---- !u!114 &-5166658883083112617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/\u0423\u0434\u0430\u0440 \u043F\u043E \u043C\u044F\u0447\u0443
-    2.0"
-  m_EditorClassIdentifier: 
-  Path: "event:/\u0423\u0434\u0430\u0440 \u043F\u043E \u043C\u044F\u0447\u0443 2.0"
-  Guid:
-    Data1: 1863342126
-    Data2: 1341490698
-    Data3: 1971761288
-    Data4: -240045090
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1999
---- !u!114 &-4479457349810762773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Atmosphere Forest/Parameter Multiband
-  m_EditorClassIdentifier: 
-  Name: Parameter Multiband
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 285570390
-    data2: 607756159
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-4356106630800223867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0418\u043D\u0432\u0435\u043D\u0442\u0430\u0440\u044C;
-    \u0444\u0435\u0440\u043C\u0435\u0440\u0441\u043A\u0438\u0439 \u0434\u043E\u043C\u0438\u043A"
-  m_EditorClassIdentifier: 
-  Path: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0418\u043D\u0432\u0435\u043D\u0442\u0430\u0440\u044C;
-    \u0444\u0435\u0440\u043C\u0435\u0440\u0441\u043A\u0438\u0439 \u0434\u043E\u043C\u0438\u043A"
-  Guid:
-    Data1: 1158744390
-    Data2: 1198055429
-    Data3: 1180464559
-    Data4: 2041768275
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 809
---- !u!114 &-4233398103763990197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/\u0411\u0435\u0433 \u0413\u043B\u0430\u0432\u043D\u044B\u0439 \u0433\u0435\u0440\u043E\u0439"
-  m_EditorClassIdentifier: 
-  Path: "event:/\u0411\u0435\u0433 \u0413\u043B\u0430\u0432\u043D\u044B\u0439 \u0433\u0435\u0440\u043E\u0439"
-  Guid:
-    Data1: 1681517534
-    Data2: 1276221120
-    Data3: -1186133615
-    Data4: 1284242712
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 82428
---- !u!114 &-2978237368895961137
+--- !u!114 &-8958822922668659324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -333,7 +23,7 @@ MonoBehaviour:
     Data3: 900222881
     Data4: -1152202047
   Banks:
-  - {fileID: 5666174042814727921}
+  - {fileID: 8527511169068308197}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -341,452 +31,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 999
---- !u!114 &-2947903645573950898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
-    \u043F\u0443\u0445\u0430 2.0/\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
-  m_EditorClassIdentifier: 
-  Path: "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
-    \u043F\u0443\u0445\u0430 2.0/\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
-  Guid:
-    Data1: -1958402366
-    Data2: 1094347057
-    Data3: 299722415
-    Data4: -229471302
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 999
---- !u!114 &-2342851520736835200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0434\u043E\u043C\u0438\u043A/\u0421\u043D\u0435\u0441\u0442\u0438"
-  m_EditorClassIdentifier: 
-  Path: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0434\u043E\u043C\u0438\u043A/\u0421\u043D\u0435\u0441\u0442\u0438"
-  Guid:
-    Data1: 592350051
-    Data2: 1143357328
-    Data3: -745221734
-    Data4: 738594688
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 227
---- !u!114 &-1646303092079510041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/\u0423\u0434\u0430\u0440 \u0438 \u043E\u0442\u0441\u043A\u043E\u043A
-    \u043C\u044F\u0447\u0430 (\u043D\u0435 \u043E\u0442 \u0434\u0435\u0440\u0435\u0432\u0430)
-    2.0"
-  m_EditorClassIdentifier: 
-  Path: "event:/\u0423\u0434\u0430\u0440 \u0438 \u043E\u0442\u0441\u043A\u043E\u043A
-    \u043C\u044F\u0447\u0430 (\u043D\u0435 \u043E\u0442 \u0434\u0435\u0440\u0435\u0432\u0430)
-    2.0"
-  Guid:
-    Data1: -268087878
-    Data2: 1219662480
-    Data3: -1453419354
-    Data4: -77389335
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1691
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 3825600576355611488}
-  - {fileID: 5666174042814727921}
-  EditorEvents:
-  - {fileID: 7950936889879600962}
-  - {fileID: -5166658883083112617}
-  - {fileID: 6837980217354303774}
-  - {fileID: 5768851231190486442}
-  - {fileID: 266455258079183971}
-  - {fileID: -4356106630800223867}
-  - {fileID: 4756624961597235068}
-  - {fileID: 2479796985615072111}
-  - {fileID: -2342851520736835200}
-  - {fileID: 2481142883653398901}
-  - {fileID: 4001130980203985473}
-  - {fileID: -5576547839610231993}
-  - {fileID: 3566450247541713339}
-  - {fileID: 4895450617454485274}
-  - {fileID: 6656818520950733343}
-  - {fileID: -7746557105445564849}
-  - {fileID: 260315809196794791}
-  - {fileID: -7578296645750495261}
-  - {fileID: -5736830729932557693}
-  - {fileID: 7195964283029505399}
-  - {fileID: -1646303092079510041}
-  - {fileID: 7664476569374293439}
-  - {fileID: -2947903645573950898}
-  - {fileID: 7580879681232620046}
-  - {fileID: -2978237368895961137}
-  - {fileID: -4233398103763990197}
-  - {fileID: 3186087176646188463}
-  - {fileID: -5565631844689373664}
-  - {fileID: 2539220974651403614}
-  - {fileID: -6743853058350476600}
-  - {fileID: -8271773293617589795}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 5666174042814727921}
-  StringsBanks:
-  - {fileID: 3825600576355611488}
-  cacheTime: 638378374739487339
-  cacheVersion: 131605
---- !u!114 &260315809196794791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Atmosphere/Atmosphere See
-  m_EditorClassIdentifier: 
-  Path: event:/Atmosphere/Atmosphere See
-  Guid:
-    Data1: 432457361
-    Data2: 1273486519
-    Data3: 609215642
-    Data4: -1647063332
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 4277454116169483792}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 50625
---- !u!114 &266455258079183971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0434\u043E\u043C\u0438\u043A/\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
-  m_EditorClassIdentifier: 
-  Path: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0434\u043E\u043C\u0438\u043A/\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
-  Guid:
-    Data1: 1947342149
-    Data2: 1125335396
-    Data3: -831695442
-    Data4: -1108097938
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 999
---- !u!114 &428607940652762961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Soundtrack/Parameter Multiband
-  m_EditorClassIdentifier: 
-  Name: Parameter Multiband
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 285570390
-    data2: 607756159
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &2479796985615072111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Atmosphere/Atmosphere Flag
-  m_EditorClassIdentifier: 
-  Path: event:/Atmosphere/Atmosphere Flag
-  Guid:
-    Data1: -1387614628
-    Data2: 1319226624
-    Data3: 1611309468
-    Data4: -1383109416
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 3492215521794275271}
-  - {fileID: 8931002074517350713}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 50625
---- !u!114 &2481142883653398901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/\u041B\u0438\u0441 \u043F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435
-    2.0"
-  m_EditorClassIdentifier: 
-  Path: "event:/\u041B\u0438\u0441 \u043F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435
-    2.0"
-  Guid:
-    Data1: -2005594778
-    Data2: 1169967167
-    Data3: 736983218
-    Data4: -1811088199
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 5690
---- !u!114 &2539220974651403614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/\u0411\u0435\u0433 \u041D\u0430\u0435\u043C\u043D\u044B\u0439 \u0440\u0430\u0431\u043E\u0442\u043D\u0438\u043A
-    2.0"
-  m_EditorClassIdentifier: 
-  Path: "event:/\u0411\u0435\u0433 \u041D\u0430\u0435\u043C\u043D\u044B\u0439 \u0440\u0430\u0431\u043E\u0442\u043D\u0438\u043A
-    2.0"
-  Guid:
-    Data1: 1501038311
-    Data2: 1109909955
-    Data3: -1527683933
-    Data4: -1025531380
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 81197
---- !u!114 &3186087176646188463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0414\u043E\u0441\u0442\u0443\u043F\u043D\u044B\u0435;
-    \u043C\u043E\u0438"
-  m_EditorClassIdentifier: 
-  Path: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0414\u043E\u0441\u0442\u0443\u043F\u043D\u044B\u0435;
-    \u043C\u043E\u0438"
-  Guid:
-    Data1: 445656802
-    Data2: 1284109784
-    Data3: 1007467455
-    Data4: 1827319265
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 809
---- !u!114 &3492215521794275271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Atmosphere Flag/Parameter Volume
-  m_EditorClassIdentifier: 
-  Name: Parameter Volume
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 501928732
-    data2: 2741400003
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &3566450247541713339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/\u0413\u0430\u0433\u0430 \u041F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435"
-  m_EditorClassIdentifier: 
-  Path: "event:/\u0413\u0430\u0433\u0430 \u041F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435"
-  Guid:
-    Data1: 1618502011
-    Data2: 1276393722
-    Data3: 410003587
-    Data4: -1732847101
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 6472179142290965959}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3806
---- !u!114 &3825600576355611488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Eider Farm Project/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638378374739487339
-  FileSizes:
-  - Name: Desktop
-    Value: 2842
-  Exists: 1
---- !u!114 &4001130980203985473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
-    \u043F\u0443\u0445\u0430 2.0/\u0421\u0442\u0440\u043E\u0438\u0442\u044C 2.0"
-  m_EditorClassIdentifier: 
-  Path: "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
-    \u043F\u0443\u0445\u0430 2.0/\u0421\u0442\u0440\u043E\u0438\u0442\u044C 2.0"
-  Guid:
-    Data1: -2005147536
-    Data2: 1341257105
-    Data3: -858455368
-    Data4: 1756690414
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1460
---- !u!114 &4277454116169483792
+--- !u!114 &-8698134240626229891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -810,7 +55,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &4756624961597235068
+--- !u!114 &-8556191573165044076
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -820,26 +65,340 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/\u0411\u0435\u0433 \u0418\u043D\u0441\u043F\u0435\u043A\u0442\u043E\u0440
-    2.0"
+  m_Name: event:/Atmosphere/Atmosphere Flag
   m_EditorClassIdentifier: 
-  Path: "event:/\u0411\u0435\u0433 \u0418\u043D\u0441\u043F\u0435\u043A\u0442\u043E\u0440
-    2.0"
+  Path: event:/Atmosphere/Atmosphere Flag
   Guid:
-    Data1: -553157041
-    Data2: 1212645929
-    Data3: 822114688
-    Data4: 636448334
+    Data1: -1387614628
+    Data2: 1319226624
+    Data3: 1611309468
+    Data4: -1383109416
   Banks:
-  - {fileID: 5666174042814727921}
+  - {fileID: 8527511169068308197}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 6999195908599907319}
+  - {fileID: 1501062221675573890}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 50625
+--- !u!114 &-8461370025832776604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0418\u043D\u0432\u0435\u043D\u0442\u0430\u0440\u044C;
+    \u0444\u0435\u0440\u043C\u0435\u0440\u0441\u043A\u0438\u0439 \u0434\u043E\u043C\u0438\u043A"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0418\u043D\u0432\u0435\u043D\u0442\u0430\u0440\u044C;
+    \u0444\u0435\u0440\u043C\u0435\u0440\u0441\u043A\u0438\u0439 \u0434\u043E\u043C\u0438\u043A"
+  Guid:
+    Data1: 1158744390
+    Data2: 1198055429
+    Data3: 1180464559
+    Data4: 2041768275
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 809
+--- !u!114 &-8391242010071735580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Atmosphere/Atmosphere See
+  m_EditorClassIdentifier: 
+  Path: event:/Atmosphere/Atmosphere See
+  Guid:
+    Data1: 432457361
+    Data2: 1273486519
+    Data3: 609215642
+    Data4: -1647063332
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8698134240626229891}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 50625
+--- !u!114 &-7014577911607748491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/\u0421\u0442\u0440\u043E\u0439\u043A\u0430 \u0441\u043A\u043B\u0430\u0434\u0430"
+  m_EditorClassIdentifier: 
+  Path: "event:/\u0421\u0442\u0440\u043E\u0439\u043A\u0430 \u0441\u043A\u043B\u0430\u0434\u0430"
+  Guid:
+    Data1: -455867650
+    Data2: 1159932341
+    Data3: 1565707927
+    Data4: 1643573041
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1529
+--- !u!114 &-6239322746233859995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/\u0413\u0443\u0441\u044C 2.0"
+  m_EditorClassIdentifier: 
+  Path: "event:/\u0413\u0443\u0441\u044C 2.0"
+  Guid:
+    Data1: -1629915418
+    Data2: 1126527544
+    Data3: 1565535892
+    Data4: -1237282963
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4613
+--- !u!114 &-5980390419043077041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Atmosphere Forest/Parameter Multiband
+  m_EditorClassIdentifier: 
+  Name: Parameter Multiband
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 285570390
+    data2: 607756159
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-5308610716668882982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
+    \u043F\u0443\u0445\u0430 2.0/\u041D\u0430\u0437\u0430\u0434"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
+    \u043F\u0443\u0445\u0430 2.0/\u041D\u0430\u0437\u0430\u0434"
+  Guid:
+    Data1: 1220124464
+    Data2: 1156912396
+    Data3: -1159509838
+    Data4: 193461957
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 285
+--- !u!114 &-4459401895696927657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0442\u043A\u0430\u0446\u043A\u0438\u0439 \u0441\u0442\u0430\u043D\u043E\u043A
+    2.0/\u0421\u0442\u0440\u043E\u0438\u0442\u044C 2.0"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0442\u043A\u0430\u0446\u043A\u0438\u0439 \u0441\u0442\u0430\u043D\u043E\u043A
+    2.0/\u0421\u0442\u0440\u043E\u0438\u0442\u044C 2.0"
+  Guid:
+    Data1: 1973587337
+    Data2: 1271382646
+    Data3: 1310108550
+    Data4: -546962969
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1460
+--- !u!114 &-4436921044377718191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/\u0413\u0430\u0433\u0430 \u041F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435"
+  m_EditorClassIdentifier: 
+  Path: "event:/\u0413\u0430\u0433\u0430 \u041F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435"
+  Guid:
+    Data1: 1618502011
+    Data2: 1276393722
+    Data3: 410003587
+    Data4: -1732847101
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8755644529205139760}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3806
+--- !u!114 &-4313370439814849644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/\u0411\u0435\u0433 \u043F\u043E \u043C\u043E\u0441\u0442\u0443
+    (\u0412\u0441\u0435 \u0433\u0435\u0440\u043E\u0438) 2.0"
+  m_EditorClassIdentifier: 
+  Path: "event:/\u0411\u0435\u0433 \u043F\u043E \u043C\u043E\u0441\u0442\u0443 (\u0412\u0441\u0435
+    \u0433\u0435\u0440\u043E\u0438) 2.0"
+  Guid:
+    Data1: -1315360083
+    Data2: 1081534260
+    Data3: 759149467
+    Data4: -1086934536
+  Banks:
+  - {fileID: 8527511169068308197}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 81197
---- !u!114 &4895450617454485274
+  Length: 12302
+--- !u!114 &-4010500565823766485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
+    \u043F\u0443\u0445\u0430 2.0/\u0421\u043D\u0435\u0441\u0442\u0438"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
+    \u043F\u0443\u0445\u0430 2.0/\u0421\u043D\u0435\u0441\u0442\u0438"
+  Guid:
+    Data1: -1376650341
+    Data2: 1208932893
+    Data3: 1589251717
+    Data4: -1442193131
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 227
+--- !u!114 &-3211122638581913737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0417\u0430\u0434\u0430\u043D\u0438\u044F;
+    \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0417\u0430\u0434\u0430\u043D\u0438\u044F;
+    \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  Guid:
+    Data1: 1815335540
+    Data2: 1125961340
+    Data3: 23454098
+    Data4: -1873722485
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 809
+--- !u!114 &-2570696796177190445
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -862,7 +421,7 @@ MonoBehaviour:
     Data3: -332077429
     Data4: -2100270757
   Banks:
-  - {fileID: 5666174042814727921}
+  - {fileID: 8527511169068308197}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -870,7 +429,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 227
---- !u!114 &5666174042814727921
+--- !u!114 &-2191982879964357147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -879,18 +438,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/\u0423\u0434\u0430\u0440 \u0438 \u043E\u0442\u0441\u043A\u043E\u043A
+    \u043C\u044F\u0447\u0430 (\u043E\u0442 \u0434\u0435\u0440\u0435\u0432\u0430,
+    \u0437\u0430\u0431\u043E\u0440\u0430) 2.0"
   m_EditorClassIdentifier: 
-  Path: Eider Farm Project/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638378374739477392
-  FileSizes:
-  - Name: Desktop
-    Value: 9011776
-  Exists: 1
---- !u!114 &5768851231190486442
+  Path: "event:/\u0423\u0434\u0430\u0440 \u0438 \u043E\u0442\u0441\u043A\u043E\u043A
+    \u043C\u044F\u0447\u0430 (\u043E\u0442 \u0434\u0435\u0440\u0435\u0432\u0430,
+    \u0437\u0430\u0431\u043E\u0440\u0430) 2.0"
+  Guid:
+    Data1: -19648360
+    Data2: 1218551874
+    Data3: 2095734192
+    Data4: 1635013872
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1537
+--- !u!114 &-1275422135816466467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -911,7 +481,7 @@ MonoBehaviour:
     Data3: 1730172341
     Data4: -1900349697
   Banks:
-  - {fileID: 5666174042814727921}
+  - {fileID: 8527511169068308197}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -919,7 +489,618 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1230
---- !u!114 &6472179142290965959
+--- !u!114 &-1255852260268312864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Soundtrack/Parameter Multiband
+  m_EditorClassIdentifier: 
+  Name: Parameter Multiband
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 285570390
+    data2: 607756159
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-188052128353616383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0414\u043E\u0441\u0442\u0443\u043F\u043D\u044B\u0435;
+    \u043C\u043E\u0438"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0414\u043E\u0441\u0442\u0443\u043F\u043D\u044B\u0435;
+    \u043C\u043E\u0438"
+  Guid:
+    Data1: 445656802
+    Data2: 1284109784
+    Data3: 1007467455
+    Data4: 1827319265
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 809
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 8997223786972079739}
+  - {fileID: 8527511169068308197}
+  EditorEvents:
+  - {fileID: 8120572382804708542}
+  - {fileID: 8439252270662131606}
+  - {fileID: -5308610716668882982}
+  - {fileID: -1275422135816466467}
+  - {fileID: 5790214343034847413}
+  - {fileID: -8461370025832776604}
+  - {fileID: 4042294209509864104}
+  - {fileID: -8556191573165044076}
+  - {fileID: 672621788428824438}
+  - {fileID: 7228466941281135270}
+  - {fileID: 3453033183984226743}
+  - {fileID: -3211122638581913737}
+  - {fileID: -4436921044377718191}
+  - {fileID: -2570696796177190445}
+  - {fileID: -4459401895696927657}
+  - {fileID: 127813546492304501}
+  - {fileID: -8391242010071735580}
+  - {fileID: -2191982879964357147}
+  - {fileID: -4010500565823766485}
+  - {fileID: -4313370439814849644}
+  - {fileID: 8054893557650999147}
+  - {fileID: 47543594223381250}
+  - {fileID: 507964837861275863}
+  - {fileID: 5610612201066645984}
+  - {fileID: -8958822922668659324}
+  - {fileID: 4712298692801579570}
+  - {fileID: -188052128353616383}
+  - {fileID: -6239322746233859995}
+  - {fileID: 2227826186398172556}
+  - {fileID: 404610889342281451}
+  - {fileID: -7014577911607748491}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 8527511169068308197}
+  StringsBanks:
+  - {fileID: 8997223786972079739}
+  cacheTime: 638378351912533563
+  cacheVersion: 131605
+--- !u!114 &47543594223381250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Atmosphere/Atmosphere Forest
+  m_EditorClassIdentifier: 
+  Path: event:/Atmosphere/Atmosphere Forest
+  Guid:
+    Data1: -449220930
+    Data2: 1256418033
+    Data3: -1715171429
+    Data4: 749480421
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -5980390419043077041}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 50625
+--- !u!114 &127813546492304501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundtrack/Soundtrack
+  m_EditorClassIdentifier: 
+  Path: event:/Soundtrack/Soundtrack
+  Guid:
+    Data1: 789768073
+    Data2: 1285299731
+    Data3: -1649380940
+    Data4: -607101489
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1255852260268312864}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 264501
+--- !u!114 &404610889342281451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0434\u043E\u043C\u0438\u043A/\u041D\u0430\u0437\u0430\u0434"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0434\u043E\u043C\u0438\u043A/\u041D\u0430\u0437\u0430\u0434"
+  Guid:
+    Data1: -234982149
+    Data2: 1141225331
+    Data3: -250681433
+    Data4: 1897748003
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 285
+--- !u!114 &507964837861275863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
+    \u043F\u0443\u0445\u0430 2.0/\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
+    \u043F\u0443\u0445\u0430 2.0/\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
+  Guid:
+    Data1: -1958402366
+    Data2: 1094347057
+    Data3: 299722415
+    Data4: -229471302
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 999
+--- !u!114 &672621788428824438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0434\u043E\u043C\u0438\u043A/\u0421\u043D\u0435\u0441\u0442\u0438"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0434\u043E\u043C\u0438\u043A/\u0421\u043D\u0435\u0441\u0442\u0438"
+  Guid:
+    Data1: 592350051
+    Data2: 1143357328
+    Data3: -745221734
+    Data4: 738594688
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 227
+--- !u!114 &1501062221675573890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Atmosphere Flag/Parameter Multiband
+  m_EditorClassIdentifier: 
+  Name: Parameter Multiband
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 285570390
+    data2: 607756159
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &2227826186398172556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/\u0411\u0435\u0433 \u041D\u0430\u0435\u043C\u043D\u044B\u0439 \u0440\u0430\u0431\u043E\u0442\u043D\u0438\u043A
+    2.0"
+  m_EditorClassIdentifier: 
+  Path: "event:/\u0411\u0435\u0433 \u041D\u0430\u0435\u043C\u043D\u044B\u0439 \u0440\u0430\u0431\u043E\u0442\u043D\u0438\u043A
+    2.0"
+  Guid:
+    Data1: 1501038311
+    Data2: 1109909955
+    Data3: -1527683933
+    Data4: -1025531380
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 81197
+--- !u!114 &3453033183984226743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
+    \u043F\u0443\u0445\u0430 2.0/\u0421\u0442\u0440\u043E\u0438\u0442\u044C 2.0"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
+    \u043F\u0443\u0445\u0430 2.0/\u0421\u0442\u0440\u043E\u0438\u0442\u044C 2.0"
+  Guid:
+    Data1: -2005147536
+    Data2: 1341257105
+    Data3: -858455368
+    Data4: 1756690414
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1460
+--- !u!114 &4042294209509864104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/\u0411\u0435\u0433 \u0418\u043D\u0441\u043F\u0435\u043A\u0442\u043E\u0440
+    2.0"
+  m_EditorClassIdentifier: 
+  Path: "event:/\u0411\u0435\u0433 \u0418\u043D\u0441\u043F\u0435\u043A\u0442\u043E\u0440
+    2.0"
+  Guid:
+    Data1: -553157041
+    Data2: 1212645929
+    Data3: 822114688
+    Data4: 636448334
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 81197
+--- !u!114 &4712298692801579570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/\u0411\u0435\u0433 \u0413\u043B\u0430\u0432\u043D\u044B\u0439 \u0433\u0435\u0440\u043E\u0439"
+  m_EditorClassIdentifier: 
+  Path: "event:/\u0411\u0435\u0433 \u0413\u043B\u0430\u0432\u043D\u044B\u0439 \u0433\u0435\u0440\u043E\u0439"
+  Guid:
+    Data1: 1681517534
+    Data2: 1276221120
+    Data3: -1186133615
+    Data4: 1284242712
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 82428
+--- !u!114 &5610612201066645984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0442\u043A\u0430\u0446\u043A\u0438\u0439 \u0441\u0442\u0430\u043D\u043E\u043A
+    2.0/\u041D\u0430\u0437\u0430\u0434"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0442\u043A\u0430\u0446\u043A\u0438\u0439 \u0441\u0442\u0430\u043D\u043E\u043A
+    2.0/\u041D\u0430\u0437\u0430\u0434"
+  Guid:
+    Data1: 949467081
+    Data2: 1317235096
+    Data3: -1141973869
+    Data4: -250021559
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 285
+--- !u!114 &5790214343034847413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0434\u043E\u043C\u0438\u043A/\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0434\u043E\u043C\u0438\u043A/\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
+  Guid:
+    Data1: 1947342149
+    Data2: 1125335396
+    Data3: -831695442
+    Data4: -1108097938
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 999
+--- !u!114 &6999195908599907319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Atmosphere Flag/Parameter Volume
+  m_EditorClassIdentifier: 
+  Name: Parameter Volume
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 501928732
+    data2: 2741400003
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7228466941281135270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/\u041B\u0438\u0441 \u043F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435
+    2.0"
+  m_EditorClassIdentifier: 
+  Path: "event:/\u041B\u0438\u0441 \u043F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435
+    2.0"
+  Guid:
+    Data1: -2005594778
+    Data2: 1169967167
+    Data3: 736983218
+    Data4: -1811088199
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5690
+--- !u!114 &8054893557650999147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/\u0423\u0434\u0430\u0440 \u0438 \u043E\u0442\u0441\u043A\u043E\u043A
+    \u043C\u044F\u0447\u0430 (\u043D\u0435 \u043E\u0442 \u0434\u0435\u0440\u0435\u0432\u0430)
+    2.0"
+  m_EditorClassIdentifier: 
+  Path: "event:/\u0423\u0434\u0430\u0440 \u0438 \u043E\u0442\u0441\u043A\u043E\u043A
+    \u043C\u044F\u0447\u0430 (\u043D\u0435 \u043E\u0442 \u0434\u0435\u0440\u0435\u0432\u0430)
+    2.0"
+  Guid:
+    Data1: -268087878
+    Data2: 1219662480
+    Data3: -1453419354
+    Data4: -77389335
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1691
+--- !u!114 &8120572382804708542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0417\u0430\u043A\u0440\u044B\u0442\u044C"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0417\u0430\u043A\u0440\u044B\u0442\u044C"
+  Guid:
+    Data1: 137504772
+    Data2: 1242374671
+    Data3: 1439985802
+    Data4: -1787938667
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 850
+--- !u!114 &8439252270662131606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/\u0423\u0434\u0430\u0440 \u043F\u043E \u043C\u044F\u0447\u0443
+    2.0"
+  m_EditorClassIdentifier: 
+  Path: "event:/\u0423\u0434\u0430\u0440 \u043F\u043E \u043C\u044F\u0447\u0443 2.0"
+  Guid:
+    Data1: 1863342126
+    Data2: 1341490698
+    Data3: 1971761288
+    Data4: -240045090
+  Banks:
+  - {fileID: 8527511169068308197}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1999
+--- !u!114 &8527511169068308197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Eider Farm Project/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638378351912523558
+  FileSizes:
+  - Name: Desktop
+    Value: 9011776
+  Exists: 1
+--- !u!114 &8755644529205139760
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -944,160 +1125,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &6656818520950733343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0442\u043A\u0430\u0446\u043A\u0438\u0439 \u0441\u0442\u0430\u043D\u043E\u043A
-    2.0/\u0421\u0442\u0440\u043E\u0438\u0442\u044C 2.0"
-  m_EditorClassIdentifier: 
-  Path: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0442\u043A\u0430\u0446\u043A\u0438\u0439 \u0441\u0442\u0430\u043D\u043E\u043A
-    2.0/\u0421\u0442\u0440\u043E\u0438\u0442\u044C 2.0"
-  Guid:
-    Data1: 1973587337
-    Data2: 1271382646
-    Data3: 1310108550
-    Data4: -546962969
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1460
---- !u!114 &6837980217354303774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
-    \u043F\u0443\u0445\u0430 2.0/\u041D\u0430\u0437\u0430\u0434"
-  m_EditorClassIdentifier: 
-  Path: "event:/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
-    \u043F\u0443\u0445\u0430 2.0/\u041D\u0430\u0437\u0430\u0434"
-  Guid:
-    Data1: 1220124464
-    Data2: 1156912396
-    Data3: -1159509838
-    Data4: 193461957
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 285
---- !u!114 &7195964283029505399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/\u0411\u0435\u0433 \u043F\u043E \u043C\u043E\u0441\u0442\u0443
-    (\u0412\u0441\u0435 \u0433\u0435\u0440\u043E\u0438) 2.0"
-  m_EditorClassIdentifier: 
-  Path: "event:/\u0411\u0435\u0433 \u043F\u043E \u043C\u043E\u0441\u0442\u0443 (\u0412\u0441\u0435
-    \u0433\u0435\u0440\u043E\u0438) 2.0"
-  Guid:
-    Data1: -1315360083
-    Data2: 1081534260
-    Data3: 759149467
-    Data4: -1086934536
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 12302
---- !u!114 &7580879681232620046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0442\u043A\u0430\u0446\u043A\u0438\u0439 \u0441\u0442\u0430\u043D\u043E\u043A
-    2.0/\u041D\u0430\u0437\u0430\u0434"
-  m_EditorClassIdentifier: 
-  Path: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-    \u0442\u043A\u0430\u0446\u043A\u0438\u0439 \u0441\u0442\u0430\u043D\u043E\u043A
-    2.0/\u041D\u0430\u0437\u0430\u0434"
-  Guid:
-    Data1: 949467081
-    Data2: 1317235096
-    Data3: -1141973869
-    Data4: -250021559
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 285
---- !u!114 &7664476569374293439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Atmosphere/Atmosphere Forest
-  m_EditorClassIdentifier: 
-  Path: event:/Atmosphere/Atmosphere Forest
-  Guid:
-    Data1: -449220930
-    Data2: 1256418033
-    Data3: -1715171429
-    Data4: 749480421
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -4479457349810762773}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 50625
-<<<<<<< HEAD
---- !u!114 &7950936889879600962
-=======
---- !u!114 &-2222524810892591784
+--- !u!114 &8997223786972079739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1112,335 +1140,8 @@ MonoBehaviour:
   Path: Eider Farm Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638378301201380647
+  lastModified: 638378351912533563
   FileSizes:
   - Name: Desktop
-    Value: 1762
-  Exists: 1
---- !u!114 &-2182337491768686468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/\u0413\u0430\u0433\u0430 \u041F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435"
-  m_EditorClassIdentifier: 
-  Path: "event:/\u0413\u0430\u0433\u0430 \u041F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435"
-  Guid:
-    Data1: 1618502011
-    Data2: 1276393722
-    Data3: 410003587
-    Data4: -1732847101
-  Banks:
-  - {fileID: 6769393119567457817}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -4019640018482866332}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3806
---- !u!114 &-2123851603940920122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0418\u043D\u0432\u0435\u043D\u0442\u0430\u0440\u044C;
-    \u0444\u0435\u0440\u043C\u0435\u0440\u0441\u043A\u0438\u0439 \u0434\u043E\u043C\u0438\u043A"
-  m_EditorClassIdentifier: 
-  Path: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0418\u043D\u0432\u0435\u043D\u0442\u0430\u0440\u044C;
-    \u0444\u0435\u0440\u043C\u0435\u0440\u0441\u043A\u0438\u0439 \u0434\u043E\u043C\u0438\u043A"
-  Guid:
-    Data1: 1158744390
-    Data2: 1198055429
-    Data3: 1180464559
-    Data4: 2041768275
-  Banks:
-  - {fileID: 6769393119567457817}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 809
---- !u!114 &-1248029495984542180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Atmosphere Forest/Parameter Multiband
-  m_EditorClassIdentifier: 
-  Name: Parameter Multiband
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 285570390
-    data2: 607756159
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-460041389728665883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Atmosphere See/Parameter Multiband
-  m_EditorClassIdentifier: 
-  Name: Parameter Multiband
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 285570390
-    data2: 607756159
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -2222524810892591784}
-  - {fileID: 6769393119567457817}
-  EditorEvents:
-  - {fileID: 5292753366039797658}
-  - {fileID: -8999587324527719675}
-  - {fileID: 484527986484044941}
-  - {fileID: -2123851603940920122}
-  - {fileID: -6340657678605446468}
-  - {fileID: -4624485668916196152}
-  - {fileID: 4360876085339012978}
-  - {fileID: -2182337491768686468}
-  - {fileID: -4376450941347430216}
-  - {fileID: 749707738767245287}
-  - {fileID: -2807818995419270421}
-  - {fileID: 8798359439919854362}
-  - {fileID: -3221284287878292787}
-  - {fileID: 8571914658573292514}
-  - {fileID: -8081689226432573914}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 6769393119567457817}
-  StringsBanks:
-  - {fileID: -2222524810892591784}
-  cacheTime: 638378301201380647
-  cacheVersion: 131605
---- !u!114 &484527986484044941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438/\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
-  m_EditorClassIdentifier: 
-  Path: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438/\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
-  Guid:
-    Data1: 1947342149
-    Data2: 1125335396
-    Data3: -831695442
-    Data4: -1108097938
-  Banks:
-  - {fileID: 6769393119567457817}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 999
---- !u!114 &749707738767245287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Atmosphere/Atmosphere See
-  m_EditorClassIdentifier: 
-  Path: event:/Atmosphere/Atmosphere See
-  Guid:
-    Data1: 432457361
-    Data2: 1273486519
-    Data3: 609215642
-    Data4: -1647063332
-  Banks:
-  - {fileID: 6769393119567457817}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -460041389728665883}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 50625
---- !u!114 &4360876085339012978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0417\u0430\u0434\u0430\u043D\u0438\u044F;
-    \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
-  m_EditorClassIdentifier: 
-  Path: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0417\u0430\u0434\u0430\u043D\u0438\u044F;
-    \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
-  Guid:
-    Data1: 1815335540
-    Data2: 1125961340
-    Data3: 23454098
-    Data4: -1873722485
-  Banks:
-  - {fileID: 6769393119567457817}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 809
---- !u!114 &5292753366039797658
->>>>>>> UILevel
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0417\u0430\u043A\u0440\u044B\u0442\u044C"
-  m_EditorClassIdentifier: 
-  Path: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0417\u0430\u043A\u0440\u044B\u0442\u044C"
-  Guid:
-    Data1: 137504772
-    Data2: 1242374671
-    Data3: 1439985802
-    Data4: -1787938667
-  Banks:
-  - {fileID: 5666174042814727921}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 850
-<<<<<<< HEAD
---- !u!114 &8931002074517350713
-=======
---- !u!114 &5573579502599396582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Atmosphere Flag/Parameter Volume
-  m_EditorClassIdentifier: 
-  Name: Parameter Volume
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 501928732
-    data2: 2741400003
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &6769393119567457817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Eider Farm Project/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638378301201370371
-  FileSizes:
-  - Name: Desktop
-    Value: 6944064
-  Exists: 1
---- !u!114 &8115717184319495255
->>>>>>> UILevel
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Atmosphere Flag/Parameter Multiband
-  m_EditorClassIdentifier: 
-  Name: Parameter Multiband
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 285570390
-    data2: 607756159
-  Type: 0
-  IsGlobal: 0
-  Labels: []
+    Value: 2842
   Exists: 1
