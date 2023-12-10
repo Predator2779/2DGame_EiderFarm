@@ -50,15 +50,15 @@ public class Gaga : MonoBehaviour
     private void MoveTo()
     {
         Vector2 direction = (_targetPos - new Vector2(transform.position.x,transform.position.y)).normalized;
+        _personAnimate.Walk(direction, true, false);
         _movement.Move(direction.normalized * _speed * Time.deltaTime);
-        _personAnimate.Walk(direction, true);
         float directionX = direction.x;
         _sprite.flipX = directionX < 0;
 
         float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.y), _targetPos);
         if (distance < 3f)
         {
-            _personAnimate.Walk(direction, false);
+            _personAnimate.Walk(direction, false, false);
             SetState(State.Idle);
             GetRandomPoint(_moveRadius, _centerPoint);
         }
