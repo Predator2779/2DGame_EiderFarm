@@ -105,6 +105,7 @@ namespace Characters.AI
 
             if (!IsDestination(transform.position, _target))
             {
+                print("walked");
                 if (_index > 0)
                 {
                     if (_path == null) return;
@@ -149,7 +150,7 @@ namespace Characters.AI
             _index = _path.Count - 1;
         }
 
-        private bool IsDestination(Vector2 first, Vector2 second) => (int)Vector2.Distance(first, second) == 0;
+        private bool IsDestination(Vector2 first, Vector2 second) => Vector2.Distance(first, second) < 1;
         private bool IsFull() => CountUncleanFluff() >= _fluffCapacity;
         private int CountUncleanFluff() => TryGetBunch(GlobalConstants.UncleanedFluff)?.GetCount() ?? 0;
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;

@@ -10,13 +10,18 @@ namespace Characters.AI
         [SerializeField] private float _patrolTime;
         [SerializeField] private float _changeDirTime;
 
-        protected EnemyStates CurrentState { get => _currentState; set => _currentState = value; }
+        protected EnemyStates CurrentState
+        {
+            get => _currentState;
+            set => _currentState = value;
+        }
+
         protected Vector2 CurrentDirection { get; set; }
 
         private float _idleDelay;
         private bool _isPatrol;
         private bool _canChangeDir;
-        private bool _canChangePatrolState;
+        protected bool _canChangePatrolState;
 
         private void Start() => Initialize();
         private void OnValidate() => Initialize();
@@ -26,7 +31,7 @@ namespace Characters.AI
         protected void Initialize()
         {
             CurrentDirection = GetRandomDirection();
-            
+
             _canChangePatrolState = true;
             _canChangeDir = true;
         }
@@ -55,7 +60,6 @@ namespace Characters.AI
         private void Patrol()
         {
             if (_canChangeDir) StartCoroutine(ChangeDirection(GetRandomDirection()));
-            PlaySound();
             Walk(CurrentDirection);
         }
 
@@ -68,7 +72,6 @@ namespace Characters.AI
         protected override void Run(Vector2 direction)
         {
             StopCoroutine(ChangeDirection(direction));
-            PlaySound();
             base.Run(direction);
         }
 
@@ -102,6 +105,7 @@ namespace Characters.AI
         protected Vector2 GetOppositeDirection(Vector2 direction, bool isRandomDir)
         {
             float angle = 180;
+
             if (isRandomDir) angle = Random.Range(90, 270);
 
             return (Quaternion.AngleAxis(angle, Vector3.forward) * direction).normalized;
@@ -112,9 +116,8 @@ namespace Characters.AI
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            // развернуться при упоре в стену
             StopCoroutine(ChangeDirection(GetRandomDirection()));
-            StartCoroutine(ChangeDirection(GetOppositeDirection(other.transform.position, false)));
+            StartCoroutine(ChangeDirection(GetOppositeDirection(other.transform.position, true)));
         }
 
         protected enum EnemyStates
