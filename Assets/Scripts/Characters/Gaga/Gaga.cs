@@ -52,7 +52,7 @@ public class Gaga : MonoBehaviour
         float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.y), _targetPos);
         if (distance < 3f)
         {
-            SetState(State.Idle);
+            SetState(State.Idle); 
             GetRandomPoint(_moveRadius, _centerPoint);
         }
     }
