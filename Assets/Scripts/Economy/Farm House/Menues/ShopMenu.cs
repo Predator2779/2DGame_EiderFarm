@@ -1,7 +1,5 @@
 using System.Linq;
 using General;
-using TMPro;
-using UnityEditor.Build;
 using UnityEngine;
 
 namespace Economy.Farm_House.Menues
