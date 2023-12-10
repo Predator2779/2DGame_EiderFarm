@@ -12,13 +12,13 @@ namespace Economy.Farm_House
         protected override void Initialize()
         {
             EventHandler.OnItemPickUp.AddListener(PickUpItem);
-            EventHandler.OnItemPut.AddListener(PutItem);
+            // EventHandler.OnItemPut.AddListener(PutItem);
         }
 
         protected override void Deinitialize()
         {
             EventHandler.OnItemPickUp.RemoveListener(PickUpItem);
-            EventHandler.OnItemPut.RemoveListener(PutItem);
+            // EventHandler.OnItemPut.RemoveListener(PutItem);
         }
         
         protected void PickUpItem(Item item, int count)

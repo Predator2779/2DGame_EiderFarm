@@ -51,7 +51,7 @@ public class Flag : MonoBehaviour
         EventHandler.FlagPanelEvent.Invoke(false);
         EventHandler.OnFlagSet?.Invoke();
         EventHandler.OnFlagSpriteChanged.RemoveListener(SetFlagSprite);
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Atmosphere/Atmosphere Flag");
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Atmosphere/Atmosphere Flag", gameObject);
     }
 
     public void RemoveFlag()
