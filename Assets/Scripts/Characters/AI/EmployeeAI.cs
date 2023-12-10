@@ -21,9 +21,9 @@ namespace Characters.AI
         [Space] [Header("Settings:")]
         [SerializeField] [Range(1, 100)] private int _fluffCapacity;
 
-        private BuildStorage _currentHouse;
         private Transform _currentCleaner;
-        private Inventory _currentStorage;
+        private BuildStorage _currentHouse;
+        private BuildStorage _currentStorage;
         private BuildingsPull _pull;
         private PathFinder _pathFinder;
         private Employee _employee;
@@ -204,10 +204,10 @@ namespace Characters.AI
                 var bMenu = storage.GetBuildMenu();
 
                 if (!bMenu.IsBuilded ||
-                    !bMenu.GetBuilding().TryGetComponent(out Inventory inventory) ||
-                    inventory.GetFreeSpace() > 0) continue;
+                    !bMenu.GetBuilding().TryGetComponent(out BuildStorage bStorage))
+                    continue;
 
-                _currentStorage = inventory;
+                _currentStorage = bStorage;
                 return true;
             }
 
@@ -216,9 +216,10 @@ namespace Characters.AI
 
         private void Idle()
         {
+            CheckConditions(); //
+            
             _personAnimate.Walk(_target, false);
             StopSound();
-            CheckConditions(); //
             // if (!_isDelayed) StartCoroutine(Delay());
         }
 

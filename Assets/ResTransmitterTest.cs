@@ -2,25 +2,29 @@ using System.Collections;
 using Building.Constructions;
 using Characters;
 using Economy;
+using General;
 using UnityEngine;
 
 [RequireComponent(typeof(Construction))]
-[RequireComponent(typeof(Inventory))]
+[RequireComponent(typeof(BuildStorage))]
 public class ResTransmitterTest : MonoBehaviour
 {
     public delegate IEnumerator CoroutineDelegate(Item typeFrom, Inventory inv, int fluff);
+
     public event CoroutineDelegate TransmitteEvent;
 
-    [SerializeField, Header("Сколько пуха передается от игрока")] private int _fluffCount;
+    [SerializeField, Header("Сколько пуха передается от игрока")]
+    private int _fluffCount;
+
     [SerializeField] private Item _typeToPlayer;
     [SerializeField] private Inventory _characterInventory;
     private Construction _construction;
-    private Inventory _inventory;
+    private BuildStorage _storage;
 
     private void Start()
     {
         _construction = GetComponent<Construction>();
-        _inventory = GetComponent<Inventory>();
+        _storage = GetComponent<BuildStorage>();
     }
 
     private void CheckBag()
@@ -37,21 +41,16 @@ public class ResTransmitterTest : MonoBehaviour
     {
         if (_characterInventory.IsPlayerInventory())
         {
-            var resources = _inventory.GetAllItems();
-        
-            if (resources == null) return;
-        
-            _characterInventory.AddItemsWithMsg(resources.ToArray(), _construction);
-            _inventory.ResetInventory();
+            _characterInventory.AddItems(_typeToPlayer, _storage.GetFluffCount());
+            _storage.ResetFluff();
         }
         else
         {
-            var resources = _characterInventory.GetAllItems();
-        
-            if (resources == null) return;
-        
-            _inventory.AddItems(resources.ToArray());
-            _characterInventory.ResetInventory();
+            if (!_characterInventory.TryGetBunch(GlobalConstants.CleanedFluff, out ItemBunch bunch))
+                return;
+
+            _storage.AddFluff(bunch.GetCount());
+            _characterInventory.RemoveItems(bunch.GetItem(), bunch.GetCount());
         }
     }
 
