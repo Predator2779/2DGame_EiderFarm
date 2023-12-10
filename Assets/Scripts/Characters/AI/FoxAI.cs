@@ -1,3 +1,4 @@
+using Characters;
 using Characters.AI;
 using UnityEngine;
 
@@ -9,18 +10,17 @@ namespace Charcters.AI
         [SerializeField] private float _requireFlagDistance;
         [SerializeField] private float _radius;
         
-        private Transform _player;
+        private Transform _person;
         private Transform _flag;
 
         protected override void CheckConditions()
         {
-            if (_player != null)
+            if (IsLessPerson())
             {
-                if (IsLessDistance(_player, _requirePlayerDistance) && CurrentState != EnemyStates.Run)
-                {
-                    CurrentDirection = GetOppositeDirection(_player.position, false);
-                    CurrentState = EnemyStates.Run;
-                }
+                if (!IsLessDistance(_person, _requirePlayerDistance) || CurrentState == EnemyStates.Run) return;
+                
+                CurrentDirection = GetOppositeDirection(_person.position, false);
+                CurrentState = EnemyStates.Run;
 
                 return;
             }
@@ -44,6 +44,21 @@ namespace Charcters.AI
         private bool IsLessDistance(Transform obj, float requireDistance) =>
                 Vector2.Distance(transform.position, obj.position) < requireDistance;
 
+        private bool IsLessPerson()
+        {
+            var cols = Physics2D.OverlapCircleAll(transform.position, _radius);
+            
+            foreach (var col in cols )
+            {
+                if (!col.TryGetComponent(out Person per)) continue;
+                
+                _person = per.transform;
+                return true;
+            }
+
+            return false;
+        }
+        
         private bool IsLessFlags()
         {
             var cols = Physics2D.OverlapCircleAll(transform.position, _radius);

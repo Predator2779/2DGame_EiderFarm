@@ -10,7 +10,12 @@ namespace Characters.AI
         [SerializeField] private float _patrolTime;
         [SerializeField] private float _changeDirTime;
 
-        protected EnemyStates CurrentState { get => _currentState; set => _currentState = value; }
+        protected EnemyStates CurrentState
+        {
+            get => _currentState;
+            set => _currentState = value;
+        }
+
         protected Vector2 CurrentDirection { get; set; }
 
         private float _idleDelay;
@@ -26,7 +31,7 @@ namespace Characters.AI
         protected void Initialize()
         {
             CurrentDirection = GetRandomDirection();
-            
+
             _canChangePatrolState = true;
             _canChangeDir = true;
         }
@@ -100,13 +105,14 @@ namespace Characters.AI
         protected Vector2 GetOppositeDirection(Vector2 direction, bool isRandomDir)
         {
             float angle = 180;
+
             if (isRandomDir) angle = Random.Range(90, 270);
 
-            return (Quaternion.AngleAxis(angle, Vector2.right) * direction).normalized;
+            return (Quaternion.AngleAxis(angle, Vector3.forward) * direction).normalized;
         }
 
         protected Vector2 GetRandomDirection() => (Quaternion.AngleAxis(
-                Random.Range(0, 360), Vector2.right) * Vector2.right).normalized;
+                Random.Range(0, 360), Vector3.forward) * Vector2.right).normalized;
 
         private void OnCollisionEnter2D(Collision2D other)
         {
