@@ -147,7 +147,7 @@ namespace Characters.AI
             _index = _path.Count - 1;
         }
 
-        private bool IsDestination(Vector2 first, Vector2 second) => Vector2.Distance(first, second) < 0.25f;
+        private bool IsDestination(Vector2 first, Vector2 second) => Vector2.Distance(first, second) < 0.5f;
         private bool IsFull() => CountUncleanFluff() >= _fluffCapacity;
         private int CountUncleanFluff() => TryGetBunch(GlobalConstants.UncleanedFluff)?.GetCount() ?? 0;
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;

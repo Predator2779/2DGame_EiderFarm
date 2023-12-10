@@ -175,6 +175,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0078fe2cf6d2c24e84c84b6f0612788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gagaHousePrefab: {fileID: 2055177213520633573, guid: fadf628535c05c74992c3a05a3a3f14f, type: 3}
-  gb: {fileID: 0}
+  _gagaHousePrefab: {fileID: 2055177213520633573, guid: fc12b7fc1ab8ba849897d3b2180cc28a, type: 3}
   _save: {fileID: 0}
