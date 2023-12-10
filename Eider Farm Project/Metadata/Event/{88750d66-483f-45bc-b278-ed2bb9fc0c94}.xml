@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{88750d66-483f-45bc-b278-ed2bb9fc0c94}">
 		<property name="name">
-			<value>Лис перемещение 3.0</value>
+			<value>Лис перемещение 2.2</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -117,7 +117,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{45c047d8-3174-4d4e-ad8a-4fd885c360e9}">
 		<property name="volume">
-			<value>-23.5</value>
+			<value>-16</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -148,6 +148,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{8f063350-f54b-4e8c-a47b-94272586af6e}">
 		<relationship name="effects">
+			<destination>{f45d21ba-1393-42b9-8016-cff45c600e7b}</destination>
 			<destination>{230044cd-c2af-437c-bf94-0b8b35e5e22a}</destination>
 			<destination>{bade4d8e-69b2-4c9a-bade-370546d30d87}</destination>
 		</relationship>
@@ -161,6 +162,14 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{04f7b0b4-dd1d-451d-96f9-3db0a4f989de}" />
+	<object class="MultibandEqEffect" id="{f45d21ba-1393-42b9-8016-cff45c600e7b}">
+		<property name="frequencyA">
+			<value>11104.0605</value>
+		</property>
+		<property name="qualityA">
+			<value>0.686068952</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{230044cd-c2af-437c-bf94-0b8b35e5e22a}" />
 	<object class="SpatialiserEffect" id="{bade4d8e-69b2-4c9a-bade-370546d30d87}" />
 	<object class="MultibandEqEffect" id="{aaa673a6-50aa-413d-a6e8-c1187fedb9bb}">

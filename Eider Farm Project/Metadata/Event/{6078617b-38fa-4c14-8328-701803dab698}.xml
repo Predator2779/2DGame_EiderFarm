@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{6078617b-38fa-4c14-8328-701803dab698}">
 		<property name="name">
-			<value>Гага Перемещение</value>
+			<value>Гага Перемещение 2.2</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -117,7 +117,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{6aeb24f0-fc86-439f-aba0-69a177078267}">
 		<property name="volume">
-			<value>-20</value>
+			<value>-16</value>
 		</property>
 		<property name="name">
 			<value>Гага перемещение</value>

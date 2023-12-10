@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{ad4aae5c-cd00-4ea1-9ca1-0a60d86c8fad}">
 		<property name="name">
-			<value>Atmosphere Flag</value>
+			<value>Atmosphere Flag 2.2</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -123,7 +123,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{7aba65d2-7353-4aae-8235-6d4299f5a9ea}">
 		<property name="volume">
-			<value>-10</value>
+			<value>-12</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -164,6 +164,7 @@
 		<relationship name="effects">
 			<destination>{29766a71-f63d-4d45-bb68-2f309fc32149}</destination>
 			<destination>{1ad17081-4971-47bb-a60a-a7aec5c80ad7}</destination>
+			<destination>{18c67a50-e10e-4f8e-9e50-6ab50f795e1d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{4d6491fe-094f-4134-90b4-0143e3ef4b41}" />
@@ -174,13 +175,30 @@
 			<value>21999.9902</value>
 		</property>
 		<property name="qualityA">
-			<value>0.602344871</value>
+			<value>0.25999999</value>
 		</property>
 		<relationship name="automators">
 			<destination>{b01425b2-08c6-44b2-b40a-c064b128891b}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{1ad17081-4971-47bb-a60a-a7aec5c80ad7}" />
+	<object class="ThreeEQEffect" id="{18c67a50-e10e-4f8e-9e50-6ab50f795e1d}">
+		<property name="lowGain">
+			<value>-80</value>
+		</property>
+		<property name="midGain">
+			<value>-32</value>
+		</property>
+		<property name="highGain">
+			<value>-5</value>
+		</property>
+		<property name="lowCrossover">
+			<value>280</value>
+		</property>
+		<property name="highCrossover">
+			<value>2600</value>
+		</property>
+	</object>
 	<object class="Automator" id="{b01425b2-08c6-44b2-b40a-c064b128891b}">
 		<property name="nameOfPropertyBeingAutomated">
 			<value>frequencyA</value>

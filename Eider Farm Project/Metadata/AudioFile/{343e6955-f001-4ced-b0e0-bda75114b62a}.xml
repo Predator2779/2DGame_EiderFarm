@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{343e6955-f001-4ced-b0e0-bda75114b62a}">
+		<property name="assetPath">
+			<value>Выйти.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.92269841269841268</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f7c7fe7c-c78b-448f-8544-83198bf4c8d2}</destination>
+		</relationship>
+	</object>
+</objects>

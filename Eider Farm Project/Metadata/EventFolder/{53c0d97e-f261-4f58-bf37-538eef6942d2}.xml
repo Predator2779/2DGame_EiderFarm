@@ -5,7 +5,7 @@
 			<value>UI меню стройки станок обработки пуха 2.0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{9ab01565-efa6-4eb0-8851-a29743ae0c65}</destination>
+			<destination>{a67f5626-66d0-43e1-bd6e-212efafa8273}</destination>
 		</relationship>
 	</object>
 </objects>
