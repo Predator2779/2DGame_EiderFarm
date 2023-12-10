@@ -19,6 +19,7 @@ namespace Economy
 
         public Sprite[] GetSprites() => _sprites;
         public string GetName() => _name;
+        public string GetDescription() => _description;
         public int GetPrice() => _price;
 
         public string GetDescriptiption() => _description;
