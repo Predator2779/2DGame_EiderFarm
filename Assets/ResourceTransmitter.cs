@@ -31,25 +31,34 @@ public class ResourceTransmitter : MonoBehaviour
         _machine = GetComponent<Machine>();
     }
 
-    public void CheckBag()
+    public bool CheckBag()
     {
-        if (_characterInventory == null) return;
+        if (_characterInventory == null) return false;
 
         Transmitte();
 
+        if (GetComponent<Converter>())
+            if (_characterInventory.GetBunch(GetComponent<Converter>().GetRelevantItem()).GetCount() < _fluffCount)
+            {
+                _machine.GetAnimator().enabled = false;
+                return false;
+            }
+
         if (_fluffCount != 0 && TransmitteEvent != null)
             StartCoroutine(TransmitteEvent?.Invoke(_typeToPlayer, _characterInventory, _fluffCount));
+
+        return true;
     }
 
     private void Transmitte()
     {
         if (_storage.GetFluffCount() == 0) return;
-        
+
         int count = _storage.GetFluffCount();
 
         _characterInventory.AddItems(_typeToPlayer, count);
         _storage.ResetFluff();
-        
+
         if (GetComponent<FluffGiver>())
             StartCoroutine(GetComponent<FluffGiver>().ChangeSpritesWithDelay(0.3f));
 
@@ -62,9 +71,7 @@ public class ResourceTransmitter : MonoBehaviour
 
         _characterInventory = collision.gameObject.GetComponent<Inventory>();
 
-        CheckBag();
-
-        if (gameObject.GetComponent<Machine>()) _machine.EnableAnimator();
+        if (gameObject.GetComponent<Machine>() && CheckBag()) _machine.GetAnimator().enabled = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -74,7 +81,7 @@ public class ResourceTransmitter : MonoBehaviour
 
         _characterInventory = null;
 
-        if (gameObject.GetComponent<Machine>()) _machine.EnableAnimator();
+        if (gameObject.GetComponent<Machine>()) _machine.GetAnimator().enabled = false;
     }
 
 

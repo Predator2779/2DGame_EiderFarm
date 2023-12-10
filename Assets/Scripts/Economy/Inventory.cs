@@ -84,7 +84,7 @@ namespace Economy
             else bunch.AddItems(count);
         }
 
-        private ItemBunch GetBunch(Item item)
+        public ItemBunch GetBunch(Item item)
         {
             ItemBunch bunch = new ItemBunch(item);
 
