@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb214ac4f1ea4b7a8d44128de42eb616, type: 3}
   m_Name: Industrial Revolution
   m_EditorClassIdentifier: 
-  _stage: 0
-  _resetStage: 0
+  _stage: 4
+  _resetStage: 1
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: "\u0420\u0435\u0432\u043E\u043B\u044E\u0446\u0438\u044F!"
   _description: "\u041F\u0440\u043E\u043C\u044B\u0448\u043B\u0435\u043D\u043D\u0430\u044F
@@ -27,5 +27,4 @@ MonoBehaviour:
   _subTasks:
   - {fileID: 11400000, guid: 84e520d09aacefb4c890fb81434e7e8b, type: 2}
   - {fileID: 11400000, guid: ede00244197d4a545ae179acdb90e886, type: 2}
-  - {fileID: 11400000, guid: 91b02b23d69cf404597c823afd5442a7, type: 2}
   - {fileID: 11400000, guid: 499f53ec3526ec74f88b490c902066b6, type: 2}
