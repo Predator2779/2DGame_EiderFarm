@@ -259,7 +259,7 @@ MonoBehaviour:
   Path: Eider Farm Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638378301201380647
+  lastModified: 638378362614485502
   FileSizes:
   - Name: Desktop
     Value: 1762
@@ -405,7 +405,7 @@ MonoBehaviour:
   - {fileID: 6769393119567457817}
   StringsBanks:
   - {fileID: -2222524810892591784}
-  cacheTime: 638378301201380647
+  cacheTime: 638378362614485502
   cacheVersion: 131605
 --- !u!114 &484527986484044941
 MonoBehaviour:
@@ -557,7 +557,7 @@ MonoBehaviour:
   Path: Eider Farm Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638378301201370371
+  lastModified: 638378362614475498
   FileSizes:
   - Name: Desktop
     Value: 6944064
