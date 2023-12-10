@@ -43,8 +43,6 @@ public class FluffGiver : MonoBehaviour
     {
         if (hasGivenFluff) return;
 
-        
-
         hasGivenFluff = true;
         if (Random.Range(0, 100) < _chance)
         {

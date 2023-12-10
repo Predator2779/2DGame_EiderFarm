@@ -71,8 +71,9 @@ public class ResourceTransmitter : MonoBehaviour
 
         _characterInventory = collision.gameObject.GetComponent<Inventory>();
 
-        if(CheckBag())
-        if (gameObject.GetComponent<Machine>()) _machine.GetAnimator().enabled = true;
+        if (CheckBag())
+            if (gameObject.GetComponent<Machine>())
+                _machine.GetAnimator().enabled = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
