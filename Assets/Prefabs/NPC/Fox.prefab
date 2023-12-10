@@ -174,8 +174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _personAnimate: {fileID: 4890964017926284591}
-  _walkSound: "event:/\u0411\u0435\u0433 \u0418\u043D\u0441\u043F\u0435\u043A\u0442\u043E\u0440
-    2.0"
+  _walkSound: "event:/\u041B\u0438\u0441 \u043F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435
+    3.0"
   _currentState: 0
   _idleTime: 3
   _patrolTime: 3
