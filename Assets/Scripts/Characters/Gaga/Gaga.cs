@@ -58,12 +58,8 @@ public class Gaga : MonoBehaviour
         float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.y), _targetPos);
         if (distance < 3f)
         {
-<<<<<<< HEAD
-            SetState(State.Idle); 
-=======
             _personAnimate.Walk(direction, false, false);
             SetState(State.Idle);
->>>>>>> gagaAnimation
             GetRandomPoint(_moveRadius, _centerPoint);
         }
     }
