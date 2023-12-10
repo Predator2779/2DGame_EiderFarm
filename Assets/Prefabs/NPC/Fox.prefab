@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8121593789935038621}
   - component: {fileID: 2932823940365785843}
   - component: {fileID: 2251581718500601478}
+  - component: {fileID: 5616179734583736253}
   - component: {fileID: 8224497332577226762}
   - component: {fileID: 7687938006764830125}
   - component: {fileID: 888522739896275641}
-  - component: {fileID: 5616179734583736253}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Untagged
@@ -108,6 +108,33 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!50 &5616179734583736253
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5755486986276998862}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!114 &8224497332577226762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,42 +174,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _personAnimate: {fileID: 4890964017926284591}
-  _walkSound: "event:/\u041B\u0438\u0441 \u043F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435
+  _walkSound: "event:/\u0411\u0435\u0433 \u0418\u043D\u0441\u043F\u0435\u043A\u0442\u043E\u0440
     2.0"
   _currentState: 0
-  _idleTime: 4
+  _idleTime: 3
   _patrolTime: 3
   _changeDirTime: 3.5
-  _requirePlayerDistance: 7
-  _requireFlagDistance: 7
+  _requirePlayerDistance: 8
+  _requireFlagDistance: 8
   _radius: 5
---- !u!50 &5616179734583736253
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5755486986276998862}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
 --- !u!1 &6031475718690357728
 GameObject:
   m_ObjectHideFlags: 0
