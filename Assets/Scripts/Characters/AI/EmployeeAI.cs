@@ -14,16 +14,14 @@ namespace Characters.AI
     {
         [Header("Service")]
         [SerializeField] private EmployeeStates _currentEmployeeState;
-
         [SerializeField] private int _maxDistance;
         [SerializeField] private float _idleDelay;
-
         [Space] [Header("Settings:")]
         [SerializeField] [Range(1, 100)] private int _fluffCapacity;
 
-        [SerializeField] private Transform _currentCleaner;
-        [SerializeField] private BuildStorage _currentHouse;
-        [SerializeField] private BuildStorage _currentStorage;
+        private Transform _currentCleaner;
+        private BuildStorage _currentHouse;
+        private BuildStorage _currentStorage;
         private BuildingsPull _pull;
         private PathFinder _pathFinder;
         private Employee _employee;
@@ -47,7 +45,6 @@ namespace Characters.AI
 
         private void CheckConditions()
         {
-            print("pick");
             if (!IsFull() &&
                 CanPickFluff() &&
                 CountCleanFluff() <= 0 &&
@@ -106,7 +103,6 @@ namespace Characters.AI
 
             if (!IsDestination(transform.position, _target))
             {
-                print("walked");
                 if (_index > 0)
                 {
                     if (_path == null) return;
