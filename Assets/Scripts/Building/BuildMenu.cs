@@ -1,3 +1,4 @@
+using System;
 using Building.Constructions;
 using Economy;
 using General;
@@ -25,8 +26,10 @@ namespace Building
 
         [Header("Стоимость постройки")]
         [SerializeField, Range(0, 1000)] private int _buyPrice;
+
         [Header("Стоимость улучшений")]
         [SerializeField, Range(0, 1000)] private int[] _upgradePrice = new int[1];
+
         [Header("Сколько возвращает при сносе (0 если 0)")]
         [SerializeField, Range(0, 1000)] private int _sellPrice;
 
@@ -34,7 +37,7 @@ namespace Building
 
         public bool HasFlag;
         public bool IsBuilded;
-        
+
         public void SetConstruction(
                 Construction prefab,
                 Transform parent,
@@ -86,11 +89,10 @@ namespace Building
 
             EventHandler.OnDemolition?.Invoke(_currentBuilding.typeConstruction);
             Destroy(_currentBuilding.gameObject);
-            
+
             CheckBtns();
 
             if (_flag != null) _flag.RemoveFlag();
-
         }
 
         public void Upgrade()
@@ -100,28 +102,54 @@ namespace Building
             switch (_currentBuilding.GetCurrentGrade())
             {
                 case 1:
-                    if (!Buy(_upgradePrice[0])) return; break;
+                    if (!Buy(_upgradePrice[0])) return;
+                    break;
                 case 2:
-                    if (!Buy(_upgradePrice[1])) return; break;
+                    if (!Buy(_upgradePrice[1])) return;
+                    break;
             }
 
             _currentBuilding.SetSprite(_currentBuilding.Upgrade());
 
             if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.GagaHouse)
                 _currentBuilding.GetComponent<FluffGiver>().CheckGrade();
-            if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.FluffCleaner || _currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.ClothMachine)
+            if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.FluffCleaner ||
+                _currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.ClothMachine)
                 _currentBuilding.GetComponent<Machine>().CheckGrade();
 
             if (_currentBuilding.GetComponent<ResourceTransmitter>() && _currentBuilding.GetComponent<Machine>())
-                _currentBuilding.GetComponent<ResourceTransmitter>().SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
-            
+                _currentBuilding.GetComponent<ResourceTransmitter>()
+                                .SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
+
             _currentBuilding.SetSprite(_currentBuilding.Upgrade());
             if (_currentBuilding.GetComponent<ResourceTransmitter>() && _currentBuilding.GetComponent<Machine>())
-                _currentBuilding.GetComponent<ResourceTransmitter>().SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
+                _currentBuilding.GetComponent<ResourceTransmitter>()
+                                .SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
 
             EventHandler.OnUpgraded?.Invoke(
                     _currentBuilding.typeConstruction,
                     _currentBuilding.GetCurrentGrade());
+        }
+
+        private void UpgradeSounded()
+        {
+            switch (_currentBuilding.typeConstruction)
+            {
+                case GlobalTypes.TypeBuildings.GagaHouse:
+                    FMODUnity.RuntimeManager.PlayOneShot("");
+                    break;
+                case GlobalTypes.TypeBuildings.FluffCleaner:
+                    FMODUnity.RuntimeManager.PlayOneShot("");
+                    break;
+                case GlobalTypes.TypeBuildings.ClothMachine:
+                    FMODUnity.RuntimeManager.PlayOneShot("");
+                    break;
+                case GlobalTypes.TypeBuildings.Storage:
+                    FMODUnity.RuntimeManager.PlayOneShot("");
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         public void CheckBtns()
@@ -157,7 +185,7 @@ namespace Building
         private bool Buy(int price)
         {
             if (!_inventory.TryGetBunch(GlobalConstants.Money, out var moneyBunch)) return false;
-            
+
             if (moneyBunch.GetCount() < price)
                 return false;
             moneyBunch.RemoveItems(price);
@@ -174,7 +202,5 @@ namespace Building
         }
 
         public void SetInventory(Inventory inv) => _inventory = inv;
-
-
     }
 }
