@@ -21,9 +21,9 @@ namespace Characters.AI
         [Space] [Header("Settings:")]
         [SerializeField] [Range(1, 100)] private int _fluffCapacity;
 
-        private Transform _currentCleaner;
-        private BuildStorage _currentHouse;
-        private BuildStorage _currentStorage;
+        [SerializeField] private Transform _currentCleaner;
+        [SerializeField] private BuildStorage _currentHouse;
+        [SerializeField] private BuildStorage _currentStorage;
         private BuildingsPull _pull;
         private PathFinder _pathFinder;
         private Employee _employee;
@@ -151,7 +151,7 @@ namespace Characters.AI
             _index = _path.Count - 1;
         }
 
-        private bool IsDestination(Vector2 first, Vector2 second) => Vector2.Distance(first, second) < 1;
+        private bool IsDestination(Vector2 first, Vector2 second) => Vector2.Distance(first, second) < 0.25f;
         private bool IsFull() => CountUncleanFluff() >= _fluffCapacity;
         private int CountUncleanFluff() => TryGetBunch(GlobalConstants.UncleanedFluff)?.GetCount() ?? 0;
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;

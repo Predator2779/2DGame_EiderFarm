@@ -89,7 +89,9 @@ namespace Building
 
             EventHandler.OnDemolition?.Invoke(_currentBuilding.typeConstruction);
             Destroy(_currentBuilding.gameObject);
-
+            
+            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI меню стройки домик/Снести");
+            
             CheckBtns();
 
             if (_flag != null) _flag.RemoveFlag();
@@ -125,30 +127,11 @@ namespace Building
                 _currentBuilding.GetComponent<ResourceTransmitter>()
                                 .SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
 
+            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI меню стройки домик/Улучшить");
+            
             EventHandler.OnUpgraded?.Invoke(
                     _currentBuilding.typeConstruction,
                     _currentBuilding.GetCurrentGrade());
-        }
-
-        private void UpgradeSounded()
-        {
-            switch (_currentBuilding.typeConstruction)
-            {
-                case GlobalTypes.TypeBuildings.GagaHouse:
-                    FMODUnity.RuntimeManager.PlayOneShot("");
-                    break;
-                case GlobalTypes.TypeBuildings.FluffCleaner:
-                    FMODUnity.RuntimeManager.PlayOneShot("");
-                    break;
-                case GlobalTypes.TypeBuildings.ClothMachine:
-                    FMODUnity.RuntimeManager.PlayOneShot("");
-                    break;
-                case GlobalTypes.TypeBuildings.Storage:
-                    FMODUnity.RuntimeManager.PlayOneShot("");
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
         }
 
         public void CheckBtns()
