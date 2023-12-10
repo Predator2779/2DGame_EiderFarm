@@ -16,7 +16,7 @@ namespace Characters.AI
         private float _idleDelay;
         private bool _isPatrol;
         private bool _canChangeDir;
-        private bool _canChangePatrolState;
+        protected bool _canChangePatrolState;
 
         private void Start() => Initialize();
         private void OnValidate() => Initialize();
@@ -104,17 +104,16 @@ namespace Characters.AI
             float angle = 180;
             if (isRandomDir) angle = Random.Range(90, 270);
 
-            return (Quaternion.AngleAxis(angle, Vector3.forward) * direction).normalized;
+            return (Quaternion.AngleAxis(angle, Vector2.right) * direction).normalized;
         }
 
         protected Vector2 GetRandomDirection() => (Quaternion.AngleAxis(
-                Random.Range(0, 360), Vector3.forward) * Vector2.right).normalized;
+                Random.Range(0, 360), Vector2.right) * Vector2.right).normalized;
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            // развернуться при упоре в стену
             StopCoroutine(ChangeDirection(GetRandomDirection()));
-            StartCoroutine(ChangeDirection(GetOppositeDirection(other.transform.position, false)));
+            StartCoroutine(ChangeDirection(GetOppositeDirection(other.transform.position, true)));
         }
 
         protected enum EnemyStates

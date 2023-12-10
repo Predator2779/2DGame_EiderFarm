@@ -40,6 +40,7 @@ namespace Characters.AI
 
         protected void PlaySound()
         {
+            print(gameObject.name);
             if (_isPlayed) return;
             
             _eventInstance.start();

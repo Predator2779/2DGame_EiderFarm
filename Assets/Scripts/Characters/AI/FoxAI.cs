@@ -7,7 +7,8 @@ namespace Charcters.AI
     {
         [SerializeField] private float _requirePlayerDistance;
         [SerializeField] private float _requireFlagDistance;
-
+        [SerializeField] private float _radius;
+        
         private Transform _player;
         private Transform _flag;
 
@@ -15,24 +16,27 @@ namespace Charcters.AI
         {
             if (_player != null)
             {
-                if (IsLessDistance(_player, _requirePlayerDistance))
+                if (IsLessDistance(_player, _requirePlayerDistance) && CurrentState != EnemyStates.Run)
                 {
                     CurrentDirection = GetOppositeDirection(_player.position, false);
                     CurrentState = EnemyStates.Run;
-                    return;
                 }
+
+                return;
             }
 
-            if (_flag != null)
+            if (IsLessFlags())
             {
-                if (IsLessDistance(_flag, _requireFlagDistance))
-                {
-                    StopCoroutine(ChangeDirection(GetRandomDirection()));
-                    StartCoroutine(ChangeDirection(GetOppositeDirection(_flag.position, true)));
-                    CurrentState = EnemyStates.Run;
-                    return;
-                }
+                if (!IsLessDistance(_flag, _requireFlagDistance) || CurrentState == EnemyStates.Run) return;
+                
+                StopCoroutine(ChangeDirection(GetRandomDirection()));
+                StartCoroutine(ChangeDirection(GetOppositeDirection(_flag.position, true)));
+                CurrentState = EnemyStates.Run;
+
+                return;
             }
+
+            if (CurrentState == EnemyStates.Run) _canChangePatrolState = true;
 
             base.CheckConditions();
         }
@@ -40,22 +44,25 @@ namespace Charcters.AI
         private bool IsLessDistance(Transform obj, float requireDistance) =>
                 Vector2.Distance(transform.position, obj.position) < requireDistance;
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private bool IsLessFlags()
         {
-            if (other.CompareTag("Player")) _player = other.transform;
-
-            if (other.TryGetComponent(out Flag flag) &&
-                flag.isFlagAdded && _flag != flag)
+            var cols = Physics2D.OverlapCircleAll(transform.position, _radius);
+            
+            foreach (var col in cols )
+            {
+                if (!col.TryGetComponent(out Flag flag) || !flag.isFlagAdded) continue;
+                
                 _flag = flag.transform;
+                return true;
+            }
+
+            return false;
         }
 
-        private void OnTriggerExit2D(Collider2D other)
+        private void OnDrawGizmos()
         {
-            if (other.CompareTag("Player")) _player = null;
-
-            if (other.TryGetComponent(out Flag flag) &&
-                flag.isFlagAdded && _flag == flag)
-                _flag = null;
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, _radius);
         }
     }
 }
