@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db890482-7c9c-4845-aed2-97ea93e16238" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2DGame_EiderFarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BUILDINGS/BuildPlaces/CleanerPlace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BUILDINGS/BuildPlaces/CleanerPlace.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/BuildPlace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/BuildPlace.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/ClothMachinePlace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/ClothMachinePlace.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/StoragePlace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/BuildPlaces/StoragePlace.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main-Level 1.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main-Level 1.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main-Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main-Level.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start-Scene (Mobile).unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start-Scene (Mobile).unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Flag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Flag.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/CollectTasks/ItemTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Farm House/Tasks/CollectTasks/ItemTask.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Cloth Machine/Grade.1/grade1Animation.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Cloth Machine/Grade.1/grade1Animation.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.1/grade1AnimationFluff.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buildings/Converters/Fluff Cleaner/Grade.1/grade1AnimationFluff.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
-    </list>
+    <list default="true" id="db890482-7c9c-4845-aed2-97ea93e16238" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
