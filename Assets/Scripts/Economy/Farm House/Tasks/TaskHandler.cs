@@ -12,6 +12,8 @@ namespace Economy.Farm_House
         {
             ResetTasks(); /// убрать на билдинге
             
+            _tasks[0].StartTask();
+            
             EventHandler.OnTaskStageChanged.AddListener(RefreshTasksStatus);
             EventHandler.OnGiveReward.AddListener(GiveReward);
         }
