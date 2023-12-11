@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void ExitLevel() => SceneManager.LoadScene(0);
+    public void ExitLevel() => SceneManager.LoadScene(1);
 
     public void Exit() => Application.Quit();
 
