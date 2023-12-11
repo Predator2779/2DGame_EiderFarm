@@ -1144,12 +1144,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI-2
       objectReference: {fileID: 0}
+    - target: {fileID: 7409383323694776413, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -186.48006
+      objectReference: {fileID: 0}
     - target: {fileID: 8034219714849878336, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1563552816}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7323216835117717644, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
