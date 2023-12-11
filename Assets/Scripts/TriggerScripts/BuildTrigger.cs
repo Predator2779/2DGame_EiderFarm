@@ -20,7 +20,7 @@ namespace TriggerScripts
 
         private void Start() => Initialize();
 
-        private void Initialize()
+        public void Initialize()
         {
             _map = transform.GetComponentInParent<Tilemap>();
             _buildMenu.SetButtons();

@@ -107,6 +107,7 @@ public class SaveSerial : MonoBehaviour
 
         ClearAndAdd();
         LoadFlags();
+        
         BuildAndUpgrade(data.GagaHouses, _gagaHouses);
         BuildAndUpgrade(data.Cleaners, _cleaners);
         BuildAndUpgrade(data.ClothMachines, _clothMachines);
@@ -193,8 +194,9 @@ public class SaveSerial : MonoBehaviour
     {
         for (int i = 0; i < dataArray.Length; i++)
         {
+            menus[i].Initialize();
             BuildMenu buildMenu = menus[i].GetBuildMenu();
-
+            
             switch (dataArray[i])
             {
                 default: continue;
