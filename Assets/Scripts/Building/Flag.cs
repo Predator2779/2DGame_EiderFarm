@@ -44,14 +44,16 @@ public class Flag : MonoBehaviour
     {
         if (_itemBunch == null || _itemBunch.GetCount() <= 0) return;
 
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Atmosphere/Atmosphere Flag", gameObject);
+        
         isFlagAdded = true;
         _itemBunch.RemoveItems(1);
         _flagBtn.SetActive(false);
         _flag.SetActive(true);
+        
         EventHandler.FlagPanelEvent.Invoke(false);
         EventHandler.OnFlagSet?.Invoke();
         EventHandler.OnFlagSpriteChanged.RemoveListener(SetFlagSprite);
-        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Atmosphere/Atmosphere Flag", gameObject);
     }
 
     public void RemoveFlag()

@@ -168,8 +168,8 @@ namespace Building
         {
             if (!_inventory.TryGetBunch(GlobalConstants.Money, out var moneyBunch)) return false;
 
-            if (moneyBunch.GetCount() < price)
-                return false;
+            if (moneyBunch.GetCount() < price) return false;
+            
             moneyBunch.RemoveItems(price);
             EventHandler.OnBunchChanged.Invoke(GlobalConstants.Money, moneyBunch.GetCount());
             return true;

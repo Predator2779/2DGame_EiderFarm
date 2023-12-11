@@ -203,9 +203,10 @@ MonoBehaviour:
   _isPlayerInventory: 0
   _listItems:
   - _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
-    _count: 10000
+    _count: 100000
   - _item: {fileID: 11400000, guid: 65288ac64d0b23545b0e2f7b8ceb9734, type: 2}
-    _count: 50
+    _count: 100
+  _limit: 0
 --- !u!1 &1820263781624604452
 GameObject:
   m_ObjectHideFlags: 0
