@@ -250,4 +250,9 @@ public class SaveSerial : MonoBehaviour
         }
         return gb;
     }
+
+    public void OnApplicationQuit()
+    {
+        SaveGame();
+    }
 }
