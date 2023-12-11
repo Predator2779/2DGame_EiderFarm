@@ -28,16 +28,19 @@ namespace Economy.Farm_House
 
         protected override void Draw()
         {
-            if (_isHouseMenu)
-            {
-                SetBtnText("Доступные");
-                DrawTasks(GetTasks(TaskStage.NotStarted));
-                return;
-            }
-
-            SetBtnText("Мои");
-            DrawTasks(GetTasks(TaskStage.Completed));
             DrawTasks(GetTasks(TaskStage.Progressing));
+            DrawTasks(GetTasks(TaskStage.Completed));
+            
+            // if (_isHouseMenu)
+            // {
+            //     SetBtnText("Доступные");
+            //     DrawTasks(GetTasks(TaskStage.NotStarted));
+            //     return;
+            // }
+            //
+            // SetBtnText("Мои");
+            // DrawTasks(GetTasks(TaskStage.Completed));
+            // DrawTasks(GetTasks(TaskStage.Progressing));
         }
 
         private Task[] GetTasks(TaskStage stage) => _tasks.Where(task => task.GetStage() == stage).ToArray();

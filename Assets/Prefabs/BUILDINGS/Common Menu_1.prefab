@@ -440,11 +440,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2386509825448028827, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
       propertyPath: m_Name
-      value: Common Menu_1 Variant
+      value: Common Menu_1
       objectReference: {fileID: 0}
     - target: {fileID: 2386509825448028827, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2927302135616181233, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -580,11 +580,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7626448791440526852, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.22
+      value: 0.2199707
       objectReference: {fileID: 0}
     - target: {fileID: 7626448791440526852, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.35
+      value: 2.3499756
       objectReference: {fileID: 0}
     - target: {fileID: 7626448791440526852, guid: 07b7aee3a418dae4d9e646793a568360, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

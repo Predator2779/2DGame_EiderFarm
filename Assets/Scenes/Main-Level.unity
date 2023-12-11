@@ -1096,6 +1096,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2565912003107825558, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1563552816}
+    - target: {fileID: 2565912003107825558, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3000684930273133400, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1837,6 +1845,11 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
+--- !u!20 &1563552816 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 263903135797866773, guid: 5365565ee0cccde418767ade71145759, type: 3}
+  m_PrefabInstance: {fileID: 4295215124526477004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1589511525 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5089448783602680647, guid: f299813240def0a49b1fb565cc232e05, type: 3}

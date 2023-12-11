@@ -92,7 +92,10 @@ namespace Economy.Farm_House
             foreach (var task in _nextTasks)
             {
                 if (task.GetStage() == TaskStage.NotAvailable)
-                    task.SetStage(TaskStage.Progressing);//
+                {
+                    task.SetStage(TaskStage.NotStarted);
+                    task.StartTask();
+                }
             }
         }
         
