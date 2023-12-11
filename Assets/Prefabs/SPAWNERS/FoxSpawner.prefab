@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnObjs:
   - {fileID: 5755486986276998862, guid: 1731b9624e84ad94aa2939c1c66369e7, type: 3}
-  _countObjs: 5
+  _countObjs: 1
   _isRandomPos: 1
   _circle: {fileID: 8386835941854364288}
   _radius: 0

@@ -169,8 +169,9 @@ MonoBehaviour:
     \u0440\u0430\u0431\u043E\u0442\u043D\u0438\u043A 2.0"
   _currentEmployeeState: 0
   _maxDistance: 40
-  _idleDelay: 2
   _fluffCapacity: 2
+  _targetF: 1
+  _cellF: 0.5
 --- !u!114 &5987656316525160417
 MonoBehaviour:
   m_ObjectHideFlags: 0
