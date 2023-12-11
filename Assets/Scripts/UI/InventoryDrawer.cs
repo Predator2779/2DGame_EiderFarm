@@ -42,7 +42,7 @@ public class InventoryDrawer : MonoBehaviour
         }
     }
 
-    public void SwitchFlagPanel(bool yes)
+    private void SwitchFlagPanel(bool yes)
     {
         if (yes)
             _flagPanel.SetActive(true);
@@ -55,13 +55,12 @@ public class InventoryDrawer : MonoBehaviour
 
     private void UpdateFlagSprite(int count, Sprite[] flagSprites)
     {
-        if (count > 0 && !_isFlagAdded)
-        {
-            _flagImage.sprite = flagSprites[Random.Range(0, flagSprites.Length)];
-            EventHandler.OnFlagSpriteChanged.Invoke(_flagImage.sprite);
-            EventHandler.FlagPanelEvent?.Invoke(true);
-            _isFlagAdded = true;
-        }
+        if (count <= 0 || _isFlagAdded) return;
+        
+        _flagImage.sprite = flagSprites[Random.Range(0, flagSprites.Length)];
+        EventHandler.OnFlagSpriteChanged.Invoke(_flagImage.sprite);
+        EventHandler.FlagPanelEvent?.Invoke(true);
+        _isFlagAdded = true;
     }
 
     public GameObject GetFlagPanel() => _flagPanel;
