@@ -103,3 +103,6 @@ Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SD
 
 >>>>>>> animations
 >>>>>>> main
+
+/.idea/*
+/[Aa]ssets/Plugins/FMOD/Cache/*

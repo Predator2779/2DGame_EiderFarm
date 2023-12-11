@@ -25,10 +25,9 @@ namespace Characters.AI
         private BuildingsPull _pull;
         private PathFinder _pathFinder;
         private Employee _employee;
-        private Rigidbody2D _rbody;
         private Vector2 _target;
         private List<Vector2> _path = new();
-        private bool _isDelayed;
+        // private bool _isDelayed;
         private int _index;
 
         private void Start() => Initialize();
@@ -40,7 +39,6 @@ namespace Characters.AI
             _pull ??= FindObjectOfType<BuildingsPull>();
             _pathFinder ??= GetComponent<PathFinder>();
             _employee ??= GetComponent<Employee>();
-            _rbody ??= GetComponent<Rigidbody2D>();
         }
 
         private void CheckConditions()
@@ -221,13 +219,13 @@ namespace Characters.AI
             // if (!_isDelayed) StartCoroutine(Delay());
         }
 
-        private IEnumerator Delay()
-        {
-            _isDelayed = true;
-            yield return new WaitForSeconds(_idleDelay);
-            CheckConditions();
-            _isDelayed = false;
-        }
+        // private IEnumerator Delay()
+        // {
+        //     _isDelayed = true;
+        //     yield return new WaitForSeconds(_idleDelay);
+        //     CheckConditions();
+        //     _isDelayed = false;
+        // }
 
         private void Picking()
         {

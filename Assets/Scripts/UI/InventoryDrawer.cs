@@ -13,7 +13,7 @@ public class InventoryDrawer : MonoBehaviour
 
     [SerializeField] private GameObject _flagPanel;
     [SerializeField] private Image _flagImage;
-    
+
     private bool _isFlagAdded;
 
     private void Awake()
@@ -35,7 +35,7 @@ public class InventoryDrawer : MonoBehaviour
                 break;
             case UncleanedFluff:
                 _uncleanFCounter.text = points.ToString();
-                break;            
+                break;
             case GlobalConstants.Cloth:
                 _clothesCounter.text = points.ToString();
                 break;
@@ -55,14 +55,13 @@ public class InventoryDrawer : MonoBehaviour
 
     private void UpdateFlagSprite(int count, Sprite[] flagSprites)
     {
-        if(count > 0 && !_isFlagAdded)
+        if (count > 0 && !_isFlagAdded)
         {
             _flagImage.sprite = flagSprites[Random.Range(0, flagSprites.Length)];
             EventHandler.OnFlagSpriteChanged.Invoke(_flagImage.sprite);
             EventHandler.FlagPanelEvent?.Invoke(true);
             _isFlagAdded = true;
         }
-        
     }
 
     public GameObject GetFlagPanel() => _flagPanel;
