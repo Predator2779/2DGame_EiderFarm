@@ -202,18 +202,18 @@ public class SaveSerial : MonoBehaviour
                 default: continue;
                 case 1:
                     menus[i].SetConstruction();
-                    buildMenu.Build();
+                    buildMenu.Build(true);
                     continue;
                 case 2:
                     menus[i].SetConstruction();
-                    buildMenu.Build();
-                    buildMenu.Upgrade();
+                    buildMenu.Build(true);
+                    buildMenu.Upgrade(true);
                     continue;
                 case 3:
                     menus[i].SetConstruction();
-                    buildMenu.Build();
-                    buildMenu.Upgrade();
-                    buildMenu.Upgrade();
+                    buildMenu.Build(true);
+                    buildMenu.Upgrade(true);
+                    buildMenu.Upgrade(true);
                     continue;
             }
 
