@@ -184,7 +184,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isPlayerInventory: 0
-  _listItems: []
+  _listItems:
+  - _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
+    _count: 100
   _limit: 1000
 --- !u!1 &9136485320912651497
 GameObject:
