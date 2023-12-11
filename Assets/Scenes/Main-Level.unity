@@ -2688,6 +2688,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AUDIO
       objectReference: {fileID: 0}
+    - target: {fileID: 5850216344069370796, guid: 720bf77ba0f20aa4aa07d7d3ee2377db, type: 3}
+      propertyPath: StopEvent
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
