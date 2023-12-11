@@ -10,6 +10,8 @@ namespace Economy.Farm_House
         [SerializeField] protected TMP_Text _name;
         [SerializeField] protected TMP_Text _description;
         [SerializeField] protected TMP_Text _counter;
+
+        [SerializeField] protected TMP_Text _price;
         
         protected void SetButton(string description)
         {
@@ -43,5 +45,16 @@ namespace Economy.Farm_House
                 _name.text = name;
             SetButton(icon, description, count);
         }
+
+        protected void SetButton(Sprite icon, string name, string description, int count, int price, bool isShop)
+        {
+            if (_name != null)
+                _name.text = name;
+
+            if(_price != null)
+                _price.text = price.ToString();
+            SetButton(icon, description, count);
+        }
+
     }
 }

@@ -32,6 +32,8 @@ namespace Economy
 
         public string GetItemDescription() => _item.GetDescription();
 
+        public int GetItemPrice() => _item.GetPrice();
+
         public int GetCount() => _count;
 
         private void AddValue(int value) => _count += value;

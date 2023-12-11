@@ -56,7 +56,10 @@ namespace Economy.Farm_House
                 SetButton(_bunch.GetItemIcon(),
                         _bunch.GetItemName(),
                         _bunch.GetItemDescription(),
-                        _bunch.GetCount());
+                        _bunch.GetCount(),
+                        _bunch.GetItemPrice(),
+                        true);
+                        
         
         private bool IsEnoughMoney(Inventory inv, int value) =>
                 inv.IsExistsItems(GlobalConstants.Money, value);
