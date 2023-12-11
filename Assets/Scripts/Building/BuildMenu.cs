@@ -79,6 +79,24 @@ namespace Building
             EventHandler.OnBuilded?.Invoke(_currentBuilding.typeConstruction);
         }
 
+        public void Build(bool isFree)
+        {
+            if (_currentBuilding != null) return;
+
+
+            if (_triggerSprite != null)
+                _triggerSprite.enabled = false;
+
+
+            Build(_buildingPrefab);
+            _currentBuilding.SetSprite(_currentBuilding.Upgrade());
+            IsBuilded = true;
+
+            CheckBtns();
+
+            EventHandler.OnBuilded?.Invoke(_currentBuilding.typeConstruction);
+        }
+
         public void Demolition()
         {
             if (_currentBuilding == null) return;
@@ -134,8 +152,37 @@ namespace Building
                     _currentBuilding.GetCurrentGrade());
         }
 
+        public void Upgrade(bool isFree)
+        {
+            if (_currentBuilding == null || !_currentBuilding.CanUpgrade()) return;
+
+
+            _currentBuilding.SetSprite(_currentBuilding.Upgrade());
+
+            if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.GagaHouse)
+                _currentBuilding.GetComponent<FluffGiver>().CheckGrade();
+            if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.FluffCleaner ||
+                _currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.ClothMachine)
+                _currentBuilding.GetComponent<Machine>().CheckGrade();
+
+            if (_currentBuilding.GetComponent<ResourceTransmitter>() && _currentBuilding.GetComponent<Machine>())
+                _currentBuilding.GetComponent<ResourceTransmitter>()
+                                .SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
+
+            if (_currentBuilding.GetComponent<ResourceTransmitter>() && _currentBuilding.GetComponent<Machine>())
+                _currentBuilding.GetComponent<ResourceTransmitter>()
+                                .SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI меню стройки домик/Улучшить");
+
+            EventHandler.OnUpgraded?.Invoke(
+                    _currentBuilding.typeConstruction,
+                    _currentBuilding.GetCurrentGrade());
+        }
+
         public void CheckBtns()
         {
+            if(_buildBtn != null && _upgradeBtn != null && _demolitionBtn != null)
             if (!IsBuilded)
             {
                 _buildBtn.SetActive(true);
