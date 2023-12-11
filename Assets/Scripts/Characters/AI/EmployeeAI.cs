@@ -15,11 +15,13 @@ namespace Characters.AI
         [Header("Service")]
         [SerializeField] private EmployeeStates _currentEmployeeState;
         [SerializeField] private int _maxDistance;
-        [SerializeField] private float _idleDelay;
         [Space] [Header("Settings:")]
         [SerializeField] [Range(1, 100)] private int _fluffCapacity;
 
-        private Transform _currentCleaner;
+        [SerializeField] private float _targetF;
+        [SerializeField] private float _cellF;
+        
+        private Construction _currentCleaner;
         private BuildStorage _currentHouse;
         private BuildStorage _currentStorage;
         private BuildingsPull _pull;
@@ -27,7 +29,6 @@ namespace Characters.AI
         private Employee _employee;
         private Vector2 _target;
         private List<Vector2> _path = new();
-        // private bool _isDelayed;
         private int _index;
 
         private void Start() => Initialize();
@@ -89,9 +90,6 @@ namespace Characters.AI
                 case EmployeeStates.Patrol:
                     Idle();
                     break;
-                // case EmployeeStates.SideStep:
-                //     SideStep();
-                //     break;
             }
         }
 
@@ -99,13 +97,13 @@ namespace Characters.AI
         {
             if (Vector2.Distance(transform.position, _target) > _maxDistance) return;
 
-            if (!IsDestination(transform.position, _target))
+            if (IsDestination(transform.position, _target) > _targetF)
             {
                 if (_index > 0)
                 {
                     if (_path == null) return;
 
-                    if (!IsDestination(transform.position, _path[_index]))
+                    if (IsDestination(transform.position, _path[_index]) > _cellF)
                     {
                         var direction = _path[_index] - (Vector2)transform.position;
                         Walk(direction.normalized);
@@ -145,7 +143,7 @@ namespace Characters.AI
             _index = _path.Count - 1;
         }
 
-        private bool IsDestination(Vector2 first, Vector2 second) => Vector2.Distance(first, second) < 0.5f;
+        private float IsDestination(Vector2 first, Vector2 second) => Vector2.Distance(first, second);
         private bool IsFull() => CountUncleanFluff() >= _fluffCapacity;
         private int CountUncleanFluff() => TryGetBunch(GlobalConstants.UncleanedFluff)?.GetCount() ?? 0;
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;
@@ -184,7 +182,7 @@ namespace Characters.AI
                     cleaner.GetBuildMenu().GetBuilding().typeConstruction != GlobalTypes.TypeBuildings.FluffCleaner)
                     continue;
 
-                _currentCleaner = cleaner.transform;
+                _currentCleaner = cleaner.GetBuildMenu().GetBuilding();
                 return true;
             }
 
@@ -212,20 +210,11 @@ namespace Characters.AI
 
         private void Idle()
         {
-            CheckConditions(); //
+            CheckConditions();
             
             _personAnimate.Walk(_target, false);
             StopSound();
-            // if (!_isDelayed) StartCoroutine(Delay());
         }
-
-        // private IEnumerator Delay()
-        // {
-        //     _isDelayed = true;
-        //     yield return new WaitForSeconds(_idleDelay);
-        //     CheckConditions();
-        //     _isDelayed = false;
-        // }
 
         private void Picking()
         {
@@ -259,31 +248,6 @@ namespace Characters.AI
 
             WalkToTarget();
             CheckConditions();
-            //
-            // var bunch = TryGetBunch(GlobalConstants.CleanedFluff);
-            //
-            // if (bunch == null && CountCleanFluff() <= 0 || !(Vector2.Distance(transform.position, _target) < 5)) return;
-            //
-            // _currentStorage.Exchange(
-            //         _employee.GetInventory(),
-            //         _currentStorage,
-            //         bunch);
-        }
-
-        private void SideStep()
-        {
-            // /// Добавить проверку. (если некоторое время не двигается -> смена пути)
-            //
-            // CheckConditions();
-            //
-            // if (!IsDestination(transform.position, _target))
-            //     WalkToTarget();
-        }
-
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            // SetPath(_target);
-            // _currentEmployeeState = EmployeeStates.SideStep;
         }
 
         private enum EmployeeStates
@@ -292,7 +256,6 @@ namespace Characters.AI
             Picking,
             Recycling,
             Transportation,
-            SideStep,
             Patrol
         }
     }

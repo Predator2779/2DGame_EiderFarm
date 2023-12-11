@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using Characters;
 using UnityEngine;
 
 public class PathFinder : MonoBehaviour
@@ -66,7 +67,12 @@ public class PathFinder : MonoBehaviour
     {
         var colliders = Physics2D.OverlapCircleAll(nodePosition, radius, SolidLayer);
 
-        return colliders.All(col => !col.CompareTag("Obstacle"));
+        foreach (var _col in colliders)
+        {
+            if (_col.CompareTag("Obstacle") || _col.GetComponent<Person>()) return false;
+        }
+
+        return true;
     }
 
     private List<Vector2> CalculatePathFromNode(Node node)
