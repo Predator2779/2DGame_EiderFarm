@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5790238859978159372}
   - component: {fileID: 8119752006717887790}
   - component: {fileID: 277233241798781}
-  - component: {fileID: 7924215316631800172}
   - component: {fileID: 1645055648655777952}
   - component: {fileID: 4274013785058683456}
+  - component: {fileID: 4559354573640820820}
   m_Layer: 0
   m_Name: Storage
   m_TagString: Untagged
@@ -196,21 +196,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 043f914453117a745a1a914bbb9713a4, type: 3}
   - {fileID: 21300000, guid: fe01de77df3107d48859c6d5a3f76a48, type: 3}
   _currentGrade: 0
---- !u!114 &7924215316631800172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5296330802562157729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb78e7f5ebcb4bc895d087d2a4c70af7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fluffCount: 0
-  _typeToPlayer: {fileID: 11400000, guid: 159a6522252945049be044ad47855211, type: 2}
-  _characterInventory: {fileID: 0}
 --- !u!114 &1645055648655777952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +240,21 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &4559354573640820820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296330802562157729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfcd90eecabae024e954552a4da420d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fluffCount: 0
+  _typeToPlayer: {fileID: 11400000, guid: 159a6522252945049be044ad47855211, type: 2}
+  _characterInventory: {fileID: 0}
 --- !u!1 &6830579629966980656
 GameObject:
   m_ObjectHideFlags: 0

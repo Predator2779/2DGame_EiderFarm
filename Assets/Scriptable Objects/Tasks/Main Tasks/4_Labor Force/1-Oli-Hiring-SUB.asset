@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89243f1299d444aa8db3fbf4f1ca98fd, type: 3}
   m_Name: 1-Oli-Hiring-SUB
   m_EditorClassIdentifier: 
-  _stage: 0
+  _stage: 2
   _resetStage: 0
   _icon: {fileID: 21300000, guid: bbab026af1be7164b8a44f9b7d855e2b, type: 3}
   _name: "\u041D\u0430\u043D\u044F\u0442\u044C \u0440\u0430\u0431\u043E\u0447\u0435\u0433\u043E
