@@ -28,7 +28,6 @@ namespace Economy.Farm_House
         }
 
         protected abstract void Deinitialize();
-
         public abstract void CreateCell(Transform parent);
 
         public Sprite GetIcon() => _icon;
@@ -93,7 +92,7 @@ namespace Economy.Farm_House
             foreach (var task in _nextTasks)
             {
                 if (task.GetStage() == TaskStage.NotAvailable)
-                    task.SetStage(TaskStage.NotStarted);
+                    task.SetStage(TaskStage.Progressing);//
             }
         }
         
