@@ -9,8 +9,8 @@ namespace General
     public static class EventHandler
     {
         public static UnityEvent<string, int> OnBunchChanged = new(); // for UI
-
         public static UnityEvent<int> OnUpgradeChanged = new();
+        
         #region FLAGS
 
         public static UnityEvent<int, Sprite[]> OnFlagChanged = new();
