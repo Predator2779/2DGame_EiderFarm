@@ -225,6 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fa2e6fc95fbcf43870efe5c2306378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loadedScene: Main-Level
+  _cutScene: Cuscene-0
 --- !u!114 &370129052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2621,7 +2623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 85551493684295431, guid: f97c0dd0b739b8e4eb6a39a84a9cc8a9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -12.2
+      value: -12.199997
       objectReference: {fileID: 0}
     - target: {fileID: 85551493684295431, guid: f97c0dd0b739b8e4eb6a39a84a9cc8a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2730,7 +2732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4451457663609015995, guid: 464588e8b338f934a968d01009bcf166, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -37.04
+      value: -37.04001
       objectReference: {fileID: 0}
     - target: {fileID: 4451457663609015995, guid: 464588e8b338f934a968d01009bcf166, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2827,7 +2829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3965460249006346726, guid: 1243579cc9fa910468c5addfc55efded, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -66.64
+      value: -66.640015
       objectReference: {fileID: 0}
     - target: {fileID: 3965460249006346726, guid: 1243579cc9fa910468c5addfc55efded, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

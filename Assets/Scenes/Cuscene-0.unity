@@ -942,7 +942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cutScenes:
   - {fileID: 1124790715189847897}
-  _nextLoadedScene: Start-Scene (Mobile)
+  _nextLoadedScene: Main-Level
 --- !u!222 &3024285085092441236
 CanvasRenderer:
   m_ObjectHideFlags: 0
