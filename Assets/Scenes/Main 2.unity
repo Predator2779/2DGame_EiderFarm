@@ -333,17 +333,6 @@ Sprite:
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
---- !u!114 &179353301 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4836821510209801568, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
-  m_PrefabInstance: {fileID: 1030999271}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!213 &345382409
 Sprite:
   m_ObjectHideFlags: 0
@@ -1055,26 +1044,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 806717704500577868, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 806717704500577868, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1628313785450708044, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2565912003107825558, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1563552816}
-    - target: {fileID: 2884492516698948712, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3000684930273133400, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1115,58 +1088,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3032447132925251582, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3861589768070961592, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 914002007}
-    - target: {fileID: 3861589768070961592, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3971417818279321124, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3971417818279321124, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4184340910326118677, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4184340910326118677, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 166b211191e5b3c4f9592825544b1239, type: 3}
     - target: {fileID: 7183966054052693947, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
       propertyPath: m_Name
       value: UI-2
       objectReference: {fileID: 0}
-    - target: {fileID: 8012062044832378624, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
-      propertyPath: _flagImage
-      value: 
-      objectReference: {fileID: 179353301}
-    - target: {fileID: 8012062044832378624, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
-      propertyPath: _ksuhaSprites.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8012062044832378624, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
-      propertyPath: _ksuhaSprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 633d939ac04619a489a3d8aba57debdf, type: 3}
-    - target: {fileID: 8012062044832378624, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
-      propertyPath: _ksuhaSprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 03aee3abf7238bb498fed8c1a5eec23e, type: 3}
-    - target: {fileID: 8012062044832378624, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
-      propertyPath: _ksuhaSprites.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 166b211191e5b3c4f9592825544b1239, type: 3}
     - target: {fileID: 8034219714849878336, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
       propertyPath: m_Camera
       value: 

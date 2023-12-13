@@ -114,6 +114,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 449568004539122333, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 733230576131683345, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0.51
@@ -230,9 +234,13 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1855300807405196507, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2680448933005731689, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4078072832746986857, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -426,6 +434,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6672855950691873829, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
+      propertyPath: _flagImage
+      value: 
+      objectReference: {fileID: 4836821510209801568}
+    - target: {fileID: 6672855950691873829, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
+      propertyPath: _ksuhaSprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672855950691873829, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
+      propertyPath: _ksuhaSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 633d939ac04619a489a3d8aba57debdf, type: 3}
+    - target: {fileID: 6672855950691873829, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
+      propertyPath: _ksuhaSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 03aee3abf7238bb498fed8c1a5eec23e, type: 3}
+    - target: {fileID: 6672855950691873829, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
+      propertyPath: _ksuhaSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 166b211191e5b3c4f9592825544b1239, type: 3}
     - target: {fileID: 7019260783906376414, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
       propertyPath: m_text
       value: 0
@@ -511,6 +539,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
+--- !u!114 &4836821510209801568 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8121651840540382789, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
+  m_PrefabInstance: {fileID: 3722841750118112037}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &9075389451448462955 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5645387784410707278, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
