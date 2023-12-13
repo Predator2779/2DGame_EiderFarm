@@ -21,36 +21,44 @@ public class FluffGiver : MonoBehaviour
     [Header("Количество воспроизв. пуха по улучшениям (открыть стрелочку слева)")]
     [SerializeField, Range(1,100)] private int[] _ugradeFluffCount;
 
+    [SerializeField] private Sprite[] _spritesWithFluff;
+    
     private BuildStorage _storage;
     private ResourceTransmitter _transmitter;
-    private bool hasGivenFluff;
-
-    [SerializeField] private Sprite[] _spritesWithFluff;
     private SpriteRenderer _sprRender;
     private Construction _construction;
+    private bool _hasGivenFluff;
+    private bool _isInitialized;
 
-    private void Start()
+    private void Start() => Initialize();
+
+    public void Initialize()
     {
+        if (_isInitialized) return;
+        
         _storage = GetComponent<BuildStorage>();
         _transmitter = GetComponent<ResourceTransmitter>();
         _sprRender = GetComponent<SpriteRenderer>();
         _construction = GetComponent<Construction>();
+        
         CheckGrade();
         StartCoroutine(CreateFluff());
+        
+        _isInitialized = true;
     }
     
     private void GiveFluff()
     {
-        if (hasGivenFluff) return;
+        if (_hasGivenFluff) return;
 
-        hasGivenFluff = true;
+        _hasGivenFluff = true;
         if (Random.Range(0, 100) < _chance)
         {
             _storage.AddFluff(_fluffCount);
             _transmitter.CheckBag();
             ChangeSpriteFromNullToFluff();
         }
-        hasGivenFluff = false;
+        _hasGivenFluff = false;
     }
 
     public void CheckGrade()

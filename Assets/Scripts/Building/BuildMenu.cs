@@ -161,7 +161,13 @@ namespace Building
             _currentBuilding.SetSprite(_currentBuilding.Upgrade());
 
             if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.GagaHouse)
-                _currentBuilding.GetComponent<FluffGiver>().CheckGrade();
+            {
+                var giver = _currentBuilding.GetComponent<FluffGiver>();
+                
+                giver.Initialize();
+                giver.CheckGrade();
+            }
+            
             if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.FluffCleaner ||
                 _currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.ClothMachine)
                 _currentBuilding.GetComponent<Machine>().CheckGrade();
