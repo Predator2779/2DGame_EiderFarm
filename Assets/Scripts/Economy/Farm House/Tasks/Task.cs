@@ -1,3 +1,4 @@
+using Building;
 using UnityEngine;
 using EventHandler = General.EventHandler;
 
@@ -18,7 +19,7 @@ namespace Economy.Farm_House
 
         [Header("Set available tasks")]
         [SerializeField] protected Task[] _nextTasks;
-
+        
         protected abstract void Initialize();
 
         private void Reinitialize()
@@ -29,7 +30,7 @@ namespace Economy.Farm_House
 
         protected abstract void Deinitialize();
         public abstract void CreateCell(Transform parent);
-
+        
         public Sprite GetIcon() => _icon;
         public string GetName() => _name;
         public string GetDescription() => _description;

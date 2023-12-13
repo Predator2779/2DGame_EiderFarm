@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed151be32864cc3a17edac02ffb695a, type: 3}
   m_Name: 1-CreateStorage-SUB
   m_EditorClassIdentifier: 
-  _stage: 3
+  _stage: 0
   _resetStage: 0
   _icon: {fileID: 21300000, guid: c66f84d3cb21bf2489c9ea1608b261b3, type: 3}
   _name: "\u041F\u043E\u0441\u0442\u0440\u043E\u0438\u0442\u044C \u0441\u043A\u043B\u0430\u0434"
@@ -26,5 +26,5 @@ MonoBehaviour:
   _nextTasks: []
   _cellPrefab: {fileID: 2800116051798515356, guid: 6e6d042e3c1206a47b503c538abb5442, type: 3}
   _requireCount: 1
-  _currentCount: 1
+  _currentCount: 0
   _buildType: 3

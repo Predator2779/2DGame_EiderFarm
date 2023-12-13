@@ -342,7 +342,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7298571379754579918}
-  - component: {fileID: 5676653089589038779}
   m_Layer: 5
   m_Name: HouseMenu
   m_TagString: Untagged
@@ -377,21 +376,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5676653089589038779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3318960362550864178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf1ac9807816414ba98ce2cf8ada62b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _shopMenu: {fileID: 4362042400771594}
-  _taskHandler: {fileID: 4958275968342431167}
-  _personalMenu: {fileID: 389792708353609203}
 --- !u!1 &4275312172148959788
 GameObject:
   m_ObjectHideFlags: 0

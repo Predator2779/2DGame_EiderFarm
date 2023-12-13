@@ -21,7 +21,7 @@ namespace Economy.Farm_House.Menues
         {
             if (_isHouseMenu)
             {
-                SetBtnText("Фермерский домик");
+                SetBtnText("Магазин");
                 DrawInventory(_assortment);
                 return;
             }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89243f1299d444aa8db3fbf4f1ca98fd, type: 3}
   m_Name: 1-Oli-Hiring-SUB
   m_EditorClassIdentifier: 
-  _stage: 2
+  _stage: 0
   _resetStage: 0
   _icon: {fileID: 21300000, guid: bbab026af1be7164b8a44f9b7d855e2b, type: 3}
   _name: "\u041D\u0430\u043D\u044F\u0442\u044C \u0440\u0430\u0431\u043E\u0447\u0435\u0433\u043E
@@ -28,4 +28,4 @@ MonoBehaviour:
   _nextTasks: []
   _cellPrefab: {fileID: 1450947221153099899, guid: 4a56b4d2851b4f0448978e45f3ff13d5, type: 3}
   _requiredEmployees:
-  - {fileID: 8307517251854064901, guid: f73f35d34c0e8fb449b87b3802d913f4, type: 3}
+  - {fileID: 7934326965898499444, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}

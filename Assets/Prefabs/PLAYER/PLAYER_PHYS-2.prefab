@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095f9ac3038800c469f1dc71a9042567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 4
+  _speed: 7
   _runSpeed: 0
   _name: "\u0410\u0440\u043D\u0438"
 --- !u!114 &811996131228905330

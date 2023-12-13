@@ -102,7 +102,7 @@ public class MyJoystick : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDr
         handle.anchoredPosition = Vector2.zero;
     }
 
-    protected virtual void HandleInput(float magnitude, Vector2 normalised, Vector2 radius, Camera cam)
+    protected void HandleInput(float magnitude, Vector2 normalised, Vector2 radius, Camera cam)
     {
         if (magnitude > deadZone)
         {
@@ -129,19 +129,21 @@ public class MyJoystick : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDr
         if (axisOptions == AxisOptions.Both)
         {
             float angle = Vector2.Angle(input, Vector2.up);
+
             if (snapAxis == AxisOptions.Horizontal)
             {
                 if (angle < 22.5f || angle > 157.5f)
                     return 0;
-                else
-                    return (value > 0) ? 1 : -1;
+
+                return value;
             }
-            else if (snapAxis == AxisOptions.Vertical)
+
+            if (snapAxis == AxisOptions.Vertical)
             {
                 if (angle > 67.5f && angle < 112.5f)
                     return 0;
-                else
-                    return (value > 0) ? 1 : -1;
+
+                return value;
             }
 
             return value;

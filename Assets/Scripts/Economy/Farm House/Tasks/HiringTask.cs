@@ -13,8 +13,11 @@ namespace Economy.Farm_House
         [Header("Employees")]
         [SerializeField] private Employee[] _requiredEmployees;
 
-        protected override void Initialize() =>
-                EventHandler.OnEmployeeHired.AddListener(ProgressingTask);
+        protected override void Initialize()
+        {
+            EventHandler.OnEmployeeHired.AddListener(ProgressingTask);
+            ProgressingTask();
+        }
 
         protected override void Deinitialize() =>
                 EventHandler.OnEmployeeHired.RemoveListener(ProgressingTask);
@@ -22,6 +25,11 @@ namespace Economy.Farm_House
         public override void CreateCell(Transform parent) =>
                 Instantiate(_cellPrefab, parent).SetCell(this);
 
-        protected override bool SomeCondition() => _requiredEmployees.All(e => !e.CanHiring());
+        protected override bool SomeCondition() => _requiredEmployees.All(e => e.CanHiring());
+
+        private void ScanEmployees()
+        {
+            
+        }
     }
 }
