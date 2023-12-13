@@ -149,9 +149,7 @@ namespace Characters.AI
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;
 
         private ItemBunch TryGetBunch(string name) => _employee.GetInventory().TryGetBunch(
-                name, out ItemBunch bunch)
-                ? bunch
-                : null;
+                name, out ItemBunch bunch) ? bunch : null;
 
         private bool CanPickFluff()
         {

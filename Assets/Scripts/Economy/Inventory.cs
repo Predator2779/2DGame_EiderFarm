@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Building.Constructions;
+using General;
 using UnityEngine;
 using EventHandler = General.EventHandler;
 
@@ -84,7 +85,6 @@ namespace Economy
             else bunch.AddItems(count);
         }
 
-
         private void Remove(Item item, int count)
         {
             if (!TryGetBunch(item.GetName(), out ItemBunch bunch)) return;
@@ -121,12 +121,12 @@ namespace Economy
             }
 
             TryGetBunch(item.GetName(), out ItemBunch newBunch);
-
             return newBunch;
         }
 
         private void CheckCount(ItemBunch bunch)
         {
+            if (bunch.GetItem().GetName() == GlobalConstants.Money) return;
             if (bunch.GetCount() <= 0) _listItems.Remove(bunch);
         }
 

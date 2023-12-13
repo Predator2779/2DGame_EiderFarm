@@ -88,6 +88,7 @@ namespace TriggerScripts
             {
                 SetConstruction();
                 _buildMenu.SetInventory(other.gameObject.GetComponent<Inventory>());
+                
                 if (other.gameObject.GetComponent<Inventory>().
                           TryGetBunch(GlobalConstants.Flag, out var bunch)) 
                     _buildMenu.HasFlag = bunch.GetCount() > 0;

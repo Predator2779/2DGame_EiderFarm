@@ -34,6 +34,7 @@ namespace Building
         [SerializeField, Range(0, 1000)] private int _sellPrice;
 
         private Inventory _inventory;
+        private ItemBunch _moneyBunch;
 
         public bool HasFlag;
         public bool IsBuilded;
@@ -107,9 +108,9 @@ namespace Building
 
             EventHandler.OnDemolition?.Invoke(_currentBuilding.typeConstruction);
             Destroy(_currentBuilding.gameObject);
-            
+
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI меню стройки домик/Снести");
-            
+
             CheckBtns();
 
             if (_flag != null) _flag.RemoveFlag();
@@ -146,7 +147,7 @@ namespace Building
                                 .SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
 
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI меню стройки домик/Улучшить");
-            
+
             EventHandler.OnUpgraded?.Invoke(
                     _currentBuilding.typeConstruction,
                     _currentBuilding.GetCurrentGrade());
@@ -182,7 +183,8 @@ namespace Building
 
         public void CheckBtns()
         {
-            if(_buildBtn != null && _upgradeBtn != null && _demolitionBtn != null)
+            if (_buildBtn == null || _upgradeBtn == null || _demolitionBtn == null) return;
+
             if (!IsBuilded)
             {
                 _buildBtn.SetActive(true);
@@ -215,18 +217,15 @@ namespace Building
         {
             if (!_inventory.TryGetBunch(GlobalConstants.Money, out var moneyBunch) ||
                 moneyBunch.GetCount() < price) return false;
-            
-            moneyBunch.RemoveItems(price);
-            EventHandler.OnBunchChanged.Invoke(GlobalConstants.Money, moneyBunch.GetCount());
+
+            _inventory.RemoveItems(moneyBunch.GetItem(), price);
             return true;
         }
 
         private void Sell(int price)
         {
-            _inventory.TryGetBunch(GlobalConstants.Money, out var moneyBunch);
-
-            moneyBunch.AddItems(price);
-            EventHandler.OnBunchChanged.Invoke(GlobalConstants.Money, moneyBunch.GetCount());
+            if (_moneyBunch != null)
+                _inventory.AddItems(_moneyBunch.GetItem(), price);
         }
 
         public void SetInventory(Inventory inv) => _inventory = inv;
