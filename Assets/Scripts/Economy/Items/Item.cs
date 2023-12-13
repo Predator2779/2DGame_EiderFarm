@@ -12,12 +12,15 @@ namespace Economy
         [SerializeField] private int _price;
 
         [SerializeField] private Sprite[] _sprites;
+        private Sprite _currentSprite;
 
         [SerializeField] private bool _isOneAtTime;
 
         public Sprite GetIcon() => _icon;
 
         public Sprite[] GetSprites() => _sprites;
+
+        public Sprite GetCurrentSprite() => _currentSprite;
         public string GetName() => _name;
         public string GetDescription() => _description;
         public int GetPrice() => _price;

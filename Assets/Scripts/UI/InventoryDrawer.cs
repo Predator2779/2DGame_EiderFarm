@@ -14,6 +14,8 @@ public class InventoryDrawer : MonoBehaviour
     [SerializeField] private GameObject _flagPanel;
     [SerializeField] private Image _flagImage;
 
+    [SerializeField] private Sprite[] _ksuhaSprites;
+
     private bool _isFlagAdded;
 
     private void Awake()
@@ -56,8 +58,10 @@ public class InventoryDrawer : MonoBehaviour
     private void UpdateFlagSprite(int count, Sprite[] flagSprites)
     {
         if (count <= 0 || _isFlagAdded) return;
-        
-        _flagImage.sprite = flagSprites[Random.Range(0, flagSprites.Length)];
+
+        int value = Random.Range(0, flagSprites.Length);
+        _flagImage.sprite = flagSprites[value];
+        _flagPanel.GetComponent<Image>().sprite = _ksuhaSprites[value];
         EventHandler.OnFlagSpriteChanged.Invoke(_flagImage.sprite);
         EventHandler.FlagPanelEvent?.Invoke(true);
         _isFlagAdded = true;
