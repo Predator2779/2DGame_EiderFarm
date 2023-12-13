@@ -84,20 +84,6 @@ namespace Economy
             else bunch.AddItems(count);
         }
 
-        public ItemBunch GetBunch(Item item)
-        {
-            ItemBunch bunch = new ItemBunch(item);
-
-            if (!IsExistsItems(item.GetName(), 0))
-            {
-                _listItems.Add(bunch);
-                return bunch;
-            }
-
-            TryGetBunch(item.GetName(), out ItemBunch newBunch);
-
-            return newBunch;
-        }
 
         private void Remove(Item item, int count)
         {
@@ -122,6 +108,21 @@ namespace Economy
 
             itemBunch = null;
             return false;
+        }
+        
+        public ItemBunch GetBunch(Item item)
+        {
+            ItemBunch bunch = new ItemBunch(item);
+
+            if (!IsExistsItems(item.GetName(), 0))
+            {
+                _listItems.Add(bunch);
+                return bunch;
+            }
+
+            TryGetBunch(item.GetName(), out ItemBunch newBunch);
+
+            return newBunch;
         }
 
         private void CheckCount(ItemBunch bunch)

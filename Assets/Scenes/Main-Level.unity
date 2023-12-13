@@ -680,6 +680,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2846992885868396912, guid: f299813240def0a49b1fb565cc232e05, type: 3}
   m_PrefabInstance: {fileID: 1840146213}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &695386144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5051790840111504609, guid: 720bf77ba0f20aa4aa07d7d3ee2377db, type: 3}
+  m_PrefabInstance: {fileID: 3390096662386218628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &706669964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1094,6 +1099,34 @@ PrefabInstance:
     - target: {fileID: 3000684930273133400, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533470706025584781, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: _audio
+      value: 
+      objectReference: {fileID: 695386144}
+    - target: {fileID: 3861589768070961592, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5069678491385381035}
+    - target: {fileID: 3861589768070961592, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 108836119157750684}
+    - target: {fileID: 3861589768070961592, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SaveGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861589768070961592, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ExitLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861589768070961592, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SaveSerial, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861589768070961592, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Menu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3971417818279321124, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2466,6 +2499,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a633d024163675f48863759ac430047f, type: 3}
+--- !u!114 &108836119157750684 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2381571922620921615, guid: a633d024163675f48863759ac430047f, type: 3}
+  m_PrefabInstance: {fileID: 108836119157750683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35fa2e6fc95fbcf43870efe5c2306378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3390096662386218628
 PrefabInstance:
   m_ObjectHideFlags: 0
