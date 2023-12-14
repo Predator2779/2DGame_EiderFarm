@@ -90,6 +90,7 @@ public class SaveSerial : MonoBehaviour
         data.Storages = SaveDataGrades(_storages);
         SaveFlags();
 
+        _menu.SetSaves(true);
 
         bf.Serialize(file, data);
         file.Close();
@@ -112,6 +113,8 @@ public class SaveSerial : MonoBehaviour
         BuildAndUpgrade(data.Cleaners, _cleaners);
         BuildAndUpgrade(data.ClothMachines, _clothMachines);
         BuildAndUpgrade(data.Storages, _storages);
+
+        
     }
 
     private void ResetData()
@@ -133,6 +136,8 @@ public class SaveSerial : MonoBehaviour
 
         data.Flags = new bool[0];
         data.flagSprites = new int[0];
+
+        _menu.SetSaves(false);
     }
 
     private int[] SaveDataGrades(BuildTrigger[] menus)

@@ -303,6 +303,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fa2e6fc95fbcf43870efe5c2306378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loadedScene: 
+  _cutScene: 
+  _loadGameButton: {fileID: 6437605120999373181}
 --- !u!1 &1129905373
 GameObject:
   m_ObjectHideFlags: 0
