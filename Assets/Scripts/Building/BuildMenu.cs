@@ -146,6 +146,9 @@ namespace Building
                 _currentBuilding.GetComponent<ResourceTransmitter>()
                                 .SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
 
+            if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.Storage)
+                _currentBuilding.GetComponent<StorageSpriteChanger>().ChangeToGradeSprite();
+
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI меню стройки домик/Улучшить");
 
             EventHandler.OnUpgraded?.Invoke(
@@ -163,11 +166,11 @@ namespace Building
             if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.GagaHouse)
             {
                 var giver = _currentBuilding.GetComponent<FluffGiver>();
-                
+
                 giver.Initialize();
                 giver.CheckGrade();
             }
-            
+
             if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.FluffCleaner ||
                 _currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.ClothMachine)
                 _currentBuilding.GetComponent<Machine>().CheckGrade();

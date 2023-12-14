@@ -48,5 +48,6 @@ namespace Building.Constructions
             }
             return sprites[0];
         }
+
     }
 }
