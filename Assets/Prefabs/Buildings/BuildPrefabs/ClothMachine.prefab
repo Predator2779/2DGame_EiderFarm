@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 5806867218413712330}
   - component: {fileID: 7179212813463761311}
   - component: {fileID: 2469458603659518761}
-  - component: {fileID: -9006404705314180767}
   m_Layer: 0
   m_Name: ClothMachine
   m_TagString: Untagged
@@ -196,6 +195,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 89c95003a6d57754883533e544efaba9, type: 3}
   - {fileID: 21300000, guid: 029e7ba9a690dae44964fb57b733bb79, type: 3}
   _currentGrade: 0
+  _buildSound: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
+    \u0442\u043A\u0430\u0446\u043A\u0438\u0439 \u0441\u0442\u0430\u043D\u043E\u043A
+    2.0/\u0421\u0442\u0440\u043E\u0438\u0442\u044C 2.0"
 --- !u!114 &5617066704552950403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,39 +265,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-9006404705314180767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6516709680449119309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1973587337
-      Data2: 1271382646
-      Data3: 1310108550
-      Data4: -546962969
-    Path: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
-      \u0442\u043A\u0430\u0446\u043A\u0438\u0439 \u0441\u0442\u0430\u043D\u043E\u043A
-      2.0/\u0421\u0442\u0440\u043E\u0438\u0442\u044C 2.0"
-  Event: 
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &8455517892580568423
 GameObject:
   m_ObjectHideFlags: 0

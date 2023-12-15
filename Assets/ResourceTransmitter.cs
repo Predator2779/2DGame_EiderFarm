@@ -24,7 +24,7 @@ public class ResourceTransmitter : MonoBehaviour
     private Machine _machine;
     private Sprite _sprite;
 
-    private void Awake()
+    public void Awake()
     {
         _construction = GetComponent<Construction>();
         _storage = GetComponent<BuildStorage>();

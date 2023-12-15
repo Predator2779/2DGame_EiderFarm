@@ -11,7 +11,8 @@ namespace Building.Constructions
         [SerializeField] private Transform _entryPoint;
         [SerializeField] private Sprite[] _gradeBuildings;
         [SerializeField] private int _currentGrade;
-
+        [SerializeField] private string _buildSound;
+        
         private SpriteRenderer _spriteRenderer;
         private ResourceTransmitter _transmitter;
 
@@ -27,6 +28,8 @@ namespace Building.Constructions
         public Sprite GetFirstGrade() => _gradeBuildings[0];
 
         public Sprite[] GetGradeBuildings() => _gradeBuildings;
+
+        public string GetBuildSound() => _buildSound;
 
         public void SetSprite(Sprite sprite) => _spriteRenderer.sprite = sprite;
 

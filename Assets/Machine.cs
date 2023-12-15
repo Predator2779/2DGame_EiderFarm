@@ -26,9 +26,14 @@ public class Machine : MonoBehaviour
     [Header("Сколько пуха за раз по улучшениям (открыть стрелочку слева)")]
     [SerializeField, Range(1, 100)] private int[] _ugradeFluffCount;
 
+    private bool _isInitialized;
 
-    private void Start()
+    private void Start() => Initialize();
+
+    public void Initialize()
     {
+        if (_isInitialized) return;
+        
         _construction = GetComponent<Construction>();
         _storage = GetComponent<BuildStorage>();
         _converter = GetComponent<Converter>();
@@ -36,6 +41,8 @@ public class Machine : MonoBehaviour
 
         _transmitter.TransmitteEvent += Production;
         CheckGrade();
+        
+        _isInitialized = true;
     }
 
     private void Make(int _fluffCount)

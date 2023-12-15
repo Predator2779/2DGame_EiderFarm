@@ -70,11 +70,12 @@ namespace Building
             if (_triggerSprite != null)
                 _triggerSprite.enabled = false;
 
-
             Build(_buildingPrefab);
             _currentBuilding.SetSprite(_currentBuilding.Upgrade());
             IsBuilded = true;
-
+            
+            FMODUnity.RuntimeManager.PlayOneShotAttached(_buildingPrefab.GetBuildSound(), gameObject);
+            
             CheckBtns();
 
             EventHandler.OnBuilded?.Invoke(_currentBuilding.typeConstruction);
@@ -84,10 +85,8 @@ namespace Building
         {
             if (_currentBuilding != null) return;
 
-
             if (_triggerSprite != null)
                 _triggerSprite.enabled = false;
-
 
             Build(_buildingPrefab);
             _currentBuilding.SetSprite(_currentBuilding.Upgrade());
@@ -108,7 +107,7 @@ namespace Building
 
             EventHandler.OnDemolition?.Invoke(_currentBuilding.typeConstruction);
             Destroy(_currentBuilding.gameObject);
-
+            
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI меню стройки домик/Снести");
 
             CheckBtns();
@@ -134,6 +133,7 @@ namespace Building
 
             if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.GagaHouse)
                 _currentBuilding.GetComponent<FluffGiver>().CheckGrade();
+            
             if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.FluffCleaner ||
                 _currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.ClothMachine)
                 _currentBuilding.GetComponent<Machine>().CheckGrade();
@@ -157,20 +157,24 @@ namespace Building
         {
             if (_currentBuilding == null || !_currentBuilding.CanUpgrade()) return;
 
-
             _currentBuilding.SetSprite(_currentBuilding.Upgrade());
 
             if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.GagaHouse)
             {
                 var giver = _currentBuilding.GetComponent<FluffGiver>();
-                
+
                 giver.Initialize();
                 giver.CheckGrade();
             }
-            
+
             if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.FluffCleaner ||
                 _currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.ClothMachine)
-                _currentBuilding.GetComponent<Machine>().CheckGrade();
+            {
+                var machine = _currentBuilding.GetComponent<Machine>();
+
+                machine.Initialize();
+                machine.CheckGrade();
+            }
 
             if (_currentBuilding.GetComponent<ResourceTransmitter>() && _currentBuilding.GetComponent<Machine>())
                 _currentBuilding.GetComponent<ResourceTransmitter>()
@@ -179,8 +183,6 @@ namespace Building
             if (_currentBuilding.GetComponent<ResourceTransmitter>() && _currentBuilding.GetComponent<Machine>())
                 _currentBuilding.GetComponent<ResourceTransmitter>()
                                 .SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
-
-            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI меню стройки домик/Улучшить");
 
             EventHandler.OnUpgraded?.Invoke(
                     _currentBuilding.typeConstruction,

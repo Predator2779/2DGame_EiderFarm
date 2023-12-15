@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panelUI: {fileID: 2795513817969799166}
-  _houseMenu: {fileID: 5045012571634993271}
+  _houseMenu: {fileID: 0}
 --- !u!60 &5996649275729495458
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1377,11 +1377,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 977267878239523640, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_Size
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 977267878239523640, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1059672201280423887, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: _listItems.Array.size
@@ -1425,7 +1425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1255986280711010438, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_Value
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1999806323286601480, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_IsActive
@@ -1621,7 +1621,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 05bf73c20f2ea9544acd4738b265a9dd, type: 2}
     - target: {fileID: 5185622769439147131, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 512.72424
+      value: 512.72437
       objectReference: {fileID: 0}
     - target: {fileID: 5468336205536155252, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_IsActive
@@ -1633,6 +1633,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5861419363362830659, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861419363362830659, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6232645264431525260, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
@@ -1797,11 +1801,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8094500542938198758, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_Size
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8094500542938198758, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8403141940066574173, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1833,7 +1837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8889584840645363237, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 512.72424
+      value: 512.72437
       objectReference: {fileID: 0}
     - target: {fileID: 9019696190864530422, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_IsActive
@@ -1918,17 +1922,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2569851649706288147, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
   m_PrefabInstance: {fileID: 631904575015290572}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5045012571634993271 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5676653089589038779, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
-  m_PrefabInstance: {fileID: 631904575015290572}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2795513817969799166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf1ac9807816414ba98ce2cf8ada62b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5424218502047849249 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4864529857491688941, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}

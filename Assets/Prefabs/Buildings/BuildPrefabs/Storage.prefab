@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8119752006717887790}
   - component: {fileID: 277233241798781}
   - component: {fileID: 1645055648655777952}
-  - component: {fileID: 4274013785058683456}
   - component: {fileID: 4559354573640820820}
   m_Layer: 0
   m_Name: Storage
@@ -196,6 +195,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 043f914453117a745a1a914bbb9713a4, type: 3}
   - {fileID: 21300000, guid: fe01de77df3107d48859c6d5a3f76a48, type: 3}
   _currentGrade: 0
+  _buildSound: "event:/\u0421\u0442\u0440\u043E\u0439\u043A\u0430 \u0441\u043A\u043B\u0430\u0434\u0430"
 --- !u!114 &1645055648655777952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,37 +209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fluffCount: 30
---- !u!114 &4274013785058683456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5296330802562157729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -455867650
-      Data2: 1159932341
-      Data3: 1565707927
-      Data4: 1643573041
-    Path: "event:/\u0421\u0442\u0440\u043E\u0439\u043A\u0430 \u0441\u043A\u043B\u0430\u0434\u0430"
-  Event: 
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!114 &4559354573640820820
 MonoBehaviour:
   m_ObjectHideFlags: 0
