@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 277233241798781}
   - component: {fileID: 1645055648655777952}
   - component: {fileID: 4559354573640820820}
+  - component: {fileID: 850811214579393393}
   m_Layer: 0
   m_Name: Storage
   m_TagString: Untagged
@@ -224,6 +225,23 @@ MonoBehaviour:
   _fluffCount: 0
   _typeToPlayer: {fileID: 11400000, guid: 159a6522252945049be044ad47855211, type: 2}
   _characterInventory: {fileID: 0}
+--- !u!114 &850811214579393393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296330802562157729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f2013bbe51bbe42a15e9bd453f6231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gradesOpenStorageSprites:
+  - {fileID: 21300000, guid: 7dd1b6b7b30bf7040abe565057cc6b7b, type: 3}
+  - {fileID: 21300000, guid: 5eff5e9097f09984bb0b4d88cbef33b0, type: 3}
+  - {fileID: 21300000, guid: 7a405464561e9304a83d7e47465f3463, type: 3}
+  _construciton: {fileID: 0}
 --- !u!1 &6830579629966980656
 GameObject:
   m_ObjectHideFlags: 0

@@ -2606,6 +2606,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3324752455631967444, guid: 5365565ee0cccde418767ade71145759, type: 3}
+      propertyPath: _listItems.Array.data[0]._count
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324752455631967444, guid: 5365565ee0cccde418767ade71145759, type: 3}
       propertyPath: _listItems.Array.data[1]._count
       value: 200
       objectReference: {fileID: 0}

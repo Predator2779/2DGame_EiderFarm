@@ -146,6 +146,9 @@ namespace Building
                 _currentBuilding.GetComponent<ResourceTransmitter>()
                                 .SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
 
+            if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.Storage)
+                _currentBuilding.GetComponent<StorageSpriteChanger>().ChangeToGradeSprite();
+
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI меню стройки домик/Улучшить");
 
             EventHandler.OnUpgraded?.Invoke(
