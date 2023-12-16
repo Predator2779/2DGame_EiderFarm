@@ -22,6 +22,8 @@ public class Menu : MonoBehaviour
         if (_loadGameButton != null)
             if (_isHasSaves)
                 _loadGameButton.interactable = true;
+
+        Screen.orientation = ScreenOrientation.Portrait;
     }
 
     public void StartLevel(bool isNewGame)
