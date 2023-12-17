@@ -21,6 +21,10 @@ public class PathFinder2 : MonoBehaviour
     // Depth
     private Dictionary<int, Node> _visited = new();
     private Stack<Node> _toVisit = new();
+    
+    // Width
+    private Dictionary<int, Node> _visitedQueue = new();
+    private Queue<Node> _toVisitQueue = new Queue<Node>();
 
     public List<Vector2> pathToTarget;
     public bool isFinded;
@@ -55,6 +59,7 @@ public class PathFinder2 : MonoBehaviour
                 InitSearchInDepth();
                 break;
             case PFindAlgorithm.Width:
+                InitSearchInWidth();
                 break;
             case PFindAlgorithm.Directed:
                 break;
@@ -79,12 +84,13 @@ public class PathFinder2 : MonoBehaviour
         switch (_algorithm)
         {
             case PFindAlgorithm.AStar:
-                AStar();
+                SearchAStar();
                 break;
             case PFindAlgorithm.Depth:
                 SearchInDepth();
                 break;
             case PFindAlgorithm.Width:
+                SearchInWidth();
                 break;
             case PFindAlgorithm.Directed:
                 break;
@@ -93,7 +99,7 @@ public class PathFinder2 : MonoBehaviour
         }
     }
 
-    private void AStar()
+    private void SearchAStar()
     {
         if (_waitingNodes.Count <= 0) return;
 
@@ -175,37 +181,58 @@ public class PathFinder2 : MonoBehaviour
                 _visited.Add(nodeToCheck.GetHashCode(), nodeToCheck);
                 break;
         }
+    }   
+    
+    private void InitSearchInWidth()
+    {
+        _visitedQueue = new Dictionary<int, Node>();
+        _toVisitQueue = new Queue<Node>();
+        _toVisitQueue.Enqueue(_startNode);
+
+        isFinded = false;
+        isWorked = true;
     }
 
-    // private Node SearchInWidth(Node entry, Node target)
-    // {
-    //     Dictionary<int, Node> visited = new Dictionary<int, Node>();
-    //     Queue<Node> toVisit = new Queue<Node>();
-    //
-    //     toVisit.Enqueue(entry);
-    //
-    //     while (toVisit.Count > 0)
-    //     {
-    //         Node current = toVisit.Dequeue();
-    //
-    //         if (current.Equals(target))
-    //         {
-    //             return current;
-    //         }
-    //
-    //         visited.Add(current.GetHashCode(), current);
-    //         List<Node> neighbours = GetNeighbourNodes(current);
-    //         foreach (Node neighbour in neighbours)
-    //         {
-    //             if (!visited.ContainsKey(neighbour.GetHashCode()) && !toVisit.Contains(neighbour))
-    //             {
-    //                 toVisit.Enqueue(neighbour); ;
-    //             }
-    //         }
-    //     }
-    //
-    //     return null;
-    // }
+    private void SearchInWidth()
+    {
+        if (_toVisitQueue.Count <= 0) return;
+        
+        Node nodeToCheck = _toVisitQueue.Dequeue();
+        
+        if (CheckDestination(nodeToCheck.Position))
+        {
+            pathToTarget = CalculatePathFromNode(nodeToCheck);
+            isFinded = true;
+            isWorked = false;
+        }
+
+        List<Node> neighbours;
+        
+        switch (IsValidNode(nodeToCheck.Position))
+        {
+            case true:
+            {
+                if (_visitedQueue.All(x => x.Value.Position != nodeToCheck.Position))
+                {
+                    _visitedQueue.Add(nodeToCheck.GetHashCode(), nodeToCheck);
+                    
+                    neighbours = GetNeighbourNodes(nodeToCheck);
+                
+                    foreach (Node neighbour in neighbours)
+                    {
+                        if (!_visitedQueue.ContainsKey(neighbour.GetHashCode()) && !_toVisitQueue.Contains(neighbour))
+                        {
+                            _toVisitQueue.Enqueue(neighbour);
+                        }
+                    }
+                }
+                break;
+            }
+            case false:
+                _visitedQueue.Add(nodeToCheck.GetHashCode(), nodeToCheck);
+                break;
+        }
+    }
 
     // private Node SearchDirected(Node entry, Node target)
     // {
@@ -303,11 +330,17 @@ public class PathFinder2 : MonoBehaviour
         {
             foreach (var item in pathToTarget)
             {
-                Gizmos.color = Color.red;
+                Gizmos.color = Color.green;
                 Gizmos.DrawWireSphere(new Vector2(item.x, item.y), _radius);
             }
         }
 
+        foreach (var item in _waitingNodes)
+        {
+            Gizmos.color = Color.grey;
+            Gizmos.DrawWireSphere(new Vector2(item.Position.x, item.Position.y), _radius);
+        }
+        
         foreach (var item in _checkedNodes)
         {
             Gizmos.color = Color.blue;
@@ -316,13 +349,25 @@ public class PathFinder2 : MonoBehaviour
         
         foreach (var item in _toVisit)
         {
-            Gizmos.color = Color.blue;
+            Gizmos.color = Color.grey;
             Gizmos.DrawWireSphere(new Vector2(item.Position.x, item.Position.y), _radius);
         }
         
         foreach (var item in _visited)
         {
-            Gizmos.color = Color.red;
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(new Vector2(item.Value.Position.x, item.Value.Position.y), _radius);
+        }  
+        
+        foreach (var item in _toVisitQueue)
+        {
+            Gizmos.color = Color.grey;
+            Gizmos.DrawWireSphere(new Vector2(item.Position.x, item.Position.y), _radius);
+        }
+        
+        foreach (var item in _visitedQueue)
+        {
+            Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(new Vector2(item.Value.Position.x, item.Value.Position.y), _radius);
         }
     }
