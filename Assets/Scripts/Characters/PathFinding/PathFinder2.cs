@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using Characters;
@@ -7,13 +8,19 @@ public class PathFinder2 : MonoBehaviour
 {
     private Vector2 _currentPos;
     private Vector2 _targetPos;
+    private PFindAlgorithm _algorithm;
     private LayerMask _solidLayer;
     private float _radius;
     private float _requireDistance;
 
+    // AStar
     private Node _startNode;
     private List<Node> _checkedNodes = new();
     private List<Node> _waitingNodes = new(); //to stack
+
+    // Depth
+    private Dictionary<int, Node> _visited = new();
+    private Stack<Node> _toVisit = new();
 
     public List<Vector2> pathToTarget;
     public bool isFinded;
@@ -22,6 +29,7 @@ public class PathFinder2 : MonoBehaviour
     public void Initialize(
             Vector2 currentPos,
             Vector2 targetPos,
+            PFindAlgorithm algorithm,
             LayerMask layer,
             float radius,
             float requireDistance
@@ -29,6 +37,7 @@ public class PathFinder2 : MonoBehaviour
     {
         _currentPos = currentPos;
         _targetPos = targetPos;
+        _algorithm = algorithm;
         _solidLayer = layer;
         _radius = radius;
         _requireDistance = requireDistance;
@@ -36,6 +45,26 @@ public class PathFinder2 : MonoBehaviour
         if (_currentPos == _targetPos) return;
 
         _startNode = new Node(0, _currentPos, _targetPos, null);
+        
+        switch (_algorithm)
+        {
+            case PFindAlgorithm.AStar:
+                InitAStar();
+                break;
+            case PFindAlgorithm.Depth:
+                InitSearchInDepth();
+                break;
+            case PFindAlgorithm.Width:
+                break;
+            case PFindAlgorithm.Directed:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
+    private void InitAStar()
+    {
         _checkedNodes.Add(_startNode);
         _waitingNodes.AddRange(GetNeighbourNodes(_startNode));
 
@@ -45,16 +74,28 @@ public class PathFinder2 : MonoBehaviour
 
     private void Update()
     {
-        if (isWorked) AStar();
+        if (!isWorked) return;
+
+        switch (_algorithm)
+        {
+            case PFindAlgorithm.AStar:
+                AStar();
+                break;
+            case PFindAlgorithm.Depth:
+                SearchInDepth();
+                break;
+            case PFindAlgorithm.Width:
+                break;
+            case PFindAlgorithm.Directed:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
 
     private void AStar()
     {
-        print("AStar...");
-
         if (_waitingNodes.Count <= 0) return;
-
-        print("worked...");
 
         Node nodeToCheck = _waitingNodes.FirstOrDefault(x => x.F == _waitingNodes.Min(y => y.F));
 
@@ -63,8 +104,6 @@ public class PathFinder2 : MonoBehaviour
             pathToTarget = CalculatePathFromNode(nodeToCheck);
             isFinded = true;
             isWorked = false;
-
-            print("finded.");
         }
 
         switch (IsValidNode(nodeToCheck.Position))
@@ -78,49 +117,65 @@ public class PathFinder2 : MonoBehaviour
                     _checkedNodes.Add(nodeToCheck);
                     _waitingNodes.AddRange(GetNeighbourNodes(nodeToCheck));
                 }
-
-                print(true);
                 break;
             }
             case false:
                 _waitingNodes.Remove(nodeToCheck);
                 _checkedNodes.Add(nodeToCheck);
-                print(false);
                 break;
         }
     }
 
-    // public List<Vector2> SearchInDepth(Node entry)
-    // {
-    //     Dictionary<int, Node> visited = new Dictionary<int, Node>();
-    //     Stack<Node> toVisit = new Stack<Node>();
-    //
-    //     toVisit.Push(entry);
-    //
-    //     while (toVisit.Count > 0)
-    //     {
-    //         Node current = toVisit.Pop();
-    //
-    //         if (current.Position == _targetPos)
-    //         {
-    //             return CalculatePathFromNode(current);
-    //             // return current;
-    //         }
-    //
-    //         visited.Add(current.GetHashCode(), current);
-    //         List<Node> neighbours = GetNeighbourNodes(current);
-    //
-    //         foreach (Node neighbour in neighbours)
-    //         {
-    //             if (!visited.ContainsKey(neighbour.GetHashCode()) && !toVisit.Contains(neighbour))
-    //             {
-    //                 toVisit.Push(neighbour);
-    //             }
-    //         }
-    //     }
-    //
-    //     return null;
-    // }
+    private void InitSearchInDepth()
+    {
+        _visited = new Dictionary<int, Node>();
+        _toVisit = new Stack<Node>();
+        _toVisit.Push(_startNode);
+
+        isFinded = false;
+        isWorked = true;
+    }
+
+    private void SearchInDepth()
+    {
+        if (_toVisit.Count <= 0) return;
+        
+        Node nodeToCheck = _toVisit.Pop();
+        
+        if (CheckDestination(nodeToCheck.Position))
+        {
+            pathToTarget = CalculatePathFromNode(nodeToCheck);
+            isFinded = true;
+            isWorked = false;
+        }
+
+        List<Node> neighbours;
+        
+        switch (IsValidNode(nodeToCheck.Position))
+        {
+            case true:
+            {
+                if (_visited.All(x => x.Value.Position != nodeToCheck.Position))
+                {
+                    _visited.Add(nodeToCheck.GetHashCode(), nodeToCheck);
+                    
+                    neighbours = GetNeighbourNodes(nodeToCheck);
+                
+                    foreach (Node neighbour in neighbours)
+                    {
+                        if (!_visited.ContainsKey(neighbour.GetHashCode()) && !_toVisit.Contains(neighbour))
+                        {
+                            _toVisit.Push(neighbour);
+                        }
+                    }
+                }
+                break;
+            }
+            case false:
+                _visited.Add(nodeToCheck.GetHashCode(), nodeToCheck);
+                break;
+        }
+    }
 
     // private Node SearchInWidth(Node entry, Node target)
     // {
@@ -189,17 +244,19 @@ public class PathFinder2 : MonoBehaviour
     private bool CheckDestination(Vector2 nodePosition)
     {
         float distance = Vector2.Distance(nodePosition, _targetPos);
-        
+
         if (distance <= _requireDistance) return true;
 
         return false;
     }
-    
+
     private bool IsValidNode(Vector2 nodePosition)
     {
         var colliders = Physics2D.OverlapCircleAll(nodePosition, _radius, _solidLayer);
 
-        return colliders.All(_col => !_col.CompareTag("Obstacle") && !_col.GetComponent<Person>());
+        return colliders.All(_col => !_col.CompareTag("Obstacle")
+                                     // && !_col.GetComponent<Person>()
+                                     );
     }
 
     private List<Vector2> CalculatePathFromNode(Node node)
@@ -236,7 +293,7 @@ public class PathFinder2 : MonoBehaviour
                         node.Position.x, node.Position.y + 1),
                 node.TargetPosition,
                 node));
-        
+
         return Neighbours;
     }
 
@@ -255,6 +312,26 @@ public class PathFinder2 : MonoBehaviour
         {
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(new Vector2(item.Position.x, item.Position.y), _radius);
+        }    
+        
+        foreach (var item in _toVisit)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(new Vector2(item.Position.x, item.Position.y), _radius);
         }
+        
+        foreach (var item in _visited)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(new Vector2(item.Value.Position.x, item.Value.Position.y), _radius);
+        }
+    }
+
+    public enum PFindAlgorithm
+    {
+        AStar,
+        Depth,
+        Width,
+        Directed
     }
 }

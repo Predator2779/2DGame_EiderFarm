@@ -32,6 +32,8 @@ namespace Characters.AI
         private Employee _employee;
         private Vector2 _target;
         private List<Vector2> _path = new();
+
+        [SerializeField] private PathFinder2.PFindAlgorithm _findAlgorithm;
         [SerializeField] private int _index;
         [SerializeField] private float _pathDistance;
         [SerializeField] private LayerMask _layer;
@@ -151,6 +153,7 @@ namespace Characters.AI
                 _pathFinder2.Initialize(
                     transform.position,
                     _target, 
+                    _findAlgorithm,
                     _layer, 
                     _cellF, 
                     _pathDistance);
