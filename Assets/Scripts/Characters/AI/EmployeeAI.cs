@@ -33,7 +33,7 @@ namespace Characters.AI
         private Vector2 _target;
         private List<Vector2> _path = new();
         [SerializeField] private int _index;
-
+        [SerializeField] private float _pathDistance;
         [SerializeField] private LayerMask _layer;
 
         private void Start() => Initialize();
@@ -147,7 +147,13 @@ namespace Characters.AI
         {
             if (_pathFinder2.isWorked) return;
 
-            if (!_pathFinder2.isFinded) _pathFinder2.Initialize(transform.position, _target, _layer, _cellF);
+            if (!_pathFinder2.isFinded)
+                _pathFinder2.Initialize(
+                    transform.position,
+                    _target, 
+                    _layer, 
+                    _cellF, 
+                    _pathDistance);
             else
             {
                 _path = _pathFinder2.pathToTarget;

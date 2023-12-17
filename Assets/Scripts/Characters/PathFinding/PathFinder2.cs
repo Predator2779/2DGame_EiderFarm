@@ -9,6 +9,7 @@ public class PathFinder2 : MonoBehaviour
     private Vector2 _targetPos;
     private LayerMask _solidLayer;
     private float _radius;
+    private float _requireDistance;
 
     private Node _startNode;
     private List<Node> _checkedNodes = new();
@@ -22,13 +23,15 @@ public class PathFinder2 : MonoBehaviour
             Vector2 currentPos,
             Vector2 targetPos,
             LayerMask layer,
-            float radius
+            float radius,
+            float requireDistance
     )
     {
         _currentPos = currentPos;
         _targetPos = targetPos;
         _solidLayer = layer;
         _radius = radius;
+        _requireDistance = requireDistance;
 
         if (_currentPos == _targetPos) return;
 
@@ -55,7 +58,7 @@ public class PathFinder2 : MonoBehaviour
 
         Node nodeToCheck = _waitingNodes.FirstOrDefault(x => x.F == _waitingNodes.Min(y => y.F));
 
-        if (nodeToCheck.Position == _targetPos)
+        if (CheckDestination(nodeToCheck.Position))
         {
             pathToTarget = CalculatePathFromNode(nodeToCheck);
             isFinded = true;
@@ -100,7 +103,7 @@ public class PathFinder2 : MonoBehaviour
     //
     //         if (current.Position == _targetPos)
     //         {
-    //             return await CalculatePathFromNode(current);
+    //             return CalculatePathFromNode(current);
     //             // return current;
     //         }
     //
@@ -183,6 +186,15 @@ public class PathFinder2 : MonoBehaviour
     //     return null;
     // }
 
+    private bool CheckDestination(Vector2 nodePosition)
+    {
+        float distance = Vector2.Distance(nodePosition, _targetPos);
+        
+        if (distance <= _requireDistance) return true;
+
+        return false;
+    }
+    
     private bool IsValidNode(Vector2 nodePosition)
     {
         var colliders = Physics2D.OverlapCircleAll(nodePosition, _radius, _solidLayer);
