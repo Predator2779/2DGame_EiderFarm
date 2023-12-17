@@ -14,13 +14,15 @@ namespace Characters.AI
     {
         [Header("Service")]
         [SerializeField] private EmployeeStates _currentEmployeeState;
+
         [SerializeField] private int _maxDistance;
+
         [Space] [Header("Settings:")]
         [SerializeField] [Range(1, 100)] private int _fluffCapacity;
 
         [SerializeField] private float _targetF;
         [SerializeField] private float _cellF;
-        
+
         private Construction _currentCleaner;
         private BuildStorage _currentHouse;
         private BuildStorage _currentStorage;
@@ -33,11 +35,11 @@ namespace Characters.AI
         [SerializeField] private int _index;
 
         [SerializeField] private LayerMask _layer;
-        
+
         private void Start() => Initialize();
         private void OnValidate() => Initialize();
         private void FixedUpdate() => StateExecute();
-        
+
         private void Initialize()
         {
             _pull ??= FindObjectOfType<BuildingsPull>();
@@ -143,9 +145,14 @@ namespace Characters.AI
 
         private void SetPath(Vector2 target)
         {
-            _pathFinder2.Initialize(transform.position, _target, _layer, _targetF);
-            _path = _pathFinder2.GetPath();
-            _index = _path.Count - 1;
+            if (_pathFinder2.isWorked) return;
+
+            if (_pathFinder2.isFinded)
+            {
+                _path = _pathFinder2.pathToTarget;
+                _index = _path.Count - 1;
+            }
+            else _pathFinder2.Initialize(transform.position, _target, _layer, _targetF);
         }
 
         private float IsDestination(Vector2 first, Vector2 second) => Vector2.Distance(first, second);
@@ -154,7 +161,9 @@ namespace Characters.AI
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;
 
         private ItemBunch TryGetBunch(string name) => _employee.GetInventory().TryGetBunch(
-                name, out ItemBunch bunch) ? bunch : null;
+                name, out ItemBunch bunch)
+                ? bunch
+                : null;
 
         private bool CanPickFluff()
         {
@@ -214,7 +223,7 @@ namespace Characters.AI
         private void Idle()
         {
             CheckConditions();
-            
+
             _personAnimate.Walk(_target, false);
             StopSound();
         }
