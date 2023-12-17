@@ -49,6 +49,8 @@ public class PathFinder2 : MonoBehaviour
     {
         if (_waitingNodes.Count > 0) return;
         
+        print("worked...");
+        
         Node nodeToCheck = _waitingNodes.FirstOrDefault(x => x.F == _waitingNodes.Min(y => y.F));
 
         if (nodeToCheck.Position == _targetPos)
@@ -56,6 +58,8 @@ public class PathFinder2 : MonoBehaviour
             pathToTarget = CalculatePathFromNode(nodeToCheck); // просчитываем путь исходя из последней node. Добавление в список предыдущих node.
             isFinded = true;
             isWorked = false;
+            
+            print("finded.");
         }
 
         var isValid = IsValidNode(nodeToCheck.Position);
