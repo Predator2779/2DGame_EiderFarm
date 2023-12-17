@@ -147,12 +147,12 @@ namespace Characters.AI
         {
             if (_pathFinder2.isWorked) return;
 
-            if (_pathFinder2.isFinded)
+            if (!_pathFinder2.isFinded) _pathFinder2.Initialize(transform.position, _target, _layer, _cellF);
+            else
             {
                 _path = _pathFinder2.pathToTarget;
                 _index = _path.Count - 1;
             }
-            else _pathFinder2.Initialize(transform.position, _target, _layer, _targetF);
         }
 
         private float IsDestination(Vector2 first, Vector2 second) => Vector2.Distance(first, second);

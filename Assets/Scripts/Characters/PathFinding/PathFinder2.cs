@@ -13,29 +13,29 @@ public class PathFinder2 : MonoBehaviour
     private Node _startNode;
     private List<Node> _checkedNodes = new();
     private List<Node> _waitingNodes = new(); //to stack
-    
+
     public List<Vector2> pathToTarget;
     public bool isFinded;
     public bool isWorked;
-    
+
     public void Initialize(
             Vector2 currentPos,
-            Vector2 targetPos, 
-            LayerMask layer, 
+            Vector2 targetPos,
+            LayerMask layer,
             float radius
-            )
+    )
     {
         _currentPos = currentPos;
         _targetPos = targetPos;
         _solidLayer = layer;
         _radius = radius;
-        
+
         if (_currentPos == _targetPos) return;
-        
+
         _startNode = new Node(0, _currentPos, _targetPos, null);
         _checkedNodes.Add(_startNode);
         _waitingNodes.AddRange(GetNeighbourNodes(_startNode));
-        
+
         isFinded = false;
         isWorked = true;
     }
@@ -47,44 +47,46 @@ public class PathFinder2 : MonoBehaviour
 
     private void AStar()
     {
-        if (_waitingNodes.Count > 0) return;
-        
+        print("AStar...");
+
+        if (_waitingNodes.Count <= 0) return;
+
         print("worked...");
-        
+
         Node nodeToCheck = _waitingNodes.FirstOrDefault(x => x.F == _waitingNodes.Min(y => y.F));
 
         if (nodeToCheck.Position == _targetPos)
         {
-            pathToTarget = CalculatePathFromNode(nodeToCheck); // просчитываем путь исходя из последней node. Добавление в список предыдущих node.
+            pathToTarget = CalculatePathFromNode(nodeToCheck);
             isFinded = true;
             isWorked = false;
-            
+
             print("finded.");
         }
 
-        var isValid = IsValidNode(nodeToCheck.Position);
-
-        switch (isValid)
+        switch (IsValidNode(nodeToCheck.Position))
         {
-            case false:
-                _waitingNodes.Remove(nodeToCheck);
-                _checkedNodes.Add(nodeToCheck);
-                break;
             case true:
             {
                 _waitingNodes.Remove(nodeToCheck);
-                
+
                 if (_checkedNodes.All(x => x.Position != nodeToCheck.Position))
                 {
                     _checkedNodes.Add(nodeToCheck);
                     _waitingNodes.AddRange(GetNeighbourNodes(nodeToCheck));
                 }
 
+                print(true);
                 break;
             }
+            case false:
+                _waitingNodes.Remove(nodeToCheck);
+                _checkedNodes.Add(nodeToCheck);
+                print(false);
+                break;
         }
     }
-    
+
     // public List<Vector2> SearchInDepth(Node entry)
     // {
     //     Dictionary<int, Node> visited = new Dictionary<int, Node>();
@@ -185,12 +187,7 @@ public class PathFinder2 : MonoBehaviour
     {
         var colliders = Physics2D.OverlapCircleAll(nodePosition, _radius, _solidLayer);
 
-        foreach (var _col in colliders)
-        {
-            if (_col.CompareTag("Obstacle") || _col.GetComponent<Person>()) return false;
-        }
-
-        return true;
+        return colliders.All(_col => !_col.CompareTag("Obstacle") && !_col.GetComponent<Person>());
     }
 
     private List<Vector2> CalculatePathFromNode(Node node)
@@ -227,6 +224,7 @@ public class PathFinder2 : MonoBehaviour
                         node.Position.x, node.Position.y + 1),
                 node.TargetPosition,
                 node));
+        
         return Neighbours;
     }
 
@@ -237,14 +235,14 @@ public class PathFinder2 : MonoBehaviour
             foreach (var item in pathToTarget)
             {
                 Gizmos.color = Color.red;
-                Gizmos.DrawSphere(new Vector2(item.x, item.y), _radius);
+                Gizmos.DrawWireSphere(new Vector2(item.x, item.y), _radius);
             }
         }
 
         foreach (var item in _checkedNodes)
         {
             Gizmos.color = Color.blue;
-            Gizmos.DrawSphere(new Vector2(item.Position.x, item.Position.y), _radius);
+            Gizmos.DrawWireSphere(new Vector2(item.Position.x, item.Position.y), _radius);
         }
     }
 }
