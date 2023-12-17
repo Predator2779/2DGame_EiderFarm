@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using Building;
 using Building.Constructions;
@@ -10,6 +9,7 @@ namespace Characters.AI
 {
     [RequireComponent(typeof(Employee))]
     [RequireComponent(typeof(PathFinder))]
+    [RequireComponent(typeof(PathFinder2))]
     public class EmployeeAI : WalkerAI
     {
         [Header("Service")]
@@ -26,11 +26,14 @@ namespace Characters.AI
         private BuildStorage _currentStorage;
         private BuildingsPull _pull;
         private PathFinder _pathFinder;
+        private PathFinder2 _pathFinder2;
         private Employee _employee;
         private Vector2 _target;
         private List<Vector2> _path = new();
-        private int _index;
+        [SerializeField] private int _index;
 
+        [SerializeField] private LayerMask _layer;
+        
         private void Start() => Initialize();
         private void OnValidate() => Initialize();
         private void FixedUpdate() => StateExecute();
@@ -39,6 +42,7 @@ namespace Characters.AI
         {
             _pull ??= FindObjectOfType<BuildingsPull>();
             _pathFinder ??= GetComponent<PathFinder>();
+            _pathFinder2 ??= GetComponent<PathFinder2>();
             _employee ??= GetComponent<Employee>();
         }
 
@@ -139,7 +143,8 @@ namespace Characters.AI
 
         private void SetPath(Vector2 target)
         {
-            _path = _pathFinder.GetPath(target);
+            _pathFinder2.Initialize(transform.position, _target, _layer, _targetF);
+            _path = _pathFinder2.GetPath();
             _index = _path.Count - 1;
         }
 
