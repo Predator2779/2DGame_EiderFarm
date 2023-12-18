@@ -17,8 +17,8 @@ namespace Characters.PathFinding
             targetPosition = targetPos;
             previousNode = prevNode;
             distStartToNode = distance;
-            distNodeToTarget = (int)Mathf.Abs(targetPosition.x - currentPosition.x) +
-                               (int)Mathf.Abs(targetPosition.y - currentPosition.y);
+            distNodeToTarget = Mathf.Abs(targetPosition.x - currentPosition.x) +
+                               Mathf.Abs(targetPosition.y - currentPosition.y);
             distTotal = distStartToNode + distNodeToTarget;
         }
     }

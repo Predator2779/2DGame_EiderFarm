@@ -12,6 +12,7 @@ namespace Characters.PathFinding.Algorithms
         private Vector2 _currentPos;
         private Vector2 _targetPos;
         private LayerMask _solidLayer;
+        private float _requireDistance;
         
         protected float _radius;
         protected Node _startNode;
@@ -21,12 +22,14 @@ namespace Characters.PathFinding.Algorithms
                 Vector2 currentPos, 
                 Vector2 targetPos,
                 LayerMask layer, 
-                float radius)
+                float radius, 
+                float requireDistance)
         {
             _currentPos = currentPos;
             _targetPos = targetPos;
             _solidLayer = layer;
             _radius = radius;
+            _requireDistance = requireDistance;
         }
 
         public virtual void Initialize()

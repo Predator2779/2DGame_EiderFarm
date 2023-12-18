@@ -13,12 +13,14 @@ namespace Characters.PathFinding.Algorithms
                 Vector2 currentPos, 
                 Vector2 targetPos, 
                 LayerMask layer, 
-                float radius) :
+                float radius, 
+                float requireDistance) :
                 base(
                         currentPos,
                         targetPos,
                         layer, 
-                        radius) { }
+                        radius, 
+                        requireDistance) { }
 
         
         public override void Initialize()

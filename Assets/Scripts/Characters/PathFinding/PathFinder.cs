@@ -11,37 +11,38 @@ namespace Characters.PathFinding
         private AbstractPathFind _algorithm;
         private Vector2 _currentPos;
         private Vector2 _targetPos;
-        private float _radius;
 
         [SerializeField] private LayerMask _solidLayer;
+        [SerializeField] private float _radius;
+        private float _requireDistance;
 
         public void Initialize(
                 Vector2 currentPos,
                 Vector2 targetPos,
                 TypeFind type,
-                float radius
+                float requireDistance
         )
         {
             _currentPos = currentPos;
             _targetPos = targetPos;
             _typeFind = type;
-            _radius = radius;
+            _requireDistance = requireDistance;
 
             if (_currentPos == _targetPos) return;
 
             switch (_typeFind)
             {
                 case TypeFind.AStar:
-                    _algorithm = new AStarPathFind(_currentPos, _targetPos, _solidLayer, _radius);
+                    _algorithm = new AStarPathFind(_currentPos, _targetPos, _solidLayer, _radius, _requireDistance);
                     break;
                 case TypeFind.Depth:
-                    _algorithm = new SearchInDepth(_currentPos, _targetPos, _solidLayer, _radius);
+                    _algorithm = new SearchInDepth(_currentPos, _targetPos, _solidLayer, _radius, _requireDistance);
                     break;
                 case TypeFind.Width:
-                    _algorithm = new SearchInWidth(_currentPos, _targetPos, _solidLayer, _radius);
+                    _algorithm = new SearchInWidth(_currentPos, _targetPos, _solidLayer, _radius, _requireDistance);
                     break;
                 case TypeFind.Greedy:
-                    _algorithm = new GreedyPathFind(_currentPos, _targetPos, _solidLayer, _radius);
+                    _algorithm = new GreedyPathFind(_currentPos, _targetPos, _solidLayer, _radius, _requireDistance);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(_typeFind));

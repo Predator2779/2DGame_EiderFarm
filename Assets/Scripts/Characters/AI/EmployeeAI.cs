@@ -5,7 +5,6 @@ using Characters.PathFinding;
 using Economy;
 using General;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Characters.AI
 {
@@ -22,9 +21,9 @@ namespace Characters.AI
 
         [Space][Header("Path Finding:")]
         [SerializeField] private PathFinder.TypeFind _findAlgorithm;
-        [SerializeField] private float _radius;
         [SerializeField] private int _index;
-        private float _reqDistToNode;
+        [SerializeField] private float _reqDistToTarget;
+        [SerializeField] private float _reqDistToNode;
 
         [SerializeField] private float _distance;
         
@@ -105,11 +104,11 @@ namespace Characters.AI
         {
             if (_maxDistWalkable > 0 && !(Vector2.Distance(transform.position, _target) <= _maxDistWalkable)) return;
             
-            if (IsDestination(transform.position, _target) > _radius * 2) // magic number
+            if (IsDestination(transform.position, _target) > _reqDistToTarget)
             {
                 if (_path != null && _index > 0)
                 {
-                    if (IsDestination(transform.position, _path[_index]) > _radius / 20) // magic number
+                    if (IsDestination(transform.position, _path[_index]) > _reqDistToNode)
                     {
                         var direction = _path[_index] - (Vector2)transform.position;
                         Walk(direction.normalized);
@@ -145,7 +144,7 @@ namespace Characters.AI
                         transform.position,
                         _target,
                         _findAlgorithm,
-                        _radius);
+                        _reqDistToTarget);
             else
             {
                 _path = _pathFinder.GetPath();

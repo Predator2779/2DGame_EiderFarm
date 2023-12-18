@@ -171,7 +171,7 @@ MonoBehaviour:
   _fluffCapacity: 1
   _findAlgorithm: 3
   _index: 0
-  _reqDistToTarget: 0.85
+  _reqDistToTarget: 2
   _reqDistToNode: 0.05
   _distance: 0
 --- !u!114 &5987656316525160417
