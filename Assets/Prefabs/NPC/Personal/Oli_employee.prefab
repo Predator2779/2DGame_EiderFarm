@@ -129,7 +129,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   _radius: 0.5
-  _requireDistance: 0.55
 --- !u!114 &7934326965898499444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,13 +167,13 @@ MonoBehaviour:
   _walkSound: "event:/\u0411\u0435\u0433 \u041D\u0430\u0435\u043C\u043D\u044B\u0439
     \u0440\u0430\u0431\u043E\u0442\u043D\u0438\u043A 2.0"
   _currentEmployeeState: 0
-  _maxDistance: 40
+  _maxDistWalkable: 0
   _fluffCapacity: 1
-  _targetF: 1
-  _cellF: 0.5
-  _pathFinder: {fileID: 3324305552047506518}
-  _findAlgorithm: 0
+  _findAlgorithm: 3
   _index: 0
+  _reqDistToTarget: 0.85
+  _reqDistToNode: 0.05
+  _distance: 0
 --- !u!114 &5987656316525160417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +190,8 @@ MonoBehaviour:
   _listItems:
   - _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
     _count: 100
+  - _item: {fileID: 11400000, guid: 159a6522252945049be044ad47855211, type: 2}
+    _count: 2
   _limit: 1000
 --- !u!1 &9136485320912651497
 GameObject:

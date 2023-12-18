@@ -7,11 +7,11 @@ namespace Characters.PathFinding
         public Vector2 currentPosition;
         public Vector2 targetPosition;
         public readonly Node previousNode;
-        public readonly int distStartToNode;
-        public readonly int distNodeToTarget;
-        public readonly int distTotal;
+        public readonly float distStartToNode;
+        public readonly float distNodeToTarget;
+        public readonly float distTotal;
 
-        public Node(int distance, Vector2 nodePos, Vector2 targetPos, Node prevNode)
+        public Node(float distance, Vector2 nodePos, Vector2 targetPos, Node prevNode)
         {
             currentPosition = nodePos;
             targetPosition = targetPos;

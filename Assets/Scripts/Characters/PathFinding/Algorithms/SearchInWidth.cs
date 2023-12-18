@@ -7,20 +7,18 @@ namespace Characters.PathFinding.Algorithms
     public class SearchInWidth : AbstractPathFind
     {
         private Dictionary<int, Node> _visitedQueue = new();
-        private Queue<Node> _toVisitQueue = new Queue<Node>();
+        private Queue<Node> _toVisitQueue = new();
 
         public SearchInWidth(
                 Vector2 currentPos, 
                 Vector2 targetPos, 
                 LayerMask layer, 
-                float radius, 
-                float requireDistance) :
+                float radius) :
                 base(
                         currentPos,
                         targetPos,
                         layer, 
-                        radius, 
-                        requireDistance)
+                        radius)
         { }
 
         

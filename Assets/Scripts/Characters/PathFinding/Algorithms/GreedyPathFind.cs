@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Characters.PathFinding.Nodes;
 using UnityEngine;
 
 namespace Characters.PathFinding.Algorithms
@@ -10,23 +11,22 @@ namespace Characters.PathFinding.Algorithms
         Dictionary<int, Node> _toVisitDicGreedy = new();
 
         public GreedyPathFind(
-                Vector2 currentPos, 
-                Vector2 targetPos, 
-                LayerMask layer, 
-                float radius, 
-                float requireDistance) :
+                Vector2 currentPos,
+                Vector2 targetPos,
+                LayerMask layer,
+                float radius) :
                 base(
                         currentPos,
                         targetPos,
-                        layer, 
-                        radius, 
-                        requireDistance)
-        { }
-        
+                        layer,
+                        radius)
+        {
+        }
+
         public override void Initialize()
         {
             base.Initialize();
-            
+
             _visitedGreedy = new Dictionary<int, Node>();
             _toVisitGreedy = new SortedSet<Node>(new NodeComparer());
             _toVisitDicGreedy = new Dictionary<int, Node>();
@@ -75,7 +75,8 @@ namespace Characters.PathFinding.Algorithms
                     break;
                 }
                 case false:
-                    _visitedGreedy.Add(nodeToCheck.GetHashCode(), nodeToCheck);
+                    if (!_visitedGreedy.ContainsKey(nodeToCheck.GetHashCode()))
+                        _visitedGreedy.Add(nodeToCheck.GetHashCode(), nodeToCheck);
                     break;
             }
         }

@@ -12,7 +12,6 @@ namespace Characters.PathFinding.Algorithms
         private Vector2 _currentPos;
         private Vector2 _targetPos;
         private LayerMask _solidLayer;
-        private float _requireDistance;
         
         protected float _radius;
         protected Node _startNode;
@@ -22,14 +21,12 @@ namespace Characters.PathFinding.Algorithms
                 Vector2 currentPos, 
                 Vector2 targetPos,
                 LayerMask layer, 
-                float radius, 
-                float requireDistance)
+                float radius)
         {
             _currentPos = currentPos;
             _targetPos = targetPos;
             _solidLayer = layer;
             _radius = radius;
-            _requireDistance = requireDistance;
         }
 
         public virtual void Initialize()
@@ -42,9 +39,9 @@ namespace Characters.PathFinding.Algorithms
         public abstract void Draw();
         
         protected bool CheckDestination(Vector2 nodePosition) => 
-                Vector2.Distance(nodePosition, _targetPos) <= _requireDistance;
+                Vector2.Distance(nodePosition, _targetPos) <= _radius;
 
-        protected bool IsValidNode(Vector2 nodePosition)
+        protected bool IsValidNode(Vector2 nodePosition)////
         {
             var colliders = Physics2D.OverlapCircleAll(nodePosition, _radius, _solidLayer);
 
@@ -69,20 +66,22 @@ namespace Characters.PathFinding.Algorithms
         {
             var Neighbours = new List<Node>();
 
-            Neighbours.Add(new Node(node.distStartToNode + 1, new Vector2(
-                            node.currentPosition.x - 1, node.currentPosition.y),
+            float value = _radius * 2;
+            
+            Neighbours.Add(new Node(node.distStartToNode + value, new Vector2(
+                            node.currentPosition.x - value, node.currentPosition.y),
                     node.targetPosition,
                     node));
-            Neighbours.Add(new Node(node.distStartToNode + 1, new Vector2(
-                            node.currentPosition.x + 1, node.currentPosition.y),
+            Neighbours.Add(new Node(node.distStartToNode + value, new Vector2(
+                            node.currentPosition.x + value, node.currentPosition.y),
                     node.targetPosition,
                     node));
-            Neighbours.Add(new Node(node.distStartToNode + 1, new Vector2(
-                            node.currentPosition.x, node.currentPosition.y - 1),
+            Neighbours.Add(new Node(node.distStartToNode + value, new Vector2(
+                            node.currentPosition.x, node.currentPosition.y - value),
                     node.targetPosition,
                     node));
-            Neighbours.Add(new Node(node.distStartToNode + 1, new Vector2(
-                            node.currentPosition.x, node.currentPosition.y + 1),
+            Neighbours.Add(new Node(node.distStartToNode + value, new Vector2(
+                            node.currentPosition.x, node.currentPosition.y + value),
                     node.targetPosition,
                     node));
 

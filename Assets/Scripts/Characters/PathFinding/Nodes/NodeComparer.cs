@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Characters.PathFinding
+namespace Characters.PathFinding.Nodes
 {
     public class NodeComparer : IComparer<Node>
     {
@@ -10,7 +10,7 @@ namespace Characters.PathFinding
                 return (int)((x.distNodeToTarget - y.distNodeToTarget) * 1000f);
 
             if (x.distStartToNode - y.distStartToNode != 0)
-                return (x.distStartToNode - y.distStartToNode) * 1000;
+                return (int)(x.distStartToNode - y.distStartToNode) * 1000;
 
             if (x.currentPosition.x - y.currentPosition.x != 0)
                 return (int)(x.currentPosition.x - y.currentPosition.x);
