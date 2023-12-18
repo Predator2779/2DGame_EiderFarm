@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2484876753256005348}
   - component: {fileID: 2529878683125780359}
   - component: {fileID: 7657352252721850111}
-  - component: {fileID: 8092244096398859633}
+  - component: {fileID: 3324305552047506518}
   - component: {fileID: 7934326965898499444}
   - component: {fileID: 5112419574872024042}
   - component: {fileID: 5987656316525160417}
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08111f1ff9745efbed5903f98bdb3ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8092244096398859633
+--- !u!114 &3324305552047506518
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,14 +122,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6007349334224100691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0973663992e14c84bd3d73bca5c816bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 59ec31a16cae400f9f814447e84db484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PathToTarget: []
-  SolidLayer:
+  _solidLayer:
     serializedVersion: 2
     m_Bits: 1
-  radius: 1
+  _radius: 0.5
+  _requireDistance: 0.55
 --- !u!114 &7934326965898499444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +172,9 @@ MonoBehaviour:
   _fluffCapacity: 1
   _targetF: 1
   _cellF: 0.5
+  _pathFinder: {fileID: 3324305552047506518}
+  _findAlgorithm: 0
+  _index: 0
 --- !u!114 &5987656316525160417
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Building;
 using Building.Constructions;
+using Characters.PathFinding;
 using Economy;
 using General;
 using UnityEngine;
@@ -9,7 +10,6 @@ namespace Characters.AI
 {
     [RequireComponent(typeof(Employee))]
     [RequireComponent(typeof(PathFinder))]
-    [RequireComponent(typeof(PathFinder2))]
     public class EmployeeAI : WalkerAI
     {
         [Header("Service")]
@@ -27,16 +27,13 @@ namespace Characters.AI
         private BuildStorage _currentHouse;
         private BuildStorage _currentStorage;
         private BuildingsPull _pull;
-        private PathFinder _pathFinder;
-        private PathFinder2 _pathFinder2;
         private Employee _employee;
         private Vector2 _target;
+        
         private List<Vector2> _path = new();
-
-        [SerializeField] private PathFinder2.PFindAlgorithm _findAlgorithm;
+        [SerializeField] private PathFinder _pathFinder;
+        [SerializeField] private PathFinder.TypeFind _findAlgorithm;
         [SerializeField] private int _index;
-        [SerializeField] private float _pathDistance;
-        [SerializeField] private LayerMask _layer;
 
         private void Start() => Initialize();
         private void OnValidate() => Initialize();
@@ -46,7 +43,6 @@ namespace Characters.AI
         {
             _pull ??= FindObjectOfType<BuildingsPull>();
             _pathFinder ??= GetComponent<PathFinder>();
-            _pathFinder2 ??= GetComponent<PathFinder2>();
             _employee ??= GetComponent<Employee>();
         }
 
@@ -121,7 +117,7 @@ namespace Characters.AI
                         _index--;
                     }
                 }
-                else SetPath(_target);
+                else SetPath();
             }
             else
             {
@@ -145,21 +141,17 @@ namespace Characters.AI
             _target = target.transform.position;
         }
 
-        private void SetPath(Vector2 target)
+        private void SetPath()
         {
-            if (_pathFinder2.isWorked) return;
+            if (_pathFinder.IsWorked()) return;
 
-            if (!_pathFinder2.isFinded)
-                _pathFinder2.Initialize(
+            if (!_pathFinder.IsFinded()) _pathFinder.Initialize(
                     transform.position,
                     _target, 
-                    _findAlgorithm,
-                    _layer, 
-                    _cellF, 
-                    _pathDistance);
+                    _findAlgorithm);
             else
             {
-                _path = _pathFinder2.pathToTarget;
+                _path = _pathFinder.GetPath();
                 _index = _path.Count - 1;
             }
         }
