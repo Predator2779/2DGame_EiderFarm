@@ -17,4 +17,6 @@ using UnityEngine;
     public bool[] Flags;
 
     public int[] flagSprites;
+
+    public bool isSaves;
 }

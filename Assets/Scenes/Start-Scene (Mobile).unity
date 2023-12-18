@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 370129049}
   - component: {fileID: 370129051}
   - component: {fileID: 370129052}
+  - component: {fileID: 370129053}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -229,6 +230,8 @@ MonoBehaviour:
   _menuScene: 
   _cutScene: Cuscene-0
   _loadGameButton: {fileID: 4948284313620712599}
+  _textButton: {fileID: 2062002392}
+  _saveSerial: {fileID: 370129053}
 --- !u!114 &370129052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +245,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
+--- !u!114 &370129053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370129047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a962015ff1935b8419e97afe9155c41a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerInventory: {fileID: 0}
+  _itemTypes: []
+  _menu: {fileID: 370129051}
+  _sprites: []
+  _gagaHouses: []
+  _cleaners: []
+  _clothMachines: []
+  _storages: []
+  data:
+    Money: 0
+    UncleanedFluff: 0
+    CleanedFluff: 0
+    Cloth: 0
+    Flag: 0
+    GagaHouses: 
+    Cleaners: 
+    ClothMachines: 
+    Storages: 
+    Flags: 
+    flagSprites: 
+    isSaves: 0
 --- !u!1 &439191351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2587,6 +2623,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043207099}
   m_CullTransparentMesh: 1
+--- !u!114 &2062002392 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2367829381220927712, guid: 464588e8b338f934a968d01009bcf166, type: 3}
+  m_PrefabInstance: {fileID: 4948284313620712598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1948146871217449075
 PrefabInstance:
   m_ObjectHideFlags: 0

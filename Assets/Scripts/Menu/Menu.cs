@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,21 +10,27 @@ public class Menu : MonoBehaviour
     [SerializeField] private string _cutScene;
 
     [SerializeField] private Button _loadGameButton;
+    [SerializeField] private TextMeshProUGUI _textButton;
 
-    
+    [SerializeField] private SaveSerial _saveSerial;
+
 
     private static bool _isNewGame;
 
     private static bool _isHasSaves;
 
-
     private void Awake()
     {
-        if (_loadGameButton != null)
-            if (_isHasSaves)
-                _loadGameButton.interactable = true;
-
-        Screen.orientation = ScreenOrientation.Portrait;
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+            _saveSerial.Initialize();
+    }
+    public void IfNotSaves()
+    {
+        if (_loadGameButton != null && _textButton != null)
+        {
+            _loadGameButton.interactable = false;
+            _textButton.color = Color.gray;
+        }
     }
 
     public void StartLevel(bool isNewGame)

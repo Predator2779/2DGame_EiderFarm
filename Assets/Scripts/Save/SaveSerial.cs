@@ -7,6 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using General;
 using TriggerScripts;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Menu))]
 public class SaveSerial : MonoBehaviour
@@ -20,20 +21,35 @@ public class SaveSerial : MonoBehaviour
     [SerializeField] private BuildTrigger[] _cleaners;
     [SerializeField] private BuildTrigger[] _clothMachines;
     [SerializeField] private BuildTrigger[] _storages;
-    
+
     private bool[] _flags;
     private List<ItemBunch> _items;
     private string _path = "/dataSaveFile.dat";
     public SaveData data = new();
 
+    public bool IsHasSaves;
+
     public void Initialize()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            LoadBool();
+            if (!IsHasSaves)
+            {
+                _menu.IfNotSaves();
+            }
+            return;
+        }
+
+        if (_playerInventory != null)
         GetItems();
 
         if (_menu.IsNewGame()) ResetData();
         else LoadGame();
     }
-    
+
+    private void SaveBool(bool value) => data.isSaves = value;
+
     private void GetItems() => _items = _playerInventory.GetAllItems();
 
     public void SetBuildings(BuildingsPull pull)
@@ -43,7 +59,7 @@ public class SaveSerial : MonoBehaviour
         _clothMachines = pull.ClothMachines;
         _storages = pull.Storages;
     }
-    
+
     private void SaveItems()
     {
         for (int i = 0; i < _items.Count; i++)
@@ -92,6 +108,9 @@ public class SaveSerial : MonoBehaviour
 
         _menu.SetSaves(true);
 
+        Debug.Log("Save");
+        SaveBool(_menu.IsHasSaves());
+
         bf.Serialize(file, data);
         file.Close();
     }
@@ -108,13 +127,25 @@ public class SaveSerial : MonoBehaviour
 
         ClearAndAdd();
         LoadFlags();
-        
+
         BuildAndUpgrade(data.GagaHouses, _gagaHouses);
         BuildAndUpgrade(data.Cleaners, _cleaners);
         BuildAndUpgrade(data.ClothMachines, _clothMachines);
         BuildAndUpgrade(data.Storages, _storages);
 
-        
+
+    }
+
+    public void LoadBool()
+    {
+        if (!File.Exists(Application.persistentDataPath + _path)) return ;
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + _path, FileMode.Open);
+
+        data = (SaveData)bf.Deserialize(file);
+        file.Close();
+
+        IsHasSaves = data.isSaves;
     }
 
     private void ResetData()
@@ -138,6 +169,7 @@ public class SaveSerial : MonoBehaviour
         data.flagSprites = new int[0];
 
         _menu.SetSaves(false);
+        SaveBool(false);
     }
 
     private int[] SaveDataGrades(BuildTrigger[] menus)
@@ -201,7 +233,7 @@ public class SaveSerial : MonoBehaviour
         {
             menus[i].Initialize();
             BuildMenu buildMenu = menus[i].GetBuildMenu();
-            
+
             switch (dataArray[i])
             {
                 default: continue;
@@ -260,6 +292,6 @@ public class SaveSerial : MonoBehaviour
 
     public void OnApplicationQuit()
     {
-        SaveGame();
+        //SaveGame();
     }
 }
