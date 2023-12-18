@@ -77,11 +77,16 @@ public class SaveSerial : MonoBehaviour
 
     private void LoadItems()
     {
-        AddItems(GlobalConstants.Money, data.Money);
-        AddItems(GlobalConstants.CleanedFluff, data.CleanedFluff);
-        AddItems(GlobalConstants.UncleanedFluff, data.UncleanedFluff);
-        AddItems(GlobalConstants.Cloth, data.Cloth);
-        AddItems(GlobalConstants.Flag, data.Flag);
+        if (data.Money != 0)
+            AddItems(GlobalConstants.Money, data.Money);
+        if (data.CleanedFluff != 0)
+            AddItems(GlobalConstants.CleanedFluff, data.CleanedFluff);
+        if (data.UncleanedFluff != 0)
+            AddItems(GlobalConstants.UncleanedFluff, data.UncleanedFluff);
+        if (data.Cloth != 0)
+            AddItems(GlobalConstants.Cloth, data.Cloth);
+        if (data.Flag != 0)
+            AddItems(GlobalConstants.Flag, data.Flag);
     }
 
     private void AddItems(string name, int count)
