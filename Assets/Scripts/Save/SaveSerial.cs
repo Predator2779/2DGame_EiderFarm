@@ -42,7 +42,7 @@ public class SaveSerial : MonoBehaviour
         }
 
         if (_playerInventory != null)
-        GetItems();
+            GetItems();
 
         if (_menu.IsNewGame()) ResetData();
         else LoadGame();
@@ -143,7 +143,7 @@ public class SaveSerial : MonoBehaviour
 
     public void LoadBool()
     {
-        if (!File.Exists(Application.persistentDataPath + _path)) return ;
+        if (!File.Exists(Application.persistentDataPath + _path)) return;
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + _path, FileMode.Open);
 
@@ -297,6 +297,7 @@ public class SaveSerial : MonoBehaviour
 
     public void OnApplicationQuit()
     {
-        //SaveGame();
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+            SaveGame();
     }
 }
