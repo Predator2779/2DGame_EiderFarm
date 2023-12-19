@@ -45,7 +45,6 @@ namespace Characters.PathFinding.Algorithms
             if (_toVisit.Count <= 0) return;
 
             _nodeToCheck = _toVisit.Dequeue();
-
             _nodeToCheck = _toVisitDictionary[_nodeToCheck.GetHashCode()];
             _toVisitDictionary.Remove(_nodeToCheck.GetHashCode());
 

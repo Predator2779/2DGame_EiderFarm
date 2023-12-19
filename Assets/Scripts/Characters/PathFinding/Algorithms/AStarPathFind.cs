@@ -11,23 +11,25 @@ namespace Characters.PathFinding.Algorithms
         private List<Node> _waitingNodes = new(); //to stack
 
         public AStarPathFind(
-                Vector2 currentPos, 
-                Vector2 targetPos, 
-                LayerMask layer, 
-                float radius, 
+                Vector2 currentPos,
+                Vector2 targetPos,
+                LayerMask layer,
+                float radius,
                 float requireDistance) :
                 base(
                         currentPos,
                         targetPos,
-                        layer, 
-                        radius, 
-                        requireDistance) { }
+                        layer,
+                        radius,
+                        requireDistance)
+        {
+        }
 
-        
+
         public override void Initialize()
         {
             base.Initialize();
-            
+
             _checkedNodes.Add(_startNode);
             _waitingNodes.AddRange(GetNeighbourNodes(_startNode));
 
@@ -48,24 +50,19 @@ namespace Characters.PathFinding.Algorithms
                 isWorked = false;
             }
 
-            switch (IsValidNode(_nodeToCheck.currentPosition))
+            if (!IsValidNode(_nodeToCheck.currentPosition))
             {
-                case true:
-                {
-                    _waitingNodes.Remove(_nodeToCheck);
+                _waitingNodes.Remove(_nodeToCheck);
+                _checkedNodes.Add(_nodeToCheck);
+                return;
+            }
 
-                    if (_checkedNodes.All(x => x.currentPosition != _nodeToCheck.currentPosition))
-                    {
-                        _checkedNodes.Add(_nodeToCheck);
-                        _waitingNodes.AddRange(GetNeighbourNodes(_nodeToCheck));
-                    }
+            _waitingNodes.Remove(_nodeToCheck);
 
-                    break;
-                }
-                case false:
-                    _waitingNodes.Remove(_nodeToCheck);
-                    _checkedNodes.Add(_nodeToCheck);
-                    break;
+            if (_checkedNodes.All(x => x.currentPosition != _nodeToCheck.currentPosition))
+            {
+                _checkedNodes.Add(_nodeToCheck);
+                _waitingNodes.AddRange(GetNeighbourNodes(_nodeToCheck));
             }
         }
 
@@ -85,7 +82,7 @@ namespace Characters.PathFinding.Algorithms
 
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(new Vector2(_nodeToCheck.currentPosition.x, _nodeToCheck.currentPosition.y), _radius);
-            
+
             if (_path == null) return;
 
             foreach (var item in _path)

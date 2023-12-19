@@ -51,33 +51,25 @@ namespace Characters.PathFinding.Algorithms
                 isWorked = false;
             }
 
-            List<Node> neighbours;
-
-            switch (IsValidNode(_nodeToCheck.currentPosition))
+            if (!IsValidNode(_nodeToCheck.currentPosition))
             {
-                case true:
+                _visitedQueue.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
+                return;
+            }
+
+            if (_visitedQueue.Any(x => x.Value.currentPosition == _nodeToCheck.currentPosition)) return;
+            
+            _visitedQueue.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
+
+            List<Node> neighbours = GetNeighbourNodes(_nodeToCheck);
+            
+            foreach (Node neighbour in neighbours)
+            {
+                if (!_visitedQueue.ContainsKey(neighbour.GetHashCode()) &&
+                    !_toVisitQueue.Contains(neighbour))
                 {
-                    if (_visitedQueue.All(x => x.Value.currentPosition != _nodeToCheck.currentPosition))
-                    {
-                        _visitedQueue.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
-
-                        neighbours = GetNeighbourNodes(_nodeToCheck);
-
-                        foreach (Node neighbour in neighbours)
-                        {
-                            if (!_visitedQueue.ContainsKey(neighbour.GetHashCode()) &&
-                                !_toVisitQueue.Contains(neighbour))
-                            {
-                                _toVisitQueue.Enqueue(neighbour);
-                            }
-                        }
-                    }
-
-                    break;
+                    _toVisitQueue.Enqueue(neighbour);
                 }
-                case false:
-                    _visitedQueue.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
-                    break;
             }
         }
 

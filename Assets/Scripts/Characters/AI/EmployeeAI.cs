@@ -21,11 +21,10 @@ namespace Characters.AI
 
         [Space][Header("Path Finding:")]
         [SerializeField] private PathFinder.TypeFind _findAlgorithm;
-        [SerializeField] private int _index;
         [SerializeField] private float _reqDistToTarget;
         [SerializeField] private float _reqDistToNode;
 
-        [SerializeField] private float _distance;
+        [SerializeField] private float _distance; //
         
         private Construction _currentCleaner;
         private BuildStorage _currentHouse;
@@ -35,6 +34,7 @@ namespace Characters.AI
         private Vector2 _target;
         private List<Vector2> _path = new();
         private PathFinder _pathFinder;
+        private int _index;
 
         private void Start() => Initialize();
         private void OnValidate() => Initialize();

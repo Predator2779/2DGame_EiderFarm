@@ -42,7 +42,7 @@ namespace Characters.PathFinding.Algorithms
         public abstract void Draw();
         
         protected bool CheckDestination(Vector2 nodePosition) => 
-                Vector2.Distance(nodePosition, _targetPos) <= _radius + _radius / 10;
+                Vector2.Distance(nodePosition, _targetPos) <= _radius * 2;
 
         protected bool IsValidNode(Vector2 nodePosition)////
         {
@@ -67,28 +67,28 @@ namespace Characters.PathFinding.Algorithms
         }
         protected List<Node> GetNeighbourNodes(Node node)
         {
-            var Neighbours = new List<Node>();
+            var neighbours = new List<Node>();
 
             float value = _radius * 2;
             
-            Neighbours.Add(new Node(node.distStartToNode + value, new Vector2(
+            neighbours.Add(new Node(node.distStartToNode + value, new Vector2(
                             node.currentPosition.x - value, node.currentPosition.y),
                     node.targetPosition,
                     node));
-            Neighbours.Add(new Node(node.distStartToNode + value, new Vector2(
+            neighbours.Add(new Node(node.distStartToNode + value, new Vector2(
                             node.currentPosition.x + value, node.currentPosition.y),
                     node.targetPosition,
                     node));
-            Neighbours.Add(new Node(node.distStartToNode + value, new Vector2(
+            neighbours.Add(new Node(node.distStartToNode + value, new Vector2(
                             node.currentPosition.x, node.currentPosition.y - value),
                     node.targetPosition,
                     node));
-            Neighbours.Add(new Node(node.distStartToNode + value, new Vector2(
+            neighbours.Add(new Node(node.distStartToNode + value, new Vector2(
                             node.currentPosition.x, node.currentPosition.y + value),
                     node.targetPosition,
                     node));
 
-            return Neighbours;
+            return neighbours;
         }
     }
 }

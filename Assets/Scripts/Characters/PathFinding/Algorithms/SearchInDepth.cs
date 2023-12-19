@@ -51,33 +51,48 @@ namespace Characters.PathFinding.Algorithms
                 isWorked = false;
             }
 
-            List<Node> neighbours;
-
-            switch (IsValidNode(_nodeToCheck.currentPosition))
+            if (!IsValidNode(_nodeToCheck.currentPosition))
             {
-                case true:
-                {
-                    if (_visited.All(x => x.Value.currentPosition != _nodeToCheck.currentPosition))
-                    {
-                        _visited.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
-
-                        neighbours = GetNeighbourNodes(_nodeToCheck);
-
-                        foreach (Node neighbour in neighbours)
-                        {
-                            if (!_visited.ContainsKey(neighbour.GetHashCode()) && !_toVisit.Contains(neighbour))
-                            {
-                                _toVisit.Push(neighbour);
-                            }
-                        }
-                    }
-
-                    break;
-                }
-                case false:
-                    _visited.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
-                    break;
+                _visited.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
+                return;
             }
+
+            if (_visited.All(x => x.Value.currentPosition != _nodeToCheck.currentPosition))
+            {
+                _visited.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
+
+                List<Node> neighbours = GetNeighbourNodes(_nodeToCheck);
+
+                foreach (Node neighbour in neighbours)
+                    if (!_visited.ContainsKey(neighbour.GetHashCode()) && !_toVisit.Contains(neighbour))
+                        _toVisit.Push(neighbour);
+            }
+
+            // switch (IsValidNode(_nodeToCheck.currentPosition))
+            // {
+            //     case true:
+            //     {
+            //         if (_visited.All(x => x.Value.currentPosition != _nodeToCheck.currentPosition))
+            //         {
+            //             _visited.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
+            //
+            //             neighbours = GetNeighbourNodes(_nodeToCheck);
+            //
+            //             foreach (Node neighbour in neighbours)
+            //             {
+            //                 if (!_visited.ContainsKey(neighbour.GetHashCode()) && !_toVisit.Contains(neighbour))
+            //                 {
+            //                     _toVisit.Push(neighbour);
+            //                 }
+            //             }
+            //         }
+            //
+            //         break;
+            //     }
+            //     case false:
+            //         _visited.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
+            //         break;
+            // }
         }
 
         public override void Draw()

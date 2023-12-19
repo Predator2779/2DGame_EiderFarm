@@ -45,22 +45,22 @@ namespace Characters.PathFinding.Algorithms
         {
             if (_toVisitGreedy.Count <= 0) return;
 
-            Node nodeToCheck = _toVisitGreedy.Min;
+            _nodeToCheck = _toVisitGreedy.Min;
 
-            _visitedGreedy.Add(nodeToCheck.GetHashCode(), nodeToCheck);
-            _toVisitGreedy.Remove(nodeToCheck);
-            _toVisitDicGreedy.Remove(nodeToCheck.GetHashCode());
+            _visitedGreedy.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
+            _toVisitGreedy.Remove(_nodeToCheck);
+            _toVisitDicGreedy.Remove(_nodeToCheck.GetHashCode());
 
-            if (CheckDestination(nodeToCheck.currentPosition))
+            if (CheckDestination(_nodeToCheck.currentPosition))
             {
-                _path = CalculatePathFromNode(nodeToCheck);
+                _path = CalculatePathFromNode(_nodeToCheck);
                 isFinded = true;
                 isWorked = false;
             }
 
-            if (!IsValidNode(nodeToCheck.currentPosition)) return;
-            
-            List<Node> neighbours = GetNeighbourNodes(nodeToCheck);
+            if (!IsValidNode(_nodeToCheck.currentPosition)) return;
+
+            List<Node> neighbours = GetNeighbourNodes(_nodeToCheck);
 
             foreach (Node neighbour in neighbours)
             {
@@ -89,14 +89,13 @@ namespace Characters.PathFinding.Algorithms
 
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(new Vector2(_nodeToCheck.currentPosition.x, _nodeToCheck.currentPosition.y), _radius);
-            
-            if (_path != null)
+
+            if (_path == null) return;
+
+            foreach (var item in _path)
             {
-                foreach (var item in _path)
-                {
-                    Gizmos.color = Color.green;
-                    Gizmos.DrawWireSphere(new Vector2(item.x, item.y), _radius);
-                }
+                Gizmos.color = Color.green;
+                Gizmos.DrawWireSphere(new Vector2(item.x, item.y), _radius);
             }
         }
     }

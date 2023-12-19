@@ -11,10 +11,11 @@ namespace Characters.PathFinding
         private AbstractPathFind _algorithm;
         private Vector2 _currentPos;
         private Vector2 _targetPos;
+        private float _requireDistance;
 
+        [SerializeField] private int _countTest;
         [SerializeField] private LayerMask _solidLayer;
         [SerializeField] private float _radius;
-        private float _requireDistance;
 
         public void Initialize(
                 Vector2 currentPos,
@@ -56,7 +57,10 @@ namespace Characters.PathFinding
 
         private void Update()
         {
-            if (IsWorked()) _algorithm.Search();
+            if (!IsWorked())  return;
+
+            for (int i = 0; i < _countTest; i++)
+                _algorithm.Search();
         }
 
         private void OnDrawGizmos()
