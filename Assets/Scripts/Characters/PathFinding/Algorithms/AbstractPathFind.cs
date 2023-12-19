@@ -44,13 +44,11 @@ namespace Characters.PathFinding.Algorithms
         protected bool CheckDestination(Vector2 nodePosition) => 
                 Vector2.Distance(nodePosition, _targetPos) <= _radius * 2;
 
-        protected bool IsValidNode(Vector2 nodePosition)////
+        protected bool IsValidNode(Vector2 nodePosition)
         {
             var colliders = Physics2D.OverlapCircleAll(nodePosition, _radius, _solidLayer);
 
-            return colliders.All(_col => !_col.CompareTag("Obstacle")
-                    // && !_col.GetComponent<Person>()
-            );
+            return colliders.All(_col => !_col.CompareTag("Obstacle") && !_col.GetComponent<Person>());
         }
         protected List<Vector2> CalculatePathFromNode(Node node)
         {
