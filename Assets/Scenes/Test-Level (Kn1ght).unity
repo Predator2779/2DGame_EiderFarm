@@ -603,14 +603,6 @@ PrefabInstance:
       propertyPath: _solidLayer.m_Bits
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3324305552047506518, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
-      propertyPath: _radius
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3324305552047506518, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
-      propertyPath: _countTest
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: _cellF
       value: 0.5
@@ -631,25 +623,13 @@ PrefabInstance:
       propertyPath: _pathDistance
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
-      propertyPath: _findAlgorithm
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
-      propertyPath: _fluffCapacity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
-      propertyPath: _reqDistToNode
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6007349334224100691, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: m_Name
       value: Oli_employee
       objectReference: {fileID: 0}
     - target: {fileID: 6007349334224100691, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8092244096398859633, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
