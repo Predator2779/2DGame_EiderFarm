@@ -48,7 +48,9 @@ namespace Characters.PathFinding.Algorithms
         {
             var colliders = Physics2D.OverlapCircleAll(nodePosition, _radius, _solidLayer);
 
-            return colliders.All(_col => !_col.CompareTag("Obstacle") && !_col.GetComponent<Person>());
+            return colliders.All(_col => !_col.CompareTag("Obstacle")
+                                         // && !_col.GetComponent<Person>()
+                                         );
         }
         protected List<Vector2> CalculatePathFromNode(Node node)
         {
