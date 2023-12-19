@@ -1,16 +1,16 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Characters.PathFinding.Algorithms
 {
-    public class SearchInDepth : AbstractPathFind
+    public class DijkstraPathFind : AbstractPathFind
     {
         private Node _nodeToCheck;
         private Dictionary<int, Node> _visited = new();
-        private Stack<Node> _toVisit = new();
+        private Queue<Node> _toVisit = new();
+        private Dictionary<int, Node> _toVisitDictionary = new();
 
-        public SearchInDepth(
+        public DijkstraPathFind(
                 Vector2 currentPos,
                 Vector2 targetPos,
                 LayerMask layer,
@@ -25,14 +25,16 @@ namespace Characters.PathFinding.Algorithms
         {
         }
 
-
         public override void Initialize()
         {
             base.Initialize();
 
             _visited = new Dictionary<int, Node>();
-            _toVisit = new Stack<Node>();
-            _toVisit.Push(_startNode);
+            _toVisit = new Queue<Node>();
+            _toVisitDictionary = new Dictionary<int, Node>();
+
+            _toVisit.Enqueue(_startNode);
+            _toVisitDictionary.Add(_startNode.GetHashCode(), _startNode);
 
             isFinded = false;
             isWorked = true;
@@ -42,41 +44,37 @@ namespace Characters.PathFinding.Algorithms
         {
             if (_toVisit.Count <= 0) return;
 
-            _nodeToCheck = _toVisit.Pop();
+            _nodeToCheck = _toVisit.Dequeue();
 
-            if (CheckDestination(_nodeToCheck.currentPosition))
+            _nodeToCheck = _toVisitDictionary[_nodeToCheck.GetHashCode()];
+            _toVisitDictionary.Remove(_nodeToCheck.GetHashCode());
+
+            // if (!IsValidNode(_nodeToCheck.currentPosition)) return;
+
+            _visited.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
+            List<Node> neighbours = GetNeighbourNodes(_nodeToCheck);
+
+            foreach (Node neighbour in neighbours)
             {
-                _path = CalculatePathFromNode(_nodeToCheck);
-                isFinded = true;
-                isWorked = false;
-            }
-
-            List<Node> neighbours;
-
-            switch (IsValidNode(_nodeToCheck.currentPosition))
-            {
-                case true:
+                if (!_visited.ContainsKey(neighbour.GetHashCode()) &&
+                    !_toVisitDictionary.ContainsKey(neighbour.GetHashCode()))
                 {
-                    if (_visited.All(x => x.Value.currentPosition != _nodeToCheck.currentPosition))
-                    {
-                        _visited.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
-
-                        neighbours = GetNeighbourNodes(_nodeToCheck);
-
-                        foreach (Node neighbour in neighbours)
-                        {
-                            if (!_visited.ContainsKey(neighbour.GetHashCode()) && !_toVisit.Contains(neighbour))
-                            {
-                                _toVisit.Push(neighbour);
-                            }
-                        }
-                    }
-
-                    break;
+                    _toVisit.Enqueue(neighbour);
+                    _toVisitDictionary.Add(neighbour.GetHashCode(), neighbour);
                 }
-                case false:
-                    _visited.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
-                    break;
+                else if (_visited.ContainsKey(neighbour.GetHashCode())
+                         && _visited[neighbour.GetHashCode()].distStartToNode > neighbour.distStartToNode)
+                {
+                    _visited.Remove(neighbour.GetHashCode());
+
+                    _toVisit.Enqueue(neighbour);
+                    _toVisitDictionary.Add(neighbour.GetHashCode(), neighbour);
+                }
+                else if (_toVisitDictionary.ContainsKey(neighbour.GetHashCode())
+                         && _toVisitDictionary[neighbour.GetHashCode()].distStartToNode > neighbour.distStartToNode)
+                {
+                    _toVisitDictionary[neighbour.GetHashCode()] = neighbour;
+                }
             }
         }
 
@@ -98,7 +96,7 @@ namespace Characters.PathFinding.Algorithms
             Gizmos.DrawWireSphere(new Vector2(_nodeToCheck.currentPosition.x, _nodeToCheck.currentPosition.y), _radius);
 
             if (_path == null) return;
-
+            
             foreach (var item in _path)
             {
                 Gizmos.color = Color.green;

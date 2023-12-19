@@ -44,6 +44,9 @@ namespace Characters.PathFinding
                 case TypeFind.Greedy:
                     _algorithm = new GreedyPathFind(_currentPos, _targetPos, _solidLayer, _radius, _requireDistance);
                     break;
+                case TypeFind.Dijkstra:
+                    _algorithm = new DijkstraPathFind(_currentPos, _targetPos, _solidLayer, _radius, _requireDistance);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(_typeFind));
             }
@@ -58,7 +61,7 @@ namespace Characters.PathFinding
 
         private void OnDrawGizmos()
         {
-            if (IsWorked()) _algorithm.Draw();
+            if (_algorithm != null) _algorithm.Draw();
         }
 
         public bool IsWorked() => _algorithm != null && _algorithm.isWorked;
@@ -76,7 +79,8 @@ namespace Characters.PathFinding
             AStar,
             Depth,
             Width,
-            Greedy
+            Greedy,
+            Dijkstra
         }
     }
 }

@@ -6,28 +6,30 @@ namespace Characters.PathFinding.Algorithms
 {
     public class SearchInWidth : AbstractPathFind
     {
+        private Node _nodeToCheck;
         private Dictionary<int, Node> _visitedQueue = new();
         private Queue<Node> _toVisitQueue = new();
 
         public SearchInWidth(
-                Vector2 currentPos, 
-                Vector2 targetPos, 
-                LayerMask layer, 
-                float radius, 
+                Vector2 currentPos,
+                Vector2 targetPos,
+                LayerMask layer,
+                float radius,
                 float requireDistance) :
                 base(
                         currentPos,
                         targetPos,
-                        layer, 
-                        radius, 
+                        layer,
+                        radius,
                         requireDistance)
-        { }
+        {
+        }
 
-        
+
         public override void Initialize()
         {
             base.Initialize();
-            
+
             _visitedQueue = new Dictionary<int, Node>();
             _toVisitQueue = new Queue<Node>();
             _toVisitQueue.Enqueue(_startNode);
@@ -40,26 +42,26 @@ namespace Characters.PathFinding.Algorithms
         {
             if (_toVisitQueue.Count <= 0) return;
 
-            Node nodeToCheck = _toVisitQueue.Dequeue();
+            _nodeToCheck = _toVisitQueue.Dequeue();
 
-            if (CheckDestination(nodeToCheck.currentPosition))
+            if (CheckDestination(_nodeToCheck.currentPosition))
             {
-                _path = CalculatePathFromNode(nodeToCheck);
+                _path = CalculatePathFromNode(_nodeToCheck);
                 isFinded = true;
                 isWorked = false;
             }
 
             List<Node> neighbours;
 
-            switch (IsValidNode(nodeToCheck.currentPosition))
+            switch (IsValidNode(_nodeToCheck.currentPosition))
             {
                 case true:
                 {
-                    if (_visitedQueue.All(x => x.Value.currentPosition != nodeToCheck.currentPosition))
+                    if (_visitedQueue.All(x => x.Value.currentPosition != _nodeToCheck.currentPosition))
                     {
-                        _visitedQueue.Add(nodeToCheck.GetHashCode(), nodeToCheck);
+                        _visitedQueue.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
 
-                        neighbours = GetNeighbourNodes(nodeToCheck);
+                        neighbours = GetNeighbourNodes(_nodeToCheck);
 
                         foreach (Node neighbour in neighbours)
                         {
@@ -74,7 +76,7 @@ namespace Characters.PathFinding.Algorithms
                     break;
                 }
                 case false:
-                    _visitedQueue.Add(nodeToCheck.GetHashCode(), nodeToCheck);
+                    _visitedQueue.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
                     break;
             }
         }
@@ -93,13 +95,15 @@ namespace Characters.PathFinding.Algorithms
                 Gizmos.DrawWireSphere(new Vector2(item.Value.currentPosition.x, item.Value.currentPosition.y), _radius);
             }
 
-            if (_path != null)
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(new Vector2(_nodeToCheck.currentPosition.x, _nodeToCheck.currentPosition.y), _radius);
+
+            if (_path == null) return;
+
+            foreach (var item in _path)
             {
-                foreach (var item in _path)
-                {
-                    Gizmos.color = Color.green;
-                    Gizmos.DrawWireSphere(new Vector2(item.x, item.y), _radius);
-                }
+                Gizmos.color = Color.green;
+                Gizmos.DrawWireSphere(new Vector2(item.x, item.y), _radius);
             }
         }
     }

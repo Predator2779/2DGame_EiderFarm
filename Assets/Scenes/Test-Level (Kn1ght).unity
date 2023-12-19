@@ -553,11 +553,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1746540638408619865, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.95
+      value: -9.4
       objectReference: {fileID: 0}
     - target: {fileID: 1746540638408619865, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -48.65
+      value: -12.7
       objectReference: {fileID: 0}
     - target: {fileID: 1746540638408619865, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -603,6 +603,10 @@ PrefabInstance:
       propertyPath: _solidLayer.m_Bits
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3324305552047506518, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+      propertyPath: _radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: _cellF
       value: 0.5
@@ -622,6 +626,14 @@ PrefabInstance:
     - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: _pathDistance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+      propertyPath: _findAlgorithm
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+      propertyPath: _reqDistToNode
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6007349334224100691, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: m_Name

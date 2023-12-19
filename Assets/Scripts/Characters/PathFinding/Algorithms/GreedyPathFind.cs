@@ -6,9 +6,10 @@ namespace Characters.PathFinding.Algorithms
 {
     public class GreedyPathFind : AbstractPathFind
     {
-        Dictionary<int, Node> _visitedGreedy = new();
-        SortedSet<Node> _toVisitGreedy = new(new NodeComparer());
-        Dictionary<int, Node> _toVisitDicGreedy = new();
+        private Node _nodeToCheck;
+        private Dictionary<int, Node> _visitedGreedy = new();
+        private SortedSet<Node> _toVisitGreedy = new(new NodeComparer());
+        private Dictionary<int, Node> _toVisitDicGreedy = new();
 
         public GreedyPathFind(
                 Vector2 currentPos,
@@ -57,29 +58,18 @@ namespace Characters.PathFinding.Algorithms
                 isWorked = false;
             }
 
-            List<Node> neighbours;
+            if (!IsValidNode(nodeToCheck.currentPosition)) return;
+            
+            List<Node> neighbours = GetNeighbourNodes(nodeToCheck);
 
-            switch (IsValidNode(nodeToCheck.currentPosition))
+            foreach (Node neighbour in neighbours)
             {
-                case true:
+                if (!_visitedGreedy.ContainsKey(neighbour.GetHashCode()) &&
+                    !_toVisitDicGreedy.ContainsKey(neighbour.GetHashCode()))
                 {
-                    neighbours = GetNeighbourNodes(nodeToCheck);
-
-                    foreach (Node neighbour in neighbours)
-                    {
-                        if (_visitedGreedy.ContainsKey(neighbour.GetHashCode()) ||
-                            _toVisitDicGreedy.ContainsKey(neighbour.GetHashCode())) continue;
-
-                        _toVisitGreedy.Add(neighbour);
-                        _toVisitDicGreedy.Add(neighbour.GetHashCode(), neighbour);
-                    }
-
-                    break;
+                    _toVisitGreedy.Add(neighbour);
+                    _toVisitDicGreedy.Add(neighbour.GetHashCode(), neighbour);
                 }
-                case false:
-                    if (!_visitedGreedy.ContainsKey(nodeToCheck.GetHashCode()))
-                        _visitedGreedy.Add(nodeToCheck.GetHashCode(), nodeToCheck);
-                    break;
             }
         }
 
@@ -97,6 +87,9 @@ namespace Characters.PathFinding.Algorithms
                 Gizmos.DrawWireSphere(new Vector2(item.Value.currentPosition.x, item.Value.currentPosition.y), _radius);
             }
 
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(new Vector2(_nodeToCheck.currentPosition.x, _nodeToCheck.currentPosition.y), _radius);
+            
             if (_path != null)
             {
                 foreach (var item in _path)

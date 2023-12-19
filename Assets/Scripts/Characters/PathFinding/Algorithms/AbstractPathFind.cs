@@ -42,7 +42,7 @@ namespace Characters.PathFinding.Algorithms
         public abstract void Draw();
         
         protected bool CheckDestination(Vector2 nodePosition) => 
-                Vector2.Distance(nodePosition, _targetPos) <= _radius;
+                Vector2.Distance(nodePosition, _targetPos) <= _radius + _radius / 10;
 
         protected bool IsValidNode(Vector2 nodePosition)////
         {

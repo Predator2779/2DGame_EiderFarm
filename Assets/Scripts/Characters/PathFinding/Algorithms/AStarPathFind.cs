@@ -6,6 +6,7 @@ namespace Characters.PathFinding.Algorithms
 {
     public class AStarPathFind : AbstractPathFind
     {
+        private Node _nodeToCheck;
         private List<Node> _checkedNodes = new();
         private List<Node> _waitingNodes = new(); //to stack
 
@@ -38,32 +39,32 @@ namespace Characters.PathFinding.Algorithms
         {
             if (_waitingNodes.Count <= 0) return;
 
-            Node nodeToCheck = _waitingNodes.FirstOrDefault(x => x.distTotal == _waitingNodes.Min(y => y.distTotal));
+            _nodeToCheck = _waitingNodes.FirstOrDefault(x => x.distTotal == _waitingNodes.Min(y => y.distTotal));
 
-            if (CheckDestination(nodeToCheck.currentPosition))
+            if (CheckDestination(_nodeToCheck.currentPosition))
             {
-                _path = CalculatePathFromNode(nodeToCheck);
+                _path = CalculatePathFromNode(_nodeToCheck);
                 isFinded = true;
                 isWorked = false;
             }
 
-            switch (IsValidNode(nodeToCheck.currentPosition))
+            switch (IsValidNode(_nodeToCheck.currentPosition))
             {
                 case true:
                 {
-                    _waitingNodes.Remove(nodeToCheck);
+                    _waitingNodes.Remove(_nodeToCheck);
 
-                    if (_checkedNodes.All(x => x.currentPosition != nodeToCheck.currentPosition))
+                    if (_checkedNodes.All(x => x.currentPosition != _nodeToCheck.currentPosition))
                     {
-                        _checkedNodes.Add(nodeToCheck);
-                        _waitingNodes.AddRange(GetNeighbourNodes(nodeToCheck));
+                        _checkedNodes.Add(_nodeToCheck);
+                        _waitingNodes.AddRange(GetNeighbourNodes(_nodeToCheck));
                     }
 
                     break;
                 }
                 case false:
-                    _waitingNodes.Remove(nodeToCheck);
-                    _checkedNodes.Add(nodeToCheck);
+                    _waitingNodes.Remove(_nodeToCheck);
+                    _checkedNodes.Add(_nodeToCheck);
                     break;
             }
         }
@@ -82,6 +83,9 @@ namespace Characters.PathFinding.Algorithms
                 Gizmos.DrawWireSphere(new Vector2(item.currentPosition.x, item.currentPosition.y), _radius);
             }
 
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(new Vector2(_nodeToCheck.currentPosition.x, _nodeToCheck.currentPosition.y), _radius);
+            
             if (_path == null) return;
 
             foreach (var item in _path)
