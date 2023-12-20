@@ -116,7 +116,7 @@ namespace Characters.AI
 
             if (_path != null && _index >= 0)
             {
-                if (IsDestination(transform.position, _path[_index]) > _radius)
+                if (IsDestination(transform.position, _path[_index]) > _radius * 1.5f)
                 {
                     var direction = _path[_index] - (Vector2)transform.position;
                     Walk(direction.normalized);
