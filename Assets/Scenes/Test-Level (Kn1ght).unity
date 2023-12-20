@@ -603,17 +603,9 @@ PrefabInstance:
       propertyPath: _solidLayer.m_Bits
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3324305552047506518, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
-      propertyPath: _findSpeed
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: _cellF
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
-      propertyPath: _radius
-      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: _maxDistance
