@@ -1,7 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using Building;
 using Building.Constructions;
+using Characters.PathFinding;
 using Economy;
 using General;
 using UnityEngine;
@@ -12,21 +12,27 @@ namespace Characters.AI
     [RequireComponent(typeof(PathFinder))]
     public class EmployeeAI : WalkerAI
     {
-        [Header("Service")]
+        [Header("Service:")]
         [SerializeField] private EmployeeStates _currentEmployeeState;
-        [SerializeField] private int _maxDistance;
+
+        [SerializeField] private int _maxDistWalkable;
+
         [Space] [Header("Settings:")]
         [SerializeField] [Range(1, 100)] private int _fluffCapacity;
 
-        [SerializeField] private float _targetF;
-        [SerializeField] private float _cellF;
-        
+        [Space] [Header("Path Finding:")]
+        [SerializeField] private PathFinder.TypeFind _findAlgorithm;
+
+        [SerializeField] private float _radius;
+
+        [SerializeField] private float _distance; //
+
         private Construction _currentCleaner;
         private BuildStorage _currentHouse;
         private BuildStorage _currentStorage;
         private BuildingsPull _pull;
-        private PathFinder _pathFinder;
         private Employee _employee;
+        private PathFinder _pathFinder;
         private Vector2 _target;
         private List<Vector2> _path = new();
         private int _index;
@@ -34,12 +40,14 @@ namespace Characters.AI
         private void Start() => Initialize();
         private void OnValidate() => Initialize();
         private void FixedUpdate() => StateExecute();
-        
+
         private void Initialize()
         {
             _pull ??= FindObjectOfType<BuildingsPull>();
-            _pathFinder ??= GetComponent<PathFinder>();
             _employee ??= GetComponent<Employee>();
+            _pathFinder ??= GetComponent<PathFinder>();
+
+            ResetPath();
         }
 
         private void CheckConditions()
@@ -73,6 +81,8 @@ namespace Characters.AI
 
         private void StateExecute()
         {
+            _distance = Vector2.Distance(transform.position, _target); ////
+
             switch (_currentEmployeeState)
             {
                 case EmployeeStates.Idle:
@@ -95,30 +105,27 @@ namespace Characters.AI
 
         private void WalkToTarget()
         {
-            if (Vector2.Distance(transform.position, _target) > _maxDistance) return;
+            if (_maxDistWalkable > 0 && Vector2.Distance(transform.position, _target) > _maxDistWalkable) return;
 
-            if (IsDestination(transform.position, _target) > _targetF)
+            if (IsDestination(transform.position, _target) <= _radius * 1.5f) // magic
             {
-                if (_index > 0)
-                {
-                    if (_path == null) return;
-
-                    if (IsDestination(transform.position, _path[_index]) > _cellF)
-                    {
-                        var direction = _path[_index] - (Vector2)transform.position;
-                        Walk(direction.normalized);
-                    }
-                    else
-                    {
-                        _index--;
-                    }
-                }
-                else SetPath(_target);
-            }
-            else
-            {
+                ResetPath();
                 Idle();
+                return;
             }
+
+            if (_path != null && _index >= 0)
+            {
+                if (IsDestination(transform.position, _path[_index]) > _radius)
+                {
+                    var direction = _path[_index] - (Vector2)transform.position;
+                    Walk(direction.normalized);
+                    return;
+                }
+
+                _index--;
+            }
+            else SetPath();
         }
 
         private void SetTarget(GameObject target)
@@ -137,10 +144,27 @@ namespace Characters.AI
             _target = target.transform.position;
         }
 
-        private void SetPath(Vector2 target)
+        private void SetPath()
         {
-            _path = _pathFinder.GetPath(target);
-            _index = _path.Count - 1;
+            if (_pathFinder.IsWorked()) return;
+
+            if (!_pathFinder.IsFinded() && _path == null)
+            {
+                ResetPath();
+
+                _pathFinder.Initialize(
+                        transform.position,
+                        _target,
+                        _findAlgorithm,
+                        _radius,
+                        _employee.GetName());
+            }
+            else if (_pathFinder.IsFinded())
+            {
+                _path = _pathFinder.GetPath();
+                _index = _path.Count - 1;
+                _pathFinder.Deinitialize();
+            }
         }
 
         private float IsDestination(Vector2 first, Vector2 second) => Vector2.Distance(first, second);
@@ -149,7 +173,9 @@ namespace Characters.AI
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;
 
         private ItemBunch TryGetBunch(string name) => _employee.GetInventory().TryGetBunch(
-                name, out ItemBunch bunch) ? bunch : null;
+                name, out ItemBunch bunch)
+                ? bunch
+                : null;
 
         private bool CanPickFluff()
         {
@@ -208,10 +234,10 @@ namespace Characters.AI
 
         private void Idle()
         {
-            CheckConditions();
-            
             _personAnimate.Walk(_target, false);
+
             StopSound();
+            CheckConditions();
         }
 
         private void Picking()
@@ -245,7 +271,12 @@ namespace Characters.AI
             }
 
             WalkToTarget();
-            CheckConditions();
+        }
+
+        private void ResetPath()
+        {
+            _pathFinder.Deinitialize();
+            _path = null;
         }
 
         private enum EmployeeStates

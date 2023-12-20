@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2484876753256005348}
   - component: {fileID: 2529878683125780359}
   - component: {fileID: 7657352252721850111}
-  - component: {fileID: 8092244096398859633}
+  - component: {fileID: 3324305552047506518}
   - component: {fileID: 7934326965898499444}
   - component: {fileID: 5112419574872024042}
   - component: {fileID: 5987656316525160417}
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08111f1ff9745efbed5903f98bdb3ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8092244096398859633
+--- !u!114 &3324305552047506518
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,14 +122,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6007349334224100691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0973663992e14c84bd3d73bca5c816bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 59ec31a16cae400f9f814447e84db484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PathToTarget: []
-  SolidLayer:
+  _countTest: 50
+  _solidLayer:
     serializedVersion: 2
     m_Bits: 1
-  radius: 1
+  _radius: 0.5
 --- !u!114 &7934326965898499444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,10 +168,12 @@ MonoBehaviour:
   _walkSound: "event:/\u0411\u0435\u0433 \u041D\u0430\u0435\u043C\u043D\u044B\u0439
     \u0440\u0430\u0431\u043E\u0442\u043D\u0438\u043A 2.0"
   _currentEmployeeState: 0
-  _maxDistance: 40
+  _maxDistWalkable: 0
   _fluffCapacity: 1
-  _targetF: 1
-  _cellF: 0.5
+  _findAlgorithm: 2
+  _reqDistToTarget: 2
+  _reqDistToNode: 0.5
+  _distance: 0
 --- !u!114 &5987656316525160417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +190,8 @@ MonoBehaviour:
   _listItems:
   - _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
     _count: 100
+  - _item: {fileID: 11400000, guid: 159a6522252945049be044ad47855211, type: 2}
+    _count: 2
   _limit: 1000
 --- !u!1 &9136485320912651497
 GameObject:
