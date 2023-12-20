@@ -15,13 +15,13 @@ namespace Characters.PathFinding.Algorithms
                 Vector2 targetPos,
                 LayerMask layer,
                 float radius,
-                float requireDistance) :
+                string name) :
                 base(
                         currentPos,
                         targetPos,
                         layer,
                         radius,
-                        requireDistance)
+                        name)
         {
         }
 
@@ -87,8 +87,11 @@ namespace Characters.PathFinding.Algorithms
                 Gizmos.DrawWireSphere(new Vector2(item.Value.currentPosition.x, item.Value.currentPosition.y), _radius);
             }
 
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(new Vector2(_nodeToCheck.currentPosition.x, _nodeToCheck.currentPosition.y), _radius);
+            if (_nodeToCheck != null)
+            {
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawWireSphere(new Vector2(_nodeToCheck.currentPosition.x, _nodeToCheck.currentPosition.y), _radius);
+            }
 
             if (_path == null) return;
 

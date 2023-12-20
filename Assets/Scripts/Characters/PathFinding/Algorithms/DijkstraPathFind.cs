@@ -15,13 +15,13 @@ namespace Characters.PathFinding.Algorithms
                 Vector2 targetPos,
                 LayerMask layer,
                 float radius,
-                float requireDistance) :
+                string name) :
                 base(
                         currentPos,
                         targetPos,
                         layer,
                         radius,
-                        requireDistance)
+                        name)
         {
         }
 
@@ -48,7 +48,7 @@ namespace Characters.PathFinding.Algorithms
             _nodeToCheck = _toVisitDictionary[_nodeToCheck.GetHashCode()];
             _toVisitDictionary.Remove(_nodeToCheck.GetHashCode());
 
-            // if (!IsValidNode(_nodeToCheck.currentPosition)) return;
+            if (!IsValidNode(_nodeToCheck.currentPosition)) return;
 
             _visited.Add(_nodeToCheck.GetHashCode(), _nodeToCheck);
             List<Node> neighbours = GetNeighbourNodes(_nodeToCheck);
@@ -91,8 +91,11 @@ namespace Characters.PathFinding.Algorithms
                 Gizmos.DrawWireSphere(new Vector2(item.Value.currentPosition.x, item.Value.currentPosition.y), _radius);
             }
 
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(new Vector2(_nodeToCheck.currentPosition.x, _nodeToCheck.currentPosition.y), _radius);
+            if (_nodeToCheck != null)
+            {
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawWireSphere(new Vector2(_nodeToCheck.currentPosition.x, _nodeToCheck.currentPosition.y), _radius);
+            }
 
             if (_path == null) return;
             
