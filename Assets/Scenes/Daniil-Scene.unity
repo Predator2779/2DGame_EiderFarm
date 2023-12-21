@@ -2645,13 +2645,17 @@ PrefabInstance:
       value: PLAYER_PHYS
       objectReference: {fileID: 0}
     - target: {fileID: 3324752455631967444, guid: 5365565ee0cccde418767ade71145759, type: 3}
+      propertyPath: _listItems.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324752455631967444, guid: 5365565ee0cccde418767ade71145759, type: 3}
       propertyPath: _listItems.Array.data[1]._item
       value: 
-      objectReference: {fileID: 11400000, guid: 3e35c204c77a2c34a9439f95cd1ddef4, type: 2}
+      objectReference: {fileID: 11400000, guid: 159a6522252945049be044ad47855211, type: 2}
     - target: {fileID: 3324752455631967444, guid: 5365565ee0cccde418767ade71145759, type: 3}
       propertyPath: _listItems.Array.data[2]._item
       value: 
-      objectReference: {fileID: 11400000, guid: 65288ac64d0b23545b0e2f7b8ceb9734, type: 2}
+      objectReference: {fileID: 11400000, guid: 200ec94766fc499428a2a0d4b79d9875, type: 2}
     - target: {fileID: 3324752455631967444, guid: 5365565ee0cccde418767ade71145759, type: 3}
       propertyPath: _listItems.Array.data[3]._item
       value: 
@@ -2661,12 +2665,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3324752455631967444, guid: 5365565ee0cccde418767ade71145759, type: 3}
-      propertyPath: _listItems.Array.data[1]._count
+      propertyPath: _listItems.Array.data[0]._count
       value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3324752455631967444, guid: 5365565ee0cccde418767ade71145759, type: 3}
+      propertyPath: _listItems.Array.data[1]._count
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324752455631967444, guid: 5365565ee0cccde418767ade71145759, type: 3}
       propertyPath: _listItems.Array.data[2]._count
-      value: 1
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3324752455631967444, guid: 5365565ee0cccde418767ade71145759, type: 3}
       propertyPath: _listItems.Array.data[3]._count
