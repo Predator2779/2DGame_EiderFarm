@@ -55,7 +55,10 @@ MonoBehaviour:
   _cellPrefab: {fileID: 2329546994574512717, guid: f49e72cc48fdc914196415e2aca5faf3, type: 3}
   _spawnTransform: {fileID: 0}
   _personal:
+  - {fileID: 7934326965898499444, guid: 6206a015170bbfe4bb94dd156800362e, type: 3}
+  - {fileID: 7934326965898499444, guid: c67a95e5c92ab4c4a8586003bc41d781, type: 3}
   - {fileID: 7934326965898499444, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+  - {fileID: 7934326965898499444, guid: 37361cffdf8b4f54cb136f7545843e23, type: 3}
 --- !u!1 &1793497947987895294
 GameObject:
   m_ObjectHideFlags: 0
