@@ -9,6 +9,7 @@ namespace Characters.PathFinding
     {
         [SerializeField] private int _findSpeed;
         [SerializeField] private LayerMask _solidLayer;
+        [SerializeField] private bool _drawGizmos;
 
         private TypeFind _typeFind;
         private AbstractPathFind _algorithm;
@@ -65,7 +66,7 @@ namespace Characters.PathFinding
 
         private void OnDrawGizmos()
         {
-            if (_algorithm != null) _algorithm.Draw();
+            if (_algorithm != null && _drawGizmos) _algorithm.Draw();
         }
 
         public bool IsWorked() => _algorithm != null && _algorithm.isWorked;

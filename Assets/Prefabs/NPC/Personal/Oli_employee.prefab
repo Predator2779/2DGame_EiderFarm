@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6007349334224100691}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.47, y: 0.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -129,6 +129,7 @@ MonoBehaviour:
   _solidLayer:
     serializedVersion: 2
     m_Bits: 1
+  _drawGizmos: 0
 --- !u!114 &7934326965898499444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,11 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isPlayerInventory: 0
-  _listItems:
-  - _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
-    _count: 100
-  - _item: {fileID: 11400000, guid: 159a6522252945049be044ad47855211, type: 2}
-    _count: 2
+  _listItems: []
   _limit: 1000
 --- !u!1 &9136485320912651497
 GameObject:
