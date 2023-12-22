@@ -10,7 +10,6 @@ using UnityEngine;
 public class ResourceTransmitter : MonoBehaviour
 {
     public delegate IEnumerator CoroutineDelegate(Item typeFrom, Inventory inv, int fluff);
-
     public event CoroutineDelegate TransmitteEvent;
 
     [SerializeField, Header("Сколько пуха передается от игрока")]
@@ -19,6 +18,7 @@ public class ResourceTransmitter : MonoBehaviour
     [SerializeField] private Item _typeToPlayer;
     [SerializeField] private Inventory _characterInventory;
 
+    [SerializeField] private Person _person;
     private Construction _construction;
     private BuildStorage _storage;
     private Machine _machine;
@@ -33,7 +33,14 @@ public class ResourceTransmitter : MonoBehaviour
 
     public bool CheckBag()
     {
-        if (_characterInventory == null) return false;
+        if (_characterInventory == null && _person == null) return false;
+
+        if (_construction.typeConstruction == GlobalTypes.TypeBuildings.Storage 
+            && _person.TryGetComponent(out Employee employee))
+        {
+            TransmitteFromEmployee(employee);
+            return false; /// на совесть Даниила
+        }
 
         Transmitte();
 
@@ -50,6 +57,17 @@ public class ResourceTransmitter : MonoBehaviour
         return true;
     }
 
+    private void TransmitteFromEmployee(Employee employee)
+    {
+        var inventory = employee.GetComponent<Inventory>();
+        if (!inventory.TryGetBunch(GlobalConstants.CleanedFluff, out ItemBunch bunch) || bunch == null) return;
+        
+        _storage.AddFluff(bunch.GetCount());
+        inventory.RemoveItems(bunch.GetItem(), bunch.GetCount());
+        
+        // inventory.Exchange(inventory, gameObject.GetComponent<Inventory>(), bunch);
+    }
+
     private void Transmitte()
     {
         if (_storage.GetFluffCount() == 0) return;
@@ -59,39 +77,33 @@ public class ResourceTransmitter : MonoBehaviour
         _characterInventory.AddItems(_typeToPlayer, count);
         _storage.ResetFluff();
 
-        if (GetComponent<FluffGiver>())
-            StartCoroutine(GetComponent<FluffGiver>().ChangeSpritesWithDelay(0.3f));
+        if (TryGetComponent(out FluffGiver fluffGiver)) StartCoroutine(fluffGiver.ChangeSpritesWithDelay(0.3f));
 
         EventHandler.OnItemTransmitted?.Invoke(_construction.typeConstruction, _typeToPlayer, count);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.GetComponent<Person>()) return;
+        if (!collision.TryGetComponent(out _person)) return;
 
         _characterInventory = collision.gameObject.GetComponent<Inventory>();
 
         if (!CheckBag()) return;
-        
-        if (gameObject.GetComponent<Machine>())
-            _machine.GetAnimator().enabled = true;
+
+        if (gameObject.GetComponent<Machine>()) _machine.GetAnimator().enabled = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (_characterInventory != collision.GetComponent<Inventory>() ||
-            !collision.gameObject.GetComponent<Person>()) return;
+            collision.gameObject.GetComponent<Person>() != _person) return;
 
         _characterInventory = null;
+        _person = null;
 
         if (gameObject.GetComponent<Machine>()) _machine.GetAnimator().enabled = false;
     }
-
-
-    public void SetGradeAnimationTrue(int grade)
-    {
-        _machine.Animation(true, grade);
-    }
-
+    
+    public void SetGradeAnimationTrue(int grade) => _machine.Animation(true, grade);
     public void ChangeFluffCount(int count) => _fluffCount = count;
 }
