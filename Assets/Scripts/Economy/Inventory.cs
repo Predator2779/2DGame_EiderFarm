@@ -126,7 +126,7 @@ namespace Economy
             TryGetBunch(item.GetName(), out ItemBunch newBunch);
             return newBunch;
         }
-
+        
         private void CheckCount(ItemBunch bunch)
         {
             if (bunch.GetItem().GetName() == GlobalConstants.Money) return;

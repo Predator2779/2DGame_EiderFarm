@@ -46,17 +46,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5695158240800521757, guid: 65a15219c5cbb684c8cf7a14e6edee9b, type: 3}
+      propertyPath: _countObjs
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6666216913917355124, guid: 65a15219c5cbb684c8cf7a14e6edee9b, type: 3}
       propertyPath: m_Name
       value: FoxSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 8817704698588942518, guid: 65a15219c5cbb684c8cf7a14e6edee9b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.1
+      value: -24.44
       objectReference: {fileID: 0}
     - target: {fileID: 8817704698588942518, guid: 65a15219c5cbb684c8cf7a14e6edee9b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.1
+      value: -17.54
       objectReference: {fileID: 0}
     - target: {fileID: 8817704698588942518, guid: 65a15219c5cbb684c8cf7a14e6edee9b, type: 3}
       propertyPath: m_LocalPosition.z

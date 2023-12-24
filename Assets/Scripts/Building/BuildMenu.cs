@@ -2,6 +2,7 @@ using System;
 using Building.Constructions;
 using Economy;
 using General;
+using TMPro;
 using UnityEngine;
 using EventHandler = General.EventHandler;
 
@@ -33,7 +34,7 @@ namespace Building
         [Header("Сколько возвращает при сносе (0 если 0)")]
         [SerializeField, Range(0, 1000)] private int _sellPrice;
 
-        private Inventory _inventory;
+       [SerializeField] private Inventory _inventory;
         private ItemBunch _moneyBunch;
 
         public bool HasFlag;
@@ -64,18 +65,17 @@ namespace Building
         {
             if (_currentBuilding != null) return;
 
-            if (!Buy(_buyPrice))
-                return;
+            if (!Buy(_buyPrice)) return;
 
-            if (_triggerSprite != null)
-                _triggerSprite.enabled = false;
+            if (_triggerSprite != null) _triggerSprite.enabled = false;
 
             Build(_buildingPrefab);
             _currentBuilding.SetSprite(_currentBuilding.Upgrade());
+            
             IsBuilded = true;
-            
+
             FMODUnity.RuntimeManager.PlayOneShotAttached(_buildingPrefab.GetBuildSound(), gameObject);
-            
+
             CheckBtns();
 
             EventHandler.OnBuilded?.Invoke(_currentBuilding.typeConstruction);
@@ -107,7 +107,7 @@ namespace Building
 
             EventHandler.OnDemolition?.Invoke(_currentBuilding.typeConstruction);
             Destroy(_currentBuilding.gameObject);
-            
+
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI меню стройки домик/Снести");
 
             CheckBtns();
@@ -119,21 +119,23 @@ namespace Building
         {
             if (_currentBuilding == null || !_currentBuilding.CanUpgrade()) return;
 
-            switch (_currentBuilding.GetCurrentGrade())
-            {
-                case 1:
-                    if (!Buy(_upgradePrice[0])) return;
-                    break;
-                case 2:
-                    if (!Buy(_upgradePrice[1])) return;
-                    break;
-            }
+            if (!Buy(_upgradePrice[_currentBuilding.GetCurrentGrade() - 1])) return; /// проверить
+
+            // switch (_currentBuilding.GetCurrentGrade())
+            // {
+            //     case 1:
+            //         if (!Buy(_upgradePrice[0])) return;
+            //         break;
+            //     case 2:
+            //         if (!Buy(_upgradePrice[1])) return;
+            //         break;
+            // }
 
             _currentBuilding.SetSprite(_currentBuilding.Upgrade());
 
             if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.GagaHouse)
                 _currentBuilding.GetComponent<FluffGiver>().CheckGrade();
-            
+
             if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.FluffCleaner ||
                 _currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.ClothMachine)
                 _currentBuilding.GetComponent<Machine>().CheckGrade();
@@ -154,6 +156,8 @@ namespace Building
             EventHandler.OnUpgraded?.Invoke(
                     _currentBuilding.typeConstruction,
                     _currentBuilding.GetCurrentGrade());
+            
+            CheckBtns();
         }
 
         public void Upgrade(bool isFree)
@@ -196,21 +200,27 @@ namespace Building
         {
             if (_buildBtn == null || _upgradeBtn == null || _demolitionBtn == null) return;
 
+            _buildBtn.SetActive(false);
+            _upgradeBtn.SetActive(false);
+            _demolitionBtn.SetActive(false);
+
             if (!IsBuilded)
             {
+                _buildBtn.transform.Find("Price").GetComponentInChildren<TMP_Text>().text = _buyPrice + "kr";
                 _buildBtn.SetActive(true);
-                _upgradeBtn.SetActive(false);
-                _demolitionBtn.SetActive(false);
             }
             else
             {
-                _buildBtn.SetActive(false);
-                _upgradeBtn.SetActive(true);
+                if (_currentBuilding.GetCurrentGrade() < _currentBuilding.GetMaxGrade() -1)
+                {
+                    _upgradeBtn.transform.Find("Price").GetComponentInChildren<TMP_Text>().text =
+                            _upgradePrice[_currentBuilding.GetCurrentGrade()] + "kr";
+                    _upgradeBtn.SetActive(true);
+                }
+
                 _demolitionBtn.SetActive(true);
 
-                if (_flagBtn == null) return;
-
-                _flagBtn.SetActive(HasFlag);
+                if (_flagBtn != null) _flagBtn.SetActive(HasFlag);
             }
         }
 
@@ -229,6 +239,7 @@ namespace Building
             if (!_inventory.TryGetBunch(GlobalConstants.Money, out var moneyBunch) ||
                 moneyBunch.GetCount() < price) return false;
 
+            print(_inventory.gameObject.name);
             _inventory.RemoveItems(moneyBunch.GetItem(), price);
             return true;
         }

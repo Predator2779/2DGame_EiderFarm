@@ -8,6 +8,7 @@ using UnityEngine.Tilemaps;
 
 namespace TriggerScripts
 {
+    [SelectionBase]
     public class BuildTrigger : MenuTrigger
     {
         [SerializeField] private Tilemap _map;
@@ -16,7 +17,7 @@ namespace TriggerScripts
         [SerializeField] private SpriteRenderer _renderer;
 
         private Transform _parentBuildings;
-        private string _personName;
+        private Person _person;
 
         private void Start() => Initialize();
 
@@ -43,14 +44,14 @@ namespace TriggerScripts
         private Quaternion GetRotation() => transform.GetComponentInChildren<SpriteRenderer>().transform.rotation;
 
         public void AddToPull() =>
-                EventHandler.OnAddedBuildPull.Invoke(this, GetTypeBuilding());  
-        
+                EventHandler.OnAddedBuildPull.Invoke(this, GetTypeBuilding());
+
         public void RemoveFromPull() =>
                 EventHandler.OnRemovedBuildPull?.Invoke(this, GetTypeBuilding());
 
         private GlobalTypes.TypeBuildings GetTypeBuilding() => _buildPrefab.typeConstruction;
-        
-        public bool IsOccupied() => _personName != "";
+
+        public bool IsOccupied() => _person != null;
 
         private void SetParent(GlobalTypes.TypeBuildings type)
         {
@@ -82,38 +83,37 @@ namespace TriggerScripts
                         GetRotation());
 
 
-        protected override void OnTriggerEnter2D(Collider2D other)
+        protected override void OnTriggerEnter2D(Collider2D other) /// to Physics.Overlap
         {
-            if (other.gameObject.GetComponent<InputHandler>())
-            {
-                SetConstruction();
-                _buildMenu.SetInventory(other.gameObject.GetComponent<Inventory>());
-                
-                if (other.gameObject.GetComponent<Inventory>().
-                          TryGetBunch(GlobalConstants.Flag, out var bunch)) 
-                    _buildMenu.HasFlag = bunch.GetCount() > 0;
-
-                _buildMenu.CheckBtns();
-            }
-
-            if (other.TryGetComponent(out Person person) &&
-                person.GetName() == _personName)
-                _personName = person.GetName();
-
             base.OnTriggerEnter2D(other);
+            
+            if (!other.TryGetComponent(out Person person)) return;
+
+            if (person.GetName() == null || person.TryGetComponent(out InputHandler inputHandler))
+                _person = person;
+            
+            if (_person.GetName() != "Арни") return; /// to GlobalConstants
+
+            SetConstruction();
+
+            var inventory = _person.GetComponent<Inventory>();
+            
+            _buildMenu.SetInventory(inventory);
+
+            if (inventory.TryGetBunch(GlobalConstants.Flag, out ItemBunch bunch))
+                _buildMenu.HasFlag = bunch.GetCount() > 0;
+
+            _buildMenu.CheckBtns();
         }
 
         protected override void OnTriggerExit2D(Collider2D other)
         {
             base.OnTriggerExit2D(other);
-            _buildMenu.SetInventory(null);
-            if (other.TryGetComponent(out Person person) &&
-                person.GetName() == _personName)
-            {
-                _personName = "";
-            }
+
+            if (other.TryGetComponent(out Person person) && person.GetName() == null)
+                _person = null;
         }
-        
+
         public void RemovePlace()
         {
             _buildMenu.Demolition();

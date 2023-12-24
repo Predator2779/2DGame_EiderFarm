@@ -37,6 +37,8 @@ namespace Building.Constructions
 
         public int GetCurrentGrade() => _currentGrade;
 
+        public int GetMaxGrade() => _gradeBuildings.Length;
+        
         public ResourceTransmitter GetTransmitter() => _transmitter;
 
         public Transform GetEntryPoint() => _entryPoint;

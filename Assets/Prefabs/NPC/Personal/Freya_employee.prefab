@@ -170,7 +170,7 @@ MonoBehaviour:
     \u0440\u0430\u0431\u043E\u0442\u043D\u0438\u043A 2.0"
   _currentEmployeeState: 0
   _maxDistWalkable: 0
-  _fluffCapacity: 1
+  _fluffCapacity: 2
   _findAlgorithm: 0
   _radius: 0.5
   _distance: 0
