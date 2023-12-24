@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,8 +15,7 @@ public class Field : MonoBehaviour
 
     [Header("Количество гаг.")]
     [SerializeField] private int _count;
-
-
+    
     private void OnEnable() => Initialize();
 
     private void Initialize()
