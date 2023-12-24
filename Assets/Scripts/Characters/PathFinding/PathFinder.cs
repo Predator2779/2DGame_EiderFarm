@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using Characters.PathFinding.Algorithms;
 using UnityEngine;
@@ -15,7 +15,9 @@ namespace Characters.PathFinding
         private AbstractPathFind _algorithm;
         private Vector2 _currentPos;
         private Vector2 _targetPos;
+        private bool _isWorkedCoroutine;
         private float _radius;
+        private int _timeFinding;
         private string _name;
 
         public void Initialize(
@@ -59,11 +61,22 @@ namespace Characters.PathFinding
         private void Update()
         {
             if (!IsWorked()) return;
-
+            
+            if (!_isWorkedCoroutine) StartCoroutine(LimitFind());
+            
             for (int i = 0; i < _findSpeed; i++)
                 _algorithm.Search();
         }
 
+        private IEnumerator LimitFind()
+        {
+            _isWorkedCoroutine = true;
+            yield return new WaitForSeconds(_timeFinding);
+            Deinitialize();
+            
+            _isWorkedCoroutine = false;
+        }
+        
         private void OnDrawGizmos()
         {
             if (_algorithm != null && _drawGizmos) _algorithm.Draw();
