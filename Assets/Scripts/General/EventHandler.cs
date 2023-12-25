@@ -10,6 +10,8 @@ namespace General
     {
         public static UnityEvent<string, int> OnBunchChanged = new(); // for UI
         public static UnityEvent<int> OnUpgradeChanged = new();
+
+       
         
         #region FLAGS
 
@@ -17,6 +19,7 @@ namespace General
         public static UnityEvent<bool> FlagPanelEvent = new();
         public static UnityEvent<Sprite> OnFlagSpriteChanged = new();
         public static UnityEvent OnFlagSet = new();
+        public static UnityEvent OnFlagPanelCurrentState = new();
 
         #endregion
         

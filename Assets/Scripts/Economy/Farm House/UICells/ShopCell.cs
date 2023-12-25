@@ -48,6 +48,9 @@ namespace Economy.Farm_House
             Sell(_item, _count, _price);
             Buy(_item, _count, _price);
 
+            if (_item.GetName() == GlobalConstants.Flag)
+                EventHandler.OnFlagPanelCurrentState.Invoke();
+
             RefreshButton();
             CheckCount();
         }
