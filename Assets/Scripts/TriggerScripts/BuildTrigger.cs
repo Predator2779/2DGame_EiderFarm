@@ -85,7 +85,7 @@ namespace TriggerScripts
             if (person.TryGetComponent(out InputHandler inputHandler))
                 _person = person;
             
-            if (_person.GetName() != "Арни") return; /// to GlobalConstants
+            if (_person.GetName() != GlobalConstants.PlayerName) return;
 
             SetConstruction();
 

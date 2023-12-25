@@ -25,6 +25,7 @@ namespace Characters.AI
         [SerializeField] private PathFinder.TypeFind _findAlgorithm;
 
         [SerializeField] private float _radius;
+        [SerializeField] private float _walkTime;
         [SerializeField] private float _distance; //
 
         private Construction _currentCleaner;
@@ -33,13 +34,11 @@ namespace Characters.AI
         private BuildingsPull _pull;
         private Employee _employee;
         private PathFinder _pathFinder;
-        [SerializeField] private Vector2 _target;
-        [SerializeField] private Transform _subTarget;
+        private Vector2 _target;
+        [SerializeField] private Transform _subTarget; //
         private List<Vector2> _path = new();
-        [SerializeField] private int _index;
-        [SerializeField] private float _walkTime;
-        [SerializeField] private float _distTarget;
-        [SerializeField] private float _distCell;
+        private int _index;
+
         private void Start() => Initialize();
         private void OnValidate() => Initialize();
         private void FixedUpdate() => StateExecute();
@@ -65,7 +64,7 @@ namespace Characters.AI
             }
 
             if (CountCleanFluff() < CountUncleanFluff() &&
-                // CountUncleanFluff() > 0 &&
+                CountUncleanFluff() > 0 &&
                 CanRecycle())
             {
                 SetTarget(_currentCleaner.gameObject);
@@ -85,7 +84,7 @@ namespace Characters.AI
 
         private void StateExecute()
         {
-            _distance = Vector2.Distance(transform.position, _target); ////
+            // _distance = Vector2.Distance(transform.position, _target); ////
 
             switch (_currentEmployeeState)
             {
@@ -154,7 +153,7 @@ namespace Characters.AI
         {
             if (_maxDistWalkable > 0 && Vector2.Distance(transform.position, _target) > _maxDistWalkable) return;
 
-            if (IsNearby(_target, _distTarget))
+            if (IsNearby(_target))
             {
                 StopMove();
                 return;
@@ -163,24 +162,21 @@ namespace Characters.AI
             if (_path == null || _index < 0) SetPath();
             else
             {
-                if (IsNearby(_path[0], _distTarget))
+                if (IsNearby(_path[0]))
                 {
-                    print("idle...");
                     ResetPath();
                     StopMove();
                 }
                 else
                 {
-                    if (IsNearby(_path[_index], _distCell))
+                    if (IsNearby(_path[_index]))
                     {
                         StartCoroutine(WalkTime());
-                        print("index--");
                         _index--;
                     }
                     else
                     {
                         StartCoroutine(WalkTime());
-                        print("walk...");
                         var direction = _path[_index] - (Vector2)transform.position;
                         Walk(direction.normalized);
                     }
@@ -221,7 +217,6 @@ namespace Characters.AI
 
         private void SetPath()
         {
-            print("set path...");
             if (_pathFinder.IsWorked()) return;
 
             if (!_pathFinder.IsFinded() && _path == null)
@@ -243,19 +238,12 @@ namespace Characters.AI
             }
         }
 
-        private bool IsNearby(Vector2 target, float dist)
+        private bool IsNearby(Vector2 target)
         {
             var distance = Vector2.Distance(transform.position, target);
 
-            return distance <= dist;
+            return distance <= _radius * 1.5f;;
         }
-
-        // private bool IsDestination(Vector2 target)
-        // {
-        //     var distance = Vector2.Distance(transform.position, target);
-        //
-        //     return distance <= _radius * 1.5f;
-        // }
 
         private int CountUncleanFluff() => TryGetBunch(GlobalConstants.UncleanedFluff)?.GetCount() ?? 0;
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;
@@ -293,7 +281,8 @@ namespace Characters.AI
             {
                 if (!cleaner.GetBuildMenu().IsBuilded ||
                     cleaner.IsOccupied() ||
-                    cleaner.GetBuildMenu().GetBuilding().typeConstruction != GlobalTypes.TypeBuildings.FluffCleaner)
+                    cleaner.GetBuildMenu().GetBuilding().typeConstruction != GlobalTypes.TypeBuildings.FluffCleaner ||
+                    CountUncleanFluff() < cleaner.GetComponent<ResourceTransmitter>().GetRequireFluffCount())
                     continue;
 
                 _currentCleaner = cleaner.GetBuildMenu().GetBuilding();

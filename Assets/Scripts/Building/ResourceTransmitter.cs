@@ -110,7 +110,8 @@ public class ResourceTransmitter : MonoBehaviour
 
         if (gameObject.GetComponent<Machine>()) _machine.GetAnimator().enabled = false;
     }
-    
+
+    public int GetRequireFluffCount() => _fluffCount;
     public void SetGradeAnimationTrue(int grade) => _machine.Animation(true, grade);
     public void ChangeFluffCount(int count) => _fluffCount = count;
 }
