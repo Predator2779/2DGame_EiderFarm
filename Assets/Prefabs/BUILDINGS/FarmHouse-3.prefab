@@ -1974,8 +1974,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _arrows:
-  - {fileID: 21300000, guid: 217bf9855a44fa749a8452cbb542f488, type: 3}
   - {fileID: 21300000, guid: 7dac18bc33afa2c478d45f313c3cefdd, type: 3}
+  - {fileID: 21300000, guid: 217bf9855a44fa749a8452cbb542f488, type: 3}
   _image: {fileID: 3994059420303379567}
 --- !u!114 &6050642557968882998 stripped
 MonoBehaviour:

@@ -34,6 +34,17 @@ namespace Economy.Farm_House.Menues
         {
             var listBunch = inv.GetAllItems();
 
+            if (_isHouseMenu)
+            {
+                if (_playerInventory.TryGetBunch(GlobalConstants.Flag, out ItemBunch b)
+                    && b.GetCount() > 0) return;
+                
+                foreach (var bunch in listBunch.Where(bunch => bunch.GetItemName() == GlobalConstants.Flag))
+                    SetCell(Instantiate(_shopCellPrefab, _content), bunch);
+                
+                return;
+            }
+            
             foreach (var bunch in listBunch.Where(bunch => bunch.GetItemName() != GlobalConstants.Money))
                 SetCell(Instantiate(_shopCellPrefab, _content), bunch);
         }

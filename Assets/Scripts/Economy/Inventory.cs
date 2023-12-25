@@ -141,7 +141,7 @@ namespace Economy
 
             EventHandler.OnBunchChanged?.Invoke(name, count);
 
-            if (TryGetBunch("Флажок", out ItemBunch bunch))
+            if (TryGetBunch(GlobalConstants.Flag, out ItemBunch bunch))
                 EventHandler.OnFlagChanged?.Invoke(bunch.GetCount(), bunch.GetItem().GetSprites());
         }
 

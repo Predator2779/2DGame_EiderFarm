@@ -1235,6 +1235,5 @@ MonoBehaviour:
   _name: {fileID: 5106081032181778928}
   _description: {fileID: 1042079135703884616}
   _counter: {fileID: 5941817015130430983}
-  _price: {fileID: 2165519484954207191}
-  _inpField: {fileID: 0}
+  _priceField: {fileID: 2165519484954207191}
   _prefabButtonText: {fileID: 8580320478191011652}

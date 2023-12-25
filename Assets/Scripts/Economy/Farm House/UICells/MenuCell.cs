@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Economy.Farm_House
@@ -10,35 +11,34 @@ namespace Economy.Farm_House
         [SerializeField] protected TMP_Text _name;
         [SerializeField] protected TMP_Text _description;
         [SerializeField] protected TMP_Text _counter;
+        [SerializeField] protected TMP_Text _priceField;
 
-        [SerializeField] protected TMP_Text _price;
-        
         protected void SetButton(string description)
         {
             _description.text = description;
-        }    
-        
+        }
+
         protected void SetButton(Sprite icon, string description)
         {
-            if(_icon != null)
-            _icon.sprite = icon;
-            if(_description != null)
-            _description.text = description;
+            if (_icon != null)
+                _icon.sprite = icon;
+            if (_description != null)
+                _description.text = description;
         }
-        
+
         protected void SetButton(Sprite icon, string name, string description)
         {
-            if(_name != null)
-            _name.text = name;
+            if (_name != null)
+                _name.text = name;
             SetButton(icon, description);
-        }   
-        
+        }
+
         protected void SetButton(Sprite icon, string description, int count)
         {
             SetButton(icon, description);
             _counter.text = count.ToString();
-        }     
-        
+        }
+
         protected void SetButton(Sprite icon, string name, string description, int count)
         {
             if (_name != null)
@@ -51,10 +51,10 @@ namespace Economy.Farm_House
             if (_name != null)
                 _name.text = name;
 
-            if(_price != null)
-                _price.text = price.ToString();
+            if (_priceField != null)
+                _priceField.text = price.ToString();
+            
             SetButton(icon, description, count);
         }
-
     }
 }

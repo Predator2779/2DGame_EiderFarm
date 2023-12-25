@@ -113,7 +113,6 @@ public class SaveSerial : MonoBehaviour
 
         _menu.SetSaves(true);
 
-        Debug.Log("Save");
         SaveBool(_menu.IsHasSaves());
 
         bf.Serialize(file, data);

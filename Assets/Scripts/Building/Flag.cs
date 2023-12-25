@@ -47,7 +47,7 @@ public class Flag : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Atmosphere/Atmosphere Flag", gameObject);
 
         isFlagAdded = true;
-        _itemBunch.RemoveItems(1);
+        _playerInventory.RemoveItems(_itemBunch.GetItem(), 1);
         _flagBtn.SetActive(false);
         _flag.SetActive(true);
 

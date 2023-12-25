@@ -11,7 +11,7 @@ namespace Economy.Farm_House
         protected TextMeshProUGUI _prefabText;
 
         protected Inventory _playerInventory;
-        protected bool _isHouseMenu = true;
+        protected bool _isHouseMenu;
 
         public void SetPlayerInventory(Inventory inventory) => _playerInventory = inventory;
 
@@ -20,22 +20,19 @@ namespace Economy.Farm_House
             ChangeText(_isHouseMenu);
             ChangeText(_isHouseMenu);
         }
+
         public void SwitchDisplay()
         {
             _isHouseMenu = !_isHouseMenu;
             ChangeText(_isHouseMenu);
             RefreshDisplay();
-
-            
         }
 
         private void ChangeText(bool menu)
         {
-            if (_prefabText != null)
-                if (menu)
-                    _prefabText.text = "Купить";
-                else if (!menu)
-                    _prefabText.text = "Продать";
+            if (_prefabText == null) return;
+
+            _prefabText.text = menu ? "Купить" : "Продать";
         }
 
         protected abstract void Draw();

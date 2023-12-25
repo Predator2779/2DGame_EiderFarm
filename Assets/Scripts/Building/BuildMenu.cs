@@ -239,15 +239,13 @@ namespace Building
             if (!_inventory.TryGetBunch(GlobalConstants.Money, out var moneyBunch) ||
                 moneyBunch.GetCount() < price) return false;
 
-            print(_inventory.gameObject.name);
             _inventory.RemoveItems(moneyBunch.GetItem(), price);
             return true;
         }
 
         private void Sell(int price)
         {
-            if (_moneyBunch != null)
-                _inventory.AddItems(_moneyBunch.GetItem(), price);
+            if (_moneyBunch != null) _inventory.AddItems(_moneyBunch.GetItem(), price);
         }
 
         public void SetInventory(Inventory inv) => _inventory = inv;

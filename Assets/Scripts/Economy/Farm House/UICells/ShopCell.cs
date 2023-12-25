@@ -1,4 +1,3 @@
-using System;
 using General;
 using TMPro;
 using UnityEngine;
@@ -7,7 +6,6 @@ namespace Economy.Farm_House
 {
     public class ShopCell : MenuCell
     {
-        [SerializeField] private TMP_InputField _inpField;
         [SerializeField] private TextMeshProUGUI _prefabButtonText;
 
         private ItemBunch _bunch;
@@ -15,12 +13,19 @@ namespace Economy.Farm_House
         private Inventory _buyer;
         private ItemBunch _sellerWallet;
         private ItemBunch _buyerWallet;
+        private Item _item;
+        private int _count;
+        private int _price;
         
         public void SetCell(ItemBunch bunch, Inventory invFrom, Inventory invTo)
         {
             _bunch = bunch;
             _seller = invFrom;
             _buyer = invTo;
+            _item = _bunch.GetItem();
+            _count = GetBuyCount(_seller, _bunch.GetCount());
+            _price = _item.GetPrice() * _count;
+            _priceField.text = _price.ToString();
 
             RefreshButton();
         }
@@ -29,35 +34,34 @@ namespace Economy.Farm_House
 
         public void Exchange()
         {
-            Item item = _bunch.GetItem();
-
-            int count = GetCountFromInput();
-            var price = item.GetPrice() * count;
-            
-            if (_buyer.TryGetBunch("Ôëàæîê", out ItemBunch bunch))
+            if (_item.GetName() == GlobalConstants.Flag && 
+                _buyer.TryGetBunch(GlobalConstants.Flag, out ItemBunch bunch))
             {
-                if (item.IsOne() && bunch.GetCount() != 0) return;
-                if (item.IsOne() && bunch.GetCount() == 0) count = 1;
+                if (_item.IsOne() && bunch.GetCount() > 0) return;
+                // if (_item.IsOne() && bunch.GetCount() == 0) count = 1;
             }
             
-            if (count > _bunch.GetCount()) return;
             if (!CheckWallets(_buyer, _seller)) return;;
-            if (!IsEnoughMoney(_buyer, price)) return;
+            if (!IsEnoughMoney(_buyer, _price)) return;
             
-            
-            Sell(item, count, price);
-            Buy(item, count, price);
+            Sell(_item, _count, _price);
+            Buy(_item, _count, _price);
 
             RefreshButton();
             CheckCount();
         }
 
+        private int GetBuyCount(Inventory seller, int count) =>
+                !seller.IsPlayerInventory() 
+                || _item.GetName() == GlobalConstants.Flag 
+                        ? 1 : count;
+
         private void RefreshButton() =>
                 SetButton(_bunch.GetItemIcon(),
                         _bunch.GetItemName(),
                         _bunch.GetItemDescription(),
-                        _bunch.GetCount(),
-                        _bunch.GetItemPrice(),
+                        _count,
+                        _price,
                         true);
                         
         
@@ -83,23 +87,6 @@ namespace Economy.Farm_House
         private void CheckCount()
         {
             if (_bunch.GetCount() <= 0) Destroy(gameObject);
-        }
-
-        private int GetCountFromInput()
-        {
-            string text;
-            if (_inpField != null)
-            {
-                text = _inpField.text;
-            }
-            else text = 1.ToString();
-            
-            
-            if (text == "") return 1;
-            
-            int count = Convert.ToInt32(text);
-            
-            return count > 0 ? count : 0;
         }
     }
 }
