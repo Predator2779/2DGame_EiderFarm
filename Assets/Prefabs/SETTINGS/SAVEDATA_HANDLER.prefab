@@ -52,6 +52,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 65288ac64d0b23545b0e2f7b8ceb9734, type: 2}
   - {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
   - {fileID: 11400000, guid: 200ec94766fc499428a2a0d4b79d9875, type: 2}
+  _menu: {fileID: 8635574941930412320}
+  _sprites:
+  - {fileID: 21300000, guid: 4e2cdc0d940136e408ae0527e9beb599, type: 3}
+  - {fileID: 21300000, guid: e5dc00a900a5f70498e16cb6eaa0d28e, type: 3}
+  - {fileID: 21300000, guid: 0470f41a972d6cb4eb87f1c721bca793, type: 3}
+  _employees:
+  - {fileID: 7934326965898499444, guid: c67a95e5c92ab4c4a8586003bc41d781, type: 3}
+  - {fileID: 7934326965898499444, guid: 6206a015170bbfe4bb94dd156800362e, type: 3}
+  - {fileID: 7934326965898499444, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+  - {fileID: 7934326965898499444, guid: 37361cffdf8b4f54cb136f7545843e23, type: 3}
   _gagaHouses:
   - {fileID: 0}
   - {fileID: 0}
@@ -100,23 +110,21 @@ MonoBehaviour:
   - {fileID: 0}
   _storages:
   - {fileID: 0}
-  _menu: {fileID: 8635574941930412320}
-  _sprites:
-  - {fileID: 21300000, guid: 4e2cdc0d940136e408ae0527e9beb599, type: 3}
-  - {fileID: 21300000, guid: e5dc00a900a5f70498e16cb6eaa0d28e, type: 3}
-  - {fileID: 21300000, guid: 0470f41a972d6cb4eb87f1c721bca793, type: 3}
   data:
     Money: 0
     UncleanedFluff: 0
     CleanedFluff: 0
     Cloth: 0
     Flag: 0
+    Employees: 
     GagaHouses: 
     Cleaners: 
     ClothMachines: 
     Storages: 
     Flags: 
     flagSprites: 
+    isSaves: 0
+  IsHasSaves: 0
 --- !u!114 &8635574941930412320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,3 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fa2e6fc95fbcf43870efe5c2306378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loadedScene: 
+  _menuScene: 
+  _cutScene: 
+  _loadGameButton: {fileID: 0}
+  _textButton: {fileID: 0}
+  _saveSerial: {fileID: 0}

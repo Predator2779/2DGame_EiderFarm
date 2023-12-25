@@ -121,16 +121,6 @@ namespace Building
 
             if (!Buy(_upgradePrice[_currentBuilding.GetCurrentGrade() - 1])) return; /// проверить
 
-            // switch (_currentBuilding.GetCurrentGrade())
-            // {
-            //     case 1:
-            //         if (!Buy(_upgradePrice[0])) return;
-            //         break;
-            //     case 2:
-            //         if (!Buy(_upgradePrice[1])) return;
-            //         break;
-            // }
-
             _currentBuilding.SetSprite(_currentBuilding.Upgrade());
 
             if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.GagaHouse)
