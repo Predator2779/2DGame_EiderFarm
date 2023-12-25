@@ -74,6 +74,25 @@ public class SaveSerial : MonoBehaviour
         }
     }
 
+    private void SaveEmployees()
+    {
+        data.Employees = new bool[_employees.Length];
+        for (int i = 0; i < _employees.Length; i++)
+        {
+            if (_employees[i].GetHired())
+                data.Employees[i] = true;
+        }
+    }
+
+    private void LoadEmployees()
+    {
+        for (int i = 0; i < _employees.Length; i++)
+        {
+            if (data.Employees[i])
+                _employees[i].SpawnEmployee(GlobalConstants.PersonalSpawnPoint);
+        }
+    }
+
     private void LoadItems()
     {
         if (data.Money != 0)
@@ -110,6 +129,8 @@ public class SaveSerial : MonoBehaviour
         data.Storages = SaveDataGrades(_storages);
         SaveFlags();
 
+        SaveEmployees();
+
         _menu.SetSaves(true);
 
         SaveBool(_menu.IsHasSaves());
@@ -130,6 +151,8 @@ public class SaveSerial : MonoBehaviour
 
         ClearAndAdd();
         LoadFlags();
+
+        LoadEmployees();
 
         BuildAndUpgrade(data.GagaHouses, _gagaHouses);
         BuildAndUpgrade(data.Cleaners, _cleaners);
@@ -161,7 +184,7 @@ public class SaveSerial : MonoBehaviour
         data.Cloth = 0;
         data.Flag = 0;
 
-        data.Employees = new int[0];
+        data.Employees = new bool[0];
         data.GagaHouses = new int[0];
         data.Cleaners = new int[0];
         data.ClothMachines = new int[0];

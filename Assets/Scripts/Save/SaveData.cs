@@ -9,7 +9,7 @@ using UnityEngine;
     public int Cloth;
     public int Flag;
 
-    public int[] Employees; 
+    public bool[] Employees; 
     public int[] GagaHouses;
     public int[] Cleaners;
     public int[] ClothMachines;
@@ -20,4 +20,6 @@ using UnityEngine;
     public int[] flagSprites;
 
     public bool isSaves;
+
+
 }

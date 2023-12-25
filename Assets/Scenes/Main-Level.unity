@@ -2499,6 +2499,26 @@ PrefabInstance:
       propertyPath: _playerInventory
       value: 
       objectReference: {fileID: 4544929881048724889}
+    - target: {fileID: 2118555756345629674, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: _employees.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118555756345629674, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: _employees.Array.data[0]
+      value: 
+      objectReference: {fileID: 7934326965898499444, guid: c67a95e5c92ab4c4a8586003bc41d781, type: 3}
+    - target: {fileID: 2118555756345629674, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: _employees.Array.data[1]
+      value: 
+      objectReference: {fileID: 7934326965898499444, guid: 6206a015170bbfe4bb94dd156800362e, type: 3}
+    - target: {fileID: 2118555756345629674, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: _employees.Array.data[2]
+      value: 
+      objectReference: {fileID: 7934326965898499444, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+    - target: {fileID: 2118555756345629674, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: _employees.Array.data[3]
+      value: 
+      objectReference: {fileID: 7934326965898499444, guid: 37361cffdf8b4f54cb136f7545843e23, type: 3}
     - target: {fileID: 2381571922620921615, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: _cutScene
       value: Cutscene-0
@@ -2720,6 +2740,10 @@ PrefabInstance:
     - target: {fileID: 3324752455631967444, guid: 5365565ee0cccde418767ade71145759, type: 3}
       propertyPath: _listItems.Array.data[4]._item
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324752455631967444, guid: 5365565ee0cccde418767ade71145759, type: 3}
+      propertyPath: _listItems.Array.data[0]._count
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 3324752455631967444, guid: 5365565ee0cccde418767ade71145759, type: 3}
       propertyPath: _listItems.Array.data[1]._count
