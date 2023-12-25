@@ -35,6 +35,7 @@ namespace Economy.Farm_House
         public void Exchange()
         {
             if (_item.GetName() == GlobalConstants.Flag && 
+                _buyer.IsPlayerInventory() &&
                 _buyer.TryGetBunch(GlobalConstants.Flag, out ItemBunch bunch))
             {
                 if (_item.IsOne() && bunch.GetCount() > 0) return;

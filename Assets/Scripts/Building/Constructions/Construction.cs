@@ -26,21 +26,13 @@ namespace Building.Constructions
         }
 
         public Sprite GetFirstGrade() => _gradeBuildings[0];
-
         public Sprite[] GetGradeBuildings() => _gradeBuildings;
-
         public string GetBuildSound() => _buildSound;
-
         public void SetSprite(Sprite sprite) => _spriteRenderer.sprite = sprite;
-
         public bool CanUpgrade() => _currentGrade < _gradeBuildings.Length;
-
         public int GetCurrentGrade() => _currentGrade;
-
         public int GetMaxGrade() => _gradeBuildings.Length;
-        
         public ResourceTransmitter GetTransmitter() => _transmitter;
-
         public Transform GetEntryPoint() => _entryPoint;
         
         public Sprite GetCurrentGradeSprite(Sprite[] sprites)

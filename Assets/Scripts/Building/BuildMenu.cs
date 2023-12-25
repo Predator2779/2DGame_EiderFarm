@@ -34,7 +34,7 @@ namespace Building
         [Header("Сколько возвращает при сносе (0 если 0)")]
         [SerializeField, Range(0, 1000)] private int _sellPrice;
 
-       [SerializeField] private Inventory _inventory;
+        [SerializeField] private Inventory _inventory;
         private ItemBunch _moneyBunch;
 
         public bool HasFlag;
@@ -71,7 +71,7 @@ namespace Building
 
             Build(_buildingPrefab);
             _currentBuilding.SetSprite(_currentBuilding.Upgrade());
-            
+
             IsBuilded = true;
 
             FMODUnity.RuntimeManager.PlayOneShotAttached(_buildingPrefab.GetBuildSound(), gameObject);
@@ -156,7 +156,7 @@ namespace Building
             EventHandler.OnUpgraded?.Invoke(
                     _currentBuilding.typeConstruction,
                     _currentBuilding.GetCurrentGrade());
-            
+
             CheckBtns();
         }
 
@@ -211,7 +211,7 @@ namespace Building
             }
             else
             {
-                if (_currentBuilding.GetCurrentGrade() < _currentBuilding.GetMaxGrade() -1)
+                if (_currentBuilding.GetCurrentGrade() < _currentBuilding.GetMaxGrade() - 1)
                 {
                     _upgradeBtn.transform.Find("Price").GetComponentInChildren<TMP_Text>().text =
                             _upgradePrice[_currentBuilding.GetCurrentGrade()] + "kr";

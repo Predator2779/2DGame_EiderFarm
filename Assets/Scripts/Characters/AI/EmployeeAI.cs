@@ -24,7 +24,6 @@ namespace Characters.AI
         [SerializeField] private PathFinder.TypeFind _findAlgorithm;
 
         [SerializeField] private float _radius;
-
         [SerializeField] private float _distance; //
 
         private Construction _currentCleaner;
@@ -187,6 +186,7 @@ namespace Characters.AI
 
                 if (!bMenu.IsBuilded ||
                     !bMenu.GetBuilding().TryGetComponent(out BuildStorage storage) ||
+                    house.IsOccupied() ||
                     storage.GetFluffCount() <= 0) continue;
 
                 _currentHouse = storage;
@@ -203,6 +203,7 @@ namespace Characters.AI
             foreach (var cleaner in cleaners)
             {
                 if (!cleaner.GetBuildMenu().IsBuilded ||
+                    cleaner.IsOccupied() ||
                     cleaner.GetBuildMenu().GetBuilding().typeConstruction != GlobalTypes.TypeBuildings.FluffCleaner)
                     continue;
 
@@ -222,6 +223,7 @@ namespace Characters.AI
                 var bMenu = storage.GetBuildMenu();
 
                 if (!bMenu.IsBuilded ||
+                    storage.IsOccupied() ||
                     !bMenu.GetBuilding().TryGetComponent(out BuildStorage bStorage))
                     continue;
 

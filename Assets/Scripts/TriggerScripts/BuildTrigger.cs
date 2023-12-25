@@ -38,19 +38,11 @@ namespace TriggerScripts
         }
 
         private void SetPosition() => transform.position = GetTilePos();
-
         private Vector3 GetTilePos() => _map.CellToWorld(_map.WorldToCell(transform.position));
-
         private Quaternion GetRotation() => transform.GetComponentInChildren<SpriteRenderer>().transform.rotation;
-
-        public void AddToPull() =>
-                EventHandler.OnAddedBuildPull.Invoke(this, GetTypeBuilding());
-
-        public void RemoveFromPull() =>
-                EventHandler.OnRemovedBuildPull?.Invoke(this, GetTypeBuilding());
-
+        public void AddToPull() => EventHandler.OnAddedBuildPull.Invoke(this, GetTypeBuilding());
+        public void RemoveFromPull() => EventHandler.OnRemovedBuildPull?.Invoke(this, GetTypeBuilding());
         private GlobalTypes.TypeBuildings GetTypeBuilding() => _buildPrefab.typeConstruction;
-
         public bool IsOccupied() => _person != null;
 
         private void SetParent(GlobalTypes.TypeBuildings type)

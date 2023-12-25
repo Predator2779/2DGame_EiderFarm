@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace General
 {
     public static class GlobalConstants
@@ -10,5 +12,7 @@ namespace General
 
         public const float CoefPhysPlayerSpeed = 1000f;
         public const float PlayerSpeed = 3.25f;
+        
+        public static Vector2 PersonalSpawnPoint = new Vector2(0.15f, -8);
     }
 }
