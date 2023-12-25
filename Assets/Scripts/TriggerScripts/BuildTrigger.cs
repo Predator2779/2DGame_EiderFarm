@@ -17,7 +17,7 @@ namespace TriggerScripts
         [SerializeField] private SpriteRenderer _renderer;
 
         private Transform _parentBuildings;
-        private Person _person;
+        [SerializeField] private Person _person;
 
         private void Start() => Initialize();
 
@@ -79,9 +79,10 @@ namespace TriggerScripts
         {
             base.OnTriggerEnter2D(other);
             
-            if (!other.TryGetComponent(out Person person)) return;
+            if (other.TryGetComponent(out Person person) && _person == null) _person = person;
+            else return;
 
-            if (person.GetName() == null || person.TryGetComponent(out InputHandler inputHandler))
+            if (person.TryGetComponent(out InputHandler inputHandler))
                 _person = person;
             
             if (_person.GetName() != "Арни") return; /// to GlobalConstants
@@ -102,7 +103,7 @@ namespace TriggerScripts
         {
             base.OnTriggerExit2D(other);
 
-            if (other.TryGetComponent(out Person person) && person.GetName() == null)
+            if (other.TryGetComponent(out Person person) && person.GetName() == _person.GetName()) // employee стоящие в триггере зависнут.
                 _person = null;
         }
 

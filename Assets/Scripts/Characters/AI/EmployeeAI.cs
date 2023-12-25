@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Building;
 using Building.Constructions;
@@ -32,10 +33,13 @@ namespace Characters.AI
         private BuildingsPull _pull;
         private Employee _employee;
         private PathFinder _pathFinder;
-        private Vector2 _target;
+        [SerializeField] private Vector2 _target;
+        [SerializeField] private Transform _subTarget;
         private List<Vector2> _path = new();
-        private int _index;
-
+        [SerializeField] private int _index;
+        [SerializeField] private float _walkTime;
+        [SerializeField] private float _distTarget;
+        [SerializeField] private float _distCell;
         private void Start() => Initialize();
         private void OnValidate() => Initialize();
         private void FixedUpdate() => StateExecute();
@@ -51,17 +55,18 @@ namespace Characters.AI
 
         private void CheckConditions()
         {
-            if (!IsFull() &&
-                CanPickFluff() &&
+            if (CountUncleanFluff() < _fluffCapacity &&
                 CountCleanFluff() <= 0 &&
-                CountUncleanFluff() < _fluffCapacity)
+                CanPickFluff())
             {
                 SetTarget(_currentHouse.gameObject);
                 _currentEmployeeState = EmployeeStates.Picking;
                 return;
             }
 
-            if (IsFull() && CanRecycle() && CountUncleanFluff() > 0)
+            if (CountCleanFluff() < CountUncleanFluff() &&
+                // CountUncleanFluff() > 0 &&
+                CanRecycle())
             {
                 SetTarget(_currentCleaner.gameObject);
                 _currentEmployeeState = EmployeeStates.Recycling;
@@ -102,31 +107,100 @@ namespace Characters.AI
             }
         }
 
+        private void Idle()
+        {
+            StopMove();
+            CheckConditions();
+        }
+
+        private void Picking()
+        {
+            if (_currentHouse == null ||
+                _currentHouse.GetFluffCount() <= 0 ||
+                CountUncleanFluff() > _fluffCapacity)
+            {
+                CheckConditions();
+                return;
+            }
+
+            WalkToTarget();
+        }
+
+        private void Recycling()
+        {
+            if (_currentCleaner == null ||
+                CountCleanFluff() >= _fluffCapacity)
+            {
+                CheckConditions();
+                return;
+            }
+
+            WalkToTarget();
+        }
+
+        private void Transportation()
+        {
+            if (_currentStorage == null ||
+                CountCleanFluff() <= 0)
+            {
+                CheckConditions();
+                return;
+            }
+
+            WalkToTarget();
+        }
+        
         private void WalkToTarget()
         {
             if (_maxDistWalkable > 0 && Vector2.Distance(transform.position, _target) > _maxDistWalkable) return;
 
-            if (IsDestination(transform.position, _target) <= _radius * 1.5f) // magic
+            if (IsNearby(_target, _distTarget))
             {
-                ResetPath();
-                Idle();
+                StopMove();
                 return;
             }
-
-            if (_path != null && _index >= 0)
+            
+            if (_path == null || _index < 0) SetPath();
+            else
             {
-                if (IsDestination(transform.position, _path[_index]) > _radius * 1.5f)
+                if (IsNearby(_path[0], _distTarget))
                 {
-                    var direction = _path[_index] - (Vector2)transform.position;
-                    Walk(direction.normalized);
-                    return;
+                    print("idle...");
+                    ResetPath();
+                    StopMove();
                 }
-
-                _index--;
+                else
+                {
+                    if (IsNearby(_path[_index], _distCell))
+                    {
+                        StartCoroutine(WalkTime());
+                        print("index--");
+                        _index--;
+                    }
+                    else
+                    {
+                        StartCoroutine(WalkTime());
+                        print("walk...");
+                        var direction = _path[_index] - (Vector2)transform.position;
+                        Walk(direction.normalized);
+                    }
+                }
             }
-            else SetPath();
         }
-
+        
+        
+        private void StopMove()
+        {
+            _personAnimate.Walk(_target, false);
+            StopSound();
+        }
+        
+        private IEnumerator WalkTime()
+        {
+            yield return new WaitForSeconds(_walkTime);
+            SetPath();
+        }
+        
         private void SetTarget(GameObject target)
         {
             if (target.TryGetComponent(out Construction construction))
@@ -136,15 +210,18 @@ namespace Characters.AI
                 if (entryPoint != null)
                 {
                     _target = entryPoint.position;
+                    _subTarget = entryPoint;
                     return;
                 }
             }
 
             _target = target.transform.position;
+            _subTarget = target.transform;
         }
 
         private void SetPath()
         {
+            print("set path...");
             if (_pathFinder.IsWorked()) return;
 
             if (!_pathFinder.IsFinded() && _path == null)
@@ -166,8 +243,20 @@ namespace Characters.AI
             }
         }
 
-        private float IsDestination(Vector2 first, Vector2 second) => Vector2.Distance(first, second);
-        private bool IsFull() => CountUncleanFluff() >= _fluffCapacity;
+        private bool IsNearby(Vector2 target, float dist)
+        {
+            var distance = Vector2.Distance(transform.position, target);
+
+            return distance <= dist;
+        }
+
+        // private bool IsDestination(Vector2 target)
+        // {
+        //     var distance = Vector2.Distance(transform.position, target);
+        //
+        //     return distance <= _radius * 1.5f;
+        // }
+
         private int CountUncleanFluff() => TryGetBunch(GlobalConstants.UncleanedFluff)?.GetCount() ?? 0;
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;
 
@@ -232,47 +321,6 @@ namespace Characters.AI
             }
 
             return false;
-        }
-
-        private void Idle()
-        {
-            _personAnimate.Walk(_target, false);
-
-            StopSound();
-            CheckConditions();
-        }
-
-        private void Picking()
-        {
-            if (_currentHouse == null || _currentHouse.GetFluffCount() <= 0)
-            {
-                CheckConditions();
-                return;
-            }
-
-            WalkToTarget();
-        }
-
-        private void Recycling()
-        {
-            if (_currentCleaner == null || CountUncleanFluff() <= 0)
-            {
-                CheckConditions();
-                return;
-            }
-
-            WalkToTarget();
-        }
-
-        private void Transportation()
-        {
-            if (_currentStorage == null)
-            {
-                CheckConditions();
-                return;
-            }
-
-            WalkToTarget();
         }
 
         private void ResetPath()
