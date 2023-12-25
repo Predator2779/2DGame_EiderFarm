@@ -281,8 +281,8 @@ namespace Characters.AI
             {
                 if (!cleaner.GetBuildMenu().IsBuilded ||
                     cleaner.IsOccupied() ||
-                    cleaner.GetBuildMenu().GetBuilding().typeConstruction != GlobalTypes.TypeBuildings.FluffCleaner ||
-                    CountUncleanFluff() < cleaner.GetComponent<ResourceTransmitter>().GetRequireFluffCount())
+                    cleaner.GetBuildMenu().GetBuilding().typeConstruction != GlobalTypes.TypeBuildings.FluffCleaner 
+                    || CountUncleanFluff() < 2)
                     continue;
 
                 _currentCleaner = cleaner.GetBuildMenu().GetBuilding();

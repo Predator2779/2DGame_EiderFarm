@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5987656316525160417}
   m_Layer: 0
   m_Name: Oli_employee
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.35}
-  m_Size: {x: 0.75, y: 1.1}
+  m_Size: {x: 0.5, y: 0.75}
   m_Direction: 0
 --- !u!50 &2529878683125780359
 Rigidbody2D:
@@ -125,12 +125,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ec31a16cae400f9f814447e84db484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _findSpeed: 50
+  _findSpeed: 30
   _timeFinding: 10
   _solidLayer:
     serializedVersion: 2
     m_Bits: 1
-  _drawGizmos: 1
+  _drawGizmos: 0
 --- !u!114 &7934326965898499444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +173,9 @@ MonoBehaviour:
   _fluffCapacity: 2
   _findAlgorithm: 2
   _radius: 0.4
+  _walkTime: 7
   _distance: 0
+  _subTarget: {fileID: 0}
 --- !u!114 &5987656316525160417
 MonoBehaviour:
   m_ObjectHideFlags: 0
