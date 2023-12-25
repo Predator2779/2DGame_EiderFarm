@@ -46,5 +46,11 @@ namespace General
         public static UnityEvent OnEmployeeHired = new();
 
         #endregion
+
+        #region BUBBLES
+
+        public static UnityEvent OnCameraShake = new();
+
+        #endregion
     }
 }
