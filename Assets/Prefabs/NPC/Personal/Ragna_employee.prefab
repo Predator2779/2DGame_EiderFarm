@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _findSpeed: 80
+  _timeFinding: 10
   _solidLayer:
     serializedVersion: 2
     m_Bits: 1

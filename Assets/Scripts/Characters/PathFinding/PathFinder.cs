@@ -8,6 +8,7 @@ namespace Characters.PathFinding
     public class PathFinder : MonoBehaviour
     {
         [SerializeField] private int _findSpeed;
+        [SerializeField] private int _timeFinding;
         [SerializeField] private LayerMask _solidLayer;
         [SerializeField] private bool _drawGizmos;
 
@@ -17,7 +18,6 @@ namespace Characters.PathFinding
         private Vector2 _targetPos;
         private bool _isWorkedCoroutine;
         private float _radius;
-        private int _timeFinding;
         private string _name;
 
         public void Initialize(
