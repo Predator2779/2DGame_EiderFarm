@@ -9,7 +9,7 @@ namespace TriggerScripts
     
         protected virtual void OnTriggerEnter2D(Collider2D other)
         {
-            if (!other.CompareTag("Player")) return; SetMenuActive(true);
+            if (!other.CompareTag("Player")) SetMenuActive(true);
         }
 
         protected virtual void OnTriggerExit2D(Collider2D other)

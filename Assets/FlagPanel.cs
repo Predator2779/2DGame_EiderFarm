@@ -8,20 +8,16 @@ public class FlagPanel : MonoBehaviour
 {
     [SerializeField] private Inventory _inventory;
 
-    private void Awake()
+    private void Awake() => EventHandler.OnFlagPanelCurrentState.AddListener(CheckFlagPanelState);
+
+    private void CheckFlagPanelState()
     {
-        EventHandler.OnFlagPanelCurrentState.AddListener(CheckFlagPanelState);
-    }
-    public void CheckFlagPanelState()
-    {
-        if(_inventory.TryGetBunch(GlobalConstants.Flag, out var bunch))
+        if (_inventory.TryGetBunch(GlobalConstants.Flag, out var bunch))
         {
-            if (bunch.GetCount() < 1)
-                gameObject.SetActive(false);
-            else
-                gameObject.SetActive(true);
+            gameObject.SetActive(bunch.GetCount() >= 1);
+            return;
         }
-        else
-            gameObject.SetActive(false);
+
+        gameObject.SetActive(false);
     }
 }

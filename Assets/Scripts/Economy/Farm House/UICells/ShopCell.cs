@@ -16,7 +16,7 @@ namespace Economy.Farm_House
         private Item _item;
         private int _count;
         private int _price;
-        
+
         public void SetCell(ItemBunch bunch, Inventory invFrom, Inventory invTo)
         {
             _bunch = bunch;
@@ -34,17 +34,14 @@ namespace Economy.Farm_House
 
         public void Exchange()
         {
-            if (_item.GetName() == GlobalConstants.Flag && 
+            if (_item.GetName() == GlobalConstants.Flag &&
                 _buyer.IsPlayerInventory() &&
-                _buyer.TryGetBunch(GlobalConstants.Flag, out ItemBunch bunch))
-            {
-                if (_item.IsOne() && bunch.GetCount() > 0) return;
-                // if (_item.IsOne() && bunch.GetCount() == 0) count = 1;
-            }
-            
-            if (!CheckWallets(_buyer, _seller)) return;;
+                _buyer.TryGetBunch(GlobalConstants.Flag, out ItemBunch bunch) &&
+                _item.IsOne() && bunch.GetCount() > 0) return;
+
+            if (!CheckWallets(_buyer, _seller)) return;
             if (!IsEnoughMoney(_buyer, _price)) return;
-            
+
             Sell(_item, _count, _price);
             Buy(_item, _count, _price);
 
@@ -56,9 +53,10 @@ namespace Economy.Farm_House
         }
 
         private int GetBuyCount(Inventory seller, int count) =>
-                !seller.IsPlayerInventory() 
-                || _item.GetName() == GlobalConstants.Flag 
-                        ? 1 : count;
+                !seller.IsPlayerInventory()
+                || _item.GetName() == GlobalConstants.Flag
+                        ? 1
+                        : count;
 
         private void RefreshButton() =>
                 SetButton(_bunch.GetItemIcon(),
@@ -67,11 +65,11 @@ namespace Economy.Farm_House
                         _count,
                         _price,
                         true);
-                        
-        
+
+
         private bool IsEnoughMoney(Inventory inv, int value) =>
                 inv.IsExistsItems(GlobalConstants.Money, value);
-        
+
         private void Buy(Item item, int count, int price)
         {
             _buyer.RemoveItems(_buyerWallet.GetItem(), price);
@@ -83,7 +81,7 @@ namespace Economy.Farm_House
             _seller.AddItems(_sellerWallet.GetItem(), price);
             _seller.RemoveItems(item, count);
         }
-        
+
         private bool CheckWallets(Inventory buyer, Inventory seller) =>
                 buyer.TryGetBunch(GlobalConstants.Money, out _buyerWallet) &&
                 seller.TryGetBunch(GlobalConstants.Money, out _sellerWallet);
