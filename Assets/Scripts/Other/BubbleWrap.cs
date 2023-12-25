@@ -1,18 +1,19 @@
+using General;
 using UnityEngine;
-using EventHandler = General.EventHandler;
 
 namespace Other
 {
     public class BubbleWrap : MonoBehaviour
     {
         [SerializeField] private ParticleSystem _particles;
+        [SerializeField] private string _sound;
 
-        private void Start() => EventHandler.OnBubbleWrap.AddListener(StartBubble);
-
-        private void StartBubble(string sound)
+        public void StartBubble()
         {
-            _particles.Play();
-            FMODUnity.RuntimeManager.PlayOneShot(sound);
+            if (_particles != null) _particles.Play();
+            if (_sound != "") FMODUnity.RuntimeManager.PlayOneShot(_sound);
+            
+            EventHandler.OnCameraShake?.Invoke();
         }
     }
 }

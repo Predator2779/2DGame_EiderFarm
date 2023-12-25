@@ -10,6 +10,7 @@ namespace Other
     {
         [SerializeField] private float _duration, _magnitude, _noize;
         [SerializeField] private bool _enable;
+        
         private void Update()
         {
             if (_enable)

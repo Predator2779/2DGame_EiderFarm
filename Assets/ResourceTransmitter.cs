@@ -3,6 +3,7 @@ using Building.Constructions;
 using Characters;
 using Economy;
 using General;
+using Other;
 using UnityEngine;
 
 [RequireComponent(typeof(Construction))]
@@ -17,18 +18,20 @@ public class ResourceTransmitter : MonoBehaviour
 
     [SerializeField] private Item _typeToPlayer;
     [SerializeField] private Inventory _characterInventory;
-
     [SerializeField] private Person _person;
+    
     private Construction _construction;
     private BuildStorage _storage;
     private Machine _machine;
     private Sprite _sprite;
+    private BubbleWrap _bubbles;
 
     public void Awake()
     {
         _construction = GetComponent<Construction>();
         _storage = GetComponent<BuildStorage>();
         _machine = GetComponent<Machine>();
+        _bubbles = GetComponent<BubbleWrap>();
     }
 
     public bool CheckBag()
@@ -65,6 +68,8 @@ public class ResourceTransmitter : MonoBehaviour
         _storage.AddFluff(bunch.GetCount());
         inventory.RemoveItems(bunch.GetItem(), bunch.GetCount());
         
+        if (_bubbles != null) _bubbles.StartBubble();
+        
         // inventory.Exchange(inventory, gameObject.GetComponent<Inventory>(), bunch);
     }
 
@@ -77,6 +82,8 @@ public class ResourceTransmitter : MonoBehaviour
         _characterInventory.AddItems(_typeToPlayer, count);
         _storage.ResetFluff();
 
+        if (_bubbles != null) _bubbles.StartBubble();
+        
         if (TryGetComponent(out FluffGiver fluffGiver)) StartCoroutine(fluffGiver.ChangeSpritesWithDelay(0.3f));
 
         EventHandler.OnItemTransmitted?.Invoke(_construction.typeConstruction, _typeToPlayer, count);
