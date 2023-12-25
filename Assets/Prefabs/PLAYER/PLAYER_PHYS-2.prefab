@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _followObject: {fileID: 8515593216909106432}
-  _speed: 8
+  _speed: 12.5
 --- !u!114 &7659566595052807934
 MonoBehaviour:
   m_ObjectHideFlags: 0
