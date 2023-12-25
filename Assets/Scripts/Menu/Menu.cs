@@ -5,18 +5,17 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
+    [Header("Scenes")]
     [SerializeField] private string _loadedScene;
     [SerializeField] private string _menuScene;
     [SerializeField] private string _cutScene;
-
+    
+    [Space][Header("Settings")]
     [SerializeField] private Button _loadGameButton;
     [SerializeField] private TextMeshProUGUI _textButton;
-
     [SerializeField] private SaveSerial _saveSerial;
-
-
+    
     private static bool _isNewGame;
-
     private static bool _isHasSaves;
 
     private void Awake()
@@ -26,11 +25,10 @@ public class Menu : MonoBehaviour
     }
     public void IfNotSaves()
     {
-        if (_loadGameButton != null && _textButton != null)
-        {
-            _loadGameButton.interactable = false;
-            _textButton.color = Color.gray;
-        }
+        if (_loadGameButton == null || _textButton == null) return;
+        
+        _loadGameButton.interactable = false;
+        _textButton.color = Color.gray;
     }
 
     public void StartLevel(bool isNewGame)
@@ -42,8 +40,6 @@ public class Menu : MonoBehaviour
     public void ExitLevel() => SceneManager.LoadScene(_menuScene);
     public void Exit() => Application.Quit();
     public bool IsNewGame() => _isNewGame;
-
     public bool IsHasSaves() => _isHasSaves;
-
     public void SetSaves(bool isSaves) => _isHasSaves = isSaves;
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
+using Characters;
 using General;
 using TriggerScripts;
 using UnityEngine;
@@ -17,6 +18,8 @@ public class SaveSerial : MonoBehaviour
     [SerializeField] private Menu _menu;
     [SerializeField] private Sprite[] _sprites;
 
+    [Space][Header("Save Data")]
+    [SerializeField] private Employee[] _employees;
     [SerializeField] private BuildTrigger[] _gagaHouses;
     [SerializeField] private BuildTrigger[] _cleaners;
     [SerializeField] private BuildTrigger[] _clothMachines;
@@ -34,22 +37,18 @@ public class SaveSerial : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             LoadBool();
-            if (!IsHasSaves)
-            {
-                _menu.IfNotSaves();
-            }
+            if (!IsHasSaves) _menu.IfNotSaves();
+
             return;
         }
 
-        if (_playerInventory != null)
-            GetItems();
+        if (_playerInventory != null) GetItems();
 
         if (_menu.IsNewGame()) ResetData();
         else LoadGame();
     }
 
     private void SaveBool(bool value) => data.isSaves = value;
-
     private void GetItems() => _items = _playerInventory.GetAllItems();
 
     public void SetBuildings(BuildingsPull pull)
@@ -136,8 +135,6 @@ public class SaveSerial : MonoBehaviour
         BuildAndUpgrade(data.Cleaners, _cleaners);
         BuildAndUpgrade(data.ClothMachines, _clothMachines);
         BuildAndUpgrade(data.Storages, _storages);
-
-
     }
 
     public void LoadBool()
@@ -164,6 +161,7 @@ public class SaveSerial : MonoBehaviour
         data.Cloth = 0;
         data.Flag = 0;
 
+        data.Employees = new int[0];
         data.GagaHouses = new int[0];
         data.Cleaners = new int[0];
         data.ClothMachines = new int[0];
@@ -195,32 +193,25 @@ public class SaveSerial : MonoBehaviour
     {
         data.Flags = new bool[_gagaHouses.Length];
         data.flagSprites = new int[data.Flags.Length];
+        
         for (int i = 0; i < _gagaHouses.Length; i++)
-        {
             if (_gagaHouses[i].gameObject.GetComponent<Flag>().isFlagAdded)
             {
                 data.Flags[i] = true;
 
                 for (int j = 0; j < _sprites.Length; j++)
-                {
                     if (_sprites[j] == _gagaHouses[i].gameObject.GetComponent<Flag>().GetSprite())
                         data.flagSprites[i] = j + 1;
-                }
             }
-        }
     }
 
     private void LoadFlags()
     {
         for (int i = 0; i < _gagaHouses.Length; i++)
-        {
             if (data.Flags[i])
-            {
                 _gagaHouses[i].gameObject.GetComponent<Flag>().isFlagAdded = true;
-            }
-        }
+        
         SetFlags(_gagaHouses);
-
     }
 
     private void ClearAndAdd()
@@ -257,7 +248,6 @@ public class SaveSerial : MonoBehaviour
                     buildMenu.Upgrade(true);
                     continue;
             }
-
         }
     }
 
@@ -265,32 +255,23 @@ public class SaveSerial : MonoBehaviour
     {
         for (int i = 0; i < _gagaHouses.Length; i++)
         {
-
             if (gagaHousesMenus[i].gameObject.GetComponent<Flag>().isFlagAdded)
-            {
                 gagaHousesMenus[i].gameObject.GetComponent<Flag>().AddFlag();
 
-            }
-            if (data.Flags[i])
-            {
-                for (int j = 0; j < _sprites.Length; j++)
-                {
-                    if (data.flagSprites[i] == j + 1)
-                    {
-                        gagaHousesMenus[i].gameObject.GetComponent<Flag>().SetSprite(_sprites[j]);
-                    }
-                }
-            }
+            if (!data.Flags[i]) continue;
+            for (int j = 0; j < _sprites.Length; j++)
+                if (data.flagSprites[i] == j + 1)
+                    gagaHousesMenus[i].gameObject.GetComponent<Flag>().SetSprite(_sprites[j]);
         }
     }
 
     public GameObject[] GetGagaHouses()
     {
         GameObject[] gb = new GameObject[_gagaHouses.Length];
+        
         for (int i = 0; i < _gagaHouses.Length; i++)
-        {
             gb[i] = _gagaHouses[i].gameObject;
-        }
+        
         return gb;
     }
 

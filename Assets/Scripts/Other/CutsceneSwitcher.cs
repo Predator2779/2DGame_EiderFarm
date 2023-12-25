@@ -6,17 +6,14 @@ public class CutsceneSwitcher : MonoBehaviour
 {
     [SerializeField] private GameObject[] _cutScenes;
     [SerializeField] private string _nextLoadedScene;
-    
+
     private GameObject[] _slides;
     private bool _isShowed;
     private int _currentCutscene;
     private int _currentSlide;
     private bool _final;
 
-    private void Start()
-    {
-        InitializeCutscene();
-    }
+    private void Start() => InitializeCutscene();
 
     private void Update()
     {
@@ -25,10 +22,11 @@ public class CutsceneSwitcher : MonoBehaviour
         if (Input.anyKeyDown) NextScene();
     }
 
-    public void InitializeCutscene()
+    private void InitializeCutscene()
     {
         _isShowed = true;
         _slides = GetAllChilds(_cutScenes[_currentCutscene]);
+        _currentSlide = 1;
         _cutScenes[_currentCutscene].SetActive(true);
         _slides[_currentSlide].SetActive(true);
     }
@@ -61,11 +59,7 @@ public class CutsceneSwitcher : MonoBehaviour
 
     private void FinilizeCutscene()
     {
+        _cutScenes[_currentCutscene].SetActive(false);
         SceneManager.LoadScene(_nextLoadedScene);
-        // _slides[_currentSlide].SetActive(false);
-        // _cutScenes[_currentCutscene].SetActive(false);
-        // _currentSlide = 0;
-        // _currentCutscene++;
-        // _isShowed = false;
     }
 }
