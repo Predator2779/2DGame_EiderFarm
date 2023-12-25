@@ -471,10 +471,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _icon: {fileID: 381124898521225180}
-  _name: {fileID: 0}
-  _description: {fileID: 0}
+  _name: {fileID: 6098896713734712484}
+  _description: {fileID: 1225057955806203934}
   _counter: {fileID: 5657578775538221702}
-  _price: {fileID: 0}
+  _priceField: {fileID: 5657578775538221702}
 --- !u!1 &5476021274099626416
 GameObject:
   m_ObjectHideFlags: 0
