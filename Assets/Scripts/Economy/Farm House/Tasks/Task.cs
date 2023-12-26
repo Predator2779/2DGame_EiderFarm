@@ -58,7 +58,7 @@ namespace Economy.Farm_House
             SetStage(TaskStage.Progressing);
         }
 
-        protected void ProgressingTask()
+        public void ProgressingTask()
         {
             if (SomeCondition()) SetStage(TaskStage.Completed);
         }
