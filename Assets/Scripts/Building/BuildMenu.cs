@@ -119,8 +119,7 @@ namespace Building
         {
             if (_currentBuilding == null || !_currentBuilding.CanUpgrade()) return;
 
-            if (!Buy(_upgradePrice[_currentBuilding.GetCurrentGrade() - 1])) return; /// проверить
-
+            if (!Buy(_upgradePrice[_currentBuilding.GetCurrentGrade() -1])) return; /// проверить
             _currentBuilding.SetSprite(_currentBuilding.Upgrade());
 
             if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.GagaHouse)
@@ -230,6 +229,7 @@ namespace Building
                 moneyBunch.GetCount() < price) return false;
 
             _inventory.RemoveItems(moneyBunch.GetItem(), price);
+            
             return true;
         }
 

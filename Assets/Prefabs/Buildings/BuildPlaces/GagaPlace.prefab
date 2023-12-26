@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6247605505575192600}
     m_Modifications:
+    - target: {fileID: 2362189177452004049, guid: d7a103e19658d57468739c3c28238ccb, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2452629338687653179, guid: d7a103e19658d57468739c3c28238ccb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

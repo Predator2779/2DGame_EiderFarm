@@ -477,7 +477,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2759310772757918117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,6 +512,7 @@ MonoBehaviour:
   _buyPrice: 0
   _upgradePrice: 00000000
   _sellPrice: 0
+  _inventory: {fileID: 0}
   HasFlag: 0
   IsBuilded: 0
 --- !u!1 &2485397831367445419
