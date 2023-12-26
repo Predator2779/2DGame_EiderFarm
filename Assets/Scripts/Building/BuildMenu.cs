@@ -118,8 +118,9 @@ namespace Building
         public void Upgrade()
         {
             if (_currentBuilding == null || !_currentBuilding.CanUpgrade()) return;
-
-            if (!Buy(_upgradePrice[_currentBuilding.GetCurrentGrade() -1])) return; /// проверить
+            
+            if (!Buy(_upgradePrice[_currentBuilding.GetCurrentGrade() -1])) return;
+            
             _currentBuilding.SetSprite(_currentBuilding.Upgrade());
 
             if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.GagaHouse)
@@ -200,10 +201,10 @@ namespace Building
             }
             else
             {
-                if (_currentBuilding.GetCurrentGrade() < _currentBuilding.GetMaxGrade() - 1)
+                if (_currentBuilding.GetCurrentGrade() < _currentBuilding.GetMaxGrade())
                 {
                     _upgradeBtn.transform.Find("Price").GetComponentInChildren<TMP_Text>().text =
-                            _upgradePrice[_currentBuilding.GetCurrentGrade()] + "kr";
+                            _upgradePrice[_currentBuilding.GetCurrentGrade() -1] + "kr";
                     _upgradeBtn.SetActive(true);
                 }
 
