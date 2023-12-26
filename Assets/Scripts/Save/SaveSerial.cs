@@ -9,6 +9,7 @@ using General;
 using TriggerScripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Economy.Farm_House;
 
 [RequireComponent(typeof(Menu))]
 public class SaveSerial : MonoBehaviour
@@ -31,6 +32,8 @@ public class SaveSerial : MonoBehaviour
     public SaveData data = new();
 
     public bool IsHasSaves;
+
+    [SerializeField] private TaskHandler _taskHandler;
 
     public void Initialize()
     {
@@ -110,7 +113,7 @@ public class SaveSerial : MonoBehaviour
     private void AddItems(string name, int count)
     {
         var item = _itemTypes.FirstOrDefault(item => item.GetName() == name);
-        _playerInventory.AddItems(item, count);
+        _playerInventory.AddItems(item, count, true);
     }
 
     public void SaveGame()
@@ -195,6 +198,8 @@ public class SaveSerial : MonoBehaviour
 
         _menu.SetSaves(false);
         SaveBool(false);
+
+        _taskHandler.ResetAllTasks();
     }
 
     private int[] SaveDataGrades(BuildTrigger[] menus)

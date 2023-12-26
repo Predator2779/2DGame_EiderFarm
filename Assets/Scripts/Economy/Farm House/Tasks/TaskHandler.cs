@@ -11,8 +11,7 @@ namespace Economy.Farm_House
         public void Initialize()
         {
             // ResetTasks(); /// убрать на билдинге
-            
-            _tasks[0].StartTask();
+            //_tasks[0].StartTask();
             
             EventHandler.OnTaskStageChanged.AddListener(RefreshTasksStatus);
             EventHandler.OnGiveReward.AddListener(GiveReward);
@@ -42,7 +41,13 @@ namespace Economy.Farm_House
                 task.CreateCell(_content);
         }
 
-        private void ResetTasks()
+        public void ResetAllTasks()
+        {
+            ResetTasks();
+            _tasks[0].StartTask();
+        }
+
+        public void ResetTasks()
         {
             foreach (var task in _tasks)
                 task.ResetTask();

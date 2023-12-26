@@ -21,6 +21,8 @@ namespace Economy
 
         public void AddItems(Item item, int count) => AddOrCreate(item, count);
 
+        public void AddItems(Item item, int count, bool forTasks) => AddOrCreate(item, count, true);
+
         public void AddItems(ItemBunch[] bunches)
         {
             foreach (var bunch in bunches)
@@ -74,6 +76,14 @@ namespace Economy
             AddUpToLimit(bunch, count);
             SendCountItemsMsg(item.GetName(), bunch.GetCount());
             SendCountAddedMsg(item, count);
+        }
+
+        private void AddOrCreate(Item item, int count, bool forTasks)
+        {
+            var bunch = GetBunch(item);
+
+            AddUpToLimit(bunch, count);
+            SendCountItemsMsg(item.GetName(), bunch.GetCount());
         }
 
         private void AddUpToLimit(ItemBunch bunch, int count) => bunch.AddItems(GetCountWithLimit(count));
