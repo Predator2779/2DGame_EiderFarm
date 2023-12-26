@@ -13,7 +13,7 @@ namespace Other
             if (_particles != null) _particles.Play();
             if (_sound != "") FMODUnity.RuntimeManager.PlayOneShot(_sound);
             
-            EventHandler.OnCameraShake?.Invoke();
+            // EventHandler.OnCameraShake?.Invoke();
         }
     }
 }
