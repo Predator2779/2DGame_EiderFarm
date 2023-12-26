@@ -152,7 +152,7 @@ MonoBehaviour:
       2.2/\u0412\u044B\u0439\u0442\u0438 2.2"
   Event: 
   PlayEvent: 9
-  StopEvent: 0
+  StopEvent: 10
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0

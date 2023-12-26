@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ec31a16cae400f9f814447e84db484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _findSpeed: 25
-  _timeFinding: 10
+  _findSpeed: 5
+  _timeFinding: 15
   _solidLayer:
     serializedVersion: 2
     m_Bits: 1
@@ -171,9 +171,9 @@ MonoBehaviour:
     \u0440\u0430\u0431\u043E\u0442\u043D\u0438\u043A 2.0"
   _currentEmployeeState: 0
   _maxDistWalkable: 0
-  _fluffCapacity: 2
+  _fluffCapacity: 1
   _findAlgorithm: 2
-  _radius: 0.4
+  _radius: 0.8
   _walkTime: 7
   _distance: 0
   _subTarget: {fileID: 0}
@@ -190,9 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isPlayerInventory: 0
-  _listItems:
-  - _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
-    _count: 100
+  _listItems: []
   _limit: 1000
 --- !u!1 &9136485320912651497
 GameObject:

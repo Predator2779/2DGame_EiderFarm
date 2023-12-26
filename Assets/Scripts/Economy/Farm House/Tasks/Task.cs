@@ -60,8 +60,7 @@ namespace Economy.Farm_House
 
         protected void ProgressingTask()
         {
-            if (SomeCondition())
-                SetStage(TaskStage.Completed);
+            if (SomeCondition()) SetStage(TaskStage.Completed);
         }
 
         private void PassTask()

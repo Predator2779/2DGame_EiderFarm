@@ -13,7 +13,7 @@ public class ResourceTransmitter : MonoBehaviour
     public delegate IEnumerator CoroutineDelegate(Item typeFrom, Inventory inv, int fluff);
     public event CoroutineDelegate TransmitteEvent;
 
-    [SerializeField, Header("Сколько пуха передается от игрока")]
+    [SerializeField, Header("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ")]
     private int _fluffCount;
 
     [SerializeField] private Item _typeToPlayer;
@@ -42,7 +42,7 @@ public class ResourceTransmitter : MonoBehaviour
             && _person.TryGetComponent(out Employee employee))
         {
             TransmitteFromEmployee(employee);
-            return false; /// на совесть Даниила
+            return false; /// пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         }
 
         Transmitte();
@@ -67,8 +67,6 @@ public class ResourceTransmitter : MonoBehaviour
         
         _storage.AddFluff(bunch.GetCount());
         inventory.RemoveItems(bunch.GetItem(), bunch.GetCount());
-        
-        if (_bubbles != null) _bubbles.StartBubble();
         
         // inventory.Exchange(inventory, gameObject.GetComponent<Inventory>(), bunch);
     }

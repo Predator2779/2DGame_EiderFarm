@@ -10,7 +10,7 @@ namespace Economy.Farm_House
 
         public void Initialize()
         {
-            ResetTasks(); /// убрать на билдинге
+            // ResetTasks(); /// убрать на билдинге
             
             _tasks[0].StartTask();
             

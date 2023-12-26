@@ -45,7 +45,7 @@ namespace Characters.PathFinding.Algorithms
             var colliders = Physics2D.OverlapCircleAll(nodePosition, _radius, _solidLayer);
 
             return colliders.All(_col => !_col.CompareTag("Obstacle")
-                    && CheckPerson(_col.gameObject)
+                    // && CheckPerson(_col.gameObject)
             );
         }
 
