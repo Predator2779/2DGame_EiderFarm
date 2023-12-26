@@ -23,7 +23,7 @@ namespace Economy.Farm_House.Tasks.TypesTask.BuildingTasks
         {
             _pathBuildings = GameObject.Find("Tilemap-Buildings").transform;
             _buildings = GetBuildings(_buildType);
-            _currentCount = _buildings.Count;
+            //_currentCount = _buildings.Count;
         }
 
         protected override void Deinitialize() => EventHandler.OnBuilded.RemoveListener(Build);

@@ -2436,6 +2436,17 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
+--- !u!114 &2042014763 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6743127782162559459, guid: f299813240def0a49b1fb565cc232e05, type: 3}
+  m_PrefabInstance: {fileID: 1840146213}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e845c5f618884098a55fb12e95d1a6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2106935047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,21 +2503,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 564526363}
     - target: {fileID: 2118555756345629674, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: _taskHandler
+      value: 
+      objectReference: {fileID: 2042014763}
+    - target: {fileID: 2118555756345629674, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: _playerInventory
       value: 
       objectReference: {fileID: 4544929881048724889}
-    - target: {fileID: 2381571922620921615, guid: a633d024163675f48863759ac430047f, type: 3}
-      propertyPath: _cutScene
-      value: Cutscene-0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2381571922620921615, guid: a633d024163675f48863759ac430047f, type: 3}
-      propertyPath: _menuScene
-      value: Start-Scene (Mobile)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2381571922620921615, guid: a633d024163675f48863759ac430047f, type: 3}
-      propertyPath: _loadedScene
-      value: Main-Level
-      objectReference: {fileID: 0}
     - target: {fileID: 7460094689457116688, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
