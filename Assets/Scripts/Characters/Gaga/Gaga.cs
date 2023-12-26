@@ -1,9 +1,6 @@
 using Player;
-using System;
 using System.Collections;
-using TMPro;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class Gaga : MonoBehaviour
 {
@@ -13,6 +10,8 @@ public class Gaga : MonoBehaviour
         Walk,
     }
 
+    [SerializeField] private PersonAnimate _personAnimate;
+    [SerializeField] private Animator _animator;
     [SerializeField] private Movement _movement;
     [SerializeField] private int _timeInHome;
     [SerializeField] private float _speed;
@@ -23,9 +22,6 @@ public class Gaga : MonoBehaviour
     private SpriteRenderer _sprite;
     private bool _isCoroutineRunning;
     private Vector2 _targetPos;
-
-    [SerializeField] private PersonAnimate _personAnimate;
-    [SerializeField] private Animator _animator;
 
     private void Start()
     {
@@ -50,15 +46,16 @@ public class Gaga : MonoBehaviour
     private void MoveTo()
     {
         Vector2 direction = (_targetPos - new Vector2(transform.position.x,transform.position.y)).normalized;
+        
         _personAnimate.Walk(direction, true, false);
         _movement.Move(direction.normalized * _speed * Time.deltaTime);
-        float directionX = direction.x;
-        _sprite.flipX = directionX < 0;
+        _sprite.flipX = direction.x < 0;
 
         float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.y), _targetPos);
         if (distance < 3f)
         {
             _personAnimate.Walk(direction, false, false);
+            
             SetState(State.Idle);
             GetRandomPoint(_moveRadius, _centerPoint);
         }
@@ -102,10 +99,17 @@ public class Gaga : MonoBehaviour
         }
     }
 
-    public void GetRandomPoint(float moveRadius, Transform center)
+    private void GetRandomPoint(float moveRadius, Transform center)
     {
-        Vector2 randomPoint = UnityEngine.Random.insideUnitCircle * moveRadius;
+        Vector2 randomPoint = Random.insideUnitCircle * moveRadius;
 
         _targetPos = new Vector2(center.position.x, center.position.y) + randomPoint;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        StopCoroutine(IdleProcess(4, 3));
+        _targetPos *= -1;
+        SetState(State.Walk);
     }
 }

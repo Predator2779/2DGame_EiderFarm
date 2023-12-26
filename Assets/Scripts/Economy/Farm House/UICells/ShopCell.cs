@@ -48,6 +48,8 @@ namespace Economy.Farm_House
             if (_item.GetName() == GlobalConstants.Flag)
                 EventHandler.OnFlagPanelCurrentState.Invoke();
 
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Продать 2.2");
+            
             RefreshButton();
             CheckCount();
         }

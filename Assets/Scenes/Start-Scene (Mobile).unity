@@ -261,6 +261,7 @@ MonoBehaviour:
   _itemTypes: []
   _menu: {fileID: 370129051}
   _sprites: []
+  _employees: []
   _gagaHouses: []
   _cleaners: []
   _clothMachines: []
@@ -271,6 +272,7 @@ MonoBehaviour:
     CleanedFluff: 0
     Cloth: 0
     Flag: 0
+    Employees: 
     GagaHouses: 
     Cleaners: 
     ClothMachines: 
@@ -278,6 +280,7 @@ MonoBehaviour:
     Flags: 
     flagSprites: 
     isSaves: 0
+  IsHasSaves: 0
 --- !u!1 &439191351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2675,18 +2678,6 @@ PrefabInstance:
       value: 190
       objectReference: {fileID: 0}
     - target: {fileID: 85551493684295431, guid: f97c0dd0b739b8e4eb6a39a84a9cc8a9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 85551493684295431, guid: f97c0dd0b739b8e4eb6a39a84a9cc8a9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 85551493684295431, guid: f97c0dd0b739b8e4eb6a39a84a9cc8a9, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 85551493684295431, guid: f97c0dd0b739b8e4eb6a39a84a9cc8a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2734,25 +2725,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 85551493684295431, guid: f97c0dd0b739b8e4eb6a39a84a9cc8a9, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2028382198383408310, guid: f97c0dd0b739b8e4eb6a39a84a9cc8a9, type: 3}
       propertyPath: m_Name
       value: newGameButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 4897735911808861666, guid: f97c0dd0b739b8e4eb6a39a84a9cc8a9, type: 3}
-      propertyPath: m_fontSize
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 4897735911808861666, guid: f97c0dd0b739b8e4eb6a39a84a9cc8a9, type: 3}
-      propertyPath: m_fontSizeMax
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 4897735911808861666, guid: f97c0dd0b739b8e4eb6a39a84a9cc8a9, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9015987401976024369, guid: f97c0dd0b739b8e4eb6a39a84a9cc8a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2775,18 +2750,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 370129051}
-    - target: {fileID: 2367829381220927712, guid: 464588e8b338f934a968d01009bcf166, type: 3}
-      propertyPath: m_fontSize
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367829381220927712, guid: 464588e8b338f934a968d01009bcf166, type: 3}
-      propertyPath: m_fontSizeMax
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367829381220927712, guid: 464588e8b338f934a968d01009bcf166, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4071049324866695858, guid: 464588e8b338f934a968d01009bcf166, type: 3}
       propertyPath: m_Name
       value: loadGameButton
@@ -2822,18 +2785,6 @@ PrefabInstance:
     - target: {fileID: 4451457663609015995, guid: 464588e8b338f934a968d01009bcf166, type: 3}
       propertyPath: m_SizeDelta.y
       value: 190
-      objectReference: {fileID: 0}
-    - target: {fileID: 4451457663609015995, guid: 464588e8b338f934a968d01009bcf166, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4451457663609015995, guid: 464588e8b338f934a968d01009bcf166, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4451457663609015995, guid: 464588e8b338f934a968d01009bcf166, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4451457663609015995, guid: 464588e8b338f934a968d01009bcf166, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2881,10 +2832,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4451457663609015995, guid: 464588e8b338f934a968d01009bcf166, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4451457663609015995, guid: 464588e8b338f934a968d01009bcf166, type: 3}
-      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2948,18 +2895,6 @@ PrefabInstance:
       value: 185
       objectReference: {fileID: 0}
     - target: {fileID: 3965460249006346726, guid: 1243579cc9fa910468c5addfc55efded, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3965460249006346726, guid: 1243579cc9fa910468c5addfc55efded, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3965460249006346726, guid: 1243579cc9fa910468c5addfc55efded, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3965460249006346726, guid: 1243579cc9fa910468c5addfc55efded, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -3006,22 +2941,6 @@ PrefabInstance:
     - target: {fileID: 3965460249006346726, guid: 1243579cc9fa910468c5addfc55efded, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3965460249006346726, guid: 1243579cc9fa910468c5addfc55efded, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4449277359364782936, guid: 1243579cc9fa910468c5addfc55efded, type: 3}
-      propertyPath: m_fontSize
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 4449277359364782936, guid: 1243579cc9fa910468c5addfc55efded, type: 3}
-      propertyPath: m_fontSizeMax
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 4449277359364782936, guid: 1243579cc9fa910468c5addfc55efded, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7859668696239993801, guid: 1243579cc9fa910468c5addfc55efded, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

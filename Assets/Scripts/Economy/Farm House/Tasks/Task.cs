@@ -70,6 +70,8 @@ namespace Economy.Farm_House
             SetStage(TaskStage.Passed);
             SetAvailableTasks();
             Deinitialize();
+            
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Сдать 2.2");
         }
 
         public void CheckProgressing()

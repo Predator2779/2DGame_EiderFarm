@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: -2651130561913625798}
   - component: {fileID: 8677283614156787453}
   - component: {fileID: 3887411481366468119}
+  - component: {fileID: 8485449647625298690}
+  - component: {fileID: 4658138057462788230}
   m_Layer: 0
   m_Name: Gaga
   m_TagString: Untagged
@@ -48,11 +50,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fb09106ddb39f40a75f27279a7ce3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _personAnimate: {fileID: 0}
+  _animator: {fileID: 0}
   _movement: {fileID: -2651130561913625798}
   _timeInHome: 2
   _speed: 2
-  _personAnimate: {fileID: 0}
-  _animator: {fileID: 0}
 --- !u!114 &-2651130561913625798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,6 +129,70 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8485449647625298690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7382054376449002626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1899518582
+      Data2: 1200283317
+      Data3: 1951408296
+      Data4: 2002441777
+    Path: "event:/UI \u0413\u043B\u0430\u0432\u043D\u043E\u0435 \u043C\u0435\u043D\u044E
+      2.2/\u0412\u044B\u0439\u0442\u0438 2.2"
+  Event: 
+  PlayEvent: 9
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &4658138057462788230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7382054376449002626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1618502011
+      Data2: 1276393722
+      Data3: 410003587
+      Data4: -1732847101
+    Path: "event:/\u0413\u0430\u0433\u0430 \u041F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435
+      2.2"
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8197437208212237301
 GameObject:
   m_ObjectHideFlags: 0
