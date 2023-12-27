@@ -93,8 +93,6 @@ namespace Building
             IsBuilded = true;
 
             CheckBtns();
-
-            EventHandler.OnBuilded?.Invoke(_currentBuilding.typeConstruction);
         }
 
         public void Demolition()

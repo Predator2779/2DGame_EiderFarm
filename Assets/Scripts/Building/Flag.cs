@@ -72,6 +72,13 @@ public class Flag : MonoBehaviour
         EventHandler.OnFlagSet?.Invoke();
     }
 
+    public void AddFlag(bool forSaves)
+    {
+        _flag.SetActive(true);
+        isFlagAdded = true;
+        EventHandler.OnFlagSpriteChanged?.RemoveListener(SetFlagSprite);
+    }
+
     public Sprite GetSprite()
     {
         return gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite;

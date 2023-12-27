@@ -284,7 +284,7 @@ public class SaveSerial : MonoBehaviour
         for (int i = 0; i < _gagaHouses.Length; i++)
         {
             if (gagaHousesMenus[i].gameObject.GetComponent<Flag>().isFlagAdded)
-                gagaHousesMenus[i].gameObject.GetComponent<Flag>().AddFlag();
+                gagaHousesMenus[i].gameObject.GetComponent<Flag>().AddFlag(true);
 
             if (!data.Flags[i]) continue;
             for (int j = 0; j < _sprites.Length; j++)
