@@ -22,7 +22,7 @@ namespace Economy.Farm_House
         
         protected abstract void Initialize();
 
-        private void Reinitialize()
+        public void Reinitialize()
         {
             Deinitialize();
             Initialize();

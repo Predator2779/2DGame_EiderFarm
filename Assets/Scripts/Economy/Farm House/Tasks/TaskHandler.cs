@@ -10,14 +10,17 @@ namespace Economy.Farm_House
 
         public void Initialize()
         {
-            // ResetTasks(); /// убрать на билдинге
-            // _tasks[0].StartTask();
-            if (_tasks[0].GetStage() == TaskStage.NotStarted) _tasks[0].StartTask();
-            
             EventHandler.OnTaskStageChanged.AddListener(RefreshTasksStatus);
             EventHandler.OnGiveReward.AddListener(GiveReward);
+
+            foreach (var task in _tasks)
+                if (task.GetStage() == TaskStage.Progressing)
+                {
+                    task.StartTask();
+                    return;
+                }
         }
-        
+
         private void GiveReward(Task task, TaskStage stage)
         {
             if (stage == TaskStage.Completed)
@@ -35,7 +38,7 @@ namespace Economy.Farm_House
         }
 
         private Task[] GetTasks(TaskStage stage) => _tasks.Where(task => task.GetStage() == stage).ToArray();
-        
+
         private void DrawTasks(Task[] tasks)
         {
             foreach (var task in tasks)
