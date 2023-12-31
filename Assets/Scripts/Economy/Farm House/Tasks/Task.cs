@@ -19,7 +19,7 @@ namespace Economy.Farm_House
 
         [Header("Set available tasks")]
         [SerializeField] protected Task[] _nextTasks;
-        
+
         protected abstract void Initialize();
 
         public void Reinitialize()
@@ -30,7 +30,7 @@ namespace Economy.Farm_House
 
         protected abstract void Deinitialize();
         public abstract void CreateCell(Transform parent);
-        
+
         public Sprite GetIcon() => _icon;
         public string GetName() => _name;
         public string GetDescription() => _description;
@@ -44,7 +44,7 @@ namespace Economy.Farm_House
         }
 
         public int RewardCount() => _reward.GetCount();
-        
+
         public void GiveReward(Inventory inventory)
         {
             if (_reward != null) inventory.AddItems(_reward.GetItem(), _reward.GetCount());
@@ -69,7 +69,7 @@ namespace Economy.Farm_House
             SetStage(TaskStage.Passed);
             SetAvailableTasks();
             Deinitialize();
-            
+
             FMODUnity.RuntimeManager.PlayOneShot("event:/Сдать 2.2");
         }
 
@@ -93,18 +93,15 @@ namespace Economy.Farm_House
         {
             foreach (var task in _nextTasks)
             {
-                if (task.GetStage() == TaskStage.NotAvailable)
-                {
-                    task.SetStage(TaskStage.NotStarted);
-                    task.StartTask();
-                }
+                if (task.GetStage() != TaskStage.NotAvailable &&
+                    task.GetStage() != TaskStage.Passed) continue;
+                
+                task.SetStage(TaskStage.NotStarted);
+                task.StartTask();
             }
         }
-        
-        public virtual void ResetTask()
-        {
-            SetStage(_resetStage);
-        }
+
+        public virtual void ResetTask() => SetStage(_resetStage);
     }
 
     public enum TaskStage

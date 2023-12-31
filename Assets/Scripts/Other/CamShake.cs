@@ -1,6 +1,7 @@
 using System.Collections;
 using General;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace Other
@@ -8,7 +9,8 @@ namespace Other
     [RequireComponent(typeof(Camera))]
     public class CamShake : MonoBehaviour
     {
-        [SerializeField] private float _duration, _magnitude, _noize;
+        [SerializeField] private float _duration, _magnitude;
+        [SerializeField] private float _noise;
         [SerializeField] private bool _enable;
         
         private void Update()
@@ -21,15 +23,15 @@ namespace Other
         }
         
         private void Start() => EventHandler.OnCameraShake.AddListener(Shake);
-        private void Shake() => ShakeCamera(_duration, _magnitude, _noize);
+        private void Shake() => ShakeCamera(_duration, _magnitude, _noise);
 
-        private void ShakeCamera(float duration, float magnitude, float noize) =>
-                StartCoroutine(ShakeCameraCor(duration, magnitude, noize));
+        private void ShakeCamera(float duration, float magnitude, float noise) =>
+                StartCoroutine(ShakeCameraCor(duration, magnitude, noise));
 
-        private void RotateCamera(float duration, float noize) =>
-                StartCoroutine(ShakeRotateCor(duration, noize));
+        private void RotateCamera(float duration, float noise) =>
+                StartCoroutine(ShakeRotateCor(duration, noise));
 
-        private IEnumerator ShakeRotateCor(float duration, float noize)
+        private IEnumerator ShakeRotateCor(float duration, float noise)
         {
             float elapsed = 0f;
 
@@ -53,26 +55,29 @@ namespace Other
             }
         }
 
-        private IEnumerator ShakeCameraCor(float duration, float magnitude, float noize)
+        private IEnumerator ShakeCameraCor(float duration, float magnitude, float noise)
         {
             float elapsed = 0f;
 
             Vector3 startPosition = transform.localPosition;
 
-            Vector2 noizeStartPoint0 = Random.insideUnitCircle * noize * Random.Range(-1000, 1000);
-            Vector2 noizeStartPoint1 = Random.insideUnitCircle * noize * Random.Range(-1000, 1000);
+            Vector2 noizeStartPoint0 = Random.insideUnitCircle * noise;
+            Vector2 noizeStartPoint1 = Random.insideUnitCircle * noise;
 
             while (elapsed < duration)
             {
-                Vector2 currentNoizePoint0 = Vector2.Lerp(noizeStartPoint0, Vector2.zero, elapsed / duration);
-                Vector2 currentNoizePoint1 = Vector2.Lerp(noizeStartPoint1, Vector2.zero, elapsed / duration);
+                Vector2 currentNoizePoint0 = Vector2.Lerp(noizeStartPoint0, startPosition, elapsed / duration);
+                Vector2 currentNoizePoint1 = Vector2.Lerp(noizeStartPoint1, startPosition, elapsed / duration);
 
                 Vector2 cameraPostionDelta = new Vector2(Mathf.PerlinNoise(currentNoizePoint0.x, currentNoizePoint0.y),
                         Mathf.PerlinNoise(currentNoizePoint1.x, currentNoizePoint1.y));
 
                 cameraPostionDelta *= magnitude;
+                
+                Vector2 newVector = new Vector2(cameraPostionDelta.x * (Random.Range(0, 2) * 2 - 1),
+                        cameraPostionDelta.y * (Random.Range(0, 2) * 2 - 1));
 
-                transform.localPosition = startPosition + (Vector3)cameraPostionDelta;
+                transform.localPosition += (Vector3)newVector;
 
                 elapsed += Time.deltaTime;
                 yield return null;

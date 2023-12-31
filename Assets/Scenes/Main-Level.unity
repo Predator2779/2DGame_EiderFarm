@@ -1737,6 +1737,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1628313785450708044, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2565912003107825558, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1796,6 +1800,26 @@ PrefabInstance:
     - target: {fileID: 7183966054052693947, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
       propertyPath: m_Name
       value: UI-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425662164605244287, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: EventReference.Path
+      value: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0417\u0430\u043A\u0440\u044B\u0442\u044C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425662164605244287, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: 137504772
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425662164605244287, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1242374671
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425662164605244287, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: 1439985802
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425662164605244287, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: -1787938667
       objectReference: {fileID: 0}
     - target: {fileID: 8034219714849878336, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
       propertyPath: m_Camera
