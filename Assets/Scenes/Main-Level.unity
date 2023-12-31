@@ -2772,6 +2772,14 @@ PrefabInstance:
       propertyPath: _joystick
       value: 
       objectReference: {fileID: 767403901}
+    - target: {fileID: 9020436082477829717, guid: 5365565ee0cccde418767ade71145759, type: 3}
+      propertyPath: m_ShowToolkit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020436082477829717, guid: 5365565ee0cccde418767ade71145759, type: 3}
+      propertyPath: m_ShowCustomSorter
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
