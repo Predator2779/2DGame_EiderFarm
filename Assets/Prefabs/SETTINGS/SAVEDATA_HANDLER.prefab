@@ -125,6 +125,7 @@ MonoBehaviour:
     flagSprites: 
     isSaves: 0
   IsHasSaves: 0
+  _taskHandler: {fileID: 0}
 --- !u!114 &8635574941930412320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,8 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fa2e6fc95fbcf43870efe5c2306378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadedScene: 
-  _menuScene: 
+  _loadedScene: Main-Level
+  _menuScene: Start-Scene
   _cutScene: 
   _loadGameButton: {fileID: 0}
   _textButton: {fileID: 0}

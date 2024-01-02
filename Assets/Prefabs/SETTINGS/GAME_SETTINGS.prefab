@@ -69,14 +69,6 @@ PrefabInstance:
       propertyPath: _cutScene
       value: Cutscene-0
       objectReference: {fileID: 0}
-    - target: {fileID: 8635574941930412320, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
-      propertyPath: _menuScene
-      value: Start-Scene (Mobile)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8635574941930412320, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
-      propertyPath: _loadedScene
-      value: Main-Level
-      objectReference: {fileID: 0}
     - target: {fileID: 8655681694898486711, guid: 84373ef0a454f85488a7dff6607e864d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
