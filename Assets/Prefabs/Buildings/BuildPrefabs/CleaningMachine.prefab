@@ -1,72 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2190821475224712653
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1344881661350309291}
-  - component: {fileID: 6939297212657686128}
-  m_Layer: 0
-  m_Name: Collider
-  m_TagString: Obstacle
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1344881661350309291
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2190821475224712653}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2212489885118787166}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &6939297212657686128
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2190821475224712653}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.75}
-  serializedVersion: 2
-  m_Radius: 1.2
 --- !u!1 &3675441815452204403
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +38,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1344881661350309291}
   - {fileID: 3241405553164733230}
   - {fileID: 5865723828606204950}
   m_Father: {fileID: 0}
@@ -216,6 +148,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 624c7db7ce9ee7e4fa8fae80a7466120, type: 3}
   - {fileID: 21300000, guid: 7bbed1e4bb7f30542ac1135f94c8f8fe, type: 3}
   _currentGrade: 0
+  _buildSpeed: 0.2
   _buildSound: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
     \u0441\u0442\u0430\u043D\u043E\u043A \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438
     \u043F\u0443\u0445\u0430 2.0/\u0421\u0442\u0440\u043E\u0438\u0442\u044C 2.0"

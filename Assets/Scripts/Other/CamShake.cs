@@ -28,32 +28,32 @@ namespace Other
         private void ShakeCamera(float duration, float magnitude, float noise) =>
                 StartCoroutine(ShakeCameraCor(duration, magnitude, noise));
 
-        private void RotateCamera(float duration, float noise) =>
-                StartCoroutine(ShakeRotateCor(duration, noise));
-
-        private IEnumerator ShakeRotateCor(float duration, float noise)
-        {
-            float elapsed = 0f;
-
-            float angleDeg = 30; //
-            Vector2 direction = Vector2.left;
-
-            float halfDuration = duration / 2;
-            direction = direction.normalized;
-            while (elapsed < duration)
-            {
-                Vector2 currentDirection = direction;
-                float t = elapsed < halfDuration ? elapsed / halfDuration : (duration - elapsed) / halfDuration;
-                float currentAngle = Mathf.Lerp(0f, angleDeg, t); //
-                currentDirection *= Mathf.Tan(currentAngle * Mathf.Deg2Rad);
-                Vector2 resDirection = ((Vector3)currentDirection + Vector3.forward).normalized;
-
-                Quaternion.FromToRotation(Vector3.forward, resDirection);
-
-                elapsed += Time.deltaTime;
-                yield return null;
-            }
-        }
+        // private void RotateCamera(float duration, float noise) =>
+        //         StartCoroutine(ShakeRotateCor(duration, noise));
+        //
+        // private IEnumerator ShakeRotateCor(float duration, float noise)
+        // {
+        //     float elapsed = 0f;
+        //
+        //     float angleDeg = 30; //
+        //     Vector2 direction = Vector2.left;
+        //
+        //     float halfDuration = duration / 2;
+        //     direction = direction.normalized;
+        //     while (elapsed < duration)
+        //     {
+        //         Vector2 currentDirection = direction;
+        //         float t = elapsed < halfDuration ? elapsed / halfDuration : (duration - elapsed) / halfDuration;
+        //         float currentAngle = Mathf.Lerp(0f, angleDeg, t); //
+        //         currentDirection *= Mathf.Tan(currentAngle * Mathf.Deg2Rad);
+        //         Vector2 resDirection = ((Vector3)currentDirection + Vector3.forward).normalized;
+        //
+        //         Quaternion.FromToRotation(Vector3.forward, resDirection);
+        //
+        //         elapsed += Time.deltaTime;
+        //         yield return null;
+        //     }
+        // }
 
         private IEnumerator ShakeCameraCor(float duration, float magnitude, float noise)
         {

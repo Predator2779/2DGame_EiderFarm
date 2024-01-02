@@ -37,7 +37,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5530597264696609760}
-  - {fileID: 4298729534979757486}
   - {fileID: 822599582121912999}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -147,6 +146,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 043f914453117a745a1a914bbb9713a4, type: 3}
   - {fileID: 21300000, guid: fe01de77df3107d48859c6d5a3f76a48, type: 3}
   _currentGrade: 0
+  _buildSpeed: 0.3
   _buildSound: "event:/\u0421\u0442\u0440\u043E\u0439\u043A\u0430 \u0441\u043A\u043B\u0430\u0434\u0430"
 --- !u!114 &1645055648655777952
 MonoBehaviour:
@@ -240,89 +240,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5044950058977623976}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7994364683950236450
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4298729534979757486}
-  - component: {fileID: 4171942324482466775}
-  m_Layer: 0
-  m_Name: Collider
-  m_TagString: Obstacle
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4298729534979757486
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7994364683950236450}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5044950058977623976}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &4171942324482466775
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7994364683950236450}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -3.7092266, y: -2.6056738}
-  - {x: -4.123904, y: -2.8464503}
-  - {x: -4.909301, y: -3.2352376}
-  - {x: -7.8956757, y: -1.4797122}
-  - {x: -6.1383095, y: 1.2741685}
-  - {x: -4.0340757, y: 4.815048}
-  - {x: 4.076848, y: 0.830549}
-  - {x: 5.919315, y: -0.70396805}
-  - {x: 6.548948, y: -1.9523478}
-  - {x: 6.508559, y: -3.541421}
-  - {x: 1.9356027, y: -5.4338846}
-  - {x: -3.7243872, y: -2.5715146}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!1001 &5172336310322145012
 PrefabInstance:
   m_ObjectHideFlags: 0

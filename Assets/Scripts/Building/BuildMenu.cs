@@ -20,7 +20,8 @@ namespace Building
         private GameObject _buildBtn;
         private GameObject _upgradeBtn;
         private GameObject _demolitionBtn;
-
+        private int _currentGrade;
+        
         [SerializeField] private GameObject _flagBtn;
         [SerializeField] private Flag _flag;
 
@@ -34,7 +35,7 @@ namespace Building
         [SerializeField, Range(0, 1000)] private int _sellPrice;
 
         [SerializeField] private Inventory _inventory;
-        private ItemBunch _moneyBunch;
+        private ItemBunch _moneyBunch; // ?
 
         public bool HasFlag;
         public bool IsBuilded;
@@ -51,6 +52,7 @@ namespace Building
             _triggerSprite = triggerSprite;
             _buildPos = buildPos;
             _buildRot = buildRot;
+            _currentGrade = 0;
         }
 
         public void SetButtons()
@@ -64,31 +66,25 @@ namespace Building
         {
             if (_currentBuilding != null) return;
 
-            if (!Buy(_buyPrice)) return;
+            if (!CanBuy(_buyPrice, out ItemBunch wallet)) return;
 
-            if (_triggerSprite != null) _triggerSprite.enabled = false;
-
-            Build(_buildingPrefab);
-            _currentBuilding.SetSprite(_currentBuilding.Upgrade());
-
-            IsBuilded = true;
-
+            Buy(wallet, _buyPrice);
+            Build(true);
+            
             FMODUnity.RuntimeManager.PlayOneShotAttached(_buildingPrefab.GetBuildSound(), gameObject);
-
-            CheckBtns();
-
             EventHandler.OnBuilded?.Invoke(_currentBuilding.typeConstruction);
         }
 
         public void Build(bool isFree)
         {
-            if (_currentBuilding != null) return;
-
             if (_triggerSprite != null)
                 _triggerSprite.enabled = false;
 
             Build(_buildingPrefab);
-            _currentBuilding.SetSprite(_currentBuilding.Upgrade());
+
+            _currentBuilding.Upgrade(_currentGrade);
+            _currentGrade = _currentBuilding.GetCurrentGrade();
+            
             IsBuilded = true;
 
             CheckBtns();
@@ -99,14 +95,15 @@ namespace Building
             if (_currentBuilding == null) return;
 
             _triggerSprite.enabled = true;
+            _currentGrade = 0;
+            
             Sell(_sellPrice);
-            IsBuilded = false;
-
-            EventHandler.OnDemolition?.Invoke(_currentBuilding.typeConstruction);
-            Destroy(_currentBuilding.gameObject);
-
+            
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI меню стройки домик/Снести");
+            EventHandler.OnDemolition?.Invoke(_currentBuilding.typeConstruction);
 
+            IsBuilded = false;
+            Destroy(_currentBuilding.gameObject);
             CheckBtns();
 
             if (_flag != null) _flag.RemoveFlag();
@@ -115,44 +112,26 @@ namespace Building
         public void Upgrade()
         {
             if (_currentBuilding == null || !_currentBuilding.CanUpgrade()) return;
+
+            int price = _upgradePrice[_currentBuilding.GetCurrentGrade() - 1];
             
-            if (!Buy(_upgradePrice[_currentBuilding.GetCurrentGrade() -1])) return;
+            if (!CanBuy(price, out ItemBunch wallet)) return;
             
-            _currentBuilding.SetSprite(_currentBuilding.Upgrade());
-
-            if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.GagaHouse)
-                _currentBuilding.GetComponent<FluffGiver>().CheckGrade();
-
-            if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.FluffCleaner ||
-                _currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.ClothMachine)
-                _currentBuilding.GetComponent<Machine>().CheckGrade();
-
-            if (_currentBuilding.GetComponent<ResourceTransmitter>() && _currentBuilding.GetComponent<Machine>())
-                _currentBuilding.GetComponent<ResourceTransmitter>()
-                                .SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
-
-            if (_currentBuilding.GetComponent<ResourceTransmitter>() && _currentBuilding.GetComponent<Machine>())
-                _currentBuilding.GetComponent<ResourceTransmitter>()
-                                .SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
-
-            if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.Storage)
-                _currentBuilding.GetComponent<StorageSpriteChanger>().ChangeToGradeSprite();
-
+            Buy(wallet, price);
+            Upgrade(true);
+            
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI меню стройки домик/Улучшить");
-
-            EventHandler.OnUpgraded?.Invoke(
-                    _currentBuilding.typeConstruction,
-                    _currentBuilding.GetCurrentGrade());
-
+            
             CheckBtns();
         }
 
         public void Upgrade(bool isFree)
         {
-            if (_currentBuilding == null || !_currentBuilding.CanUpgrade()) return;
+            Build(_buildingPrefab);
 
-            _currentBuilding.SetSprite(_currentBuilding.Upgrade());
-
+            _currentBuilding.Upgrade(_currentGrade);
+            _currentGrade = _currentBuilding.GetCurrentGrade();
+            
             if (_currentBuilding.typeConstruction == GlobalTypes.TypeBuildings.GagaHouse)
             {
                 var giver = _currentBuilding.GetComponent<FluffGiver>();
@@ -201,7 +180,7 @@ namespace Building
                 if (_currentBuilding.GetCurrentGrade() < _currentBuilding.GetMaxGrade())
                 {
                     _upgradeBtn.transform.Find("Price").GetComponentInChildren<TMP_Text>().text =
-                            _upgradePrice[_currentBuilding.GetCurrentGrade() -1] + "kr";
+                            _upgradePrice[_currentBuilding.GetCurrentGrade() - 1] + "kr";
                     _upgradeBtn.SetActive(true);
                 }
 
@@ -215,21 +194,27 @@ namespace Building
 
         private void Build(Construction building)
         {
-            if (_currentBuilding != null) Destroy(_currentBuilding);
+            if (_currentBuilding != null) Destroy(_currentBuilding.gameObject);
+
             _currentBuilding = Instantiate(building, _buildPos, _buildRot, _parent);
         }
 
         public void SetFlag() => _flag.AddFlag();
 
-        private bool Buy(int price)
+        private bool CanBuy(int price, out ItemBunch wallet)
         {
-            if (!_inventory.TryGetBunch(GlobalConstants.Money, out var moneyBunch) ||
-                moneyBunch.GetCount() < price) return false;
+            if (_inventory.TryGetBunch(GlobalConstants.Money, out var moneyBunch) &&
+                moneyBunch.GetCount() >= price)
+            {
+                wallet = moneyBunch;
+                return true;
+            }
 
-            _inventory.RemoveItems(moneyBunch.GetItem(), price);
-            
-            return true;
+            wallet = null;
+            return false;
         }
+
+        private void Buy(ItemBunch wallet, int price) => _inventory.RemoveItems(wallet.GetItem(), price);
 
         private void Sell(int price)
         {

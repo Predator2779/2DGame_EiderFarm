@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8975455275979976100
 Transform:
   m_ObjectHideFlags: 0
@@ -87,7 +87,6 @@ GameObject:
   m_Component:
   - component: {fileID: 92403738945501994}
   - component: {fileID: 3771664251059694654}
-  - component: {fileID: 1939296390255304421}
   - component: {fileID: 987119111608633216}
   - component: {fileID: 8916316367632330952}
   - component: {fileID: 5496360640194218666}
@@ -154,41 +153,6 @@ CircleCollider2D:
   m_Offset: {x: 1, y: -0.5}
   serializedVersion: 2
   m_Radius: 1.5
---- !u!58 &1939296390255304421
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2055177213520633573}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.25}
-  serializedVersion: 2
-  m_Radius: 1
 --- !u!212 &987119111608633216
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -273,6 +237,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 97c3a8d8cf66e414dbaa121b282f8a90, type: 3}
   - {fileID: 21300000, guid: 33059f67d97188941a5ed9a74ca0a1a5, type: 3}
   _currentGrade: 0
+  _buildSpeed: 0.2
   _buildSound: "event:/UI/UI \u043C\u0435\u043D\u044E \u0441\u0442\u0440\u043E\u0439\u043A\u0438
     \u0434\u043E\u043C\u0438\u043A/\u0421\u0442\u0440\u043E\u0438\u0442\u044C"
 --- !u!114 &8785618567574733136
