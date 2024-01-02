@@ -87,6 +87,7 @@ MonoBehaviour:
   _buildMenu: {fileID: 6711799631444094443}
   _buildPrefab: {fileID: 5870109810159464413, guid: fa5d5521fca1d6c42850e1c8c068c359, type: 3}
   _renderer: {fileID: 7076034563731592162}
+  _person: {fileID: 0}
 --- !u!1 &2428883316117120994
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,6 +259,14 @@ PrefabInstance:
     - target: {fileID: 2358450605360603548, guid: 6cd6ca1b4b76a914cb935d0d48bee746, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002087751469744806, guid: 6cd6ca1b4b76a914cb935d0d48bee746, type: 3}
+      propertyPath: _upgradePrice.Array.data[0]
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002087751469744806, guid: 6cd6ca1b4b76a914cb935d0d48bee746, type: 3}
+      propertyPath: _upgradePrice.Array.data[1]
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7058175638665100393, guid: 6cd6ca1b4b76a914cb935d0d48bee746, type: 3}
       propertyPath: m_PresetInfoIsWorld
