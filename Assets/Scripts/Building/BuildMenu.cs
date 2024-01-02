@@ -157,9 +157,7 @@ namespace Building
                 _currentBuilding.GetComponent<ResourceTransmitter>()
                                 .SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
 
-            EventHandler.OnUpgraded?.Invoke(
-                    _currentBuilding.typeConstruction,
-                    _currentBuilding.GetCurrentGrade());
+            EventHandler.OnUpgraded?.Invoke(_currentBuilding.typeConstruction, _currentBuilding.GetCurrentGrade());
         }
 
         public void CheckBtns()
