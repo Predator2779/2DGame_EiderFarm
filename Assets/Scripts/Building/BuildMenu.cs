@@ -52,7 +52,6 @@ namespace Building
             _triggerSprite = triggerSprite;
             _buildPos = buildPos;
             _buildRot = buildRot;
-            _currentGrade = 0;
         }
 
         public void SetButtons()

@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Mobile/Cuscene-0.unity
     guid: 23e9e0423f61a19448364f25e946cf2c
   - enabled: 1
-    path: Assets/Scenes/Main-Level.unity
-    guid: bd6ca6fe929cc454285c43f257249867
+    path: Assets/Scenes/Mobile/Main-Level.unity
+    guid: 53f000ae975b82a4bb86945c8c5d28ab
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 23bca2de37cb81b438115dbffbe82cdd, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 1158e3058758c184099701b830d61b29, type: 2}
