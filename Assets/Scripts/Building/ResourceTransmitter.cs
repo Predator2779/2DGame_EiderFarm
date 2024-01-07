@@ -95,7 +95,11 @@ public class ResourceTransmitter : MonoBehaviour
 
         if (!CheckBag()) return;
 
-        if (gameObject.GetComponent<Machine>()) _machine.GetAnimator().enabled = true;
+        if (gameObject.GetComponent<Machine>())
+        {
+            _machine.GetAnimator().enabled = true;
+            _machine.StartSound();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -106,7 +110,11 @@ public class ResourceTransmitter : MonoBehaviour
         _characterInventory = null;
         _person = null;
 
-        if (gameObject.GetComponent<Machine>()) _machine.GetAnimator().enabled = false;
+        if (gameObject.GetComponent<Machine>())
+        {
+            _machine.GetAnimator().enabled = false;
+            _machine.StopSound();
+        }
     }
 
     public int GetRequireFluffCount() => _fluffCount;

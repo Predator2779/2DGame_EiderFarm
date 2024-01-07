@@ -1604,20 +1604,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 809290218603822820, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 8915056409898540691}
-    - target: {fileID: 809290218603822820, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 809290218603822820, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ChangeSprite
-      objectReference: {fileID: 0}
-    - target: {fileID: 809290218603822820, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UIHelper, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 809290218603822820, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName

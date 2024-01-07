@@ -180,11 +180,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ed1386f1ec2b042bacfa2412ee9cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delayProduction: 1
-  _transmitter: {fileID: 6533531074316886523}
-  _animator: {fileID: 4486999885980057955}
   _upgradeTime: 020000000200000001000000
   _ugradeFluffCount: 020000000400000003000000
+  _delayProduction: 1
+  _soundProcessing: "event:/\u0420\u0430\u0431\u043E\u0442\u0430 \u0441\u0442\u0430\u043D\u043A\u0430
+    \u043F\u043E \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0435 \u043F\u0443\u0445\u0430
+    3.0"
+  _animator: {fileID: 4486999885980057955}
 --- !u!114 &5069752540118177730
 MonoBehaviour:
   m_ObjectHideFlags: 0

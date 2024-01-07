@@ -290,6 +290,7 @@ MonoBehaviour:
   _particles: {fileID: 1647125545528373978}
   _sound: "event:/UI \u0413\u043B\u0430\u0432\u043D\u043E\u0435 \u043C\u0435\u043D\u044E
     2.2/\u0412\u044B\u0439\u0442\u0438 2.2"
+  _camShake: 1
 --- !u!1 &3095534224398095761
 GameObject:
   m_ObjectHideFlags: 0

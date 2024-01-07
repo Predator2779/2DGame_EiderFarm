@@ -1,6 +1,7 @@
 using Building.Constructions;
 using Economy;
 using General;
+using Other;
 using TMPro;
 using UnityEngine;
 using EventHandler = General.EventHandler;
@@ -120,8 +121,6 @@ namespace Building
             Upgrade(true);
             
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI меню стройки домик/Улучшить");
-            
-            CheckBtns();
         }
 
         public void Upgrade(bool isFree)
@@ -152,11 +151,8 @@ namespace Building
                 _currentBuilding.GetComponent<ResourceTransmitter>()
                                 .SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
 
-            if (_currentBuilding.GetComponent<ResourceTransmitter>() && _currentBuilding.GetComponent<Machine>())
-                _currentBuilding.GetComponent<ResourceTransmitter>()
-                                .SetGradeAnimationTrue(_currentBuilding.GetCurrentGrade());
-
             EventHandler.OnUpgraded?.Invoke(_currentBuilding.typeConstruction, _currentBuilding.GetCurrentGrade());
+            CheckBtns();
         }
 
         public void CheckBtns()

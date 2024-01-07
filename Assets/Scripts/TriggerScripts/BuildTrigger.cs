@@ -3,6 +3,7 @@ using Building.Constructions;
 using Economy;
 using Characters;
 using General;
+using Other;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -15,9 +16,9 @@ namespace TriggerScripts
         [SerializeField] private BuildMenu _buildMenu;
         [SerializeField] private Construction _buildPrefab;
         [SerializeField] private SpriteRenderer _renderer;
-
-        private Transform _parentBuildings;
         [SerializeField] private Person _person;
+        
+        private Transform _parentBuildings;
 
         private void Start() => Initialize();
 
@@ -25,7 +26,7 @@ namespace TriggerScripts
         {
             _map = transform.GetComponentInParent<Tilemap>();
             _buildMenu.SetButtons();
-
+            
             SetParent(_buildPrefab.typeConstruction);
             SetSprite();
             SetPosition();

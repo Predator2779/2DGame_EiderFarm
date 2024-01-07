@@ -207,11 +207,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ed1386f1ec2b042bacfa2412ee9cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delayProduction: 60
-  _transmitter: {fileID: 0}
-  _animator: {fileID: 2469458603659518761}
   _upgradeTime: 030000000200000001000000
   _ugradeFluffCount: 010000000200000003000000
+  _delayProduction: 60
+  _soundProcessing: "event:/\u0420\u0430\u0431\u043E\u0442\u0430 \u0442\u043A\u0430\u0446\u043A\u043E\u0433\u043E
+    \u0441\u0442\u0430\u043D\u043A\u0430 3.0"
+  _animator: {fileID: 2469458603659518761}
 --- !u!95 &2469458603659518761
 Animator:
   serializedVersion: 5
@@ -248,6 +249,7 @@ MonoBehaviour:
   _particles: {fileID: 4254733238553802743}
   _sound: "event:/UI \u0413\u043B\u0430\u0432\u043D\u043E\u0435 \u043C\u0435\u043D\u044E
     2.2/\u0412\u044B\u0439\u0442\u0438 2.2"
+  _camShake: 0
 --- !u!1 &8455517892580568423
 GameObject:
   m_ObjectHideFlags: 0
