@@ -44,7 +44,7 @@ public class Flag : MonoBehaviour
     {
         if (_itemBunch == null || _itemBunch.GetCount() <= 0) return;
         if (isFlagAdded) return;
-        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Atmosphere/Atmosphere Flag", gameObject);
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Установка флажка 3.0", gameObject);
 
         isFlagAdded = true;
         _playerInventory.RemoveItems(_itemBunch.GetItem(), 1);
