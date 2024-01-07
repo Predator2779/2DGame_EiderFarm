@@ -129,7 +129,7 @@ PrefabInstance:
     - target: {fileID: 449568004539122333, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5521965820041076803}
+      objectReference: {fileID: 3852285442991041936}
     - target: {fileID: 449568004539122333, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
@@ -921,9 +921,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8093134987746546625, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9171861536525877404}
-    - targetCorrespondingSourceObject: {fileID: 9158145833650526617, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5521965820041076803}
     - targetCorrespondingSourceObject: {fileID: 4392965145907110519, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2697136799894660848}
@@ -968,6 +965,17 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &3852285442991041936 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 494307355998762677, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
+  m_PrefabInstance: {fileID: 3722841750118112037}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4836821510209801568 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8121651840540382789, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
@@ -1005,42 +1013,6 @@ MonoBehaviour:
       Data4: 2041768275
     Path: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0418\u043D\u0432\u0435\u043D\u0442\u0430\u0440\u044C;
       \u0444\u0435\u0440\u043C\u0435\u0440\u0441\u043A\u0438\u0439 \u0434\u043E\u043C\u0438\u043A"
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!1 &5526609185887617724 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9158145833650526617, guid: a56386e6a662e804bbf4fdbe2c483793, type: 3}
-  m_PrefabInstance: {fileID: 3722841750118112037}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5521965820041076803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5526609185887617724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 137504772
-      Data2: 1242374671
-      Data3: 1439985802
-      Data4: -1787938667
-    Path: "event:/UI/UI \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u043C\u0435\u043D\u044E/\u0417\u0430\u043A\u0440\u044B\u0442\u044C"
   Event: 
   PlayEvent: 0
   StopEvent: 0
