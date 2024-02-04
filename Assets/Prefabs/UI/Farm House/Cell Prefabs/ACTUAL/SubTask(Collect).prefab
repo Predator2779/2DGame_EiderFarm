@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 3797190390009715268}
   - component: {fileID: 2800116051798515356}
   m_Layer: 5
-  m_Name: SubTask(Puh)
+  m_Name: SubTask(Collect)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

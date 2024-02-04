@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 270196201733510537}
   - component: {fileID: 2714213325177431332}
   m_Layer: 5
-  m_Name: SubTask(Buildings)(Clone)
+  m_Name: SubTask(Building)NEW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
