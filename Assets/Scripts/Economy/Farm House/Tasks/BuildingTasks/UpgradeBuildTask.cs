@@ -12,7 +12,7 @@ namespace Economy.Farm_House.Tasks.TypesTask.BuildingTasks
 
         protected override void Initialize()
         {
-            _pathBuildings = GameObject.Find("Tilemap-Buildings").transform;
+            _pathBuildings = GameObject.Find("Tilemap-Grids").transform;
             _currentCount = GetUpgradeBuildingsCount(GetBuildings(_buildType).ToArray());
 
             EventHandler.OnUpgraded.AddListener(Upgrade);

@@ -21,7 +21,7 @@ namespace Economy.Farm_House.Tasks.TypesTask.BuildingTasks
 
         protected void SetNullableFields()
         {
-            _pathBuildings = GameObject.Find("Tilemap-Buildings").transform;
+            _pathBuildings = GameObject.Find("Grid").transform;
             _buildings = GetBuildings(_buildType);
             //_currentCount = _buildings.Count;
         }

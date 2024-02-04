@@ -9,7 +9,6 @@ namespace Economy.Farm_House
         [SerializeField] private TMP_Text _btnText;
 
         protected TextMeshProUGUI _prefabText;
-
         protected Inventory _playerInventory;
         protected bool _isHouseMenu;
 

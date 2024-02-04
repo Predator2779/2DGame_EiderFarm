@@ -36,9 +36,8 @@ public class Menu : MonoBehaviour
         _isNewGame = isNewGame;
         SceneManager.LoadScene(isNewGame ? _cutScene : _loadedScene);
     }
-
     public void ExitLevel() => SceneManager.LoadScene(_menuScene);
-    public void Exit() => Application.Quit();
+    public void Quit() => Application.Quit();
     public bool IsNewGame() => _isNewGame;
     public bool IsHasSaves() => _isHasSaves;
     public void SetSaves(bool isSaves) => _isHasSaves = isSaves;
