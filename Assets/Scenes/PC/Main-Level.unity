@@ -1516,6 +1516,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MONEY
       objectReference: {fileID: 0}
+    - target: {fileID: 4628844041913726704, guid: 747b9b832b2f0514187aae91a0a274d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1589,6 +1593,17 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
+--- !u!114 &1361722618 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6743127782162559459, guid: 5687cbc97d94ebb40be6359229947d8f, type: 3}
+  m_PrefabInstance: {fileID: 152516380}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e845c5f618884098a55fb12e95d1a6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1464765522 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8564671768752287489, guid: 5687cbc97d94ebb40be6359229947d8f, type: 3}
@@ -2506,7 +2521,7 @@ PrefabInstance:
     - target: {fileID: 2118555756345629674, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: _taskHandler
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1361722618}
     - target: {fileID: 2118555756345629674, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: _playerInventory
       value: 
