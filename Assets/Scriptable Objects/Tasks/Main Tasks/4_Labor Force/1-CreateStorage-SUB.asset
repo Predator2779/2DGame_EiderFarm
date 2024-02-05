@@ -24,7 +24,7 @@ MonoBehaviour:
     _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
     _count: 0
   _nextTasks: []
-  _cellPrefab: {fileID: 2800116051798515356, guid: 6e6d042e3c1206a47b503c538abb5442, type: 3}
+  _cellPrefab: {fileID: 2714213325177431332, guid: 1b7f11e573b4ec749902d8bedabb10e2, type: 3}
   _requireCount: 1
   _currentCount: 1
   _buildType: 3
