@@ -15,8 +15,11 @@ namespace Characters
         public Sprite GetSprite() => _sprite;
         public string GetDescription() => _description;
         public int GetPrice() => _price;
+        public bool GetHired() => _isHired;
         public bool CanHiring() => !_isHired;
-
+        public void SpawnEmployee(Vector2 spawnPosition) => Instantiate(this, spawnPosition, Quaternion.identity);
+        public Inventory GetInventory() => _inventory;
+        
         public void Hire(Inventory inventory, Vector2 spawnPosition)
         {
             if (!inventory.TryGetBunch(GlobalConstants.Money, out ItemBunch wallet)) return;
@@ -30,14 +33,5 @@ namespace Characters
             
             SpawnEmployee(spawnPosition);
         }
-
-        public Inventory GetInventory() => _inventory;
-        
-        public void SpawnEmployee(Vector2 spawnPosition)
-        {
-            Instantiate(this, spawnPosition, Quaternion.identity);
-        }
-
-        public bool GetHired() => _isHired;
     }
 }

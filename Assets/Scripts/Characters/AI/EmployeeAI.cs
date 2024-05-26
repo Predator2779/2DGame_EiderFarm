@@ -6,11 +6,12 @@ using Characters.PathFinding;
 using Economy;
 using General;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Characters.AI
 {
     [RequireComponent(typeof(Employee))]
-    [RequireComponent(typeof(PathFinder))]
+    [RequireComponent(typeof(NavMeshAgent))]
     public class EmployeeAI : WalkerAI
     {
         [Header("Service:")]
@@ -28,6 +29,7 @@ namespace Characters.AI
         [SerializeField] private float _walkTime;
         [SerializeField] private float _distance; //
 
+        private NavMeshAgent _agent;
         private Construction _currentCleaner;
         private BuildStorage _currentHouse;
         private BuildStorage _currentStorage;
@@ -36,7 +38,7 @@ namespace Characters.AI
         private PathFinder _pathFinder;
         private Vector2 _target;
         [SerializeField] private Transform _subTarget; //
-        private List<Vector2> _path = new();
+        private List<Vector2> _path = new List<Vector2>();
         private int _index;
 
         private void Start() => Initialize();
@@ -45,6 +47,7 @@ namespace Characters.AI
 
         private void Initialize()
         {
+            _agent = GetComponent<NavMeshAgent>();
             _pull ??= FindObjectOfType<BuildingsPull>();
             _employee ??= GetComponent<Employee>();
             _pathFinder ??= GetComponent<PathFinder>();
@@ -84,8 +87,6 @@ namespace Characters.AI
 
         private void StateExecute()
         {
-            // _distance = Vector2.Distance(transform.position, _target); ////
-
             switch (_currentEmployeeState)
             {
                 case EmployeeStates.Idle:
@@ -149,41 +150,7 @@ namespace Characters.AI
             WalkToTarget();
         }
         
-        private void WalkToTarget()
-        {
-            if (_maxDistWalkable > 0 && Vector2.Distance(transform.position, _target) > _maxDistWalkable) return;
-
-            if (IsNearby(_target))
-            {
-                StopMove();
-                return;
-            }
-            
-            if (_path == null || _index < 0) SetPath();
-            else
-            {
-                if (IsNearby(_path[0]))
-                {
-                    ResetPath();
-                    StopMove();
-                }
-                else
-                {
-                    if (IsNearby(_path[_index]))
-                    {
-                        StartCoroutine(WalkTime());
-                        _index--;
-                    }
-                    else
-                    {
-                        StartCoroutine(WalkTime());
-                        var direction = _path[_index] - (Vector2)transform.position;
-                        Walk(direction.normalized);
-                    }
-                }
-            }
-        }
-        
+        private void WalkToTarget() => _agent.SetDestination(_target);
         
         private void StopMove()
         {
