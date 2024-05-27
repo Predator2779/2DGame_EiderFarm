@@ -9,17 +9,16 @@ using UnityEngine.AI;
 namespace Characters.AI
 {
     [RequireComponent(typeof(Employee))]
-    // [RequireComponent(typeof(NavMeshAgent))]
     public class EmployeeAI : WalkerAI
     {
         [Header("Service:")]
         [SerializeField] private EmployeeStates _currentEmployeeState;
+        [SerializeField] private NavMeshAgent _agent;
 
         [Space] [Header("Settings:")]
         [SerializeField] [Range(1, 100)] private int _fluffCapacity;
         [SerializeField] private float _radius;
 
-        private NavMeshAgent _agent;
         private Construction _currentCleaner;
         private BuildStorage _currentHouse;
         private BuildStorage _currentStorage;
@@ -33,7 +32,6 @@ namespace Characters.AI
 
         private void Initialize()
         {
-            _agent = GetComponent<NavMeshAgent>();
             _pull ??= FindObjectOfType<BuildingsPull>();
             _employee ??= GetComponent<Employee>();
         }
