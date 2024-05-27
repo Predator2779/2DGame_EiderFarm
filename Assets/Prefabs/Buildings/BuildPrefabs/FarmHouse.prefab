@@ -273,7 +273,7 @@ RectTransform:
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7909445111753758711}
+  m_Father: {fileID: 7894042537200038146}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1863,6 +1863,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7298571379754579918, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       insertIndex: 3
       addedObject: {fileID: 4844328895047807730}
+    - targetCorrespondingSourceObject: {fileID: 7298571379754579918, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1798128645089702066}
     - targetCorrespondingSourceObject: {fileID: 6309935948328744703, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3711044187087823087}
@@ -1881,9 +1884,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5958939152337851780, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1554550485998986813}
-    - targetCorrespondingSourceObject: {fileID: 7279795778337591611, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1798128645089702066}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6369352060658982982, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
       insertIndex: -1
@@ -1970,11 +1970,6 @@ RectTransform:
 --- !u!224 &7894042537200038146 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7298571379754579918, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
-  m_PrefabInstance: {fileID: 631904575015290572}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &7909445111753758711 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7279795778337591611, guid: b93d1d9c68a72c74e83849e9efb3fff7, type: 3}
   m_PrefabInstance: {fileID: 631904575015290572}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8158163517547755436 stripped

@@ -2,7 +2,6 @@ using Building;
 using Economy;
 using General;
 using UnityEngine;
-using UnityEngine.Serialization;
 using EventHandler = General.EventHandler;
 
 public class Flag : MonoBehaviour

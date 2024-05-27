@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8045537459041494023}
   - component: {fileID: 4486999885980057955}
   - component: {fileID: -2738715371074727452}
+  - component: {fileID: -3330601584014018607}
   m_Layer: 0
   m_Name: CleaningMachine
   m_TagString: Untagged
@@ -250,6 +251,23 @@ MonoBehaviour:
   _particles: {fileID: 7977566795296842259}
   _sound: "event:/UI \u0413\u043B\u0430\u0432\u043D\u043E\u0435 \u043C\u0435\u043D\u044E
     2.2/\u0412\u044B\u0439\u0442\u0438 2.2"
+  _camShake: 0
+--- !u!114 &-3330601584014018607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3675441815452204403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4, y: 3, z: 4}
+  m_Center: {x: 0, y: 1, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &5532231162559635533
 GameObject:
   m_ObjectHideFlags: 0

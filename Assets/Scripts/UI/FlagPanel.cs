@@ -1,7 +1,5 @@
 using Economy;
 using General;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FlagPanel : MonoBehaviour

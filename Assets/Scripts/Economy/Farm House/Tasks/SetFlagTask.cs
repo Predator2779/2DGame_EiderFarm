@@ -1,7 +1,5 @@
 using Economy.Farm_House;
 using General;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Tasks/CollectTasks/SetFlagTasks", fileName = "New SetFlagTask", order = 0)]

@@ -3,7 +3,6 @@ using Building.Constructions;
 using Economy;
 using Characters;
 using General;
-using Other;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 

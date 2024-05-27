@@ -234,6 +234,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3009231518836810066, guid: 17da7457f77fca3468c6c3685360b168, type: 3}
       insertIndex: -1
       addedObject: {fileID: 904435799217560630}
+    - targetCorrespondingSourceObject: {fileID: 3009231518836810066, guid: 17da7457f77fca3468c6c3685360b168, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6200054513973510157}
   m_SourcePrefab: {fileID: 100100000, guid: 17da7457f77fca3468c6c3685360b168, type: 3}
 --- !u!4 &276946897613554081 stripped
 Transform:
@@ -287,6 +290,22 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &6200054513973510157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490224663035617232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4, y: 3, z: 4}
+  m_Center: {x: 0, y: 1, z: 0}
+  m_Area: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1729010933536795524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -350,6 +369,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2969754357743684295, guid: 2ad447449bb9d6f428dedf2ce394001c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1902585145731388565}
+    - targetCorrespondingSourceObject: {fileID: 2969754357743684295, guid: 2ad447449bb9d6f428dedf2ce394001c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7447778647146976617}
   m_SourcePrefab: {fileID: 100100000, guid: 2ad447449bb9d6f428dedf2ce394001c, type: 3}
 --- !u!4 &1760793763102950112 stripped
 Transform:
@@ -403,3 +425,19 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &7447778647146976617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4523867552559997251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4, y: 3, z: 4}
+  m_Center: {x: 0, y: 1, z: 0}
+  m_Area: 0
+  m_AffectedAgents: ffffffff

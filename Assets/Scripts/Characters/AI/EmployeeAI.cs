@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Building;
 using Building.Constructions;
-using Characters.PathFinding;
 using Economy;
 using General;
 using UnityEngine;
@@ -17,17 +14,17 @@ namespace Characters.AI
         [Header("Service:")]
         [SerializeField] private EmployeeStates _currentEmployeeState;
 
-        [SerializeField] private int _maxDistWalkable;
+        // [SerializeField] private int _maxDistWalkable;
 
         [Space] [Header("Settings:")]
         [SerializeField] [Range(1, 100)] private int _fluffCapacity;
 
-        [Space] [Header("Path Finding:")]
-        [SerializeField] private PathFinder.TypeFind _findAlgorithm;
+        // [Space] [Header("Path Finding:")]
+        // [SerializeField] private PathFinder.TypeFind _findAlgorithm;
 
-        [SerializeField] private float _radius;
-        [SerializeField] private float _walkTime;
-        [SerializeField] private float _distance; //
+        // [SerializeField] private float _radius;
+        // [SerializeField] private float _walkTime;
+        // [SerializeField] private float _distance; //
 
         private NavMeshAgent _agent;
         private Construction _currentCleaner;
@@ -35,11 +32,7 @@ namespace Characters.AI
         private BuildStorage _currentStorage;
         private BuildingsPull _pull;
         private Employee _employee;
-        private PathFinder _pathFinder;
         private Vector2 _target;
-        [SerializeField] private Transform _subTarget; //
-        private List<Vector2> _path = new List<Vector2>();
-        private int _index;
 
         private void Start() => Initialize();
         private void OnValidate() => Initialize();
@@ -50,9 +43,6 @@ namespace Characters.AI
             _agent = GetComponent<NavMeshAgent>();
             _pull ??= FindObjectOfType<BuildingsPull>();
             _employee ??= GetComponent<Employee>();
-            _pathFinder ??= GetComponent<PathFinder>();
-
-            ResetPath();
         }
 
         private void CheckConditions()
@@ -157,13 +147,7 @@ namespace Characters.AI
             _personAnimate.Walk(_target, false);
             StopSound();
         }
-        
-        private IEnumerator WalkTime()
-        {
-            yield return new WaitForSeconds(_walkTime);
-            SetPath();
-        }
-        
+
         private void SetTarget(GameObject target)
         {
             if (target.TryGetComponent(out Construction construction))
@@ -173,50 +157,25 @@ namespace Characters.AI
                 if (entryPoint != null)
                 {
                     _target = entryPoint.position;
-                    _subTarget = entryPoint;
                     return;
                 }
             }
 
             _target = target.transform.position;
-            _subTarget = target.transform;
         }
 
-        private void SetPath()
-        {
-            if (_pathFinder.IsWorked()) return;
-
-            if (!_pathFinder.IsFinded() && _path == null)
-            {
-                ResetPath();
-
-                _pathFinder.Initialize(
-                        transform.position,
-                        _target,
-                        _findAlgorithm,
-                        _radius,
-                        _employee.GetName());
-            }
-            else if (_pathFinder.IsFinded())
-            {
-                _path = _pathFinder.GetPath();
-                _index = _path.Count - 1;
-                _pathFinder.Deinitialize();
-            }
-        }
-
-        private bool IsNearby(Vector2 target)
-        {
-            var distance = Vector2.Distance(transform.position, target);
-
-            return distance <= _radius * 1.5f;;
-        }
+        // private bool IsNearby(Vector2 target)
+        // {
+        //     var distance = Vector2.Distance(transform.position, target);
+        //
+        //     return distance <= _radius * 1.5f;;
+        // }
 
         private int CountUncleanFluff() => TryGetBunch(GlobalConstants.UncleanedFluff)?.GetCount() ?? 0;
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;
 
-        private ItemBunch TryGetBunch(string name) => _employee.GetInventory().TryGetBunch(
-                name, out ItemBunch bunch)
+        private ItemBunch TryGetBunch(string nameBunch) => _employee.GetInventory().TryGetBunch(
+                nameBunch, out ItemBunch bunch)
                 ? bunch
                 : null;
 
@@ -277,12 +236,6 @@ namespace Characters.AI
             }
 
             return false;
-        }
-
-        private void ResetPath()
-        {
-            _pathFinder.Deinitialize();
-            _path = null;
         }
 
         private enum EmployeeStates

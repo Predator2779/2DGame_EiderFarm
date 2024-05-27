@@ -1,8 +1,5 @@
 using Building.Constructions;
 using Characters;
-using Economy;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StorageSpriteChanger : MonoBehaviour

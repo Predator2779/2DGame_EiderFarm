@@ -1,7 +1,6 @@
 using System.Collections;
 using General;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace Other

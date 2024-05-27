@@ -1,7 +1,6 @@
 using Building.Constructions;
 using Economy;
 using General;
-using Other;
 using TMPro;
 using UnityEngine;
 using EventHandler = General.EventHandler;

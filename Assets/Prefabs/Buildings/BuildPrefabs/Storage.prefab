@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5044950058977623976}
-  - component: {fileID: 2701883296695884993}
   - component: {fileID: 8119752006717887790}
   - component: {fileID: 277233241798781}
   - component: {fileID: 1645055648655777952}
@@ -40,41 +39,6 @@ Transform:
   - {fileID: 822599582121912999}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &2701883296695884993
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5296330802562157729}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -2, y: -5}
-  serializedVersion: 2
-  m_Radius: 3
 --- !u!212 &8119752006717887790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -209,6 +173,7 @@ MonoBehaviour:
   _particles: {fileID: 3799714217997743266}
   _sound: "event:/UI \u0413\u043B\u0430\u0432\u043D\u043E\u0435 \u043C\u0435\u043D\u044E
     2.2/\u0412\u044B\u0439\u0442\u0438 2.2"
+  _camShake: 0
 --- !u!1 &6830579629966980656
 GameObject:
   m_ObjectHideFlags: 0
