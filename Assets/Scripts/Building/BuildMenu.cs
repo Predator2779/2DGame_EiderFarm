@@ -100,6 +100,7 @@ namespace Building
             
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI меню стройки домик/Снести");
             EventHandler.OnDemolition?.Invoke(_currentBuilding.typeConstruction);
+            EventHandler.OnBakedNavigationSurface?.Invoke();
 
             IsBuilded = false;
             Destroy(_currentBuilding.gameObject);
@@ -189,6 +190,7 @@ namespace Building
             if (_currentBuilding != null) Destroy(_currentBuilding.gameObject);
 
             _currentBuilding = Instantiate(building, _buildPos, _buildRot, _parent);
+            EventHandler.OnBakedNavigationSurface?.Invoke();
         }
 
         public void SetFlag() => _flag.AddFlag();
