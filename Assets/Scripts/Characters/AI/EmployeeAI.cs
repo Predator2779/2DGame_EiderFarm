@@ -3,6 +3,7 @@ using Building;
 using Building.Constructions;
 using Economy;
 using General;
+using Other;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,11 +14,18 @@ namespace Characters.AI
     {
         [Header("Service:")]
         [SerializeField] private EmployeeStates _currentEmployeeState;
+
         [SerializeField] private NavMeshAgent _agent;
 
         [Space] [Header("Settings:")]
         [SerializeField] [Range(1, 100)] private int _fluffCapacity;
+
         [SerializeField] private float _radius;
+
+        [Space] [Header("Thinking:")]
+        [SerializeField] private SpriteRenderer _mindCloud;
+        [SerializeField] private SpriteRenderer _thought;
+        [SerializeField] private Thought[] _thoughts;
 
         private Construction _currentCleaner;
         private BuildStorage _currentHouse;
@@ -74,12 +82,15 @@ namespace Characters.AI
                     Idle();
                     break;
                 case EmployeeStates.Picking:
+                    ChangeMindCloud(_currentEmployeeState);
                     Picking();
                     break;
                 case EmployeeStates.Recycling:
+                    ChangeMindCloud(_currentEmployeeState);
                     Recycling();
                     break;
                 case EmployeeStates.Transportation:
+                    ChangeMindCloud(_currentEmployeeState);
                     Transportation();
                     break;
                 case EmployeeStates.Patrol:
@@ -93,8 +104,21 @@ namespace Characters.AI
             }
         }
 
+        private void ChangeMindCloud(EmployeeStates state)
+        {
+            print("base state: " + state);
+            _mindCloud.gameObject.SetActive(true);
+
+            foreach (var t in _thoughts)
+            {
+                print(t.state);
+                if (t.state == state) _thought.sprite = t.sprite;
+            }
+        }
+
         private void Idle()
         {
+            _mindCloud.gameObject.SetActive(false);
             StopMove();
             CheckConditions();
         }
@@ -106,17 +130,10 @@ namespace Characters.AI
                 _currentEmployeeState = EmployeeStates.Idle;
                 return;
             }
-            
-            base.WalkAnimation(_target - (Vector2)transform.position);
+
+            base.WalkAnimation(_target - (Vector2) transform.position);
         }
 
-        // private Vector2 GetDirection()
-        // {
-        //     var direction = Vector2.right;
-        //     direction.y = Math.Sign(transform.position.x - _target.x);
-        //     return direction;
-        // }
-        
         private void Picking()
         {
             if (_currentHouse == null ||
@@ -150,13 +167,15 @@ namespace Characters.AI
                 CheckConditions();
                 return;
             }
-            
+
             WalkToTarget();
         }
+
         private bool IsNearby(Vector2 target)
         {
             var distance = Vector2.Distance(transform.position, target);
-            return distance <= _radius * 1.5f;;
+            return distance <= _radius * 1.5f;
+            ;
         }
 
         private void WalkToTarget()
@@ -164,7 +183,7 @@ namespace Characters.AI
             _agent.SetDestination(_target);
             _currentEmployeeState = EmployeeStates.Walk;
         }
-        
+
         private void StopMove()
         {
             _personAnimate.Walk(_target, false);
@@ -223,7 +242,7 @@ namespace Characters.AI
             {
                 if (!cleaner.GetBuildMenu().IsBuilded ||
                     cleaner.IsOccupied() ||
-                    cleaner.GetBuildMenu().GetBuilding().typeConstruction != GlobalTypes.TypeBuildings.FluffCleaner 
+                    cleaner.GetBuildMenu().GetBuilding().typeConstruction != GlobalTypes.TypeBuildings.FluffCleaner
                     || CountUncleanFluff() < 2)
                     continue;
 
@@ -264,7 +283,7 @@ namespace Characters.AI
 
 #endif
 
-        private enum EmployeeStates
+        public enum EmployeeStates
         {
             Idle,
             Picking,
