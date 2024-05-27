@@ -20,7 +20,13 @@ namespace Player
             }
         }
 
-        private void RotateObj(Transform obj, float angle) => obj.localRotation = Quaternion.Euler(0f, angle, 0f);
+        private void RotateObj(Transform obj, float angle)
+        {
+            Quaternion newRot = obj.rotation;
+            newRot.y = angle;
+            obj.rotation = newRot;
+            // obj.localRotation = Quaternion.Euler(obj.localRotation.x, angle, obj.localRotation.z);
+        }
 
         public enum PlayerSides
         {

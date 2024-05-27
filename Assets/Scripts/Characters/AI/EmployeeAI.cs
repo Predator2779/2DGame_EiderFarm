@@ -1,3 +1,4 @@
+using System;
 using Building;
 using Building.Constructions;
 using Economy;
@@ -8,23 +9,15 @@ using UnityEngine.AI;
 namespace Characters.AI
 {
     [RequireComponent(typeof(Employee))]
-    [RequireComponent(typeof(NavMeshAgent))]
+    // [RequireComponent(typeof(NavMeshAgent))]
     public class EmployeeAI : WalkerAI
     {
         [Header("Service:")]
         [SerializeField] private EmployeeStates _currentEmployeeState;
 
-        // [SerializeField] private int _maxDistWalkable;
-
         [Space] [Header("Settings:")]
         [SerializeField] [Range(1, 100)] private int _fluffCapacity;
-
-        // [Space] [Header("Path Finding:")]
-        // [SerializeField] private PathFinder.TypeFind _findAlgorithm;
-
-        // [SerializeField] private float _radius;
-        // [SerializeField] private float _walkTime;
-        // [SerializeField] private float _distance; //
+        [SerializeField] private float _radius;
 
         private NavMeshAgent _agent;
         private Construction _currentCleaner;
@@ -94,6 +87,11 @@ namespace Characters.AI
                 case EmployeeStates.Patrol:
                     Idle();
                     break;
+                case EmployeeStates.Walk:
+                    Walk();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
 
@@ -103,6 +101,24 @@ namespace Characters.AI
             CheckConditions();
         }
 
+        private void Walk()
+        {
+            if (IsNearby(_target))
+            {
+                _currentEmployeeState = EmployeeStates.Idle;
+                return;
+            }
+            
+            base.WalkAnimation(_target - (Vector2)transform.position);
+        }
+
+        // private Vector2 GetDirection()
+        // {
+        //     var direction = Vector2.right;
+        //     direction.y = Math.Sign(transform.position.x - _target.x);
+        //     return direction;
+        // }
+        
         private void Picking()
         {
             if (_currentHouse == null ||
@@ -136,11 +152,20 @@ namespace Characters.AI
                 CheckConditions();
                 return;
             }
-
+            
             WalkToTarget();
         }
-        
-        private void WalkToTarget() => _agent.SetDestination(_target);
+        private bool IsNearby(Vector2 target)
+        {
+            var distance = Vector2.Distance(transform.position, target);
+            return distance <= _radius * 1.5f;;
+        }
+
+        private void WalkToTarget()
+        {
+            _agent.SetDestination(_target);
+            _currentEmployeeState = EmployeeStates.Walk;
+        }
         
         private void StopMove()
         {
@@ -163,13 +188,6 @@ namespace Characters.AI
 
             _target = target.transform.position;
         }
-
-        // private bool IsNearby(Vector2 target)
-        // {
-        //     var distance = Vector2.Distance(transform.position, target);
-        //
-        //     return distance <= _radius * 1.5f;;
-        // }
 
         private int CountUncleanFluff() => TryGetBunch(GlobalConstants.UncleanedFluff)?.GetCount() ?? 0;
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;
@@ -238,13 +256,24 @@ namespace Characters.AI
             return false;
         }
 
+#if UNITY_EDITOR
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, _radius);
+        }
+
+#endif
+
         private enum EmployeeStates
         {
             Idle,
             Picking,
             Recycling,
             Transportation,
-            Patrol
+            Patrol,
+            Walk
         }
     }
 }

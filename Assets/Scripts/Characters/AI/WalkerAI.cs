@@ -32,6 +32,13 @@ namespace Characters.AI
             _eventInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, _rbody));
             Animate(direction);
         }
+        
+        protected virtual void WalkAnimation(Vector2 direction)
+        {
+            PlaySound();
+            _eventInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, _rbody));
+            Animate(direction);
+        }
 
         protected virtual void Run(Vector2 direction)
         {

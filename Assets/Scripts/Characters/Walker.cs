@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace Characters
 {
-    [RequireComponent(typeof(Movement))]
     public class Walker : MonoBehaviour, IMovable
     {
         [Header("Character speed.")]
