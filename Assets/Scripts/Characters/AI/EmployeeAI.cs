@@ -20,13 +20,10 @@ namespace Characters.AI
 
         [Space] [Header("Settings:")]
         [SerializeField] [Range(1, 100)] private int _fluffCapacity;
-
-        [FormerlySerializedAs("_distanceToTarget")] [FormerlySerializedAs("_radius")] [SerializeField]
-        private float _requireDistance;
+        [SerializeField] private float _requireDistance;
 
         [Space] [Header("Thinking:")]
         [SerializeField] private SpriteRenderer _mindCloud;
-
         [SerializeField] private SpriteRenderer _thought;
         [SerializeField] private Thought[] _thoughts;
 
@@ -38,7 +35,7 @@ namespace Characters.AI
         private Transform _target;
 
         private void Start() => Initialize();
-        private void OnValidate() => Initialize();
+        // private void OnValidate() => Initialize();
         private void FixedUpdate() => Execute();
 
         private void Initialize()
@@ -159,7 +156,7 @@ namespace Characters.AI
         }
 
         private bool IsDestination() =>
-                !(_target != null && Vector2.Distance(transform.position, _target.position) > _requireDistance);
+                _target == null || Vector2.Distance(transform.position, _target.position) <= _requireDistance;
 
         private int CountUncleanFluff() => TryGetBunch(GlobalConstants.UncleanedFluff)?.GetCount() ?? 0;
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;
@@ -174,7 +171,7 @@ namespace Characters.AI
             var direction = Vector2.zero;
 
             if (_target) direction = _target.position;
-            
+
             _personAnimate.Walk(direction, false);
             StopSound();
         }
