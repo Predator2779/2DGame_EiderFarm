@@ -1473,6 +1473,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 289628135}
     - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+      propertyPath: _requireDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: _thoughts.Array.size
       value: 3
       objectReference: {fileID: 0}

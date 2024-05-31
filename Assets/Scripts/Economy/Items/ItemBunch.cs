@@ -19,25 +19,17 @@ namespace Economy
         public void RemoveItems(int value)
         {
             if (!IsValidValue(value)) return;
-
             AddValue(_count - value >= 0 ? -value : -_count);
         }
 
         public void ClearItems() => _count = 0;
         public Item GetItem() => _item;
-        
         public Sprite GetItemIcon() => _item.GetIcon();
-        
         public string GetItemName() => _item.GetName();
-
         public string GetItemDescription() => _item.GetDescription();
-
         public int GetItemPrice() => _item.GetPrice();
-
         public int GetCount() => _count;
-
         private void AddValue(int value) => _count += value;
-
         private bool IsValidValue(int value) => value > 0;
     }
 }

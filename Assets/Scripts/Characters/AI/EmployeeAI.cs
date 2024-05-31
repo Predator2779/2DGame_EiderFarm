@@ -20,10 +20,12 @@ namespace Characters.AI
 
         [Space] [Header("Settings:")]
         [SerializeField] [Range(1, 100)] private int _fluffCapacity;
+
         [SerializeField] private float _requireDistance;
 
         [Space] [Header("Thinking:")]
         [SerializeField] private SpriteRenderer _mindCloud;
+
         [SerializeField] private SpriteRenderer _thought;
         [SerializeField] private Thought[] _thoughts;
 
@@ -32,23 +34,29 @@ namespace Characters.AI
         private BuildStorage _currentStorage;
         private BuildingsPull _pull;
         private Employee _employee;
-        private Transform _target;
+        [SerializeField] private Transform _target;
 
         private void Start() => Initialize();
+
         // private void OnValidate() => Initialize();
         private void FixedUpdate() => Execute();
+
+        private void Execute()
+        {
+            if (CanWalk()) Walk();
+            else
+            {
+                _target = null;
+                StopMove();
+                StateExecute();
+            }
+        }
 
         private void Initialize()
         {
             _pull ??= FindObjectOfType<BuildingsPull>();
             _employee ??= GetComponent<Employee>();
             _currentEmployeeState = EmployeeStates.Idle;
-        }
-
-        private void Execute()
-        {
-            if (!IsDestination()) Walk();
-            else StateExecute();
         }
 
         private void CheckConditions()
@@ -71,26 +79,8 @@ namespace Characters.AI
             {
                 SetTarget(_currentStorage.gameObject);
                 _currentEmployeeState = EmployeeStates.Transportation;
-                return;
             }
-
-            _currentEmployeeState = EmployeeStates.Idle;
         }
-
-        // собирает, пока не заполнится до максимума и при этом нет очищенного
-        private bool CanPick() => CountUncleanFluff() < _fluffCapacity &&
-                                  CountCleanFluff() <= 0 &&
-                                  HasUncleanFluff();
-
-        // обрабатывает, пока чистый не заполнится до максимума, либо пока не кончится неочищенный
-        private bool CanRecycle() => (CountCleanFluff() < _fluffCapacity ||
-                                      CountUncleanFluff() > 0) &&
-                                     HasCleaner();
-
-        // стоит у склада, пока не выгрузит весь очищенный пух
-        private bool CanTransportation() => CountCleanFluff() > 0 &&
-                                            HasStorage();
-
 
         private void StateExecute()
         {
@@ -127,49 +117,50 @@ namespace Characters.AI
             CheckConditions();
         }
 
-        private void Walk() => base.WalkAnimation(_target.position - transform.position);
-
         private void Picking()
         {
-            if (_currentHouse == null ||
-                _currentHouse.GetFluffCount() <= 0
-                    // || CountUncleanFluff() > _fluffCapacity
-            )
-                _currentEmployeeState = EmployeeStates.Idle;
+            if (!CanPick()) _currentEmployeeState = EmployeeStates.Idle;
             print("собираю...");
         }
 
         private void Recycling()
         {
-            if (_currentCleaner == null ||
-                CountUncleanFluff() <= 0)
-                _currentEmployeeState = EmployeeStates.Idle;
+            if (!CanRecycle()) _currentEmployeeState = EmployeeStates.Idle;
             print("обрабатываю...");
         }
 
         private void Transportation()
         {
-            if (_currentStorage == null ||
-                CountCleanFluff() <= 0)
-                _currentEmployeeState = EmployeeStates.Idle;
+            if (!CanTransportation()) _currentEmployeeState = EmployeeStates.Idle;
             print("транспортирую...");
         }
 
-        private bool IsDestination() =>
-                _target == null || Vector2.Distance(transform.position, _target.position) <= _requireDistance;
+        private bool CanWalk() => _target != null && !IsDestination();
+
+        // собирает, пока не заполнится до максимума и при этом нет очищенного
+        private bool CanPick() => CountUncleanFluff() < _fluffCapacity &&
+                                  CountCleanFluff() <= 0 &&
+                                  HasUncleanFluff();
+
+        // обрабатывает, пока чистый не заполнится до максимума и пока есть неочищенный
+        private bool CanRecycle() => CountCleanFluff() < _fluffCapacity &&
+                                      CountUncleanFluff() > 0 &&
+                                     HasCleaner();
+
+        // стоит у склада, пока не выгрузит весь очищенный пух
+        private bool CanTransportation() => CountCleanFluff() > 0 &&
+                                            HasStorage();
+
 
         private int CountUncleanFluff() => TryGetBunch(GlobalConstants.UncleanedFluff)?.GetCount() ?? 0;
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;
 
         private ItemBunch TryGetBunch(string nameBunch) => _employee.GetInventory().TryGetBunch(
-                nameBunch, out ItemBunch bunch)
-                ? bunch
-                : null;
+                nameBunch, out ItemBunch bunch) ? bunch : null;
 
         private void StopMove()
         {
             var direction = Vector2.zero;
-
             if (_target) direction = _target.position;
 
             _personAnimate.Walk(direction, false);
@@ -178,20 +169,20 @@ namespace Characters.AI
 
         private void SetTarget(GameObject target)
         {
+            _target = target.transform;
+            
             if (target.TryGetComponent(out Construction construction))
             {
                 var entryPoint = construction.GetEntryPoint();
-                if (entryPoint != null)
-                {
-                    _target = entryPoint;
-                    return;
-                }
+                if (entryPoint != null) _target = entryPoint;
             }
 
-            _target = target.transform;
             _agent.SetDestination(_target.position);
             ChangeMindCloud(_currentEmployeeState);
         }
+
+        private void Walk() => base.WalkAnimation(_target.position - transform.position);
+        private bool IsDestination() => Vector2.Distance(transform.position, _target.position) <= _requireDistance;
 
         private bool HasUncleanFluff()
         {

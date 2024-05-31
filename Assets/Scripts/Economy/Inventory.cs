@@ -110,7 +110,7 @@ namespace Economy
 
         public bool TryGetBunch(string name, out ItemBunch itemBunch)
         {
-            if (_listItems != null)
+            if (_listItems.Count > 0)
             {
                 foreach (var bunch in _listItems.Where(bunch => bunch.GetItemName() == name))
                 {
