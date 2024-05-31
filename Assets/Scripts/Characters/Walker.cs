@@ -13,13 +13,9 @@ namespace Characters
         private void OnValidate() => SetNullableFields();
         private void Start() => SetNullableFields();
         private void SetNullableFields() => _movement ??= GetComponent<Movement>();
+        public float GetWalkSpeed() => _speed;
         public void Walk(Vector2 direction) => Move(direction, _speed);
-
         public void Run(Vector2 direction) => Move(direction, _runSpeed);
-
-        private void Move(Vector2 direction, float speed)
-        {
-            _movement.Move(direction * speed * Time.deltaTime);
-        }
+        private void Move(Vector2 direction, float speed) =>_movement.Move(direction * speed * Time.deltaTime);
     }
 }

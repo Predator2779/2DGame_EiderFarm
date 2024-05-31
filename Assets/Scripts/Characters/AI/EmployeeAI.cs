@@ -1,4 +1,3 @@
-using System;
 using Building;
 using Building.Constructions;
 using Economy;
@@ -6,40 +5,36 @@ using General;
 using Other;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 
 namespace Characters.AI
 {
     [RequireComponent(typeof(Employee))]
     public class EmployeeAI : WalkerAI
     {
-        [Header("Service:")] [SerializeField] private EmployeeStates _currentEmployeeState;
-
-        [SerializeField] private NavMeshAgent _agent;
+        [Header("Service:")] 
+        [SerializeField] private EmployeeStates _currentEmployeeState;
+        [SerializeField] private NavMeshAgent _navMeshPrefab;
 
         [Space] [Header("Settings:")] 
-        [SerializeField] [Range(1, 100)] private int _fluffForPick;
-        [SerializeField] [Range(1, 100)] private int _fluffForRecycle;
-        [SerializeField] [Range(1, 100)] private int _fluffForTransportaion;
+        [SerializeField] [Range(1, 100)] private int _fluffCapacity;
 
         [SerializeField] private float _requireDistance;
 
-        [Space] [Header("Thinking:")] [SerializeField]
-        private SpriteRenderer _mindCloud;
-
+        [Space] [Header("Thinking:")] 
+        [SerializeField] private SpriteRenderer _mindCloud;
         [SerializeField] private SpriteRenderer _thought;
         [SerializeField] private Thought[] _thoughts;
 
+        private Following _following;
+        private NavMeshAgent _agent;
         private Construction _currentCleaner;
         private BuildStorage _currentHouse;
         private BuildStorage _currentStorage;
         private BuildingsPull _pull;
         private Employee _employee;
-        [SerializeField] private Transform _target;
+        private Transform _target;
 
         private void Start() => Initialize();
-
-        // private void OnValidate() => Initialize();
         private void FixedUpdate() => Execute();
 
         private void Execute()
@@ -57,6 +52,10 @@ namespace Characters.AI
         {
             _pull ??= FindObjectOfType<BuildingsPull>();
             _employee ??= GetComponent<Employee>();
+            _agent = Instantiate(_navMeshPrefab, transform.position, Quaternion.identity);
+            _agent.speed = _employee.GetWalkSpeed();
+            _following = gameObject.AddComponent<Following>();
+            _following.followObject = _agent.transform;
             _currentEmployeeState = EmployeeStates.Idle;
         }
 
@@ -65,21 +64,21 @@ namespace Characters.AI
             if (CanStartTransportation())
             {
                 _currentEmployeeState = EmployeeStates.Transportation;
-                SetTarget(_currentStorage.gameObject);
+                SetTarget(_currentStorage.transform);
                 return;
             }
             
             if (CanStartRecycle())
             {
                 _currentEmployeeState = EmployeeStates.Recycling;
-                SetTarget(_currentCleaner.gameObject);
+                SetTarget(_currentCleaner.transform);
                 return;
             }
 
             if (CanStartPick())
             {
                 _currentEmployeeState = EmployeeStates.Picking;
-                SetTarget(_currentHouse.gameObject);
+                SetTarget(_currentHouse.transform);
             }
         }
 
@@ -138,24 +137,24 @@ namespace Characters.AI
 
         private bool CanWalk() => _target != null && !IsDestination();
 
-        private bool CanStartTransportation() => CountCleanFluff() >= _fluffForRecycle && HasStorage();
+        private bool CanStartTransportation() => CountCleanFluff() >= _fluffCapacity && HasStorage();
 
-        private bool CanStartRecycle() => CountCleanFluff() < _fluffForRecycle &&
-                                          CountUncleanFluff() > 0 && HasCleaner();
+        private bool CanStartRecycle() => CountCleanFluff() < _fluffCapacity &&
+                                          CountUncleanFluff() >= _fluffCapacity && HasCleaner();
 
-        private bool CanStartPick() => CountUncleanFluff() < _fluffForPick && HasUncleanFluff();
+        private bool CanStartPick() => CountUncleanFluff() < _fluffCapacity && HasGagaHouse();
 
         // собирает, пока не заполнится до максимума
-        private bool CanStopPick() => CountUncleanFluff() >= _fluffForPick || !HasUncleanFluff();
+        private bool CanStopPick() => CountUncleanFluff() >= _fluffCapacity || !HasUncleanFluff() || !HasGagaHouse();
 
         // обрабатывает, пока чистый не заполнится до максимума и пока есть неочищенный
-        private bool CanStopRecycle() => CountCleanFluff() >= _fluffForRecycle ||
+        private bool CanStopRecycle() => CountCleanFluff() >= _fluffCapacity ||
                                      CountUncleanFluff() <= 0 ||
                                      !HasCleaner();
 
         // стоит у склада, пока не выгрузит весь очищенный пух
         private bool CanStopTransportation() => CountCleanFluff() <= 0 || !HasStorage();
-
+        private bool HasUncleanFluff() => _currentHouse.GetFluffCount() > 0;
         private int CountUncleanFluff() => TryGetBunch(GlobalConstants.UncleanedFluff)?.GetCount() ?? 0;
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;
 
@@ -173,7 +172,7 @@ namespace Characters.AI
             StopSound();
         }
 
-        private void SetTarget(GameObject target)
+        private void SetTarget(Transform target)
         {
             _target = target.transform;
 
@@ -190,7 +189,27 @@ namespace Characters.AI
         private void Walk() => base.WalkAnimation(_target.position - transform.position);
         private bool IsDestination() => Vector2.Distance(transform.position, _target.position) <= _requireDistance;
 
-        private bool HasUncleanFluff()
+        private bool HasStorage()
+        {
+            var storages = _pull.Storages;
+
+            foreach (var storage in storages)
+            {
+                var bMenu = storage.GetBuildMenu();
+
+                if (bMenu.IsBuilded &&
+                    !storage.IsOccupied() &&
+                    bMenu.GetBuilding().TryGetComponent(out BuildStorage bStorage))
+                {
+                    _currentStorage = bStorage;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        
+        private bool HasGagaHouse()
         {
             var gagaHouses = _pull.GagaHouses;
 
@@ -199,11 +218,11 @@ namespace Characters.AI
                 var bMenu = house.GetBuildMenu();
 
                 if (bMenu.IsBuilded &&
-                    bMenu.GetBuilding().TryGetComponent(out BuildStorage storage) &&
                     !house.IsOccupied() &&
-                    storage.GetFluffCount() > 0)
+                    bMenu.GetBuilding().TryGetComponent(out BuildStorage bStorage) &&
+                    bStorage.GetFluffCount() > 0)
                 {
-                    _currentHouse = storage;
+                    _currentHouse = bStorage;
                     return true;
                 }
             }
@@ -222,26 +241,6 @@ namespace Characters.AI
                     cleaner.GetBuildMenu().GetBuilding().typeConstruction == GlobalTypes.TypeBuildings.FluffCleaner)
                 {
                     _currentCleaner = cleaner.GetBuildMenu().GetBuilding();
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        private bool HasStorage()
-        {
-            var storages = _pull.Storages;
-
-            foreach (var storage in storages)
-            {
-                var bMenu = storage.GetBuildMenu();
-
-                if (bMenu.IsBuilded &&
-                    !storage.IsOccupied() &&
-                    bMenu.GetBuilding().TryGetComponent(out BuildStorage bStorage))
-                {
-                    _currentStorage = bStorage;
                     return true;
                 }
             }
