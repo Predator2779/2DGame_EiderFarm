@@ -13,18 +13,19 @@ namespace Characters.AI
     [RequireComponent(typeof(Employee))]
     public class EmployeeAI : WalkerAI
     {
-        [Header("Service:")]
-        [SerializeField] private EmployeeStates _currentEmployeeState;
+        [Header("Service:")] [SerializeField] private EmployeeStates _currentEmployeeState;
 
         [SerializeField] private NavMeshAgent _agent;
 
-        [Space] [Header("Settings:")]
-        [SerializeField] [Range(1, 100)] private int _fluffCapacity;
+        [Space] [Header("Settings:")] 
+        [SerializeField] [Range(1, 100)] private int _fluffForPick;
+        [SerializeField] [Range(1, 100)] private int _fluffForRecycle;
+        [SerializeField] [Range(1, 100)] private int _fluffForTransportaion;
 
         [SerializeField] private float _requireDistance;
 
-        [Space] [Header("Thinking:")]
-        [SerializeField] private SpriteRenderer _mindCloud;
+        [Space] [Header("Thinking:")] [SerializeField]
+        private SpriteRenderer _mindCloud;
 
         [SerializeField] private SpriteRenderer _thought;
         [SerializeField] private Thought[] _thoughts;
@@ -61,24 +62,24 @@ namespace Characters.AI
 
         private void CheckConditions()
         {
-            if (CanPick())
+            if (CanStartTransportation())
             {
-                SetTarget(_currentHouse.gameObject);
-                _currentEmployeeState = EmployeeStates.Picking;
-                return;
-            }
-
-            if (CanRecycle())
-            {
-                SetTarget(_currentCleaner.gameObject);
-                _currentEmployeeState = EmployeeStates.Recycling;
-                return;
-            }
-
-            if (CanTransportation())
-            {
-                SetTarget(_currentStorage.gameObject);
                 _currentEmployeeState = EmployeeStates.Transportation;
+                SetTarget(_currentStorage.gameObject);
+                return;
+            }
+            
+            if (CanStartRecycle())
+            {
+                _currentEmployeeState = EmployeeStates.Recycling;
+                SetTarget(_currentCleaner.gameObject);
+                return;
+            }
+
+            if (CanStartPick())
+            {
+                _currentEmployeeState = EmployeeStates.Picking;
+                SetTarget(_currentHouse.gameObject);
             }
         }
 
@@ -119,44 +120,49 @@ namespace Characters.AI
 
         private void Picking()
         {
-            if (!CanPick()) _currentEmployeeState = EmployeeStates.Idle;
+            if (CanStopPick()) _currentEmployeeState = EmployeeStates.Idle;
             print("собираю...");
         }
 
         private void Recycling()
         {
-            if (!CanRecycle()) _currentEmployeeState = EmployeeStates.Idle;
+            if (CanStopRecycle()) _currentEmployeeState = EmployeeStates.Idle;
             print("обрабатываю...");
         }
 
         private void Transportation()
         {
-            if (!CanTransportation()) _currentEmployeeState = EmployeeStates.Idle;
+            if (CanStopTransportation()) _currentEmployeeState = EmployeeStates.Idle;
             print("транспортирую...");
         }
 
         private bool CanWalk() => _target != null && !IsDestination();
 
-        // собирает, пока не заполнится до максимума и при этом нет очищенного
-        private bool CanPick() => CountUncleanFluff() < _fluffCapacity &&
-                                  CountCleanFluff() <= 0 &&
-                                  HasUncleanFluff();
+        private bool CanStartTransportation() => CountCleanFluff() >= _fluffForRecycle && HasStorage();
+
+        private bool CanStartRecycle() => CountCleanFluff() < _fluffForRecycle &&
+                                          CountUncleanFluff() > 0 && HasCleaner();
+
+        private bool CanStartPick() => CountUncleanFluff() < _fluffForPick && HasUncleanFluff();
+
+        // собирает, пока не заполнится до максимума
+        private bool CanStopPick() => CountUncleanFluff() >= _fluffForPick || !HasUncleanFluff();
 
         // обрабатывает, пока чистый не заполнится до максимума и пока есть неочищенный
-        private bool CanRecycle() => CountCleanFluff() < _fluffCapacity &&
-                                      CountUncleanFluff() > 0 &&
-                                     HasCleaner();
+        private bool CanStopRecycle() => CountCleanFluff() >= _fluffForRecycle ||
+                                     CountUncleanFluff() <= 0 ||
+                                     !HasCleaner();
 
         // стоит у склада, пока не выгрузит весь очищенный пух
-        private bool CanTransportation() => CountCleanFluff() > 0 &&
-                                            HasStorage();
-
+        private bool CanStopTransportation() => CountCleanFluff() <= 0 || !HasStorage();
 
         private int CountUncleanFluff() => TryGetBunch(GlobalConstants.UncleanedFluff)?.GetCount() ?? 0;
         private int CountCleanFluff() => TryGetBunch(GlobalConstants.CleanedFluff)?.GetCount() ?? 0;
 
         private ItemBunch TryGetBunch(string nameBunch) => _employee.GetInventory().TryGetBunch(
-                nameBunch, out ItemBunch bunch) ? bunch : null;
+            nameBunch, out ItemBunch bunch)
+            ? bunch
+            : null;
 
         private void StopMove()
         {
@@ -170,7 +176,7 @@ namespace Characters.AI
         private void SetTarget(GameObject target)
         {
             _target = target.transform;
-            
+
             if (target.TryGetComponent(out Construction construction))
             {
                 var entryPoint = construction.GetEntryPoint();

@@ -132,9 +132,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 80325643953984672, guid: 5687cbc97d94ebb40be6359229947d8f, type: 3}
+      propertyPath: m_VoxelSize
+      value: 0.13333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 80325643953984672, guid: 5687cbc97d94ebb40be6359229947d8f, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: 91cc9fcbbf9b8cd40a9228fb5dbd46e2, type: 2}
+      objectReference: {fileID: 23800000, guid: f1f46c0f92cdf4c4ca1a52085a46c782, type: 2}
     - target: {fileID: 2032215401353554351, guid: 5687cbc97d94ebb40be6359229947d8f, type: 3}
       propertyPath: _pull
       value: 
@@ -319,7 +323,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 228320014}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.3
+  m_Radius: 0.4
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
@@ -1473,12 +1477,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 289628135}
     - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+      propertyPath: _fluffForPick
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+      propertyPath: _fluffForRecycle
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: _requireDistance
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+      propertyPath: _cleanFluffCapacity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: _thoughts.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+      propertyPath: _uncleanFluffCapacity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
+      propertyPath: _fluffForTransportaion
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5112419574872024042, guid: 6679413a3c9caa347aa78f7f4dd27ad1, type: 3}
       propertyPath: _thoughts.Array.data[0].state
