@@ -13,7 +13,10 @@ using Economy.Farm_House;
 
 [RequireComponent(typeof(Menu))]
 public class SaveSerial : MonoBehaviour
-{
+{ 
+    public bool IsHasSaves;
+
+    [SerializeField] private TaskHandler _taskHandler;
     [SerializeField] private Inventory _playerInventory;
     [SerializeField] private Item[] _itemTypes;
     [SerializeField] private Menu _menu;
@@ -21,19 +24,15 @@ public class SaveSerial : MonoBehaviour
 
     [Space][Header("Save Data")]
     [SerializeField] private Employee[] _employees;
-    [SerializeField] private BuildTrigger[] _gagaHouses;
-    [SerializeField] private BuildTrigger[] _cleaners;
-    [SerializeField] private BuildTrigger[] _clothMachines;
-    [SerializeField] private BuildTrigger[] _storages;
 
+    private BuildTrigger[] _gagaHouses;
+    private BuildTrigger[] _cleaners;
+    private BuildTrigger[] _clothMachines;
+    private BuildTrigger[] _storages;
     private bool[] _flags;
     private List<ItemBunch> _items;
     private string _path = "/dataSaveFile.dat";
     public SaveData data = new();
-
-    public bool IsHasSaves;
-
-    [SerializeField] private TaskHandler _taskHandler;
 
     public void Initialize()
     {

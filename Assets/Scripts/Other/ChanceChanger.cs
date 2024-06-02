@@ -12,7 +12,7 @@ public class ChanceChanger : MonoBehaviour
 
     [SerializeField] private SaveSerial _save;
 
-    private void Awake()
+    private void Start()
     {
         _gagaHousePrefab.GetComponent<FluffGiver>().ChangeChance(100);
         _gagaHouses = _save.GetGagaHouses();

@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 367812793240177649, guid: 4edd66b6610ea1d448217f0fa5f00cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1867183821635842673, guid: 4edd66b6610ea1d448217f0fa5f00cc2, type: 3}
       propertyPath: _menuScene
       value: Start-Scene
