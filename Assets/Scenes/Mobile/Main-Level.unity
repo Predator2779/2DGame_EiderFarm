@@ -1208,6 +1208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MONEY
       objectReference: {fileID: 0}
+    - target: {fileID: 4628844041913726704, guid: 747b9b832b2f0514187aae91a0a274d0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1350,6 +1354,14 @@ PrefabInstance:
     - target: {fileID: 7183966054052693947, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
       propertyPath: m_Name
       value: UI-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350463359934232632, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350463359934232632, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1920
       objectReference: {fileID: 0}
     - target: {fileID: 8034219714849878336, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
       propertyPath: m_Camera
