@@ -36,7 +36,7 @@ namespace Economy.Farm_House
 
         protected abstract void Draw();
 
-        public void RefreshDisplay()
+        public virtual void RefreshDisplay()
         {
             ClearContent();
             Draw();

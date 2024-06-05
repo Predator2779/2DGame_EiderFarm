@@ -27,6 +27,6 @@ MonoBehaviour:
   _nextTasks: []
   _cellPrefab: {fileID: 2714213325177431332, guid: 1b7f11e573b4ec749902d8bedabb10e2, type: 3}
   _requireCount: 1
-  _currentCount: 0
+  _currentCount: 1
   _buildType: 2
   _requireGrade: 2
