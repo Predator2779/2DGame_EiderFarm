@@ -141,8 +141,8 @@ MonoBehaviour:
   _navMeshPrefab: {fileID: 6278927696622914852, guid: 1be17caed0fa63b498615ce50af436ca, type: 3}
   _fluffCapacity: 3
   _requireDistance: 1.5
-  _mindCloud: {fileID: 0}
-  _thought: {fileID: 0}
+  _mindCloud: {fileID: 1232076192388741335}
+  _thought: {fileID: 2377000175943779145}
   _thoughts:
   - sprite: {fileID: 21300000, guid: 2b906e136a2d0a9458e8f10fe2b7a327, type: 3}
     state: 1
@@ -346,5 +346,15 @@ PrefabInstance:
 --- !u!4 &468202549936062693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3804635160941779952, guid: 419be9c0b94d31a4982da3ba473e980f, type: 3}
+  m_PrefabInstance: {fileID: 3653444284968491797}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1232076192388741335 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2570028150741377986, guid: 419be9c0b94d31a4982da3ba473e980f, type: 3}
+  m_PrefabInstance: {fileID: 3653444284968491797}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2377000175943779145 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1319388838544660572, guid: 419be9c0b94d31a4982da3ba473e980f, type: 3}
   m_PrefabInstance: {fileID: 3653444284968491797}
   m_PrefabAsset: {fileID: 0}
