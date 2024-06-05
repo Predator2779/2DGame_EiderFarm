@@ -13,7 +13,7 @@ namespace Economy.Farm_House
         [SerializeField] private Employee[] _personal;
         [SerializeField] private BuildingsPull _pull;
         
-        private void Start() => _pull ??= FindObjectOfType<BuildingsPull>();
+        private void Awake() => _pull ??= FindObjectOfType<BuildingsPull>();
         
         protected override void Draw()
         {
