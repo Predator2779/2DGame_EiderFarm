@@ -44,7 +44,7 @@ namespace Economy.Farm_House
             foreach (var task in tasks)
                 task.CreateCell(_content);
         }
-
+        
         public void ResetAllTasks()
         {
             ResetTasks();

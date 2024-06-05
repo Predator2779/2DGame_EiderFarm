@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 1292131290121699070}
   - component: {fileID: 2250466582382174060}
   m_Layer: 0
-  m_Name: FarmHouse-3
+  m_Name: FarmHousePC
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
