@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace General
 {
@@ -34,5 +36,15 @@ namespace General
 
             return position;
         }
+
+#if UNITY_EDITOR
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(transform.position, GetRadius());
+        }
+
+#endif
     }
 }
