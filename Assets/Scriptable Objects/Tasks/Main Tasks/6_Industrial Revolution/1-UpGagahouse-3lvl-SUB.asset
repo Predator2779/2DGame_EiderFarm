@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69693cc07a0446a7a9725b8767d1af76, type: 3}
   m_Name: 1-UpGagahouse-3lvl-SUB
   m_EditorClassIdentifier: 
-  _stage: 2
+  _stage: 0
   _resetStage: 0
   _icon: {fileID: 21300000, guid: 33059f67d97188941a5ed9a74ca0a1a5, type: 3}
   _name: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C 1 \u0434\u043E\u043C\u0438\u043A
@@ -27,7 +27,7 @@ MonoBehaviour:
     _item: {fileID: 11400000, guid: 0a9ff2e307f267143945677874f06d65, type: 2}
     _count: 0
   _nextTasks: []
-  _cellPrefab: {fileID: 9118589748332261459, guid: b91930b88bfa3e2498f82463f02d36c0, type: 3}
+  _cellPrefab: {fileID: 2714213325177431332, guid: 1b7f11e573b4ec749902d8bedabb10e2, type: 3}
   _requireCount: 1
   _currentCount: 0
   _buildType: 0
