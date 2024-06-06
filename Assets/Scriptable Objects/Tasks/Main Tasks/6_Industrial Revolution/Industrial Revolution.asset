@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb214ac4f1ea4b7a8d44128de42eb616, type: 3}
   m_Name: Industrial Revolution
   m_EditorClassIdentifier: 
-  _stage: 2
+  _stage: 1
   _resetStage: 1
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: "\u0420\u0435\u0432\u043E\u043B\u044E\u0446\u0438\u044F!"
@@ -25,7 +25,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 17da6f72d23268d45a63e53e176d960e, type: 2}
   _cellPrefab: {fileID: 3904866896323149092, guid: 881e53c46ad8ef7428c7cd2efccf67ef, type: 3}
   _subTasks:
-  - {fileID: 11400000, guid: 84e520d09aacefb4c890fb81434e7e8b, type: 2}
-  - {fileID: 11400000, guid: ede00244197d4a545ae179acdb90e886, type: 2}
-  - {fileID: 11400000, guid: 91b02b23d69cf404597c823afd5442a7, type: 2}
   - {fileID: 11400000, guid: 499f53ec3526ec74f88b490c902066b6, type: 2}
+  - {fileID: 11400000, guid: 84e520d09aacefb4c890fb81434e7e8b, type: 2}
+  - {fileID: 11400000, guid: 91b02b23d69cf404597c823afd5442a7, type: 2}
+  - {fileID: 11400000, guid: ede00244197d4a545ae179acdb90e886, type: 2}

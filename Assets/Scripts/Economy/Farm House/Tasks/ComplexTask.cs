@@ -12,15 +12,8 @@ namespace Economy.Farm_House
         [Header("Subtasks")]
         [SerializeField] private Task[] _subTasks;
 
-        protected override void Initialize()
-        {
-            EventHandler.OnTaskStageChanged.AddListener(CheckSubtasks);
-        }
-
-        protected override void Deinitialize()
-        {
-            EventHandler.OnTaskStageChanged.RemoveListener(CheckSubtasks);
-        }
+        protected override void Initialize() => EventHandler.OnTaskStageChanged.AddListener(CheckSubtasks);
+        protected override void Deinitialize() => EventHandler.OnTaskStageChanged.RemoveListener(CheckSubtasks);
 
         public override void StartTask()
         {
