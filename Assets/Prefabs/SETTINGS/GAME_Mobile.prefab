@@ -172,6 +172,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2618944160824821339, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618944160824821339, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.64
+      objectReference: {fileID: 0}
     - target: {fileID: 4958565177445906378, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: m_Name
       value: FarmHouseMobile
@@ -188,9 +196,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6269140149864770742, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269140149864770742, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.82
+      objectReference: {fileID: 0}
     - target: {fileID: 6581943145752698593, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 63.712402
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116334758851443771, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116334758851443771, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7460094689457116688, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -246,7 +270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8490285015444166525, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: m_Name
-      value: GAME_Mobile Variant
+      value: GAME_Mobile
       objectReference: {fileID: 0}
     - target: {fileID: 9080406560221385017, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: m_TileColorArray.Array.data[0].m_Data.a
