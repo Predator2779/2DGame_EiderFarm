@@ -1416,7 +1416,7 @@ PrefabInstance:
       objectReference: {fileID: 108836119157750684}
     - target: {fileID: 7183966054052693947, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
       propertyPath: m_Name
-      value: UI-2
+      value: UI-2 (Mobile)
       objectReference: {fileID: 0}
     - target: {fileID: 7350463359934232632, guid: 034f9fbac0f973a409ed3864560cd5cf, type: 3}
       propertyPath: m_ReferenceResolution.x
