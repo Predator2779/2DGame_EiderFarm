@@ -75,8 +75,14 @@ public class Machine : MonoBehaviour
             _typeFromPlayer = _converter.Convert(_typeToPlayer, _storage);
             _characterInventory.RemoveItems(_typeFromPlayer, _fluffCount);
 
+            GetAnimator().enabled = true;
+            StartSound();
+            
             yield return new WaitForSecondsRealtime(_delayProduction);
 
+            GetAnimator().enabled = false;
+            StopSound();
+            
             _isWorked = false;
             Make(_fluffCount);
         }

@@ -50,7 +50,7 @@ public class ResourceTransmitter : MonoBehaviour
         if (GetComponent<Converter>())
             if (_characterInventory.GetBunch(GetComponent<Converter>().GetRelevantItem()).GetCount() < _fluffCount)
             {
-                _machine.GetAnimator().enabled = false;
+                // _machine.GetAnimator().enabled = false;
                 return false;
             }
 
@@ -93,13 +93,15 @@ public class ResourceTransmitter : MonoBehaviour
 
         _characterInventory = collision.gameObject.GetComponent<Inventory>();
 
-        if (!CheckBag()) return;
+        CheckBag();
 
-        if (gameObject.GetComponent<Machine>())
-        {
-            _machine.GetAnimator().enabled = true;
-            _machine.StartSound();
-        }
+        // if (!CheckBag()) return;
+        //
+        // if (gameObject.GetComponent<Machine>())
+        // {
+        //     _machine.GetAnimator().enabled = true;
+        //     _machine.StartSound();
+        // }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -110,11 +112,11 @@ public class ResourceTransmitter : MonoBehaviour
         _characterInventory = null;
         _person = null;
 
-        if (gameObject.GetComponent<Machine>())
-        {
-            _machine.GetAnimator().enabled = false;
-            _machine.StopSound();
-        }
+        // if (gameObject.GetComponent<Machine>())
+        // {
+        //     _machine.GetAnimator().enabled = false;
+        //     _machine.StopSound();
+        // }
     }
 
     public int GetRequireFluffCount() => _fluffCount;
