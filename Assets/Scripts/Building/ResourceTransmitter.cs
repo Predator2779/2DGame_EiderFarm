@@ -13,9 +13,7 @@ public class ResourceTransmitter : MonoBehaviour
     public delegate IEnumerator CoroutineDelegate(Item typeFrom, Inventory inv, int fluff);
     public event CoroutineDelegate TransmitteEvent;
 
-    [SerializeField, Header("������� ���� ���������� �� ������")]
-    private int _fluffCount;
-
+    [SerializeField] private int _fluffCount;
     [SerializeField] private Item _typeToPlayer;
     [SerializeField] private Inventory _characterInventory;
     [SerializeField] private Person _person;
@@ -42,17 +40,14 @@ public class ResourceTransmitter : MonoBehaviour
             && _person.TryGetComponent(out Employee employee))
         {
             TransmitteFromEmployee(employee);
-            return false; /// �� ������� �������
+            return false;
         }
 
         Transmitte();
 
         if (GetComponent<Converter>())
             if (_characterInventory.GetBunch(GetComponent<Converter>().GetRelevantItem()).GetCount() < _fluffCount)
-            {
-                // _machine.GetAnimator().enabled = false;
                 return false;
-            }
 
         if (_fluffCount != 0 && TransmitteEvent != null)
             StartCoroutine(TransmitteEvent?.Invoke(_typeToPlayer, _characterInventory, _fluffCount));
@@ -67,8 +62,6 @@ public class ResourceTransmitter : MonoBehaviour
         
         _storage.AddFluff(bunch.GetCount());
         inventory.RemoveItems(bunch.GetItem(), bunch.GetCount());
-        
-        // inventory.Exchange(inventory, gameObject.GetComponent<Inventory>(), bunch);
     }
 
     private void Transmitte()
@@ -94,14 +87,6 @@ public class ResourceTransmitter : MonoBehaviour
         _characterInventory = collision.gameObject.GetComponent<Inventory>();
 
         CheckBag();
-
-        // if (!CheckBag()) return;
-        //
-        // if (gameObject.GetComponent<Machine>())
-        // {
-        //     _machine.GetAnimator().enabled = true;
-        //     _machine.StartSound();
-        // }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -111,15 +96,8 @@ public class ResourceTransmitter : MonoBehaviour
 
         _characterInventory = null;
         _person = null;
-
-        // if (gameObject.GetComponent<Machine>())
-        // {
-        //     _machine.GetAnimator().enabled = false;
-        //     _machine.StopSound();
-        // }
     }
 
-    public int GetRequireFluffCount() => _fluffCount;
     public void SetGradeAnimationTrue(int grade) => _machine.Animation(true, grade);
     public void ChangeFluffCount(int count) => _fluffCount = count;
 }
