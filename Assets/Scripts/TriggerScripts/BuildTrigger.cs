@@ -16,7 +16,7 @@ namespace TriggerScripts
         [SerializeField] private Construction _buildPrefab;
         [SerializeField] private SpriteRenderer _renderer;
         [SerializeField] private Person _person;
-        
+
         private Transform _parentBuildings;
 
         private void Start() => Initialize();
@@ -75,21 +75,17 @@ namespace TriggerScripts
                         GetRotation());
 
 
-        protected override void OnTriggerEnter2D(Collider2D other) /// to Physics.Overlap
+        protected void OnTriggerStay2D(Collider2D other)
         {
-            base.OnTriggerEnter2D(other);
-            
-            if (other.TryGetComponent(out Person person) && _person == null) _person = person;
-            else return;
+            if (_person != null || !other.TryGetComponent(out Person person)) return;
 
-            if (person.TryGetComponent(out InputHandler inputHandler))
-                _person = person;
+            _person = person;
             
-            if (_person.GetName() != GlobalConstants.PlayerName) return;
-
+            if (!person.GetComponent<InputHandler>()) return;
+            
             SetConstruction();
 
-            var inventory = _person.GetComponent<Inventory>();
+            var inventory = person.GetComponent<Inventory>();
             
             _buildMenu.SetInventory(inventory);
 
@@ -103,7 +99,7 @@ namespace TriggerScripts
         {
             base.OnTriggerExit2D(other);
 
-            if (other.TryGetComponent(out Person person) && person.GetName() == _person.GetName()) // employee стоящие в триггере зависнут.
+            if (other.TryGetComponent(out Person person) && person.GetName() == _person.GetName())
                 _person = null;
         }
 

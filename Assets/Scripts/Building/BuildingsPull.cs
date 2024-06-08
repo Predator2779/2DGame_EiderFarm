@@ -55,15 +55,15 @@ namespace Building
             _gagaHouses = _mapGagaHouse.GetComponentsInChildren<BuildTrigger>();
         }
         
-        private void AddBuilding(BuildTrigger buildTrigger, GlobalTypes.TypeBuildings type)
-        {
-            Handle(CommandType.Add, buildTrigger, type);
-        }
-        
-        private void RemoveBuilding(BuildTrigger buildTrigger, GlobalTypes.TypeBuildings type)
-        {
-            Handle(CommandType.Remove, buildTrigger, type);
-        }
+        // private void AddBuilding(BuildTrigger buildTrigger, GlobalTypes.TypeBuildings type)
+        // {
+        //     Handle(CommandType.Add, buildTrigger, type);
+        // }
+        //
+        // private void RemoveBuilding(BuildTrigger buildTrigger, GlobalTypes.TypeBuildings type)
+        // {
+        //     Handle(CommandType.Remove, buildTrigger, type);
+        // }
         
         private void Handle(
                 CommandType commandType,
@@ -118,11 +118,11 @@ namespace Building
             }
         }
         
-        private void OnApplicationQuit()
-        {
-            EventHandler.OnAddedBuildPull.RemoveListener(AddBuilding);
-            EventHandler.OnRemovedBuildPull.RemoveListener(RemoveBuilding);
-        }
+        // private void OnApplicationQuit()
+        // {
+        //     EventHandler.OnAddedBuildPull.RemoveListener(AddBuilding);
+        //     EventHandler.OnRemovedBuildPull.RemoveListener(RemoveBuilding);
+        // }
         
         private enum CommandType
         {

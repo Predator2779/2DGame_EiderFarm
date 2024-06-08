@@ -80,18 +80,20 @@ public class ResourceTransmitter : MonoBehaviour
         EventHandler.OnItemTransmitted?.Invoke(_construction.typeConstruction, _typeToPlayer, count);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!collision.TryGetComponent(out _person)) return;
+        if (_person != null || !collision.TryGetComponent(out Person person)) return;
 
-        _characterInventory = collision.gameObject.GetComponent<Inventory>();
+        _person = person;
+        _characterInventory = collision.GetComponent<Inventory>();
 
         CheckBag();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (_characterInventory != collision.GetComponent<Inventory>() ||
+        if (
+                // _characterInventory != collision.GetComponent<Inventory>() ||
             collision.gameObject.GetComponent<Person>() != _person) return;
 
         _characterInventory = null;
