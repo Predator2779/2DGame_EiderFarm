@@ -25,7 +25,7 @@ namespace Economy.Farm_House
 
         private void GiveReward(Task task, TaskStage stage)
         {
-            if (stage == TaskStage.Completed)
+            if (stage == TaskStage.Completed && _playerInventory != null)
                 task.GiveReward(_playerInventory);
         }
 

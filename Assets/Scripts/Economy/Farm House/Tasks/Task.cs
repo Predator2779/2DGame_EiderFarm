@@ -39,7 +39,7 @@ namespace Economy.Farm_House
         private void SetStage(TaskStage stage)
         {
             _stage = stage;
-            // EventHandler.OnTaskStageChanged?.Invoke(this, _stage);
+            EventHandler.OnTaskStageChanged?.Invoke(this, _stage);
         }
 
         public int RewardCount() => _reward.GetCount();
