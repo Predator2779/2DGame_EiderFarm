@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed151be32864cc3a17edac02ffb695a, type: 3}
   m_Name: 4-GagaHouse-SUB
   m_EditorClassIdentifier: 
-  _stage: 2
+  _stage: 3
   _resetStage: 0
   _icon: {fileID: 21300000, guid: 608927cdc666d3242bdf06f28381b64e, type: 3}
   _name: "4 \u0434\u043E\u043C\u0430"
@@ -25,5 +25,5 @@ MonoBehaviour:
   _nextTasks: []
   _cellPrefab: {fileID: 2714213325177431332, guid: 1b7f11e573b4ec749902d8bedabb10e2, type: 3}
   _requireCount: 4
-  _currentCount: 1
+  _currentCount: 4
   _buildType: 0

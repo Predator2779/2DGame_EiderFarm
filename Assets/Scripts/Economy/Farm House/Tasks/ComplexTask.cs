@@ -25,9 +25,10 @@ namespace Economy.Farm_House
 
         private void CheckSubtasks(Task task, TaskStage stage)
         {
-            if (_subTasks.Any(t => t == task) &&
-                stage == TaskStage.Completed)
-                ProgressingTask();
+            ProgressingTask();
+            // if (_subTasks.Any(t => t == task) &&
+            //     stage == TaskStage.Completed)
+            //     ProgressingTask();
         }
 
         public override void CreateCell(Transform parent)

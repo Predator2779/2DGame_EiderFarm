@@ -57,12 +57,12 @@ namespace Economy.Farm_House
             SetStage(TaskStage.Progressing);
         }
 
-        public void ProgressingTask()
+        protected void ProgressingTask()
         {
             if (SomeCondition()) SetStage(TaskStage.Completed);
         }
 
-        private void PassTask()
+        public void PassTask()
         {
             EventHandler.OnGiveReward?.Invoke(this, _stage);
             SetStage(TaskStage.Passed);
@@ -88,6 +88,11 @@ namespace Economy.Farm_House
             }
         }
 
+        public void CheckCompleting()
+        {
+            
+        }
+        
         private void SetAvailableTasks()
         {
             foreach (var task in _nextTasks) 

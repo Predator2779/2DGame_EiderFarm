@@ -55,7 +55,8 @@ namespace Economy.Farm_House
         private void CheckTasks(Task[] tasks)
         {
             foreach (var task in tasks)
-                task.CheckProgressing();
+                if (task.GetStage() == TaskStage.Completed) task.PassTask();
+                // task.CheckProgressing();
         }
         
         public void ResetAllTasks()
