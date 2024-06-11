@@ -1,5 +1,5 @@
+using General;
 using UnityEngine;
-using EventHandler = General.EventHandler;
 
 namespace Economy.Farm_House
 {
@@ -7,7 +7,6 @@ namespace Economy.Farm_House
     {
         [Header("Task")]
         [SerializeField] protected TaskStage _stage;
-
         [SerializeField] protected TaskStage _resetStage;
         [SerializeField] protected Sprite _icon;
         [SerializeField] protected string _name;
@@ -38,6 +37,7 @@ namespace Economy.Farm_House
 
         private void SetStage(TaskStage stage)
         {
+            if (_stage == stage) return; // Предотвращение повторной установки того же состояния
             _stage = stage;
             EventHandler.OnTaskStageChanged?.Invoke(this, _stage);
         }
@@ -57,9 +57,12 @@ namespace Economy.Farm_House
             SetStage(TaskStage.Progressing);
         }
 
-        protected void ProgressingTask()
+        public void ProgressingTask()
         {
-            if (SomeCondition()) SetStage(TaskStage.Completed);
+            if (SomeCondition())
+            {
+                SetStage(TaskStage.Completed);
+            }
         }
 
         public void PassTask()
@@ -88,31 +91,21 @@ namespace Economy.Farm_House
             }
         }
 
-        public void CheckCompleting()
-        {
-            
-        }
-        
         private void SetAvailableTasks()
         {
-            foreach (var task in _nextTasks) 
-                if (task.GetStage() == TaskStage.NotStarted) 
+            foreach (var task in _nextTasks)
+            {
+                if (task.GetStage() == TaskStage.NotStarted)
+                {
                     task.StartTask();
+                }
+            }
         }
-        
-        // private void SetAvailableTasks()
-        // {
-        //     foreach (var task in _nextTasks)
-        //     {
-        //         if (task.GetStage() == TaskStage.NotAvailable || task.GetStage() == TaskStage.Passed)
-        //         {
-        //             task.SetStage(TaskStage.NotStarted);
-        //             task.StartTask();
-        //         }
-        //     }
-        // }
 
-        public virtual void ResetTask() => SetStage(_resetStage);
+        public virtual void ResetTask()
+        {
+            SetStage(_resetStage);
+        }
     }
 
     public enum TaskStage

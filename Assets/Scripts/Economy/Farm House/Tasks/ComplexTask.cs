@@ -12,8 +12,15 @@ namespace Economy.Farm_House
         [Header("Subtasks")]
         [SerializeField] private Task[] _subTasks;
 
-        protected override void Initialize() => EventHandler.OnTaskStageChanged.AddListener(CheckSubtasks);
-        protected override void Deinitialize() => EventHandler.OnTaskStageChanged.RemoveListener(CheckSubtasks);
+        protected override void Initialize()
+        {
+            EventHandler.OnTaskStageChanged.AddListener(CheckSubtasks);
+        }
+
+        protected override void Deinitialize()
+        {
+            EventHandler.OnTaskStageChanged.RemoveListener(CheckSubtasks);
+        }
 
         public override void StartTask()
         {
@@ -25,10 +32,10 @@ namespace Economy.Farm_House
 
         private void CheckSubtasks(Task task, TaskStage stage)
         {
-            ProgressingTask();
-            // if (_subTasks.Any(t => t == task) &&
-            //     stage == TaskStage.Completed)
-            //     ProgressingTask();
+            if (_subTasks.Contains(task) && stage == TaskStage.Completed)
+            {
+                ProgressingTask();
+            }
         }
 
         public override void CreateCell(Transform parent)
@@ -45,11 +52,13 @@ namespace Economy.Farm_House
                 task.CreateCell(parent);
         }
 
-        protected override bool SomeCondition() =>
-                _subTasks.All(sub => sub.GetStage() == TaskStage.Completed ||
-                                     sub.GetStage() == TaskStage.Passed);
+        protected override bool SomeCondition()
+        {
+            return _subTasks.All(sub => sub.GetStage() == TaskStage.Completed || sub.GetStage() == TaskStage.Passed);
+        }
 
-        [ContextMenu("Reset Task")] public override void ResetTask()
+        [ContextMenu("Reset Task")]
+        public override void ResetTask()
         {
             base.ResetTask();
 
