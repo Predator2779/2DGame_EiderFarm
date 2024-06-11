@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb214ac4f1ea4b7a8d44128de42eb616, type: 3}
   m_Name: Labor Force
   m_EditorClassIdentifier: 
-  _stage: 4
+  _stage: 1
   _resetStage: 1
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: "\u0420\u0430\u0431\u043E\u0447\u0430\u044F \u0441\u0438\u043B\u0430"
@@ -24,7 +24,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b3213b5ac85d93a45936517bcd840f62, type: 2}
   _cellPrefab: {fileID: 3904866896323149092, guid: 881e53c46ad8ef7428c7cd2efccf67ef, type: 3}
   _subTasks:
-  - {fileID: 11400000, guid: 0252f10fede5c0d48b687b7afce6277e, type: 2}
-  - {fileID: 11400000, guid: 5615995dbdd520d479c317a64a255ccc, type: 2}
   - {fileID: 11400000, guid: 6582a72006996494b86f04c325fc9c7b, type: 2}
   - {fileID: 11400000, guid: 5bb8ecfdc298de94e9f8f7915c713a29, type: 2}
+  - {fileID: 11400000, guid: 5615995dbdd520d479c317a64a255ccc, type: 2}
+  - {fileID: 11400000, guid: 0252f10fede5c0d48b687b7afce6277e, type: 2}
