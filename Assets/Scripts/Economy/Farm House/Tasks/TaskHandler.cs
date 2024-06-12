@@ -7,11 +7,9 @@ namespace Economy.Farm_House
     public class TaskHandler : DisplayMenu
     {
         [SerializeField] private Task[] _tasks;
-        private bool _isRefreshing = false;
 
         public void Initialize()
         {
-            EventHandler.OnTaskStageChanged.AddListener(RefreshTasksStatus);
             EventHandler.OnGiveReward.AddListener(GiveReward);
 
             foreach (var task in _tasks)
@@ -30,15 +28,6 @@ namespace Economy.Farm_House
                 task.GiveReward(_playerInventory);
         }
 
-        private void RefreshTasksStatus(Task task, TaskStage stage)
-        {
-            if (_isRefreshing) return;
-
-            _isRefreshing = true;
-            RefreshDisplay();
-            _isRefreshing = false;
-        }
-
         protected override void Draw()
         {
             DrawTasks(GetTasks(TaskStage.Progressing));
@@ -47,13 +36,9 @@ namespace Economy.Farm_House
 
         public override void RefreshDisplay()
         {
-            if (_isRefreshing) return;
-
-            _isRefreshing = true;
             CheckTasks(GetTasks(TaskStage.Progressing));
             CheckTasks(GetTasks(TaskStage.Completed));
             base.RefreshDisplay();
-            _isRefreshing = false;
         }
 
         private Task[] GetTasks(TaskStage stage) => _tasks.Where(task => task.GetStage() == stage).ToArray();
@@ -63,14 +48,12 @@ namespace Economy.Farm_House
             foreach (var task in tasks)
                 task.CreateCell(_content);
         }
-
+        
         private void CheckTasks(Task[] tasks)
         {
             foreach (var task in tasks)
             {
-                if (task.GetStage() == TaskStage.Progressing)
-                    task.ProgressingTask();
-                else if (task.GetStage() == TaskStage.Completed)
+                if (task.GetStage() == TaskStage.Completed)
                     task.PassTask();
             }
         }

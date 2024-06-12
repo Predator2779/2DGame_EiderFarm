@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69376c678bfa46278e251fbc7da67550, type: 3}
   m_Name: 30-CleanFluff-SUB
   m_EditorClassIdentifier: 
-  _stage: 2
+  _stage: 3
   _resetStage: 0
   _icon: {fileID: 21300000, guid: a11248a400a3daa47a40503faf902c52, type: 3}
   _name: "\u0417\u0430\u0431\u0440\u0430\u0442\u044C \u0441\u043E \u0441\u043A\u043B\u0430\u0434\u0430
@@ -28,6 +28,6 @@ MonoBehaviour:
   _nextTasks: []
   _cellPrefab: {fileID: 2800116051798515356, guid: 6e6d042e3c1206a47b503c538abb5442, type: 3}
   _requireCount: 30
-  _currentCount: 0
+  _currentCount: 10
   _requiredItem: {fileID: 11400000, guid: 159a6522252945049be044ad47855211, type: 2}
   _requireType: 3
