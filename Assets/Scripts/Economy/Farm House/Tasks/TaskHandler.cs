@@ -69,13 +69,9 @@ namespace Economy.Farm_House
             foreach (var task in tasks)
             {
                 if (task.GetStage() == TaskStage.Progressing)
-                {
                     task.ProgressingTask();
-                }
                 else if (task.GetStage() == TaskStage.Completed)
-                {
                     task.PassTask();
-                }
             }
         }
 

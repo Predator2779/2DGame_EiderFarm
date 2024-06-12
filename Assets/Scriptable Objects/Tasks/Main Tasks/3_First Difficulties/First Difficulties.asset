@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb214ac4f1ea4b7a8d44128de42eb616, type: 3}
   m_Name: First Difficulties
   m_EditorClassIdentifier: 
-  _stage: 2
+  _stage: 4
   _resetStage: 1
   _icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _name: "\u041F\u0435\u0440\u0432\u044B\u0435 \u0442\u0440\u0443\u0434\u043D\u043E\u0441\u0442\u0438"

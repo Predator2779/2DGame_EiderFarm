@@ -37,7 +37,7 @@ namespace Economy.Farm_House
 
         private void SetStage(TaskStage stage)
         {
-            if (_stage == stage) return; // Предотвращение повторной установки того же состояния
+            if (_stage == stage) return;
             _stage = stage;
             EventHandler.OnTaskStageChanged?.Invoke(this, _stage);
         }
@@ -59,10 +59,7 @@ namespace Economy.Farm_House
 
         public void ProgressingTask()
         {
-            if (SomeCondition())
-            {
-                SetStage(TaskStage.Completed);
-            }
+            if (SomeCondition()) SetStage(TaskStage.Completed);
         }
 
         public void PassTask()
@@ -96,9 +93,7 @@ namespace Economy.Farm_House
             foreach (var task in _nextTasks)
             {
                 if (task.GetStage() == TaskStage.NotStarted)
-                {
                     task.StartTask();
-                }
             }
         }
 
