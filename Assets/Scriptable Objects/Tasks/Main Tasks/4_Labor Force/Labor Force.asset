@@ -25,6 +25,6 @@ MonoBehaviour:
   _cellPrefab: {fileID: 3904866896323149092, guid: 881e53c46ad8ef7428c7cd2efccf67ef, type: 3}
   _subTasks:
   - {fileID: 11400000, guid: 6582a72006996494b86f04c325fc9c7b, type: 2}
-  - {fileID: 11400000, guid: 5bb8ecfdc298de94e9f8f7915c713a29, type: 2}
   - {fileID: 11400000, guid: 5615995dbdd520d479c317a64a255ccc, type: 2}
   - {fileID: 11400000, guid: 0252f10fede5c0d48b687b7afce6277e, type: 2}
+  - {fileID: 11400000, guid: 5bb8ecfdc298de94e9f8f7915c713a29, type: 2}
