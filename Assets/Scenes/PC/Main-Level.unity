@@ -1960,9 +1960,13 @@ PrefabInstance:
       propertyPath: _playerInventory
       value: 
       objectReference: {fileID: 4544929881048724889}
-    - target: {fileID: 4958565177445906378, guid: a633d024163675f48863759ac430047f, type: 3}
+    - target: {fileID: 2382411749448240076, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958565177445906378, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7116334758851443771, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: m_LocalPosition.x
