@@ -1954,7 +1954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1797326929060662829, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2118555756345629674, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: _playerInventory
@@ -1962,7 +1962,7 @@ PrefabInstance:
       objectReference: {fileID: 4544929881048724889}
     - target: {fileID: 2382411749448240076, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4958565177445906378, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: m_IsActive
@@ -2464,9 +2464,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3653664754370719211, guid: 593dad14484c5ec439e21861ae9ad000, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4700435365990698730, guid: 593dad14484c5ec439e21861ae9ad000, type: 3}
       propertyPath: m_Name
       value: UI-2 (PC)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6406004332122352931, guid: 593dad14484c5ec439e21861ae9ad000, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7918928356975458041, guid: 593dad14484c5ec439e21861ae9ad000, type: 3}
       propertyPath: m_Camera
