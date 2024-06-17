@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1941,10 +1940,30 @@ PrefabInstance:
       propertyPath: m_TileSpriteArray.Array.data[6].m_Data
       value: 
       objectReference: {fileID: 2051213374}
+    - target: {fileID: 945715913093369849, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 945715913093369849, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 945715913093369849, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797326929060662829, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2118555756345629674, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: _playerInventory
       value: 
       objectReference: {fileID: 4544929881048724889}
+    - target: {fileID: 4958565177445906378, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7116334758851443771, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1991,6 +2010,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7460094689457116688, guid: a633d024163675f48863759ac430047f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469715139617611356, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469715139617611356, guid: a633d024163675f48863759ac430047f, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8490285015444166525, guid: a633d024163675f48863759ac430047f, type: 3}
@@ -2437,10 +2464,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI-2 (PC)
       objectReference: {fileID: 0}
-    - target: {fileID: 6406004332122352931, guid: 593dad14484c5ec439e21861ae9ad000, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7918928356975458041, guid: 593dad14484c5ec439e21861ae9ad000, type: 3}
       propertyPath: m_Camera
       value: 
@@ -2458,8 +2481,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 695386144}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 7235937306841210513, guid: 593dad14484c5ec439e21861ae9ad000, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 593dad14484c5ec439e21861ae9ad000, type: 3}
