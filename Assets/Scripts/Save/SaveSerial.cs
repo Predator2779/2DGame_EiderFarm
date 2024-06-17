@@ -176,6 +176,8 @@ public class SaveSerial : MonoBehaviour
 
     private void ResetData()
     {
+        _taskHandler.ResetAllTasks();
+
         if (!File.Exists(Application.persistentDataPath + _path)) return;
 
         File.Delete(Application.persistentDataPath + _path);
@@ -197,8 +199,6 @@ public class SaveSerial : MonoBehaviour
 
         _menu.SetSaves(false);
         SaveBool(false);
-
-        _taskHandler.ResetAllTasks();
     }
 
     private int[] SaveDataGrades(BuildTrigger[] menus)
